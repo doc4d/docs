@@ -27,7 +27,7 @@ The list provides the following information:
 - **Login Date**: Date and time when the session was established.
 - **CPU Time**: CPU time consumed by the session since it was created.
 - **Activity**: Percentage of server activity currently devoted to the session (dynamic value).
-- **Status**: Status of the session. Client sessions can be **Online**, **[Sleeping]**(clientServer.md#management-of-sleeping-client-sessions), or **[Unreachable]**(clientServer.md#management-of-unreachable-peer). Web, REST, and SOAP sessions always have the **Online** status.
+- **Status**: Status of the session. Client sessions can be **Online**, **[Sleeping](../Desktop/clientServer.md#management-of-sleeping-client-sessions)** clientServer.md#management-of-sleeping-client-sessions), or **[Unreachable](../Desktop/clientServer.mdmanagement-of-unreachable-peer)**. Web, REST, and SOAP sessions always have the **Online** status.
 
 Additional information is available in the detail panel when a session is selected.
 
