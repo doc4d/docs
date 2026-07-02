@@ -698,7 +698,7 @@ The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.Q
 
 Esta propiedad es **solo lectura**.
 
-The following properties of the `4D.QuotaManager` object are available for the session:
+Las siguientes propiedades del objeto `4D.QuotaManager` están disponibles para la sesión:
 
 | Propiedad                                                                 |              | Tipo    | Writable | Descripción                                                                                                    |
 | ------------------------------------------------------------------------- | ------------ | ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
