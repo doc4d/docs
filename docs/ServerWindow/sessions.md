@@ -5,7 +5,7 @@ title: Sessions Page
 
 The **Sessions** page lists all active sessions connected to the server, including Client, Web, REST, and SOAP sessions.
 
-![](../assets/en/Admin/server-sessions.png)
+![](../assets/en/Admin/server-sessions-1.png)
 
 The **Sessions** button indicates, in parentheses, the total number of active sessions (this number does not take into account any display filters applied to the window).
 
@@ -13,7 +13,7 @@ The page contains a dynamic search area, filtering controls, and administration 
 
 You can also sort the list by clicking a column header. Click repeatedly to toggle between ascending and descending order.
 
-![](../assets/en/Admin/server-sessions-sort.png)
+![](../assets/en/Admin/server-sessions-sort-1.png)
 
 ## List of Sessions
 
@@ -22,7 +22,7 @@ Each row represents one active session.
 The list provides the following information:
 
 - Icon representing the type of session (Apple for macOS Client sessions, Windows for Windows Client sessions, globe for Web, REST, and SOAP sessions). And an additional visual indicator shows whether the session is authenticated.
-- **Type**: Type of session (Client, Web, REST, or SOAP).
+- **Origin**: Type of session (Client, Web, REST, or SOAP).
 - **User Name**: Name of the connected 4D user, or the alias defined using the [`SET USER ALIAS`](../commands/set-user-alias) command when applicable.
 - **Login Date**: Date and time when the session was established.
 - **CPU Time**: CPU time consumed by the session since it was created.
@@ -37,17 +37,17 @@ Selecting a session displays additional information in the lower panel.
 
 For **Client** sessions, the following information is available:
 
-- Operating system session name
+- System username
 - IP address
 - Machine name
-- Write Pro indicator
-- 4D View Pro indicator
+- Write Pro indicator (means that the user belongs to a group that grants access to 4D Write Pro)
+- 4D View Pro indicator (means that the user belongs to a group that grants access to 4D View Pro)
 - IP lookup button
 
 For **REST**, **Web**, and **SOAP** sessions, the detail panel displays information such as:
 
 - Guest status
-- Privileges
+- Privileges (list of privileges associated with the session)
 - IP address
 - User agent
 - IP lookup button
@@ -83,7 +83,7 @@ The Sessions page also provides quick filters to display only specific session t
 The following filters are available:
 
 - **Counted sessions**:  includes only sessions counted for floating license consumption.
-- **Clients**: includes only Client sessions.
+- **Clients**: includes only desktop client sessions.
 - **Web**: includes only Web and SOAP sessions.
 - **REST**: includes only REST sessions.
 
@@ -91,7 +91,7 @@ Filters can be enabled or disabled independently, or combined with other filters
 
 ## Administration Buttons
 
-There are three administration buttons. **Watch Processes** and **Drop User** are available when one or more sessions are selected. **Send Message** is available when one or more Client sessions are selected.
+There are three administration buttons: **Send Message** is available when one or more Client sessions are selected. **Watch Processes** and **Drop User** are available when one or more sessions are selected, whatever their type. 
 You can select several rows by holding down the **Shift** key for an adjacent selection or the **Ctrl** (Windows) / **Command** (macOS) key for a non-adjacent selection.
 
 ### Send message
@@ -107,7 +107,7 @@ You can perform the same action programmatically using the [`SEND MESSAGE TO REM
 
 ### Watch Processes
 
-This button can used to directly show the processes associated with the selected session on the [**Processes** page](processes.md).
+This button can be used to directly show the processes associated with the selected session on the [**Processes** page](processes.md).
 
 The process list is automatically filtered using the selected session UUID.
 

@@ -6,7 +6,7 @@ title: Processes Page
 
 The **Processes** page lists all the processes underway.
 
-![](../assets/en/Admin/server-admin-process-page.png)
+![](../assets/en/Admin/server-admin-process-page-1.png)
 
 
 The "Processes" button indicates, in parentheses, the total number of processes running in the server (this number does not take into account any display filters applied to the window nor the state of the **Display processes by groups** option).
