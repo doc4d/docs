@@ -52,7 +52,7 @@ The detail panel displays information such as:
 - **Guest status**: Indicates whether the session is a Guest session. Guest sessions are unauthenticated Web sessions.
 - **Privileges**: List of privileges associated with the session.
 - **IP address**: IP address of the remote machine that opened the session.
-- **User agent**: dentifies the client application, browser, or service that initiated the session.
+- **User agent**: Identifies the client application, browser, or service that initiated the session.
 
 ### IP Lookup button
 
