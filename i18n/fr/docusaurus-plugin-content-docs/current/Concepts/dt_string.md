@@ -36,9 +36,9 @@ Les séquences d’échappement suivantes peuvent être utilisées dans les cha�
 
 ### Automatic normalization of line endings
 
-In order to ensure multi-platform compatibility of texts handled in the database, 4D automatically normalizes line endings so that they occupy a single character: `\r` (carriage return). This normalization is carried out at the level of form objects (variables or fields) hosting plain or multi-style text. Line endings that are not native, or that use a mix of several characters (for example `\r\n`), are considered as a single `\r`. Note that in compliance with the XML standard (multi-style text format), the [multi-style text commands](../commands/theme/Styled_Text.md) also normalize line endings for text variables that are not associated with objects.
+In order to ensure multi-platform compatibility of texts handled in the database, 4D automatically normalizes line endings so that they occupy a single character: `\r` (carriage return). This normalization is carried out at the level of form objects (variables or fields) hosting plain or multi-style text. Line endings that are not native, or that use a mix of several characters (for example `\r\n`), are considered as a single `\r`. Notez que, conformément à la norme XML (format de texte multi-style), les [commandes de texte multi-style](../commands/theme/Styled_Text.md) normalisent également les fins de ligne pour les variables de texte qui ne sont pas associées à des objets.
 
-This principle makes it easier to use multi-style text commands or commands such as [`HIGHLIGHT TEXT`](../commands/highlight-text) in a multi-platform context. However, you must take this into account in your processing when you work with texts from heterogeneous sources.
+Ce principe facilite l'utilisation de commandes de texte multi-styles ou de commandes telles que [`HIGHLIGHT TEXT`](../commands/highlight-text) dans un contexte multiplateforme. However, you must take this into account in your processing when you work with texts from heterogeneous sources.
 
 ## Opérateurs sur les chaînes
 
