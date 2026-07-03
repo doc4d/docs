@@ -579,11 +579,11 @@ En este caso, debe llenar y vaciar los arrays por código. Los principios que de
 
 - Cuando un usuario hace clic en un botón de contracción, puede procesar el evento `On Collapse`. El comando [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devuelve la celda en cuestión: se eliminan tantas líneas como sean necesarias del list box mediante el comando [`LISTBOX DELETE ROWS`](../commands/listbox-delete-rows).
 
-## List boxes and the 4D language
+## List boxes y el lenguaje 4D
 
-Many commands of the 4D language can be used with list boxes, from the [List box theme](../commands/theme/List_Box.md) but also from [Objects (Forms)](../commands/theme/Objects_Forms.md) and other themes. They can be used with list boxes, or [parts of list boxes](#list-box-parts) such as headers, footers, rows, or columns. Some of them can only be used with specific [list box types](#list-box-types).
+Muchos comandos del lenguaje 4D se pueden utilizar con list boxes, tanto del [tema List box](../commands/theme/List_Box.md) como de [Objetos (Formularios)](../commands/theme/Objects_Forms.md) y otros temas. Se pueden utilizar con list boxes o con [partes de list boxes](#list-box-parts), como encabezados, pies de página, filas o columnas. Algunos de ellos solo se pueden utilizar con determinados [tipos de list box](#list-box-types).
 
-### List Box commands
+### Comandos List Box
 
 | Comando                                                                          | List Box Type                | Supported Parts                           |
 | -------------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------- |
