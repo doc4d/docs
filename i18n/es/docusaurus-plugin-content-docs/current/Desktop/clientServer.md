@@ -151,11 +151,11 @@ La siguiente tabla resume dónde se ejecuta el código por defecto y cómo cambi
 
 ## Gestión de pares inalcanzables
 
-When the [QUIC network layer is used](../settings/client-server.md#network-layer), client/server sessions benefit from an **automatic reconnection feature** in case of unexpected disconnections. Unexpected disconnections include for example:
+Cuando se utiliza la [capa de red QUIC](../settings/client-server.md#network-layer), las sesiones cliente-servidor se benefician de una **función de reconexión automática** en caso de desconexiones inesperadas. Entre las desconexiones inesperadas se incluyen, por ejemplo:
 
-- Desenchufar y enchufar el cable LAN,
+- desenchufar y enchufar el cable LAN,
 - Transferencia mediante una conexión móvil,
-- Switch reboot,
+- reinicio del conmutador,
 - un pequeño error de red.
 
 This feature supports both server-side and client-side management in the event of a lost connection with a peer, and includes configurable timeouts and real-time information.
