@@ -1,9 +1,9 @@
 ---
-id: glisser-déposer
+id: drag-and-drop
 title: Drag and drop
 ---
 
-## Vue d’ensemble
+## Overview
 
 4D allows built-in drag and drop capability between objects in your forms and applications. You can drag and drop one object to another, in the same window or in another window. In other words, drag and drop can be performed within a process or from one process to another.
 
