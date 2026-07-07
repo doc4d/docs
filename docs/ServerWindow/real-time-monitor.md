@@ -6,7 +6,7 @@ title: Real Time Monitor Page
 
 The Real Time Monitor page monitors the progress of "long" operations performed by the application in real time. These operations are, for example, sequential queries, execution of formulas, etc.
 
-![](../assets/en/Admin/server-admin-monitor-page-1.png)
+![](../assets/en/Admin/server-admin-monitor-page-2.png)
 
 
 >This page is available in the administration window of the server machine and also from a remote 4D machine. In the case of a remote machine, this page displays data from operations performed on the server machine.
