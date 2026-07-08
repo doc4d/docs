@@ -48,7 +48,7 @@ Un [Datastore](ORDA/dsMapping.md#datastore) est un objet d'interface fourni par 
 
 #### Description
 
-Each dataclass in a datastore is available as a property of the [DataStore object](ORDA/dsMapping.md#datastore) data. L'objet retourné <!-- REF DataStoreClass.dataclassName.Summary -->contient la description de la dataclass<!-- END REF -->.
+Chaque dataclass d'un datastore est disponible en tant que propriété de l'[objet DataStore](ORDA/dsMapping.md#datastore). L'objet retourné <!-- REF DataStoreClass.dataclassName.Summary -->contient la description de la dataclass<!-- END REF -->.
 
 #### Exemple
 
@@ -89,7 +89,7 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 
 #### Description
 
-La fonction `.cancelTransaction()` <!-- REF #DataStoreClass.cancelTransaction().Summary -->annule la transaction<!-- END REF --> ouverte par la fonction [`.startTransaction()`](#starttransaction) au niveau correspondant dans le process en cours pour le datastore spécifié.
+La fonction `.cancelTransaction()` <!-- REF #DataStoreClass.cancelTransaction().Summary -->annule la transaction<!-- END REF --> ouverte par la fonction [`.startTransaction()`](#starttransaction) au niveau correspondant dans le process courant pour le datastore spécifié.
 
 La fonction `.cancelTransaction()` annule toutes les modifications apportées aux données durant la transaction.
 
@@ -524,7 +524,7 @@ Sur un datastore distant :
 
 #### Description
 
-La fonction `.getRemoteContextInfo()` <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> renvoie un objet qui contient des informations sur le contexte d'optimisation *contextName* dans le datastore<!-- END REF -->.
+La fonction `.getRemoteContextInfo()` <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> renvoie un objet qui contient des informations sur le contexte d'optimisation *contextName* dans le datastore<!-- END REF -->..
 
 Pour plus d'informations sur la façon dont les contextes peuvent être créés, voir [Optimisation client/serveur](../ORDA/client-server-optimization.md#optimization-context).
 
@@ -1064,12 +1064,12 @@ Pour une description du format du journal des requêtes ORDA, veuillez vous réf
 
 Pour créer un journal des requêtes ORDA côté client, appelez cette fonction sur une machine distante. Le journal peut être envoyé à un fichier ou en mémoire, selon le type de paramètre :
 
-- Si vous avez passé un objet *file* créé à l'aide de la commande `File`, les données de l'enregistrement sont écrites dans ce fichier sous forme de collection d'objets (format JSON). Chaque objet représente une requête.<br/>Si le fichier n'existe pas encore, il est créé. Sinon, s'il existe déjà, les nouvelles données d'enregistrement y sont ajoutées.
+- Si vous avez passé un objet *file* créé à l'aide de la commande `File`, les données de l'enregistrement sont écrites dans ce fichier sous forme de collection d'objets (format JSON). Si vous avez passé un objet *file* créé à l'aide de la commande `File`, les données de l'enregistrement sont écrites dans ce fichier sous forme de collection d'objets (format JSON).Si le fichier n'existe pas encore, il est créé. Sinon, s'il existe déjà, les nouvelles données d'enregistrement y sont ajoutées.
   Si la fonction `.startRequestLog()` est appelée avec un fichier alors qu'un enregistrement des requêtes est déjà en cours en mémoire, l'enregistrement en mémoire est stoppé et vidé.
 
 > Un caractère \] doit être ajouté manuellement à la fin du fichier pour effectuer une validation JSON
 
-- Si vous avez passé un numéro *reqNum*, l'enregistrement en mémoire est vidé (le cas échéant) et un nouvel enregistrement est lancé. Il conserve les demandes *reqNum* en mémoire jusqu'à ce que le nombre soit atteint, auquel cas les entrées les plus anciennes sont vidées (pile FIFO).<br/>Si `.startRequestLog()` est appelé avec un *reqNum* alors qu'un enregistrement a été précédemment lancé dans un fichier, l'enregistrement du fichier est arrêté.
+- Si vous avez passé un numéro *reqNum*, l'enregistrement en mémoire est vidé (le cas échéant) et un nouvel enregistrement est lancé. Si vous avez passé un numéro *reqNum*, l'enregistrement en mémoire est vidé (le cas échéant) et un nouvel enregistrement est lancé.Il conserve les demandes *reqNum* en mémoire jusqu'à ce que le nombre soit atteint, auquel cas les entrées les plus anciennes sont vidées (pile FIFO).<br/>
 
 - Si vous n'avez passé aucun paramètre, l'enregistrement est lancé dans la mémoire. Si `.startRequestLog()` a été préalablement appelée avec un *reqNum* (avant un `.stopRequestLog()`), les données enregistrées sont empilées dans la mémoire jusqu'au prochain vidage ou appel de `.stopRequestLog()`.
 

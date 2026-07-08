@@ -68,7 +68,7 @@ Vous pouvez modifier le code du composant dans les conditions suivantes :
 
 - le projet hôte est exécuté en interprété,
 - le composant a été [chargé en mode interprété](../Project/components.md#interpreted-and-compiled-components) et le code source est disponible,
-- les fichiers des composants sont stockés localement (c'est-à-dire qu'ils n'on,t pas été [téléchargés depuis GitHub](../Project/components.md#adding-a-github-dependency)).
+- les fichiers des composants sont stockés localement (c'est-à-dire qu'ils n'on,t pas été [téléchargés depuis GitHub](../Project/components.md#adding-a-github-or-gitlab-dependency)).
 
 Dans ce contexte, vous pouvez ouvrir, modifier et sauvegarder le code de vos composants dans l'éditeur de code du projet hôte à partir de deux endroits :
 
@@ -438,7 +438,7 @@ Les composants peuvent utiliser des ressources situées dans le dossier Ressourc
 
 Les mécanismes automatiques sont opérationnels : les fichiers XLIFF présents dans le dossier Resources d’un composant seront chargés par ce composant.
 
-Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Les ressources sont réparties entre les différents projets : il n'est pas possible d'accéder aux ressources du composant A à partir du composant B ou du projet hôte.
+Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Les ressources sont réparties entre les différents projets : il n'est pas possible d'accéder aux ressources du composant A à partir du composant B ou du projet hôte.
 
 ## Exécution du code d'initialisation
 

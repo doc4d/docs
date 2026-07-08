@@ -20,7 +20,7 @@ Les commandes [`MAIL Convert from MIME`](../commands/mail-convert-from-mime.md) 
 
 Les objets Email exposent les propriétés suivantes :
 
-> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec-mail.html).
+> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec/rfc8621/).
 
 |                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,7 +110,7 @@ Les propriétés [`textBody`](#textbody) et [`htmlBody`](#htmlbody) sont utilis�
 
 La propriété `.attachments` contient une <!-- REF #EmailObjectClass.attachments.Summary -->collection d'objet(s) `4D.MailAttachment`<!-- END REF -->.
 
-Les objets Attachment ont des [propriétés et fonctions](MailAttachmentClass.md) spécifiques. Les objets de type pièce jointe sont définis par la commande [`MAIL New attachment`](../commands/mail-new-attachment.md).
+Les objets Attachment ont des [propriétés et fonctions](MailAttachmentClass.md) spécifiques. Les objets de type pièce jointe sont définis par la commande [`MAIL New attachment`](../commands/mail-new-attachment).
 
 ## .bcc
 

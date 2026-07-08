@@ -75,7 +75,7 @@ Puede insertar expresiones especiales relacionadas con los atributos del documen
 
 :::note
 
-When you **work with tables**, [additional context expressions](./user-legacy/handling-tables.md#table-formula-object) such as `This.item` are available.
+Cuando **trabajas con tablas**, [expresiones de contexto adicionales](./user-legacy/handling-tables.md#table-formula-object) como `Este.elemento` están disponibles.
 
 :::
 
@@ -235,8 +235,6 @@ En este contexto, puede visualizar el texto fuente de la fórmula pulsando **Ctr
 
 - Cuando las fórmulas tienen nombres y se muestran como nombres, no se muestra ningún consejo por defecto.
   Puede mostrar el texto original de la fórmula presionando **Ctrl** (Windows) o **Cmd** (macOS) mientras pasa el cursor sobre la fórmula:
-
-  !&#x20;
 
 #### Ver también
 

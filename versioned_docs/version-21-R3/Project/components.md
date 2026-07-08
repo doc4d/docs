@@ -53,7 +53,7 @@ This section describes how to work with components in the **4D** and **4D Server
 To load a component in your 4D project, you can either:
 
 - copy the component files in the [**Components** folder of your project](architecture.md#components) (interpreted component package folders must be suffixed with ".4dbase", see above),
-- or, declare the component in the **dependencies.json** file of your project; this is done automatically for local files when you [**add a dependency using the Dependency manager interface**](#adding-a-github-dependency).
+- or, declare the component in the **dependencies.json** file of your project; this is done automatically for local files when you [**add a dependency using the Dependency manager interface**](#adding-a-github-or-gitlab-dependency).
 
 Components declared in the **dependencies.json** file can be stored at different locations:
 
@@ -569,7 +569,7 @@ Once the connection is established, an icon ![dependency-gitlogo](../assets/en/P
 
 :::note
 
-If the component is stored on a [private repository](#private-repositories) and your personal token is missing, an error message is displayed and a **Add a personal access token...** button is displayed (see [Providing your access token](#providing-your-access-token)).
+If the component is stored on a [private repository](#authentication-and-tokens) and your personal token is missing, an error message is displayed and a **Add a personal access token...** button is displayed (see [Providing your access token](#providing-your-access-token)).
 
 :::
 
@@ -620,7 +620,7 @@ Dependencies are regularly checked for updates on GitHub. This checking is done 
 
 :::note
 
-If you provide an [access token](#providing-your-github-access-token), checks are performed more frequently, as GitHub then allows a higher frequency of requests to repositories.
+If you provide an [access token](#providing-your-access-token), checks are performed more frequently, as GitHub then allows a higher frequency of requests to repositories.
 
 :::
 
@@ -635,7 +635,7 @@ In addition, you can check for updates at any moment, for a single dependency or
 ![check components](../assets/en/Project/check-component-all.png)
 
 
-If a new component version matching your [component versioning configuration](#defining-a-github-dependency-version-range) is detected on GitHub, a specific dependency status is displayed: 
+If a new component version matching your [component versioning configuration](#defining-a-dependency-version-range) is detected on GitHub, a specific dependency status is displayed: 
 
 ![dependency-new-version](../assets/en/Project/dependency-available.png)
 
@@ -657,7 +657,7 @@ You can update dependencies at any moment, for a single dependency or for all de
 
 ![check components](../assets/en/Project/update-component-all.png)
 
-In any cases, whatever the current dependency status, an automatic checking is done on GitHub before updating the dependency, to make sure the most recent version is retrieved, [according to your component versioning configuration](#defining-a-github-dependency-version-range). 
+In any cases, whatever the current dependency status, an automatic checking is done on GitHub before updating the dependency, to make sure the most recent version is retrieved, [according to your component versioning configuration](#defining-a-dependency-version-range). 
 
 When you select an update command:
 
@@ -668,9 +668,9 @@ When you select an update command:
 
 The **Automatic update** option is available in the **options** menu at the bottom of the Dependency manager window. 
 
-When this option is checked (default), new GitHub or GitLab component versions matching your [component versioning configuration](#defining-a-github-dependency-version-range) are automatically updated for the next project startup. This option facilitates the day-to-day management of dependency updates, by eliminating the need to manually select updates. 
+When this option is checked (default), new GitHub or GitLab component versions matching your [component versioning configuration](#defining-a-dependency-version-range) are automatically updated for the next project startup. This option facilitates the day-to-day management of dependency updates, by eliminating the need to manually select updates. 
 
-When this option is unchecked, a new component version matching your [component versioning configuration](#defining-a-github-dependency-version-range) is only indicated as available and will require a [manual updating](#updating-dependencies). Unselect the **Automatic update** option if you want to monitor dependency updates precisely. 
+When this option is unchecked, a new component version matching your [component versioning configuration](#defining-a-dependency-version-range) is only indicated as available and will require a [manual updating](#updating-dependencies). Unselect the **Automatic update** option if you want to monitor dependency updates precisely. 
 
 
 

@@ -107,7 +107,7 @@ La función `4D.POP3Transporter.new()` <!-- REF #4D.POP3Transporter.new().Summar
 
 La función `.delete( )` <!-- REF #POP3TransporterClass.delete().Summary -->marca el correo electrónico *msgNumber* para su eliminación del servidor POP3<!-- END REF -->.
 
-En el parámetro *msgNumber*, pase el número del correo electrónico que desea eliminar. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) method.
+En el parámetro *msgNumber*, pase el número del correo electrónico que desea eliminar. Este número es devuelto en la propiedad number por la [función `.getMailInfoList()`](#getmailinfolist).
 
 La ejecución de este método no elimina realmente ningún correo electrónico. El correo marcado se eliminará del servidor POP3 sólo cuando se destruya el objeto `POP3_transporter` (creado con `POP3 New transporter`). El marcador también puede eliminarse utilizando el método `.undeleteAll()`.
 
@@ -281,7 +281,7 @@ Quiere saber el remitente del primer correo del buzón:
 
 La función `.getMailInfo()`<!-- REF #POP3TransporterClass.getMailInfo().Summary --> devuelve un objeto `mailInfo` correspondiente al *msgNumber* en el buzón designado por el [`transportador POP3`](#pop3-transporter-object)<!-- END REF -->. Esta función permite gestionar localmente la lista de mensajes localizados en el servidor de correo POP3.
 
-En *msgNumber*, pase el número del mensaje a recuperar. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) method.
+En *msgNumber*, pase el número del mensaje a recuperar. Este número es devuelto en la propiedad number por la [función `.getMailInfoList()`](#getmailinfolist).
 
 El objeto `mailInfo` devuelto contiene las siguientes propiedades:
 
@@ -357,7 +357,7 @@ Si el buzón no contiene ningún mensaje, se devuelve una colección vacía.
 
 *number* es el número de un mensaje en el buzón en el momento en que se creó el `POP3_transporter`. La propiedad *number* no es un valor estático en relación con ningún mensaje específico y cambiará de una sesión a otra dependiendo de su relación con otros mensajes en el buzón en el momento en que se abrió la sesión. Los números asignados a los mensajes sólo son válidos durante la vigencia del objeto [`POP3_transporter`](#pop3-transporter-object). En el momento en que el `POP3_transporter` sea eliminado cualquier mensaje marcado para ser borrado será eliminado. Cuando el usuario vuelva a conectarse al servidor, los mensajes actuales en el buzón serán renumerados de 1 a x.
 
-Sin embargo, el *id* es un número único asignado al mensaje cuando fue recibido por el servidor. Este número se calcula utilizando la hora y la fecha de recepción del mensaje y es un valor asignado por su servidor POP3. Lamentablemente, los servidores POP3 no utilizan el *id* como referencia principal de sus mensajes. A lo largo de las sesiones POP3 deberá especificar el *number* como referencia a los mensajes del servidor. Los desarrolladores deben tener cierto cuidado si desarrollan soluciones que introducen referencias a los mensajes en una base de datos pero dejan el cuerpo del mensaje en el servidor.
+Sin embargo, el *id* es un número único asignado al mensaje cuando fue recibido por el servidor. Este número se calcula utilizando la hora y la fecha de recepción del mensaje y es un valor asignado por su servidor POP3. Este número se calcula utilizando la hora y la fecha de recepción del mensaje y es un valor asignado por su servidor POP3. Lamentablemente, los servidores POP3 no utilizan el *id* como referencia principal de sus mensajes. Los desarrolladores deben tener cierto cuidado si desarrollan soluciones que introducen referencias a los mensajes en una base de datos pero dejan el cuerpo del mensaje en el servidor.
 
 ##### Ejemplo
 
@@ -412,7 +412,7 @@ Quiere saber el número total y el tamaño de los correos electrónicos en el bu
 
 La función `.getMIMEAsBlob()` <!-- REF #POP3TransporterClass.getMIMEAsBlob().Summary -->devuelve un BLOB con el contenido MIME del mensaje correspondiente al *msgNumber* en el buzón designado por el objeto [`POP3_transporter`](#pop3-transporter-object)<!-- END REF -->.
 
-En *msgNumber*, pase el número del mensaje a recuperar. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) method.
+En *msgNumber*, pase el número del mensaje a recuperar. Este número es devuelto en la propiedad number por la [función `.getMailInfoList()`](#getmailinfolist).
 
 El método devuelve un BLOB vacío si:
 
@@ -421,7 +421,7 @@ El método devuelve un BLOB vacío si:
 
 **BLOB devuelto**
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` devuelve un `BLOB` que se puede archivar en una base de datos o convertir en un [objeto `Email`](EmailObjectClass.md#email-object) con el comando `MAIL Convert from MIME`.
 
 ##### Ejemplo
 

@@ -20,7 +20,7 @@ Dans le langage 4D, il existe plusieurs catégories de méthodes. La catégorie 
 | **Méthode formulaire**                              | Automatique, lorsqu'un événement implique le formulaire auquel la méthode est associée                                                         | Non                                | Propriété d'un formulaire. Vous pouvez utiliser une méthode formulaire pour gérer les données et les objets, mais il est généralement plus simple et plus efficace d'utiliser une méthode objet dans ces cas de figure. |
 | **Trigger** (ou *méthode table*) | Automatique, chaque fois que vous manipulez les enregistrements d'une table (Ajouter, Supprimer, Modifier)                  | Non                                | Propriété d'une table. Les triggers sont des méthodes qui permettent d'éviter les opérations "illégales" sur les enregistrements de votre base de données.                                                              |
 | **Méthode base**                                    | Automatique, lorsqu'un événement se produit sur la session de travail                                                                          | Oui (prédéfini) | Il existe 16 méthodes base dans 4D.                                                                                                                                                                                                     |
-| **Type**                                            | [**Les fonctions de classes**](classes.md#function) sont appelées dans le contexte d'une instance d'objet                                      | oui                                | Les fonctions de classes peuvent être intégrées au langage 4D (par exemple `collection.orderBy()` ou `entity.save()`), ou créées par le développeur 4D. Voir [**Classes**](classes.md)                               |
+| **Classe**                                          | [**Les fonctions de classes**](classes.md#function) sont appelées dans le contexte d'une instance d'objet                                      | oui                                | Les fonctions de classes peuvent être intégrées au langage 4D (par exemple `collection.orderBy()` ou `entity.save()`), ou créées par le développeur 4D. Voir [**Classes**](classes.md)                               |
 
 ## Méthodes projet
 
@@ -219,7 +219,7 @@ Des méthodes projet peuvent s'appeler les unes les autres. Par exemple :
 
 Cela s'appelle la récursivité. Le langage de 4D supporte pleinement la récursivité.
 
-Examinons l'exemple suivant : Examinons l'exemple suivant : Examinons l'exemple suivant : Examinons l'exemple suivant : Supposons que vous disposiez d'une table `[Friends and Relatives]` composée de cet ensemble de champs extrêmement simplifié :
+Examinons l'exemple suivant : Examinons l'exemple suivant : Examinons l'exemple suivant : Examinons l'exemple suivant : Examinons l'exemple suivant : Supposons que vous disposiez d'une table `[Friends and Relatives]` composée de cet ensemble de champs extrêmement simplifié :
 
 - `[Amis et parents]Nom`
 - `[Amis et parents]Enfant'Nom`

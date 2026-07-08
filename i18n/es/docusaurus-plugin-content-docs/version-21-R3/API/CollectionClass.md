@@ -9,7 +9,7 @@ Una colección es inicializada con los comandos [`New collection`](../commands/n
 
 :::info
 
-This class is [**streamable**](../Concepts/dt_object.md#binary-streaming-variable-to-blob) in binary.
+Esta clase es [**streamable**](../Concepts/dt_object.md#binary-streaming-variable-to-blob) en binario.
 
 :::
 
@@ -308,7 +308,7 @@ La función.`.concat()` <!-- REF #collection.concat().Summary -->devuelve una nu
 
 > Esta función no modifica la colección original.
 
-Si *value* es una colección, todos sus elementos se añaden al final de la colección original. Si *value* no es una colección, se añade ella misma como un nuevo elemento.
+La colección devuelta contiene el elemento especificado por *startFrom* y todos los elementos subsiguientes hasta, pero sin incluir, el elemento especificado por *end*. Si sólo se especifica el parámetro *startFrom*, la colección devuelta contiene todos los elementos desde *startFrom* hasta el último elemento de la colección original.
 
 #### Ejemplo
 
@@ -362,7 +362,7 @@ Si se pasa, el parámetro *option* puede contener una de las siguientes constant
 
 | option                | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ck resolve pointers` | Si la colección original contiene valores de tipo puntero, por defecto la copia también contiene los punteros. Sin embargo, puede resolver los punteros al copiar pasando la constante `ck resolve pointers`. En este caso, cada puntero presente en la colección se evalúa al copiar y se utiliza su valor desreferenciado.                                                          |
+| `ck resolve pointers` | Si la colección original contiene valores de tipo puntero, por defecto la copia también contiene los punteros. Si la colección original contiene valores de tipo puntero, por defecto la copia también contiene los punteros. En este caso, cada puntero presente en la colección se evalúa al copiar y se utiliza su valor desreferenciado.                                          |
 | `ck shared`           | Por defecto, `copy()` devuelve una colección Clásica (no compartida), incluso si el comando se aplica a una colección compartida. Pasa la constante `ck shared` para crear una colección compartida. En este caso, puede utilizar el parámetro *groupWith* para asociar la colección compartida con otra colección u objeto (ver más adelante). |
 
 Los parámetros *groupWithCol* o *groupWithObj* permiten designar una colección o un objeto al que se debe asociar la colección resultante.
@@ -397,7 +397,7 @@ End use
 
 #### Ejemplo 2
 
-Queremos combinar *$sharedColl1* y *$sharedColl2*. Dado que pertenecen a diferentes grupos compartidos, una combinación directa daría lugar a un error. Por lo tanto, debemos hacer una copia compartida de *$sharedColl1* y designar *$sharedColl2* como grupo compartido para la copia.
+Queremos combinar *$sharedColl1* y *$sharedColl2*. Dado que pertenecen a diferentes grupos compartidos, una combinación directa daría lugar a un error. Dado que pertenecen a diferentes grupos compartidos, una combinación directa daría lugar a un error.
 
 ```4d
 var $sharedColl1;$sharedColl2;$copyColl : Collection
@@ -683,7 +683,7 @@ La función `.equal()` <!-- REF #collection.equal().Summary -->compara recursiva
 
 :::
 
-Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluación diferencie entre mayúsculas y minúsculas o que diferencie los caracteres acentuados, pase la constante `ck diacritical` en el parámetro option.
+Por defecto, se realiza una evaluación no diacrítica. La evaluación distingue entre mayúsculas y minúsculas y diferencia los caracteres acentuados.
 
 :::tip
 
@@ -1071,7 +1071,7 @@ Se designa la retrollamada a ejecutar para evaluar los elementos de la colecció
 - *formula* (sintaxis recomendada), un [objeto Fórmula](FunctionClass.md) que puede encapsular toda expresión ejecutable, incluyendo funciones y métodos proyecto;
 - o *methodName*, el nombre de un método proyecto (texto).
 
-La retrollamada se llama con los parámetros pasados en *param* (opcional). La retrollamada puede efecturar toda prueba, con o sin los parámetros, y debe devolver *true* para cada elemento que cumpla la prueba. Recibe un `Object` en el primer parámetro ($1).
+La retrollamada se llama con los parámetros pasados en *param* (opcional). La retrollamada se llama con los parámetros pasados en *param* (opcional). Recibe un `Object` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1162,7 +1162,7 @@ Se designa la retrollamada a ejecutar para evaluar los elementos de la colecció
 - *formula* (sintaxis recomendada), un [objeto Fórmula](FunctionClass.md) que puede encapsular toda expresión ejecutable, incluyendo funciones y métodos proyecto;
 - *methodName*, el nombre de un método proyecto (texto).
 
-La retrollamada se llama con los parámetros pasados en *param* (opcional). La retrollamada puede efecturar toda prueba, con o sin los parámetros, y debe devolver *true* para cada elemento que cumpla la prueba. Recibe un `Object` en el primer parámetro ($1).
+La retrollamada se llama con los parámetros pasados en *param* (opcional). La retrollamada se llama con los parámetros pasados en *param* (opcional). Recibe un `Object` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1926,7 +1926,7 @@ La función `.max()` <!-- REF #collection.max().Summary -->devuelve el elemento 
 
 > Esta función no modifica la colección original.
 
-If the collection contains different [types of values](../Concepts/data-types.md), they will be sorted according to the [4D ordering principles](../Concepts/ordering.md) and the `.max()` function will return the maximum value within the last element type in the type list order.
+Si la colección contiene diferentes [tipos de valores](../Concepts/data-types.md), se ordenarán según los [principios de ordenación de 4D](../Concepts/ordering.md) y la función `.max()` devolverá el valor máximo del último tipo de elemento en el orden de la lista de tipos.
 
 Si la colección contiene objetos, pase el parámetro *propertyPath* para indicar la propiedad del objeto cuyo valor máximo desea obtener.
 
@@ -1979,7 +1979,7 @@ La función `.min()` <!-- REF #collection.min().Summary -->devuelve el elemento 
 
 > Esta función no modifica la colección original.
 
-If the collection contains different [types of values](../Concepts/data-types.md), they will be sorted according to the [4D ordering principles](../Concepts/ordering.md) and the `.min()` function will return the minimum value within the first element type in the type list order.
+Si la colección contiene diferentes [tipos de valores](../Concepts/data-types.md), se ordenarán según los [principios de ordenación 4D](../Concepts/ordering.md) y la función `.min()` devolverá el valor mínimo en el primer tipo de elemento en el orden de la lista de tipos.
 
 Si la colección contiene objetos, pase el parámetro *propertyPath* para indicar la propiedad del objeto cuyo valor mínimo desea obtener.
 
@@ -2035,7 +2035,7 @@ La función `.multiSort()` <!-- REF #collection.multiSort().Summary -->permite r
 
 Si se llama a `.multiSort()` sin parámetros, la función tiene el mismo efecto que la función [`.sort()`](#sort): la colección se ordena (sólo valores escalares) en orden ascendente por defecto, según su tipo.
 
-If the collection contains elements of different [types](../Concepts/data-types.md), they will be sorted according to the [4D ordering principles](../Concepts/ordering.md).
+Si la colección contiene elementos de diferentes [tipos](../Concepts/data-types.md), se ordenarán según los [principios de ordenación 4D](../Concepts/ordering.md).
 
 **Ordenación sincronizada de un nivel**
 
@@ -2196,7 +2196,7 @@ También puede pasar un parámetro de criterios para definir cómo deben ordenar
 
   Esta sintaxis sólo ordena los valores escalares de la colección (otros tipos de elementos, como objetos o colecciones, se devuelven desordenados).
 
-If the collection contains elements of different [types](../Concepts/data-types.md), they will be sorted according to the [4D ordering principles](../Concepts/ordering.md).
+Si la colección contiene elementos de diferentes [tipos](../Concepts/data-types.md), se ordenarán según los [principios de ordenación 4D](../Concepts/ordering.md).
 
 #### Ejemplo 1
 
@@ -2545,7 +2545,7 @@ donde:
 | Incluído en                           | IN                            | Devuelve los datos iguales a al menos uno de los valores de una colección o de un conjunto de valores, admite el comodín (@)                |
 
 - **valor**: valor a comparar con el valor actual de la propiedad de cada elemento de la colección. Puede ser cualquier valor de expresión constante que coincida con la propiedad del tipo de datos del elemento o un [**marcador de posición**](#using-placeholders).
-  For example, if the string "v20" is entered as <strong x-id="1">value</strong> to compare with an integer attribute, it will be converted to 20.
+  Al utilizar un valor constante, deben respetarse las siguientes reglas:
   - La constante de tipo **texto** puede pasarse con o sin comillas simples (ver **Uso de comillas** más abajo). Para consultar una cadena dentro de otra cadena (una consulta de tipo "contiene"), utilice el símbolo de comodín (@) en el valor para aislar la cadena a buscar como se muestra en este ejemplo: "@Smith@". Las siguientes palabras claves están prohibidas para las constantes de texto: true, false.
   - Valores constantes de tipo **booleano**: **true** o **false** (Sensible a las mayúsculas y minúsculas).
   - Valores constantes de **tipo numérico**: los decimales se separan con un '.' (punto).
@@ -2584,7 +2584,7 @@ Puede utilizar paréntesis en la búsqueda para dar prioridad al cálculo. Por e
 
 Se pueden utilizar dos tipos de marcadores de posición: **marcadores de posición indexados** y **marcadores de posición con nombre**.
 
-- **Marcadores de posición indexados**: los parámetros se insertan como `:paramIndex` (por ejemplo ":1", ":2"...) en *queryString* y sus valores correspondientes son proporcionados por la secuencia de parámetros *value*. Puede usar hasta 128 parámetros *value*.
+- **Marcadores de posición indexados**: los parámetros se insertan como `:paramIndex` (por ejemplo ":1", ":2"...) en *queryString* y sus valores correspondientes son proporcionados por la secuencia de parámetros *value*. en *queryString* y sus valores correspondientes son proporcionados por la secuencia de parámetros *value*.
 
 Ejemplo:
 
@@ -2602,7 +2602,7 @@ $o.parameters:={name:"Chicago")
 $c:=$myCol.query(":att=:name";$o)
 ```
 
-Puede mezclar todos los tipos de argumentos en *queryString*. Puede mezclar todos los tipos de argumentos en *queryString*.
+Puede mezclar todos los tipos de argumentos en *queryString*. Un *queryString* puede contener, para los parámetros *propertyPath* y *value*:
 
 - valores directos (sin marcadores),
 - marcadores indexados y/o con nombre.
@@ -2997,7 +2997,7 @@ La función `.remove()` <!-- REF #collection.remove().Summary -->elimina uno o m
 
 En *index*, pase la posición donde quiere eliminar el elemento de la colección.
 
-> **Atención**: recuerde que los elementos de la colección están numerados desde 0. Si *index* es mayor que la longitud de la colección, el índice inicial real se definirá en la longitud de la colección.
+> **Atención**: recuerde que los elementos de la colección están numerados desde 0. Si *startFrom* < 0, se considera el desplazamiento desde el final de la colección (*startFrom:=startFrom+length*).
 
 - Si *index* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
 - Si el valor calculado < 0, *index* toma el valor 0.
@@ -3105,7 +3105,7 @@ Por defecto, los nuevos elementos se llenan con valores **null**. Puede especifi
 
 #### Descripción
 
-The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a new collection with all elements of the original collection in reverse order<!-- END REF -->. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
+La función `.reverse()` <!-- REF #collection.reverse().Summary -->devuelve una nueva colección con todos los elementos de la colección original en orden inverso<!-- END REF -->. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
 
 > Esta función no modifica la colección original.
 
@@ -3347,7 +3347,7 @@ También puede pasar una de las siguientes constantes en el parámetro *ascOrDes
 
 Esta sintaxis sólo ordena los valores escalares de la colección (otros tipos de elementos, como objetos o colecciones, se devuelven desordenados).
 
-If the collection contains elements of different [types](../Concepts/data-types.md), they will be sorted according to the [4D ordering principles](../Concepts/ordering.md).
+Si la colección contiene elementos de diferentes [tipos](../Concepts/data-types.md), se ordenarán según los [principios de ordenación 4D](../Concepts/ordering.md).
 
 Si quiere ordenar los elementos de la colección en algún otro orden o ordenar cualquier tipo de elemento, debe suministrar en *formula* ([objeto Formula](FunctionClass.md)) o *methodName* (Text) una retro llamada que define el orden de clasificación. El valor de retorno debe ser un booleano que indica el orden relativo de los dos elementos: **True** si *$1.value* es menor que *$1.value2*, **False** si *$1.value* es mayor que *$1.value2*. Puede ofrecer parámetros adicionales a la retrollamada si es necesario.
 

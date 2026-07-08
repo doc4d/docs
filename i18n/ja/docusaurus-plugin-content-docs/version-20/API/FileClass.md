@@ -74,19 +74,19 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 <!-- REF #_command_.File.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-|path|Text|->|File path|
-|fileConstant|Integer|->|4D file constant|
-|pathType|Integer|->|`fk posix path` (default) or `fk platform path`|
-|*||->|* to return file of host database|
-|Result|4D.File|<-|New file object|
+|path|Text|->|ファイルパス|
+|fileConstant|Integer|->|4Dファイル定数|
+|pathType|Integer|->|`fk posix path` (デフォルト) または `fk platform path`|
+|*||->|ホストデータベースのファイルを返すには * を渡します|
+|戻り値|4D.File|<-|New file object|
 </div>
 <!-- END REF -->
 
 #### 説明
 
-`File` コマンドは、 <!-- REF #_command_.File.Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。
+`File` コマンドは、 <!-- REF #_command_.File.Summary -->`4D.File` 型の新しいオブジェクトを作成して返します 。<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。
 
 **File ( path { ; pathType } { ; \* })**
 
@@ -149,7 +149,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 #### 説明
 
-`4D.File.new()` 関数は、 <!-- REF #4D.File.new().Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 この関数の機能は、[`File`](#file) コマンドと同一です。
+`4D.File.new()` 関数は、 <!-- REF #4D.File.new().Summary -->`4D.File` 型の新しいオブジェクトを作成して返します 。<!-- END REF -->。 この関数の機能は、[`File`](#file) コマンドと同一です。
 
 > `4D.File.new()` よりも、短い [`File`](#file) コマンドの使用が推奨されます。
 
@@ -175,9 +175,9 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 <!--REF #FileClass.create().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|Result|Boolean|<-|True if the file was created successfully, false otherwise|
+|戻り値|Boolean|<-|True if the file was created successfully, false otherwise|
 </div>
 <!-- END REF -->
 
@@ -218,12 +218,12 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 <!--REF #FileClass.createAlias().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|destinationFolder|4D.Folder|->|Destination folder for the alias or shortcut|
-|aliasName|Text|->|Name of the alias or shortcut|
-|aliasType|Integer|->|Type of the alias link|
-|Result|4D.File|<-|Alias or shortcut file reference|
+|destinationFolder|4D.Folder|->|エイリアスまたはショートカットの作成先フォルダー|
+|aliasName|Text|->|エイリアスまたはショートカットの名称|
+|aliasType|Integer|->|エイリアスリンクのタイプ|
+|戻り値|4D.File|<-|Alias or shortcut file reference|
 </div>
 <!-- END REF -->
 
@@ -276,9 +276,9 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 <!-- REF #FileClass.delete().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|----|---|---|
-||||Does not require any parameters|
+||||引数を必要としません|
 </div>
 <!-- END REF -->
 
@@ -286,7 +286,7 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 #### 説明
 
-`.delete()` 関数は、 <!-- REF #FileClass.delete().Summary -->ファイルを削除します<!-- END REF -->。
+`.delete()` 関数は、 <!-- REF #FileClass.delete().Summary -->`.delete()` 関数は、<!-- END REF -->。
 
 ファイルがディスク上に存在しない場合、関数は何もしません (エラーは生成されません)。
 
@@ -309,7 +309,8 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
  $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
  If($tempo.exists)
     $tempo.delete()
-    ALERT("ユーザーのプリファレンスファイルが削除されました。")
+    ALERT("ユーザーのプリファレンスファイルが削除されました。
+ ")
  End if
 ```
 <!-- END REF -->
@@ -336,9 +337,9 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 <!--REF #FileClass.getAppInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|Result|Object|<-|Contents of .exe/.dll version resource or .plist file|
+|戻り値|Object|<-|Contents of .exe/.dll version resource or .plist file|
 </div>
 <!-- END REF -->
 
@@ -432,11 +433,11 @@ ALERT($info.Copyright)
 <!--REF #FileClass.moveTo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|----|---|---|
-|destinationFolder|4D.Folder|->|Destination folder|
-|newName|Text|->|Full name for the moved file|
-|Result|4D.File|<-|Moved file|
+|destinationFolder|4D.Folder|->|移動先フォルダ|
+|newName|Text|->|移動先でのファイルの完全な名称|
+|戻り値|4D.File|<-|Moved file|
 </div>
 <!-- END REF -->
 
@@ -447,7 +448,7 @@ ALERT($info.Copyright)
 
 *destinationFolder* 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
-デフォルトでは、移動したファイルは元の名前を維持します。 移動の際にファイル名を変更したい場合、新しい完全な名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
+デフォルトでは、移動したファイルは元の名前を維持します。 移動の際にファイル名を変更したい場合、新しい完全な名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。
 
 **返されるオブジェクト**
 
@@ -480,11 +481,11 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 <!--REF #FileClass.open().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|mode|Text|->|Opening mode: "read", "write", "append"|
-|options|Object|->|Opening options|
-|Result|[4D.FileHandle](FileHandleClass)|<-|New File handle object|
+|mode|Text|->|開くモード: "read"、"write"、"append"|
+|options|Object|->|開くオプション|
+|戻り値|[4D.FileHandle](FileHandleClass)|<-|New File handle object|
 </div>
 <!-- END REF -->
 
@@ -563,16 +564,16 @@ $fhandle:=$f.open("read")
 <!--REF #FileClass.rename().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|newName|Text|->|New full name for the file|
-|Result|4D.File|<-|Renamed file|
+|newName|Text|->|ファイルの新しい完全な名称|
+|戻り値|4D.File|<-|Renamed file|
 </div>
 <!-- END REF -->
 
 #### 説明
 
-`.rename()` 関数は、 <!-- REF #FileClass.rename().Summary -->ファイル名を *newName* に指定した名称に変更し、名称変更後の `File` オブジェクトを返します<!-- END REF -->。
+`.rename()` 関数は、 <!-- REF #FileClass.rename().Summary -->`.rename()` 関数は、<!-- END REF -->。
 
 *newName* 引数は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。 同じ名前のファイルがすでに存在する場合には、エラーが返されます。
 
@@ -609,9 +610,9 @@ $fhandle:=$f.open("read")
 <!--REF #FileClass.setAppInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|info|Object|->|Properties to write in .exe/.dll version resource or .plist file|
+|info|Object|->|.exe/.dll バージョンリソースや .plist ファイル情報内に書き込むプロパティ|
 </div>
 <!-- END REF -->
 
@@ -622,7 +623,7 @@ $fhandle:=$f.open("read")
 
 **.exe または .dll ファイル用の *info* オブジェクト**
 
-関数に渡されるファイルは、ディスク上に存在する有効な .exe または .dll ファイルでなければなりません。そうでない場合、この関数は何もしません (エラーは生成されません)。
+関数に渡されるファイルは、ディスク上に存在する有効な .exe または .dll ファイルでなければなりません。
 
 
 > .exe および .dll ファイル情報の書き込みは Windows上でのみ可能です。
@@ -703,9 +704,9 @@ $infoPlistFile.setAppInfo($info)
 <!--REF #FileClass.setContent().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|content|BLOB|->|New contents for the file|
+|content|BLOB|->|ファイルの新しいコンテンツ|
 </div>
 <!-- END REF -->
 
@@ -740,12 +741,12 @@ $infoPlistFile.setAppInfo($info)
 <!--REF #FileClass.setText().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|----|---|--------|
-|text|Text|->|Text to store in the file|
-|charSetName|Text|->|Name of character set|
-|charSetNum|Integer|->|Number of character set|
-|breakMode|Integer|->|Processing mode for line breaks|
+|text|Text|->|ファイルに保存するテキスト|
+|charSetName|Text|->|文字セットの名前|
+|charSetNum|Integer|->|文字セットの番号|
+|breakMode|Integer|->|改行の処理モード|
 </div>
 <!-- END REF -->
 

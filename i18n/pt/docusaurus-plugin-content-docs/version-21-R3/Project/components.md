@@ -49,7 +49,7 @@ This section describes how to work with components in the **4D** and **4D Server
 Para carregar um componente no seu projeto 4D, você pode:
 
 - copie os arquivos de componentes na pasta [**Components** do seu projeto](architecture.md#components) (as pastas de pacotes de componentes interpretados devem ser sufixadas com ".4dbase", veja acima),
-- ou, declarar o componente nas **dependências**. fil\*\* arquivo de seu projeto; isto é feito automaticamente para arquivos locais quando você [**adicionar uma dependência usando a interface do Gerenciador de Dependência**](#adding-a-github-dependency).
+- ou, declarar o componente nas **dependências**. fil\*\* arquivo de seu projeto; isto é feito automaticamente para arquivos locais quando você [**adicionar uma dependência usando a interface do Gerenciador de Dependência**](#adding-a-github-or-gitlab-dependency).
 
 Os componentes declarados no arquivo **dependencies.json** podem ser armazenados em locais diferentes:
 
@@ -266,7 +266,7 @@ Se você selecionar a [**Seguir 4D Version**](#defining-a-dependency-version-ran
 
 :::
 
-- **Etiquetas** são textos que fazem referência exclusiva a uma versão. In the [**dependencies.json**](#dependenciesjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. Por exemplo :
+- **Etiquetas** são textos que fazem referência exclusiva a uma versão. **Etiquetas** são textos que fazem referência exclusiva a uma versão. In the [**dependencies.json**](#dependenciesjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. Por exemplo :
 
 ```json title="dependencies.json"
 {
@@ -343,7 +343,7 @@ Em seguida, você precisa [fornecer seu token de conexão](#providing-your-acces
 
 #### Cache local para dependências
 
-Referenced GitHub and GitLab components are downloaded in a local cache folder then loaded in your environment. A pasta de cache local é armazenada na seguinte localização:
+A pasta de cache local é armazenada na seguinte localização: Referenced GitHub and GitLab components are downloaded in a local cache folder then loaded in your environment.
 
 - on macOS: `$HOME/Library/Caches/<app name>/Dependencies`
 - no Windows: `C:\Users\<username>\AppData\Local\<app name>\Dependencies`
@@ -426,7 +426,7 @@ Estão disponíveis as seguintes etiquetas de status:
 - **Duplicated**: a dependência não é carregada porque existe uma outra dependência com o mesmo nome no mesmo local (e é carregado).
 - **Disponível após a reinicialização**: A referência de dependência acabou de ser adicionada ou atualizada [usando a interface] (#monitoring-project-dependencies) e será carregada quando o aplicativo for reiniciado.
 - **Disponível após a reinicialização**: A referência de dependência acabou de ser adicionada ou atualizada [usando a interface] (#removing-a-dependency) e será carregada quando o aplicativo for reiniciado.
-- **Update available \<version\>**: A new version of the dependency matching your [component version configuration](#defining-a-github-dependency-version-range) has been detected.
+- **Update available \<version\>**: A new version of the dependency matching your [component version configuration](#defining-a-dependency-version-range) has been detected.
 - **Refreshed after restart**: The [component version configuration](#defining-a-dependency-version-range) of the dependency has been modified, it will be adjusted at the next startup.
 - **Recent update**: A new version of the dependency has been loaded at startup.
 
@@ -530,7 +530,7 @@ Once the connection is established, an icon ![dependency-gitlogo](../assets/en/P
 
 :::note
 
-If the component is stored on a [private repository](#private-repositories) and your personal token is missing, an error message is displayed and a **Add a personal access token...** button is displayed (see [Providing your access token](#providing-your-access-token)).
+If the component is stored on a [private repository](#authentication-and-tokens) and your personal token is missing, an error message is displayed and a **Add a personal access token...** button is displayed (see [Providing your access token](#providing-your-access-token)).
 
 :::
 
@@ -546,7 +546,7 @@ Você pode definir a opção [tag ou versão](#tags-and-versions) para uma depen
 
 ![dependency-git-tag](../assets/en/Project/dependency-git-tag.png)
 
-- **Follow 4D version** (default, recommended option): Download the latest component release that is compatible with the running 4D version. Você pode usar essa regra de dependência somente se as tags de liberação do componente seguirem a [convenção de nomenclatura] apropriada (#naming-conventions-for-4d-version-tags). This option is **recommended**, especially for the [components developed by 4D](../Extensions/overview.md#components-developed-by-4d).
+- Você pode usar essa regra de dependência somente se as tags de liberação do componente seguirem a [convenção de nomenclatura] apropriada (#naming-conventions-for-4d-version-tags). **Follow 4D version** (default, recommended option): Download the latest component release that is compatible with the running 4D version. This option is **recommended**, especially for the [components developed by 4D](../Extensions/overview.md#components-developed-by-4d).
 - **Até a próxima versão major**: defina um [intervalo de versão semântica](#tags-and-versions) para restringir as atualizações para a próxima versão principal.
 - **Até a próxima versão minor**: da mesma forma, restringe as atualizações para a próxima versão minor.
 - **Versão exata (etiqueta)**: selecione ou insira manualmente uma [etiqueta específica](#tags-and-versions) na lista disponível.
@@ -558,7 +558,7 @@ The current dependency version is displayed on the right side of the dependency 
 
 #### Modifying the dependency version range
 
-You can modify the [version setting](#defining-a-dependency-version-range) for a listed dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**.
+In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. You can modify the [version setting](#defining-a-dependency-version-range) for a listed dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu.
 
 Modificar o intervalo de versão é útil, por exemplo, se você usar o recurso de atualização automática e deseja bloquear a dependência de um número de versão específico.
 
@@ -577,7 +577,7 @@ As dependências são verificadas regularmente quanto a atualizações no GitHub
 
 :::note
 
-Se você fornecer um [token de acesso](#providing-your-github-access-token), as verificações serão realizadas com mais frequência, pois o GitHub permite uma frequência maior de solicitações aos repositórios.
+Se você fornecer um [token de acesso](#providing-your-access-token), as verificações serão realizadas com mais frequência, pois o GitHub permite uma frequência maior de solicitações aos repositórios.
 
 :::
 
@@ -591,7 +591,7 @@ Além disso, você pode verificar se há atualizações a qualquer momento, para
 
 ![componentes de verificação](../assets/en/Project/check-component-all.png)
 
-Se uma nova versão de componente que corresponda à sua [configuração de controle de versão de componente](#defining-a-github-dependency-version-range) for detectada no GitHub, um status de dependência específico será exibido:
+Se uma nova versão de componente que corresponda à sua [configuração de controle de versão de componente](#defining-a-dependency-version-range) for detectada no GitHub, um status de dependência específico será exibido:
 
 ![dependency-new-version](../assets/en/Project/dependency-available.png)
 

@@ -13,7 +13,7 @@ title: FileHandle
 
 :::note
 
-ドキュメントなどのオブジェクトリソースは、メモリ上で参照がなくなると解放されます。これはたとえば、メソッド実行終了時のローカル変数などで起こります。 任意の時点でオブジェクトリソースを "強制的に" 解放したい場合は、[その参照を無効化](../Concepts/dt_object.md#リソース) することができます。
+ドキュメントなどのオブジェクトリソースは、メモリ上で参照がなくなると解放されます。 これはたとえば、メソッド実行終了時のローカル変数などで起こります。 任意の時点でオブジェクトリソースを "強制的に" 解放したい場合は、[その参照を無効化](../Concepts/dt_object.md#リソース) することができます。
 
 :::
 
@@ -212,9 +212,9 @@ FileHandle オブジェクトは共有できません。
 <!--REF #FileHandleClass.getSize().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|Result|Real|<-|Size of the document in bytes|
+|戻り値|Real|<-|Size of the document in bytes|
 </div>
 <!-- END REF -->
 
@@ -282,16 +282,21 @@ FileHandle オブジェクトは共有できません。
 
 :::caution
 
-FileHandle の作成時、`.offset` の値はバイト数です。 しかしながら、オフセットの単位は読み取り関数によって異なります。[`readBlob()`](#readblob) の場合、`.offset` はバイト数ですが、[`readText()`](#readtext)/[`readLine()`](#readline) の場合は文字数になります。 ファイルの文字セットに応じて、1文字は 1バイトまたは複数バイトに対応します。 したがって、`readBlob()` で読み取りを開始してから `readText()` を呼び出すと、テキストの読み取りは一貫性のない位置から開始されます。 そのため、同じ FileHandle内で、BLOB の読み取り/書き込みからテキストの読み取り/書き込みに切り替える場合には、`.offset` プロパティを自分で設定することが不可欠です。 例:
+FileHandle の作成時、`.offset` の値はバイト数です。 しかしながら、オフセットの単位は読み取り関数によって異なります。 [`readBlob()`](#readblob) の場合、`.offset` はバイト数ですが、[`readText()`](#readtext)/[`readLine()`](#readline) の場合は文字数になります。 ファイルの文字セットに応じて、1文字は 1バイトまたは複数バイトに対応します。 したがって、`readBlob()` で読み取りを開始してから `readText()` を呼び出すと、テキストの読み取りは一貫性のない位置から開始されます。 そのため、同じ FileHandle内で、BLOB の読み取り/書き込みからテキストの読み取り/書き込みに切り替える場合には、`.offset` プロパティを自分で設定することが不可欠です。 例:
 
 ```4d
   // utf-16エンコーディング (1文字につき 2バイト) を使用して、ヨーロッパのテキストファイルを開きます
+  // 最初の 10文字をバイトとして、残りをテキストとして読み込みます
+// utf-16エンコーディング (1文字につき 2バイト) を使用して、ヨーロッパのテキストファイルを開きます
   // 最初の 10文字をバイトとして、残りをテキストとして読み込みます
 $fh:=File("/RESOURCES/sample_utf_16.txt").open()
   // 最初の 20バイト (=10文字) を読み取ります
 $b:=$fh.readBlob(20) // 現在のオフセット: $fh.offset=20
   // 次にすでに読み取った 10文字を飛ばして残りのテキストをすべて読み取ります
   // バイトからテキストの読み取りへと切り替えるため、オフセットの単位が変わります
+  // そのため、オフセットをバイトから文字数に変換する必要があります
+$fh.offset:=10 // 最初の 10文字 (20バイト) の utf-16文字をスキップさせます
+$s:=$fh.readText()
   // そのため、オフセットをバイトから文字数に変換する必要があります
 $fh.offset:=10 // 最初の 10文字 (20バイト) の utf-16文字をスキップさせます
 $s:=$fh.readText()
@@ -319,10 +324,10 @@ $s:=$fh.readText()
 <!--REF #FileHandleClass.readBlob().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|bytes|Real|->|Number of bytes to be read|
-|Result|[4D.Blob](BlobClass)|<-|Bytes read from the file|
+|bytes|Real|->|読み取るバイト数|
+|戻り値|[4D.Blob](BlobClass)|<-|Bytes read from the file|
 </div>
 <!-- END REF -->
 
@@ -359,9 +364,9 @@ $s:=$fh.readText()
 <!--REF #FileHandleClass.readLine().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|Result|Text|<-|Line of text|
+|戻り値|Text|<-|Line of text|
 </div>
 <!-- END REF -->
 
@@ -405,10 +410,10 @@ $s:=$fh.readText()
 <!--REF #FileHandleClass.readText().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|stopChar|Text|->|Character(s) at which to stop reading|
-|Result|Text|<-|Text from the file|
+|stopChar|Text|->|読み取りを停止する文字|
+|戻り値|Text|<-|Text from the file|
 </div>
 <!-- END REF -->
 
@@ -454,9 +459,9 @@ $s:=$fh.readText()
 <!--REF #FileHandleClass.setSize().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|size|Real|->|New size of the document in bytes|
+|size|Real|->|ドキュメントの新しいサイズ (バイト単位)|
 </div>
 <!-- END REF -->
 
@@ -490,9 +495,9 @@ $s:=$fh.readText()
 <!--REF #FileHandleClass.writeBlob().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|blob|[4D.Blob](BlobClass)|->|Blob to write in the file|
+|blob|[4D.Blob](BlobClass)|->|ファイルに書き込むBlob|
 </div>
 <!-- END REF -->
 
@@ -528,9 +533,9 @@ $s:=$fh.readText()
 <!--REF #FileHandleClass.writeLine().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|lineOfText|Text|->|Text to write|
+|lineOfText|Text|->|書き込むテキスト|
 </div>
 <!-- END REF -->
 
@@ -564,9 +569,9 @@ $s:=$fh.readText()
 <!--REF #FileHandleClass.writeText().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|textToWrite|Text|->|Text to write|
+|textToWrite|Text|->|書き込むテキスト|
 </div>
 <!-- END REF -->
 

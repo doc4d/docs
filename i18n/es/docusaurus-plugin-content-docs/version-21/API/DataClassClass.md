@@ -272,11 +272,11 @@ Para cada objeto de *objectCol*:
 
 - Si el objeto contiene una propiedad booleana "\__NEW" establecida en false (o no contiene una propiedad booleana "\__NEW"), la entidad se actualiza o se crea con los valores correspondientes de las propiedades del objeto. No se realiza ninguna comprobación con respecto a la llave primaria:
   - Si la llave primaria se da y existe, la entidad se actualiza. En este caso, la llave primaria puede darse tal cual o con una propiedad "\_\_KEY" (llenada con el valor de la llave primaria).
-  - If the primary key is given (as is) and does not exist, the entity is created
+  - Si se da la llave primaria (tal cual) y no existe, se crea la entidad
   - Si no se da la llave primaria, se crea la entidad y se asigna el valor de la llave primaria con respecto a las reglas estándar de la base de datos.
 - Si el objeto contiene una propiedad booleana "\_\_NEW" definida como **true**, la entidad se crea con los valores correspondientes de los atributos del objeto. Se realiza una verificación con respecto a la llave primaria:
   - Si se da la llave primaria (tal cual) y existe, se envía un error
-  - If the primary key is given (as is) and does not exist, the entity is created
+  - Si se da la llave primaria (tal cual) y no existe, se crea la entidad
   - Si no se da la primaria, se crea la entidad y se asigna el valor de la llave primaria con respecto a las reglas estándar de la base de datos.
 
 > La propiedad "\__KEY" que contiene un valor sólo se tiene en cuenta cuando la propiedad "\__NEW" tiene el valor **false** (o se omite) y existe una entidad correspondiente. The use of a \_\_KEY property allows independence from the primary key attribute name.
@@ -727,7 +727,7 @@ La función `.getInfo()` <!-- REF #DataClassClass.getInfo().Summary -->devuelve 
 
 #### Descripción
 
-La función `.getRemoteCache()` <!-- REF #DataClassClass.getRemoteCache().Summary -->devuelve un objeto que contiene el contenido de la caché ORDA para una clase de datos<!-- END REF -->.
+La función `.setRemoteCacheSettings()` <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->define el tiempo de espera y el tamaño máximo de la caché ORDA para una dataclass.<!-- END REF -->.
 
 Llamar a esta función desde una aplicación monopuesto de 4D devuelve `Null`.
 
@@ -970,8 +970,8 @@ Las fórmulas en las consultas pueden recibir parámetros a través de $1. Este 
 | Incluído en                           | IN                            | Devuelve los datos iguales a al menos uno de los valores de una colección o de un conjunto de valores, admite el comodín (@)                                                                                |                                    |
 | Contiene palabra clave                | %                             | Las palabras claves pueden utilizarse en atributos de tipo texto o imagen                                                                                                                                                                   |                                    |
 
-- Puede ser un **marcador de posición** (ver **Uso de marcadores de posición** más adelante) o cualquier expresión que coincida con la propiedad de tipo de datos. **value**: el valor a comparar con el valor actual de la propiedad de cada entidad en la selección de entidades. Por ejemplo, si se introduce la cadena "v20" como **value** para comparar con un atributo entero, se convertirá a 20. For example, if the string "v20" is entered as <strong x-id="1">value</strong> to compare with an integer attribute, it will be converted to 20.
-  For example, if the string "v20" is entered as <strong x-id="1">value</strong> to compare with an integer attribute, it will be converted to 20.
+- Puede ser un **marcador de posición** (ver **Uso de marcadores de posición** más adelante) o cualquier expresión que coincida con la propiedad de tipo de datos. **value**: el valor a comparar con el valor actual de la propiedad de cada entidad en la selección de entidades. Por ejemplo, si se introduce la cadena "v20" como **value** para comparar con un atributo entero, se convertirá a 20. Por ejemplo, si la cadena "v20" se introduce como **value** para comparar con un atributo entero, se convertirá en 20.
+  Al utilizar un valor constante, deben respetarse las siguientes reglas:
   - La constante de tipo **texto** puede pasarse con o sin comillas simples (ver **Uso de comillas** más abajo). Para consultar una cadena dentro de otra cadena (una consulta de tipo "contiene"), utilice el símbolo de comodín (@) en el valor para aislar la cadena a buscar como se muestra en este ejemplo: "@Smith@". Las siguientes palabras claves están prohibidas para las constantes de texto: true, false.
   - Valores constantes de tipo **booleano**: **true** o **false** (Sensible a las mayúsculas y minúsculas).
   - Valores constantes de **tipo numérico**: los decimales se separan con un '.' (punto).
@@ -1675,7 +1675,7 @@ ds.VectorTable.query("embedding>:1 and embedding<:2";$vector1Comparison;$vector2
 
 #### Descripción
 
-La función `.setRemoteCacheSettings()` <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->define el tiempo de espera y el tamaño máximo de la caché ORDA para una dataclass.<!-- END REF -->.
+La función `.getRemoteCache()` <!-- REF #DataClassClass.getRemoteCache().Summary -->devuelve un objeto que contiene el contenido de la caché ORDA para una clase de datos<!-- END REF -->..
 
 En el parámetro *settings*, pase un objeto con las siguientes propiedades:
 

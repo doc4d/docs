@@ -7,7 +7,7 @@ title: Componentes de desarrollo
 
 Un componente 4D es un conjunto de funciones, métodos y formularios 4D que representan una o varias funcionalidades que pueden ser [instaladas y utilizadas en aplicaciones 4D](Concepts/components.md). Por ejemplo, puede desarrollar un componente 4D de correo electrónico que gestione todos los aspectos del envío, la recepción y el almacenamiento de correos electrónicos en aplicaciones 4D.
 
-Puede desarrollar componentes 4D para sus propias necesidades y mantenerlos en privado. También puede [compartir sus componentes con la comunidad 4D](https://github.com/topics/4d-component).
+Puede desarrollar componentes 4D para sus propias necesidades y mantenerlos en privado. Puede desarrollar componentes 4D para sus propias necesidades y mantenerlos en privado.
 
 ## Definiciones
 
@@ -68,7 +68,7 @@ Puede editar el código de un componente siempre que se cumplan las siguientes c
 
 - el proyecto host está ejecutando interpretaciones,
 - el componente ha sido [cargado en modo interpretado](../Project/components.md#interpreted-and-compiled-components) y el código fuente está disponible,
-- los archivos de los componentes se almacenan localmente (es decir, no se [descargan de GitHub](../Project/components.md#adding-a-github-dependency)).
+- los archivos de los componentes se almacenan localmente (es decir, no se [descargan de GitHub](../Project/components.md#adding-a-github-or-gitlab-dependency)).
 
 En este contexto, puede abrir, editar y guardar el código de su componente en el Editor de código del proyecto local desde dos lugares:
 

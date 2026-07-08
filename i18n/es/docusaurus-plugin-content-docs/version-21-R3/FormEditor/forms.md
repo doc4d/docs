@@ -66,44 +66,44 @@ Puede añadir o modificar formularios 4D utilizando los siguientes elementos:
 }
 ```
 
-## Printing forms
+## Impresión de formularios
 
-In 4D desktop applications, forms can be printed using the various [commands of the **Printing** theme](../commands/theme/Printing).
+En las aplicaciones de escritorio 4D, los formularios pueden imprimirse utilizando los diferentes [comandos del tema **Imprimir**](../commands/theme/Printing).
 
-### Print rendering engine
+### Imprimir motor de renderizado
 
-4D uses a dedicated print rendering engine to generate outputs with a design adapted for printing. It includes the following main features:
+4D utiliza un motor de renderizado de impresión específico para generar salidas con un diseño adaptado a la impresión. Incluye las siguientes características principales:
 
-- Interactive widgets such as buttons, toggles, dropdowns, etc. and modern UI effects such as glass, blur, transparency, or shadow effects are converted into adapted static representations and flattened into printable styles, so that the document remains readable and professional once printed.
-- Layout structure, spacing, and alignment, are preserved so that the printed document reflects the logical structure of the on-screen form.
-- The same output is produced, whether the form is printed from macOS or Windows.
+- Widgets interactivos como botones, interruptores, desplegables, etc. y los efectos de interfaz de usuario modernos como vidrio, desenfoque o transparencia o efectos de sombra se convierten en representaciones estáticas adaptadas y se aplanan en estilos imprimibles, para que el documento siga siendo legible y profesional una vez impreso.
+- La estructura del diseño, el espaciado y la alineación se conservan para que el documento impreso refleje la estructura lógica del formulario en pantalla.
+- Se produce la misma salida, tanto si el formulario se imprime desde macOS como desde Windows.
 
-For example, the following form:
+Por ejemplo, el siguiente formulario:
 
 ![](../assets/en/FormEditor/screen_rendering.png)
 
-... will be printed with this rendering:
+... se imprimirá con este renderizado:
 
 ![](../assets/en/FormEditor/print_rendering.png)
 
 :::tip Entrada de blog relacionada
 
-[Printing Modern Interfaces with Clean, Consistent Output](https://blog.4d.com/printing-modern-interfaces-with-clean-consistent-output)
+[Impresión de interfaces modernas con resultados limpios y coherentes](https://blog.4d.com/printing-modern-interfaces-with-clean-consistent-output)
 
 :::
 
-### Legacy print renderer
+### Renderizador de impresión heredado
 
-In releases prior to 4D 21 R3, another print renderer was used. This legacy renderer simply draws widgets as they appear on the screen. For compatibility, the legacy renderer is **enabled by default** in projects or databases converted from versions prior to 4D 21 R3, so that forms designed with this renderer continue to be printed as expected.
+En versiones anteriores a 4D 21 R3, se utilizaba otro renderizador de impresión. Este renderizador heredado simplemente dibuja los widgets tal y como aparecen en la pantalla. Por motivos de compatibilidad, el renderizador heredado está **activado por defecto** en los proyectos o bases de datos convertidos desde versiones anteriores a 4D 21 R3, de modo que los formularios diseñados con este renderizador sigan imprimiéndose como se espera.
 
-You can however enable the modern print rendering engine at any moment by:
+Sin embargo, puede habilitar el moderno motor de procesamiento de impresión en cualquier momento:
 
-- unchecking the **Use legacy print rendering** option in the [Compatibility page of the Settings dialog box](../settings/compatibility.md) (permanent setting),
-- or executing [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command with `Use legacy print rendering` selector set to 1 (volatile setting).
+- desmarcar la opción **Usar representación de impresión heredada** en la [página Compatibilidad del cuadro de diálogo Parámetros](../settings/compatibility.md) (configuración permanente),
+- o ejecutando el comando [`SET DATABASE PARAMETER`](../commands/set-database-parameter) con el selector `Use legacy print rendering` a 1 (configuración volátil).
 
 :::warning Limitación
 
-For technical reasons, the legacy print renderer is not available with forms displayed with [Fluent UI](#fluent-ui-rendering) on Windows or [Liquid Glass](../Notes/updates.md#support-of-liquid-glass-on-macos) on macOS. In these contexts, forms are **always printed with the modern print rendering engine**, whatever the compatibility option.
+Por motivos técnicos, el motor de impresión heredado no está disponible con los formularios que se muestran con [Fluent UI](#fluent-ui-rendering) en Windows o [Liquid Glass](../Notes/updates.md#support-of-liquid-glass-on-macos) en macOS. En estos contextos, los formularios se **imprimen siempre con el motor de renderizado de impresión moderno**, sea cual sea la opción de compatibilidad.
 
 :::
 
@@ -119,7 +119,7 @@ Normalmente, se selecciona la categoría del formulario al crearlo, pero se pued
 
 ## Páginas formulario
 
-Each form is made of at least two pages:
+Cada formulario consta de al menos dos páginas:
 
 - una página 1: una página principal, mostrada por defecto
 - una página 0: una página de fondo, cuyo contenido se muestra en todas las demás páginas.
