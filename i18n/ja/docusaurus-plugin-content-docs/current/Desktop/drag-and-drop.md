@@ -147,23 +147,23 @@ If(Form event code=On Drop) // プロパティリストでドロップ可を有�
 
 ### ファイルパスからテキストエリアへ
 
-You want the user to select a file on the disk, then drag and drop it on an enterable variable (of type object) so that it displays a json description of the file.
+ユーザーがディスク上のファイルを選択し、入力可能な(オブジェクト型の)変数にドラッグ&ドロップしたときにそのjson ファイル詳細を表示するようにしたい場合を考えます。
 
 ![](../assets/en/Desktop/dragdrop6.png)
 
-In the object method of the variable, you just write:
+変数のオブジェクトメソッドに、以下のように書くだけです:
 
 ```4d
  #DECLARE -> $result : Integer
  Case of
  
     :(Form event code=On Drag Over)
-  // Accept On Drop event only if the pasteboard contains files, reject otherwise.
-       If(Get file from pasteboard(1)="") //no file in pasteboard
-          $result:=-1 //reject drop
+  // ペーストボードにファイルが格納されている場合にのみOn Dropイベントを受け入れ、それ以外は拒否する
+       If(Get file from pasteboard(1)="") //ペーストボードにファイルがない
+          $result:=-1 //ドロップを拒否
        End if
  
-    :(Form event code=On Drop) //Requires Droppable action enabled from Property List
+    :(Form event code=On Drop) //プロパティリストにてドロップ可アクションが有効化されている必要あり
        var $path_t : Text
        var path_o : Object
        $path_t:=Get file from pasteboard(1)
@@ -174,27 +174,27 @@ In the object method of the variable, you just write:
  End case
 ```
 
-### File paths to list box
+### ファイルパスからリストボックスへ
 
-You want the user to select files on the disk, then drag and drop them on a list box so that it displays file paths.
+ユーザーがディスク上のファイルを選択し、リストボックス上にドラッグ&ドロップしたときにそのファイルのパスを表示するようにしたい場合を考えます。
 
 ![](../assets/en/Desktop/dragdrop7.png)
 
-In the list box object method, you just write:
+リストボックスのオブジェクトメソッドに、以下のように書くだけです:
 
 ```4d
  #DECLARE -> $result : Integer
  Case of
  
     :(Form event code=On Drag Over)
-  // Accept On Drop event only if the pasteboard contains files, reject otherwise.
-       If(Get file from pasteboard(1)#"") //at least one file dropped
-          $result:=0 //accept drop
-       Else //no file in pasteboard
-          $result:=-1 //reject drop
+  // ペーストボードにファイルが格納されている婆にのみOn Drop イベントを受け入れ、それ以外は拒否する
+       If(Get file from pasteboard(1)#"") // 少なくとも1つのファイルがドロップされた
+          $result:=0 //ドロップを受け入れる
+       Else //ペーストボードにファイルがない
+          $result:=-1 //ドロップを拒否
        End if
  
-    :(Form event code=On Drop) //Requires Droppable action enabled from Property List
+    :(Form event code=On Drop) //プロパティリストにてドロップ可アクションが有効化されている必要あり
        ARRAY TEXT(importedPath_at;0)
        var $path_t :Text
        var $index_l:=1
@@ -208,53 +208,53 @@ In the list box object method, you just write:
  End case
 ```
 
-## Pasteboard commands
+## ペーストボードコマンド
 
-The [commands of the "Pasteboard" theme](../commands/theme/Pasteboard.md) can be used both for managing copy/paste actions (**Clipboard management**), as well as inter-application drag and drop actions.
+[“ペーストボード” テーマのコマンド](../commands/theme/Pasteboard.md) は、コピー/ペーストアクション (**クリップボード管理**) とアプリケーション間のドラッグ＆ドロップの管理両方に使用できます。
 
-4D uses two data pasteboards: one for copied (or cut) data, which is the clipboard, and the other for data being dragged and dropped.
-These two pasteboards are managed using the same commands. You access one or the other depending on the context:
+4D は2つのデータペーストボードを使用します。1つはコピーあるいはカットされたデータ用で、もう1つはドラッグ&ドロップされたデータ用です。
+これら2つのペーストボードは同じコマンドを使用して管理されます。 コンテキストにより、どちらかにアクセスします:
 
-- The drag and drop pasteboard can only be accessed within the [`On Begin Drag Over`](../Events/onBeginDragOver.md), [`On Drag over`](../Events/onDragOver.md) or [`On Drop`](../Events/onDrop.md) form events and in the [**On Drop** database method](../commands-legacy/on-drop-database-method.md). Outside of these contexts, the drag and drop pasteboard is not available.
-- The copy/paste pasteboard can be accessed in all other cases. Unlike the drag and drop pasteboard, it keeps the data that are placed in it during the entire session, so long as they are not cleared or reused.
+- ドラッグ＆ドロップペーストボードには、[**On Drop** データベースメソッド](../commands-legacy/on-drop-database-method.md) 内での[`On Begin Drag Over`](../Events/onBeginDragOver.md), [`On Drag over`](../Events/onDragOver.md) あるいは [`On Drop`](../Events/onDrop.md) フォームイベントや内でのみアクセスできます。 これらのコンテキスト外では、ドラッグ＆ドロップペーストボードは使用できません。
+- コピー/ペーストペーストボードには、他のすべてのケースでアクセスできます。 ドラッグ＆ドロップペーストボードと異なり、そこに置かれたデータはクリアされるか再利用されるまで、セッション中保持されます。
 
-### Types of Data
+### データのタイプ
 
-During drag and drop actions, different types of data can be placed on and read from the pasteboard. You can access a data type in several ways:
+ドラッグ＆ドロップアクション中、異なるタイプのデータがペーストボードに置かれたり、あるいはペーストボードから読み込まれます。 データタイプには複数の方法でアクセスします:
 
-- Via its 4D signature: The 4D signature is a character string indicating a data type referenced by the 4D application. The use of 4D signatures facilitates the development of multi-platform applications since these signatures are identical under Mac OS and Windows. You will find the list of 4D signatures below.
-- Via a UTI (Uniform Type Identifier, macos only): The UTI standard, specified by Apple, associates a character string with each type of native object. For example, GIF pictures have the UTI type "com.apple.gif". UTI types are published in Apple documentations as well as by the editors concerned.
-- Via its number or its format name (Windows only): Under Windows, each native data type is referenced by its number ("3", "12", and so on) and a name ("Rich Text Edit"). By default, Microsoft specifies several native types called standard data formats. In addition, third-party editors can "save" format names in the system, which then attributes them a number in return. For more information about this and about native types, please refer to the Microsoft developer documentation (more particularly at http://msdn2.microsoft.com/en-us/library/ms649013.aspx).
-
-:::note
-
-In 4D commands, the Windows format numbers are handled as text.
-
-:::
-
-All the [commands of the "Pasteboard" theme](../commands/theme/Pasteboard.md) can work with each one of these data types. You can find out which data types are present in the pasteboard in each of these formats using the [`GET PASTEBOARD DATA TYPE`](../commands/get-pasteboard-data-type) command.
+- 4Dシグネチャ: 4Dシグネチャは4Dアプリケーションにより参照されるデータタイプを示す文字列です。 4D シグネチャはmacOS およびWindows で同じであるため、マルチプラットフォームアプリケーションの開発に適しています。 4D シグネチャの一覧は以下に示します。
+- UTI (Uniform Type Identifier, macOS のみ): Apple 社が定めるUTI 標準は、ネイティブタイプのオブジェクトごとに文字列を割り当てたものです。 例えばGIF ピクチャにはUTI タイプ “com.apple.gif”が割り当てられています。 UTI はApple 社のドキュメント、あるいは関連するエディタで公開されています。
+- 数値またはフォーマット名 (Windowsのみ): Windowsでは、ネイティブデータタイプは数値 (“3”, “12”, 等) と名前 (“Rich Text Edit”)で参照されます。 デフォルトでMicrosoft社は標準データフォーマットと呼ばれるネイティブタイプを複数定義しています。 さらにサードパーティーエディタはシステムにフォーマットを “保存” し、対応する番号を得ることもできます。 この点に関する詳細とネイティブタイプについては、Microsoft developer documentation (特に http://msdn2.microsoft.com/en-us/library/ms649013.aspx ) を参照してください。
 
 :::note
 
-4-character types (TEXT, PICT or custom types) are supported for compatibility with prior versions of 4D.
+4D コマンド中では、Windows のフォーマット番号はテキストとして処理されます。
 
 :::
 
-### 4D Signatures
+[“ペーストボード” テーマのコマンド](../commands/theme/Pasteboard.md) は、これらのデータタイプのそれぞれ1つを使用できます。 [`GET PASTEBOARD DATA TYPE`](../commands/get-pasteboard-data-type) コマンドを使用して、これらのフォーマットそれぞれにおいてペーストボードに格納されているデータのデータタイプを取得することができます。
 
-Here is the list of standard 4D signatures as well as their description:
+:::note
 
-| 署名                                                                                              | 説明                            |
-| ----------------------------------------------------------------------------------------------- | ----------------------------- |
-| "com.4d.private.text.native"    | Text in native character set  |
-| "com.4d.private.text.utf16"     | Text in Unicode character set |
-| "com.4d.private.text.rtf"       | Enriched text                 |
-| "com.4d.private.picture.pict"   | PICT picture format           |
-| "com.4d.private.picture.png"    | PNG picture format            |
-| "com.4d.private.picture.gif"    | GIF picture format            |
-| "com.4d.private.picture.jfif"   | JPEG picture format           |
-| "com.4d.private.picture.emf"    | EMF picture format            |
-| "com.4d.private.picture.bitmap" | BITMAP picture format         |
-| "com.4d.private.picture.tiff"   | TIFF picture format           |
-| "com.4d.private.picture.pdf"    | PDF document                  |
-| "com.4d.private.file.url"       | File pathname                 |
+4文字のタイプ (TEXT, PICT やカスタムタイプ) は以前のバージョンの4D との互換性のために保持されています。
+
+:::
+
+### 4D シグネチャ
+
+以下は標準の4D シグネチャとその詳細です:
+
+| 署名                                                                                              | 説明                 |
+| ----------------------------------------------------------------------------------------------- | ------------------ |
+| "com.4d.private.text.native"    | ネイティブ文字セットのテキスト    |
+| "com.4d.private.text.utf16"     | Unicode 文字セットのテキスト |
+| "com.4d.private.text.rtf"       | リッチテキスト            |
+| "com.4d.private.picture.pict"   | PICT ピクチャフォーマット    |
+| "com.4d.private.picture.png"    | PNG ピクチャフォーマット     |
+| "com.4d.private.picture.gif"    | GIF ピクチャフォーマット     |
+| "com.4d.private.picture.jfif"   | JPEG ピクチャフォーマット    |
+| "com.4d.private.picture.emf"    | EMF ピクチャフォーマット     |
+| "com.4d.private.picture.bitmap" | BITMAP ピクチャフォーマット  |
+| "com.4d.private.picture.tiff"   | TIFF ピクチャフォーマット    |
+| "com.4d.private.picture.pdf"    | PDF ドキュメント         |
+| "com.4d.private.file.url"       | ファイルパス名            |
