@@ -31,7 +31,7 @@ The sequence number is a unique non-repeating number that may be assigned to a f
 - 4D does not carry out any check when you modify the automatic number internal counter of a table using the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command. If you decrement this counter, the new records created may have numbers that have already been assigned.
 - Sequence numbers are not recommended to fill unique ID primary key fields for records. To create unique record IDs, it is strongly recommended to use UUIDs. 
 
-::: 
+:::
 
 ### Example
 
