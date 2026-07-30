@@ -207,7 +207,7 @@ When modifications to be made to a record are finished, the record must be relea
 
 :::note
 
-When it is used in a transaction, the [`UNLOAD RECORD`](../commands/unload-record) command unloads the current record only for the process that manages the transaction. For other processes, the record stays locked as long as the transaction has not been validated (or cancelled).
+When it is used in a transaction, the [`UNLOAD RECORD`](../commands/unload-record) command unloads the current record only for the process that manages the transaction. For other processes, the record stays locked as long as the transaction has not been validated (or canceled).
 
 :::
 
