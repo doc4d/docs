@@ -239,7 +239,7 @@ The following example uses the previous loop to load an unlocked record and modi
  Repeat //Loop until the record is unlocked
     LOAD RECORD([Inventory]) //Load record and set it to locked
  Until(Not(Locked([Inventory])))
- [Inventory]Part Qty:=[Inventory]Part Qty 1 //Modify the record
+ [Inventory]Part Qty:=[Inventory]Part Qty-1 //Modify the record
  SAVE RECORD([Inventory]) //Save the record
  UNLOAD RECORD([Inventory]) //Let other users modify it
  READ ONLY([Inventory])
