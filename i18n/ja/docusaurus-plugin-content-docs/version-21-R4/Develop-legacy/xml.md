@@ -133,7 +133,7 @@ In addition, the reference returned in this case is a sequence of 32 zero "0" ch
 
 The [XML SAX commands](../commands/theme/XML_SAX.md) work with the standard document references of 4D (**DocRef**, a Time type reference). It is therefore possible to use these commands jointly with the 4D commands used to manage documents, such as [`SEND PACKET`](../commands/send-packet) or [`Append document`](../commands/append-document).
 
-The creation and opening of XML documents by programming is carried out using the [`Create document`](../commands/create-document) and [`Open document`](../commands/open-document) commands. Subsequently, the use of an XML command with these documents will cause the automatic activation of XML mechanisms such as encoding. For instance, the `<?xml version="1.0" encoding="… encodage …" standalone = "no "?>` header will be written automatically in the document.
+The creation and opening of XML documents by programming is carried out using the [`Create document`](../commands/create-document) and [`Open document`](../commands/open-document) commands. Subsequently, the use of an XML command with these documents will cause the automatic activation of XML mechanisms such as encoding. For instance, the `<?xml version="1.0" encoding="UTF-8" standalone="no"?>` header will be written automatically in the document.
 
 :::note
 

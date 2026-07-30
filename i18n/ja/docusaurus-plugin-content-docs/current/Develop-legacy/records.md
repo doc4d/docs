@@ -131,7 +131,7 @@ Each process has its own record stack for each table. 4D maintains the record st
 
 [`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) are useful when you want to examine records in the same file during data entry. To do this, you push the record, search and examine records in the file (copy fields into variables, for example), and finally pop the record to restore the record.
 
-While entering a record, if you have to check a multiple field unique value, use the [`SET QUERY DESTINATION`](../commands/set-quer-destination) command. This will save you the calls to [`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) that you were making before and after the call to QUERY in order to preserve the data entered in the current record. [`SET QUERY DESTINATION`](../commands/set-quer-destination) allows you to make a query that does not change the selection nor the current record.
+While entering a record, if you have to check a multiple field unique value, use the [`SET QUERY DESTINATION`](../commands/set-query-destination) command. This will save you the calls to [`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) that you were making before and after the call to QUERY in order to preserve the data entered in the current record. [`SET QUERY DESTINATION`](../commands/set-query-destination) allows you to make a query that does not change the selection nor the current record.
 
 ## Record locking
 
@@ -245,7 +245,7 @@ The following example uses the previous loop to load an unlocked record and modi
  Until(Not(Locked([Inventory])))
  [Inventory]Part Qty:=[Inventory]Part Qty 1 //Modify the record
  SAVE RECORD([Inventory]) //Save the record
- UNLOAD RECORD([Inventory]) //Let other users modfiy it
+ UNLOAD RECORD([Inventory]) //Let other users modify it
  READ ONLY([Inventory])
 ```
 
