@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 このコマンドで生成されるグラフは、統合されたSVGレンダリングエンジンを使用して描画されます。グラフにはピクチャー変数に関連付けられたインターフェース機能があります。 (表示フォーマットの設定などに使用できる) アプリケーションモードのコンテキストメニュー、スクロールバー等。
 
-**注:** SVG (Scalable Vector Graphics) はグラフィックファイルフォーマット (.svg 拡張子) です。XMLに基づき、このフォーマットは広く使用され、特にWebブラウザで表示できます。詳細は以下のWebサイトを参照してください: <http://www.w3.org/Graphics/SVG/>。[SVG EXPORT TO PICTURE](svg-export-to-picture.md) コマンドを使用して、統合されたSVGエンジンを利用することもできます。
+**注:** SVG (Scalable Vector Graphics) はグラフィックファイルフォーマット (.svg 拡張子) です。XMLに基づき、このフォーマットは広く使用され、特にWebブラウザーで表示できます。詳細は以下のWebサイトを参照してください: <http://www.w3.org/Graphics/SVG/>。[SVG EXPORT TO PICTURE](svg-export-to-picture.md) コマンドを使用して、統合されたSVGエンジンを利用することもできます。
 
 *graphPicture* 引数にはフォーム中でグラフを表示するピクチャー変数名を渡します。
 
