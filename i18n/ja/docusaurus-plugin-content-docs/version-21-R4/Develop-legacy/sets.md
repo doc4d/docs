@@ -38,7 +38,7 @@ A set "remembers" which record was the current record at the time the set was cr
 |Number per table|1|0 to many|
 |Sortable|Yes|No|
 |Can be saved on disk|No|Yes|
-|RAM per record(in bytes)|Number of	selected records * 4|Total number of records/8|
+|RAM per record (in bytes)|Number of selected records * 4|Total number of records/8|
 |Combinable|	No|	Yes|
 |Contains current record|	Yes|	Yes, as of the time the set was created|
 

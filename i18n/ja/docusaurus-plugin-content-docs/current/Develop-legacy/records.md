@@ -213,11 +213,7 @@ When it is used in a transaction, the [`UNLOAD RECORD`](../commands/unload-recor
 
 Use the [`LOCKED BY`](../commands/locked-by) command to see which user and/or process have locked a record.
 
-:::
-
 A good practice is to place all tables in read-only mode when each process is started (using the syntax [`READ ONLY(*)`](../commands/read-only)) then put each table in read/write mode only when necessary. Access to tables in read-only mode is faster and more memory-efficient. Moreover, changing the state of a table is optimized in client/server mode because it does not cause any additional network traffic: information is only sent to the server when executing a command that requires adequate access to the table.
-
-:::
 
 ### Loops to Load Unlocked Records
 
