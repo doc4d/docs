@@ -108,7 +108,7 @@ HTTPサーバーで TLS接続を受け入れるには、HTTPS を有効化しな
 
 4Dアプリケーションサーバー (クライアントサーバーのデスクトップアプリケーション) または SQLサーバーで TLS を使用するには、TLS通信を有効にするだけで、起動時にサーバーが自動で接続を設定します。
 
-- With the application server when [QUIC network layer](../settings/client-server.md#network-layer) is enabled, you don't have anything to do: QUIC communications are always in TLS. When ServerNet network layer is enabled select the **Encrypt Client-Server Communications** option in the ["Client-server/Network options" page of the Settings dialog box](../settings/client-server#encrypt-client-server-communications).
+- アプリケーションサーバーにて[QUIC ネットワークレイヤー](../settings/client-server.md#network-layer) が有効化された場合、やるべきことは何もありません。QUIC 通信は必ずTLS で行われるからです。 ServerNet ネットワークレイヤーが有効化されている場合には、[ストラクチャー設定ダイアログボックスの "C/S (クライアントサーバー)" ページ](../settings/client-server#クライアント-サーバー通信の暗号化) で **クライアント-サーバー通信の暗号化** オプションを選択します。
 - SQLサーバーの場合は、[ストラクチャー設定ダイアログボックスの "SQL" ページ](../settings/sql#sqlサーバー公開) で **TLSを有効にする** オプションを選択します。
 
 ## RSA証明書の取得方法 (チュートリアル)
