@@ -13,6 +13,6 @@ title: バックアップと復元
 
 また、この統合バックアップモジュールでは、[ログファイル](log.md) (.journal 拡張子のジャーナルファイル) を利用することができます。 このファイルは、データ上で実行された全操作の記録を保管し、2回のバックアップ間の安全性を完全に保証します。 使用中のアプリケーションに問題が発生した場合は、次回そのアプリケーションを開いたときに、データファイルから失われた操作が自動的に再統合されます。 ログファイルの内容はいつでも確認することができます。
 
-With 4D Server, you can also implement a [logical mirror](./mirror.md) for replicating and synchronizing data in order to maintain identical versions of applications for backup purposes.
+4D Server では、常に複数の完全一致するアプリケーションを管理したい場合には、バックアップを目的にデータを複製・同期するために、[論理ミラー](./mirror.md) を実装することもできます。
 
 > 4Dのセキュリティ機能の概要については、[4D Security guide](https://blog.4d.com/4d-security-guide/) をご覧ください。
