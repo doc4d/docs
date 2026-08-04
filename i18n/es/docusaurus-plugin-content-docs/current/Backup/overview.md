@@ -13,6 +13,6 @@ Las aplicaciones pueden restaurarse automáticamente cuando se abre una aplicaci
 
 Además, el módulo de copia de seguridad integrado puede aprovechar el archivo .journal ([de historial](log.md)). Este archivo mantiene un registro de todas las operaciones realizadas en los datos y también garantiza una seguridad total entre dos copias de seguridad. Puede ver el contenido del archivo de historial en cualquier momento. En caso de problemas con una aplicación en uso, las operaciones que falten en el archivo de datos se reintegran automáticamente la próxima vez que se abra la aplicación.
 
-With 4D Server, you can also implement a [logical mirror](./mirror.md) for replicating and synchronizing data in order to maintain identical versions of applications for backup purposes.
+Con el servidor 4D, también puede implementar un [espejo lógico](./mirror.md) para replicar y sincronizar datos con el fin de mantener copias idénticas de las aplicaciones con fines de respaldo.
 
 > Para una visión general de las funciones de seguridad de 4D, consulte la [Guía de seguridad de 4D](https://blog.4d.com/4d-security-guide/).
