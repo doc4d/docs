@@ -175,47 +175,48 @@ title: クライアント/サーバー
 
 #### アーキテクチャー
 
-Like a regular process, a stored procedure has its own environment:
+通常のプロセスと同様に、ストアドプロシージャーには次のような独自の環境があります:
 
-- Current selection per table: Each stored procedure has a separate current selection. One table can have a different current selection in different stored procedures.
-- Current record per table: Each table can have a different current record in each stored procedure.
-- Variables: Every stored procedure has its own process variables. Process variables are recognized only within the domain of their native stored procedure.
-- Default table: Each stored procedure has its own default table.
-- Process sets: Each stored procedure has its own process sets.
-- On Error Call: Each stored procedure has its own error-handling method.
-- Debugger window: Each stored procedure can have its own Debugger window.
+- テーブルごとのカレントセレクション: 各ストアドプロシージャーには、個別のカレントセレクションがあります。 1 つのテーブルは、別々のストアドプロシージャーで異なるカレントセレクションを持つことができます。
+- テーブルごとのカレントレコード: 各テーブルは、ストアドプロシージャーごとに異なるカレントレコードを持つことができます。
+- 変数: 各ストアドプロシージャには独自のプロセス変数があります。 プロセス変数は、その変数が設定されたストアドプロシージャの範囲内でのみ認識されます。
+- デフォルトテーブル: 各ストアドプロシージャーには、独自のデフォルトテーブルがあります。
+- プロセスセット: 各ストアドプロシージャーには、独自のプロセスセットがあります。
+- エラー処理: 各ストアドプロシージャーには、独自のエラー処理メソッドを持てます。
+- デバッガウィンドウ: 各ストアドプロシージャーは、独自のデバッガーウィンドウを持てます。
 
-In terms of user interface, a stored procedure can open windows and display data (i.e., [`DISPLAY RECORD`](../commands/display-records)). A stored procedure executed on a 4D client machine allow data entry. On the other hand, a stored procedure executed on the server cannot invoke data entry interface; there is no data entry kernel on the server machine.
+ユーザーインターフェースの点では、ストアドプロシージャーは、ウィンドウを開き、データを表示する (例えば[`DISPLAY RECORD`](../commands/display-records) を使用) ことができます。 4D クライアントマシン上で実行されるストアドプロシージャーではデータ入力ができます。 一方、サーバー上で実行されるストアドプロシージャーではデータ入力を開始することはできません。
 
-You can start as many as stored procedures as the system authorizes (hardware and memory). In fact, the 4D Server machine should be viewed as a machine that not only replies to 4D clients and web browsers, but also one that executes processes that interact with other processes running on the server machine and on remote 4D machines.
+ストアドプロシージャーは、システム (ハードウェアおよびメモリ) が許す限りいくつでも開始することができます。 事実、4D Server マシンは、4D クライアントおよびWeb ブラウザに応答するマシンであるだけではなく、サーバーマシンおよびリモート4D マシン上で実行中の他のプロセスと対話するプロセスを実行するマシンである、という見方をする必要があります。
 
 :::note
 
-The [**Execute on Server** method property](../Project/project-method-properties.md#execute-on-server) can also be used to execute a method in a process on the server, but the method uses the "twinned" process of the client process in this case, which means more particularly that it can take advantage of the environment of this client process. In this case, it is not a 4D stored procedure.
+[**サーバー上で実行** ""メソッド属性](../Project/project-method-properties.md#サーバー上で実行)
+を使用して、サーバー上のプロセスでメソッドを実行することもできます。ただしこの場合メソッドは、クライアントプロセスに対応するサーバー上のクライアントプロセスで実行されます。つまりクライアントプロセスの環境を使用できます。 この場合、これは4D のストアドプロシージャーではありません。
 
 :::
 
-#### What a Stored Procedure Does?
+#### ストアドプロシージャの機能
 
-Aside from data entry for stored procedures executed on the server, almost every capabilities of processes and 4D language applies to stored procedures.
+サーバー上で実行されるストアドプロシージャでのデータ入力を除き、ほとんどすべてのプロセスおよび4D ランゲージの機能は、ストアドプロシージャーにも適用されます。
 
-A stored procedure can add, query, order by, update or delete data. A stored procedure can access documents on disk, work with BLOBs, print records and so on. Just think that instead of doing something on a local 4D machine, you are doing it on the server machine or on one or several 4D client machines.
+ストアドプロシージャーではデータの追加、検索、並べ替え、更新、削除が可能です。 ストアドプロシージャーではディスク上のドキュメントファイルへのアクセス、BLOB を使用した作業、レコードの印刷等を行うことができます。 ローカルの4Dマシン上で作業を行う代わりに、サーバーマシン上や他の4Dクライアントマシン上で実行していると考えてください。
 
-One obvious advantage of stored procedures executed on the server is that indeed a stored procedure executes locally on the server machine, the machine where the database engine is located. For example, an [`APPLY TO SELECTION`](../commands/apply-to-selection) is not efficient over the network, but it is from within a stored procedure.
+ローカルに実行されるストアドプロシージャに対しサーバー上で実行されるストアドプロシージャーの明確な利点とは、データベースエンジンがあるサーバーマシン上でローカルに実行されるということです。 例えば、ネットワーク経由で[`APPLY TO SELECTION`](../commands/apply-to-selection) を行うと効率的ではありませんが、ストアドプロシージャー内では効率良く実行されます。
 
-Stored procedures executed on one or several client machines allows to optimize the task repartition and the communication between several client machines. Refer to the command [`REGISTER CLIENT`](../commands/register-client) for an example of a stored procedures executed on several clients.
+クライアントマシン上で実行されるストアドプロシージャーを使用すれば、タスクの分割やクライアントマシン間の通信を最適化できます。 複数のマシンでストアドプロシージャーを実行する例題は、[`REGISTER CLIENT`](../commands/register-client) を参照してください。
 
-However, the most important advantage of the stored procedure architecture is the additional dimension it gives to 4D Server. Using stored procedures, you can implement your own custom 4D Server services. The only limit is your imagination.
+しかし、ストアドプロシージャアーキテクチャーの最も重要な利点は、4D Server に追加の世界をもたらすところです。 ストアドプロシージャーを利用すると、独自の4D Server サービスを実現することができます。 唯一の制約はあなたの想像力だけです。
 
-#### What a stored procedure does not do?
+#### ストアドプロシージャーが行わないこと
 
-Generally speaking, stored procedures executed on the server should not deal with interface items (such as menus, windows, forms...). Indeed the interface is not managed on the server's side.
+一般的に言って、サーバー上で実行されるストアドプロシージャーはインターフェース (メニューやウィンドウ、フォームなど) を扱うべきではありません。 実際インターフェースはサーバー上では管理されません。
 
-All commands that are likely to generate modal dialog boxes on the server machine (e.g. [`Open document`](../commands/open-document) with an empty string as first parameter) should be avoided. Keep in mind that there isn't always a user in front of a server screen, and the display of a modal dialog box requiring a user action can lead to the application being blocked for some time.
+サーバーマシン上でモーダルダイアログボックスを生成しうる可能性のあるコマンド(例: [`Open document`](../commands/open-document) に第一引数に空の文字列を渡して呼び出すなど)は、全て避けるべきです。 サーバー画面の前には必ずしも常にユーザーがいるわけではないため、ユーザーアクションが必要なモーダルなダイアログボックスを表示することは、アプリケーションの一時的なブロックにつながることがあるという点に注意してください。
 
-#### Forbidden commands on the server
+#### サーバー上で禁止されるコマンド
 
-Here is the list of the commands that should NOT be used within stored procedures executed on the server. If one of the following commands is used within a stored procedure, an alert will be displayed indicating that this command cannot be executed on 4D Server. The error #67 is returned; it can be intercepted through a method installed in the [`ON ERR CALL`](../commands/on-err-call) command.
+以下はサーバー上で実行されるストアドプロシージャー内で使用すべきでないコマンドのリストです。 以下のコマンドの1つををストアドプロシージャー内で使用したら、4D Server 上で使ってはいけないというアラートが表示されます。 エラーは#67 が返ります。[`ON ERR CALL`](../commands/on-err-call) コマンドでインストールされたメソッドを通し、受け取ることができます。
 
 [`ADD RECORD`](../commands/add-record)
 [`APPEND MENU ITEM`](../commands/append-menu-item)
@@ -251,8 +252,8 @@ Here is the list of the commands that should NOT be used within stored procedure
 [`SET USER ALIAS`](../commands/set-user-alias)
 [`SHOW MENU BAR`](../commands/show-menu-bar)
 
-Commands with no effect on the server
-The following commands have no effect when they are executed within a stored procedure on the server. No specific error code is returned.
+サーバー上で効果がないコマンド
+以下のコマンドはサーバー上のストアドプロシージャーで呼び出された場合、効果がありません。 特定のエラーコードは返されません。
 
 [`GRAPH`](../commands/graph)
 [`MESSAGES OFF`](../commands/messages-off)
@@ -260,24 +261,24 @@ The following commands have no effect when they are executed within a stored pro
 [`SET MENU BAR`](../commands/set-menu-bar)
 [`SHOW TOOL BAR`](../commands/show-tool-bar)
 
-#### How to Start a Stored Procedure
+#### ストアドプロシージャを開始する
 
-From 4D, you can manually start a stored procedure in the **Execute Method** dialog box:
+4D から**メソッド実行**ダイアログボックスを使用して、手動でストアドプロシージャーを開始できます:
 
 ![](../assets/en/Desktop/execute-method.png)
 
-You can execute it on 4D Server or on another 4D client machine. Note that to display the 4D client machines in this list, they should have been first [registered](#stored-procedures-on-client-machines).
+ここからメソッドを4D Serverまたは他の4Dクライアントマシン上で実行できます。 このリストに4Dクライアントマシンを表示させるためには、まずそのマシンが[登録](#クライアントマシン上でのストアドプロシージャ) されていなければならないことに留意してください。
 
-- Also on 4D, you can programmatically start a stored procedure using the commands [`Execute on server`](../commands/execute-on-server) or [`EXECUTE ON CLIENT`](../commands/execute-on-client).
-- A method executed on 4D Server (database method, method with the **Execute on Server** attribute or stored procedure) can start a stored procedure using [`Execute on server`](../commands/execute-on-server), [`New process`](../commands/new-process), or [`EXECUTE ON CLIENT`](../commands/execute-on-client).
+- また4D 上では、[`Execute on server`](../commands/execute-on-server) または [`EXECUTE ON CLIENT`](../commands/execute-on-client) コマンドを使用してプログラムからストアドプロシージャーを開始できます。
+- 4D Server上で実行されているメソッド (サーバデータベースメソッド、**サーバ上で実行**属性付きのメソッド、またはストアドプロシージャ) は[`Execute on server`](../commands/execute-on-server)、 [`New process`](../commands/new-process)、または [`EXECUTE ON CLIENT`](../commands/execute-on-client) を使用してストアドプロシージャを開始できます。
 
 :::note
 
-It is not possible to use the process management commands [`DELAY PROCESS`](../commands/delay-process), [`PAUSE PROCESS`](../commands/pause-process) and [`RESUME PROCESS`](../commands/resume-process) from a remote 4D with stored procedures on the server.
+リモート4Dからサーバのストアドプロシージャに、[`DELAY PROCESS`](../commands/delay-process), [`PAUSE PROCESS`](../commands/pause-process) および [`RESUME PROCESS`](../commands/resume-process) などのプロセス管理コマンドを使用することはできません。
 
 :::
 
-#### Communication Between Stored Procedures and User Processes
+#### ストアドプロシージャーとユーザプロセス間のインタープロセス通信について
 
 Stored procedures can communicate between themselves using:
 
