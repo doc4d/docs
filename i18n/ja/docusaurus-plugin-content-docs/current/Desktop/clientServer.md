@@ -157,19 +157,19 @@ title: クライアント/サーバー
 
 :::note
 
-サーバー上では、トリガは割り当てられたアクション(作成/更新/削除)を処理するプロセス内で実行されます。 アクションが[サーバー上のプリエンプティブプロセス](../Develop/preemptive.md) (例: ストアドプロシージャやスケーラブルセッションモードでのHTTP リクエスト)でトリガーされた場合には、トリガは同じプリエンプティブプロセス内で実行されます。 But, if the action was triggered from a 4D remote, then the trigger will be executed in the twinned process, which is always in cooperative mode (a twinned process is shared for all calls of a user).
+サーバー上では、トリガは割り当てられたアクション(作成/更新/削除)を処理するプロセス内で実行されます。 アクションが[サーバー上のプリエンプティブプロセス](../Develop/preemptive.md) (例: ストアドプロシージャやスケーラブルセッションモードでのHTTP リクエスト)でトリガーされた場合には、トリガは同じプリエンプティブプロセス内で実行されます。 ただし、アクションが4D リモートからトリガーされていた場合、トリガはツインプロセスで実行され、このツインプロセスは必ず小オペラティブモードで実行されます(ツインプロセスはユーザーの全ての呼び出しに対して共有されます)。
 
 :::
 
-### Stored procedures
+### ストアドプロシージャ
 
-A 4D stored procedure is project method executing a process method in a process running on the server machine (or on any registered client machine), instead of on the client machine which has launched the method.
+4D のストアドプロシージャとは、メソッドを実行したクライアントマシンではなく、サーバーマシン(ありうは登録されたクライアントマシン)上で実行中のプロセス内でプロセスメソッドを実行するプロジェクトメソッドです。
 
-With 4D in local mode, when you use a command, such as [`New process`](../commands/new-process), you can start a user process in which you can run a method. This method is called a [process method](../Project/project-method-properties.md#process-methods). You can do the same with 4D Server, on a client machine. In addition, using the [`Execute on server`](../commands/execute-on-server) command on the server machine, you can start a user process in which you can run a method. Moreover, when using the [`EXECUTE ON CLIENT`](../commands/execute-on-client) command, you can run a method in another process on a different client. In both cases, the method is called a **stored procedure**, and (by analogy) the process started on the server machine or another client is also called a stored procedure.
+ローカルモードの4D では、[`New process`](../commands/new-process) などのコマンドを使用すると、メソッドを実行できるユーザープロセスを開始することができます。 このメソッドは[プロセスメソッド](../Project/project-method-properties.md#プロセスメソッド) と呼ばれています。 同じことは、4D Server、クライアントマシンで行うことができます。 また、サーバーマシン上で[`Execute on server`](../commands/execute-on-server) コマンドを使用することで、メソッドを実行できるユーザープロセスを開始することができます。 さらに、[`EXECUTE ON CLIENT`](../commands/execute-on-client) コマンドを使用すると異なるクライアント上の他のプロセス内でメソッドを実行することができます。 どちらの場合においても、このメソッドは**ストアドプロシージャ**と呼ばれ、またサーバーマシンまたは他のクライアント上で開始されたプロセスについても(比喩から)同じくストアドプロシージャと呼ばれます。
 
 :::note
 
-All stored procedures running on the server [share the same virtual user session](./sessions.md#stored-procedure-sessions).
+サーバー上で実行される全てのストアドプロシージャは[同じ仮想的なユーザーセッションを共有します](./sessions.md#stored-procedure-sessions)。
 
 :::
 
