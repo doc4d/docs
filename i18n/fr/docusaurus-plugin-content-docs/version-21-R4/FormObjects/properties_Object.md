@@ -29,7 +29,7 @@ Chaque objet de formulaire actif est associé à un nom d'objet. Chaque nom d'ob
 
 > Les noms d'objets sont limités à une taille de 255 octets.
 
-Lorsque vous utilisez le langage 4D, vous pouvez vous référer à un objet de formulaire actif par son nom d'objet (voir les commandes [Objects (Forms)](../commands/theme/Objects_Forms))).
+Lorsque vous utilisez le langage 4D, vous pouvez vous référer à un objet de formulaire actif par son nom d'objet (voir les commandes [Objects (Forms)](../commands/theme/Objects-Forms))).
 
 Pour plus d'informations sur les règles de nommage pour les objets de formulaire, reportez-vous à la section [Identifiers](Concepts/identifiers.md).
 
@@ -90,9 +90,9 @@ Les variables ou expressions peuvent être saisissables ou non saisissables et p
 
 #### Grammaire JSON
 
-| Nom        | Type de données             | Valeurs possibles                                                                                                                                                                                                                                                                |
-| ---------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataSource | texte, ou tableau de textes | <li>variable, nom de champ, ou toute expression 4D.</li><li>Chaîne vide pour [variables dynamiques](#dynamic-variables).</li><li>Tableau de chaînes (collection de noms de tableau) pour une [colonne de listbox hiérarchique](listbox_overview.md#hierarchical-list-boxes)</li> |
+| Nom        | Type de données             | Valeurs possibles                                                                                                                                                                                                                                                                     |
+| ---------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dataSource | texte, ou tableau de textes | <li>Variable, nom de champ, ou toute expression 4D.</li><li>Chaîne vide pour les [variables dynamiques](#dynamic-variables).</li><li>Tableau de textes (collection de noms de tableaux) pour une colonne de [listbox hiérarchique](listbox_overview.md#hierarchical-list-boxes)]</li> |
 
 ### Expressions
 

@@ -23,7 +23,7 @@ displayed_sidebar: docs
 
 ## Descrição
 
-O comando **WP Add picture** <!--REF #_command_.WP Add picture.Summary--> ancora a imagem passada como parâmetro em um local fixo dentro do *wpDoc* especificado e retorna sua referência.<!-- END REF--> A referência retornada pode ser passada para o comando [WP SET ATTRIBUTES](wp-set-attributes.md) para mover a imagem para qualquer local em *wpDoc* (página, seção, cabeçalho, rodapé, etc.) com uma camada, tamanho, etc.
+O comando **WP Adicionar imagem** <!--REF #_command_.WP Adicionar imagem. ummary--> ancora a imagem passada como parâmetro em um local fixo dentro do *wpDoc* especificado e retorna sua referência.<!-- END REF--> A referência retornada pode ser passada para o comando [WP SET ATTRIBUTES](wp-set-attributes.md) para mover a imagem para qualquer local em *wpDoc* (página, seção, cabeçalho, rodapé, etc.) com uma camada, tamanho, etc.
 
 Em *wpDoc*, passe o nome de um objeto documento 4D Write Pro.
 
@@ -47,7 +47,7 @@ Por padrão, a imagem adicionada é:
 - Exibido no canto superior esquerdo da caixa de papel
 - Exibido em todas as páginas
 
-O local, camada (inline, front-behind de texto), visibilidade e quaisquer propriedades da imagem podem ser modificadas usando o comando [WP SET ATTRIBUTES](wp-set-attributes.md) ou através de ações padrão (veja *Usando ações 4D Write Pro padrão*).
+The location, layer (inline, in front/behind text), visibility, and any properties of picture can be modified using the [WP SET ATTRIBUTES](wp-set-attributes.md) command, or via standard actions.
 
 **Nota:** o comando [WP Selection range](../commands/wp-selection-range) retorna um objeto *referência de imagem* se uma imagem ancorada for selecionada e um objeto *alcance* se uma imagem em linha for selecionada. Você pode determinar se um objeto selecionado é um objeto imagem verificando o atributo `wk type`:
 

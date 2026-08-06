@@ -6,9 +6,9 @@ slug: /WritePro/formulas
 
 ## Generalidades
 
-Los documentos 4D Write Pro pueden contener referencias a fórmulas 4D como variables, campos, expresiones, métodos proyecto o comandos 4D. Información específica como el número de página también puede ser referenciada a través de fórmulas (ver [Inserción de documentos y expresiones de página](#inserting-date-and-time-formulas) más abajo).
+Los documentos 4D Write Pro pueden contener referencias a fórmulas 4D como variables, campos, expresiones, métodos proyecto o comandos 4D. Specific information such as the page number can also be referenced through formulas (see below).
 
-La inserción de fórmulas en las áreas de 4D Write Pro se realiza con el comando [**WP INSERT FORMULA**](commands/wp-insert-formula.md) y puede leerse utilizando el comando [**WP Get formulas**](commands-legacy/wp-get-formulas.md). También los devuelve el comando [**WP Get text**](commands-legacy/wp-get-text.md).
+Inserting formulas in 4D Write Pro areas is done with the [**WP Insert formula**](commands/wp-insert-formula.md) command and can be read using the [**WP Get formulas**](commands-legacy/wp-get-formulas.md) command. También los devuelve el comando [**WP Get text**](commands-legacy/wp-get-text.md).
 
 ### Evaluación de fórmulas
 
@@ -48,7 +48,7 @@ Desea sustituir la selección en un área de 4D Write Pro por el contenido de un
  $sel:=WP Selection range(4DWPArea)
  Case of
     :(Form event code=On Clicked)
-       WP INSERT FORMULA($sel;Formula(fullName);wk replace)
+       WP Insert formula($sel;Formula(fullName);wk replace)
  End case
 ```
 
@@ -65,8 +65,8 @@ Puede insertar expresiones especiales relacionadas con los atributos del documen
 | This.notes                              | Text   | Notas definidas en el atributo wk notes                                                                                                                                                                                                                                                                                                                                                                          |
 | This.dateCreation                       | Fecha  | Fecha de creación definida en el atributo wk date creation                                                                                                                                                                                                                                                                                                                                                       |
 | This.dateModified                       | Fecha  | Fecha de modificación definida en el atributo wk date modified                                                                                                                                                                                                                                                                                                                                                   |
-| This.pageNumber (\*) | Number | Número de página tal y como está definido:<ul><li>Desde el inicio del documento (por defecto) o </li><li>Desde el inicio de página de sección si está definido por inicio de página de sección.</li></ul> Esta fórmula es siempre dinámica; no se ve afectada por el comando [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md). |
-| This.pageCount (\*)  | Number | Conteo de páginas: recuento total de páginas.<br/> Esta fórmula es siempre dinámica; no se ve afectada por el comando [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md). |
+| This.pageNumber (\*) | Number | Número de página tal y como está definido:<ul><li>Desde el inicio del documento (por defecto) o </li><li>Desde el inicio de página de sección si está definido por inicio de página de sección.</li></ul> Esta fórmula siempre es dinámica; no se ve afectada por el comando [**FORMULAS WP FREEZE**](commands-legacy/wp-freeze-formulas.md). |
+| This.pageCount (\*)  | Number | Número de páginas: número total de páginas.<br/> Esta fórmula siempre es dinámica; no se ve afectada por el comando [**FORMULAS WP FREEZE**](commands-legacy/wp-freeze-formulas.md).                                                                                                                                                                             |
 | This.document                           | Object | Documento 4D Write Pro                                                                                                                                                                                                                                                                                                                                                                                           |
 | This.data                               | Object | Contexto de datos del documento 4D Write Pro definido por [**WP SET DATA CONTEXT**](commands-legacy/wp-set-data-context.md)                                                                                                                                                                                                                                                                                      |
 | This.sectionIndex                       | Number | El índice de la sección en el documento 4D Write Pro a partir de 1                                                                                                                                                                                                                                                                                                                                               |
@@ -88,14 +88,14 @@ Por ejemplo, para insertar el número de página en el pie de página:
 
 ```4d
  $footer:=WP Get footer(4DWP;1)
- WP INSERT FORMULA($footer;Formula(This.pageNumber);wk append)
-  //Usando Formula(myMethod) con myMethod procesando This.pageNumber
-  //no funcionaría correctamente
+ WP Insert formula($footer;Formula(This.pageNumber);wk append)
+  //Using Formula(myMethod) with myMethod processing This.pageNumber
+  //would not work correctly
 ```
 
 :::note
 
-Para más información sobre la inserción de fórmulas, ver [WP INSERT FORMULA](../commands/wp-insert-formula).
+For more information about formula insertion, see [WP Insert formula](../commands/wp-insert-formula).
 
 :::
 
@@ -186,7 +186,7 @@ En este caso, puede mostrar las referencias a fórmulas como símbolos ![](../as
 Para mostrar las referencias a fórmulas como símbolos, puede:
 
 - active la opción **Mostrar origen de fórmula como símbolo** en la lista de propiedades (consulte *Configuración de las propiedades de la vista*), o
-- utilizar la acción estándar displayFormulaAsSymbol (ver *Uso de las acciones estándar de 4D Write Pro*), o bien
+- use the displayFormulaAsSymbol standard action , or
 - usa el comando [**WP SET VIEW PROPERTIES**](commands-legacy/wp-set-view-properties.md) con el selector `wk display formula as symbol` en **True**.
 
 ### Referencias como nombres
@@ -204,10 +204,10 @@ Si asigna nombres a las fórmulas, se mostrarán en lugar de los textos:
 Para asignar un nombre a una fórmula, debe utilizar el comando [WP Insert formula](commands/wp-insert-formula.md) con un parámetro objeto. Por ejemplo:
 
 ```4d
-  //inserta el día anterior en el documento
- $o:=New object("formula";Formula(Current date-1); "name"; "Yesterday")
+  //inserts the previous day in the document
+ $o:=New object("formula";Formula(Current date-1);"name";"Yesterday")
  $range:=WP Text range(WPArea;wk start text;wk end text)
- WP INSERT FORMULA($range;$o;wk append)
+ WP Insert formula($range;$o;wk append)
  
 ```
 

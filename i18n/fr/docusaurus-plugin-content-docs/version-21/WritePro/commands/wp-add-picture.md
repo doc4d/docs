@@ -10,13 +10,13 @@ displayed_sidebar: docs
 
 <div class="no-index">
 
-| Paramètres     | Type                    |                             | Description                                                 |
-| -------------- | ----------------------- | --------------------------- | ----------------------------------------------------------- |
-| wpDoc          | Object                  | &#8594; | Document 4D Write Pro                                       |
-| picture        | Picture                 | &#8594; | Image 4D                                                    |
-| picturePath    | Text                    | &#8594; | Chemin de l'image                                           |
-| pictureFileObj | 4D.File | &#8594; | Objet 4D.File représentant un fichier image |
-| Résultat       | Object                  | &#8592; | Objet référençant l'image                                   |
+| Paramètres              | Type                    |                             | Description                                                 |
+| ----------------------- | ----------------------- | --------------------------- | ----------------------------------------------------------- |
+| wpDoc                   | Object                  | &#8594; | Document 4D Write Pro                                       |
+| picture                 | Picture                 | &#8594; | Image 4D                                                    |
+| picturePath             | Text                    | &#8594; | Chemin de l'image                                           |
+| pictureFileObj          | 4D.File | &#8594; | Objet 4D.File représentant un fichier image |
+| Résultat de la fonction | Object                  | &#8592; | Objet référençant l'image                                   |
 
 </div>
 <!-- END REF-->
@@ -47,7 +47,7 @@ Par défaut, l'image ajoutée est :
 - Affichée en haut à gauche de la boîte à papier
 - Affichée sur toutes les pages
 
-L'emplacement, la couche (en ligne, devant/derrière le texte), la visibilité et toutes les propriétés de l'image peuvent être modifiées en utilisant la commande [WP SET ATTRIBUTES](wp-set-attributes.md), ou via des actions standards (voir *Utiliser des actions standard 4D Write Pro*).
+The location, layer (inline, in front/behind text), visibility, and any properties of picture can be modified using the [WP SET ATTRIBUTES](wp-set-attributes.md) command, or via standard actions.
 
 **Note :** La commande [WP Selection range](../commands-legacy/wp-selection-range.md) retourne un objet *picture reference* si une image ancrée est sélectionnée et un *range object* si une image en ligne est sélectionnée. Vous pouvez déterminer si un objet sélectionné est un objet image en vérifiant l'attribut `wk type` :
 

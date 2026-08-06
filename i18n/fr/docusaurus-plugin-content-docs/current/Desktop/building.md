@@ -85,7 +85,7 @@ Cette fonctionnalité crée un fichier *.4dz* dans un dossier `Compiled Database
 
 `<destination>/Compiled Database/MyProject/MyProject.4dz`
 
-Un fichier .4dz est essentiellement une version compressée du dossier du projet. Les fichiers .4dz peuvent être utilisés par 4D Server, 4D Volume Desktop (applications fusionnées) et 4D.
+Un fichier .4dz est essentiellement une version compressée du dossier du projet. Un fichier .4dz est essentiellement une version compressée du dossier du projet. Les fichiers .4dz peuvent être utilisés par 4D Server, 4D Volume Desktop (applications fusionnées) et 4D.
 
 > Lors de la génération de fichiers .4dz, 4D utilise par défaut un format zip **standard**. L'avantage de ce format est qu'il est facilement lisible par tout outil de dézippage. Si vous ne voulez pas utiliser ce format standard, ajoutez la clé XML `UseStandardZipFormat` avec la valeur `False` dans votre fichier [`buildApp.4DSettings`](#buildapp4dsettings) (pour plus d'informations, voir le manuel [4D XML Keys BuildApplication](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-6335734.en.html)).
 
@@ -781,7 +781,7 @@ Voici le scénario pour la mise à jour d'un serveur ou d'une application mono-u
 2. Dans l'application en production, vous appelez la commande `SET UPDATE FOLDER` : cette commande désigne l'emplacement du dossier où se trouve la mise à jour "en attente" de l'application actuelle. Facultativement, vous pouvez copier dans ce dossier les éléments personnalisés de la version en production (fichiers utilisateur).
 3. Dans l'application en production, appelez la commande `RESTART 4D` : cette commande déclenche automatiquement l'exécution d'un programme utilitaire nommé "updater" qui ferme l'application en cours, la remplace en utilisant la mise à jour "en attente" si elle est spécifiée, et redémarre l'application avec le fichier de données courant. La version précédente est renommée.
 
-> Cette séquence est compatible avec les applications serveur Windows exécutées en tant que service.
+> Cette séquence est compatible avec les applications Windows Server [exécutées en tant que Service](../server/service.md).
 
 ### Journal des mises à jour
 
