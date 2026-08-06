@@ -1,0 +1,1357 @@
+
+### 4D Environment\application-version.md
+  [es] Application version — B. MINOR STRUCTURE
+      EN: **Application version** ( {*buildNum* : Integer} {; *} ) : Text
+      ES: **Application version** ( *buildNum* : Integer {; *} ) : Text
+  [ja] Application version — B. MINOR STRUCTURE
+      EN: **Application version** ( {*buildNum* : Integer} {; *} ) : Text
+      JA: **Application version** ( *buildNum* : Integer {; *} ) : Text
+  [pt] Application version — B. MINOR STRUCTURE
+      EN: **Application version** ( {*buildNum* : Integer} {; *} ) : Text
+      PT: **Application version** ( *buildNum* : Integer {; *} ) : Text
+
+### 4D Environment\data-file.md
+  [es] Data file — B. MINOR STRUCTURE
+      EN: **Data file** ( { *segment* : Integer } ) : Text
+      ES: **Data file** ( *segmento* : Integer ) : Text
+  [pt] Data file — B. MINOR STRUCTURE
+      EN: **Data file** ( { *segment* : Integer } ) : Text
+      PT: **Data file** ( *segmento* : Integer ) : Text
+
+### 4D Environment\database-measures.md
+  [es] Database measures — B. MINOR STRUCTURE
+      EN: **Database measures** ({ *options* : Object }) : Object
+      ES: **Database measures** ( *opciones* : Object ) : Object
+  [ja] Database measures — B. MINOR STRUCTURE
+      EN: **Database measures** ({ *options* : Object }) : Object
+      JA: **Database measures** ( *options* : Object ) : Object
+  [pt] Database measures — B. MINOR STRUCTURE
+      EN: **Database measures** ({ *options* : Object }) : Object
+      PT: **Database measures** ( *opcoes* : Object ) : Object
+
+### 4D Environment\ds.md
+  [fr] ds — B. MINOR STRUCTURE
+      EN: **ds** ({ *localID* : Text }) : cs.DataStore
+      FR: **ds** { ( *localID* : Text ) } : cs.DataStore
+
+### 4D Environment\get-4d-folder.md
+  [es] Get 4D folder — B. MINOR STRUCTURE
+      EN: **Get 4D folder** ({*folder* : Integer {; *options* : Object}} {; *}) : Text
+      ES: **Get 4D folder** ( *carpeta* : Integer {; *opciones* : Object} {; *}) : Text
+  [ja] Get 4D folder — B. MINOR STRUCTURE
+      EN: **Get 4D folder** ({*folder* : Integer {; *options* : Object}} {; *}) : Text
+      JA: **Get 4D folder** ( *folder* : Integer {; *options* : Object} {; *}) : Text
+  [pt] Get 4D folder — B. MINOR STRUCTURE
+      EN: **Get 4D folder** ({*folder* : Integer {; *options* : Object}} {; *}) : Text
+      PT: **Get 4D folder** ( *pasta* : Integer {; *options* : Object} {; *}) : Text
+
+### 4D Environment\is-compiled-mode.md
+  [es] Is compiled mode — B. MINOR STRUCTURE
+      EN: **Is compiled mode** ({ * }) : Boolean
+      ES: **Is compiled mode** ( * ) : Boolean
+  [fr] Is compiled mode — B. MINOR STRUCTURE
+      EN: **Is compiled mode** ({ * }) : Boolean
+      FR: **Is compiled mode** {( * )} : Boolean
+  [ja] Is compiled mode — B. MINOR STRUCTURE
+      EN: **Is compiled mode** ({ * }) : Boolean
+      JA: **Is compiled mode** ( * ) : Boolean
+  [pt] Is compiled mode — B. MINOR STRUCTURE
+      EN: **Is compiled mode** ({ * }) : Boolean
+      PT: **Is compiled mode** ( * ) : Boolean
+
+### 4D Environment\structure-file.md
+  [es] Structure file — B. MINOR STRUCTURE
+      EN: **Structure file** ({ * }) : Text
+      ES: **Structure file** ( * ) : Text
+  [fr] Structure file — B. MINOR STRUCTURE
+      EN: **Structure file** ({ * }) : Text
+      FR: **Structure file** {( * )} : Text
+  [ja] Structure file — B. MINOR STRUCTURE
+      EN: **Structure file** ({ * }) : Text
+      JA: **Structure file** ( * ) : Text
+  [pt] Structure file — B. MINOR STRUCTURE
+      EN: **Structure file** ({ * }) : Text
+      PT: **Structure file** ( * ) : Text
+
+### Arrays\selection-to-array.md
+  [es] SELECTION TO ARRAY — A. TYPES MISSING/TRANSLATED
+      EN: **SELECTION TO ARRAY** ({...(*selection* : Field, Table ; *array* : Array)} {; *})
+      ES: **SELECTION TO ARRAY** ({ *campo* : Field ; *array* : Array {; *campo* : Field ; *array* : Array {; ...(*campo* : Field, *array* : Array)}}{; *}})
+  [fr] SELECTION TO ARRAY — A. TYPES MISSING/TRANSLATED
+      EN: **SELECTION TO ARRAY** ({...(*selection* : Field, Table ; *array* : Array)} {; *})
+      FR: **SELECTION TO ARRAY** {( *leChamp* ; *tableau* {; *leChamp2* ; *tableau2* ; ... ; *leChampN* ; *tableauN*}{; *})<br/>**SELECTION TO ARRAY** {( *laTable* ; *tableau* {; *leChamp* ; *tableau* {; *leChamp2* ; *tableau2* ; ... ; *leChampN* ; *tableauN*}}{; *})}
+  [ja] SELECTION TO ARRAY — A. TYPES MISSING/TRANSLATED
+      EN: **SELECTION TO ARRAY** ({...(*selection* : Field, Table ; *array* : Array)} {; *})
+      JA: **SELECTION TO ARRAY** ({ field | table ; *array* : Array {; *aField* : Field ; *array* : Array {; ...(*aField* : Field, *array* : Array)}}{; *}})
+  [pt] SELECTION TO ARRAY — A. TYPES MISSING/TRANSLATED
+      EN: **SELECTION TO ARRAY** ({...(*selection* : Field, Table ; *array* : Array)} {; *})
+      PT: **SELECTION TO ARRAY** ({ umCampo | umaTabela ; *array* : Array {; *campo* : Field ; *array* : Array {; ...(*campo* : Field, *array* : Array)}}{; *}})
+
+### BLOB\integer-to-blob.md
+  [es] INTEGER TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      ES: **INTEGER TO BLOB** ( *entero* : Integer ; *BLOB* : Blob ; *byteOrden* : Integer {; offset | *} )
+  [pt] INTEGER TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      PT: **INTEGER TO BLOB** ( *inteiro* : Integer ; *BLOB* : Blob ; *byteOrdem* : Integer {; offset | *} )
+  [fr] INTEGER TO BLOB — B. MINOR STRUCTURE
+      EN: **INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      FR: **INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *offset* : Variable} )<br/>**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+  [ja] INTEGER TO BLOB — B. MINOR STRUCTURE
+      EN: **INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      JA: **INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *offset* : Variable} )<br/>**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+
+### BLOB\list-to-blob.md
+  [fr] LIST TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **LIST TO BLOB** ( *list* : Integer ; *blob* : Blob {; *} )
+      FR: **LIST TO BLOB** ( *liste* ; *blob* {; *blob*} )
+
+### BLOB\longint-to-blob.md
+  [es] LONGINT TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      ES: **LONGINT TO BLOB** ( *enteroLargo* : Integer ; *BLOB* : Blob ; *byteOrden* : Integer {; offset | *} )
+  [fr] LONGINT TO BLOB — B. MINOR STRUCTURE
+      EN: **LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      FR: **LONGINT TO BLOB** ( *entierLong* : Integer ; *blob* : Blob {; *ordreOctet* : Integer}{; *offset* : Variable} )<br/>**LONGINT TO BLOB** ( *entierLong* : Integer ; *blob* : Blob {; *ordreOctet* : Integer}{; *} )
+  [ja] LONGINT TO BLOB — B. MINOR STRUCTURE
+      EN: **LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      JA: **LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob ; *byteOrder* : Integer {; *offset* : Variable} )<br/>**LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob ; *byteOrder* : Integer {; *} )
+  [pt] LONGINT TO BLOB — B. MINOR STRUCTURE
+      EN: **LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; offset : Variable} )<br/>**LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob {; *byteOrder* : Integer}{; *} )
+      PT: **LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob ; *byteOrder* : Integer {; *offset* : Variable} )<br/>**LONGINT TO BLOB** ( *longint* : Integer ; *blob* : Blob ; *byteOrder* : Integer {; *} )
+
+### BLOB\real-to-blob.md
+  [es] REAL TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; offset : Variable } )<br/>**REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *} )
+      ES: **REAL TO BLOB** ( *real* : Real ; *BLOB* : Blob ; *formatoReal* : Integer {; offset | *} )
+  [fr] REAL TO BLOB — B. MINOR STRUCTURE
+      EN: **REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; offset : Variable } )<br/>**REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *} )
+      FR: **REAL TO BLOB** ( *réel* : Real ; *blob* : Blob ; *formatRéel* : Integer {; *offset* : Variable } )<br/>**REAL TO BLOB** ( *réel* : Real ; *blob* : Blob ; *formatRéel* : Integer {; *} )
+  [ja] REAL TO BLOB — B. MINOR STRUCTURE
+      EN: **REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; offset : Variable } )<br/>**REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *} )
+      JA: **REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *offset* : Variable } )<br/>**REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *} )
+  [pt] REAL TO BLOB — B. MINOR STRUCTURE
+      EN: **REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; offset : Variable } )<br/>**REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *} )
+      PT: **REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *offset* : Variable } )<br/>**REAL TO BLOB** ( *real* : Real ; *blob* : Blob ; *realFormat* : Integer {; *} )
+
+### BLOB\text-to-blob.md
+  [es] TEXT TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; offset : Variable }} )<br/>**TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; *}} )
+      ES: **TEXT TO BLOB** ( *texto* : Text ; *BLOB* : Blob {; *formatoTexto* : Integer {; offset | *}} )
+  [pt] TEXT TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; offset : Variable }} )<br/>**TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; *}} )
+      PT: **TEXT TO BLOB** ( *texto* : Text ; *BLOB* : Blob {; *textFormat* : Integer {; offset | *}} )
+  [fr] TEXT TO BLOB — B. MINOR STRUCTURE
+      EN: **TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; offset : Variable }} )<br/>**TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; *}} )
+      FR: **TEXT TO BLOB** ( *texte* : Text ; *blob* : Blob {; *formatTexte* : Integer {; *offset* : Variable }} )<br/>**TEXT TO BLOB** ( *texte* : Text ; *blob* : Blob {; *formatTexte* : Integer {; *}} )
+  [ja] TEXT TO BLOB — B. MINOR STRUCTURE
+      EN: **TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; offset : Variable }} )<br/>**TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; *}} )
+      JA: **TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; *offset* : Variable }} )<br/>**TEXT TO BLOB** ( *text* : Text ; *blob* : Blob {; *textFormat* : Integer {; *}} )
+
+### BLOB\variable-to-blob.md
+  [pt] VARIABLE TO BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; offset : Variable } )<br/>**VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *} )
+      PT: **VARIABLE TO BLOB** ( *variável* : Variable ; *BLOB* : Blob {; offset | *} )
+  [es] VARIABLE TO BLOB — B. MINOR STRUCTURE
+      EN: **VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; offset : Variable } )<br/>**VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *} )
+      ES: **VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *offset* : Variable } )<br/>**VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *} )
+  [fr] VARIABLE TO BLOB — B. MINOR STRUCTURE
+      EN: **VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; offset : Variable } )<br/>**VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *} )
+      FR: **VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *offset* : Variable } )<br/>**VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *} )
+  [ja] VARIABLE TO BLOB — B. MINOR STRUCTURE
+      EN: **VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; offset : Variable } )<br/>**VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *} )
+      JA: **VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *offset* : Variable } )<br/>**VARIABLE TO BLOB** ( *variable* : Variable ; *blob* : Blob {; *} )
+
+### Cache Management\cache-info.md
+  [es] Cache info — B. MINOR STRUCTURE
+      EN: **Cache info** ( {*dbFilter* : Object} ) : Object
+      ES: **Cache info** ( *dbFilter* : Object ) : Object
+  [ja] Cache info — B. MINOR STRUCTURE
+      EN: **Cache info** ( {*dbFilter* : Object} ) : Object
+      JA: **Cache info** ( *dbFilter* : Object ) : Object
+  [pt] Cache info — B. MINOR STRUCTURE
+      EN: **Cache info** ( {*dbFilter* : Object} ) : Object
+      PT: **Cache info** ( *bdFiltro* : Object ) : Object
+
+### Cache Management\flush-cache.md
+  [es] FLUSH CACHE — B. MINOR STRUCTURE
+      EN: **FLUSH CACHE** ({ size : Integer })<br/>**FLUSH CACHE** ({ * })
+      ES: **FLUSH CACHE** ({ *size* : Integer })<br/>**FLUSH CACHE** ({ * })
+  [fr] FLUSH CACHE — B. MINOR STRUCTURE
+      EN: **FLUSH CACHE** ({ size : Integer })<br/>**FLUSH CACHE** ({ * })
+      FR: **FLUSH CACHE** ({ *size* : Integer })<br/>**FLUSH CACHE** ({ * })
+  [ja] FLUSH CACHE — B. MINOR STRUCTURE
+      EN: **FLUSH CACHE** ({ size : Integer })<br/>**FLUSH CACHE** ({ * })
+      JA: **FLUSH CACHE** ({ *size* : Integer })<br/>**FLUSH CACHE** ({ * })
+  [pt] FLUSH CACHE — B. MINOR STRUCTURE
+      EN: **FLUSH CACHE** ({ size : Integer })<br/>**FLUSH CACHE** ({ * })
+      PT: **FLUSH CACHE** ({ *size* : Integer })<br/>**FLUSH CACHE** ({ * })
+
+### Collections\array-to-collection.md
+  [es] ARRAY TO COLLECTION — B. MINOR STRUCTURE
+      EN: **ARRAY TO COLLECTION** ( *collection* : Collection ; ...(*array* : Array {; *propertyName* : Text} ))
+      ES: **ARRAY TO COLLECTION**  ( *coleccion* : Collection ; *array* : Array {; *nombreProp* : Text}{; *array2* ; *nombreProp2* ; ... ; *arrayN* ; *nombrePropN*} )
+  [ja] ARRAY TO COLLECTION — B. MINOR STRUCTURE
+      EN: **ARRAY TO COLLECTION** ( *collection* : Collection ; ...(*array* : Array {; *propertyName* : Text} ))
+      JA: **ARRAY TO COLLECTION** ( *...collection* : Collection ; *...array* : Array {; *...propertyName* : Text} )
+  [pt] ARRAY TO COLLECTION — B. MINOR STRUCTURE
+      EN: **ARRAY TO COLLECTION** ( *collection* : Collection ; ...(*array* : Array {; *propertyName* : Text} ))
+      PT: **ARRAY TO COLLECTION**  ( *coleçãlo* : Collection ; *array* : Array {; *nomProp* : Text}{; *array2* ; *nomProp2* ; ... ; *arrayN* ; *nomPropN*} )
+
+### Communications\receive-packet.md
+  [es] RECEIVE PACKET — A. TYPES MISSING/TRANSLATED
+      EN: **RECEIVE PACKET** ( {*docRef* : Time ;} *receiveVar* : Text, Blob ; *stopChar* : Text )<br/>**RECEIVE PACKET** ( {*docRef* : Time ;} *receiveVar* : Text, Blob ; *numBytes* : Integer )
+      ES: **RECEIVE PACKET** ( {*docRef* : Time ;} *varRecep* : Text, Blob ; stopCar | numBytes )
+
+### Communications\use-character-set.md
+  [ja] USE CHARACTER SET — A. TYPES MISSING/TRANSLATED
+      EN: **USE CHARACTER SET** ( *map* : Text, Operator {; *mapInOut* : Integer} )
+      JA: **USE CHARACTER SET** ( map | * {; *mapInOut*} )
+
+### Data Entry\add-record.md
+  [es] ADD RECORD — B. MINOR STRUCTURE
+      EN: **ADD RECORD** ( *aTable* : Table {; *} )<br/>**ADD RECORD** ( * )
+      ES: **ADD RECORD** ( {*tabla* : Table}{;}{*} )
+  [ja] ADD RECORD — B. MINOR STRUCTURE
+      EN: **ADD RECORD** ( *aTable* : Table {; *} )<br/>**ADD RECORD** ( * )
+      JA: **ADD RECORD** ( {*aTable* : Table}{;}{*} )
+  [pt] ADD RECORD — B. MINOR STRUCTURE
+      EN: **ADD RECORD** ( *aTable* : Table {; *} )<br/>**ADD RECORD** ( * )
+      PT: **ADD RECORD** ( {*tabela* : Table}{;}{*} )
+
+### Data Entry\modify-record.md
+  [es] MODIFY RECORD — B. MINOR STRUCTURE
+      EN: **MODIFY RECORD** ( *aTable* : Table {; *} )<br/>**MODIFY RECORD** ( * )
+      ES: **MODIFY RECORD** ( {*tabla* : Table}{;}{*} )
+  [ja] MODIFY RECORD — B. MINOR STRUCTURE
+      EN: **MODIFY RECORD** ( *aTable* : Table {; *} )<br/>**MODIFY RECORD** ( * )
+      JA: **MODIFY RECORD** ( {*aTable* : Table}{;}{*} )
+  [pt] MODIFY RECORD — B. MINOR STRUCTURE
+      EN: **MODIFY RECORD** ( *aTable* : Table {; *} )<br/>**MODIFY RECORD** ( * )
+      PT: **MODIFY RECORD** ( {*tabela* : Table}{;}{*} )
+
+### Data Security\data-file-encryption-status.md
+  [fr] Data file encryption status — B. MINOR STRUCTURE
+      EN: **Data file encryption status** ( {*structurePath* : Text ; *dataPath* : Text} ) : Object
+      FR: **Data file encryption status** ( *cheminStructure* : Text ; *cheminDonnées* : Text ) : Object
+
+### Data Security\decrypt-data-blob.md
+  [es] Decrypt data BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **Decrypt data BLOB** ( *blobToDecrypt* : Blob ; *keyObject* : Object ; *salt* : Integer ; *decryptedBLOB* : Blob ) : Boolean<br/>**Decrypt data BLOB** ( *blobToDecrypt* : Blob ; *passPhrase* : Text ; *salt* : Integer ; *decryptedBLOB* : Blob ) : Boolean
+      ES: **Decrypt data BLOB** ( *blobADescifrar* : Blob ; objetoLlave | frasePasar ; *sal* : Integer ; *blobDescifrado* : Blob ) : Boolean
+  [pt] Decrypt data BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **Decrypt data BLOB** ( *blobToDecrypt* : Blob ; *keyObject* : Object ; *salt* : Integer ; *decryptedBLOB* : Blob ) : Boolean<br/>**Decrypt data BLOB** ( *blobToDecrypt* : Blob ; *passPhrase* : Text ; *salt* : Integer ; *decryptedBLOB* : Blob ) : Boolean
+      PT: **Decrypt data BLOB** ( *blobDecriptografar* : Blob ; objetoChave / passefrase ; *salt* : Integer ; *BLOBdecriptografado* : Blob ) : Boolean
+
+### Data Security\encrypt-data-blob.md
+  [es] Encrypt data BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **Encrypt data BLOB** ( *blobToEncrypt* : Blob ; *keyObject* : Object ; *salt* : Integer ; *encryptedBLOB* : Blob ) : Boolean<br/>**Encrypt data BLOB** ( *blobToEncrypt* : Blob ; *passPhrase* : Text ; *salt* : Integer ; *encryptedBLOB* : Blob ) : Boolean
+      ES: **Encrypt data BLOB** ( *blobAEncriptar* : Blob ; objetoLlave | frasePasar ; *sal* : Integer ; *blobEncriptado* : Blob ) : Boolean
+  [pt] Encrypt data BLOB — A. TYPES MISSING/TRANSLATED
+      EN: **Encrypt data BLOB** ( *blobToEncrypt* : Blob ; *keyObject* : Object ; *salt* : Integer ; *encryptedBLOB* : Blob ) : Boolean<br/>**Encrypt data BLOB** ( *blobToEncrypt* : Blob ; *passPhrase* : Text ; *salt* : Integer ; *encryptedBLOB* : Blob ) : Boolean
+      PT: **Encrypt data BLOB** ( *blobAcriptografar* : Blob ; objetoChave / passefrase ; *salt* : Integer ; blobCriptografado' ) : Boolean
+
+### Data Security\encrypt-data-file.md
+  [es] Encrypt data file — A. TYPES MISSING/TRANSLATED
+      EN: **Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curPassPhrase* : Text {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* : Object {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text
+      ES: **Encrypt data file** ( *rutaEstruct* : Text ; *rutaDatos* : Text {; newPassPhrase | newDataKey {; *carpetaArchivo* : Text {; curPassPhrase | curDataKey {; *nomMetod* : Text}}}} ) : Text
+  [fr] Encrypt data file — A. TYPES MISSING/TRANSLATED
+      EN: **Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curPassPhrase* : Text {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* : Object {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text
+      FR: **Encrypt data file** ( *cheminStructure* ; *cheminDonnées* {; *nouvellePhraseSecrète* {; *dossierArchive* {; *phraseSecrèteCour* {; *nomMéthode*}}}} ) : Text<br/>**Encrypt data file** ( *cheminStructure* ; *cheminDonnées* {; *nouvelleCléDonnées* {; *dossierArchive* {; *cléDonnéesCour* {; *nomMéthode*}}}} ) : Text
+  [ja] Encrypt data file — A. TYPES MISSING/TRANSLATED
+      EN: **Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curPassPhrase* : Text {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* : Object {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text
+      JA: **Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : テキスト, オブジェクト {; *archiveFolder* : Text {; *curPassPhrase* : テキスト, オブジェクト {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* : テキスト, オブジェクト {; *archiveFolder* : Text {; *curDataKey* : テキスト, オブジェクト {; *methodName* : Text}}}} ) : Text
+  [pt] Encrypt data file — A. TYPES MISSING/TRANSLATED
+      EN: **Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curPassPhrase* : Text {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* : Object {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text
+      PT: **Encrypt data file** ( *rotaEstrutura* : Text ; *rotaDados* : Text {; novaFrasePasse/novaChave {; *arqPasta* : Text {; atualFrasePasse/atualChave {; *nomeMetodo* : Text}}}} ) : Text
+
+### Date and Time\current-date.md
+  [es] Current date — B. MINOR STRUCTURE
+      EN: **Current date** ({ * }) : Date
+      ES: **Current date** ( * ) : Date
+  [fr] Current date — B. MINOR STRUCTURE
+      EN: **Current date** ({ * }) : Date
+      FR: **Current date** {( * )} : Date
+  [ja] Current date — B. MINOR STRUCTURE
+      EN: **Current date** ({ * }) : Date
+      JA: **Current date** ( * ) : Date
+  [pt] Current date — B. MINOR STRUCTURE
+      EN: **Current date** ({ * }) : Date
+      PT: **Current date** ( * ) : Date
+
+### Date and Time\current-time.md
+  [es] Current time — B. MINOR STRUCTURE
+      EN: **Current time** ({ * }) : Time
+      ES: **Current time** ( * ) : Time
+  [fr] Current time — B. MINOR STRUCTURE
+      EN: **Current time** ({ * }) : Time
+      FR: **Current time** {( * )} : Time
+  [ja] Current time — B. MINOR STRUCTURE
+      EN: **Current time** ({ * }) : Time
+      JA: **Current time** ( * ) : Time
+  [pt] Current time — B. MINOR STRUCTURE
+      EN: **Current time** ({ * }) : Time
+      PT: **Current time** ( * ) : Time
+
+### Design Object Access\form-get-names.md
+  [es] FORM GET NAMES — B. MINOR STRUCTURE
+      EN: **FORM GET NAMES** ( {*aTable* : Table ;} *arrNames* : Text array {; *filter* : Text} {; *marker* : Real} {; *} )
+      ES: **FORM GET NAMES** ( {*tabla* : Table ;} *arrayNoms* : Text array {; *filtro* : Text {; *marcador* : Real}}{; *} )
+  [fr] FORM GET NAMES — B. MINOR STRUCTURE
+      EN: **FORM GET NAMES** ( {*aTable* : Table ;} *arrNames* : Text array {; *filter* : Text} {; *marker* : Real} {; *} )
+      FR: **FORM GET NAMES** ( {*laTable* : Table ;} *tabNoms* : Text array {; *filtre* : Text {; *marqueur* : Real}}{; *} )
+  [ja] FORM GET NAMES — B. MINOR STRUCTURE
+      EN: **FORM GET NAMES** ( {*aTable* : Table ;} *arrNames* : Text array {; *filter* : Text} {; *marker* : Real} {; *} )
+      JA: **FORM GET NAMES** ( {*aTable* : Table ;} *arrNames* : Text array {; *filter* : Text {; *marker* : Real}}{; *} )
+  [pt] FORM GET NAMES — B. MINOR STRUCTURE
+      EN: **FORM GET NAMES** ( {*aTable* : Table ;} *arrNames* : Text array {; *filter* : Text} {; *marker* : Real} {; *} )
+      PT: **FORM GET NAMES** ( {*tabela* : Table ;} *arrayNome* : Text array {; *filtro* : Text {; *marcador* : Real}}{; *} )
+
+### Design Object Access\method-get-modification-date.md
+  [es] METHOD GET MODIFICATION DATE — A. TYPES MISSING/TRANSLATED
+      EN: **METHOD GET MODIFICATION DATE** ( *path* : Text, Text array ; *modDate* : Date, Date array ; *modTime* : Time, Integer array {; *} )
+      ES: **METHOD GET MODIFICATION DATE** ( *ruta* : Text, Text array ; *fechaMod* : Date, Date array ; *horaMod* : Time, Integer array {; *operador* : *} )
+
+### Design Object Access\method-set-attribute.md
+  [es] METHOD SET ATTRIBUTE — A. TYPES MISSING/TRANSLATED
+      EN: **METHOD SET ATTRIBUTE** ( *path* : Text ; *attribType* : Integer ; *attribValue* : Boolean, Text {; ...(*attribType* : Integer ; *attribValue* : Boolean, Text)}{; *} )
+      ES: **METHOD SET ATTRIBUTE** ( *ruta* : Text ; *tipoAtrib* : Integer ; *valorAtrib* : Boolean, Text {; ...(*tipoAtrib* : Integer, *valorAtrib* : Boolean, Text)}{; *operador* : *} )
+
+### Design Object Access\method-set-code.md
+  [es] METHOD SET CODE — A. TYPES MISSING/TRANSLATED
+      EN: **METHOD SET CODE** ( *path* : Text, Text array ; *code* : Text, Text array {; *} )
+      ES: **METHOD SET CODE** ( *ruta* : Text, Text array ; *codigo* : Text, Text array {; *operador* : *} )
+
+### Design Object Access\method-set-comments.md
+  [es] METHOD SET COMMENTS — B. MINOR STRUCTURE
+      EN: **METHOD SET COMMENTS** ( *path* : Text, Text array ; *comments* : Text, Text array {; *} )
+      ES: **METHOD SET COMMENTS** ( *ruta* : Text, Text array ; *comentarios* : Text, Text array {; *Operador*} )
+
+### Drag and Drop\drop-position.md
+  [es] Drop position — A. TYPES MISSING/TRANSLATED
+      EN: **Drop position** ( { *columnNumber* : Integer } ) : Integer<br/>**Drop position** ( { *pictPosY* : Integer } ) : Integer
+      ES: **Drop position** ( colNum | posXImagen ) : Integer
+  [pt] Drop position — A. TYPES MISSING/TRANSLATED
+      EN: **Drop position** ( { *columnNumber* : Integer } ) : Integer<br/>**Drop position** ( { *pictPosY* : Integer } ) : Integer
+      PT: **Drop position** ( colNum|posYimagem ) : Integer
+
+### Entry Control\get-highlight.md
+  [pt] GET HIGHLIGHT — A. TYPES MISSING/TRANSLATED
+      EN: **GET HIGHLIGHT** ( {* ;} *object* : Variable, Field, any ; *startSel* : Integer ; *endSel* : Integer )
+      PT: **GET HIGHLIGHT** ( {*Objeto* : * ;} *area* : Field, Variable, any ; *inicioSel* : Integer ; *fimSel* : Integer )
+
+### Form Events\execute-method-in-subform.md
+  [fr] EXECUTE METHOD IN SUBFORM — A. TYPES MISSING/TRANSLATED
+      EN: **EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; *return* : Variable {; *...param* : Expression}} )<br/>**EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; * {; *...param* : Expression}} )
+      FR: **EXECUTE METHOD IN SUBFORM** ( *objetSousForm* ; *nomMéthode* {; *retour* {; *param*} {; *param2* ; ... ; *paramN*}} )
+  [es] EXECUTE METHOD IN SUBFORM — B. MINOR STRUCTURE
+      EN: **EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; *return* : Variable {; *...param* : Expression}} )<br/>**EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; * {; *...param* : Expression}} )
+      ES: **EXECUTE METHOD IN SUBFORM** ( *objetoSubForm* : Text ; *nomMetodo* : Object, Text ; *retorno* : Variable {; ...*param* : Expression} )<br/>**EXECUTE METHOD IN SUBFORM** ( *objetoSubForm* : Text ; *nomMetodo* : Object, Text ; * {; ...*param* : Expression} )
+  [ja] EXECUTE METHOD IN SUBFORM — B. MINOR STRUCTURE
+      EN: **EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; *return* : Variable {; *...param* : Expression}} )<br/>**EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; * {; *...param* : Expression}} )
+      JA: **EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text ; *return* : Variable {; ...*param* : Expression} )<br/>**EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text ; * {; ...*param* : Expression} )
+  [pt] EXECUTE METHOD IN SUBFORM — B. MINOR STRUCTURE
+      EN: **EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; *return* : Variable {; *...param* : Expression}} )<br/>**EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text {; * {; *...param* : Expression}} )
+      PT: **EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text ; *return* : Variable {; ...*param* : Expression} )<br/>**EXECUTE METHOD IN SUBFORM** ( *subformObject* : Text ; *formula* : Object, Text ; * {; ...*param* : Expression} )
+
+### Forms\form-get-current-page.md
+  [es] FORM Get current page — B. MINOR STRUCTURE
+      EN: **FORM Get current page** ({ * }) : Integer
+      ES: **FORM Get current page** ( * ) : Integer
+  [fr] FORM Get current page — B. MINOR STRUCTURE
+      EN: **FORM Get current page** ({ * }) : Integer
+      FR: **FORM Get current page** {( * )} : Integer
+  [ja] FORM Get current page — B. MINOR STRUCTURE
+      EN: **FORM Get current page** ({ * }) : Integer
+      JA: **FORM Get current page** ( * ) : Integer
+  [pt] FORM Get current page — B. MINOR STRUCTURE
+      EN: **FORM Get current page** ({ * }) : Integer
+      PT: **FORM Get current page** ( * ) : Integer
+
+### Forms\form-get-entry-order.md
+  [es] FORM GET ENTRY ORDER — A. TYPES MISSING/TRANSLATED
+      EN: **FORM GET ENTRY ORDER** ( *objectNames* : Text array {; *pageNumber* : Integer } )<br/>**FORM GET ENTRY ORDER** ( *objectNames* : Text array {; *} )
+      ES: **FORM GET ENTRY ORDER** ( *nomObjetos* : Text array {; numPag | * } )
+  [pt] FORM GET ENTRY ORDER — A. TYPES MISSING/TRANSLATED
+      EN: **FORM GET ENTRY ORDER** ( *objectNames* : Text array {; *pageNumber* : Integer } )<br/>**FORM GET ENTRY ORDER** ( *objectNames* : Text array {; *} )
+      PT: **FORM GET ENTRY ORDER** ( *objectNames* : Text array {; numPagina | * } )
+
+### Forms\form-get-objects.md
+  [fr] FORM GET OBJECTS — A. TYPES MISSING/TRANSLATED
+      EN: **FORM GET OBJECTS** ( *objectsArray* : Text array {; *variablesArray* : Pointer array {; *pagesArray* : Integer array}} {; *formPageOption* : Integer } )
+      FR: **FORM GET OBJECTS** ( *tabObjets* {; *tabVariables* {; *tabPages*}} {; *optionPage* } )<br/>**FORM GET OBJECTS** ( *tabObjets* {; *tabVariables* {; *tabPages*}} {; *} )
+  [ja] FORM GET OBJECTS — A. TYPES MISSING/TRANSLATED
+      EN: **FORM GET OBJECTS** ( *objectsArray* : Text array {; *variablesArray* : Pointer array {; *pagesArray* : Integer array}} {; *formPageOption* : Integer } )
+      JA: **FORM GET OBJECTS** ( *objectsArray* : Text array {; *variablesArray* : Pointer array {; *pagesArray* : Integer array}} {; *formPageOption* : 倍長整数, 演算子} )<br/>**FORM GET OBJECTS** ( *objectsArray* : Text array {; *variablesArray* : Pointer array {; *pagesArray* : Integer array}} {; *} )
+
+### Forms\form-set-input.md
+  [es] FORM SET INPUT — B. MINOR STRUCTURE
+      EN: **FORM SET INPUT** ( {*aTable* : Table ;} *form* : Text, Object {; *userForm* : Text} {; *} )
+      ES: **FORM SET INPUT** ( {*tabla* : Table ;} *form* : Text, Object {; *formUsuario* : Text {; *}} )
+  [ja] FORM SET INPUT — B. MINOR STRUCTURE
+      EN: **FORM SET INPUT** ( {*aTable* : Table ;} *form* : Text, Object {; *userForm* : Text} {; *} )
+      JA: **FORM SET INPUT** ( {*aTable* : Table ;} *form* : Text, Object {; *userForm* : Text {; *}} )
+  [pt] FORM SET INPUT — B. MINOR STRUCTURE
+      EN: **FORM SET INPUT** ( {*aTable* : Table ;} *form* : Text, Object {; *userForm* : Text} {; *} )
+      PT: **FORM SET INPUT** ( {*tabela* : Table ;} *formulario* : Text, Object {; *formUsuario* : Text {; *}} )
+
+### Graphs\graph.md
+  [es] GRAPH — A. TYPES MISSING/TRANSLATED
+      EN: **GRAPH** ( *graphPicture* : Picture ; *graphNumber* : Integer ; *xLabels* : Array {; *...yElements* : Array} )<br/>**GRAPH** ( *graphPicture* : Picture ; *graphSettings* : Object ; *xLabels* : Array {; *...yElements* : Array} )
+      ES: **GRAPH** ( *grafImagen* : Picture ; *grafNum* : Integer, Object ; *xCategorias* : Array {; *...yValores* : Array} )
+  [fr] GRAPH — A. TYPES MISSING/TRANSLATED
+      EN: **GRAPH** ( *graphPicture* : Picture ; *graphNumber* : Integer ; *xLabels* : Array {; *...yElements* : Array} )<br/>**GRAPH** ( *graphPicture* : Picture ; *graphSettings* : Object ; *xLabels* : Array {; *...yElements* : Array} )
+      FR: **GRAPH** ( *graphImage* ; *graphNum*  ; *xCatégories* {; *zValeurs*} {; *zValeurs2* ; ... ; *zValeursN*} )<br/>**GRAPH** ( *graphImage* ; *graphParams* ; *xCatégories* {; *zValeurs*} {; *zValeurs2* ; ... ; *zValeursN*} )
+  [ja] GRAPH — A. TYPES MISSING/TRANSLATED
+      EN: **GRAPH** ( *graphPicture* : Picture ; *graphNumber* : Integer ; *xLabels* : Array {; *...yElements* : Array} )<br/>**GRAPH** ( *graphPicture* : Picture ; *graphSettings* : Object ; *xLabels* : Array {; *...yElements* : Array} )
+      JA: **GRAPH** ( *graphArea* : Picture ; *graphNumber* : Integer, Object ; *xLabels* : Array {; *...yElements* : Array} )
+  [pt] GRAPH — A. TYPES MISSING/TRANSLATED
+      EN: **GRAPH** ( *graphPicture* : Picture ; *graphNumber* : Integer ; *xLabels* : Array {; *...yElements* : Array} )<br/>**GRAPH** ( *graphPicture* : Picture ; *graphSettings* : Object ; *xLabels* : Array {; *...yElements* : Array} )
+      PT: **GRAPH** ( *grafArea* : Picture ; *grafNum* : Integer, Object ; *xCategorias* : Array {; *...yValores* : Array} )
+
+### Hierarchical Lists\delete-from-list.md
+  [fr] DELETE FROM LIST — A. TYPES MISSING/TRANSLATED
+      EN: **DELETE FROM LIST** ( * ; *list* : Text ; *itemRef* : Integer, Operator {; *} )<br/>**DELETE FROM LIST** ( *list* : Integer ; *itemRef* : Integer, Operator {; *} )
+      FR: **DELETE FROM LIST** ( {* ;} *liste* ; *réfElément* {; *} )<br/>**DELETE FROM LIST** ( * ; *liste* ; * {; *} )
+
+### Hierarchical Lists\get-list-item-font.md
+  [es] Get list item font — A. TYPES MISSING/TRANSLATED
+      EN: **Get list item font** ( * ; *list* : Text ; *itemRef* : Integer, Operator ) : Text<br/>**Get list item font** ( *list* : Integer ; *itemRef* : Integer, Operator ) : Text
+      ES: **Get list item font** ( {* ;} *lista* : Integer, Text ; refElem | * ) : Text
+  [fr] Get list item font — A. TYPES MISSING/TRANSLATED
+      EN: **Get list item font** ( * ; *list* : Text ; *itemRef* : Integer, Operator ) : Text<br/>**Get list item font** ( *list* : Integer ; *itemRef* : Integer, Operator ) : Text
+      FR: **Get list item font** ( {* ;} *liste* ; *refElément* ) : Text<br/>**Get list item font** ( * ; *liste* ; * ) : Text
+  [ja] Get list item font — A. TYPES MISSING/TRANSLATED
+      EN: **Get list item font** ( * ; *list* : Text ; *itemRef* : Integer, Operator ) : Text<br/>**Get list item font** ( *list* : Integer ; *itemRef* : Integer, Operator ) : Text
+      JA: **Get list item font** ( {* ;} *list* : Integer, Text ; *itemRef* : 倍長整数, 演算子 ) : Text<br/>**Get list item font** ( * ; *list* : Integer, Text ; * ) : Text
+  [pt] Get list item font — A. TYPES MISSING/TRANSLATED
+      EN: **Get list item font** ( * ; *list* : Text ; *itemRef* : Integer, Operator ) : Text<br/>**Get list item font** ( *list* : Integer ; *itemRef* : Integer, Operator ) : Text
+      PT: **Get list item font** ( {* ;} *lista* : Integer, Text ; refElem | *  ) : Text
+
+### Hierarchical Lists\get-list-item-icon.md
+  [es] GET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Operator, Integer ; *icon* : Picture )<br/>**GET LIST ITEM ICON** ( *list* : Integer ; *itemRef* : Operator, Integer ; *icon* : Picture )
+      ES: **GET LIST ITEM ICON** ( {* ;} *lista* : Integer, Text ; refElem | * ; *icono* : Picture )
+  [fr] GET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Operator, Integer ; *icon* : Picture )<br/>**GET LIST ITEM ICON** ( *list* : Integer ; *itemRef* : Operator, Integer ; *icon* : Picture )
+      FR: **GET LIST ITEM ICON** ( {* ;} *liste* ; *refElément* ; *icône* )<br/>**GET LIST ITEM ICON** ( {* ;} *liste* ; * ; *icône* )
+  [ja] GET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Operator, Integer ; *icon* : Picture )<br/>**GET LIST ITEM ICON** ( *list* : Integer ; *itemRef* : Operator, Integer ; *icon* : Picture )
+      JA: **GET LIST ITEM ICON** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ; *icon* : Picture )<br/>**GET LIST ITEM ICON** ( * ; *list* : Integer, Text ; * ; *icon* : Picture
+  [pt] GET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Operator, Integer ; *icon* : Picture )<br/>**GET LIST ITEM ICON** ( *list* : Integer ; *itemRef* : Operator, Integer ; *icon* : Picture )
+      PT: **GET LIST ITEM ICON** ( {* ;} *lista* : Integer, Text ; refElem | * ; *icone* : Picture )
+
+### Hierarchical Lists\get-list-item-parameter-arrays.md
+  [fr] GET LIST ITEM PARAMETER ARRAYS — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PARAMETER ARRAYS** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *arrSelection* : Text array {; *arrValues* : Text array} )<br/>**GET LIST ITEM PARAMETER ARRAYS** ( *list* : Integer ; *itemRef* : Integer, Operator ; *arrSelection* : Text array {; *arrValues* : Text array} )
+      FR: **GET LIST ITEM PARAMETER ARRAYS** ( {* ;} *liste* ; *refElément* ; *tabSélecteurs* {; *tabValeurs*} )<br/>**GET LIST ITEM PARAMETER ARRAYS** ( * ; *liste* ; * ; *tabSélecteurs* {; *tabValeurs*} )
+  [ja] GET LIST ITEM PARAMETER ARRAYS — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PARAMETER ARRAYS** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *arrSelection* : Text array {; *arrValues* : Text array} )<br/>**GET LIST ITEM PARAMETER ARRAYS** ( *list* : Integer ; *itemRef* : Integer, Operator ; *arrSelection* : Text array {; *arrValues* : Text array} )
+      JA: **GET LIST ITEM PARAMETER ARRAYS** ( {* ;} *list* : Integer, Text ; *itemRef* : 倍長整数, 演算子 ; *arrSelection* : Text array {; *arrValues* : Text array} )<br/>**GET LIST ITEM PARAMETER ARRAYS** ( * ; *list* : Integer, Text ; * ; *arrSelection* : Text array {; *arrValues* : Text array} )
+
+### Hierarchical Lists\get-list-item-parameter.md
+  [es] GET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )<br/>**GET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )
+      ES: **GET LIST ITEM PARAMETER** ( {* ;} *lista* : Integer, Text ; refElem | * ; *selector* : Text ; *valor* : Text, Boolean, Real )
+  [fr] GET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )<br/>**GET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )
+      FR: **GET LIST ITEM PARAMETER** ( {* ;} *liste* ; *refElément* ; *sélecteur* ; *valeur* )<br/>**GET LIST ITEM PARAMETER** ( * ; *liste* ; * ; *sélecteur* ; *valeur* )
+  [ja] GET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )<br/>**GET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )
+      JA: **GET LIST ITEM PARAMETER** ( {* ;} *list* : Integer, Text ; *itemRef* : 倍長整数, 演算子 ; *selector* : Text ; *value* : Text, Boolean, Real )<br/>**GET LIST ITEM PARAMETER** ( * ; *list* : Integer, Text ; * ; *selector* : Text ; *value* : Text, Boolean, Real )
+  [pt] GET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )<br/>**GET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Variable )
+      PT: **GET LIST ITEM PARAMETER** ( {* ;} *lista* : Integer, Text ; refElem | * ; *seletor* : Text ; *valor* : Text, Boolean, Real )
+
+### Hierarchical Lists\get-list-item-properties.md
+  [es] GET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<br/>*GET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )
+      ES: **GET LIST ITEM PROPERTIES** ( {* ;} *lista* : Integer, Text ; refElem | * ; *editable* : Boolean {; *estilos* : Integer {; *icono* : Text, Integer {; *color* : Integer}}} )
+  [fr] GET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<br/>*GET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )
+      FR: **GET LIST ITEM PROPERTIES** ( {* ;} *liste* ; *refElément* ; *saisissable* {; *style* {; *icône* {; *couleur*}}} )<br/>**GET LIST ITEM PROPERTIES** ( * ; *liste* ; * ; *saisissable* {; *style* {; *icône* {; *couleur*}}} )
+  [ja] GET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<br/>*GET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )
+      JA: **GET LIST ITEM PROPERTIES** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<br/>**GET LIST ITEM PROPERTIES** ( * ; *list* : Integer, Text ; * ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )
+  [pt] GET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<br/>*GET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )
+      PT: **GET LIST ITEM PROPERTIES** ( {* ;} *lista* : Integer, Text ; refElem | * ; *editavel* : Boolean {; *estilos* : Integer {; *icone* : Text, Integer {; *cor* : Integer}}} )
+
+### Hierarchical Lists\get-list-item.md
+  [es] GET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM** ( * ; *list* : Text ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )<br/>**GET LIST ITEM** ( *list* : Integer ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )
+      ES: **GET LIST ITEM** ( {* ;} *lista* : Integer, Text ; posicionElem | * ; *refElem* : Integer ; *textoElem* : Text {; *sublista* : Integer ; *desplegada* : Boolean} )
+  [fr] GET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM** ( * ; *list* : Text ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )<br/>**GET LIST ITEM** ( *list* : Integer ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )
+      FR: **GET LIST ITEM** ( {* ;} *liste* ; *positionElém* ; *réfElément* ; *libelléElément* {; *sous_Liste* ; *déployée*} )<br/>**GET LIST ITEM** ( {* ;} *liste* ; * ; *réfElément* ; *libelléElément* {; *sous_Liste* ; *déployée*} )
+  [ja] GET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM** ( * ; *list* : Text ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )<br/>**GET LIST ITEM** ( *list* : Integer ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )
+      JA: **GET LIST ITEM** ( {* ;} *list* : Integer, Text ; *itemPos* : 演算子, 倍長整数 ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer ; *expanded* : Boolean} )<br/>**GET LIST ITEM** ( {* ;} *list* : Integer, Text ; * ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer ; *expanded* : Boolean} )
+  [pt] GET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **GET LIST ITEM** ( * ; *list* : Text ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )<br/>**GET LIST ITEM** ( *list* : Integer ; *itemPos* : Integer, Operator ; *itemRef* : Integer ; *itemText* : Text {; *sublist* : Integer } {; *expanded* : Boolean} )
+      PT: **GET LIST ITEM** ( {* ;} *lista* : Integer, Text ; posiçaoElem | *  ; *refElem* : Integer ; *textoElem* : Text {; *sublista* : Integer ; *expandida* : Boolean} )
+
+### Hierarchical Lists\insert-in-list.md
+  [es] INSERT IN LIST — A. TYPES MISSING/TRANSLATED
+      EN: **INSERT IN LIST** ( {* ;} *list* : Integer, Text ; *beforeItemRef* : Integer, Operator ; *itemText* : Text ; *itemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      ES: **INSERT IN LIST** ( {* ;} *lista* : Integer, Text ; antesElem | * ; *textoElem* : Text ; *refElem* : Integer {; *sublista* : Integer ; *desplegada* : Boolean} )
+  [fr] INSERT IN LIST — A. TYPES MISSING/TRANSLATED
+      EN: **INSERT IN LIST** ( {* ;} *list* : Integer, Text ; *beforeItemRef* : Integer, Operator ; *itemText* : Text ; *itemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      FR: **INSERT IN LIST** ( {* ;} *liste* ; *avantElément* ; *libelléElément* ; *réfElément* {; *sous_Liste* ; *déployée*} )<br/>**INSERT IN LIST** ( * ; *liste* ; * ; *libelléElément* ; *réfElément* {; *sous_Liste* ; *déployée*} )
+  [ja] INSERT IN LIST — A. TYPES MISSING/TRANSLATED
+      EN: **INSERT IN LIST** ( {* ;} *list* : Integer, Text ; *beforeItemRef* : Integer, Operator ; *itemText* : Text ; *itemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      JA: **INSERT IN LIST** ( {* ;} *list* : Integer, Text ; *beforeItemRef* : 倍長整数, 演算子 ; *itemText* : Text ; *itemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )<br/>**INSERT IN LIST** ( * ; *list* : Integer, Text ; * ; *itemText* : Text ; *itemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+  [pt] INSERT IN LIST — A. TYPES MISSING/TRANSLATED
+      EN: **INSERT IN LIST** ( {* ;} *list* : Integer, Text ; *beforeItemRef* : Integer, Operator ; *itemText* : Text ; *itemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      PT: **INSERT IN LIST** ( {* ;} *lista* : Integer, Text ; antesElem | *  ; *textoElem* : Text ; *refElem* : Integer {; *sublista* : Integer ; *expandida* : Boolean} )
+
+### Hierarchical Lists\list-item-parent.md
+  [es] List item parent — A. TYPES MISSING/TRANSLATED
+      EN: **List item parent** ( {* ;} *list* : Integer, Text ; *itemRef* : Integer, Operator ) : Integer
+      ES: **List item parent** ( {* ;} *lista* : Integer, Text ; refElem | * ) : Integer
+  [fr] List item parent — A. TYPES MISSING/TRANSLATED
+      EN: **List item parent** ( {* ;} *list* : Integer, Text ; *itemRef* : Integer, Operator ) : Integer
+      FR: **List item parent** ( {* ;} *liste* ; *refElément* ) : Integer<br/>**List item parent** ( * ; *liste* ; * ) : Integer
+  [ja] List item parent — A. TYPES MISSING/TRANSLATED
+      EN: **List item parent** ( {* ;} *list* : Integer, Text ; *itemRef* : Integer, Operator ) : Integer
+      JA: **List item parent** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ) : Integer<br/>**List item parent** ( * ; *list* : Integer, Text ; * ) : Integer
+  [pt] List item parent — A. TYPES MISSING/TRANSLATED
+      EN: **List item parent** ( {* ;} *list* : Integer, Text ; *itemRef* : Integer, Operator ) : Integer
+      PT: **List item parent** ( {* ;} *lista* : Integer, Text ; refElem | * ) : Integer
+
+### Hierarchical Lists\set-list-item-font.md
+  [es] SET LIST ITEM FONT — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM FONT** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *font* : Text, Integer )<br/>**SET LIST ITEM FONT** ( *list* : Integer ; *itemRef* : Integer, Operator ; *font* : Text, Integer )
+      ES: **SET LIST ITEM FONT** ( {* ;} *lista* : Integer, Text ; refElem | * ; *fuente* : Text, Integer )
+  [fr] SET LIST ITEM FONT — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM FONT** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *font* : Text, Integer )<br/>**SET LIST ITEM FONT** ( *list* : Integer ; *itemRef* : Integer, Operator ; *font* : Text, Integer )
+      FR: **SET LIST ITEM FONT** ( {* ;} *liste* ; *refElément * ; *police* )<br/>**SET LIST ITEM FONT** ( * ; *liste* ; * ; *police* )
+  [ja] SET LIST ITEM FONT — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM FONT** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *font* : Text, Integer )<br/>**SET LIST ITEM FONT** ( *list* : Integer ; *itemRef* : Integer, Operator ; *font* : Text, Integer )
+      JA: **SET LIST ITEM FONT** ( {* ;} *list* : Integer, Text ; *itemRef* : 倍長整数, 演算子 ; *font* : Text, Integer )<br/>**SET LIST ITEM FONT** ( * ; *list* : Integer, Text ; * ; *font* : Text, Integer )
+  [pt] SET LIST ITEM FONT — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM FONT** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *font* : Text, Integer )<br/>**SET LIST ITEM FONT** ( *list* : Integer ; *itemRef* : Integer, Operator ; *font* : Text, Integer )
+      PT: **SET LIST ITEM FONT** ( {* ;} *lista* : Integer, Text ; refElem | *  ; *fonte* : Text, Integer )
+
+### Hierarchical Lists\set-list-item-icon.md
+  [es] SET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )<br/>**SET LIST ITEM ICON** (*list* : Integer ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )
+      ES: **SET LIST ITEM ICON** ( {* ;} *lista* : Integer, Text ; refElem | * ; *icono* : Picture )
+  [fr] SET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )<br/>**SET LIST ITEM ICON** (*list* : Integer ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )
+      FR: **SET LIST ITEM ICON** ( {* ;} *liste* ; *réfElément* ; *icône* )<br/>**SET LIST ITEM ICON** ( * ; *liste* ; * ; *icône* )
+  [ja] SET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )<br/>**SET LIST ITEM ICON** (*list* : Integer ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )
+      JA: **SET LIST ITEM ICON** ( {* ;} *list* : Integer, Text ; itemRef | * ; *icon* : Picture )
+  [pt] SET LIST ITEM ICON — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM ICON** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )<br/>**SET LIST ITEM ICON** (*list* : Integer ; *itemRef* : Integer, Operator ; *icon* : Picture, Pointer )
+      PT: **SET LIST ITEM ICON** ( {* ;} *lista* : Integer, Text ; refElem | *  ; *icone* : Picture )
+
+### Hierarchical Lists\set-list-item-parameter.md
+  [es] SET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )<br/>**SET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )
+      ES: **SET LIST ITEM PARAMETER** ( {* ;} *lista* : Integer, Text ; refElem | * ; *selector* : Text ; *valor* : Text, Boolean, Real )
+  [fr] SET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )<br/>**SET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )
+      FR: **SET LIST ITEM PARAMETER** ( {* ;} *liste* ; *refElément* ; *sélecteur* ; *valeur* )<br/>**SET LIST ITEM PARAMETER** ( * ; *liste* ; * ; *sélecteur* ; *valeur* )
+  [ja] SET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )<br/>**SET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )
+      JA: **SET LIST ITEM PARAMETER** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ; *selector* : Text ; *value* : Text, Boolean, Real )<br/>**SET LIST ITEM PARAMETER** ( * ; *list* : Integer, Text ; * ; *selector* : Text ; *value* : Text, Boolean, Real )
+  [pt] SET LIST ITEM PARAMETER — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PARAMETER** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )<br/>**SET LIST ITEM PARAMETER** ( *list* : Integer ; *itemRef* : Integer, Operator ; *selector* : Text ; *value* : Text, Boolean, Real )
+      PT: **SET LIST ITEM PARAMETER** ( {* ;} *lista* : Integer, Text ; refElem | * ; *seletor* : Text ; *valor* : Text, Boolean, Real )
+
+### Hierarchical Lists\set-list-item-properties.md
+  [es] SET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )
+      ES: **SET LIST ITEM PROPERTIES** ( {* ;} *lista* : Integer, Text ; refElem | * ; *editable* : Boolean ; *estilos* : Integer {; *icono* : Text, Integer {; *color* : Integer}} )
+  [fr] SET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )
+      FR: **SET LIST ITEM PROPERTIES** ( {* ;} *liste* ; *refElément* ; *saisissable* ; *style* {; *icône* {; *couleur*}} )<br/>**SET LIST ITEM PROPERTIES** ( * ; *liste* ; * ; *saisissable* ; *style* {; *icône* {; *couleur*}} )
+  [ja] SET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )
+      JA: **SET LIST ITEM PROPERTIES** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( * ; *list* : Integer, Text ; * ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )
+  [pt] SET LIST ITEM PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )
+      PT: **SET LIST ITEM PROPERTIES** ( {* ;} *lista* : Integer, Text ; refElem | * ; *editavel* : Boolean ; *estilos* : Integer {; *icone* : Text, Integer {; *cor* : Integer}} )
+
+### Hierarchical Lists\set-list-item.md
+  [es] SET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM** ( * ; *list* : Text ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )<br/>**SET LIST ITEM** ( *list* : Integer ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      ES: **SET LIST ITEM** ( {* ;} *lista* : Integer, Text ; refElem | * ; *textElem* : Text ; *nuevaRef* : Integer {; *sublista* : Integer ; *desplegada* : Boolean} )
+  [fr] SET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM** ( * ; *list* : Text ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )<br/>**SET LIST ITEM** ( *list* : Integer ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      FR: **SET LIST ITEM** ( {* ;} *liste* ; *refElément* ; *libelléElément* ; *nouvelRéf* {; *sous_Liste* ; *déployée*} )<br/>**SET LIST ITEM** ( * ; *liste* ; * ; *libelléElément* ; *nouvelRéf* {; *sous_Liste* ; *déployée*} )
+  [ja] SET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM** ( * ; *list* : Text ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )<br/>**SET LIST ITEM** ( *list* : Integer ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      JA: **SET LIST ITEM** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )<br/>**SET LIST ITEM** ( * ; *list* : Integer, Text ; * ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+  [pt] SET LIST ITEM — A. TYPES MISSING/TRANSLATED
+      EN: **SET LIST ITEM** ( * ; *list* : Text ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )<br/>**SET LIST ITEM** ( *list* : Integer ; *itemRef* : Integer,  Operator ; *newItemText* : Text ; *newItemRef* : Integer {; *sublist* : Integer ; *expanded* : Boolean} )
+      PT: **SET LIST ITEM** ( {* ;} *lista* : Integer, Text ; refElem | * ; *novoText* : Text ; *novoNum* : Integer {; *sublista* : Integer ; *expandida* : Boolean} )
+
+### Hierarchical Lists\sort-list.md
+  [fr] SORT LIST — B. MINOR STRUCTURE
+      EN: **SORT LIST** ( *list* : Integer {; order : >, < } )
+      FR: **SORT LIST** ( *liste* : Integer {; *order* : >, < } )
+
+### Interruptions\method-called-on-error.md
+  [es] Method called on error — B. MINOR STRUCTURE
+      EN: **Method called on error** ( {*scope* : Integer} ) : Text
+      ES: **Method called on error** ( *alcance* : Integer ) : Text
+  [ja] Method called on error — B. MINOR STRUCTURE
+      EN: **Method called on error** ( {*scope* : Integer} ) : Text
+      JA: **Method called on error** ( *scope* : Integer ) : Text
+  [pt] Method called on error — B. MINOR STRUCTURE
+      EN: **Method called on error** ( {*scope* : Integer} ) : Text
+      PT: **Method called on error** ( *scope* : Integer ) : Text
+
+### Interruptions\throw.md
+  [fr] throw — A. TYPES MISSING/TRANSLATED
+      EN: **throw** ( *errorCode* : Integer {; *description* : Text} )<br/>**throw** ({ *errorObj* : Object })
+      FR: **throw** ( *errorCode* {; *description*} ) <br/>
+*throw* {( *errorObj* )}
+  [es] throw — B. MINOR STRUCTURE
+      EN: **throw** ( *errorCode* : Integer {; *description* : Text} )<br/>**throw** ({ *errorObj* : Object })
+      ES: **throw** ( *errorCode* : Integer {; *description* : Text} )<br/>**throw** ( *errorObj* : Object )
+  [ja] throw — B. MINOR STRUCTURE
+      EN: **throw** ( *errorCode* : Integer {; *description* : Text} )<br/>**throw** ({ *errorObj* : Object })
+      JA: **throw** ( *errorCode* : Integer {; *description* : Text} )<br/>**throw** ( *errorObj* : Object )
+  [pt] throw — B. MINOR STRUCTURE
+      EN: **throw** ( *errorCode* : Integer {; *description* : Text} )<br/>**throw** ({ *errorObj* : Object })
+      PT: **throw** ( *errorCode* : Integer {; *description* : Text} )<br/>**throw** ( *errorObj* : Object )
+
+### Language\copy-parameters.md
+  [es] Copy parameters — B. MINOR STRUCTURE
+      EN: **Copy parameters** ({ *startFrom* : Integer }) : Collection
+      ES: **Copy parameters** ( *inicioDesde* : Integer ) : Collection
+  [ja] Copy parameters — B. MINOR STRUCTURE
+      EN: **Copy parameters** ({ *startFrom* : Integer }) : Collection
+      JA: **Copy parameters** ( *startFrom* : Integer ) : Collection
+  [pt] Copy parameters — B. MINOR STRUCTURE
+      EN: **Copy parameters** ({ *startFrom* : Integer }) : Collection
+      PT: **Copy parameters** ( *inicioDesde* : Integer ) : Collection
+
+### Language\execute-method.md
+  [es] EXECUTE METHOD — A. TYPES MISSING/TRANSLATED
+      EN: **EXECUTE METHOD** ( *methodName* : Text )<br/>**EXECUTE METHOD** ( *methodName* : Text ; *result* : Variable {; *...param* : Expression} )<br/>**EXECUTE METHOD** ( *methodName* : Text ; * {; *...param* : Expression} )
+      ES: **EXECUTE METHOD** ( *nomMetodo* : Text ; *result* : Variable {; ...*param* : Expression} )<br/>**EXECUTE METHOD** ( *nomMetodo* : Text ; * {; ...*param* : Expression} )
+  [fr] EXECUTE METHOD — A. TYPES MISSING/TRANSLATED
+      EN: **EXECUTE METHOD** ( *methodName* : Text )<br/>**EXECUTE METHOD** ( *methodName* : Text ; *result* : Variable {; *...param* : Expression} )<br/>**EXECUTE METHOD** ( *methodName* : Text ; * {; *...param* : Expression} )
+      FR: **EXECUTE METHOD** ( *nomMéthode* {; *résultat* {; *param*}}{; *param2* ; ... ; *paramN*} )
+  [ja] EXECUTE METHOD — A. TYPES MISSING/TRANSLATED
+      EN: **EXECUTE METHOD** ( *methodName* : Text )<br/>**EXECUTE METHOD** ( *methodName* : Text ; *result* : Variable {; *...param* : Expression} )<br/>**EXECUTE METHOD** ( *methodName* : Text ; * {; *...param* : Expression} )
+      JA: **EXECUTE METHOD** ( *methodName* : Text ; *result* : Variable {; ...*param* : Expression} )<br/>**EXECUTE METHOD** ( *methodName* : Text ; * {; ...*param* : Expression} )
+  [pt] EXECUTE METHOD — A. TYPES MISSING/TRANSLATED
+      EN: **EXECUTE METHOD** ( *methodName* : Text )<br/>**EXECUTE METHOD** ( *methodName* : Text ; *result* : Variable {; *...param* : Expression} )<br/>**EXECUTE METHOD** ( *methodName* : Text ; * {; *...param* : Expression} )
+      PT: **EXECUTE METHOD** ( *methodName* : Text ; *result* : Variable {; ...*param* : Expression} )<br/>**EXECUTE METHOD** ( *methodName* : Text ; * {; ...*param* : Expression} )
+
+### List Box\listbox-set-table-source.md
+  [es] LISTBOX SET TABLE SOURCE — A. TYPES MISSING/TRANSLATED
+      EN: **LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *selName* : Text {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *selName* : Text {; *highlightName* : Text} )
+      ES: **LISTBOX SET TABLE SOURCE** ( * ; *objeto* : Text ; numTabla | tempo {; *nomSel* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *objeto* : Field, Variable ; numTabla | tempo {; *nomSel* : Text} )
+  [fr] LISTBOX SET TABLE SOURCE — A. TYPES MISSING/TRANSLATED
+      EN: **LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *selName* : Text {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *selName* : Text {; *highlightName* : Text} )
+      FR: **LISTBOX SET TABLE SOURCE** ( {* ;} *objet* ; *numTable* {; *nomSurlignage*} )<br/>**LISTBOX SET TABLE SOURCE** ( {* ;} *objet* ; *tempo* {; *nomSurlignage*} )
+  [ja] LISTBOX SET TABLE SOURCE — A. TYPES MISSING/TRANSLATED
+      EN: **LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *selName* : Text {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *selName* : Text {; *highlightName* : Text} )
+      JA: **LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; tableNum | name {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; tableNum | name {; *highlightName* : Text} )
+  [pt] LISTBOX SET TABLE SOURCE — A. TYPES MISSING/TRANSLATED
+      EN: **LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *tableNum* : Integer {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( * ; *object* : Text ; *selName* : Text {; *highlightName* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *object* : Variable ; *selName* : Text {; *highlightName* : Text} )
+      PT: **LISTBOX SET TABLE SOURCE** ( * ; *objeto* : Text ; numTabela | tempo  {; *nomeSelecionado* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *objeto* : Field, Variable ; numTabela | tempo  {; *nomeSelecionado* : Text} )
+
+### Menus\count-menus.md
+  [es] Count menus — B. MINOR STRUCTURE
+      EN: **Count menus** ( {*process* : Integer} ) : Integer
+      ES: **Count menus** ( *proceso* : Integer ) : Integer
+  [ja] Count menus — B. MINOR STRUCTURE
+      EN: **Count menus** ( {*process* : Integer} ) : Integer
+      JA: **Count menus** ( *process* : Integer ) : Integer
+  [pt] Count menus — B. MINOR STRUCTURE
+      EN: **Count menus** ( {*process* : Integer} ) : Integer
+      PT: **Count menus** ( *processo* : Integer ) : Integer
+
+### Menus\get-menu-bar-reference.md
+  [es] Get menu bar reference — B. MINOR STRUCTURE
+      EN: **Get menu bar reference** ( { *process* : Integer } ) : Text
+      ES: **Get menu bar reference** ( *proceso* : Integer ) : Text
+  [ja] Get menu bar reference — B. MINOR STRUCTURE
+      EN: **Get menu bar reference** ( { *process* : Integer } ) : Text
+      JA: **Get menu bar reference** ( *process* : Integer ) : Text
+  [pt] Get menu bar reference — B. MINOR STRUCTURE
+      EN: **Get menu bar reference** ( { *process* : Integer } ) : Text
+      PT: **Get menu bar reference** ( *processo* : Integer ) : Text
+
+### Menus\menu-selected.md
+  [es] Menu selected — B. MINOR STRUCTURE
+      EN: **Menu selected** ( {*subMenu* : Text} ) : Integer
+      ES: **Menu selected** ( *subMenu* : Text ) : Integer
+  [ja] Menu selected — B. MINOR STRUCTURE
+      EN: **Menu selected** ( {*subMenu* : Text} ) : Integer
+      JA: **Menu selected** ( *subMenu* : Text ) : Integer
+  [pt] Menu selected — B. MINOR STRUCTURE
+      EN: **Menu selected** ( {*subMenu* : Text} ) : Integer
+      PT: **Menu selected** ( *subMenu* : Text ) : Integer
+
+### Objects (Forms)\object-get-name.md
+  [es] OBJECT Get name — B. MINOR STRUCTURE
+      EN: **OBJECT Get name** ({ *selector* : Integer }) : Text
+      ES: **OBJECT Get name** ( *selector* : Integer ) : Text
+  [ja] OBJECT Get name — B. MINOR STRUCTURE
+      EN: **OBJECT Get name** ({ *selector* : Integer }) : Text
+      JA: **OBJECT Get name** ( *selector* : Integer ) : Text
+  [pt] OBJECT Get name — B. MINOR STRUCTURE
+      EN: **OBJECT Get name** ({ *selector* : Integer }) : Text
+      PT: **OBJECT Get name** ( *seletor* : Integer ) : Text
+
+### Objects (Forms)\object-get-pointer.md
+  [es] OBJECT Get pointer — B. MINOR STRUCTURE
+      EN: **OBJECT Get pointer** ( {*selector* : Integer {; *objectName* : Text {; *subformName* : Text}}} ) : Pointer
+      ES: **OBJECT Get pointer** ( *selector* : Integer {; *nomObjeto* : Text {; *nomSubFormulario* : Text}}) : Pointer
+  [ja] OBJECT Get pointer — B. MINOR STRUCTURE
+      EN: **OBJECT Get pointer** ( {*selector* : Integer {; *objectName* : Text {; *subformName* : Text}}} ) : Pointer
+      JA: **OBJECT Get pointer** ( *selector* : Integer {; *objectName* : Text {; *subformName* : Text}}) : Pointer
+  [pt] OBJECT Get pointer — B. MINOR STRUCTURE
+      EN: **OBJECT Get pointer** ( {*selector* : Integer {; *objectName* : Text {; *subformName* : Text}}} ) : Pointer
+      PT: **OBJECT Get pointer** ( *seletor* : Integer {; *nomeObjeto* : Text {; *nomeSubformulario* : Text}}) : Pointer
+
+### Objects (Forms)\object-set-action.md
+  [es] OBJECT SET ACTION — A. TYPES MISSING/TRANSLATED
+      EN: **OBJECT SET ACTION** ( * ; *object* : Text ; *action* : Text )<br/>**OBJECT SET ACTION** ( *object* : Variable, Field ; *action* : Text )
+      ES: **OBJECT SET ACTION** ( {*sup* : * ;} *objeto* : any ; *accion* : Text )
+
+### Objects (Language)\ob-copy.md
+  [ja] OB Copy — B. MINOR STRUCTURE
+      EN: **OB Copy** ( *object* : Object {; resolvePtrs : Boolean} )  : Object<br/>**OB Copy** ( *object* : Object {; *option* : Integer {; *groupWith* : Collection, Object}} )  : Object
+      JA: **OB Copy** ( *object* : Object {; *resolvePtrs* : Boolean} )  : Object<br/>**OB Copy** ( *object* : Object {; *option* : Integer {; *groupWith* : Collection, Object}} )  : Object
+
+### Pictures\get-picture-from-library.md
+  [es] GET PICTURE FROM LIBRARY — A. TYPES MISSING/TRANSLATED
+      EN: **GET PICTURE FROM LIBRARY** ( *picRef* : Integer ; *picture* : Picture )<br/>**GET PICTURE FROM LIBRARY** ( *picName* : Text ; *picture* : Picture )
+      ES: **GET PICTURE FROM LIBRARY** ( refImag | nomImag ; *imagen* : Picture )
+  [fr] GET PICTURE FROM LIBRARY — A. TYPES MISSING/TRANSLATED
+      EN: **GET PICTURE FROM LIBRARY** ( *picRef* : Integer ; *picture* : Picture )<br/>**GET PICTURE FROM LIBRARY** ( *picName* : Text ; *picture* : Picture )
+      FR: **GET PICTURE FROM LIBRARY** ( *refImage * ; *image* )<br/>**GET PICTURE FROM LIBRARY** ( *nomImage* ; *image* )
+  [pt] GET PICTURE FROM LIBRARY — A. TYPES MISSING/TRANSLATED
+      EN: **GET PICTURE FROM LIBRARY** ( *picRef* : Integer ; *picture* : Picture )<br/>**GET PICTURE FROM LIBRARY** ( *picName* : Text ; *picture* : Picture )
+      PT: **GET PICTURE FROM LIBRARY** ( refImag | nomImag ; *imagem* : Picture )
+
+### Pictures\remove-picture-from-library.md
+  [es] REMOVE PICTURE FROM LIBRARY — A. TYPES MISSING/TRANSLATED
+      EN: **REMOVE PICTURE FROM LIBRARY** ( *picRef* : Integer )<br/>**REMOVE PICTURE FROM LIBRARY** ( *picName* : Text )
+      ES: **REMOVE PICTURE FROM LIBRARY** ( refImag | nomImag )
+  [pt] REMOVE PICTURE FROM LIBRARY — A. TYPES MISSING/TRANSLATED
+      EN: **REMOVE PICTURE FROM LIBRARY** ( *picRef* : Integer )<br/>**REMOVE PICTURE FROM LIBRARY** ( *picName* : Text )
+      PT: **REMOVE PICTURE FROM LIBRARY** ( refImag | nomImag )
+
+### Printing\page-break.md
+  [fr] PAGE BREAK — A. TYPES MISSING/TRANSLATED
+      EN: **PAGE BREAK** ({ * })<br/>**PAGE BREAK** ({ > : > })
+      FR: **PAGE BREAK** {( * )}<br/>**PAGE BREAK** {( > )}
+
+### Printing\print-label.md
+  [es] PRINT LABEL — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT LABEL** ( { *aTable* : Table }{; > : >}{; * } )<br/>**PRINT LABEL** ({ *aTable* : Table }{; *document* : Text {; > : >}}{; * } )
+      ES: **PRINT LABEL** ( {*tabla* : Table }{;}{ *doc* : Text {; * | >}} )
+  [fr] PRINT LABEL — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT LABEL** ( { *aTable* : Table }{; > : >}{; * } )<br/>**PRINT LABEL** ({ *aTable* : Table }{; *document* : Text {; > : >}}{; * } )
+      FR: **PRINT LABEL** ( *laTable* {; *nomFichier* {; * }} )<br/>**PRINT LABEL** ( *laTable*{; *nomFichier* {; >}} )
+  [ja] PRINT LABEL — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT LABEL** ( { *aTable* : Table }{; > : >}{; * } )<br/>**PRINT LABEL** ({ *aTable* : Table }{; *document* : Text {; > : >}}{; * } )
+      JA: **PRINT LABEL** ( *aTable* : Table {; *document* : Text {; * }} )<br/>**PRINT LABEL** ( *aTable* : Table {; *document* : Text {; >}} )
+  [pt] PRINT LABEL — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT LABEL** ( { *aTable* : Table }{; > : >}{; * } )<br/>**PRINT LABEL** ({ *aTable* : Table }{; *document* : Text {; > : >}}{; * } )
+      PT: **PRINT LABEL** ( {*tabela* : Table }{;}{ *documento* : Text {; *|>}} )
+
+### Printing\print-record.md
+  [es] PRINT RECORD — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT RECORD** ( *aTable* : Table {; *} )<br/>**PRINT RECORD** ( *aTable* : Table {; > : > } )
+      ES: **PRINT RECORD** ( {*tabla* : Table}{;}{* | >} )
+  [fr] PRINT RECORD — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT RECORD** ( *aTable* : Table {; *} )<br/>**PRINT RECORD** ( *aTable* : Table {; > : > } )
+      FR: **PRINT RECORD** ( *laTable* {; * } )<br/>**PRINT RECORD** ( *laTable {; >} )
+  [ja] PRINT RECORD — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT RECORD** ( *aTable* : Table {; *} )<br/>**PRINT RECORD** ( *aTable* : Table {; > : > } )
+      JA: **PRINT RECORD** ( *aTable* : Table {; *} )<br/>**PRINT RECORD** ( *aTable* : Table {; >} )
+  [pt] PRINT RECORD — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT RECORD** ( *aTable* : Table {; *} )<br/>**PRINT RECORD** ( *aTable* : Table {; > : > } )
+      PT: **PRINT RECORD** ( {*tabela* : Table}{;}{* | > } )
+
+### Printing\print-selection.md
+  [es] PRINT SELECTION — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT SELECTION** ( {*aTable* : Table} {; *} )<br/>**PRINT SELECTION** ( {*aTable* : Table} {; > : >} )
+      ES: **PRINT SELECTION** ( {*tabla* : Table}{;}{* | >} )
+  [pt] PRINT SELECTION — A. TYPES MISSING/TRANSLATED
+      EN: **PRINT SELECTION** ( {*aTable* : Table} {; *} )<br/>**PRINT SELECTION** ( {*aTable* : Table} {; > : >} )
+      PT: **PRINT SELECTION** ( {*tabela* : Table}{;}{* | > } )
+  [fr] PRINT SELECTION — B. MINOR STRUCTURE
+      EN: **PRINT SELECTION** ( {*aTable* : Table} {; *} )<br/>**PRINT SELECTION** ( {*aTable* : Table} {; > : >} )
+      FR: **PRINT SELECTION** ( {*laTable* : Table} {; *} )<br/>**PRINT SELECTION** ( {*laTable* : Table} {; > : >} )
+  [ja] PRINT SELECTION — B. MINOR STRUCTURE
+      EN: **PRINT SELECTION** ( {*aTable* : Table} {; *} )<br/>**PRINT SELECTION** ( {*aTable* : Table} {; > : >} )
+      JA: **PRINT SELECTION** ( *aTable* : Table {; *} )<br/>**PRINT SELECTION** ( *aTable* : Table {; > : >} )
+
+### Process (Communications)\new-signal.md
+  [fr] New signal — B. MINOR STRUCTURE
+      EN: **New signal** ({  *description* : Text }) : 4D.Signal
+      FR: **New signal** { ( *description* : Text ) } : 4D.Signal
+
+### Process (User Interface)\frontmost-process.md
+  [es] Frontmost process — B. MINOR STRUCTURE
+      EN: **Frontmost process** ({ * }) : Integer
+      ES: **Frontmost process** ( * ) : Integer
+  [fr] Frontmost process — B. MINOR STRUCTURE
+      EN: **Frontmost process** ({ * }) : Integer
+      FR: **Frontmost process** {( * )} : Integer
+  [ja] Frontmost process — B. MINOR STRUCTURE
+      EN: **Frontmost process** ({ * }) : Integer
+      JA: **Frontmost process** ( * ) : Integer
+  [pt] Frontmost process — B. MINOR STRUCTURE
+      EN: **Frontmost process** ({ * }) : Integer
+      PT: **Frontmost process** ( * ) : Integer
+
+### Processes\register-client.md
+  [pt] REGISTER CLIENT — A. TYPES MISSING/TRANSLATED
+      EN: **REGISTER CLIENT** ( {*clientName* : Text {; *}} )
+      PT: **REGISTER CLIENT** ( *nomeCliente* : Text {; *periodo* : Integer}{; *} )
+  [es] REGISTER CLIENT — B. MINOR STRUCTURE
+      EN: **REGISTER CLIENT** ( {*clientName* : Text {; *}} )
+      ES: **REGISTER CLIENT** ( *nomCliente* : Text )
+  [ja] REGISTER CLIENT — B. MINOR STRUCTURE
+      EN: **REGISTER CLIENT** ( {*clientName* : Text {; *}} )
+      JA: **REGISTER CLIENT** ( *clientName* : Text )
+
+### Queries\last-query-plan.md
+  [es] Last query plan — A. TYPES MISSING/TRANSLATED
+      EN: **Last query plan** ( *descFormat* : Integer ) : Text
+      ES: **Last query plan** : Text
+
+### Queries\query-by-example.md
+  [es] QUERY BY EXAMPLE — B. MINOR STRUCTURE
+      EN: **QUERY BY EXAMPLE** ( {*aTable* : Table} {; *} )
+      ES: **QUERY BY EXAMPLE** ( {*tabla* : Table}{;}{*} )
+  [ja] QUERY BY EXAMPLE — B. MINOR STRUCTURE
+      EN: **QUERY BY EXAMPLE** ( {*aTable* : Table} {; *} )
+      JA: **QUERY BY EXAMPLE** ( {*aTable* : Table}{;}{*} )
+  [pt] QUERY BY EXAMPLE — B. MINOR STRUCTURE
+      EN: **QUERY BY EXAMPLE** ( {*aTable* : Table} {; *} )
+      PT: **QUERY BY EXAMPLE** ( {*tabela* : Table}{;}{*} )
+
+### Quick Report\qr-report.md
+  [es] QR REPORT — B. MINOR STRUCTURE
+      EN: **QR REPORT** ( {*aTable* : Table} {; *document* : Text} {; *methodName* : Text}{; *} )
+      ES: **QR REPORT** ( {*tabla* : Table ;} *doc* : Text {; *nomMetodo* : Text}{; *} )
+  [ja] QR REPORT — B. MINOR STRUCTURE
+      EN: **QR REPORT** ( {*aTable* : Table} {; *document* : Text} {; *methodName* : Text}{; *} )
+      JA: **QR REPORT** ( {*aTable* : Table ;} *document* : Text {; *methodName* : Text}{; *} )
+  [pt] QR REPORT — B. MINOR STRUCTURE
+      EN: **QR REPORT** ( {*aTable* : Table} {; *document* : Text} {; *methodName* : Text}{; *} )
+      PT: **QR REPORT** ( {*tabela* : Table ;} *documento* : Text {; *nomeMetodo* : Text}{; *} )
+
+### Quick Report\qr-set-totals-data.md
+  [es] QR SET TOTALS DATA — A. TYPES MISSING/TRANSLATED
+      EN: **QR SET TOTALS DATA** ( *area* : Integer ; *colNum* : Integer ; *breakNum* : Integer ; *operator* : Integer )<br/>**QR SET TOTALS DATA** ( *area* : Integer ; *colNum* : Integer ; *breakNum* : Integer ; *value* : Text )
+      ES: **QR SET TOTALS DATA** ( *area* : Integer ; *numColumna* : Integer ; *numRuptura* : Integer ; operador | valor )
+  [pt] QR SET TOTALS DATA — A. TYPES MISSING/TRANSLATED
+      EN: **QR SET TOTALS DATA** ( *area* : Integer ; *colNum* : Integer ; *breakNum* : Integer ; *operator* : Integer )<br/>**QR SET TOTALS DATA** ( *area* : Integer ; *colNum* : Integer ; *breakNum* : Integer ; *value* : Text )
+      PT: **QR SET TOTALS DATA** ( *area* : Integer ; *numColuna* : Integer ; *numQuebra* : Integer ; operador | valor )
+
+### Record Locking\locked.md
+  [es] Locked — B. MINOR STRUCTURE
+      EN: **Locked** ( {*aTable* : Table} ) : Boolean
+      ES: **Locked** ( *tabla* : Table ) : Boolean
+  [ja] Locked — B. MINOR STRUCTURE
+      EN: **Locked** ( {*aTable* : Table} ) : Boolean
+      JA: **Locked** ( *aTable* : Table ) : Boolean
+  [pt] Locked — B. MINOR STRUCTURE
+      EN: **Locked** ( {*aTable* : Table} ) : Boolean
+      PT: **Locked** ( *tabela* : Table ) : Boolean
+
+### Record Locking\read-only-state.md
+  [es] Read only state — B. MINOR STRUCTURE
+      EN: **Read only state** ( {*aTable* : Table} ) : Boolean
+      ES: **Read only state** ( *tabla* : Table ) : Boolean
+  [ja] Read only state — B. MINOR STRUCTURE
+      EN: **Read only state** ( {*aTable* : Table} ) : Boolean
+      JA: **Read only state** ( *aTable* : Table ) : Boolean
+  [pt] Read only state — B. MINOR STRUCTURE
+      EN: **Read only state** ( {*aTable* : Table} ) : Boolean
+      PT: **Read only state** ( *tabela* : Table ) : Boolean
+
+### Record Locking\read-only.md
+  [es] READ ONLY — A. TYPES MISSING/TRANSLATED
+      EN: **READ ONLY** ({ *aTable* : Table })<br/>**READ ONLY** ({ * })
+      ES: **READ ONLY** ({ tabla | * })
+  [pt] READ ONLY — A. TYPES MISSING/TRANSLATED
+      EN: **READ ONLY** ({ *aTable* : Table })<br/>**READ ONLY** ({ * })
+      PT: **READ ONLY** ({ aTabela | * })
+
+### Record Locking\read-write.md
+  [es] READ WRITE — A. TYPES MISSING/TRANSLATED
+      EN: **READ WRITE** ({ *aTable* : Table })<br/>**READ WRITE** ({ * })
+      ES: **READ WRITE** ({ tabla | * })
+  [pt] READ WRITE — A. TYPES MISSING/TRANSLATED
+      EN: **READ WRITE** ({ *aTable* : Table })<br/>**READ WRITE** ({ * })
+      PT: **READ WRITE** ({ tabela | * })
+
+### Records\is-new-record.md
+  [es] Is new record — B. MINOR STRUCTURE
+      EN: **Is new record** ( {*aTable* : Table} ) : Boolean
+      ES: **Is new record** ( *tabla* : Table ) : Boolean
+  [ja] Is new record — B. MINOR STRUCTURE
+      EN: **Is new record** ( {*aTable* : Table} ) : Boolean
+      JA: **Is new record** ( *aTable* : Table ) : Boolean
+  [pt] Is new record — B. MINOR STRUCTURE
+      EN: **Is new record** ( {*aTable* : Table} ) : Boolean
+      PT: **Is new record** ( *tabela* : Table ) : Boolean
+
+### Records\is-record-loaded.md
+  [es] Is record loaded — B. MINOR STRUCTURE
+      EN: **Is record loaded** ( {*aTable* : Table} ) : Boolean
+      ES: **Is record loaded** ( *tabla* : Table ) : Boolean
+  [ja] Is record loaded — B. MINOR STRUCTURE
+      EN: **Is record loaded** ( {*aTable* : Table} ) : Boolean
+      JA: **Is record loaded** ( *aTable* : Table ) : Boolean
+  [pt] Is record loaded — B. MINOR STRUCTURE
+      EN: **Is record loaded** ( {*aTable* : Table} ) : Boolean
+      PT: **Is record loaded** ( *tabela* : Table ) : Boolean
+
+### Records\modified-record.md
+  [es] Modified record — B. MINOR STRUCTURE
+      EN: **Modified record** ( {*aTable* : Table} ) : Boolean
+      ES: **Modified record** ( *tabla* : Table ) : Boolean
+  [ja] Modified record — B. MINOR STRUCTURE
+      EN: **Modified record** ( {*aTable* : Table} ) : Boolean
+      JA: **Modified record** ( *aTable* : Table ) : Boolean
+  [pt] Modified record — B. MINOR STRUCTURE
+      EN: **Modified record** ( {*aTable* : Table} ) : Boolean
+      PT: **Modified record** ( *tabela* : Table ) : Boolean
+
+### Records\record-number.md
+  [es] Record number — B. MINOR STRUCTURE
+      EN: **Record number** ( {*aTable* : Table} ) : Integer
+      ES: **Record number** ( *tabla* : Table ) : Integer
+  [ja] Record number — B. MINOR STRUCTURE
+      EN: **Record number** ( {*aTable* : Table} ) : Integer
+      JA: **Record number** ( *aTable* : Table ) : Integer
+  [pt] Record number — B. MINOR STRUCTURE
+      EN: **Record number** ( {*aTable* : Table} ) : Integer
+      PT: **Record number** ( *tabela* : Table ) : Integer
+
+### Records\records-in-table.md
+  [es] Records in table — B. MINOR STRUCTURE
+      EN: **Records in table** ( {*aTable* : Table} ) : Integer
+      ES: **Records in table** ( *tabla* : Table ) : Integer
+  [ja] Records in table — B. MINOR STRUCTURE
+      EN: **Records in table** ( {*aTable* : Table} ) : Integer
+      JA: **Records in table** ( *aTable* : Table ) : Integer
+  [pt] Records in table — B. MINOR STRUCTURE
+      EN: **Records in table** ( {*aTable* : Table} ) : Integer
+      PT: **Records in table** ( *tabela* : Table ) : Integer
+
+### Records\sequence-number.md
+  [es] Sequence number — B. MINOR STRUCTURE
+      EN: **Sequence number** ( {*aTable* : Table} ) : Integer
+      ES: **Sequence number** ( *tabla* : Table ) : Integer
+  [ja] Sequence number — B. MINOR STRUCTURE
+      EN: **Sequence number** ( {*aTable* : Table} ) : Integer
+      JA: **Sequence number** ( *aTable* : Table ) : Integer
+  [pt] Sequence number — B. MINOR STRUCTURE
+      EN: **Sequence number** ( {*aTable* : Table} ) : Integer
+      PT: **Sequence number** ( *tabela* : Table ) : Integer
+
+### Relations\relate-many.md
+  [es] RELATE MANY — A. TYPES MISSING/TRANSLATED
+      EN: **RELATE MANY** ( *oneTable* : Table )<br/>**RELATE MANY** ( *oneField* : Field )
+      ES: **RELATE MANY** ( tabla1 | campo1 )
+  [pt] RELATE MANY — A. TYPES MISSING/TRANSLATED
+      EN: **RELATE MANY** ( *oneTable* : Table )<br/>**RELATE MANY** ( *oneField* : Field )
+      PT: **RELATE MANY** ( tabela1 | campo1 )
+
+### Relations\relate-one.md
+  [es] RELATE ONE — A. TYPES MISSING/TRANSLATED
+      EN: **RELATE ONE** ( *manyTable* : Table )<br/>**RELATE ONE** ( *manyField* : Field {; *choiceField* : Field} )
+      ES: **RELATE ONE** ( tablasN | CampoN {; *discriminante* : Field} )
+  [fr] RELATE ONE — A. TYPES MISSING/TRANSLATED
+      EN: **RELATE ONE** ( *manyTable* : Table )<br/>**RELATE ONE** ( *manyField* : Field {; *choiceField* : Field} )
+      FR: **RELATE ONE** ( *tableN* {; *discriminant*} )<br/>**RELATE ONE** ( *champN* {; *discriminant*} )
+  [ja] RELATE ONE — A. TYPES MISSING/TRANSLATED
+      EN: **RELATE ONE** ( *manyTable* : Table )<br/>**RELATE ONE** ( *manyField* : Field {; *choiceField* : Field} )
+      JA: **RELATE ONE** ( *manyTable* : テーブル, フィールド {; *choiceField* : Field} )<br/>**RELATE ONE** ( *field* : テーブル, フィールド {; *choiceField* : Field} )
+  [pt] RELATE ONE — A. TYPES MISSING/TRANSLATED
+      EN: **RELATE ONE** ( *manyTable* : Table )<br/>**RELATE ONE** ( *manyField* : Field {; *choiceField* : Field} )
+      PT: **RELATE ONE** ( tabelasN | campoN {; *discriminante* : Field } )
+
+### Relations\set-field-relation.md
+  [es] SET FIELD RELATION — A. TYPES MISSING/TRANSLATED
+      EN: **SET FIELD RELATION** ( *manyTable* : Table ; *one* : Integer ; *many* : Integer )<br/>**SET FIELD RELATION** ( *manyField* : Field ; *one* : Integer ; *many* : Integer )
+      ES: **SET FIELD RELATION** ( tablasN | CampoN ; *uno* : Integer ; *muchos* : Integer )
+  [ja] SET FIELD RELATION — A. TYPES MISSING/TRANSLATED
+      EN: **SET FIELD RELATION** ( *manyTable* : Table ; *one* : Integer ; *many* : Integer )<br/>**SET FIELD RELATION** ( *manyField* : Field ; *one* : Integer ; *many* : Integer )
+      JA: **SET FIELD RELATION** ( manyTable | manyField ; *one* : Integer ; *many* : Integer )
+  [pt] SET FIELD RELATION — A. TYPES MISSING/TRANSLATED
+      EN: **SET FIELD RELATION** ( *manyTable* : Table ; *one* : Integer ; *many* : Integer )<br/>**SET FIELD RELATION** ( *manyField* : Field ; *one* : Integer ; *many* : Integer )
+      PT: **SET FIELD RELATION** ( tabelaN | campoN ; *um* : Integer ; *muitos* : Integer )
+
+### SQL\sql-export-selection.md
+  [es] SQL EXPORT SELECTION — B. MINOR STRUCTURE
+      EN: **SQL EXPORT SELECTION** ( {*aTable* : Table ;} *folderPath* : Text {; *numFiles* : Integer {; *fileLimitSize* : Integer {; *fieldLimitSize* : Integer}}} )
+      ES: **SQL EXPORT SELECTION** ( *tabla* : Table ; *rutaCarpeta* : Text {; *numArchivos* : Integer {; *tamLimiteArchivos* : Integer {; *tamLimiteCampos* : Integer}}} )
+  [ja] SQL EXPORT SELECTION — B. MINOR STRUCTURE
+      EN: **SQL EXPORT SELECTION** ( {*aTable* : Table ;} *folderPath* : Text {; *numFiles* : Integer {; *fileLimitSize* : Integer {; *fieldLimitSize* : Integer}}} )
+      JA: **SQL EXPORT SELECTION** ( *aTable* : Table ; *folderPath* : Text {; *numFiles* : Integer {; *fileLimitSize* : Integer {; *fieldLimitSize* : Integer}}} )
+  [pt] SQL EXPORT SELECTION — B. MINOR STRUCTURE
+      EN: **SQL EXPORT SELECTION** ( {*aTable* : Table ;} *folderPath* : Text {; *numFiles* : Integer {; *fileLimitSize* : Integer {; *fieldLimitSize* : Integer}}} )
+      PT: **SQL EXPORT SELECTION** ( *tabela* : Table ; *rotaPasta* : Text {; *numArquivos* : Integer {; *tamMaxArquivos* : Integer {; *tamLimCampos* : Integer}}} )
+
+### SQL\sql-login.md
+  [es] SQL LOGIN — B. MINOR STRUCTURE
+      EN: **SQL LOGIN** ({ *dataEntry* : Text ;} {*userName* : Text ; *password* : Text {; * }})
+      ES: **SQL LOGIN** ({ *entradaDatos* : Text ; *nomUsuario* : Text ; *contraseña* : Text ; * })
+  [ja] SQL LOGIN — B. MINOR STRUCTURE
+      EN: **SQL LOGIN** ({ *dataEntry* : Text ;} {*userName* : Text ; *password* : Text {; * }})
+      JA: **SQL LOGIN** ({ *dataEntry* : Text ; *userName* : Text ; *password* : Text ; * })
+  [pt] SQL LOGIN — B. MINOR STRUCTURE
+      EN: **SQL LOGIN** ({ *dataEntry* : Text ;} {*userName* : Text ; *password* : Text {; * }})
+      PT: **SQL LOGIN** ({ *entradaDados* : Text ; *nomeUsuario* : Text ; *senha* : Text ; * })
+
+### Selection\before-selection.md
+  [es] Before selection — B. MINOR STRUCTURE
+      EN: **Before selection** ( {*aTable* : Table} ) : Boolean
+      ES: **Before selection** ( *tabla* : Table ) : Boolean
+  [ja] Before selection — B. MINOR STRUCTURE
+      EN: **Before selection** ( {*aTable* : Table} ) : Boolean
+      JA: **Before selection** ( *aTable* : Table ) : Boolean
+  [pt] Before selection — B. MINOR STRUCTURE
+      EN: **Before selection** ( {*aTable* : Table} ) : Boolean
+      PT: **Before selection** ( *tabela* : Table ) : Boolean
+
+### Selection\end-selection.md
+  [es] End selection — B. MINOR STRUCTURE
+      EN: **End selection** ( {*aTable* : Table} ) : Boolean
+      ES: **End selection** ( *tabla* : Table ) : Boolean
+  [ja] End selection — B. MINOR STRUCTURE
+      EN: **End selection** ( {*aTable* : Table} ) : Boolean
+      JA: **End selection** ( *aTable* : Table ) : Boolean
+  [pt] End selection — B. MINOR STRUCTURE
+      EN: **End selection** ( {*aTable* : Table} ) : Boolean
+      PT: **End selection** ( *tabela* : Table ) : Boolean
+
+### Selection\modify-selection.md
+  [fr] MODIFY SELECTION — A. TYPES MISSING/TRANSLATED
+      EN: **MODIFY SELECTION** ( {*aTable* : Table}{; *selectMode* : Integer}{; *enterList* : Boolean}{; *} )<br/>**MODIFY SELECTION** ( {*aTable* : Table}{; *selectMode* : Integer}{; *enterList* : Boolean}; * {; *} )
+      FR: **MODIFY SELECTION** ( {*laTable*}{; *modeSélection*}{; *saisieListe*}{; *}{; *} )
+  [es] MODIFY SELECTION — B. MINOR STRUCTURE
+      EN: **MODIFY SELECTION** ( {*aTable* : Table}{; *selectMode* : Integer}{; *enterList* : Boolean}{; *} )<br/>**MODIFY SELECTION** ( {*aTable* : Table}{; *selectMode* : Integer}{; *enterList* : Boolean}; * {; *} )
+      ES: **MODIFY SELECTION** ( {*tabla* : Table}{; *modoSelección* : Integer}{; *entradaList* : Boolean}{; *} )<br/>**MODIFY SELECTION** ( {*tabla* : Table}{; *modoSelección* : Integer}{; *entradaList* : Boolean}; * {; *} )
+
+### Selection\records-in-selection.md
+  [es] Records in selection — B. MINOR STRUCTURE
+      EN: **Records in selection** ( {*aTable* : Table} ) : Integer
+      ES: **Records in selection** ( *tabla* : Table ) : Integer
+  [ja] Records in selection — B. MINOR STRUCTURE
+      EN: **Records in selection** ( {*aTable* : Table} ) : Integer
+      JA: **Records in selection** ( *aTable* : Table ) : Integer
+  [pt] Records in selection — B. MINOR STRUCTURE
+      EN: **Records in selection** ( {*aTable* : Table} ) : Integer
+      PT: **Records in selection** ( *tabela* : Table ) : Integer
+
+### Selection\selected-record-number.md
+  [es] Selected record number — B. MINOR STRUCTURE
+      EN: **Selected record number** ( {*aTable* : Table} ) : Integer
+      ES: **Selected record number** ( *tabla* : Table ) : Integer
+  [ja] Selected record number — B. MINOR STRUCTURE
+      EN: **Selected record number** ( {*aTable* : Table} ) : Integer
+      JA: **Selected record number** ( *aTable* : Table ) : Integer
+  [pt] Selected record number — B. MINOR STRUCTURE
+      EN: **Selected record number** ( {*aTable* : Table} ) : Integer
+      PT: **Selected record number** ( *tabela* : Table ) : Integer
+
+### Spell Checker\spell-check-text.md
+  [es] SPELL CHECK TEXT — B. MINOR STRUCTURE
+      EN: **SPELL CHECK TEXT** ( *text* : Text ; *errPos* : Integer ; *errLength* : Integer ; *checkPos* : Integer ; {*arrSuggest* : Text array} )
+      ES: **SPELL CHECK TEXT** ( *texto* : Text ; *posErr* : Integer ; *longErr* : Integer ; *posVerif* : Integer ; *arrSug* : Text array )
+  [ja] SPELL CHECK TEXT — B. MINOR STRUCTURE
+      EN: **SPELL CHECK TEXT** ( *text* : Text ; *errPos* : Integer ; *errLength* : Integer ; *checkPos* : Integer ; {*arrSuggest* : Text array} )
+      JA: **SPELL CHECK TEXT** ( *text* : Text ; *errPos* : Integer ; *errLength* : Integer ; *checkPos* : Integer ; *arrSuggest* : Text array )
+  [pt] SPELL CHECK TEXT — B. MINOR STRUCTURE
+      EN: **SPELL CHECK TEXT** ( *text* : Text ; *errPos* : Integer ; *errLength* : Integer ; *checkPos* : Integer ; {*arrSuggest* : Text array} )
+      PT: **SPELL CHECK TEXT** ( *texto* : Text ; *posErr* : Integer ; *longErr* : Integer ; *posVerif* : Integer ; *arrSug* : Text array )
+
+### String\match-regex.md
+  [fr] Match regex — A. TYPES MISSING/TRANSLATED
+      EN: **Match regex** ( *pattern* : Text ; *aString* : Text ) : Boolean<br/>**Match regex** ( *pattern* : Text ; *aString* : Text ; *start* : Integer {; *pos_found* : Integer } {; *length_found* : Integer }{; *} ) : Boolean<br/>**Match regex** ( *pattern* : Text ; *aString* : Text ; *start* : Integer {; *pos_found* : Integer array } {; *length_found* : Integer array }{; *} ) : Boolean
+      FR: **Match regex** ( *motif* ; *laChaîne* ; *début* {; *pos_trouvée* ; *long_trouvée*}{; *} ) -> Résultat <br/>
+**Match regex** ( *motif* ; *laChaîne* ) -> Résultat
+
+### Structure Access\get-table-properties.md
+  [ja] GET TABLE PROPERTIES — A. TYPES MISSING/TRANSLATED
+      EN: **GET TABLE PROPERTIES** ( *tablePtr* : Pointer ; *invisible* : Boolean {; *trigSaveNew* : Boolean {; *trigSaveRec* : Boolean {; *trigDelRec* : Boolean {; *trigLoadRec* : Boolean}}}} )<br/>**GET TABLE PROPERTIES** ( *tableNum* : Integer ; *invisible* : Boolean {; *trigSaveNew* : Boolean {; *trigSaveRec* : Boolean {; *trigDelRec* : Boolean {; *trigLoadRec* : Boolean}}}} )
+      JA: **GET TABLE PROPERTIES** ( tablePtr| tableNum ; *invisible* : Boolean {; *trigSaveNew* : Boolean {; *trigSaveRec* : Boolean {; *trigDelRec* : Boolean {; *trigLoadRec* : Boolean}}}} )
+
+### System Documents\create-folder.md
+  [es] CREATE FOLDER — B. MINOR STRUCTURE
+      EN: **CREATE FOLDER** ( *folderPath* : Text {; *} )
+      ES: **CREATE FOLDER** ( *rutaCarpeta* : Text {; *Operador*} )
+
+### System Environment\font-list.md
+  [es] FONT LIST — A. TYPES MISSING/TRANSLATED
+      EN: **FONT LIST** ( *fonts* : Text array {; *listType* : Integer } )<br/>**FONT LIST** ( *fonts* : Text array {; *} )
+      ES: **FONT LIST** ( *fuentes* : Text array {; *tipoLista* : Integer, *} )
+  [pt] FONT LIST — A. TYPES MISSING/TRANSLATED
+      EN: **FONT LIST** ( *fonts* : Text array {; *listType* : Integer } )<br/>**FONT LIST** ( *fonts* : Text array {; *} )
+      PT: **FONT LIST** ( *fontes* : Text array {; listType | *} )
+
+### System Environment\screen-height.md
+  [es] Screen height — B. MINOR STRUCTURE
+      EN: **Screen height** ({ * }) : Integer
+      ES: **Screen height** ( * ) : Integer
+  [fr] Screen height — B. MINOR STRUCTURE
+      EN: **Screen height** ({ * }) : Integer
+      FR: **Screen height** {( * )} : Integer
+  [ja] Screen height — B. MINOR STRUCTURE
+      EN: **Screen height** ({ * }) : Integer
+      JA: **Screen height** ( * ) : Integer
+  [pt] Screen height — B. MINOR STRUCTURE
+      EN: **Screen height** ({ * }) : Integer
+      PT: **Screen height** ( * ) : Integer
+
+### System Environment\screen-width.md
+  [es] Screen width — B. MINOR STRUCTURE
+      EN: **Screen width** ({ * }) : Integer
+      ES: **Screen width** ( * ) : Integer
+  [fr] Screen width — B. MINOR STRUCTURE
+      EN: **Screen width** ({ * }) : Integer
+      FR: **Screen width** {( * )} : Integer
+  [ja] Screen width — B. MINOR STRUCTURE
+      EN: **Screen width** ({ * }) : Integer
+      JA: **Screen width** ( * ) : Integer
+  [pt] Screen width — B. MINOR STRUCTURE
+      EN: **Screen width** ({ * }) : Integer
+      PT: **Screen width** ( * ) : Integer
+
+### System Environment\select-rgb-color.md
+  [es] Select RGB color — B. MINOR STRUCTURE
+      EN: **Select RGB color** ( {*defaultColor* : Integer {; *message* : Text}} ) : Integer
+      ES: **Select RGB color** ( *colorDefecto* : Integer {; *mensaje* : Text} ) : Integer
+  [ja] Select RGB color — B. MINOR STRUCTURE
+      EN: **Select RGB color** ( {*defaultColor* : Integer {; *message* : Text}} ) : Integer
+      JA: **Select RGB color** ( *defaultColor* : Integer {; *message* : Text} ) : Integer
+  [pt] Select RGB color — B. MINOR STRUCTURE
+      EN: **Select RGB color** ( {*defaultColor* : Integer {; *message* : Text}} ) : Integer
+      PT: **Select RGB color** ( *corDefeito* : Integer {; *mensagem* : Text} ) : Integer
+
+### System Environment\system-folder.md
+  [es] System folder — B. MINOR STRUCTURE
+      EN: **System folder** ({*type* : Integer }) : Text
+      ES: **System folder** ( *tipo* : Integer ) : Text
+  [ja] System folder — B. MINOR STRUCTURE
+      EN: **System folder** ({*type* : Integer }) : Text
+      JA: **System folder** ( *type* : Integer ) : Text
+  [pt] System folder — B. MINOR STRUCTURE
+      EN: **System folder** ({*type* : Integer }) : Text
+      PT: **System folder** ( *tipo* : Integer ) : Text
+
+### Tools\activity-snapshot.md
+  [es] ACTIVITY SNAPSHOT — A. TYPES MISSING/TRANSLATED
+      EN: **ACTIVITY SNAPSHOT** ( *arrActivities* : Object array {; *} )<br/>**ACTIVITY SNAPSHOT** ( *arrUUID* : Text array ; *arrStart* : Text array ; *arrDuration* : Integer array ; *arrInfo* : Text array {; *arrDetails* : Object array}{; *} )
+      ES: **ACTIVITY SNAPSHOT** ( arrActividades | arrUUID ; *arrInicio* : Text array ; *arrDuracion* : Integer array ; *arrInfo* : Text array {; *arrDetails* : Object array}{; *} )
+  [fr] ACTIVITY SNAPSHOT — A. TYPES MISSING/TRANSLATED
+      EN: **ACTIVITY SNAPSHOT** ( *arrActivities* : Object array {; *} )<br/>**ACTIVITY SNAPSHOT** ( *arrUUID* : Text array ; *arrStart* : Text array ; *arrDuration* : Integer array ; *arrInfo* : Text array {; *arrDetails* : Object array}{; *} )
+      FR: **ACTIVITY SNAPSHOT** (* tabActivités* {; *} )<br/>**ACTIVITY SNAPSHOT** ( *tabUUID* ; *tabDébut* ; *tabDurée* ; *tabInfo* {; *tabDétails*} )
+  [pt] ACTIVITY SNAPSHOT — A. TYPES MISSING/TRANSLATED
+      EN: **ACTIVITY SNAPSHOT** ( *arrActivities* : Object array {; *} )<br/>**ACTIVITY SNAPSHOT** ( *arrUUID* : Text array ; *arrStart* : Text array ; *arrDuration* : Integer array ; *arrInfo* : Text array {; *arrDetails* : Object array}{; *} )
+      PT: **ACTIVITY SNAPSHOT** ( arrActivities | arrUUID ; *arrInicio* : Text array ; *arrDuracao* : Integer array ; *arrInfo* : Text array {; *arrDetails* : Object array}{; *} )
+
+### User Interface\get-application-color-scheme.md
+  [es] Get Application color scheme — B. MINOR STRUCTURE
+      EN: **Get Application color scheme** ({ * }) : Text
+      ES: **Get Application color scheme** ( * ) : Text
+  [fr] Get Application color scheme — B. MINOR STRUCTURE
+      EN: **Get Application color scheme** ({ * }) : Text
+      FR: **Get Application color scheme** {( * )} : Text
+  [ja] Get Application color scheme — B. MINOR STRUCTURE
+      EN: **Get Application color scheme** ({ * }) : Text
+      JA: **Get Application color scheme** ( * ) : Text
+  [pt] Get Application color scheme — B. MINOR STRUCTURE
+      EN: **Get Application color scheme** ({ * }) : Text
+      PT: **Get Application color scheme** ( * ) : Text
+
+### User Interface\redraw.md
+  [es] REDRAW — A. TYPES MISSING/TRANSLATED
+      EN: **REDRAW** ( *aTable* : Table )<br/>**REDRAW** ( *object* : Field, Variable )
+      ES: **REDRAW** ( *objeto* : any )
+  [fr] REDRAW — A. TYPES MISSING/TRANSLATED
+      EN: **REDRAW** ( *aTable* : Table )<br/>**REDRAW** ( *object* : Field, Variable )
+      FR: **REDRAW** ( *objet* )
+  [ja] REDRAW — A. TYPES MISSING/TRANSLATED
+      EN: **REDRAW** ( *aTable* : Table )<br/>**REDRAW** ( *object* : Field, Variable )
+      JA: **REDRAW** ( *object* : any )
+  [pt] REDRAW — A. TYPES MISSING/TRANSLATED
+      EN: **REDRAW** ( *aTable* : Table )<br/>**REDRAW** ( *object* : Field, Variable )
+      PT: **REDRAW** ( *objeto* : any )
+
+### Users and Groups\current-user.md
+  [es] Current user — B. MINOR STRUCTURE
+      EN: **Current user** ({ *user* : Integer }) : Text
+      ES: **Current user** ( *usuario* : Integer ) : Text
+  [ja] Current user — B. MINOR STRUCTURE
+      EN: **Current user** ({ *user* : Integer }) : Text
+      JA: **Current user** ( *user* : Integer ) : Text
+  [pt] Current user — B. MINOR STRUCTURE
+      EN: **Current user** ({ *user* : Integer }) : Text
+      PT: **Current user** ( *usuario* : Integer ) : Text
+
+### Web Area\wa-execute-javascript-function.md
+  [fr] WA EXECUTE JAVASCRIPT FUNCTION — A. TYPES MISSING/TRANSLATED
+      EN: **WA EXECUTE JAVASCRIPT FUNCTION** ( * ; *object* : Text ; *jsFunction* : Text {; *result* : Variable} {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( *object* : Variable, Field ; *jsFunction* : Text {; *result* : Variable } {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( * ; *object* : Text ; *jsFunction* : Text ; * {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( *object* : Variable, Field ; *jsFunction* : Text ; * {; *...param* : any} )
+      FR: **WA EXECUTE JAVASCRIPT FUNCTION** ( {* ;} *objet* ; *fonctionJS* ; *résultat* {; *param*}{; *param2* ; ... ; *paramN*} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( {* ;} *objet* ; *fonctionJS* ; * {; *param*}{; *param2* ; ... ; *paramN*} )
+  [ja] WA EXECUTE JAVASCRIPT FUNCTION — B. MINOR STRUCTURE
+      EN: **WA EXECUTE JAVASCRIPT FUNCTION** ( * ; *object* : Text ; *jsFunction* : Text {; *result* : Variable} {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( *object* : Variable, Field ; *jsFunction* : Text {; *result* : Variable } {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( * ; *object* : Text ; *jsFunction* : Text ; * {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( *object* : Variable, Field ; *jsFunction* : Text ; * {; *...param* : any} )
+      JA: **WA EXECUTE JAVASCRIPT FUNCTION** ( * ; *object* : Text ; *jsFunction* : Text ; *result* : Variable {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( *object* : Variable, Field ; *jsFunction* : Text ; *result* : Variable {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( * ; *object* : Text ; *jsFunction* : Text ; * {; *...param* : any} )<br/>**WA EXECUTE JAVASCRIPT FUNCTION** ( *object* : Variable, Field ; *jsFunction* : Text ; * {; *...param* : any} )
+
+### Web Area\wa-get-context.md
+  [fr] WA Get context — B. MINOR STRUCTURE
+      EN: **WA Get context** ( * ; *object* : Text ) -> Object<br/>**WA Get context** ( *object* : Variable ) -> Object
+      FR: **WA Get context** ( * ; *object* : Text ) -> *Object*<br/>**WA Get context** ( *object* : Variable ) -> *Object*
+
+### Web Server\web-get-http-header.md
+  [es] WEB GET HTTP HEADER — A. TYPES MISSING/TRANSLATED
+      EN: **WEB GET HTTP HEADER** ( *header* : Text )<br/>**WEB GET HTTP HEADER** ( *fieldArray* : Text array ; *valueArray* : Text array )
+      ES: **WEB GET HTTP HEADER** ( encab|arrayCamp {; *arrayValores* : Text array} )
+  [pt] WEB GET HTTP HEADER — A. TYPES MISSING/TRANSLATED
+      EN: **WEB GET HTTP HEADER** ( *header* : Text )<br/>**WEB GET HTTP HEADER** ( *fieldArray* : Text array ; *valueArray* : Text array )
+      PT: **WEB GET HTTP HEADER** ( cabeçalho|arrayCampo {; *valorArray* : Text array} )
+
+### Web Server\web-get-server-info.md
+  [es] WEB Get server info — B. MINOR STRUCTURE
+      EN: **WEB Get server info** ({ *withCache* : Boolean }) : Object
+      ES: **WEB Get server info** ( *conCaché* : Boolean ) : Object
+  [ja] WEB Get server info — B. MINOR STRUCTURE
+      EN: **WEB Get server info** ({ *withCache* : Boolean }) : Object
+      JA: **WEB Get server info** ( *withCache* : Boolean ) : Object
+  [pt] WEB Get server info — B. MINOR STRUCTURE
+      EN: **WEB Get server info** ({ *withCache* : Boolean }) : Object
+      PT: **WEB Get server info** ( *comCache* : Boolean ) : Object
+
+### Web Server\web-set-http-header.md
+  [es] WEB SET HTTP HEADER — A. TYPES MISSING/TRANSLATED
+      EN: **WEB SET HTTP HEADER** ( *header* : Text )<br/>**WEB SET HTTP HEADER** ( *fieldArray* : Text array ; *valueArray* : Text array )
+      ES: **WEB SET HTTP HEADER** ( encab|arrayCamp {; *arrayValores* : Text array} )
+  [pt] WEB SET HTTP HEADER — A. TYPES MISSING/TRANSLATED
+      EN: **WEB SET HTTP HEADER** ( *header* : Text )<br/>**WEB SET HTTP HEADER** ( *fieldArray* : Text array ; *valueArray* : Text array )
+      PT: **WEB SET HTTP HEADER** ( cabeçalho|arrayCampo {; *valorArray* : Text array} )
+
+### Web Services (Client)\web-service-get-result.md
+  [es] WEB SERVICE GET RESULT — B. MINOR STRUCTURE
+      EN: **WEB SERVICE GET RESULT** ( *returnValue* : Variable {; *returnName* : Text} {; *} )
+      ES: **WEB SERVICE GET RESULT** ( *valorDevuelto* : Variable {; *nombreDevuelto* : Text {; *}} )
+  [ja] WEB SERVICE GET RESULT — B. MINOR STRUCTURE
+      EN: **WEB SERVICE GET RESULT** ( *returnValue* : Variable {; *returnName* : Text} {; *} )
+      JA: **WEB SERVICE GET RESULT** ( *returnValue* : Variable {; *returnName* : Text {; *}} )
+  [pt] WEB SERVICE GET RESULT — B. MINOR STRUCTURE
+      EN: **WEB SERVICE GET RESULT** ( *returnValue* : Variable {; *returnName* : Text} {; *} )
+      PT: **WEB SERVICE GET RESULT** ( *valorRetornado* : Variable {; *nomeRetornado* : Text {; *}} )
+
+### Windows\frontmost-window.md
+  [es] Frontmost window — B. MINOR STRUCTURE
+      EN: **Frontmost window** ({ * }) : Integer
+      ES: **Frontmost window** ( * ) : Integer
+  [fr] Frontmost window — B. MINOR STRUCTURE
+      EN: **Frontmost window** ({ * }) : Integer
+      FR: **Frontmost window** {( * )} : Integer
+  [ja] Frontmost window — B. MINOR STRUCTURE
+      EN: **Frontmost window** ({ * }) : Integer
+      JA: **Frontmost window** ( * ) : Integer
+  [pt] Frontmost window — B. MINOR STRUCTURE
+      EN: **Frontmost window** ({ * }) : Integer
+      PT: **Frontmost window** ( * ) : Integer
+
+### Windows\get-window-title.md
+  [es] Get window title — B. MINOR STRUCTURE
+      EN: **Get window title** ({ *window* : Integer }) : Text
+      ES: **Get window title** ( *ventana* : Integer ) : Text
+  [ja] Get window title — B. MINOR STRUCTURE
+      EN: **Get window title** ({ *window* : Integer }) : Text
+      JA: **Get window title** ( *window* : Integer ) : Text
+  [pt] Get window title — B. MINOR STRUCTURE
+      EN: **Get window title** ({ *window* : Integer }) : Text
+      PT: **Get window title** ( *janela* : Integer ) : Text
+
+### Windows\open-form-window.md
+  [fr] Open form window — B. MINOR STRUCTURE
+      EN: **Open form window** ( {*aTable* : Table ;} *formName* : Text, Object {; *type* : Integer {; *hPos* : Integer {; *vPos* : Integer}}}{; *} ) : Integer
+      FR: **Open form window** ( {*laTable* : Table ;} *nomForm* : Text, Object {; *type* : Integer {; *posH* : Integer {; *posV* : Integer {; *}}}} ) : Integer
+
+### Windows\window-kind.md
+  [es] Window kind — B. MINOR STRUCTURE
+      EN: **Window kind** ( {*window* : Integer} ) : Integer
+      ES: **Window kind** ( *ventana* : Integer ) : Integer
+  [ja] Window kind — B. MINOR STRUCTURE
+      EN: **Window kind** ( {*window* : Integer} ) : Integer
+      JA: **Window kind** ( *window* : Integer ) : Integer
+  [pt] Window kind — B. MINOR STRUCTURE
+      EN: **Window kind** ( {*window* : Integer} ) : Integer
+      PT: **Window kind** ( *janela* : Integer ) : Integer
+
+### Windows\window-process.md
+  [es] Window process — B. MINOR STRUCTURE
+      EN: **Window process** ( {*window* : Integer} ) : Integer
+      ES: **Window process** ( *ventana* : Integer ) : Integer
+  [ja] Window process — B. MINOR STRUCTURE
+      EN: **Window process** ( {*window* : Integer} ) : Integer
+      JA: **Window process** ( *window* : Integer ) : Integer
+  [pt] Window process — B. MINOR STRUCTURE
+      EN: **Window process** ( {*window* : Integer} ) : Integer
+      PT: **Window process** ( *janela* : Integer ) : Integer
+
+### XML DOM\dom-get-xml-element.md
+  [es] DOM Get XML element — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Get XML element** ( *elementRef* : Text ; *elementName* : Text ; *index* : Integer {; *elementValue* : Variable {; *attrNames* : Text array {; *attrValues* : Text array }}}) : Text
+      ES: **DOM Get XML element** ( *elementRef* : Text ; *nomElement* : Text ; *indice* : Integer ; *valorElement* : Variable ) : Text
+  [fr] DOM Get XML element — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Get XML element** ( *elementRef* : Text ; *elementName* : Text ; *index* : Integer {; *elementValue* : Variable {; *attrNames* : Text array {; *attrValues* : Text array }}}) : Text
+      FR: **DOM Get XML element** ( *refElément* ; *nomElément* ; *indice* ; *valeurElément* ) : Text
+  [ja] DOM Get XML element — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Get XML element** ( *elementRef* : Text ; *elementName* : Text ; *index* : Integer {; *elementValue* : Variable {; *attrNames* : Text array {; *attrValues* : Text array }}}) : Text
+      JA: **DOM Get XML element** ( *elementRef* : Text ; *elementName* : Text ; *index* : Integer ; *elementValue* : Variable ) : Text
+  [pt] DOM Get XML element — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Get XML element** ( *elementRef* : Text ; *elementName* : Text ; *index* : Integer {; *elementValue* : Variable {; *attrNames* : Text array {; *attrValues* : Text array }}}) : Text
+      PT: **DOM Get XML element** ( *refElemento* : Text ; *nomeElemento* : Text ; *index* : Integer ; *valorElemento* : Variable ) : Text
+
+### XML DOM\dom-parse-xml-source.md
+  [es] DOM Parse XML source — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Parse XML source** ( *document* : Text {; *validation* : Boolean {; *dtd* : Text }} ) : Text<br/>**DOM Parse XML source** ( *document* : Text {; *validation* : Boolean {; *schema* : Text }} ) : Text
+      ES: **DOM Parse XML source** ( *doc* : Text {; *validacion* : Boolean {; dtd | esquema}} ) : Text
+  [pt] DOM Parse XML source — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Parse XML source** ( *document* : Text {; *validation* : Boolean {; *dtd* : Text }} ) : Text<br/>**DOM Parse XML source** ( *document* : Text {; *validation* : Boolean {; *schema* : Text }} ) : Text
+      PT: **DOM Parse XML source** ( *documento* : Text {; *validaçao* : Boolean {; dtd|schmea}} ) : Text
+
+### XML DOM\dom-parse-xml-variable.md
+  [es] DOM Parse XML variable — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Parse XML variable** ( *variable* : Blob, Text {; *validation* : Boolean {; *dtd* : Text }} ) : Text<br/>**DOM Parse XML variable** ( *variable* : Blob, Text {; *validation* : Boolean {; *schema* : Text}} ) : Text
+      ES: **DOM Parse XML variable** ( *variable* : Blob, Text {; *validacion* : Boolean {; dtd | esquema}} ) : Text
+  [pt] DOM Parse XML variable — A. TYPES MISSING/TRANSLATED
+      EN: **DOM Parse XML variable** ( *variable* : Blob, Text {; *validation* : Boolean {; *dtd* : Text }} ) : Text<br/>**DOM Parse XML variable** ( *variable* : Blob, Text {; *validation* : Boolean {; *schema* : Text}} ) : Text
+      PT: **DOM Parse XML variable** ( *variável* : Blob, Text {; *validaçao* : Boolean {; dtd|schema}} ) : Text
+
+### XML SAX\sax-set-xml-declaration.md
+  [es] SAX SET XML DECLARATION — A. TYPES MISSING/TRANSLATED
+      EN: **SAX SET XML DECLARATION** ( *document* : Time ; *encoding* : Text {; *standalone* : Boolean} {; *indentation* : Boolean} )
+      ES: **SAX SET XML DECLARATION** ( *documento* : Time ; *codificacion* : Text {; *autonomo* : Boolean} )
+  [fr] SAX SET XML DECLARATION — A. TYPES MISSING/TRANSLATED
+      EN: **SAX SET XML DECLARATION** ( *document* : Time ; *encoding* : Text {; *standalone* : Boolean} {; *indentation* : Boolean} )
+      FR: **SAX SET XML DECLARATION** ( *document* ; *encodage* {; *autonome*} )
+  [ja] SAX SET XML DECLARATION — A. TYPES MISSING/TRANSLATED
+      EN: **SAX SET XML DECLARATION** ( *document* : Time ; *encoding* : Text {; *standalone* : Boolean} {; *indentation* : Boolean} )
+      JA: **SAX SET XML DECLARATION** ( *document* : Time ; *encoding* : Text {; *standalone* : Boolean} )
+  [pt] SAX SET XML DECLARATION — A. TYPES MISSING/TRANSLATED
+      EN: **SAX SET XML DECLARATION** ( *document* : Time ; *encoding* : Text {; *standalone* : Boolean} {; *indentation* : Boolean} )
+      PT: **SAX SET XML DECLARATION** ( *documento* : Time ; *codificaçao* : Text {; *autonomo* : Boolean} )
+
+==== SUMMARY ====
+Files with non-equivalent syntax: 128
+A. Types missing/translated: 160 syntaxes in 66 files
+B. Minor structure only (types OK): 204 syntaxes in 73 files
+Missing syntax block: 0
+Missing file: 0
