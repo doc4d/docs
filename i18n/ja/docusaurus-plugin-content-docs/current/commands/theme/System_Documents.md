@@ -133,5 +133,5 @@ slug: /commands/theme/System-Documents
 [`Path to object`](../../commands/path-to-object) および [`Object to path`](../../commands/object-to-path) コマンドを使用することでパス名の中身を管理することができます。 具体的には、パス名からは以下のものを取得することができます:
 
 - ファイル名
-- 親フォルダーパス
-- ファイルあるいはフォルダーの拡張子。
+- 親フォルダパス
+- ファイルあるいはフォルダの拡張子。
