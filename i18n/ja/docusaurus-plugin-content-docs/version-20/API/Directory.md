@@ -614,7 +614,7 @@ By default, if you omit the *options* parameter, only the files at the first lev
 
 |引数|型||説明|
 |---|----|---|---|
-|options|Integer|->|フォルダリスト用のオプション|
+|options|Integer|->|フォルダーリスト用のオプション|
 |戻り値|Collection|<-|Collection of children folder objects|
 </div>
 <!-- END REF -->
