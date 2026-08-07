@@ -435,7 +435,7 @@ ALERT($info.Copyright)
 
 |引数|型||説明|
 |---|----|---|---|
-|destinationFolder|4D.Folder|->|移動先フォルダ|
+|destinationFolder|4D.Folder|->|移動先フォルダー|
 |newName|Text|->|移動先でのファイルの完全な名称|
 |戻り値|4D.File|<-|Moved file|
 </div>
