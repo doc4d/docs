@@ -11,7 +11,7 @@ displayed_sidebar: docs
 
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| * | OpérOperatorteur | &#8594;  | Si spécifié, liste est un nom d’objet (chaîne) Si omis, liste est un numéro de référence de liste |
+| * | Operator | &#8594;  | Si spécifié, liste est un nom d’objet (chaîne) Si omis, liste est un numéro de référence de liste |
 | liste | Integer, Text | &#8594;  | Numéro de référence de liste (si * omis) ou Nom d'objet de type liste (si * passé) |
 | refElément | Integer, Operator | &#8594;  | Numéro de référence d’élément ou 0 pour le dernier élément ajouté à la liste ou * pour l’élément courant de la liste |
 | icône | Picture | &#8592; | Icône associée à l'élément |
