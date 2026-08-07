@@ -96,7 +96,7 @@ title: コンポーネントの開発
 
 ![tab-component](../assets/en/Project/tab-component.png)
 
-- フォルダ、メソッド、クラスおよびフォーム(プレビューのみ)を含むホーム
+- フォルダー、メソッド、クラスおよびフォーム(プレビューのみ)を含むホーム
 - プロジェクトメソッド
 - データベースメソッド([On Web Connection](../commands/on-web-connection-database-method)、[On Web Authentication](../commands/on-web-authentication-database-method)、[On Host Database Event](../commands/on-host-database-event-database-method))
 - クラス
@@ -463,7 +463,7 @@ SAVE RECORD($tablepointer->)
 
 1. アイコン用のピクチャファイルを作成し、 `logo.svg` あるいは `logo.png` という名前をつけます。 ピクチャーは正方形で表示されるという点に注意してください(必要であれば自動的にリサイズされます)。 推奨されるのは **svg** フォーマットです。
 
-2. アイコンファイルをコンポーネントの [**Resources フォルダ**](../Project/architecture.md#resources) にコピーします。
+2. アイコンファイルをコンポーネントの [**Resources フォルダー**](../Project/architecture.md#resources) にコピーします。
 
 このロゴファイルは、コンポーネントがインタープリタ版か [ビルトされている](../Desktop/building.md#コンポーネントをビルド) かに関わらず、プロジェクト依存関係ウィンドウ内においてそのコンポーネントに対して使用されます。
 
