@@ -11,11 +11,9 @@ displayed_sidebar: docs
 
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| campo | Field, Table | &#8594; | Campo a utilizar para recuperar datos o Tabla a utilizar para recuperar números de registros |
-| array | Array | &#8592; | Array para recibir valores de campos o números de registros |
-| campo | Field | &#8594; | Campo a recuperar en el array |
-| array | Array | &#8592; | Array que recibe los valores del campo |
-| * | Operador | &#8594; | Esperar ejecución |
+| seleccion | Campo, Tabla | &#8594;  | Campo a utilizar para recuperar datos o Tabla a utilizar para recuperar números de registro |
+| array | Array | &#8592; | Array para recibir valores de los campos o los números de registros |
+| * | Operador | &#8594;  | Esperar ejecución |
 </div>
 <!-- END REF-->
 
