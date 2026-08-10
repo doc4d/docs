@@ -13,9 +13,11 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | rutaEstruct | Text | &#8594; | Nombre de ruta del archivo de estructura |
 | rutaDatos | Text | &#8594; | Nombre de ruta del archivo de datos a cifrar |
-| newPassPhrase &#124; newDataKey | Texto, Objeto | &#8594; | En caso de reemplazo: nueva passPhrase (texto) o nueva llave de cifrado (objeto) |
-| carpetaArchivo | Text | &#8594; | Nombre de ruta de la carpeta donde se guardarán los archivos originales |
-| curPassPhrase &#124; curDataKey | Texto, Objeto | &#8594; | passPhrase actual (texto) o llave de encripción actual(objeto) |
+| newPassPhrase | Text | &#8594; | En caso de reemplazo: nueva passPhrase | 
+| newDataKey | Object | &#8594;  | En caso de reemplazo: nueva llave de cifrado |
+| carpetaArchivo | Text, 4D.Folder | &#8594; | Nombre de ruta de la carpeta donde se guardarán el archivo de datos original |
+| curPassPhrase &#124; | Text | &#8594; | passPhrase actual |
+| curDataKey | Object | &#8594;  | Llave de encripción actual |
 | nomMetod | Text | &#8594; | Nombre del método de retrollamada 4D |
 | Resultado | Text | &#8592; | Nombre completo de la carpeta donde se guardaron los archivos originales |
 </div>
