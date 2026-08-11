@@ -26,7 +26,7 @@ displayed_sidebar: docs
 |---|---|
 |13|Modificado|
 |12|Renombrar|
-|11 SQL|Creado por|
+|11 SQL|Creado|
 
 </details>
 </div>
