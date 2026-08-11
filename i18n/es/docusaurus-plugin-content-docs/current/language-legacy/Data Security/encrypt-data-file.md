@@ -16,7 +16,7 @@ displayed_sidebar: docs
 | newPassPhrase | Text | &#8594; | En caso de reemplazo: nueva passPhrase | 
 | newDataKey | Object | &#8594;  | En caso de reemplazo: nueva llave de cifrado |
 | carpetaArchivo | Text, 4D.Folder | &#8594; | Nombre de ruta de la carpeta donde se guardarán el archivo de datos original |
-| curPassPhrase &#124; | Text | &#8594; | passPhrase actual |
+| curPassPhrase | Text | &#8594; | passPhrase actual |
 | curDataKey | Object | &#8594;  | Llave de encripción actual |
 | nomMetod | Text | &#8594; | Nombre del método de retrollamada 4D |
 | Resultado | Text | &#8592; | Nombre completo de la carpeta donde se guardaron los archivos originales |
