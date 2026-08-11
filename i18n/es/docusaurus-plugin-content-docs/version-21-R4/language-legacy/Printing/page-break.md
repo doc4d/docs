@@ -11,8 +11,8 @@ displayed_sidebar: docs
 
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| * | Operator | &#8594; | Cancel printing job started with Print form |
-| > | Operator | &#8594; | Force one printing job |
+| * | Operator | &#8594; | Cancela la impresión lanzada por Print form |
+| > | Operator | &#8594; | Forzar un trabajo de impresión |
 </div>
 <!-- END REF-->
 
