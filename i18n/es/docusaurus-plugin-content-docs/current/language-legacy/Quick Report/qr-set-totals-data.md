@@ -5,7 +5,7 @@ slug: /commands/qr-set-totals-data
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET TOTALS DATA.Syntax-->**QR SET TOTALS DATA** ( *area* : Integer ; *numColumna* : Integer ; *numRuptura* : Integer ; operador | valor )<!-- END REF-->
+<!--REF #_command_.QR SET TOTALS DATA.Syntax-->**QR SET TOTALS DATA** ( *area* : Integer ; *colNum* : Integer ; *breakNum* : Integer ; *operator* : Integer )<br/>**QR SET TOTALS DATA** ( *area* : Integer ; *colNum* : Integer ; *breakNum* : Integer ; *value* : Text )<!-- END REF-->
 <!--REF #_command_.QR SET TOTALS DATA.Params-->
 <div class="no-index">
 
