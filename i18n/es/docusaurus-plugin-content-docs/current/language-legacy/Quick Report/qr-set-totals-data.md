@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | area | Integer | &#8594; | Referencia del área |
 | numColumna | Integer | &#8594; | Número de columna |
 | numRuptura | Integer | &#8594; | Número de ruptura |
-| operador &#124; valor | Entero largo, Cadena | &#8594; | Operador para la celda o contenido de la celda |
+| operador &#124; valor | Integer, Text | &#8594; | Operador para la celda o contenido de la celda |
 </div>
 <!-- END REF-->
 
