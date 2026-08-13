@@ -5,7 +5,7 @@ slug: /commands/print-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PRINT SELECTION.Syntax-->**PRINT SELECTION** ( {*tabla* : Table}{;}{* | >} )<!-- END REF-->
+<!--REF #_command_.PRINT SELECTION.Syntax-->**PRINT SELECTION** ( {*aTable* : Table} {; *} )<br/>**PRINT SELECTION** ( {*aTable* : Table} {; > : >} )<!-- END REF-->
 <!--REF #_command_.PRINT SELECTION.Params-->
 <div class="no-index">
 
@@ -48,6 +48,12 @@ Durante la impresión, el método de formulario de salida y los métodos de obje
 Puede saber si PRINT SELECTION está imprimiendo el primer encabezado probando [Before selection](../commands/before-selection) durante un evento On Header. Igualmente puede verificar el último pie de página, probando [End selection](../commands/end-selection) durante un evento On Printing Footer. Para mayor información, consulte la descripción de estos comandos, como también de los comandos [Form event code](../commands/form-event-code) y [Level](../commands/level).
 
 Para imprimir una selección ordenada con subtotales o rupturas utilizando PRINT SELECTION, debe primero ordenar la selección. Luego, en cada área de ruptura del informe, incluir una variable con un método de objeto que asigne el subtotal a la variable. Igualmente puede utilizar funciones estadísticas y aritméticas como [Sum](../commands/sum) y [Average](../commands/average) para asignar valores a las variables. Para mayor información, consulte las descripciones de [Subtotal](../commands/subtotal), [BREAK LEVEL](../commands/break-level) y [ACCUMULATE](../commands/accumulate).
+
+:::note
+
+Puede utilizar [comandos estadísticos](../../commands/theme/On_a_Series.md) como [Sum](../commands/sum) y [Average](../commands/average) para asignar valores a las variables. Cuando se utilizan funciones estadísticas en un informe, se comportan de manera específica porque el propio informe debe cargar cada registro. Cuando utiliza estas funciones en un informe, los valores devueltos solo son fiables en el nivel de ruptura 0, y solo cuando el procesamiento de rupturas está activado. Esto significa que solo son útiles al final de un informe, después de que se hayan procesado todos los registros. Solo usaría estas funciones en un método de objeto para un área no editable incluida en el área de ruptura B0.
+
+:::
 
 **Advertencia:** no utilice el comando [PAGE BREAK](../commands/page-break) con el comando PRINT SELECTION. [PAGE BREAK](../commands/page-break) está reservado para ser utilizado con el comando [Print form](../commands/print-form).
 

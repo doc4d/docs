@@ -39,7 +39,7 @@ Le sous-formulaire en page utilise le formulaire entrée désigné par la propri
 
 ### Utilisation de la variable ou de l'expression liée
 
-Vous pouvez lier [une variable ou une expression] (properties_Object.md#variable-or-expression) à un objet conteneur de sous-formulaire. Cette fonction est très utile pour synchroniser les valeurs du formulaire parent et de son/ses sous-formulaire(s).
+Vous pouvez lier [une variable ou une expression](properties_Object.md#variable-or-expression) à un objet conteneur de sous-formulaire. Cette fonction est très utile pour synchroniser les valeurs du formulaire parent et de son/ses sous-formulaire(s).
 
 Par défaut, 4D crée une variable ou une expression de [type d'objet](properties_Object.md#expression-type) pour un conteneur de sous-formulaire, ce qui vous permet de partager des valeurs dans le contexte du sous-formulaire à l'aide de la commande `Form`. Cependant, vous pouvez utiliser une variable ou une expression de n'importe quel type scalaire (time, integer, etc.) surtout si vous n'avez besoin de partager qu'une seule valeur :
 
@@ -52,7 +52,7 @@ Relier la même variable ou expression au conteneur du sous-formulaire et à d'a
 
 ![](../assets/en/FormObjects/subforms1.png)
 
-Dans le formulaire parent, les deux objets (zone de saisie et conteneur de sous-formulaire) **ont la même valeur que *Variable ou expression***. Il peut s'agir d'une variable (par exemple `parisTime`), ou d'une expression (par exemple `Form.parisTime`).
+Dans le formulaire parent, les deux objets (zone de saisie et conteneur de sous-formulaire) **ont la même valeur de *Variable ou expression***. Il peut s'agir d'une variable (par exemple `parisTime`), ou d'une expression (par exemple `Form.parisTime`).
 
 :::info
 
@@ -179,7 +179,7 @@ Pour répondre à ces besoins, 4D propose les mécanismes suivants :
 
 La commande `CALL SUBFORM CONTAINER` permet à une instance de sous-formulaire d'envoyer un [événement](../Events/overview.md) à l'objet conteneur de sous-formulaire, qui peut alors le traiter dans le contexte du formulaire parent. L’événement est reçu dans la méthode de l’objet conteneur. Il peut s’agir à l’origine de tout événement détecté par le sous-formulaire (clic, glisser-déposer, etc.).
 
-Le code de l’événement est libre (par exemple, 20000 ou -100). Le code de l’événement est libre (par exemple, 20000 ou -100). Dans le premier cas, seuls les événements présents dans la liste des événements "cochables" des conteneurs de sous-formulaire peuvent être utilisés (cf. Liste des propriétés). Dans le second cas, le code ne doit correspondre à aucun événement formulaire existant. Il est conseillé d’utiliser une valeur négative pour avoir l’assurance que 4D n’utilisera pas ce code dans les versions futures.
+Le code de l’événement est libre (par exemple, 20000 ou -100). Vous pouvez soit utiliser un code correspondant à un événement existant (par exemple, 3 pour `Sur validation`), soit utiliser un code personnalisé. Dans le premier cas, seuls les événements présents dans la liste des événements "cochables" des conteneurs de sous-formulaire peuvent être utilisés (cf. Liste des propriétés). Dans le second cas, le code ne doit correspondre à aucun événement formulaire existant. Il est conseillé d’utiliser une valeur négative pour avoir l’assurance que 4D n’utilisera pas ce code dans les versions futures.
 
 Les événements pris en charge pour les sous-formulaires sont les suivants :
 

@@ -556,7 +556,7 @@ La función `.files()` devuelve <!-- REF #directory.files().Summary -->una colec
 
 > Los alias o enlaces simbólicos no se resuelven.
 
-Por defecto, si se omite el parámetro *options*, sólo se devuelven en la colección los archivos del primer nivel de la carpeta, así como los archivos o carpetas invisibles. Puede modificar esto pasando, en el parámetro *options*, una o varias de las siguientes constantes:
+Por defecto, si omite el parámetro *options*, solo los archivos del primer nivel de la carpeta se devuelven en la colección, incluyendo archivos invisibles. Puede modificar esto pasando, en el parámetro *options*, una o varias de las siguientes constantes:
 
 | Constante             | Valor | Comentario                                                                      |
 | --------------------- | ----- | ------------------------------------------------------------------------------- |

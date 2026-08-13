@@ -66,7 +66,7 @@ Incluso para alguien que no conozca el proyecto, está claro lo que hace este c�
 
 Puede encapsular los métodos de su proyecto en objetos **fórmula** y llamarlos desde sus objetos.
 
-The [`Formula`](../commands/formula) or [`Formula from string`](../commands/formula-from-string) commands allow you to create [native formula objects](../API/FormulaClass.md) that you can encapsulate in object properties. Permite implementar métodos objetos personalizados.
+Los comandos [`Formula`](../commands/formula) o [`Formula from string`](../commands/formula-from-string) le permiten crear [objetos de fórmula nativos](../API/FormulaClass.md) que puede encapsular en las propiedades de los objetos. Permite implementar métodos objetos personalizados.
 
 Para ejecutar un método almacenado en una propiedad objeto, utilice el operador **()** después del nombre de la propiedad. Por ejemplo:
 
@@ -95,7 +95,7 @@ Para más información, vea la [descripción de la clase `4D.Formula`](../API/Fo
 
 Un método de menú se llama cuando se selecciona el comando de menú personalizado al que está asociado. Un método de menú se llama cuando se selecciona el comando de menú personalizado al que está asociado. El método se ejecuta cuando se elige el comando del menú. Al crear menús personalizados con métodos de menú que realizan acciones específicas, usted crea interfaces personalizadas para sus aplicaciones de escritorio.
 
-Los comandos de menú personalizados pueden hacer que se realicen una o varias actividades. Por ejemplo, un comando de menú de entrada de registros puede llamar a un método que realice dos tareas: mostrar el formulario de entrada apropiado y llamar al comando [`ADD RECORD`(../commands/add-record)] hasta que el usuario cancele la actividad de entrada de datos.
+Los comandos de menú personalizados pueden hacer que se realicen una o varias actividades. For example, a menu command for entering records might call a method that performs two tasks: displaying the appropriate input form, and calling the [`ADD RECORD`](../commands/add-record) command until the user cancels the data entry activity.
 
 La automatización de secuencias de actividades es una capacidad muy poderosa del lenguaje de programación 4D. Utilizando los menús personalizados, se pueden automatizar las secuencias de tareas y, por lo tanto, ofrecer más orientación a los usuarios de la aplicación.
 
@@ -296,7 +296,7 @@ Para más información sobre los componentes, consulte el capítulo [Desarrollo 
 
 Este atributo sólo se tiene en cuenta para una aplicación 4D en modo cliente-servidor. Cuando esta opción está marcada, el método del proyecto se ejecuta siempre en el servidor, independientemente de cómo se llame.
 
-Para más información sobre esta opción, consulte [Atributo Ejecutar en el servidor](https://doc.4d.com/4Dv20/4D/20/Execute-on-Server-attribute.300-6330555.en.html).
+Para más información sobre esta opción, consulte [Atributo Ejecutar en el servidor](../Desktop/clientServer.md#execute-on-server-attribute).
 
 ### Modo Ejecución
 

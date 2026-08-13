@@ -3750,11 +3750,11 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 <!-- REF #_method_.VP REMOVE NAME.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|vpAreaName|Text|->|4D View Pro area form object name|
-|name|Text|->|Name of the named range or named formula to remove|
-|scope|Integer|->|Target scope (default=current sheet)|
+|vpAreaName|Text|->|Nombre del objeto de formulario del área 4D View Pro|
+|name|Text|->|Nombre del rango con nombre o de la fórmula con nombre a eliminar|
+|scope|Integer|->|Alcance de destino (por defecto=hoja actual)|
 </div>
 <!-- END REF -->
 

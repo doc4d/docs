@@ -330,12 +330,12 @@ Vous pouvez cocher l'option **Permettre la mise à jour automatique...** pour le
 
 Pour cela, vous devez cliquer sur le bouton **[...]** et désigner l'emplacement sur votre disque du fichier à utiliser pour la mise à jour. Le fichier à sélectionner dépend de la plate-forme courante du serveur :
 
-| Plateforme du serveur courant | Fichier requis                                               | Détails                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ----------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| macOS                         | Windows 4D Volume Desktop *ou* Windows client update archive | By default, you can select the `4D Volume Desktop` application for Windows. However, **it is recommended** to select a `.4darchive` file previously built on Windows for proper icon management and to preserve a signed .exe after updates. To do so, press **Shift** while clicking on [...] |
-| Windows                       | macOS client update archive                                  | Sélectionnez un fichier `.4darchive` signé, précédemment créé sur macOS                                                                                                                                                                                                                                                                                                                                                                            |
+| Plateforme du serveur courant | Fichier requis                                               | Détails                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| macOS                         | Windows 4D Volume Desktop *ou* Windows client update archive | Par défaut, vous pouvez sélectionner l'application « 4D Volume Desktop » pour Windows. Cependant, **il est recommandé** de choisir un fichier `.4darchive` préalablement créé sous Windows afin d'assurer une gestion correcte des icônes et de conserver un fichier .exe signé après les mises à jour. Pour ce faire, maintenez la touche **Maj** enfoncée tout en cliquant sur [...] |
+| Windows                       | macOS client update archive                                  | Sélectionnez un fichier `.4darchive` signé, précédemment créé sur macOS                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
-You can build a specific `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option.
+Vous pouvez construire un fichier `.4darchive` spécifique pour la plate-forme concurrente en sélectionnant uniquement [**Construire application cliente**](#build-client-application) et l'option [**Permettre la mise à jour automatique...**](#copie-des-applications-clientes-dans-lapplication-serveur) adéquate.
 
 #### Comment proposer une mise à jour ?
 
@@ -572,7 +572,7 @@ Si la licence est invalide, un message vous le signale.
 
 Vous pouvez désigner autant de fichiers valides que vous voulez. Lors de la génération de l’application exécutable, 4D utilisera les licences les plus appropriées.
 
-> Des licences "R" dédiées sont requises pour générer des applications basées sur des versions "R-release" (les numéros de licence des produits "R" débutent par "R-4DDP").
+> Des licences "R" dédiées sont requises pour générer des applications basées sur des versions "R-release" (les numéros de licence des produits "R" débutent par "R-").
 
 Après la création d'une application sous licence, un nouveau fichier de licence de déploiement est automatiquement inclus dans le dossier Licenses à côté de l'application exécutable (Windows) ou dans le paquet (macOS).
 
@@ -781,7 +781,7 @@ Voici le scénario pour la mise à jour d'un serveur ou d'une application mono-u
 2. Dans l'application en production, vous appelez la commande `SET UPDATE FOLDER` : cette commande désigne l'emplacement du dossier où se trouve la mise à jour "en attente" de l'application actuelle. Facultativement, vous pouvez copier dans ce dossier les éléments personnalisés de la version en production (fichiers utilisateur).
 3. Dans l'application en production, appelez la commande `RESTART 4D` : cette commande déclenche automatiquement l'exécution d'un programme utilitaire nommé "updater" qui ferme l'application en cours, la remplace en utilisant la mise à jour "en attente" si elle est spécifiée, et redémarre l'application avec le fichier de données courant. La version précédente est renommée.
 
-> Cette séquence est compatible avec les applications serveur Windows exécutées en tant que service.
+> Cette séquence est compatible avec les applications Windows Server [exécutées en tant que Service](../server/service.md).
 
 ### Journal des mises à jour
 

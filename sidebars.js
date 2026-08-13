@@ -43,6 +43,27 @@ module.exports =
             "Project/documentation"
           ]
         },
+       {
+          type: "category",
+          label: "Settings",
+          link: {
+             type: "doc",
+             id: "settings/overview"
+          },
+          items: [
+                "settings/general",
+                "settings/interface",
+                "settings/compiler",
+                "settings/database",
+                "settings/backup",
+                "settings/client-server",
+                "settings/web",
+                "settings/sql",
+                "settings/ai",
+                "settings/security",
+                "settings/compatibility"
+              ]
+        },
         {
           type: "category",
           label: "Database Structure",
@@ -92,28 +113,7 @@ module.exports =
         "code-editor/write-class-method",
         "Project/components",
         "Project/compiler",
-        {
-          type: "category",
-          label: "Settings",
-          link: {
-             type: "doc",
-             id: "settings/overview"
-          },
-          items: [
-                "settings/general",
-                "settings/interface",
-                "settings/compiler",
-                "settings/database",
-                "settings/backup",
-                "settings/client-server",
-                "settings/web",
-                "settings/sql",
-                "settings/ai",
-                "settings/security",
-                "settings/compatibility"
-              ]
-        },
-         "Desktop/building",
+        "Desktop/building",
           {
            type: "category",
            label: "Debugging",
@@ -250,6 +250,7 @@ module.exports =
             "API/MethodClass",
             "API/OutgoingMessageClass",
             "API/POP3TransporterClass",
+            "API/QuotaManagerClass",
             "API/SessionClass",
             "API/SignalClass",
             "API/SMTPTransporterClass",
@@ -333,7 +334,29 @@ module.exports =
         },
         "Develop-legacy/transactions",
         "Tags/transformation-tags",
-        "Project/date-time-formats"
+        "Project/date-time-formats",
+        "Develop-legacy/xml"
+        /*
+        // not ready yet, needs imports from Design ref for records and selection concepts,
+        {
+            type: "category",
+            label: "Records & Selections (legacy data access)",
+            link: {
+              type: "generated-index",
+            title: "Records & Selections (legacy data access)",
+            description: "Legacy data access based upon records, selections, sets",
+            slug: "/category/records-selections",
+            keywords: [
+              "records",
+              "selections"
+            ],
+            image: "/img/docusaurus.png"              },
+              items: [
+                "Develop-legacy/records",
+                "Develop-legacy/sets",
+                "Develop-legacy/named-selections"
+          ]
+        } */
       ]
     },
     {
@@ -702,6 +725,11 @@ module.exports =
           label: "Standard actions",
           id: "Desktop-legacy/standard-actions"
         },
+        {
+          type: "doc",
+          label: "Drag and Drop",
+          id: "Desktop/drag-and-drop"
+        },
          {
           type: "doc",
           label: "Labels",
@@ -746,7 +774,7 @@ module.exports =
     },
     {
       type: "category",
-      label: "Administration",
+      label: "Server & Admin",
       link: {
         type: "generated-index",
         title: "Administration",
@@ -759,21 +787,42 @@ module.exports =
       items: [
         {
           type: "category",
-          label: "4D Server Administration Window",
+          label: "4D Server",
           link: {
             type: "doc",
-            id: "ServerWindow/overview"
+            id: "server/overview"
           },
           items: [
-            "ServerWindow/monitor",
-            "ServerWindow/sessions",
-            "ServerWindow/processes",
-            "ServerWindow/maintenance",
-            "ServerWindow/application-server",
-            "ServerWindow/sql-server",
-            "ServerWindow/http-server",
-            "ServerWindow/real-time-monitor",
-            "ServerWindow/remote-admin"
+            {
+                type: "category",
+                label: "Administration Window",
+                link: {
+                  type: "doc",
+                  id: "ServerWindow/overview"
+                },
+                items: [
+                  "ServerWindow/monitor",
+                  "ServerWindow/sessions",
+                  "ServerWindow/processes",
+                  "ServerWindow/maintenance",
+                  "ServerWindow/application-server",
+                  "ServerWindow/sql-server",
+                  "ServerWindow/http-server",
+                  "ServerWindow/real-time-monitor",
+                  "ServerWindow/remote-admin"
+                ]
+              },
+            "server/menus",
+            "server/exit",
+              {
+                type: "category",
+                label: "Windows Features",
+                items: [
+                  "server/sso",
+                  "server/service",
+                  "server/vss"
+                ]
+              }
           ]
         },
         {
@@ -844,7 +893,8 @@ module.exports =
             "Backup/backup",
             "Backup/settings",
             "Backup/log",
-            "Backup/restore"
+            "Backup/restore",
+            "Backup/mirror"
           ]
         },
         {

@@ -203,7 +203,7 @@ Una aplicación autónoma requiere una licencia de despliegue. Puede ser anidada
 | ---------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | *4D OEM Desktop*       | Licencia personalizada incorporada, contacte al equipo de ventas 4D para obtener información | [Página Licencias](#licenses) del diálogo Crear aplicación                                |
 | *4D Unlimited Desktop* | **Descontinuado** - Licencia personalizada integrada                                         | [Página Licencias](#licenses) del diálogo Crear aplicación                                |
-| *4D Desktop*           | Licencia por usuario, que permite utilizar aplicaciones 4D independientes                    | Diálogo [Primera activación](../Admin/licenses.md#first-activation) en la máquina usuario |
+| *4D Desktop*           | Per-computer license, allowing to use stand-alone 4D applications                            | Diálogo [Primera activación](../Admin/licenses.md#first-activation) en la máquina usuario |
 
 
 
@@ -332,12 +332,12 @@ Puede marcar la opción **Permitir la actualización automática...** para las a
 
 Esta funcionalidad requiere que haga clic en el botón **[...]** y designe la ubicación en su disco del archivo que se utilizará para la actualización. El archivo a seleccionar depende de la plataforma actual del servidor:
 
-| Plataforma del servidor actual | Archivo requerido                                           | Detalles                                                                                                                                                                                                                                                                                       |
-| ------------------------------ | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| macOS                          | Windows 4D Volume Desktop *o* Windows client update archive | By default, you can select the `4D Volume Desktop` application for Windows. However, **it is recommended** to select a `.4darchive` file previously built on Windows for proper icon management and to preserve a signed .exe after updates. To do so, press **Shift** while clicking on [...] |
-| Windows                        | macOS client update archive                                 | Seleccione un archivo `.4darchive` firmado previamente creado en macOS                                                                                                                                                                                                                         |
+| Plataforma del servidor actual | Archivo requerido                                           | Detalles                                                                                                                                                                                                                                                                                                                            |
+| ------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| macOS                          | Windows 4D Volume Desktop *o* Windows client update archive | Por defecto, puede seleccionar la aplicación `Volumen 4D` para Windows. Sin embargo, **se recomienda** seleccionar un `.4darchive` previamente compilado en Windows para una correcta gestión de iconos y para preservar un .exe firmado después de las actualizaciones. Para ello, presione **Mayús** mientras haces clic en [...] |
+| Windows                        | macOS client update archive                                 | Seleccione un archivo `.4darchive` firmado previamente creado en macOS                                                                                                                                                                                                                                                              |
 
-You can build a specific `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option.
+Puede compilar un archivo específico `.4darchive` en la plataforma concurrente seleccionando únicamente la opción [**Compilar aplicación cliente**](#build-client-application) y la opción correspondiente [**Permitir actualización automática... **](#copy-of-client-applications-inside-the-server-application).
 
 #### Visualización de la notificación de actualización
 
@@ -536,7 +536,7 @@ Una vez seleccionado un archivo, la lista indicará las características de la l
 Si una licencia no es válida, un mensaje le avisará.
 
 Puede designar tantos archivos válidos como desee. Al generar una aplicación ejecutable, 4D utilizará la licencia más apropiada disponible.
-> Se necesitan licencias "R" dedicadas para generar aplicaciones basadas en las versiones "R-release" (los números de licencia de los productos "R" empiezan por "R-4DDP").
+> Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-").
 
 Una vez generada la aplicación, se incluye automáticamente un nuevo archivo de licencia de despliegue en la carpeta Licencias junto a la aplicación ejecutable (Windows) o en el paquete (macOS).
 

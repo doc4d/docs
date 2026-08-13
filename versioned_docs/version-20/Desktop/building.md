@@ -205,7 +205,7 @@ A stand-alone application requires a deployment license. It can be embedded at b
 |---|----|---|
 |*4D OEM Desktop*|Embedded custom license, contact 4D Sales for information|[Licenses page](#licenses) of the Build application dialog|
 |*4D Unlimited Desktop*|**Discontinued** - Embedded custom license |[Licenses page](#licenses) of the Build application dialog|
-|*4D Desktop*|Per-user license, allowing them to use stand-alone 4D applications|[First activation](../Admin/licenses.md#first-activation) dialog box on the user's machine|
+|*4D Desktop*|Per-computer license, allowing to use stand-alone 4D applications|[First activation](../Admin/licenses.md#first-activation) dialog box on the user's machine|
 
 
 
@@ -542,7 +542,7 @@ If a license is not valid, a message will warn you.
 
 You can designate as many valid files as you want. When building an executable application, 4D will use the most appropriate license available.
 
->Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-4DDP").
+>Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-").
 
 After the application is built, a new deployment license file is automatically included in the Licenses folder next to the executable application (Windows) or in the package (macOS).
 

@@ -278,7 +278,7 @@ POP3 Transporter オブジェクトは [POP3 New transporter](#pop3-new-transpor
 
 ##### 説明
 
-`.getMail()` 関数は、 <!-- REF #POP3TransporterClass.getMail().Summary -->`.getMail()` 関数は、<!-- END REF -->。 この関すを使用すると、メールのコンテンツをローカルで管理できるようになります。
+`.getMail()` 関数は、 <!-- REF #POP3TransporterClass.getMail().Summary -->`.getMail()` 関数は、<!-- END REF -->。 この関数を使用すると、メールのコンテンツをローカルで管理できるようになります。
 
 *msgNumber* には、取得するメッセージの番号を渡します。 この番号は、[`.getMailInfoList()`](#getmailinfolist) 関数によって `number` プロパティに返されます。
 

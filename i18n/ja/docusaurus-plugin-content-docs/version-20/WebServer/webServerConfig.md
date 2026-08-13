@@ -64,7 +64,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 
 | 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
-| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | Text |
+| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | テキスト |
 
 セキュアプロトコルに使用される暗号リストです。 Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。 コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
@@ -119,10 +119,10 @@ CORS を介したサーバーへのデータリクエスト送信が許可され
 
 ## デバッグログ
 
-| 設定できる場所          | 名称              | コメント   |
-| ---------------- | --------------- | ------ |
-| webServer オブジェクト | `debugLog`      | number |
-| `WEB SET OPTION` | `Web debug log` | number |
+| 設定できる場所          | 名称              | コメント |
+| ---------------- | --------------- | ---- |
+| webServer オブジェクト | `debugLog`      | 数値   |
+| `WEB SET OPTION` | `Web debug log` | 数値   |
 
 Webサーバーの HTTPリクエストログファイル (アプリケーションの "Logs" フォルダーに格納されている [*HTTPDebugLog_nn.txt*](../Debugging/debugLogFiles.md#httpdebuglogtxt) (nn はファイル番号)) の状態を指定します。 このログファイルは、Webサーバーに関連する問題をデバッグするのに便利です。 ログには、各リクエスト・レスポンスが rawモードで記録されます。 ヘッダーを含むリクエスト全体が記録され、オプションでボディ部分も記録することができます。
 
@@ -139,7 +139,7 @@ Webサーバーの HTTPリクエストログファイル (アプリケーショ�
 
 | 設定できる場所             | 名称                                                         | コメント              |
 | ------------------- | ---------------------------------------------------------- | ----------------- |
-| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | Text              |
+| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | テキスト              |
 | `WEB SET HOME PAGE` |                                                            | Webプロセス毎に異なる設定が可能 |
 | 設定ダイアログボックス         | [設定ページ / デフォルトホームページ](../settings/web.md#デフォルトホームページ)      |                   |
 
@@ -178,22 +178,22 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 ## HTTPを有効化
 
-| 設定できる場所          | 名称                                                 | コメント    |
-| ---------------- | -------------------------------------------------- | ------- |
-| webServer オブジェクト | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | boolean |
-| `WEB SET OPTION` | `Web HTTP enabled`                                 |         |
-| 設定ダイアログボックス      | [設定ページ / HTTPを有効化](../settings/web.md#httpを有効化)    |         |
+| 設定できる場所          | 名称                                                 | コメント |
+| ---------------- | -------------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | ブール  |
+| `WEB SET OPTION` | `Web HTTP enabled`                                 |      |
+| 設定ダイアログボックス      | [設定ページ / HTTPを有効化](../settings/web.md#httpを有効化)    |      |
 
 安全でない接続を Webサーバーが受け入れるかどうかを示します。
 
 
 ## HTTPSを有効にする
 
-| 設定できる場所          | 名称                                                   | コメント    |
-| ---------------- | ---------------------------------------------------- | ------- |
-| webServer オブジェクト | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean |
-| `WEB SET OPTION` | `Web HTTPS enabled`                                  |         |
-| 設定ダイアログボックス      | 設定ページ / HTTPSを有効にする                                  |         |
+| 設定できる場所          | 名称                                                   | コメント |
+| ---------------- | ---------------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | ブール  |
+| `WEB SET OPTION` | `Web HTTPS enabled`                                  |      |
+| 設定ダイアログボックス      | 設定ページ / HTTPSを有効にする                                  |      |
 
 Webサーバーがセキュアな接続を受け入れるか受け入れないかを指定します。 このオプションは [TLSプロトコル](Admin/tls.md) で説明しています。
 
@@ -256,11 +256,11 @@ HSTS によって、4D Webサーバーはブラウザーに対し、セキュア
 
 ## HTTP ポート
 
-| 設定できる場所          | 名称                                             | コメント   |
-| ---------------- | ---------------------------------------------- | ------ |
-| webServer オブジェクト | [`HTTPPort`](API/WebServerClass.md#httpport)   | number |
-| `WEB SET OPTION` | `Web port ID`                                  |        |
-| 設定ダイアログボックス      | [設定ページ / HTTPポート](../settings/web.md#http-ポート) |        |
+| 設定できる場所          | 名称                                             | コメント |
+| ---------------- | ---------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPPort`](API/WebServerClass.md#httpport)   | 数値   |
+| `WEB SET OPTION` | `Web port ID`                                  |      |
+| 設定ダイアログボックス      | [設定ページ / HTTPポート](../settings/web.md#http-ポート) |      |
 
 HTTP接続を受け付ける IP (TCP) ポート番号。 デフォルトで、4D は通常の Web HTTPポート (TCPポート) 番号である 80番を使用して Webアプリケーションを公開します。 他の Webサービスによってこのポート番号が既に使用されている場合、4D が使用する HTTPポート番号を変更する必要があります。
 
@@ -286,11 +286,11 @@ HTTP接続を受け付ける IP (TCP) ポート番号。 デフォルトで、4D
 
 ## HTTPS ポート
 
-| 設定できる場所          | 名称                                               | コメント   |
-| ---------------- | ------------------------------------------------ | ------ |
-| webServer オブジェクト | [`HTTPSPort`](API/WebServerClass.md#httpsport)   | number |
-| `WEB SET OPTION` | `Web HTTPS port ID`                              |        |
-| 設定ダイアログボックス      | [設定ページ / HTTPSポート](../settings/web.md#https-ポート) |        |
+| 設定できる場所          | 名称                                               | コメント |
+| ---------------- | ------------------------------------------------ | ---- |
+| webServer オブジェクト | [`HTTPSPort`](API/WebServerClass.md#httpsport)   | 数値   |
+| `WEB SET OPTION` | `Web HTTPS port ID`                              |      |
+| 設定ダイアログボックス      | [設定ページ / HTTPSポート](../settings/web.md#https-ポート) |      |
 
 TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォルトで HTTPSポート番号は 443です。 ポート番号に関する詳細については、[HTTP ポート](#http-ポート) を参照ください。
 
@@ -413,7 +413,7 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォル
 
 Webサーバーに処理を許可する HTTPリクエスト (POST) の最大サイズ (バイト単位)。 デフォルト値は 2,000,000 (2MBより、すこし少ない値) です。 最大値 (2,147,483,648) に設定した場合、実際には制限無しということになります。
 
-制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。
+制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 リクエストのサイズが制限に達していると、4D Webサーバーによって拒否されます。
 
 とりうる値: 500,000 - 2,147,483,648。
 
@@ -432,9 +432,9 @@ Webサーバーに処理を許可する HTTPリクエスト (POST) の最大サ�
 
 ## 最低TLSバージョン
 
-| 設定できる場所          | 名称                                                     | コメント   |
-| ---------------- | ------------------------------------------------------ | ------ |
-| webServer オブジェクト | [`minTLSVersion`](API/WebServerClass.md#mintlsversion) | number |
+| 設定できる場所          | 名称                                                     | コメント |
+| ---------------- | ------------------------------------------------------ | ---- |
+| webServer オブジェクト | [`minTLSVersion`](API/WebServerClass.md#mintlsversion) | 数値   |
 
 接続に必要な最低TLSバージョン。 これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。
 
@@ -576,7 +576,7 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 | webServer オブジェクト | [`sessionCookieDomain`](API/WebServerClass.md#sessioncookiedomain) |      |
 | `WEB SET OPTION` | `Web session cookie domain`                                        |      |
 
-セッションcookie の "path" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。
+セッションcookie の "path" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。
 
 
 ## セッションcookie名
@@ -596,7 +596,7 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 | webServer オブジェクト | [`sessionCookiePath`](API/WebServerClass.md#sessioncookiepath) |      |
 | `WEB SET OPTION` | `Web session cookie path`                                      |      |
 
-セッションcookie の "domain" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。
+セッションcookie の "domain" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
 
 ## セッションcookie SameSite
 

@@ -15,14 +15,14 @@ https://developers.openai.com/api/reference/resources/embeddings
 
 **create**(*input* : Text; *model*: Text; *parameters* : OpenAIEmbeddingsParameters) : OpenAIEmbeddingsResult
 
-提供された入力、モデル、パラメータに対する埋め込みを作成します。
+提供された入力、モデル、パラメーターに対する埋め込みを作成します。
 
-| 引数           | 型                                                           | 説明                                                                                                                                                                                                              |
-| ------------ | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| *input*      | テキストまたはテキストのコレクション                                          | ベクター化する入力。                                                                                                                                                                                                      |
-| *model*      | Text                                                        | Supports [provider:model aliases](../provider-model-aliases.md). The [model to use](https://developers.openai.com/api/docs/guides/embeddings#embedding-models). |
-| *parameters* | [OpenAIEmbeddingsParameters](OpenAIEmbeddingsParameters.md) | 埋め込みリクエストをカスタマイズするための引数。                                                                                                                                                                                        |
-| 戻り値          | [OpenAIEmbeddingsResult](OpenAIEmbeddingsResult.md)         | 埋め込み。                                                                                                                                                                                                           |
+| 引数           | 型                                                           | 説明                                                                                                                                                                    |
+| ------------ | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| *input*      | テキストまたはテキストのコレクション                                          | ベクター化する入力。                                                                                                                                                            |
+| *model*      | Text                                                        | [使用するモデル](https://developers.openai.com/api/docs/guides/embeddings#embedding-models) [provider:model エイリアス](../provider-model-aliases.md) をサポートしています。 |
+| *parameters* | [OpenAIEmbeddingsParameters](OpenAIEmbeddingsParameters.md) | 埋め込みリクエストをカスタマイズするための引数。                                                                                                                                              |
+| 戻り値          | [OpenAIEmbeddingsResult](OpenAIEmbeddingsResult.md)         | 埋め込み。                                                                                                                                                                 |
 
 #### 使用例
 
