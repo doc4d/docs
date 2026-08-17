@@ -140,7 +140,7 @@ title: データ収集
 
 ## 保存先と送信先
 
-Collected data is written in a text file (JSON format) per database when certain events occur, such as when 4D Server starts up or shuts down. このファイルは[active 4D folder](../commands/get-4d-folder) 内、つまり以下の場所に保存されます:
+収集されたデータは、4D Server の起動やシャットダウンなどの特定のイベントが発生した際に、データベースごとにテキストファイル(JSON 形式)に書き込まれます。 このファイルは[active 4D folder](../commands/get-4d-folder) 内、つまり以下の場所に保存されます:
 
 - Windows: `Users\[userName]\AppData\Roaming\4D Server`
 - macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
