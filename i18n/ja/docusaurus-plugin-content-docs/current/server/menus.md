@@ -63,15 +63,15 @@ macOS では**終了**コマンドは**4D Server** メニュー (アプリケー
 
 4D Serverの**編集**メニューは標準のコピー/ペーストコマンドや、**クリップボード表示**コマンド等を含みます。
 
-このメニューには**環境設定...** (Windows 環境下) and **データベース設定** コマンドが含まれ、これらを使用することでアプリケーション内のそれに対応するダイアログボックスを表示することができます。 These dialog boxes are used to define developer's [preferences](../Preferences/overview.md) and various [settings](../settings/overview.md) of the project.
+このメニューには**環境設定...** (Windows 環境下) and **データベース設定** コマンドが含まれ、これらを使用することでアプリケーション内のそれに対応するダイアログボックスを表示することができます。 このダイアログボックスを使用して開発者の[設定](../Preferences/overview.md) や、プロジェクトの様々な[動作](../settings/overview.md) を定義できます。
 
 :::note
 
-Under macos, the **Preferences...** command is located in the **4D Server** menu (application menu).
+macos では、**環境設定... \*\* コマンドは**4D Server\*\* メニュー (アプリケーションメニュー) 内にあります。
 
 :::
 
-The **Edit** menu also includes the **Detach Debugger** and **Attach Debugger At Startup** commands, allowing you to control the debugging of the code:
+**編集** メニューには**デバッガを終了** および **開始時にデバッガを起動** コマンドが含まれ、これによってコードのデバッギングを管理することができます:
 
 ### Detach Debugger
 
