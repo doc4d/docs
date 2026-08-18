@@ -39,6 +39,7 @@ jobs:
       - name: Build
         env:
           LANGUAGE_TO_BUILD: ${{ matrix.language }}
+          NODE_OPTIONS: "--max-old-space-size=6144"
         run: |
           if [ -e package-lock.json ]; then
           npm ci
