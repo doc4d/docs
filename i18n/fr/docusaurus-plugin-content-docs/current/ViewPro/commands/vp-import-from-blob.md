@@ -59,7 +59,7 @@ Les paramètres suivants peuvent être utilisés dans la méthode de rappel :
 
 :::note
 
-The callback function specified in the `formula` attribute is triggered after all [4D custom functions](../formulas.md#4d-functions) within the imported content have completed their calculations. This ensures that any dependent processes, such as document modifications or exports, are performed only after all formula-based computations are fully resolved.
+La fonction de rappel spécifiée dans l'attribut `formula` est déclenchée une fois que toutes les [fonctions 4D personnalisées](../formulas.md#4d-functions) présentes dans le contenu importé ont terminé leurs calculs. Cela garantit que tous les processus dépendants, tels que les modifications de documents ou les exportations, ne sont exécutés qu'une fois que tous les calculs basés sur des formules ont été entièrement effectués.
 
 ::::
 
