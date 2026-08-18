@@ -3,67 +3,67 @@ id: menus
 title: メニュー
 ---
 
-The interface of the 4D Server application is made up of the following menus: **File**, **Edit**, **Window**, **Help**. Under macos, certain commands are found in the **4D Server** menu (application menu).
+4D Server アプリケーションのインタフェースは以下のメニューで構成されています: **ファイル**、**編集**、**ウィンドウ**、**ヘルプ**。 macOS ではいくつかのコマンドは**4D Server** メニュー (アプリケーションメニュー) に置かれます。
 
 ## File
 
-### New
+### 新規
 
-This hierarchical command has submenus that can be used to [create a project](../GettingStarted/creating.md#creating-a-project) or a new data file on the server machine.
+この階層コマンドにはサブメニューがあり、サーバマシン上で[プロジェクト](../GettingStarted/creating.md#プロジェクトの作成) やデータファイルを新しく作成するために使用します。
 
-### Open.../Open Recent
+### 開く.../最近使用したデータベースを開く
 
-These commands can be used to [open a project with 4D Server](../Desktop/clientServer.md#opening-a-remote-project). The **Open Recent>** command displays a submenu listing projects that have been opened recently by 4D Server. To reset this menu, choose the **Clear Menu** command.
+これらのコマンドを使用して[4D Serverでデータベース/プロジェクト](../Desktop/clientServer.md#リモートプロジェクトを開く) を開くことができます。 **最近使用したデータベース** コマンドは、4D Server が最近開いたことのあるデータベースを含むサブメニューを表示します。 このメニューをリセットするには、**メニュークリア** コマンドを選択します。
 
-### Close Project...
+### プロジェクトを閉じる...
 
-This command closes the current project without exiting the 4D Server application. When you choose this command, the server shutdown dialog box appears so that you can [set the disconnection mode](../server/exit.md) for any connected clients.
+このコマンドは4D Serverを終了せずに、現在のプロジェクトを閉じます。 このコマンドを選択するとサーバ終了ダイアログが表示され、接続ユーザの[接続解除モード](../server/exit.md) を指定できます。
 
-### Close Window
+### ウィンドウを閉じる
 
-This command closes the window in the foreground of the 4D Server application.
+このコマンドは4D Server アプリケーションの最前面にあるウィンドウを閉じます。
 
-### Close All Windows
+### すべてのウィンドウを閉じる
 
-This command closes all the windows of the 4D Server application. Note that in this case only the fact that the **Close Project...** command is activated in the **File** menu will indicate whether the project is still published.
+このコマンドは4D Serverアプリケーションのすべてのウィンドウを閉じます。 この場合、データベースが公開されていることを示す要素は**ファイル**メニューの**データベースを閉じる...** が有効化されているという点のみになるという点に注意してください。
 
-### Register Current Application as Service/Unregister Current Application/Unregister All Server Services
+### 現在のアプリケーションをサービスとして登録 / 現在のアプリケーションの登録解除 / すべてのサーバサービスの登録解除
 
-(Commands available under Windows) These commands are used to manage the [registering of the application as a Service](./service.md).
+(Windowsで利用可能) これらのコマンドを使用して[サービスとして登録するアプリケーション](./service.md) を管理します。
 
-### Flush Data Buffers
+### データバッファをフラッシュ
 
-This command can be used to "force" the saving of data in the cache to the disk. By default, 4D Server automatically flushes the cache after a [time limit set in the Settings](../settings/database.md#database-cache-settings).
+このコマンドはキャッシュ中のデータを"強制的に" ディスクに保存します。 デフォルトで、4D Server は[データベース環境設定 (データベース/データ管理ページ) で指定された時間](../settings/database.md#データベースキャッシュ設定) が経過すると自動でキャッシュをフラッシュします。
 
 ### バックアップ
 
-This command lets you launch a back-up of the project at any time. When you select this command, the following dialog box appears:
+このコマンドを使用していつでもデータベースのバックアップを起動できます。 このコマンドを選択すると、以下のダイアログボックスが表示されます:
 
 ![](../assets/en/server/backup.png)
 
-- The **Backup** button immediately launches a backup that takes the [parameters set in the Settings](../settings/backup.md) of the application into account (files to be backed up, location of archives, number of sets kept, etc.).
-- The **Database Properties** button opens the [Backup theme of the Settings](../settings/backup.md), which lets you view and, if necessary, modify the current backup settings.
-- The **Cancel** button interrupts the backup process.
+- **バックアップ** ボタンは、[データベース環境設定で設定された (バックアップするファイル、アーカイブの場所、保持するセット数などの) パラメタ](../settings/backup.md) を使用して、即座にバックアップを起動します。
+- **環境設定** ボタンは[環境設定のバックアップテーマ](../settings/backup.md) を開き、現在のバックアップ設定を確認して、必要であれば編集できます。
+- **キャンセル**ボタンはバックアップ処理を中断します。
 
-### Restore...
+### 復元...
 
-This command displays an open file dialog box so that you can select the archive to restore.
+このコマンドはファイルを開くダイアログを表示し、復元するアーカイブファイルを選択できます。
 
 ### 終了
 
-This command lets you [close the 4D Server application](./exit.md).
+このコマンドを使用して[4D Serverアプリケーションを閉じる](./exit.md) ことができます。
 
 :::note
 
-Under macos, the **Quit** command is located in the **4D Server** menu (application menu).
+macOS では**終了**コマンドは**4D Server** メニュー (アプリケーションメニュー) 内にあります。
 
 :::
 
 ## 編集
 
-The **Edit** menu of 4D Server includes standard copy/paste commands, the **Show Clipboard** command, etc.
+4D Serverの**編集**メニューは標準のコピー/ペーストコマンドや、**クリップボード表示**コマンド等を含みます。
 
-This menu also includes the **Preferences...** (under Windows) and **Settings** command, which display the corresponding dialog boxes of the application. These dialog boxes are used to define developer's [preferences](../Preferences/overview.md) and various [settings](../settings/overview.md) of the project.
+このメニューには**環境設定...** (Windows 環境下) and **データベース設定** コマンドが含まれ、これらを使用することでアプリケーション内のそれに対応するダイアログボックスを表示することができます。 These dialog boxes are used to define developer's [preferences](../Preferences/overview.md) and various [settings](../settings/overview.md) of the project.
 
 :::note
 
