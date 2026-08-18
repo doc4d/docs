@@ -1,30 +1,168 @@
 ---
 id: records
-title: Records
+title: Records & selections
 slug: /Develop/records
 displayed_sidebar: docs
 ---
 
 
-## Record numbers
+
+Records and selections are primary tools that allow 4D developers to access and handle data from the 4D database. They are **legacy concepts**. New developments are encouraged to rely on the modern [ORDA architecture](../ORDA/overview.md). However, they are still fully functional and are widely used in existing 4D developments. 
+
+## Working with records
+
+
+### Adding new records  
+
+You can add records using either an input or output form.
+
+In the Application environment, records may be added via the “Add Subrecord” standard action (adds a record to a list) or via the ADD RECORD and CREATE RECORD commands.
+
+In the Design environment, 4D provides by default several adding functions for both input and output forms.
+
+To add a new record using an input form:
+In the Design environment, choose New Record from the Records menu.
+You can choose New Record while you are using either an input or output form.
+4D displays a blank input form and places the insertion point in the first enterable area in the form.
+Enter data into the first enterable area then press Tab or the Carriage return to move to the next area.
+Repeat the process of entering data into each enterable area until all data for that record has been entered.When you have finished entering data and are satisfied with the values you have entered, you can accept the record .
+Press the Enter key on the numeric keypad, or click the OK button on the input form to accept the record.
+Note: Keyboard assignments can be modified in the Interface page of the Database settings.
+By accepting the record, you are requesting that 4D add the record to the database stored on disk. After you press enter, a new blank input form is displayed.
+If you want to create another record, repeat the data entry and validation process.
+OR
+When you finish entering data, click the Cancel button on the form or use the Esc key when the next blank record is displayed.
+Note: Keyboard assignments can be modified in the Interface page of the Database settings.
+Either of these actions displays the output form
+You can also add records directly in the Output form. Keep in mind that in this case you cannot enter data into variables, fields from other tables, or subforms.
+
+To add a new record using an output form:
+In the Design environment, choose New Record in List from the Records menu.
+An insertion point appears in the first field below the last record displayed in the output form.
+Type in the field and use the Tab or Carriage return key to move through the fields for that record.
+Note: Use Shift+Tab or Shift+Carriage return to move in the reverse direction among the fields of the records.
+Any data validation controls that are attached to the fields of the output form will be used when you select those fields. For example, a field with a choice list will display the choice list when you tab into it.
+Press the Enter key on the numeric keypad to save the new record and create a new blank record.
+OR
+Click a field in another record.
+4D accepts the entries in the record you added.
+
+
+### Modifying records  
+You modify records when you need to update information or when you discover that the information originally entered is incorrect. Before modifying a group of records, select the records to modify as the current selection. You can search to select records for modification or select the records after highlighting them in the output form.
+
+You can modify records using either the input or output form. The output form is convenient for modifying a group of records because several records are displayed at the same time. However, the output form typically does not include all the fields of the input form and may not duplicate the input form’s data entry controls.
+If a record is being modified in another process or by another user (remote mode), the record is said to be locked. Locked records can be viewed, but they cannot be modified. If you open a locked record, you will be able to view the entries in the fields, but you will not be able to change any data.
+
+In the Application environment, records may be modified via the “Edit Subrecord” standard action (modifying a record in list form) or via the MODIFY RECORD command. 
+
+In the Design environment, 4D provides several modifying functions. 
+
+To modify records using an input form:
+Highlight a record in the output form and choose Modify Record from the Records menu.
+OR
+Double-click the record on the output form.
+4D displays the record in the default input form.
+Select certain fields and edit, replace, or delete the values.
+Click the OK button or press the Enter key on the numeric keypad to accept the modified record and return to the output form.
+OR
+Click a navigation button (Previous Record, First Record, Next Record, Last Record) to accept the record and move to another record in the current selection.
+Clicking a navigation button moves between records in the current selection.
+You can cancel your changes and return to the output form at any time by clicking the Cancel button or hitting the Esc key.
+You can modify the fields displayed directly in the output form. Keep in mind that in this case you cannot enter data into variables, fields from other tables, or subforms.
+In the Application environment, it is possible to control the possibility of modifying records in list form.
+
+To modify records using an output form:
+Select a record then click on the field to be modified.
+The field in the output form becomes enterable.
+Note: In the Design environment, you can choose Modify Record from the Records menu at any time in order to modify the record in the input form.
+Type the new text and press Tab or the Carriage return key on the keyboard.
+4D saves your changes and selects the next field. 
+Continue modifying fields as needed.
+Click twice on a field in another record of the output form to modify it.
+
+
+
+### Global updates  
+You do a global update when you want to make a specific change to a group of records. You perform a global update to automate changes to a group of records that would otherwise be tedious and time-consuming. For example, you would perform a global update if you wanted to do the following:
+
+Change all prices in an [Inventory] table by a certain percentage.
+Format a numeric or Alpha field.
+The global update is done by “applying” a formula to the current selection of records. In other words, the formula is used to make the change to each record in the current selection. 
+
+Here are some example formulas and explanations of the functions they perform:
+
+The following formula multiplies the Salary field by 1.05. It could be used, for example, when a salary increase goes into effect:
+ [Emp]Salary :=[Emp]Salary *1.05
+The following uses a built-in function to make the contents of the State field uppercase. It ensures uniformity in the way State appears in labels and reports:
+ [Customer]State :=Uppercase([Customer]State)
+This formula includes a user-written function that formats the Last Name field. It sets the first letter of the Last Name field to uppercase and all the remaining letters to lowercase.
+ [Emp]Last Name:=Capitalize([Emp]Last Name)
+The ability to include user-written functions when carrying out global updates is a powerful feature of 4D. Formulas can contain 4D language functions as well as project methods (declared “usable” in the forms by the developer). For security reasons, access to project methods in the formulas is restricted (see Security page).
+
+You cannot write formulas that are longer than a single logical line, in other words, you cannot hit the Carriage return and enter a second line. However, methods that are declared usable in the formula editor can, of course, consist of several lines.
+
+To carry out a global update, you can use the Formula editor to write the formula which will then be applied to each record of the current selection. To do this, you choose the Apply Formula... command in the Records menu and then write your formula. You can also load a formula that was previously saved on disk as a file (extension .4fr). For more information, refer to the Formula editor chapter.
+
+In the Application environment, you can execute an update formula directly via the EXECUTE FORMULA command or display the formula editor via the EDIT FORMULA command.
+
+### Deleting records  
+
+You may want to delete a record that is outdated or no longer necessary. If the record is needed but the values stored in the record are incorrect, you should modify the record rather than delete it. 
+
+You can delete records in two ways:
+
+Delete a record individually (usually from an input form).
+Delete a set of records (usually from an output form).
+In Application mode, the deletion of records is carried out via the “Delete Record” or “Delete Subrecord” (deletion in list) standard actions or via the DELETE RECORD or DELETE SELECTION commands. 
+
+In the Design environment, you can also use the Clear command of the Edit menu as well as the deletion keys.
+
+Warning: Deleting records is permanent and can only be undone by restoring a database backup. When you delete records, 4D displays a dialog box asking you to confirm the deletion.
+
+Deleting records from the input form lets you verify the contents of each record before you delete it.
+
+To delete records using the input form:
+Open the record you want to delete.
+Click the Delete button to delete the record.
+Depending on the design of the input form, the Delete (or Clear) button may be represented in different ways. By default, it is represented by an icon symbolizing a trash can which is associated with the “Delete record” standard action. It is also possible for a form to not have a delete button.
+4D asks you to confirm the deletion. You cannot undo the deletion after 4D removes the record.
+Click the Yes button to complete the deletion.
+4D removes the current record from the database and returns to the output form.
+Using the output form, you can delete several records in one operation. The records to be deleted must be highlighted in the output form.
+
+To delete records using the output form:
+Highlight the record or records that you want to delete.
+Choose Clear from the Edit menu or press the Delete or Backspace key.
+4D displays a dialog box asking you to confirm the deletion. You cannot undo a deletion.
+Click OK to complete the deletion.
+4D removes the highlighted record or records from the database.
+Note: To delete all the records of a table, choose Show All from the Records menu then Select All from the Edit menu before choosing Clear from the Edit menu (or using a deletion key).
+Deleting locked records  
+You cannot delete locked records. Records are locked when they are being used by another process. For instance, if a process opens a record for modification, 4D locks that record so that other processes cannot modify it.
+
+Note for 4D Server: Records are also locked when they are being used by another user.
+
+Before deleting records, you create a selection of the records you want to delete. If your selection includes any locked records, the deletion will proceed but the locked records will not be deleted and will remain in the current selection after the deletion. You must wait until these records are unlocked (i.e., no longer being used) to delete them. The commands of the Record Locking theme can be used to manage this type of scenario. 
+
+Records deleted in another process  
+The current selection may be altered by records being deleted in another process. For example, while you are working in your database, you might start another process that deletes certain records from a table. The records deleted in that process are permanently removed from the table. However, the records you see while working with the database may not reflect those changes to the table until a new selection of records is created. 
+
+To illustrate this point, suppose that a table contains fifty records and that all of the records are in the current selection. At this point, the title bar of the output form says that “50 of 50” records are selected. If one of the records is deleted in another process, the title bar changes to say that “50 of 49” records are selected. There now appears to be more records in the current selection than in the table! The title bar will be updated when you change your current selection.
+
+If you attempt to modify or delete the deleted record, a dialog box will appear saying that the record has been deleted. 
+
+Note for 4D Server: Records deleted by another user have the same effect on the current selection. The records are deleted from the table, but not from the current selection. Thus, the current selection may appear to contain more records than actually exist in the table.
+
+
+### Record numbers
 
 There are three numbers associated with a record:
 
-- Record number
-- Selected record number
-- Sequence number
-
-### Record Number  
-
-The record number is the absolute/physical record number for a record. A record number is automatically assigned to each new record and remains constant for the record until the record is deleted. Record numbers start at zero. They are not unique because record numbers of deleted records are reused for new records. They also change when the database is [compacted](../MSC/compact.md) or [repaired](../MSC/repair.md).
-
-### Selected Record Number  
-
-The selected record number is the position of the record in the current selection, and so depends on the current selection. If the selection is changed or sorted, the selected record number will probably change. Numbering for the selected record number starts at one (1).
-
-### Sequence Number 
-
-The sequence number is a unique non-repeating number that may be assigned to a field of a record (via the Autoincrement property, the SQL AUTO_INCREMENT attribute or the [`Sequence number`](../commands/sequence-number) command). It is not automatically stored with each record. It starts by default at 1 and is incremented for each new record that is created. Unlike record numbers, a sequence number is not reused when a record is deleted or when a database is compacted or repaired. Sequence numbers provide a way to have unique ID numbers for records. If a sequence number is incremented during a transaction, the number is not decremented if the transaction is canceled.
+- **Record Number**: the record number is the absolute/physical record number for a record. This number is returned by the [`Record number`](../commands/record-number) command. 
+A record number is automatically assigned to each new record and remains constant for the record until the record is deleted. Record numbers start at zero. They are not unique because record numbers of deleted records are reused for new records. They also change when the database is [compacted](../MSC/compact.md) or [repaired](../MSC/repair.md).
+- **Selected Record Number**: the selected record number is the position of the record in the current selection, and so depends on the current selection. If the selection is changed or sorted, the selected record number will probably change. Numbering for the selected record number starts at one (1). This number is returned by the [`Selected record number`](../commands/selected-record-number) command.
+- **Sequence Number**: the sequence number is a unique non-repeating number that may be assigned to a field of a record (via the **Autoincrement** property, the SQL AUTO_INCREMENT attribute or the [`Sequence number`](../commands/sequence-number) command). It is not automatically stored with each record. It starts by default at 1 and is incremented for each new record that is created. Unlike record numbers, a sequence number is not reused when a record is deleted or when a database is compacted or repaired. Sequence numbers provide a way to have unique ID numbers for records. If a sequence number is incremented during a transaction, the number is not decremented if the transaction is canceled.
 
 :::note Notes
 
@@ -33,93 +171,8 @@ The sequence number is a unique non-repeating number that may be assigned to a f
 
 ::: 
 
-### Example
 
-The following tables illustrate the numbers that are associated with records. Each line in the table represents information about a record. The order of the lines is the order in which records would be displayed in an output form.
-
-- **Data**: The data from a field in each record. For our example, it contains a person’s name.
-- **Record Number**: The record’s absolute record number. This is the number returned by the [`Record number`](../commands/record-number) command.
-- **Selected Record Number**: The record’s position in the current selection. This is the number returned by the [`Selected record number`](../commands/selected-record-number) command.
-- **Sequence Number**: The record’s unique sequence number. This is the number returned by the [`Sequence number`](../commands/sequence-number) command when the record was created. This number is stored in a field.
-
-#### After the Records Are Entered 
-
-The first table shows the records after they are entered.
-
-- The default order for the records is by record number.
-- The record number starts at 0.
-- The selected record number and the sequence number start at 1.
-
-|Data|Record Number|Selected Record Number|Sequence Number|
-|---|---|---|----|
-|Tess	|0|	1|	1|
-|Terri|	1	|2	|2|
-|Sabra|	2|3|	3|
-|Sam|	3	|4	|4|
-|Lisa|	4|	5	|5|
-
-Note: The records remain in the default order after a command changes the current selection without reordering it; for example, after the **Show All** menu command is chosen in the Design environment, or after the [`ALL RECORDS`](../commands/all-records) command is executed.
-
-#### After the Records Are Sorted  
-
-The next table shows the same records sorted by name.
-
-- The same record number remains associated with each record.
-- The selected record numbers reflect the new position of the records in the sorted selection.
-- The sequence numbers never change, since they were assigned when each record was created and are stored in the record.
-
-|Data|Record Number|Selected Record Number|Sequence Number|
-|---|---|---|----|
-|Lisa|	4|	1	|5|
-|Sabra|	2|2|	3|
-|Sam|	3	|3	|4|
-|Terri|	1	|4	|2|
-|Tess	|0|	5|	1|
-
-
-#### After a Record Is Deleted  
-
-The following table shows the records after Sam is deleted.
-
-- Only the selected record numbers have changed. Selected record numbers reflect the order in which the records are displayed.
-
-|Data|Record Number|Selected Record Number|Sequence Number|
-|---|---|---|----|
-|Lisa|	4|	1	|5|
-|Sabra|	2|2|	3|
-|Terri|	1	|3	|2|
-|Tess	|0|	4|	1|
-
-
-#### After a Record Is Added  
-
-The next table shows the records after a new record has been added for Liz.
-
-- A new record is added to the end of the current selection.
-- Sam’s record number is reused for the new record.
-- The sequence number continues to increment.
-
-|Data|Record Number|Selected Record Number|Sequence Number|
-|---|---|---|----|
-|Tess	|0|	1|	1|
-|Terri|	1	|2	|2|
-|Sabra|	2|3|	3|
-|Lisa|	4|	4	|5|
-|Liz	|3|	5|	6|
-
-#### After the Selection is Changed and Sorted  
-
-The following table shows the records after the selection was reduced to three records and then sorted.
-
-- Only the selected record number associated with each record changes.
-
-|Data|Record Number|Selected Record Number|Sequence Number|
-|---|---|---|----|
-|Sabra|	2|1|	3|
-|Liz	|3|	2|	6|
-|Terri|	1	|3	|2|
-
-## Record Stack
+### Record stack
 
 The [`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) commands allow you to put (“push”) records onto the record stack, and to remove (“pop”) them from the stack.
 
