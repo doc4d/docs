@@ -18,15 +18,71 @@ The component provides two preconfigured 4D Write Pro areas that you can drag an
 
   ![](../assets/en/WriteProInterface/...)
 
-## Installation & documentation
+## Configuration
 
 4D Write Pro Interface is a **4D component** that needs to be [installed in your project](../Project/components.md#overview). 4D Write Pro Interface source files are [provided on Github](https://github.com/4d/4D-WritePro-Interface).
 
-The main [4D Write Pro Interface documentation](https://doc.4d.com/4Dv20/4D/20/Entry-areas.300-6263967.en.html) can be found in the *4D Design Reference manual*. You will find below: 
+### Customizing the widget control panel interface
 
-- the Table Wizard configuration documentation,
-- the integrated A.I. documentation.
+The appearance of the control panels can be customized using different skins and fonts. To do so, modify the object method of the associated 4D Write Pro area.
 
+Make sure that the 4D Write Pro area object variable contains the following mandatory attributes (automatically included in the default object method):
+
+- **selection**: used by 4D Write Pro commands such as [WP GET ATTRIBUTES](../commands/wp-get-attributes.md) and [WP SET ATTRIBUTES](../commands/wp-set-attributes.md).
+- **areaName**: used by S1 commands.
+
+In addition, an optional third attribute named **skin** can be added to customize the appearance of the control panel. The value of this optional attribute is an object (named `$WP_skin` in the following example) that can contain the following optional attributes:
+
+- **skinName**: values can be `"black"`, `"dark"`, `"grey"`, `"light"`, `"white"`, or `"highlight"`.
+- **backgroundColor**: e.g. `0x00A0A0A0`
+- **separatorColor**: e.g. `0x00D04060`
+- **fontColor**: e.g. `0x002080C0`
+- **separatorFontColor**: e.g. `0x00803000`
+- **font**: font family, e.g. `"Times"`
+- **fontSize**: e.g. `12`
+- **scrollbar**: `True` or `False`
+
+  *The scrollbar can only be used and enabled when the 4D Write Pro form object can be resized vertically (Vertical Sizing property set to **Grow**).*
+
+For more information about 4D Write Pro attributes, refer to [4D Write Pro Attributes](../WritePro/attributes.md).
+
+Example of code for customizing the interface of the widget control panels:
+
+```4d
+C_OBJECT($WP_skin)
+
+OB SET($WP_skin;"skinName";$skinName) // can be "black", "dark", "grey", "light", "white", "highlight"
+
+OB SET($WP_skin;"backgroundColor";0x00A0A0A0) //sets background color for control panel
+OB SET($WP_skin;"separatorColor";0x00D04060) //sets background color for separator areas
+OB SET($WP_skin;"fontColor";0x002080C0) //sets font color for control panel text
+OB SET($WP_skin;"separatorFontColor";0x00803000) //sets font color for separator area text
+
+OB SET($WP_skin;"font";"Times") // sets font used
+OB SET($WP_skin;"fontSize";13) // sets size of font used
+
+OB SET($WP_skin;"scrollbar";True)
+
+// Then you just need to assign this custom skin to the 4D Write Pro object
+
+OB SET($WP_object;"skin";$WP_skin)
+```
+
+### 4D Write Pro widget methods
+
+The panels in the 4D Write Pro widget can be configured using dedicated methods. These methods are available in the **Methods** page of the Explorer, under **Component Methods > 4D WritePro Interface**.
+
+The available methods are:
+
+- [WP ShowTabPages](../commands/wp-show-tab-pages.md) – defines the control panel tabs to be displayed, as well as their order.
+- [WP SwitchToolbar](../commands/wp-switch-toolbar.md) – switches between toolbar interfaces.
+- [WP UpdateWidget](../commands/wp-update-widget.md) – updates the widget when modifications have been made.
+
+:::note
+
+Click the **Documentation** button in the Explorer to display the detailed description of a method.
+
+:::
 ## Font Style
 
 ![](../assets/en/WriteProInterface/font-style.png)
@@ -823,68 +879,6 @@ This panel manages text find and replace operations.
 
 - In the **Find** section, you can search for text and specify its position. Options are available to designate conditions for the text search. Refer to the [Compare strings](../commands/compare-strings.md) command for more information about each option.
 - In the **Replace** section, you can specify replacement text and choose whether or not to retain the character style.
-
-## Customizing the widget control panel interface
-
-The appearance of the control panels can be customized using different skins and fonts. To do so, modify the object method of the associated 4D Write Pro area.
-
-Make sure that the 4D Write Pro area object variable contains the following mandatory attributes (automatically included in the default object method):
-
-- **selection**: used by 4D Write Pro commands such as [WP GET ATTRIBUTES](../commands/wp-get-attributes.md) and [WP SET ATTRIBUTES](../commands/wp-set-attributes.md).
-- **areaName**: used by S1 commands.
-
-In addition, an optional third attribute named **skin** can be added to customize the appearance of the control panel. The value of this optional attribute is an object (named `$WP_skin` in the following example) that can contain the following optional attributes:
-
-- **skinName**: values can be `"black"`, `"dark"`, `"grey"`, `"light"`, `"white"`, or `"highlight"`.
-- **backgroundColor**: e.g. `0x00A0A0A0`
-- **separatorColor**: e.g. `0x00D04060`
-- **fontColor**: e.g. `0x002080C0`
-- **separatorFontColor**: e.g. `0x00803000`
-- **font**: font family, e.g. `"Times"`
-- **fontSize**: e.g. `12`
-- **scrollbar**: `True` or `False`
-
-  *The scrollbar can only be used and enabled when the 4D Write Pro form object can be resized vertically (Vertical Sizing property set to **Grow**).*
-
-For more information about 4D Write Pro attributes, refer to [4D Write Pro Attributes](../WritePro/attributes.md).
-
-Example of code for customizing the interface of the widget control panels:
-
-```4d
-C_OBJECT($WP_skin)
-
-OB SET($WP_skin;"skinName";$skinName) // can be "black", "dark", "grey", "light", "white", "highlight"
-
-OB SET($WP_skin;"backgroundColor";0x00A0A0A0) //sets background color for control panel
-OB SET($WP_skin;"separatorColor";0x00D04060) //sets background color for separator areas
-OB SET($WP_skin;"fontColor";0x002080C0) //sets font color for control panel text
-OB SET($WP_skin;"separatorFontColor";0x00803000) //sets font color for separator area text
-
-OB SET($WP_skin;"font";"Times") // sets font used
-OB SET($WP_skin;"fontSize";13) // sets size of font used
-
-OB SET($WP_skin;"scrollbar";True)
-
-// Then you just need to assign this custom skin to the 4D Write Pro object
-
-OB SET($WP_object;"skin";$WP_skin)
-```
-
-## 4D Write Pro widget methods
-
-The panels in the 4D Write Pro widget can be configured using dedicated methods. These methods are available in the **Methods** page of the Explorer, under **Component Methods > 4D WritePro Interface**.
-
-The available methods are:
-
-- [WP ShowTabPages](../commands/wp-show-tab-pages.md) – defines the control panel tabs to be displayed, as well as their order.
-- [WP SwitchToolbar](../commands/wp-switch-toolbar.md) – switches between toolbar interfaces.
-- [WP UpdateWidget](../commands/wp-update-widget.md) – updates the widget when modifications have been made.
-
-:::note
-
-Click the **Documentation** button in the Explorer to display the detailed description of a method.
-
-:::
 
 ## Integrated AI
 
