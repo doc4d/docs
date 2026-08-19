@@ -71,71 +71,71 @@ macos では、**環境設定... \*\* コマンドは**4D Server\*\* メニュ�
 
 :::
 
-**編集** メニューには**デバッガを終了** および **開始時にデバッガを起動** コマンドが含まれ、これによってコードのデバッギングを管理することができます:
+**編集** メニューには**デバッガを無効化する** および **デバッガを開始時に有効化する** コマンドが含まれ、これによってコードのデバッギングを管理することができます:
 
-### Detach Debugger
+### デバッガを無効化する
 
-If you select this option, the debugger can be attached to a remote 4D. The menu command becomes **Attach Debugger**, so that you can attach the debugger back to the server (if not still attached to a remote 4D).
+このオプションを選択すると、デバッガをリモート4D で有効化することができます。 このメニューコマンドは**デバッガを有効化する**となり、これによってデバッガをサーバーで起動できるようになります(リモート4D でまだ有効化していない場合)。
 
-### Attach Debugger At Startup
+### デバッガを開始時に有効化する
 
-(selected by default) This option automatically attaches the debugger to the server each time the project is launched. Deselect this option if you want to attach permanently the debugger to a remote 4D.
+(デフォルトで選択されています) このオプションはプロジェクトが開始された時に毎回自動でサーバーでデバッガを有効にします。 リモート4D でデバッガを常時有効化したい場合には、このオプションの選択を解除してください。
 
-*Warning*: If this option is selected for a server which is subsequently launched in headless mode, it will not be possible to use the debugger on this server.
+*警告*: のちにヘッドレスモードで起動されるサーバーにおいてこのオプションが選択されたままの場合、このサーバーではデバッガーは利用できません。
 
-For more information, please refer to [Debugging from Remote Machines](../Debugging/debugging-remote.md).
+より詳細な情報については、[リモートマシンからのデバッギング](../Debugging/debugging-remote.md)を参照してください。
 
-## Window
+## ウィンドウ
 
-The first part of the **Window** menu includes standard commands for organizing workspace windows (these commands differ depending on the platform).
+**ウインドウ**メニューの上部にはワークスペースウィンドウを扱うための標準のコマンドがあります (これらのコマンドはプラットフォームより異なります)。
 
-It also contains display commands for windows specific to 4D Server:
+また4D Server 特有のウィンドウを表示するためのコマンドも含まれています:
 
 ### 管理
 
-This command displays the [4D Server Administration window](../ServerWindow/overview.md) if it has been closed or minimized.
+このコマンドは、もしそのウィンドウが閉じられていたり最小化されていれば、[4D Server 管理ウィンドウ](../ServerWindow/overview.md)  を表示します。
 
-### Project Dependencies
+### プロジェクト依存関係
 
-Displays the [Dependency manager](../Project/components.md).
+[依存関係マネージャー](../Project/components.md) を表示します。
 
 ### ランタイムエクスプローラー
 
-This command displays the 4D Server Runtime Explorer window.
+このコマンドは4D Server のランタイムエクスプローラウィンドウを表示します。
 
 ![](../assets/en/server/runtime-explorer.png)
 
-The Runtime Explorer enables you to view the status of the database various structural elements and to check that the available resources are correctly managed. The Runtime Explorer is particularly useful while developing or analyzing a database.
+ランタイムエクスプローラでは、データベースの様々なストラクチャ要素の状態を見たり、利用可能なリソースが正しく管理されているかをチェックできます。 ランタイムエクスプローラは特に開発時やデータベース解析中に便利です。
 
-The Runtime Explorer window contains four pages that can be accessed by clicking on the following buttons: **Watch**, **Process**, **Break** and **Catch**. The Runtime Explorer works the same way in 4D Server and 4D.
+ランタイムエクスプローラには4ページあり、それぞれのページには**ウォッチ**、**プロセス**、**ブレーク**、**キャッチ** ボタンからアクセスできます。 ランタイム エクスプローラは4D と4D Server で同じ動作を行います。
 
-### Data Explorer in Browser
+### データエクスプローラーをブラウザで開く
 
-Displays the [Data Explorer](../Admin/dataExplorer.md) in your default browser.
+[データエクスプローラー](../Admin/dataExplorer.md) をデフォルトのブラウザで表示します。
 
 ### Qodly Studio
 
-Displays the [Qodly Studio interface](https://developer.4d.com/qodly/4DQodlyPro/qodlyStudioInterface) in your default browser on the server machine.
+サーバーマシン上で、[Qodly Studio インターフェース](https://developer.4d.com/qodly/4DQodlyPro/qodlyStudioInterface) をデフォルトのブラウザに表示します。
 
 ### Qodlyアプリケーションのプレビュー
 
-Displays the start page of your Qodly application in your default browser on the server machine. See [this section](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#preview-qodly-application) for more information.
+サーバーマシンのデフォルトのブラウザ内でQodly アプリケーションのスタートページを表示します。 詳細な情報については[こちらの章](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#preview-qodly-application) を参照してください。
 
 ## ヘルプ
 
 ### Maintenance Security Center
 
-This command displays the [Maintenance and Security Center](../MSC/overview.md) (MSC) which groups together all the tools required for verification, analysis, maintenance, back-up, compacting and encryption of data and structure files.
-This command is available even when no project is opened by 4D Server: in this case, it can be used to open a project in "maintenance mode" (it displays the standard open file dialog box so that you can designate the project to be opened). Maintenance mode is used more particularly for operations such as compacting or opening damaged projects.
+このコマンドは[Maintenance and Security Center](../MSC/overview.md) (MSC)を開きます。ここにはデータベースの検証、解析、メンテナンス、バックアップ、圧縮を行うのに必要なすべてのツールが集められています。
+このコマンドは4D Server がプロジェクトを開いていない時でも使用できます。この場合、このコマンドを"メンテナンスモード"でプロジェクトを開くために使用できます (選択すると標準のファイルを開くダイアログが表示され、開くデータベースを選択できます)。 メンテナンスモードは圧縮や破損したデータベースを開く際に使用されます。
 
-### Online documentation
+### オンラインドキュメント
 
-Opens the 4D documentation home page.
+4D ドキュメントのホームページを開きます。
 
-### License manager...
+### ライセンス更新...
 
-This command displays the License manager, used to view, manage, and activate [licenses](../Admin/licenses.md) in your 4D environment.
+このコマンドは4D 環境で追加の[ライセンス](../Admin/licenses.md) をアクティベートするために使用するウィンドウを表示します。
 
-### About 4D Server...
+### 4D Serverについて...
 
-Displays the 4D Server **About...** window.
+このコマンドは\*\*4D Server について... \*\* ウィンドウを表示します。
