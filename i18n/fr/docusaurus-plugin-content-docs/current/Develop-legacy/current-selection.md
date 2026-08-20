@@ -1,54 +1,52 @@
 ---
 id: current-selection
-title: Current Selection
+title: Sélection courante
 slug: /Develop/current-selection
 displayed_sidebar: docs
 ---
 
 
-## Overview
+## Vue d'ensemble
 
-When managing data, you select the group of records with which you want to work. This group of records is called the **current selection**. The current selection can contain none, one, some, or all of the records in a table. Every table and every process has its own current selection of records.
+Lorsque vous gérez des données, vous sélectionnez le groupe d'enregistrements avec lequel vous souhaitez travailler. Ce groupe d'enregistrements est appelé la **sélection courante**. La sélection courante peut ne contenir aucun, un, plusieurs ou tous les enregistrements d'une table. Chaque table et chaque process possède sa propre sélection courante d'enregistrements.
 
-The **current selection** is an important concept in 4D. The most common data management operations on [**records**](./records.md) are performed in the current selection. These operations include:
+La **sélection courante** est un concept important dans 4D. Les opérations de gestion de données les plus courantes sur les [**enregistrements**](./records.md) sont effectuées dans la sélection courante. Ces opérations comprennent :
 
-- Sorting records,
-- Viewing and modifying individual records,
-- Updating a group of records,
-- Printing a report,
-- Generating labels,
-- Graphing data,
-- Exporting records.
+- le tri des enregistrements,
+- l'affichage et la modification d'enregistrements individuels,
+- la mise à jour d'un groupe d'enregistrements,
+- l'impression d'un état,
+- la génération d'étiquettes,
+- la création de graphes de données,
+- l'exportation d'enregistrements.
 
-In other words, creating a current selection in a table is the first step towards numerous other data management operations. 
+Autrement dit, la création d'une sélection courante dans une table est la première étape vers de nombreuses autres opérations de gestion de données.
 
-The current selection of records is always the set of records most recently selected. For instance, you might have a company database that uses an Employees table to keep track of employee records. Suppose that you decide to search for the records of all engineers in the company.
-When this query begins, the current selection may contain the records of all employees in the company — salespeople, production personnel, engineers, and so on. When the query is completed, the current selection contains only the engineers’ records. If you were to print a list of records, the list would contain only the records in the current selection — in this case, the records for all of the engineers in the company. If you were to graph employee salaries, your graph would display the salaries for all of the engineers in the company.
+La sélection courante d'enregistrements est toujours l'ensemble des enregistrements sélectionnés le plus récemment. Par exemple, vous pourriez disposer d'une base de données d'entreprise qui utilise une table Employés pour suivre les fiches des employés. Supposons que vous décidiez de rechercher les fiches de tous les ingénieurs de l'entreprise.
+Lorsque cette recherche débute, la sélection courante peut contenir les fiches de tous les employés de l'entreprise — commerciaux, personnel de production, ingénieurs, et ainsi de suite. Une fois la recherche terminée, la sélection courante ne contient plus que les fiches des ingénieurs. Si vous imprimiez une liste d'enregistrements, cette liste ne contiendrait que les enregistrements de la sélection courante — dans ce cas, les fiches de tous les ingénieurs de l'entreprise. Si vous créiez un graphe des salaires des employés, votre graphe afficherait les salaires de tous les ingénieurs de l'entreprise.
 
-The current selection remains the same until you perform an operation that changes it. You can change the current selection by:
+La sélection courante reste identique jusqu'à ce que vous effectuiez une opération qui la modifie. Vous pouvez modifier la sélection courante en :
 
-- Selecting all records,
-- Manually selecting a subset of records,
-- Searching for records.
+- sélectionnant tous les enregistrements,
+- sélectionnant manuellement un sous-ensemble d'enregistrements,
+- recherchant des enregistrements.
 
-The title bar of the output form tells you how many records are in the current table and how many records from the table are in the current selection. In a remote 4D, only the number of records in the current selection is displayed.
+La barre de titre du formulaire de sortie vous indique combien d'enregistrements comporte la table courante et combien d'enregistrements de la table figurent dans la sélection courante. Dans un 4D distant, seul le nombre d'enregistrements de la sélection courante est affiché.
 
-Every table in a database has its own current selection. In a relational database, changing the current selection in one table can change the current selections in related tables. For example, in a database consisting of related [Employees] and [Departments] tables, a opening an input form in the [Departments] table changes the current selection in the [Employees] table. That is, the employees belonging to that department become the new current selection in the [Employees] table. 
+Chaque table d'une base de données possède sa propre sélection courante. Dans une base de données relationnelle, la modification de la sélection courante d'une table peut modifier les sélections courantes des tables liées. Par exemple, dans une base de données constituée des tables liées [Employés] et [Services], l'ouverture d'un formulaire entrée dans la table [Services] modifie la sélection courante de la table [Employés]. Autrement dit, les employés appartenant à ce service deviennent la nouvelle sélection courante de la table [Employés].
 
-If you use [processes](../Develop/processes.md) for carrying out tasks in the database, there may be several simultaneous current selections per table. Each process acts like an individual 4D environment, which lets you carry out separate tasks. It can be useful to have more than one current selection, particularly when you are comparing two or more types of data, such as the monthly invoicing of several different sales regions. 
+Si vous utilisez des [process](../Develop/processes.md) pour effectuer des tâches dans la base de données, il peut y avoir plusieurs sélections courantes simultanées par table. Chaque process se comporte comme un environnement 4D individuel, ce qui vous permet d'effectuer des tâches distinctes. Il peut être utile de disposer de plusieurs sélections courantes, en particulier lorsque vous comparez deux types de données ou plus, comme la facturation mensuelle de plusieurs régions commerciales différentes.
 
-## Showing all the records  
+## Afficher tous les enregistrements
 
-When using an output form to display records, you can reset the current selection so that it contains all the records in the current table. This operation could be carried out via the [`Select All` standard action](../Desktop-legacy/standard-actions.md#selectall) or the [`ALL RECORDS`](../commands/all-records) command.
+Lorsque vous utilisez un formulaire de sortie pour afficher des enregistrements, vous pouvez réinitialiser la sélection courante afin qu'elle contienne tous les enregistrements de la table courante. Cette opération peut être réalisée via l'[action standard `Select All`](../Desktop-legacy/standard-actions.md#selectall) ou la commande [`ALL RECORDS`](../commands/all-records).
 
-In the Design environment, you can use the **Show All** command from the **Records** menu. All the records of the current table are then included in the current selection. The **Show All** command is disabled when you are using an input form.
+Dans l'environnement de développement, vous pouvez utiliser la commande **Tout montrer** du menu **Enregistrements**. Tous les enregistrements de la table courante sont alors inclus dans la sélection courante. La commande **Tout montrer** est désactivée lorsque vous utilisez un formulaire entrée.
 
-## Creating a subset of records  
+## Créer un sous-ensemble d'enregistrements
 
-You can specify a new current selection in an output form by manually "marking" certain records, then defining them as the new current selection. This is referred to as creating a subset. In the Design environment, there is a specific **Show Subset** command in the **Records** menu. 
+Vous pouvez définir une nouvelle sélection courante dans un formulaire de sortie en « marquant » manuellement certains enregistrements, puis en les définissant comme nouvelle sélection courante. C'est ce qu'on appelle la création d'un sous-ensemble. Dans l'environnement de développement, il existe une commande **Montrer sous-ensemble** spécifique dans le menu **Enregistrements**.
 
-In your development, you can manage records marked by users by using [Sets](./sets.md). 
+Dans vos développements, vous pouvez gérer les enregistrements marqués par les utilisateurs à l'aide des [Ensembles](./sets.md).
 
-You browse and handle current selections via commands of the [Selection](../commands/theme/Selection) theme. 
-
-
+Vous parcourez et manipulez les sélections courantes via les commandes du thème [Sélection](../commands/theme/Selection).

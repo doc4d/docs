@@ -1,17 +1,17 @@
 ---
 id: named-selections
-title: Named Selections
+title: Selecciones nombradas
 slug: /Develop/named-selections
 displayed_sidebar: docs
 ---
 
 
 
-## Overview
+## Información general
 
-Named selections provide an easy way to manipulate several selections simultaneously. A named selection is an ordered list of records for a table in a process. This ordered list can be given a name and kept in memory. Named selections offer a simple means to preserve in memory the order of the selection and the current record of the selection.
+Las selecciones nombradas ofrecen una forma sencilla de manipular varias selecciones simultáneamente. Una selección nombrada es una lista ordenada de registros de una tabla en un proceso. A esta lista ordenada se le puede asignar un nombre y mantenerla en memoria. Las selecciones nombradas ofrecen un medio sencillo de conservar en memoria el orden de la selección y el registro actual de la selección.
 
-The following commands enable you to work with named selections:
+Los siguientes comandos le permiten trabajar con selecciones nombradas:
 
 - [`COPY NAMED SELECTION`](../commands/copy-named-selection)
 - [`CUT NAMED SELECTION`](../commands/cut-named-selection)
@@ -20,57 +20,57 @@ The following commands enable you to work with named selections:
 - [`CREATE SELECTION FROM ARRAY`](../commands/create-selection-from-array)
 
 
-Named selections are created with the [`COPY NAMED SELECTION`](../commands/copy-named-selection), [`CUT NAMED SELECTION`](../commands/cut-named-selection) and [`CREATE SELECTION FROM ARRAY`](../commands/create-selection-from-array). Named selections are generally used to work on one or more selections and to save and later restore an ordered selection. There can be many named selections for each table in a process. To reuse a named selection as the current selection, call [`USE NAMED SELECTION`](../commands/use-named-selection). When you are done with a named selection, use [`CLEAR NAMED SELECTION`](../commands/clear-named-selection).
+Las selecciones nombradas se crean con los comandos [`COPY NAMED SELECTION`](../commands/copy-named-selection), [`CUT NAMED SELECTION`](../commands/cut-named-selection) y [`CREATE SELECTION FROM ARRAY`](../commands/create-selection-from-array). Las selecciones nombradas se utilizan generalmente para trabajar sobre una o varias selecciones y para guardar y restaurar posteriormente una selección ordenada. Puede haber muchas selecciones nombradas para cada tabla en un proceso. Para reutilizar una selección nombrada como selección actual, llame a [`USE NAMED SELECTION`](../commands/use-named-selection). Cuando haya terminado con una selección nombrada, utilice [`CLEAR NAMED SELECTION`](../commands/clear-named-selection).
 
 :::note
 
-Combining the statement `SET QUERY DESTINATION(Into named selection;namedselection)` with a search command (for example [`QUERY`](../commands/query)) can also be used to create a named selection. Refer to the description of the [`SET QUERY DESTINATION`](../commands/set-query-destination) command.
+Combinar la instrucción `SET QUERY DESTINATION(Into named selection;namedselection)` con un comando de búsqueda (por ejemplo [`QUERY`](../commands/query)) también puede utilizarse para crear una selección nombrada. Consulte la descripción del comando [`SET QUERY DESTINATION`](../commands/set-query-destination).
 
 :::
 
-Named selections can be local, process or interprocess in scope.
+Las selecciones nombradas pueden tener un alcance local, de proceso o interproceso.
 
-A named selection is local when its name is preceded by a dollar sign. When its name is not preceded by any symbol, it is a process named selection and it is an interprocess named selection if its name is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign. 
+Una selección nombrada es local cuando su nombre va precedido de un signo de dólar. Cuando su nombre no va precedido de ningún símbolo, es una selección nombrada de proceso, y es una selección nombrada interproceso si su nombre va precedido de los símbolos (<>) — un signo "menor que" seguido de un signo "mayor que".
 
-The scope of an interprocess named selection is identical to the scope of an interprocess variable (*deprecated*). An interprocess named selection can be accessed from any process. With 4D in remote mode and 4D Server, an interprocess named selection is available only to the processes of the client that created it. An interprocess named selection is not available to other client machines.
-A process named selection is available only within the process in which it was created and on the server.
-A local named selection is defined for the process that created it and is not visible on the server.
+El alcance de una selección nombrada interproceso es idéntico al alcance de una variable interproceso (*obsoleta*). A una selección nombrada interproceso se puede acceder desde cualquier proceso. Con 4D en modo remoto y 4D Server, una selección nombrada interproceso solo está disponible para los procesos del cliente que la creó. Una selección nombrada interproceso no está disponible para otras máquinas cliente.
+Una selección nombrada de proceso solo está disponible dentro del proceso en el que se creó y en el servidor.
+Una selección nombrada local se define para el proceso que la creó y no es visible en el servidor.
 
 :::note
 
-Creating a named selection requires access to the selection of the table. Since selections are kept on the server and a local process does not have access to server data, do not use named selections within local processes.
+La creación de una selección nombrada requiere acceso a la selección de la tabla. Dado que las selecciones se conservan en el servidor y un proceso local no tiene acceso a los datos del servidor, no utilice selecciones nombradas dentro de procesos locales.
 
 :::
 
-## Visibility of Named Selections  
+## Visibilidad de las selecciones nombradas
 
-The following table indicates the principles concerning the visibility of named selections depending on their scope and where they were created:
+La siguiente tabla indica los principios relativos a la visibilidad de las selecciones nombradas en función de su alcance y del lugar donde se crearon:
 
 
-||Client Process|Other processes on the same client|Other clients	|Server process|Other processes on the server|
+||Proceso cliente|Otros procesos en el mismo cliente|Otros clientes|Proceso servidor|Otros procesos en el servidor|
 |---|---|---|---|---|---|
-|Creation in a client process	||||||	 	 
+|Creación en un proceso cliente|||||| 	 
 |$test|X|||||
-|test	|X|||X(Trigger)	 ||
+|test|X|||X(Trigger)	 ||
 |<>test| X| X	||||
-|Creation in a server process	 ||||||	 	 	 	 
+|Creación en un proceso servidor|||||| 	 	 	 
 |$test||||X||
 |test|||| X	|| 
 |<>test	|||| X|X|
 
 
-### Named Selections and Sets
+### Selecciones nombradas y conjuntos
 
-The differences between [sets](./sets.md) and named selections are:
+Las diferencias entre los [conjuntos](./sets.md) y las selecciones nombradas son:
 
-- A named selection is an ordered list of records; a set is not.
-- Sets are very memory efficient, because they require only one bit for each record in the file. Named selections require 4 bytes for each record in the selection.
-- Unlike sets, named selections cannot be saved to disk.
-- Sets have the standard [`INTERSECTION`](../commands/intersection), [`UNION`](../commands/union) and [`DIFFERENCE`](../commands/difference) operations; named selections cannot be combined with other named selections.
+- Una selección nombrada es una lista ordenada de registros; un conjunto no lo es.
+- Los conjuntos son muy eficientes en cuanto a memoria, porque solo requieren un bit por cada registro del archivo. Las selecciones nombradas requieren 4 bytes por cada registro de la selección.
+- A diferencia de los conjuntos, las selecciones nombradas no pueden guardarse en disco.
+- Los conjuntos disponen de las operaciones estándar [`INTERSECTION`](../commands/intersection), [`UNION`](../commands/union) y [`DIFFERENCE`](../commands/difference); las selecciones nombradas no pueden combinarse con otras selecciones nombradas.
 
 
-The similarities between named selections and sets are:
+Las similitudes entre las selecciones nombradas y los conjuntos son:
 
-- Like a set, a named selection exists in memory.
-- A named selection and a set store references to a record. If records are modified or deleted, the named selection or the set can become invalid.
-- Like a set, a named selection “remembers” the current record as of the time the named selection was created.
+- Al igual que un conjunto, una selección nombrada existe en memoria.
+- Una selección nombrada y un conjunto almacenan referencias a un registro. Si los registros se modifican o eliminan, la selección nombrada o el conjunto puede volverse inválido.
+- Al igual que un conjunto, una selección nombrada "recuerda" el registro actual tal como estaba en el momento en que se creó la selección nombrada.

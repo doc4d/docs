@@ -1,17 +1,17 @@
 ---
 id: named-selections
-title: Named Selections
+title: 名前付きセレクション
 slug: /Develop/named-selections
 displayed_sidebar: docs
 ---
 
 
 
-## Overview
+## 概要
 
-Named selections provide an easy way to manipulate several selections simultaneously. A named selection is an ordered list of records for a table in a process. This ordered list can be given a name and kept in memory. Named selections offer a simple means to preserve in memory the order of the selection and the current record of the selection.
+名前付きセレクションは、複数のセレクションを同時に操作するための簡単な手段を提供します。名前付きセレクションとは、プロセス内のテーブルに対するレコードの順序付きリストです。この順序付きリストには名前を付けてメモリ内に保持できます。名前付きセレクションは、セレクションの順序およびセレクションのカレントレコードをメモリ内に保持するためのシンプルな手段を提供します。
 
-The following commands enable you to work with named selections:
+次のコマンドを使用して名前付きセレクションを操作できます：
 
 - [`COPY NAMED SELECTION`](../commands/copy-named-selection)
 - [`CUT NAMED SELECTION`](../commands/cut-named-selection)
@@ -20,57 +20,57 @@ The following commands enable you to work with named selections:
 - [`CREATE SELECTION FROM ARRAY`](../commands/create-selection-from-array)
 
 
-Named selections are created with the [`COPY NAMED SELECTION`](../commands/copy-named-selection), [`CUT NAMED SELECTION`](../commands/cut-named-selection) and [`CREATE SELECTION FROM ARRAY`](../commands/create-selection-from-array). Named selections are generally used to work on one or more selections and to save and later restore an ordered selection. There can be many named selections for each table in a process. To reuse a named selection as the current selection, call [`USE NAMED SELECTION`](../commands/use-named-selection). When you are done with a named selection, use [`CLEAR NAMED SELECTION`](../commands/clear-named-selection).
+名前付きセレクションは、[`COPY NAMED SELECTION`](../commands/copy-named-selection)、[`CUT NAMED SELECTION`](../commands/cut-named-selection)、および [`CREATE SELECTION FROM ARRAY`](../commands/create-selection-from-array) を使用して作成します。名前付きセレクションは通常、1 つまたは複数のセレクションを操作するため、また順序付きセレクションを保存して後で復元するために使用されます。1 つのプロセス内で、テーブルごとに多数の名前付きセレクションを持つことができます。名前付きセレクションをカレントセレクションとして再利用するには、[`USE NAMED SELECTION`](../commands/use-named-selection) を呼び出します。名前付きセレクションの使用が終わったら、[`CLEAR NAMED SELECTION`](../commands/clear-named-selection) を使用します。
 
 :::note
 
-Combining the statement `SET QUERY DESTINATION(Into named selection;namedselection)` with a search command (for example [`QUERY`](../commands/query)) can also be used to create a named selection. Refer to the description of the [`SET QUERY DESTINATION`](../commands/set-query-destination) command.
+`SET QUERY DESTINATION(Into named selection;namedselection)` ステートメントを検索コマンド（例：[`QUERY`](../commands/query)）と組み合わせることでも、名前付きセレクションを作成できます。[`SET QUERY DESTINATION`](../commands/set-query-destination) コマンドの説明を参照してください。
 
 :::
 
-Named selections can be local, process or interprocess in scope.
+名前付きセレクションは、ローカル、プロセス、またはインタープロセスのスコープを持つことができます。
 
-A named selection is local when its name is preceded by a dollar sign. When its name is not preceded by any symbol, it is a process named selection and it is an interprocess named selection if its name is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign. 
+名前付きセレクションは、その名前がドル記号で始まる場合にローカルとなります。名前がどの記号でも始まらない場合はプロセス名前付きセレクションであり、名前が (<>) 記号 — 「小なり」記号に続けて「大なり」記号 — で始まる場合はインタープロセス名前付きセレクションです。
 
-The scope of an interprocess named selection is identical to the scope of an interprocess variable (*deprecated*). An interprocess named selection can be accessed from any process. With 4D in remote mode and 4D Server, an interprocess named selection is available only to the processes of the client that created it. An interprocess named selection is not available to other client machines.
-A process named selection is available only within the process in which it was created and on the server.
-A local named selection is defined for the process that created it and is not visible on the server.
+インタープロセス名前付きセレクションのスコープは、インタープロセス変数（*非推奨*）のスコープと同一です。インタープロセス名前付きセレクションには、任意のプロセスからアクセスできます。4D のリモートモードおよび 4D Server では、インタープロセス名前付きセレクションは、それを作成したクライアントのプロセスに対してのみ利用可能です。インタープロセス名前付きセレクションは、他のクライアントマシンでは利用できません。
+プロセス名前付きセレクションは、それが作成されたプロセス内およびサーバー上でのみ利用可能です。
+ローカル名前付きセレクションは、それを作成したプロセスに対して定義され、サーバー上では表示されません。
 
 :::note
 
-Creating a named selection requires access to the selection of the table. Since selections are kept on the server and a local process does not have access to server data, do not use named selections within local processes.
+名前付きセレクションの作成には、テーブルのセレクションへのアクセスが必要です。セレクションはサーバー上に保持され、ローカルプロセスはサーバーデータにアクセスできないため、ローカルプロセス内では名前付きセレクションを使用しないでください。
 
 :::
 
-## Visibility of Named Selections  
+## 名前付きセレクションの可視性
 
-The following table indicates the principles concerning the visibility of named selections depending on their scope and where they were created:
+次の表は、名前付きセレクションのスコープおよび作成された場所に応じた可視性の原則を示しています：
 
 
-||Client Process|Other processes on the same client|Other clients	|Server process|Other processes on the server|
+||クライアントプロセス|同一クライアント上の他のプロセス|他のクライアント|サーバープロセス|サーバー上の他のプロセス|
 |---|---|---|---|---|---|
-|Creation in a client process	||||||	 	 
+|クライアントプロセスでの作成|||||| 	 
 |$test|X|||||
-|test	|X|||X(Trigger)	 ||
+|test|X|||X(Trigger)	 ||
 |<>test| X| X	||||
-|Creation in a server process	 ||||||	 	 	 	 
+|サーバープロセスでの作成|||||| 	 	 	 
 |$test||||X||
 |test|||| X	|| 
 |<>test	|||| X|X|
 
 
-### Named Selections and Sets
+### 名前付きセレクションとセット
 
-The differences between [sets](./sets.md) and named selections are:
+[セット](./sets.md) と名前付きセレクションの相違点は次のとおりです：
 
-- A named selection is an ordered list of records; a set is not.
-- Sets are very memory efficient, because they require only one bit for each record in the file. Named selections require 4 bytes for each record in the selection.
-- Unlike sets, named selections cannot be saved to disk.
-- Sets have the standard [`INTERSECTION`](../commands/intersection), [`UNION`](../commands/union) and [`DIFFERENCE`](../commands/difference) operations; named selections cannot be combined with other named selections.
+- 名前付きセレクションはレコードの順序付きリストですが、セットはそうではありません。
+- セットはファイル内の各レコードにつき 1 ビットしか必要としないため、メモリ効率が非常に高いです。名前付きセレクションは、セレクション内の各レコードにつき 4 バイトを必要とします。
+- セットとは異なり、名前付きセレクションはディスクに保存できません。
+- セットには標準の [`INTERSECTION`](../commands/intersection)、[`UNION`](../commands/union)、[`DIFFERENCE`](../commands/difference) 操作がありますが、名前付きセレクションは他の名前付きセレクションと組み合わせることはできません。
 
 
-The similarities between named selections and sets are:
+名前付きセレクションとセットの類似点は次のとおりです：
 
-- Like a set, a named selection exists in memory.
-- A named selection and a set store references to a record. If records are modified or deleted, the named selection or the set can become invalid.
-- Like a set, a named selection “remembers” the current record as of the time the named selection was created.
+- セットと同様に、名前付きセレクションはメモリ内に存在します。
+- 名前付きセレクションとセットは、レコードへの参照を格納します。レコードが変更または削除されると、名前付きセレクションまたはセットは無効になることがあります。
+- セットと同様に、名前付きセレクションは、名前付きセレクションが作成された時点でのカレントレコードを「記憶」します。

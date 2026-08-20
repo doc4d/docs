@@ -1,384 +1,379 @@
 ---
 id: records
-title: Records & selections
+title: Enregistrements & sélections
 slug: /Develop/records
 displayed_sidebar: docs
 ---
 
 
 
-Records and selections are primary tools that allow 4D developers to access and handle data from the 4D database. They are **legacy concepts**. New developments are encouraged to rely on the modern [ORDA architecture](../ORDA/overview.md). However, they are still fully functional and are widely used in existing 4D developments. 
+Les enregistrements et les sélections sont des outils fondamentaux qui permettent aux développeurs 4D d'accéder aux données de la base 4D et de les manipuler. Il s'agit de **concepts historiques**. Les nouveaux développements sont encouragés à s'appuyer sur l'[architecture ORDA moderne](../ORDA/overview.md). Cependant, ils restent pleinement fonctionnels et sont largement utilisés dans les développements 4D existants.
 
-## Working with records
+## Travailler avec les enregistrements
 
-:::note 
+:::note
 
-[ORDA technology](../ORDA/overview.md) creates, modifies, or delete underlying records at the database level when it is required. For example a record is create when you [create a new entity](../ORDA/entities.md#creating-an-entity).   
+La [technologie ORDA](../ORDA/overview.md) crée, modifie ou supprime les enregistrements sous-jacents au niveau de la base de données lorsque cela est nécessaire. Par exemple, un enregistrement est créé lorsque vous [créez une nouvelle entité](../ORDA/entities.md#creating-an-entity).
 
 :::
 
 
 
-### Adding new records  
+### Ajouter de nouveaux enregistrements
 
-In 4D applications, you add records using:
+Dans les applications 4D, vous ajoutez des enregistrements à l'aide de :
 
-- Commands: [`CREATE RECORD`](../commands/create-record) to create a record in memory (you need to use [`SAVE RECORD`](../commands/save-record) to actually save the new record in the data); [`ADD RECORD`](../commands/add-record) to open an input form to the user, ready for entering data; [`ARRAY TO SELECTION`](../commands/array-to-selection) to create records from corresponding data in an array. 
-- Data import feature using commands from the [Import and Export theme](../commands/theme/Import-and-Export) ot the Import dialog box.
-- Standard action: [`Add Subrecord`](../Desktop-legacy/standard-actions#addsubrecord) that adds a record to a list.
-- Interface and menu commands in the 4D IDE: **New record** and **New record in list** from the **Records** menu.  
+- Commandes : [`CREATE RECORD`](../commands/create-record) pour créer un enregistrement en mémoire (vous devez utiliser [`SAVE RECORD`](../commands/save-record) pour effectivement enregistrer le nouvel enregistrement dans les données) ; [`ADD RECORD`](../commands/add-record) pour ouvrir un formulaire entrée à l'utilisateur, prêt pour la saisie de données ; [`ARRAY TO SELECTION`](../commands/array-to-selection) pour créer des enregistrements à partir des données correspondantes d'un tableau.
+- La fonctionnalité d'importation de données à l'aide des commandes du [thème Importation et exportation](../commands/theme/Import-and-Export) ou de la boîte de dialogue d'import.
+- Action standard : [`Add Subrecord`](../Desktop-legacy/standard-actions#addsubrecord) qui ajoute un enregistrement à une liste.
+- Commandes d'interface et de menu dans l'IDE 4D : **Nouvel enregistrement** et **Nouvel enregistrement en liste** du menu **Enregistrements**.
 
-In most case, the record is only created in memory and you have to save it explicitely through the interface or using a command such as [`SAVE RECORD`](../commands/save-record) or the [`accept` standard action](../Desktop/standard-actions#accept) to actually save the new record in the data. 
-
-
-
-### Modifying records  
-
-You modify records when you need to update information or when you discover that the information originally entered is incorrect. Before modifying a group of records, select the records to modify as the [current selection](./current-selection.md). You can search to select records for modification or select the records after highlighting them in an [output form](../FormEditor/properties_FormProperties.md#form-type).
-
-If a record is being modified in another process or by another user (remote mode), the record is said to be [locked](#locked-records). Locked records can be viewed, but they cannot be modified. If you open a locked record, you will be able to view the entries in the fields, but you will not be able to change any data.
-
-In 4D applications, you modify records using:
-
-- Commands: [`MODIFY RECORD`](../commands/add-record) to open an input form to the user, ready for modifying data; [`ARRAY TO SELECTION`](../commands/array-to-selection) to modify data in selected records from an array. 
-- Data import feature using commands from the [Import and Export theme](../commands/theme/Import-and-Export) ot the Import dialog box.
-- Standard action: [`Edit Subrecord`](../Desktop/standard-actions#editsubrecord) that edits a record in a list.
-- Interface and menu commands in the 4D IDE: **Modify record** from the **Records** menu or double-click in a listr form. 
-
-In most case, the record is only modified in memory and you have to save it explicitely through the interface or using a command such as [`SAVE RECORD`](../commands/save-record) or the [`accept` standard action](../Desktop/standard-actions#accept) to actually save the edited record in the data. 
+Dans la plupart des cas, l'enregistrement n'est créé qu'en mémoire et vous devez le sauvegarder explicitement via l'interface ou à l'aide d'une commande telle que [`SAVE RECORD`](../commands/save-record) ou l'[action standard `accept`](../Desktop/standard-actions#accept) pour effectivement enregistrer le nouvel enregistrement dans les données.
 
 
-### Global updates  
 
-You do a global update when you want to make a specific change to a group of records. You perform a global update to automate changes to a group of records that would otherwise be tedious and time-consuming. For example, you would perform a global update if you wanted to change all prices in an [Inventory] table by a certain percentage or format a numeric or Alpha field.
+### Modifier des enregistrements
 
-The global update is done by “applying” a formula to the current selection of records. In other words, the formula is used to make the change to each record in the current selection. Here are some example formulas:
+Vous modifiez des enregistrements lorsque vous devez mettre à jour des informations ou lorsque vous constatez que les informations saisies à l'origine sont incorrectes. Avant de modifier un groupe d'enregistrements, sélectionnez les enregistrements à modifier en tant que [sélection courante](./current-selection.md). Vous pouvez effectuer une recherche pour sélectionner les enregistrements à modifier ou sélectionner les enregistrements après les avoir mis en surbrillance dans un [formulaire de sortie](../FormEditor/properties_FormProperties.md#form-type).
 
-- The following formula multiplies the Salary field by 1.05. It could be used, for example, when a salary increase goes into effect:
+Si un enregistrement est en cours de modification dans un autre process ou par un autre utilisateur (mode distant), l'enregistrement est dit [verrouillé](#enregistrements-verrouillés). Les enregistrements verrouillés peuvent être consultés, mais ne peuvent pas être modifiés. Si vous ouvrez un enregistrement verrouillé, vous pourrez consulter les valeurs saisies dans les champs, mais vous ne pourrez modifier aucune donnée.
+
+Dans les applications 4D, vous modifiez des enregistrements à l'aide de :
+
+- Commandes : [`MODIFY RECORD`](../commands/add-record) pour ouvrir un formulaire entrée à l'utilisateur, prêt pour la modification de données ; [`ARRAY TO SELECTION`](../commands/array-to-selection) pour modifier les données des enregistrements sélectionnés à partir d'un tableau.
+- La fonctionnalité d'importation de données à l'aide des commandes du [thème Importation et exportation](../commands/theme/Import-and-Export) ou de la boîte de dialogue d'import.
+- Action standard : [`Edit Subrecord`](../Desktop/standard-actions#editsubrecord) qui modifie un enregistrement dans une liste.
+- Commandes d'interface et de menu dans l'IDE 4D : **Modifier enregistrement** du menu **Enregistrements** ou double-clic dans un formulaire liste.
+
+Dans la plupart des cas, l'enregistrement n'est modifié qu'en mémoire et vous devez le sauvegarder explicitement via l'interface ou à l'aide d'une commande telle que [`SAVE RECORD`](../commands/save-record) ou l'[action standard `accept`](../Desktop/standard-actions#accept) pour effectivement enregistrer l'enregistrement modifié dans les données.
+
+
+### Mises à jour globales
+
+Vous effectuez une mise à jour globale lorsque vous souhaitez apporter une modification spécifique à un groupe d'enregistrements. Vous effectuez une mise à jour globale pour automatiser des modifications d'un groupe d'enregistrements qui seraient autrement fastidieuses et chronophages. Par exemple, vous effectueriez une mise à jour globale si vous vouliez modifier tous les prix d'une table [Inventaire] selon un certain pourcentage ou formater un champ numérique ou alpha.
+
+La mise à jour globale s'effectue en « appliquant » une formule à la sélection courante d'enregistrements. Autrement dit, la formule est utilisée pour apporter la modification à chaque enregistrement de la sélection courante. Voici quelques exemples de formules :
+
+- La formule suivante multiplie le champ Salaire par 1,05. Elle pourrait être utilisée, par exemple, lors de l'entrée en vigueur d'une augmentation de salaire :
 
 ```4d
 [Emp]Salary:=[Emp]Salary*1.05
 ```
 
-- The following uses a built-in function to make the contents of the State field uppercase. It ensures uniformity in the way State appears in labels and reports:
+- La suivante utilise une fonction intégrée pour mettre le contenu du champ État en majuscules. Elle garantit l'uniformité de la présentation de l'État dans les étiquettes et les états :
 
 ```4d
 [Customer]State:=Uppercase([Customer]State)
 ```
 
-- This formula includes a user-written function that sets the first letter of the Last_Name field to uppercase and all the remaining letters to lowercase.
+- Cette formule inclut une fonction écrite par l'utilisateur qui met la première lettre du champ Nom en majuscule et toutes les lettres restantes en minuscules.
 
 ```4d
 [Emp]Last Name:=Capitalize([Emp]Last_Name)
 ```
 
-The ability to include user-written functions when carrying out global updates is a powerful feature of 4D. Formulas can contain 4D language functions as well as project methods. For security reasons, access to project methods in the formulas is restricted by a [security setting](../settings/security.md#options) and/or the [`SET ALLOWED METHODS` command](../commands/set-allowed-methods). 
+La possibilité d'inclure des fonctions écrites par l'utilisateur lors de la réalisation de mises à jour globales est une fonctionnalité puissante de 4D. Les formules peuvent contenir des fonctions du langage 4D ainsi que des méthodes projet. Pour des raisons de sécurité, l'accès aux méthodes projet dans les formules est restreint par un [paramètre de sécurité](../settings/security.md#options) et/ou la [commande `SET ALLOWED METHODS`](../commands/set-allowed-methods).
 
-You cannot write formulas that are longer than a single logical line, in other words, you cannot hit the Carriage return and enter a second line. However, methods that are declared usable in the formula editor can, of course, consist of several lines.
+Vous ne pouvez pas écrire de formules plus longues qu'une seule ligne logique ; autrement dit, vous ne pouvez pas appuyer sur Retour chariot et saisir une deuxième ligne. Cependant, les méthodes déclarées utilisables dans l'éditeur de formules peuvent, bien entendu, comporter plusieurs lignes.
 
-To carry out a global update, you can execute an update formula directly via the [`EXECUTE FORMULA`](../commands/execute-formula) command or display the formula editor via the [`EDIT FORMULA`](../commands/edit-formula) command.
+Pour réaliser une mise à jour globale, vous pouvez exécuter une formule de mise à jour directement via la commande [`EXECUTE FORMULA`](../commands/execute-formula) ou afficher l'éditeur de formules via la commande [`EDIT FORMULA`](../commands/edit-formula).
 
-In the 4D IDE, you can also use the **Formula editor** to write the formula which will then be applied to each record of the current selection. To do this, you choose the **Apply Formula...** command in the **Records** menu and then write your formula. You can also load a formula that was previously saved on disk as a file (extension .4fr). 
+Dans l'IDE 4D, vous pouvez également utiliser l'**éditeur de formules** pour écrire la formule qui sera ensuite appliquée à chaque enregistrement de la sélection courante. Pour cela, vous choisissez la commande **Appliquer formule...** du menu **Enregistrements** puis vous écrivez votre formule. Vous pouvez également charger une formule précédemment sauvegardée sur disque sous forme de fichier (extension .4fr).
 
 
-### Deleting records  
+### Supprimer des enregistrements
 
-You may want to delete a record that is outdated or no longer necessary. If the record is needed but the values stored in the record are incorrect, you should modify the record rather than delete it. 
+Vous pouvez souhaiter supprimer un enregistrement obsolète ou devenu inutile. Si l'enregistrement est nécessaire mais que les valeurs qui y sont stockées sont incorrectes, il vaut mieux modifier l'enregistrement plutôt que de le supprimer.
 
-You can delete records in two ways:
+Vous pouvez supprimer des enregistrements de deux manières :
 
-- Delete a record individually.
-- Delete a set of records.
+- Supprimer un enregistrement individuellement.
+- Supprimer un ensemble d'enregistrements.
 
-The deletion of records is carried out via the [`Delete Record`](../Desktop/standard-actions#deleterecord) or [`Delete Subrecord`](../Desktop/standard-actions#deletesubrecord) (deletion in list) standard actions or via the [`DELETE RECORD`](../commands/delete-record) or [`DELETE SELECTION`](../commands/delete-selection) commands. 
+La suppression d'enregistrements s'effectue via les actions standard [`Delete Record`](../Desktop/standard-actions#deleterecord) ou [`Delete Subrecord`](../Desktop/standard-actions#deletesubrecord) (suppression en liste), ou via les commandes [`DELETE RECORD`](../commands/delete-record) ou [`DELETE SELECTION`](../commands/delete-selection).
 
-In the 4D IDE, you can also use the **Clear** command of the **Edit** menu as well as the deletion keys.
+Dans l'IDE 4D, vous pouvez également utiliser la commande **Effacer** du menu **Édition** ainsi que les touches de suppression.
 
 :::warning
 
-Deleting records is permanent and can only be undone by restoring a database backup. When you delete records, 4D displays a dialog box asking you to confirm the deletion.
+La suppression d'enregistrements est définitive et ne peut être annulée qu'en restaurant une sauvegarde de la base de données. Lorsque vous supprimez des enregistrements, 4D affiche une boîte de dialogue vous demandant de confirmer la suppression.
 
 :::
 
-Before deleting records, you create a selection of the records you want to delete. If your selection includes any [locked records](#record-locking), the deletion will proceed but the locked records will not be deleted and will remain in the current selection after the deletion. You must wait until these records are unlocked (i.e., no longer being used) to delete them. The [commands of the "Record Locking" theme](../commands/theme/Record-Locking) can be used to manage this type of scenario. 
+Avant de supprimer des enregistrements, vous créez une sélection des enregistrements que vous souhaitez supprimer. Si votre sélection comprend des [enregistrements verrouillés](#record-locking), la suppression se poursuivra mais les enregistrements verrouillés ne seront pas supprimés et resteront dans la sélection courante après la suppression. Vous devez attendre que ces enregistrements soient déverrouillés (c'est-à-dire qu'ils ne soient plus utilisés) pour les supprimer. Les [commandes du thème « Verrouillage d'enregistrement »](../commands/theme/Record-Locking) peuvent être utilisées pour gérer ce type de scénario.
 
-#### Records deleted in another process  
+#### Enregistrements supprimés dans un autre process
 
-The current selection may be altered by records being deleted in another process. For example, while you are working in your database, you might start another process that deletes certain records from a table. The records deleted in that process are permanently removed from the table. However, the records you see while working with the database may not reflect those changes to the table until a new selection of records is created. 
+La sélection courante peut être modifiée par des enregistrements supprimés dans un autre process. Par exemple, pendant que vous travaillez dans votre base de données, vous pourriez lancer un autre process qui supprime certains enregistrements d'une table. Les enregistrements supprimés dans ce process sont définitivement retirés de la table. Cependant, les enregistrements que vous voyez pendant que vous travaillez avec la base de données peuvent ne pas refléter ces modifications de la table tant qu'une nouvelle sélection d'enregistrements n'a pas été créée.
 
-To illustrate this point, suppose that a table contains fifty records and that all of the records are in the current selection. At this point, the title bar of the output form says that “50 of 50” records are selected. If one of the records is deleted in another process, the title bar changes to say that “50 of 49” records are selected. There now appears to be more records in the current selection than in the table! The title bar will be updated when you change your current selection.
+Pour illustrer ce point, supposons qu'une table contienne cinquante enregistrements et que tous les enregistrements soient dans la sélection courante. À ce stade, la barre de titre du formulaire de sortie indique que « 50 sur 50 » enregistrements sont sélectionnés. Si l'un des enregistrements est supprimé dans un autre process, la barre de titre change pour indiquer que « 50 sur 49 » enregistrements sont sélectionnés. Il semble maintenant y avoir plus d'enregistrements dans la sélection courante que dans la table ! La barre de titre sera mise à jour lorsque vous modifierez votre sélection courante.
 
-If you attempt to modify or delete the deleted record, a dialog box will appear saying that the record has been deleted. 
+Si vous tentez de modifier ou de supprimer l'enregistrement supprimé, une boîte de dialogue apparaîtra indiquant que l'enregistrement a été supprimé.
 
 :::note 4D Server
 
-Records deleted by another user have the same effect on the current selection. The records are deleted from the table, but not from the current selection. Thus, the current selection may appear to contain more records than actually exist in the table.
+Les enregistrements supprimés par un autre utilisateur ont le même effet sur la sélection courante. Les enregistrements sont supprimés de la table, mais pas de la sélection courante. Ainsi, la sélection courante peut sembler contenir plus d'enregistrements qu'il n'en existe réellement dans la table.
 
 :::
 
-### Record numbers
+### Numéros d'enregistrement
 
-There are three numbers associated with a record:
+Trois numéros sont associés à un enregistrement :
 
-- **Record Number**: the record number is the absolute/physical record number for a record. This number is returned by the [`Record number`](../commands/record-number) command. 
-A record number is automatically assigned to each new record and remains constant for the record until the record is deleted. Record numbers start at zero. They are not unique because record numbers of deleted records are reused for new records. They also change when the database is [compacted](../MSC/compact.md) or [repaired](../MSC/repair.md).
-- **Selected Record Number**: the selected record number is the position of the record in the current selection, and so depends on the current selection. If the selection is changed or sorted, the selected record number will probably change. Numbering for the selected record number starts at one (1). This number is returned by the [`Selected record number`](../commands/selected-record-number) command.
-- **Sequence Number**: the sequence number is a unique non-repeating number that may be assigned to a field of a record (via the **Autoincrement** property, the SQL AUTO_INCREMENT attribute or the [`Sequence number`](../commands/sequence-number) command). It is not automatically stored with each record. It starts by default at 1 and is incremented for each new record that is created. Unlike record numbers, a sequence number is not reused when a record is deleted or when a database is compacted or repaired. Sequence numbers provide a way to have unique ID numbers for records. If a sequence number is incremented during a transaction, the number is not decremented if the transaction is canceled.
+- **Numéro d'enregistrement** : le numéro d'enregistrement est le numéro absolu/physique d'un enregistrement. Ce numéro est retourné par la commande [`Record number`](../commands/record-number).
+Un numéro d'enregistrement est automatiquement attribué à chaque nouvel enregistrement et reste constant pour l'enregistrement jusqu'à ce que ce dernier soit supprimé. Les numéros d'enregistrement commencent à zéro. Ils ne sont pas uniques car les numéros d'enregistrement des enregistrements supprimés sont réutilisés pour de nouveaux enregistrements. Ils changent également lorsque la base de données est [compactée](../MSC/compact.md) ou [réparée](../MSC/repair.md).
+- **Numéro d'enregistrement sélectionné** : le numéro d'enregistrement sélectionné est la position de l'enregistrement dans la sélection courante, et dépend donc de la sélection courante. Si la sélection est modifiée ou triée, le numéro d'enregistrement sélectionné changera probablement. La numérotation du numéro d'enregistrement sélectionné commence à un (1). Ce numéro est retourné par la commande [`Selected record number`](../commands/selected-record-number).
+- **Numéro de séquence** : le numéro de séquence est un numéro unique non répétitif qui peut être attribué à un champ d'un enregistrement (via la propriété **Incrémentation automatique**, l'attribut SQL AUTO_INCREMENT ou la commande [`Sequence number`](../commands/sequence-number)). Il n'est pas automatiquement stocké avec chaque enregistrement. Il commence par défaut à 1 et est incrémenté pour chaque nouvel enregistrement créé. Contrairement aux numéros d'enregistrement, un numéro de séquence n'est pas réutilisé lorsqu'un enregistrement est supprimé ou lorsqu'une base de données est compactée ou réparée. Les numéros de séquence offrent un moyen de disposer de numéros d'identification uniques pour les enregistrements. Si un numéro de séquence est incrémenté au cours d'une transaction, le numéro n'est pas décrémenté si la transaction est annulée.
 
 :::note Notes
 
-- 4D does not carry out any check when you modify the automatic number internal counter of a table using the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command. If you decrement this counter, the new records created may have numbers that have already been assigned.
-- Sequence numbers are not recommended to fill unique ID primary key fields for records. To create unique record IDs, it is strongly recommended to use UUIDs. 
+- 4D n'effectue aucun contrôle lorsque vous modifiez le compteur interne de numérotation automatique d'une table à l'aide de la commande [`SET DATABASE PARAMETER`](../commands/set-database-parameter). Si vous décrémentez ce compteur, les nouveaux enregistrements créés peuvent avoir des numéros déjà attribués.
+- Les numéros de séquence ne sont pas recommandés pour remplir des champs de clé primaire d'identifiant unique pour les enregistrements. Pour créer des ID d'enregistrement uniques, il est fortement recommandé d'utiliser des UUID.
 
-::: 
+:::
 
 
-### Record stack
+### Pile d'enregistrements
 
-The [`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) commands allow you to put (“push”) records onto the record stack, and to remove (“pop”) them from the stack.
+Les commandes [`PUSH RECORD`](../commands/push-record) et [`POP RECORD`](../commands/pop-record) vous permettent de placer (« push ») des enregistrements sur la pile d'enregistrements et de les en retirer (« pop »).
 
-Each process has its own record stack for each table. 4D maintains the record stacks for you. Each record stack is a last-in-first-out (LIFO) stack. Stack capacity is limited by memory.
+Chaque process possède sa propre pile d'enregistrements pour chaque table. 4D gère les piles d'enregistrements pour vous. Chaque pile d'enregistrements est une pile de type dernier entré, premier sorti (LIFO). La capacité de la pile est limitée par la mémoire.
 
-[`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) should be used with discretion. Each record that is pushed uses part of free memory. Pushing too many records can cause an out-of-memory or stack full condition.
+[`PUSH RECORD`](../commands/push-record) et [`POP RECORD`](../commands/pop-record) doivent être utilisées avec discernement. Chaque enregistrement placé sur la pile utilise une partie de la mémoire libre. Placer trop d'enregistrements sur la pile peut provoquer une condition de mémoire insuffisante ou de pile pleine.
 
-4D clears the stack of any unpopped records when you return to the menu at the end of execution of your method.
+4D vide la pile de tous les enregistrements non retirés lorsque vous revenez au menu à la fin de l'exécution de votre méthode.
 
-[`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) are useful when you want to examine records in the same file during data entry. To do this, you push the record, search and examine records in the file (copy fields into variables, for example), and finally pop the record to restore the record.
+[`PUSH RECORD`](../commands/push-record) et [`POP RECORD`](../commands/pop-record) sont utiles lorsque vous souhaitez examiner des enregistrements du même fichier pendant la saisie de données. Pour cela, vous placez l'enregistrement sur la pile, recherchez et examinez des enregistrements du fichier (en copiant des champs dans des variables, par exemple), puis retirez enfin l'enregistrement de la pile pour le restaurer.
 
-While entering a record, if you have to check a multiple field unique value, use the [`SET QUERY DESTINATION`](../commands/set-quer-destination) command. This will save you the calls to [`PUSH RECORD`](../commands/push-record) and [`POP RECORD`](../commands/pop-record) that you were making before and after the call to QUERY in order to preserve the data entered in the current record. [`SET QUERY DESTINATION`](../commands/set-quer-destination) allows you to make a query that does not change the selection nor the current record.
+Lors de la saisie d'un enregistrement, si vous devez vérifier une valeur unique sur plusieurs champs, utilisez la commande [`SET QUERY DESTINATION`](../commands/set-quer-destination). Cela vous évitera les appels à [`PUSH RECORD`](../commands/push-record) et [`POP RECORD`](../commands/pop-record) que vous faisiez auparavant avant et après l'appel à QUERY afin de préserver les données saisies dans l'enregistrement courant. [`SET QUERY DESTINATION`](../commands/set-quer-destination) vous permet d'effectuer une recherche qui ne modifie ni la sélection ni l'enregistrement courant.
 
-## Record locking
+## Verrouillage d'enregistrement
 
-4D and 4D Server automatically manage databases by preventing multi-user or multi-process conflicts. Two users or two processes cannot modify the same record or object at the same time. However, the second user or process can have read-only access to the record or object at the same time.
+4D et 4D Server gèrent automatiquement les bases de données en empêchant les conflits multi-utilisateurs ou multi-process. Deux utilisateurs ou deux process ne peuvent pas modifier le même enregistrement ou objet en même temps. Cependant, le second utilisateur ou process peut avoir un accès en lecture seule à l'enregistrement ou à l'objet au même moment.
 
-There are several reasons for using the multi-user commands:
+Il existe plusieurs raisons d'utiliser les commandes multi-utilisateurs :
 
-- Modifying records by using the language.
-- Using a custom user interface for multi-user operations.
-- Saving related modifications inside a transaction.
+- Modifier des enregistrements à l'aide du langage.
+- Utiliser une interface utilisateur personnalisée pour les opérations multi-utilisateurs.
+- Sauvegarder des modifications liées au sein d'une transaction.
 
-There are three important concepts to be aware of when using commands in a multi-processing database:
+Trois concepts importants sont à connaître lors de l'utilisation des commandes dans une base de données multi-process :
 
-1. In a process, each table is in either a read-only or a read/write state.
-2. Records become locked when they are loaded and unlocked when they are unloaded.
-3. A locked record cannot be modified.
+1. Dans un process, chaque table est soit dans un état lecture seule, soit dans un état lecture/écriture.
+2. Les enregistrements sont verrouillés lorsqu'ils sont chargés et déverrouillés lorsqu'ils sont déchargés.
+3. Un enregistrement verrouillé ne peut pas être modifié.
 
-As a convention in the following sections, the person performing an operation on the multi-user database is referred to as the **local user**. Other people using the database are referred to as the **other users**. The discussion is from the perspective of the local user. Also, from a multi-process perspective, the process executing an operation on the database is the **current process**. Any other executing process is referred to as **other processes**. The discussion is from the point of view of the current process.
+Par convention dans les sections suivantes, la personne effectuant une opération sur la base de données multi-utilisateurs est désignée comme l'**utilisateur local**. Les autres personnes utilisant la base de données sont désignées comme les **autres utilisateurs**. La discussion se place du point de vue de l'utilisateur local. De même, d'un point de vue multi-process, le process exécutant une opération sur la base de données est le **process courant**. Tout autre process en cours d'exécution est désigné comme les **autres process**. La discussion se place du point de vue du process courant.
 
-### Locked Records  
+### Enregistrements verrouillés
 
-A locked record cannot be modified by the local user or the current process. A locked record can be loaded, but cannot be modified. A record is locked when one of the other users or processes has successfully loaded the record for modification, or when the record is stacked. Only the user who is modifying the record sees that record as unlocked. All other users and processes see the record as locked, and therefore unavailable for modification. A table must be in a read/write state for a record to be loaded unlocked.
+Un enregistrement verrouillé ne peut pas être modifié par l'utilisateur local ou le process courant. Un enregistrement verrouillé peut être chargé, mais ne peut pas être modifié. Un enregistrement est verrouillé lorsque l'un des autres utilisateurs ou process a chargé avec succès l'enregistrement pour modification, ou lorsque l'enregistrement est empilé. Seul l'utilisateur qui modifie l'enregistrement voit cet enregistrement comme déverrouillé. Tous les autres utilisateurs et process voient l'enregistrement comme verrouillé, et donc indisponible à la modification. Une table doit être dans un état lecture/écriture pour qu'un enregistrement soit chargé déverrouillé.
 
-### Read-Only and Read/Write States  
+### États lecture seule et lecture/écriture
 
-Each table in a database is in either a read/write or a read-only state for each user and process of the database. **Read-only** means that records for the table can be loaded but not modified. **Read/write** means that records for the table can be loaded and modified if no other user has locked the record first.
+Chaque table d'une base de données est dans un état lecture/écriture ou lecture seule pour chaque utilisateur et process de la base. **Lecture seule** signifie que les enregistrements de la table peuvent être chargés mais pas modifiés. **Lecture/écriture** signifie que les enregistrements de la table peuvent être chargés et modifiés si aucun autre utilisateur n'a verrouillé l'enregistrement au préalable.
 
-Note that if you change the status of a table, the change takes effect for the next record loaded. If there is a record currently loaded when you change the table’s status, that record is not affected by the status change.
+Notez que si vous modifiez le statut d'une table, la modification prend effet pour le prochain enregistrement chargé. S'il y a un enregistrement actuellement chargé lorsque vous modifiez le statut de la table, cet enregistrement n'est pas affecté par le changement de statut.
 
-#### Read-Only State  
+#### État lecture seule
 
-When a table is read-only and a record is loaded, this record is always locked. In other words, locked records can be displayed, printed, and otherwise used, but they cannot be modified.
+Lorsqu'une table est en lecture seule et qu'un enregistrement est chargé, cet enregistrement est toujours verrouillé. Autrement dit, les enregistrements verrouillés peuvent être affichés, imprimés et utilisés d'autres manières, mais ne peuvent pas être modifiés.
 
-Note that the read-only state applies only to editing existing records. A read-only state does not affect the creation of new records. You can still add records to a read-only table using [`CREATE RECORD`](../commands/create-record) and [`ADD RECORD`](../commands/add-record), or the menu commands of the Design environment (in this case, the records being created are locked for all other users/processes). Note that the [`ARRAY TO SELECTION`](../commands/array-to-selection) command is not affected by the read-only state since it can both create and modify records.
+Notez que l'état lecture seule ne s'applique qu'à la modification d'enregistrements existants. Un état lecture seule n'affecte pas la création de nouveaux enregistrements. Vous pouvez toujours ajouter des enregistrements à une table en lecture seule à l'aide de [`CREATE RECORD`](../commands/create-record) et [`ADD RECORD`](../commands/add-record), ou des commandes de menu de l'environnement de développement (dans ce cas, les enregistrements en cours de création sont verrouillés pour tous les autres utilisateurs/process). Notez que la commande [`ARRAY TO SELECTION`](../commands/array-to-selection) n'est pas affectée par l'état lecture seule car elle peut à la fois créer et modifier des enregistrements.
 
-4D automatically sets a table to read-only for commands that do not require write access to records. These commands are: [`DISPLAY SELECTION`](../commands/display-selection), [`DISTINCT VALUES`](../commands/distinct-values), [`EXPORT DIF`](../commands/export-dif), [`EXPORT SYLK`](../commands/export-sylk), [`EXPORT TEXT`](../commands/export-text), [`PRINT SELECTION`](../commands/print-selection), [`PRINT LABEL`](../commands/print-label), [`QR REPORT`](../commands/qr-report), [`SELECTION TO ARRAY`](../commands/selection-to-array), [`SELECTION RANGE TO ARRAY`](../commands/selection-range-to-array).
+4D met automatiquement une table en lecture seule pour les commandes qui ne nécessitent pas d'accès en écriture aux enregistrements. Ces commandes sont : [`DISPLAY SELECTION`](../commands/display-selection), [`DISTINCT VALUES`](../commands/distinct-values), [`EXPORT DIF`](../commands/export-dif), [`EXPORT SYLK`](../commands/export-sylk), [`EXPORT TEXT`](../commands/export-text), [`PRINT SELECTION`](../commands/print-selection), [`PRINT LABEL`](../commands/print-label), [`QR REPORT`](../commands/qr-report), [`SELECTION TO ARRAY`](../commands/selection-to-array), [`SELECTION RANGE TO ARRAY`](../commands/selection-range-to-array).
 
-You can find out the state of a table at any time using the [`Read only state`](../commands/read-only-state) function.
+Vous pouvez connaître l'état d'une table à tout moment à l'aide de la fonction [`Read only state`](../commands/read-only-state).
 
-Before executing any of these commands, 4D saves the current state of the table (read-only or read/write) for the current process. After the command has executed, this state is restored.
+Avant d'exécuter l'une de ces commandes, 4D sauvegarde l'état courant de la table (lecture seule ou lecture/écriture) pour le process courant. Une fois la commande exécutée, cet état est restauré.
 
-#### Read/Write State  
+#### État lecture/écriture
 
-When a table is read/write and a record is loaded, the record will become unlocked if no other user has locked the record first. If the record is locked by another user, the record is loaded as a locked record that cannot be modified by the local user.
+Lorsqu'une table est en lecture/écriture et qu'un enregistrement est chargé, l'enregistrement devient déverrouillé si aucun autre utilisateur n'a verrouillé l'enregistrement au préalable. Si l'enregistrement est verrouillé par un autre utilisateur, l'enregistrement est chargé comme un enregistrement verrouillé qui ne peut pas être modifié par l'utilisateur local.
 
-A table must be set to read/write and the record loaded for it to become unlocked and thus modifiable.
+Une table doit être en lecture/écriture et l'enregistrement chargé pour qu'il devienne déverrouillé et donc modifiable.
 
-If a user loads a record from a table in read/write mode, no other users can load that record for modification. However, other users can add records to the table, either through the [`CREATE RECORD`](../commands/create-record) and [`ADD RECORD`](../commands/add-record) commands or manually in the Design environment.
+Si un utilisateur charge un enregistrement d'une table en mode lecture/écriture, aucun autre utilisateur ne peut charger cet enregistrement pour modification. Cependant, d'autres utilisateurs peuvent ajouter des enregistrements à la table, soit via les commandes [`CREATE RECORD`](../commands/create-record) et [`ADD RECORD`](../commands/add-record), soit manuellement dans l'environnement de développement.
 
-Read/write is the default state for all tables when a database is opened and a new process is started.
+Lecture/écriture est l'état par défaut de toutes les tables lorsqu'une base de données est ouverte et qu'un nouveau process est démarré.
 
-#### Changing the Status of a Table  
+#### Modifier le statut d'une table
 
-You can use the [`READ ONLY`](../commands/read-only) and [`READ WRITE`](../commands/read-write) commands to change the state of a table. If you want to change the state of a table in order to make a record read-only or read/write, you must execute the command before this record is loaded. Any record that is already loaded is not affected by the [`READ ONLY`](../commands/read-only) and [`READ WRITE`](../commands/read-write) commands.
+Vous pouvez utiliser les commandes [`READ ONLY`](../commands/read-only) et [`READ WRITE`](../commands/read-write) pour modifier l'état d'une table. Si vous souhaitez modifier l'état d'une table afin de rendre un enregistrement lecture seule ou lecture/écriture, vous devez exécuter la commande avant que cet enregistrement ne soit chargé. Tout enregistrement déjà chargé n'est pas affecté par les commandes [`READ ONLY`](../commands/read-only) et [`READ WRITE`](../commands/read-write).
 
-Each process has its own state (read-only or read/write) for each table in the database.
+Chaque process possède son propre état (lecture seule ou lecture/écriture) pour chaque table de la base de données.
 
-By default, if you do not use the READ ONLY command, all tables are in read/write mode.
+Par défaut, si vous n'utilisez pas la commande READ ONLY, toutes les tables sont en mode lecture/écriture.
 
-### Loading, Modifying and Unloading Records 
+### Charger, modifier et décharger des enregistrements
 
-Before the local user can modify a record, the table must be in the read/write state and the record must be loaded and unlocked.
+Avant que l'utilisateur local puisse modifier un enregistrement, la table doit être dans l'état lecture/écriture et l'enregistrement doit être chargé et déverrouillé.
 
-Any of the commands that loads a current record (if there is one) — such as [`NEXT RECORD`](../commands/next-record), [`QUERY`](../commands/query), [`ORDER BY`](../commands/order-by), [`RELATE ONE`](../commands/relate-one), etc. — sets the record state as locked or unlocked. The record is loaded according to the current state of its table (read-only or read/write) and its availability. A record may also be loaded for a related table by any of the commands that cause an automatic relation to be established.
+Toute commande qui charge un enregistrement courant (s'il y en a un) — telle que [`NEXT RECORD`](../commands/next-record), [`QUERY`](../commands/query), [`ORDER BY`](../commands/order-by), [`RELATE ONE`](../commands/relate-one), etc. — définit l'état de l'enregistrement comme verrouillé ou déverrouillé. L'enregistrement est chargé selon l'état courant de sa table (lecture seule ou lecture/écriture) et sa disponibilité. Un enregistrement peut également être chargé pour une table liée par l'une des commandes qui provoquent l'établissement d'une relation automatique.
 
-If a table is in the read-only state for a process or a user, then this table's records are loaded in read-only mode, which means they cannot be modified or deleted by this process or user. This is recommended for viewing or retrieving data because it does not prevent other users or processes from accessing the records of this table in read/write mode if necessary.
+Si une table est dans l'état lecture seule pour un process ou un utilisateur, alors les enregistrements de cette table sont chargés en mode lecture seule, ce qui signifie qu'ils ne peuvent pas être modifiés ou supprimés par ce process ou cet utilisateur. Ceci est recommandé pour l'affichage ou la récupération de données car cela n'empêche pas les autres utilisateurs ou process d'accéder aux enregistrements de cette table en mode lecture/écriture si nécessaire.
 
-If a table is in the read/write state for a process or a user, then any record from this table is also loaded in read/write mode, but only if no other user or process has already locked this record. If a record is successfully loaded in read/write mode, it is unlocked for the current process or user (it can be modified and saved) and is locked for all other users or processes. A table must be put into the read/write state before loading a record for modification and then saving it.
+Si une table est dans l'état lecture/écriture pour un process ou un utilisateur, alors tout enregistrement de cette table est également chargé en mode lecture/écriture, mais uniquement si aucun autre utilisateur ou process n'a déjà verrouillé cet enregistrement. Si un enregistrement est chargé avec succès en mode lecture/écriture, il est déverrouillé pour le process ou l'utilisateur courant (il peut être modifié et sauvegardé) et est verrouillé pour tous les autres utilisateurs ou process. Une table doit être placée dans l'état lecture/écriture avant de charger un enregistrement pour modification puis de le sauvegarder.
 
-If the record is to be modified, you use the Locked function to test whether or not a record is locked by another user. If a record is locked (Locked returns True), load the record with the [`LOAD RECORD`](../commands/load-record) command and again test whether or not the record is locked. This sequence must be continued until the record becomes unlocked (Locked returns False).
+Si l'enregistrement doit être modifié, vous utilisez la fonction Locked pour tester si un enregistrement est verrouillé ou non par un autre utilisateur. Si un enregistrement est verrouillé (Locked retourne Vrai), chargez l'enregistrement avec la commande [`LOAD RECORD`](../commands/load-record) et testez à nouveau si l'enregistrement est verrouillé ou non. Cette séquence doit être poursuivie jusqu'à ce que l'enregistrement devienne déverrouillé (Locked retourne Faux).
 
-When modifications to be made to a record are finished, the record must be released (and therefore unlocked for the other users) with [`UNLOAD RECORD`](../commands/unload-record). If a record is not unloaded, it will remain locked for all other users until a different current record is selected. Changing the current record of a table automatically unlocks the previous current record. You need to explicitly call [`UNLOAD RECORD`](../commands/unload-record) if you do not change the current record. This discussion applies to existing records. When a new record is created, it can be saved regardless of the state of the table to which it belongs.
+Lorsque les modifications à apporter à un enregistrement sont terminées, l'enregistrement doit être libéré (et donc déverrouillé pour les autres utilisateurs) avec [`UNLOAD RECORD`](../commands/unload-record). Si un enregistrement n'est pas déchargé, il restera verrouillé pour tous les autres utilisateurs jusqu'à ce qu'un autre enregistrement courant soit sélectionné. Le changement d'enregistrement courant d'une table déverrouille automatiquement l'enregistrement courant précédent. Vous devez appeler explicitement [`UNLOAD RECORD`](../commands/unload-record) si vous ne changez pas d'enregistrement courant. Cette discussion s'applique aux enregistrements existants. Lorsqu'un nouvel enregistrement est créé, il peut être sauvegardé quel que soit l'état de la table à laquelle il appartient.
 
 :::note
 
-When it is used in a transaction, the [`UNLOAD RECORD`](../commands/unload-record) command unloads the current record only for the process that manages the transaction. For other processes, the record stays locked as long as the transaction has not been validated (or cancelled).
+Lorsqu'elle est utilisée dans une transaction, la commande [`UNLOAD RECORD`](../commands/unload-record) décharge l'enregistrement courant uniquement pour le process qui gère la transaction. Pour les autres process, l'enregistrement reste verrouillé tant que la transaction n'a pas été validée (ou annulée).
 
 :::
 
-Use the [`LOCKED BY`](../commands/locked-by) command to see which user and/or process have locked a record.
+Utilisez la commande [`LOCKED BY`](../commands/locked-by) pour voir quel utilisateur et/ou process a verrouillé un enregistrement.
 
-:::
+Une bonne pratique consiste à placer toutes les tables en mode lecture seule au démarrage de chaque process (à l'aide de la syntaxe [`READ ONLY(*)`](../commands/read-only)) puis à ne mettre chaque table en mode lecture/écriture que lorsque cela est nécessaire. L'accès aux tables en mode lecture seule est plus rapide et plus économe en mémoire. De plus, le changement d'état d'une table est optimisé en mode client/serveur car il ne génère aucun trafic réseau supplémentaire : les informations ne sont envoyées au serveur que lors de l'exécution d'une commande nécessitant un accès adéquat à la table.
 
-A good practice is to place all tables in read-only mode when each process is started (using the syntax [`READ ONLY(*)`](../commands/read-only)) then put each table in read/write mode only when necessary. Access to tables in read-only mode is faster and more memory-efficient. Moreover, changing the state of a table is optimized in client/server mode because it does not cause any additional network traffic: information is only sent to the server when executing a command that requires adequate access to the table.
+### Boucles pour charger des enregistrements déverrouillés
 
-:::
-
-### Loops to Load Unlocked Records
-
-The following example shows the simplest loop with which to load an unlocked record:
+L'exemple suivant montre la boucle la plus simple permettant de charger un enregistrement déverrouillé :
 
 ```4d
- READ WRITE([Customers])//Set the table’s state to read/write
- Repeat//Loop until the record is unlocked
-    LOAD RECORD([Customers])//Load record and set locked status
+ READ WRITE([Customers])//Définit l'état de la table sur lecture/écriture
+ Repeat//Boucle jusqu'à ce que l'enregistrement soit déverrouillé
+    LOAD RECORD([Customers])//Charge l'enregistrement et définit le statut verrouillé
  Until(Not(Locked([Customers])))
- //Do something to the record here
- READ ONLY([Customers])//Set the table’s state to read-only
+ //Faire quelque chose avec l'enregistrement ici
+ READ ONLY([Customers])//Définit l'état de la table sur lecture seule
 ```
 
-The loop continues until the record is unlocked.
+La boucle continue jusqu'à ce que l'enregistrement soit déverrouillé.
 
-A loop like this is used only if the record is unlikely to be locked by anyone else, since the user would have to wait for the loop to terminate. Thus, it is unlikely that the loop would be used as is unless the record could only be modified by means of a method.
+Une boucle de ce type n'est utilisée que si l'enregistrement a peu de chances d'être verrouillé par quelqu'un d'autre, car l'utilisateur devrait attendre la fin de la boucle. Ainsi, il est peu probable que la boucle soit utilisée telle quelle, à moins que l'enregistrement ne puisse être modifié qu'au moyen d'une méthode.
 
-The following example uses the previous loop to load an unlocked record and modify the record:
+L'exemple suivant utilise la boucle précédente pour charger un enregistrement déverrouillé et modifier l'enregistrement :
 
 ```4d
  READ WRITE([Inventory])
- Repeat //Loop until the record is unlocked
-    LOAD RECORD([Inventory]) //Load record and set it to locked
+ Repeat //Boucle jusqu'à ce que l'enregistrement soit déverrouillé
+    LOAD RECORD([Inventory]) //Charge l'enregistrement et le définit sur verrouillé
  Until(Not(Locked([Inventory])))
- [Inventory]Part Qty:=[Inventory]Part Qty 1 //Modify the record
- SAVE RECORD([Inventory]) //Save the record
- UNLOAD RECORD([Inventory]) //Let other users modfiy it
+ [Inventory]Part Qty:=[Inventory]Part Qty 1 //Modifie l'enregistrement
+ SAVE RECORD([Inventory]) //Sauvegarde l'enregistrement
+ UNLOAD RECORD([Inventory]) //Permet aux autres utilisateurs de le modifier
  READ ONLY([Inventory])
 ```
 
 
-The [`MODIFY RECORD`](../commands/modify-record) command automatically notifies the user if a record is locked, and prevents the record from being modified. The following example avoids this automatic notification by first testing the record with the Locked function. If the record is locked, the user can cancel.
+La commande [`MODIFY RECORD`](../commands/modify-record) avertit automatiquement l'utilisateur si un enregistrement est verrouillé et empêche l'enregistrement d'être modifié. L'exemple suivant évite cette notification automatique en testant d'abord l'enregistrement avec la fonction Locked. Si l'enregistrement est verrouillé, l'utilisateur peut annuler.
 
-This example efficiently checks to see if the current record is locked for the table [Commands]. If it is locked, the process is delayed by the procedure for one second. This technique can be used both in a multi-user or multi-process situation:
+Cet exemple vérifie efficacement si l'enregistrement courant est verrouillé pour la table [Commandes]. S'il est verrouillé, le process est retardé par la procédure pendant une seconde. Cette technique peut être utilisée aussi bien dans une situation multi-utilisateurs que multi-process :
 
 ```4d
  Repeat
-    READ ONLY([Commands])//You do not need read/write right now
+    READ ONLY([Commands])//Vous n'avez pas besoin de lecture/écriture pour l'instant
     QUERY([Commands])
- //If the search was completed and some records were returned
+ //Si la recherche s'est terminée et que des enregistrements ont été retournés
     If((OK=1) & (Records in selection([Commands])>0))
-       READ WRITE([Commands])//Set the table to read/write state
+       READ WRITE([Commands])//Met la table dans l'état lecture/écriture
        LOAD RECORD([Commands])
-       While(Locked([Commands]) & (OK=1)) `If the record is locked,
- //loop until the record is unlocked
- //Who is the record locked by?
+       While(Locked([Commands]) & (OK=1)) `Si l'enregistrement est verrouillé,
+ //boucle jusqu'à ce que l'enregistrement soit déverrouillé
+ //Par qui l'enregistrement est-il verrouillé ?
           LOCKED BY([Commands];$Process;$User;$SessionUser;$Name)
-          If($Process=-1)//Has the record been deleted?
-             ALERT("The record has been deleted in the meantime.")
+          If($Process=-1)//L'enregistrement a-t-il été supprimé ?
+             ALERT("L'enregistrement a été supprimé entre-temps.")
              OK:=0
           Else
-             If($User="")//Are you in single-user mode
-                $User:="you"
+             If($User="")//Êtes-vous en mode monoposte
+                $User:="vous"
              End if
-             CONFIRM("The record is already used by "+$User+" in the "+$Name+" Process.")
-             If(OK=1)//If you want to wait for a few seconds
-                DELAY PROCESS(Current process;120)//Wait for a few seconds
-                LOAD RECORD([Commands])//Try to load the record
+             CONFIRM("L'enregistrement est déjà utilisé par "+$User+" dans le process "+$Name+".")
+             If(OK=1)//Si vous voulez attendre quelques secondes
+                DELAY PROCESS(Current process;120)//Attendre quelques secondes
+                LOAD RECORD([Commands])//Essayer de charger l'enregistrement
              End if
           End if
        End while
-       If(OK=1)//The record is unlocked
-          MODIFY RECORD([Commands])//You can modify the record
+       If(OK=1)//L'enregistrement est déverrouillé
+          MODIFY RECORD([Commands])//Vous pouvez modifier l'enregistrement
           UNLOAD RECORD([Commands])
        End if
-       READ ONLY([Commands])//Switch back to read-only
+       READ ONLY([Commands])//Repasser en lecture seule
        OK:=1
     End if
  Until(OK=0)
 ```
 
 
-### Using Commands in Multi-user or Multi-process Environment  
+### Utiliser les commandes dans un environnement multi-utilisateurs ou multi-process
 
-A number of commands in the language perform specific actions when they encounter a locked record. They behave normally if they do not encounter a locked record.
+Un certain nombre de commandes du langage effectuent des actions spécifiques lorsqu'elles rencontrent un enregistrement verrouillé. Elles se comportent normalement si elles ne rencontrent pas d'enregistrement verrouillé.
 
-Here is a list of these commands and their actions when a locked record is encountered.
+Voici la liste de ces commandes et de leurs actions lorsqu'un enregistrement verrouillé est rencontré.
 
-- [`MODIFY RECORD`](../commands/modify-record): Displays a dialog box stating that the record is in use. The record is not displayed, therefore the user cannot modify the record. In the Design environment, the record is shown in read-only state.
-- [`MODIFY SELECTION`](../commands/modify-selection): Behaves normally except when the user double-clicks a record to modify it. [`MODIFY SELECTION`](../commands/modify-selection) displays dialog box stating that the record is in use and then allows read-only access to the record.
-- [`APPLY TO SELECTION`](../commands/apply-to-selection): Loads a locked record, but does not modify it. [`APPLY TO SELECTION`](../commands/apply-to-selection) can be used to read information from the table without special care. If the command encounters a locked record, the record is put into the [`LockedSet` system set](./sets.md#the-lockedset-system-set).
-- [`DELETE SELECTION`](../commands/delete-selection): Does not delete any locked records; it skips them. If the command encounters a locked record, the record is put into the [`LockedSet` system set](./sets.md#the-lockedset-system-set).
-- [`DELETE RECORD`](../commands/delete-record): This command is ignored if the record is locked. No error is returned. You must test that the record is unlocked before executing this command.
-- [`SAVE RECORD`](../commands/save-record): This command is ignored if the record is locked. No error is returned. You must test that the record is unlocked before executing this command.
-- [`ARRAY TO SELECTION`](../commands/array-to-selection): Does not save any locked records. If the command encounters a locked record, the record is put into the [`LockedSet` system set](./sets.md#the-lockedset-system-set).
-- [`GOTO RECORD`](../commands/goto-record): Records in a multi-user/multi-process database may be deleted and added by other users, therefore the record numbers may change. Use caution when directly referencing a record by number in a multi-user database.
-- [**Sets**](./sets.md): Take special care with sets, as the information that the set was based on may be changed by another user or process.
+- [`MODIFY RECORD`](../commands/modify-record) : Affiche une boîte de dialogue indiquant que l'enregistrement est en cours d'utilisation. L'enregistrement n'est pas affiché, l'utilisateur ne peut donc pas le modifier. Dans l'environnement de développement, l'enregistrement est présenté en état lecture seule.
+- [`MODIFY SELECTION`](../commands/modify-selection) : Se comporte normalement sauf lorsque l'utilisateur double-clique sur un enregistrement pour le modifier. [`MODIFY SELECTION`](../commands/modify-selection) affiche une boîte de dialogue indiquant que l'enregistrement est en cours d'utilisation puis autorise un accès en lecture seule à l'enregistrement.
+- [`APPLY TO SELECTION`](../commands/apply-to-selection) : Charge un enregistrement verrouillé, mais ne le modifie pas. [`APPLY TO SELECTION`](../commands/apply-to-selection) peut être utilisée pour lire des informations de la table sans précaution particulière. Si la commande rencontre un enregistrement verrouillé, l'enregistrement est placé dans l'[ensemble système `LockedSet`](./sets.md#the-lockedset-system-set).
+- [`DELETE SELECTION`](../commands/delete-selection) : Ne supprime aucun enregistrement verrouillé ; elle les ignore. Si la commande rencontre un enregistrement verrouillé, l'enregistrement est placé dans l'[ensemble système `LockedSet`](./sets.md#the-lockedset-system-set).
+- [`DELETE RECORD`](../commands/delete-record) : Cette commande est ignorée si l'enregistrement est verrouillé. Aucune erreur n'est retournée. Vous devez tester que l'enregistrement est déverrouillé avant d'exécuter cette commande.
+- [`SAVE RECORD`](../commands/save-record) : Cette commande est ignorée si l'enregistrement est verrouillé. Aucune erreur n'est retournée. Vous devez tester que l'enregistrement est déverrouillé avant d'exécuter cette commande.
+- [`ARRAY TO SELECTION`](../commands/array-to-selection) : Ne sauvegarde aucun enregistrement verrouillé. Si la commande rencontre un enregistrement verrouillé, l'enregistrement est placé dans l'[ensemble système `LockedSet`](./sets.md#the-lockedset-system-set).
+- [`GOTO RECORD`](../commands/goto-record) : Les enregistrements d'une base de données multi-utilisateurs/multi-process peuvent être supprimés et ajoutés par d'autres utilisateurs, les numéros d'enregistrement peuvent donc changer. Soyez prudent lorsque vous référencez directement un enregistrement par son numéro dans une base de données multi-utilisateurs.
+- [**Ensembles**](./sets.md) : Faites particulièrement attention avec les ensembles, car les informations sur lesquelles l'ensemble était basé peuvent avoir été modifiées par un autre utilisateur ou process.
 
 
-## Records and Relations
+## Enregistrements et relations
 
-Commands in the [Relations theme](../commands/theme/Relations.md), in particular [`RELATE ONE`](../commands/relate-one) and [`RELATE MANY`](../commands/relate-many), establish and manage the automatic and non-automatic relations between tables. Before using any of the commands in this theme, refer to the 4D Design Reference manual for information about creating relations between tables.
+Les commandes du [thème Relations](../commands/theme/Relations.md), en particulier [`RELATE ONE`](../commands/relate-one) et [`RELATE MANY`](../commands/relate-many), établissent et gèrent les relations automatiques et non automatiques entre les tables. Avant d'utiliser l'une des commandes de ce thème, reportez-vous au manuel de référence Mode Développement 4D pour obtenir des informations sur la création de relations entre les tables.
 
-### Using Automatic Table Relations with Commands 
+### Utiliser les relations automatiques entre tables avec les commandes
 
-Two tables can be related with automatic table relations. In general, when an automatic table relation is established, it loads or selects the related records in a related table. Many operations cause the relation to be established.
+Deux tables peuvent être liées par des relations automatiques. En général, lorsqu'une relation automatique entre tables est établie, elle charge ou sélectionne les enregistrements liés d'une table liée. De nombreuses opérations provoquent l'établissement de la relation.
 
-These operations include:
+Ces opérations comprennent :
 
-- Data entry
-- Listing records on the screen in output forms
-- Reporting
-- Operations on a selection of records, such as queries, sorts, and applying a formula
+- La saisie de données
+- L'affichage d'enregistrements à l'écran dans des formulaires de sortie
+- La création d'états
+- Les opérations sur une sélection d'enregistrements, telles que les recherches, les tris et l'application d'une formule
 
-To optimize performance, when 4D establishes automatic relations, only one record becomes the current record for a table. For each of the operations listed above, the related record is loaded according to the following principles:
+Pour optimiser les performances, lorsque 4D établit des relations automatiques, un seul enregistrement devient l'enregistrement courant d'une table. Pour chacune des opérations listées ci-dessus, l'enregistrement lié est chargé selon les principes suivants :
 
-- If a relation selects only one record of a related table, that record is loaded from disk.
-- If a relation selects more than one record of a related table, a new selection of records is created for that table, and the first record in that selection is loaded from disk.
+- Si une relation sélectionne un seul enregistrement d'une table liée, cet enregistrement est chargé depuis le disque.
+- Si une relation sélectionne plusieurs enregistrements d'une table liée, une nouvelle sélection d'enregistrements est créée pour cette table, et le premier enregistrement de cette sélection est chargé depuis le disque.
 
-For example, using the database structure displayed here, if a record for the [Employees] table is loaded and displayed for data entry, the related record from the [Companies] table is selected and is loaded. Similarly, if a record for the [Companies] table is loaded and displayed for data entry, the related records from the [Employees] table are selected.
+Par exemple, avec la structure de base de données affichée ici, si un enregistrement de la table [Employés] est chargé et affiché pour la saisie de données, l'enregistrement lié de la table [Sociétés] est sélectionné et chargé. De même, si un enregistrement de la table [Sociétés] est chargé et affiché pour la saisie de données, les enregistrements liés de la table [Employés] sont sélectionnés.
 
 ![](../assets/en/Develop/relations.png)
 
 
-In this database structure, the [Employees] table is referred to as the **Many table**, and the [Companies] table is referred to as the **One table**. To remember this concept, think of "there are many employees related to one company" and "each company has many employees".
+Dans cette structure de base de données, la table [Employés] est appelée **table N** (Many), et la table [Sociétés] est appelée **table 1** (One). Pour retenir ce concept, pensez à « il y a plusieurs employés liés à une société » et « chaque société a plusieurs employés ».
 
-Similarly, the Company field in the [Employees] table is referred to as the **Many field**, and the Name field in the [Companies] table is referred to as the **One** field. It is not always possible to have the related field be unique. For example, the [Companies]Name field may have several company records containing the same value. This non-unique situation can be easily handled by creating a relation, which will always be unique, on another field in the related table. This field could be a company ID field.
+De même, le champ Société de la table [Employés] est appelé **champ N**, et le champ Nom de la table [Sociétés] est appelé champ **1**. Il n'est pas toujours possible que le champ lié soit unique. Par exemple, le champ [Sociétés]Nom peut comporter plusieurs enregistrements de société contenant la même valeur. Cette situation non unique peut être facilement gérée en créant une relation, qui sera toujours unique, sur un autre champ de la table liée. Ce champ pourrait être un champ d'ID de société.
 
-The following table lists commands that use automatic relations to load related records during operation of the command. All of the commands will use existing automatic Many-to-One relations. Only those commands with Yes in the One-to-Many established column below will use automatic One-to-Many relations.
+Le tableau suivant liste les commandes qui utilisent des relations automatiques pour charger des enregistrements liés lors de leur exécution. Toutes les commandes utiliseront les relations automatiques N vers 1 existantes. Seules les commandes ayant Oui dans la colonne 1 vers N établie ci-dessous utiliseront les relations automatiques 1 vers N.
 
-|Command|One-to-Many established|
+|Commande|1 vers N établie|
 |--|--|
-|[`ADD RECORD`](../commands/add-record)	|Yes|
-|[`APPLY TO SELECTION`](../commands/apply-to-selection)|	No|
-|[`DISPLAY SELECTION`](../commands/display-selection)|	No|
-|[`EXPORT DIF`](../commands/export-dif)|	No|
-|[`EXPORT SYLK`](../commands/export-sylk)|	No|
-|[`EXPORT TEXT`](../commands/export-text)|	No|
-|[`EXPORT DATA`](../commands/export-data)|	No|
-|[`MODIFY RECORD`](../commands/modify-record)|	Yes|
-|[`MODIFY SELECTION`](../commands/modify-selection)|	Yes (in data entry)|
-|[`ORDER BY`](../commands/order-by)|	No|
-|[`ORDER BY FORMULA`](../commands/order-by-formula)|	No|
-|[`QUERY BY FORMULA`](../commands/query-by-formula)|	Yes|
-|[`QUERY SELECTION`](../commands/query-selection)|	Yes|
-|[`QUERY`](../commands/query)|	Yes|
-|[`PRINT LABEL`](../commands/print-label)|	No|
-|[`PRINT SELECTION`](../commands/print-selection)|	Yes|
-|[`QR REPORT`](../commands/qr-report)|	No|
-|[`SELECTION TO ARRAY`](../commands/selection-to-array)|	No|
-|[`SELECTION RANGE TO ARRAY`](../commands/selection-range-to-array)|	No|
+|[`ADD RECORD`](../commands/add-record)	|Oui|
+|[`APPLY TO SELECTION`](../commands/apply-to-selection)|	Non|
+|[`DISPLAY SELECTION`](../commands/display-selection)|	Non|
+|[`EXPORT DIF`](../commands/export-dif)|	Non|
+|[`EXPORT SYLK`](../commands/export-sylk)|	Non|
+|[`EXPORT TEXT`](../commands/export-text)|	Non|
+|[`EXPORT DATA`](../commands/export-data)|	Non|
+|[`MODIFY RECORD`](../commands/modify-record)|	Oui|
+|[`MODIFY SELECTION`](../commands/modify-selection)|	Oui (en saisie de données)|
+|[`ORDER BY`](../commands/order-by)|	Non|
+|[`ORDER BY FORMULA`](../commands/order-by-formula)|	Non|
+|[`QUERY BY FORMULA`](../commands/query-by-formula)|	Oui|
+|[`QUERY SELECTION`](../commands/query-selection)|	Oui|
+|[`QUERY`](../commands/query)|	Oui|
+|[`PRINT LABEL`](../commands/print-label)|	Non|
+|[`PRINT SELECTION`](../commands/print-selection)|	Oui|
+|[`QR REPORT`](../commands/qr-report)|	Non|
+|[`SELECTION TO ARRAY`](../commands/selection-to-array)|	Non|
+|[`SELECTION RANGE TO ARRAY`](../commands/selection-range-to-array)|	Non|
 
 
-### Using Commands to Establish Table Relations  
+### Utiliser les commandes pour établir des relations entre tables
 
-Automatic relations do not mean that the related record or records for a table will be selected simply because a command loads a record. In some cases, after using a command that loads a record, you must explicitly select the related records by using [`RELATE ONE`](../commands/relate-one) or [`RELATE MANY`](../commands/relate-many) if you need to access the related data.
+Les relations automatiques ne signifient pas que le ou les enregistrements liés d'une table seront sélectionnés simplement parce qu'une commande charge un enregistrement. Dans certains cas, après avoir utilisé une commande qui charge un enregistrement, vous devez sélectionner explicitement les enregistrements liés à l'aide de [`RELATE ONE`](../commands/relate-one) ou [`RELATE MANY`](../commands/relate-many) si vous avez besoin d'accéder aux données liées.
 
-Some of the commands listed in the previous table (such as the query commands) load a current record after the task is completed. In this case, the record that is loaded does not automatically select the records related to it. Again, if you need to access the related data, you must explicitly select the related records by using [`RELATE ONE`](../commands/relate-one) or [`RELATE MANY`](../commands/relate-many).
-
+Certaines des commandes listées dans le tableau précédent (telles que les commandes de recherche) chargent un enregistrement courant une fois la tâche terminée. Dans ce cas, l'enregistrement chargé ne sélectionne pas automatiquement les enregistrements qui lui sont liés. Là encore, si vous avez besoin d'accéder aux données liées, vous devez sélectionner explicitement les enregistrements liés à l'aide de [`RELATE ONE`](../commands/relate-one) ou [`RELATE MANY`](../commands/relate-many).

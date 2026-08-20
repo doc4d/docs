@@ -1,54 +1,52 @@
 ---
 id: current-selection
-title: Current Selection
+title: カレントセレクション
 slug: /Develop/current-selection
 displayed_sidebar: docs
 ---
 
 
-## Overview
+## 概要
 
-When managing data, you select the group of records with which you want to work. This group of records is called the **current selection**. The current selection can contain none, one, some, or all of the records in a table. Every table and every process has its own current selection of records.
+データを管理する際には、作業対象としたいレコードのグループを選択します。このレコードのグループを **カレントセレクション** と呼びます。カレントセレクションには、テーブル内のレコードが 0 件、1 件、複数件、あるいはすべて含まれることがあります。すべてのテーブルおよびすべてのプロセスは、それぞれ独自のカレントセレクションを持ちます。
 
-The **current selection** is an important concept in 4D. The most common data management operations on [**records**](./records.md) are performed in the current selection. These operations include:
+**カレントセレクション** は 4D における重要な概念です。[**レコード**](./records.md) に対する最も一般的なデータ管理操作は、カレントセレクションに対しておこなわれます。これらの操作には次のものが含まれます：
 
-- Sorting records,
-- Viewing and modifying individual records,
-- Updating a group of records,
-- Printing a report,
-- Generating labels,
-- Graphing data,
-- Exporting records.
+- レコードのソート
+- 個々のレコードの表示および変更
+- レコードグループの更新
+- レポートの印刷
+- ラベルの生成
+- データのグラフ化
+- レコードのエクスポート
 
-In other words, creating a current selection in a table is the first step towards numerous other data management operations. 
+言い換えれば、テーブルにカレントセレクションを作成することは、他の数多くのデータ管理操作への第一歩です。
 
-The current selection of records is always the set of records most recently selected. For instance, you might have a company database that uses an Employees table to keep track of employee records. Suppose that you decide to search for the records of all engineers in the company.
-When this query begins, the current selection may contain the records of all employees in the company — salespeople, production personnel, engineers, and so on. When the query is completed, the current selection contains only the engineers’ records. If you were to print a list of records, the list would contain only the records in the current selection — in this case, the records for all of the engineers in the company. If you were to graph employee salaries, your graph would display the salaries for all of the engineers in the company.
+レコードのカレントセレクションは、常に直近に選択されたレコードの集合です。たとえば、従業員レコードを管理するために従業員テーブルを使用する会社のデータベースがあるとします。会社のすべてのエンジニアのレコードを検索することにしたとしましょう。
+この検索が始まる時点では、カレントセレクションには会社のすべての従業員のレコード — 営業担当者、製造担当者、エンジニアなど — が含まれている場合があります。検索が完了すると、カレントセレクションにはエンジニアのレコードのみが含まれます。レコードのリストを印刷すると、そのリストにはカレントセレクション内のレコードのみ — この場合は会社のすべてのエンジニアのレコード — が含まれます。従業員の給与をグラフ化すると、そのグラフには会社のすべてのエンジニアの給与が表示されます。
 
-The current selection remains the same until you perform an operation that changes it. You can change the current selection by:
+カレントセレクションは、それを変更する操作を実行するまで同じ状態が維持されます。次の方法でカレントセレクションを変更できます：
 
-- Selecting all records,
-- Manually selecting a subset of records,
-- Searching for records.
+- すべてのレコードを選択する
+- レコードのサブセットを手動で選択する
+- レコードを検索する
 
-The title bar of the output form tells you how many records are in the current table and how many records from the table are in the current selection. In a remote 4D, only the number of records in the current selection is displayed.
+出力フォームのタイトルバーには、カレントテーブルに何件のレコードがあり、そのテーブルのうち何件のレコードがカレントセレクションに含まれているかが表示されます。リモート 4D では、カレントセレクション内のレコード数のみが表示されます。
 
-Every table in a database has its own current selection. In a relational database, changing the current selection in one table can change the current selections in related tables. For example, in a database consisting of related [Employees] and [Departments] tables, a opening an input form in the [Departments] table changes the current selection in the [Employees] table. That is, the employees belonging to that department become the new current selection in the [Employees] table. 
+データベース内のすべてのテーブルは、それぞれ独自のカレントセレクションを持ちます。リレーショナルデータベースでは、あるテーブルのカレントセレクションを変更すると、関連するテーブルのカレントセレクションが変更されることがあります。たとえば、関連する [従業員] テーブルと [部署] テーブルで構成されるデータベースにおいて、[部署] テーブルで入力フォームを開くと、[従業員] テーブルのカレントセレクションが変更されます。つまり、その部署に属する従業員が [従業員] テーブルの新しいカレントセレクションになります。
 
-If you use [processes](../Develop/processes.md) for carrying out tasks in the database, there may be several simultaneous current selections per table. Each process acts like an individual 4D environment, which lets you carry out separate tasks. It can be useful to have more than one current selection, particularly when you are comparing two or more types of data, such as the monthly invoicing of several different sales regions. 
+データベースでタスクを実行するために [プロセス](../Develop/processes.md) を使用する場合、テーブルごとに複数のカレントセレクションが同時に存在することがあります。各プロセスは個別の 4D 環境のように動作し、別々のタスクを実行できます。特に、複数の異なる販売地域の月次請求など、2 種類以上のデータを比較する場合には、複数のカレントセレクションを持つことが役立ちます。
 
-## Showing all the records  
+## すべてのレコードを表示する
 
-When using an output form to display records, you can reset the current selection so that it contains all the records in the current table. This operation could be carried out via the [`Select All` standard action](../Desktop-legacy/standard-actions.md#selectall) or the [`ALL RECORDS`](../commands/all-records) command.
+出力フォームを使用してレコードを表示する際、カレントセレクションをリセットして、カレントテーブルのすべてのレコードを含めることができます。この操作は、[`Select All` 標準アクション](../Desktop-legacy/standard-actions.md#selectall) または [`ALL RECORDS`](../commands/all-records) コマンドを介して実行できます。
 
-In the Design environment, you can use the **Show All** command from the **Records** menu. All the records of the current table are then included in the current selection. The **Show All** command is disabled when you are using an input form.
+デザイン環境では、**レコード** メニューの **すべてを表示** コマンドを使用できます。これにより、カレントテーブルのすべてのレコードがカレントセレクションに含まれます。**すべてを表示** コマンドは、入力フォームを使用しているときには無効になります。
 
-## Creating a subset of records  
+## レコードのサブセットを作成する
 
-You can specify a new current selection in an output form by manually "marking" certain records, then defining them as the new current selection. This is referred to as creating a subset. In the Design environment, there is a specific **Show Subset** command in the **Records** menu. 
+出力フォームで特定のレコードを手動で「マーク」し、それらを新しいカレントセレクションとして定義することで、新しいカレントセレクションを指定できます。これはサブセットの作成と呼ばれます。デザイン環境では、**レコード** メニューに専用の **サブセットを表示** コマンドがあります。
 
-In your development, you can manage records marked by users by using [Sets](./sets.md). 
+開発においては、[セット](./sets.md) を使用して、ユーザーがマークしたレコードを管理できます。
 
-You browse and handle current selections via commands of the [Selection](../commands/theme/Selection) theme. 
-
-
+カレントセレクションの参照や操作は、[Selection](../commands/theme/Selection) テーマのコマンドを介しておこないます。
