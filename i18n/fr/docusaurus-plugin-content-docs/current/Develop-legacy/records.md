@@ -1,6 +1,6 @@
 ---
 id: records
-title: Enregistrements & sélections
+title: Enregistrements
 slug: /Develop/records
 displayed_sidebar: docs
 ---
