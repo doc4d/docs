@@ -207,11 +207,11 @@ var $c3:=$c1 // 同じインスタンスへの参照
      $size:=$c.length // $size = 0
 ```
 
-## Type conversions between collections and 4D arrays
+## コレクションと4D配列間での型の変換
 
-When moving values between [arrays](./arrays.md) (typed) and collections (non-typed), 4D applies automatic conversions according to the values and the array type declarations.
+値を[配列](./arrays.md) からコレクション(型指定なし)へと移動させるとき、4D は値と配列の型宣言に応じて自動的な変換を適用します。
 
-### Converting collections to arrays
+### コレクションから配列へ変換する
 
 The following conversions are applied to values handled by the following commands:
 
