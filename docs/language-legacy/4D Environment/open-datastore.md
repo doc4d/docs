@@ -44,7 +44,7 @@ Exchanges with the remote datastore are automatically managed via REST requests.
 
 :::note
 
-`Open datastore` requests rely on the 4D REST API and can require a 4D Client license to open the connection on a remote 4D Server. Refer to the [user login mode section](../../REST/authUsers.md#force-login-mode) to know how to configure the authentication depending on the selected current user login mode.
+`Open datastore` requests rely on the 4D REST API and can require a 4D Client license to open the connection on a remote 4D Server. Refer to the [Force login mode](../../REST/authUsers.md#force-login-mode) to know how to configure the authentication.
 
 :::
 
@@ -53,12 +53,13 @@ Pass in *connectionInfo* an object describing the remote datastore you want to c
 
 |Property| Type|Remote 4D application |
 |---|---|---|
-|hostname|Text|Name or IP address of the remote database + ":" + port number (port number is mandatory)|API Endpoint of the Qodly cloud instance|
-|user|Text|User name|
-|password|Text|User password|
-|idleTimeout|Integer|Inactivity session timeout (in minutes), after which the session is automatically closed by 4D. If omitted, default value is 60 (1h). The value cannot be < 60 (if a lower value is passed, the timeout is set to 60). For more information, see **Closing sessions**.|
+|hostname|Text|Name or IP address of the remote database + ":" + port number (port number is mandatory)|
+|idleTimeout|Integer|Inactivity session timeout (in minutes), after which the session is automatically closed by 4D. If omitted, default value is 60 (1h). The value cannot be < 60 (if a lower value is passed, the timeout is set to 60). For more information, see [**Closing sessions**](../../ORDA/remoteDatastores.md#closing-sessions).|
 |tls|Boolean|True to use secured connection(1). If omitted, false by default. Using a secured connection is recommended whenever possible.|
 |type |Text |must be "4D Server"|
+|user|Text|(*deprecated*)(2) User name|
+|password|Text|(*deprecated*)(2) User password|
+
 
 (1) If `tls` is true, the HTTPS protocol is used if:
 
@@ -66,6 +67,7 @@ Pass in *connectionInfo* an object describing the remote datastore you want to c
 * the given port is the right HTTPS port configured in the database settings
 * a valid certificate and private encryption key are installed in the 4D application. Otherwise, error "1610 - A remote request to host xxx has failed" is raised
 
+(2) These properties are ignored when the "Force login mode" is enabled, in which case credentials must passed as parameters to the [`authentify()` function](../../REST/authUsers.md#function-authentify) (the legacy login mode is deprecated as of 4D 20 R6, see [**Force login mode**](../../REST/authUsers.md#force-login-mode)).  
 
 *localID* is a local alias for the session opened on remote datastore. If *localID* already exists on the application, it is used. Otherwise, a new *localID* session is created when the datastore object is used.
 
@@ -73,6 +75,7 @@ Once the session is opened, the following statements become equivalent and retur
 
 ```4d
  $myds:=Open datastore(connectionInfo;"myLocalId")
+  //authentication
  $myds2:=ds("myLocalId")
   //$myds and $myds2 are equivalent
 ```
@@ -83,44 +86,15 @@ Objects available in the `4D.DataStoreImplementation` are mapped with respect to
 If no matching datastore is found, `Open datastore` returns **Null**.
 
 
-## Example 1  
+## Example
 
-Connection to a remote datastore without user / password:
 
 ```4d
- var $connectTo : Object
  var $remoteDS : 4D.DataStoreImplementation
- $connectTo:=New object("type";"4D Server";"hostname";"192.168.18.11:8044")
+ var $connectTo : {type: "4D Server"; hostname: "192.168.7.47:8044"; idleTimeout : 70; tls : True}
  $remoteDS:=Open datastore($connectTo;"students")
+ $remoteDS.authentify({name: "Mary"; password: $pw}) //call the authentify() function of the remote datastore
  ALERT("This remote datastore contains "+String($remoteDS.Students.all().length)+" students")
-```
-
-## Example 2
-
-Connection to a remote datastore with user / password / timeout / tls:
-
-```4d
- var $connectTo : Object
- var $remoteDS : 4D.DataStoreImplementation
- $connectTo:=New object("type";"4D Server";"hostname";\"192.168.18.11:4443";\  
-  "user";"marie";"password";$pwd;"idleTimeout";70;"tls";True)
- $remoteDS:=Open datastore($connectTo;"students")
- ALERT("This remote datastore contains "+String($remoteDS.Students.all().length)+" students")
-```
-
-## Example 3  
-
-Working with several remote datastores:
-
-```4d
- var $connectTo : Object
- var $frenchStudents; $foreignStudents : 4D.DataStoreImplementation
- $connectTo:=New object("hostname";"192.168.18.11:8044")
- $frenchStudents:=Open datastore($connectTo;"french")
- $connectTo.hostname:="192.168.18.11:8050"
- $foreignStudents:=Open datastore($connectTo;"foreign")
- ALERT("They are "+String($frenchStudents.Students.all().length)+" French students")
- ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign students")
 ```
 
 

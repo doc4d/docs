@@ -8,7 +8,7 @@ A **remote datastore** is a reference, on a local 4D application (4D or 4D Serve
 
 The local 4D application connects to and references the remote datastore through a call to the [`Open datastore`](../commands/open-datastore) command.
 
-On the remote machine, 4D opens a [session](../WebServer/sessions.md) to handle requests from the application that call `Open datastore`. Requests internally use the [REST API](../REST/gettingStarted.md), which means that they might require [available licenses](../REST/authUsers.md). 
+On the remote machine, 4D opens a [session](../WebServer/sessions.md) to handle requests from the application that call `Open datastore`. Requests internally use the [REST API](../REST/gettingStarted.md), which means that they require [**authentication** and **available licenses**](../REST/authUsers.md). 
 
  
 ## Using web sessions
@@ -30,19 +30,11 @@ These principles are illustrated in the following graphics:
 
 ### Viewing sessions  
 
-Processes that manage sessions for datastore access are shown in the 4D Server administration window:
-
-*	name: "REST Handler: \<process name\>" 
-*	type: HTTP Server Worker type
-*	session: session name is the user name passed to the `Open datastore` command.
-
-In the following example, two processes are running for the same session:
-
-![](../assets/en/ORDA/sessionAdmin.png)
+Sessions for datastore access are shown in the 4D Server administration window as [**REST sessions**](../ServerWindow/sessions.md#rest-web-and-soap-sessions) with **4D** as user agent. 
 
 ## Closing sessions  
 
-As described in the [session lifetime](../WebServer/sessions.md#session-lifetime) paragraph, a web session is automatically closed by 4D when there has been no activity during its timeout period. The default timeout is 60 mn, but this value can be modified using the *connectionInfo* parameter of the `Open datastore` command. 
+As described in the [session lifetime](../WebServer/sessions.md#session-lifetime) paragraph, a web session is automatically closed by 4D when there has been no activity during its timeout period. The default timeout is 60 mn, but this value can be modified using the *connectionInfo* parameter of the [`Open datastore`](../commands/open-datastore) command. 
 
 If a request is sent to the remote datastore after the session has been closed, it is automatically re-created if possible (license available, server not stopped...). However, keep in mind that the context of the session regarding locks and transactions is lost (see below). 
 
