@@ -1,15 +1,13 @@
 ---
-id: structureEditor
+id: structure-editor
 title: Structure editor
 ---
 
-You can access the **Structure editor** by choosing the **Database Structure** command in the **Design** menu or by clicking on the ![Structure button]([picture here]) button in the 4D toolbar.
+You use the Structure editor to manage the database structure — the tables and their relations. It gives you control over tables, table properties, fields, field properties including indexes, and table relations.
 
-You use the Structure editor to manage the database structure — the tables and their relations. It gives you control over tables, table properties, fields, field properties, and table relations.
+You can access the **Structure editor** by choosing the **Database Structure** command in the **Design** menu or by clicking on the Structure button ![](../assets/en/Develop/structure-button.png) in the 4D toolbar.
 
-The Structure editor provides a graphic view of a database’s structure as well as a toolbar and context menus that you can use to carry out database design operations.
-
-Each table is represented by a table image in the Structure editor. It shows the fields and their types in the form of icons. An information bar displays the characteristics of tables and fields as the mouse moves over them.
+The Structure editor provides a graphic view of a database’s structure as well as a toolbar and context menus that you can use to carry out database design operations. Each table is represented by a table image. It shows the fields and their types in the form of icons. An information bar displays the characteristics of tables and fields as the mouse moves over them.
 
 A floating **Inspector palette** can be used to view and modify the properties of structure objects and of the structure editor itself. This window is described in the [Inspector palette](inspectorPalette.md) section.
 
@@ -17,13 +15,23 @@ A floating **Inspector palette** can be used to view and modify the properties o
 
 The structure editor has a toolbar containing functions like the addition of objects, as well as navigation and display options:
 
-[picture here]
+![](../assets/en/Develop/structure-toolbar.png)
+
+From left to right, the icons perform the following actions:
+
+- add objects (tables, fields, index, relations)
+- search in editor
+- hide/display tables according to folders defined in the Home page of the Explorer
+- display filters
+- Tools (size, alignment, sort) 
+- colors
+- Index list window
+- Primary key manager
 
 The lower part of the editor window is an information bar displaying data corresponding to the area the mouse is over: table, field or relation.
 
 ### Information about a table
 
-[picture here]
 - Table name and number  
 - Table triggers:  
   - **NEW:** On saving new record  
@@ -32,7 +40,6 @@ The lower part of the editor window is an information bar displaying data corres
 
 ### Information about a field
 
-[picture here]
 - Table name and number  
 - Field name and number  
 - Field type  
@@ -51,13 +58,13 @@ The lower part of the editor window is an information bar displaying data corres
 
 :::note
 
-For more information on ORDA names, refer to the [Data Model Objects](https://developer.4d.com/docs/DataModelObjects) page.
+For more information on ORDA names, refer to the [Data Model Objects](../ORDA/dsMapping.md#structure-mapping) page.
 
 :::
 
 ### Locking information
 
-A closed lock icon (![lock icon]([picture here])) is displayed if the structure file is locked.  
+A closed lock icon ![](../assets/en/Develop/structure-lock.png) is displayed if the structure file is locked.  
 Locking can occur in both project and client/server modes when:
 
 - The `catalog.4DCatalog` file is *Read-only* (Projects only). Clicking on the lock icon will display an alert to unlock it, if possible.  
@@ -69,9 +76,7 @@ In both cases, the structure can be opened in *Read-only*, but cannot be used un
 
 ## Selecting an object
 
-To work with an image of an object in the Structure editor, you must first select it. You can then specify its properties, move it, resize it, delete it, etc.  
-
-You can select several objects of the same type simultaneously to modify their common properties in the Inspector palette.
+To work with an image of an object in the Structure editor, you must first select it. You can then specify its properties, move it, resize it, delete it, etc. You can select several objects of the same type simultaneously to modify their common properties in the Inspector palette.
 
 To select:
 
@@ -90,45 +95,36 @@ To select:
 
 You can resize or move the table images in the Structure editor according to your requirements.
 
+**4D Server**: In [development mode](../Desktop/clientServer.md#development-mode), any modification in table images (resize, location...) is propagated to all developers in the Design environment.
+
+
 ### Scrolling the field list
 
 When you add fields to a table or when you reduce the size of a table, there may be more fields in the table than the image can display. When this happens, 4D automatically adds a cursor than you can use to scroll through the list of visible fields:
 
-[picture here]
+![](../assets/en/Develop/structure-table1.png)
 
 ### Resizing a table image
 
 You can resize a table image to display more field names or reorganize your screen.  
 There are several possibilities available:
-[picture here]
+
 
 * **Manual resizing**
 Simply click and drag the bottom of the table image or its lower right corner.
-[picture here]
+![](../assets/en/Develop/structure-table2.png)
 
 * **Optimal Size**
-This option automatically resizes the selected table(s) so that their size corresponds exactly to the number of fields they contain (no empty lines are displayed).
-To apply the **Optimal Size** command to one or more tables, you can:
-
-	- Select **Optimal Size** from the menu associated with the toolbar button of the editor 
-	[picture here]
-  (this command is not active if there is no table selected).
-	- Select **Optimal Size** from the editor’s context menu (click on a table).
-	- **Shift+Double-click** in the table name area to resize the table.  
-  If you repeat this combination, the sequence is applied again:  
-  *original size → optimal size → collapse*.
-
-[picture here]
+This option automatically resizes the selected table(s) so that their size corresponds exactly to the number of fields they contain (no empty lines are displayed). To apply the **Optimal Size** command to one or more tables, select **Optimal Size** from the menu associated with the toolbar button of the editor or from the editor’s context menu (click on a table).
 
 * **Collapse**
 The **Collapse** function collapses the selected table image(s) so that only their names are visible.  
 This is useful for large structures.
-[picture here]
+
 To apply the **Collapse** command to one or more tables, you can:
 
 	- Select **Collapse** from the editor’s context menu (click in the title area of the table).  
-	- **Shift+Double-click** again in the table name area to toggle through the same sequence:  
-  *original size → optimal size → collapse.*
+	- **Shift+Double-click** in the table name area to toggle through the same sequence *original size → collapse.*
 
 :::note Notes
 
@@ -138,21 +134,14 @@ To apply the **Collapse** command to one or more tables, you can:
 
 :::
 
-**4D Server**: If you resize a table image using 4D Server, the table is resized for all users in the Design environment.
 
 
 ### Moving table images
 
-You can move table images to regroup them according to function or to reorganize the **Structure editor** window.  
-You can also align them to improve the readability of the structure.  
-Any relations are redrawn automatically to correspond with the new table locations.
+You can move table images to regroup them according to function or to reorganize the Structure editor window. You can also align them to improve the readability of the structure. Any relations are redrawn automatically to correspond with the new table locations.
 
-**To move a table image manually:**
+To move a table image manually, click on the name of a table and drag it using the mouse cursor. Drag the table name bar only. Dragging other parts of the table image may produce different effects, such as creating a new table relation or changing the size of the table image.
 
-1. Click on the name of a table and drag it using the mouse cursor.  
-   *(Drag the table name bar only. Dragging other parts of the table image may produce different effects, such as creating a new table relation or changing the size of the table image.)*
-
-**4D Server** : If you move a table image when using **4D Server**, the table appears in its new location for all users in the Design environment.
 
 **To align two or more tables:**
 
@@ -169,7 +158,7 @@ Specific scrolling functions facilitate navigation among large structures:
 
 * The mouse wheel can be used to scroll the contents of the editor window vertically. This will also scroll through the fields of a table when the cursor is placed above it.
 * Holding down **Shift** while using the mouse wheel scrolls the contents of the window horizontally.
-* Pressing **Shift** activates the “hand” tool which can be used to drag the entire contents of window by clicking in the empty area.
+* Pressing **Shift** activates the "hand" tool which can be used to drag the entire contents of window by clicking in the empty area.
 
 ## Zoom
 
