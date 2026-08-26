@@ -4,18 +4,21 @@ title: WP Insert formula
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Insert formula.Syntax-->**WP Insert formula** ( *targetObj* ; *formula* ; *mode* {; *rangeUpdate*} ) : Object<!-- END REF-->
+<!--REF #_command_.WP Insert formula.Syntax-->**WP Insert formula** ( *targetObj* : Object ; *formula* : Object ; *mode* : Real {; *rangeUpdate* : Real} ) : Object<!-- END REF-->
 
 <!--REF #_command_.WP Insert formula.Params-->
+
+<div class="no-index">
 
 | 引数          | 型      |                             | 説明                                           |
 | ----------- | ------ | --------------------------- | -------------------------------------------- |
 | targetObj   | Object | &#8594; | レンジまたは要素または4D Write Pro ドキュメント               |
 | formula     | Object | &#8594; | フォーミュラオブジェクト、またはformula とname プロパティを持つオブジェクト |
-| mode        | Number | &#8594; | 挿入モード                                        |
-| rangeUpdate | Number | &#8594; | 挿入されたコンテンツをレンジ内に含めるか含めないかを指定                 |
+| mode        | Real   | &#8594; | 挿入モード                                        |
+| rangeUpdate | Real   | &#8594; | 挿入されたコンテンツをレンジ内に含めるか含めないかを指定                 |
 | 戻り値         | Object | &#8592; | フォーミュラの結果を表すテキストレンジオブジェクト                    |
 
+</div>
 <!-- END REF-->
 
 ## 説明
@@ -28,15 +31,15 @@ displayed_sidebar: docs
 - 要素(表組 / 行 / セル / 段落 / 本文 / ヘッダー / フッター / セクション / サブセクション / インライン画像)
 - 4D Write Pro ドキュメント
 
-*formula* 引数には、評価される 4D フォーミュラを渡します。 以下のものを渡すことができます:
+*formula* 引数には、評価される 4D フォーミュラを渡します。 以下のものを渡すことができます: 以下のものを渡すことができます:
 
-- [**Formula**](../../commands/formula.md) または [**Formula from string**](../../commands/formula.md-from-string) コマンドで作成された[フォーミュラオブジェクト](../../commands/formula.md-objects)
+- [**Formula**](../../commands/formula.md) または [**Formula from string**](../../commands/formula-from-string.md) コマンドで作成された[フォーミュラオブジェクト](../../commands/formula-objects.md)
 - または以下の2つのプロパティを格納しているオブジェクト:
 
-| **プロパティ** | **型**  | **Description**                                                                                                                                                           |
+| **プロパティ** | **型**  | **説明**                                                                                                                                                                    |
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name      | Text   | ドキュメント内で表示するフォーミュラの名前                                                                                                                                                     |
-| formula   | Object | [**Formula**](../../commands/formula.md) または [**Formula from string**](../../commands/formula.md-from-string) コマンドで作成された[フォーミュラオブジェクト](../../commands/formula.md-objects) |
+| formula   | Object | [**Formula**](../../commands/formula.md) または [**Formula from string**](../../commands/formula-from-string.md) コマンドで作成された[フォーミュラオブジェクト](../../commands/formula-objects.md) |
 
 フォーミュラの*name* プロパティがあるオブジェクトを使用する場合、ドキュメント内で、フォーミュラが参照として表示される場合にはフォーミュラ参照ではなくそのname の名前が表示され、値または記号として表示される場合にはフォーミュラtip に名前が表示されます。 *name* プロパティが空の文字列を格納しているか省略されている場合、それはオブジェクトから削除され、デフォルトでフォーミュラが表示されます。 詳細な情報については、[フォーミュラの管理](../managing-formulas.md) のページを参照してください。
 
@@ -48,7 +51,7 @@ displayed_sidebar: docs
 | wk prepend | Integer | 1 | コンテンツをターゲットの始めに挿入する  |
 | wk replace | Integer | 0 | ターゲットのコンテンツを置き換える    |
 
-- *targetObj* がレンジである場合、オプションの*rangeUpdate* 引数に以下の定数のいづれか一つを渡すことで挿入された*formula* 引数のフォーミュラが結果のレンジに含まれるかどうかを指定することができます:
+- *targetObj* がレンジである場合、オプションの*rangeUpdate* 引数に以下の定数のいずれか一つを渡すことで挿入された*formula* 引数のフォーミュラが結果のレンジに含まれるかどうかを指定することができます:
 
 | 定数                    | 型       | 値 | 説明                                                |
 | --------------------- | ------- | - | ------------------------------------------------- |
@@ -135,6 +138,6 @@ WP SET ATTRIBUTES($range1; wk background color; "yellow")
 ## 参照
 
 *Managing formulas*\
-[WP COMPUTE FORMULAS](../commands-legacy/wp-compute-formulas.md)</br>
-[WP FREEZE FORMULAS](../commands-legacy/wp-freeze-formulas.md)</br>
-[WP Get formulas](../commands-legacy/wp-get-formulas.md)
+[WP COMPUTE FORMULAS](../commands/wp-compute-formulas)</br>
+[WP FREEZE FORMULAS](../commands/wp-freeze-formulas)</br>
+[WP Get formulas](../commands/wp-get-formulas)

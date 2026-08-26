@@ -4,26 +4,29 @@ title: WP Insert picture
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Insert picture.Syntax-->**WP Insert picture** ( *targetObj* ; *picture* ; *mode* {; *rangeUpdate*} ): Object<br/>**WP Insert picture** ( *targetObj* ; *pictureFileObj*; *mode* {; *rangeUpdate*}): Object<!-- END REF-->
+<!--REF #_command_.WP Insert picture.Syntax-->**WP Insert picture** ( *targetObj* : Object ; *picture* : Picture ; *mode* : Integer {; *rangeUpdate* : Integer} ): Object<br/>**WP Insert picture** ( *targetObj* : Object ; *pictureFile* : 4D.File, Text; *mode* : Integer {; *rangeUpdate* : Integer}): Object<!-- END REF-->
 
 <!--REF #_command_.WP Insert picture.Params-->
 
-| Paramètres     | Type                    |                             | Description                                                            |
-| -------------- | ----------------------- | --------------------------- | ---------------------------------------------------------------------- |
-| targetObj      | Object                  | &#8594; | Plage ou élément ou document 4D Write Pro                              |
-| picture        | Picture                 | &#8594; | Champ image ou variable, ou chemin vers le fichier image sur le disque |
-| pictureFileObj | 4D.File | &#8594; | Un objet Fichier représentant un fichier image.        |
-| mode           | Integer                 | &#8594; | Mode d'insertion                                                       |
-| rangeUpdate    | Integer                 | &#8594; | Mode de mise à jour de la plage                                        |
-| Résultat       | Object                  | &#8592; | Objet référençant l'image                                              |
+<div class="no-index">
 
+| Paramètres              | Type                                                    |                             | Description                                                            |
+| ----------------------- | ------------------------------------------------------- | --------------------------- | ---------------------------------------------------------------------- |
+| targetObj               | Object                                                  | &#8594; | Plage ou élément ou document 4D Write Pro                              |
+| picture                 | Picture                                                 | &#8594; | Champ image ou variable, ou chemin vers le fichier image sur le disque |
+| pictureFile             | [4D.File](../../API/FileClass.md), Text | &#8594; | Objet File représentant un fichier image ou Chemin d'accès             |
+| mode                    | Integer                                                 | &#8594; | Mode d'insertion                                                       |
+| rangeUpdate             | Integer                                                 | &#8594; | Mode de mise à jour de la plage                                        |
+| Résultat de la fonction | Object                                                  | &#8592; | Objet référençant l'image                                              |
+
+</div>
 <!-- END REF-->
 
 ## Description
 
 La commande **WP Insert picture**<!--REF #_command_.WP Insert picture.Summary--> insère *picture* ou *pictureFileObj* dans le *targetObj* spécifié en fonction des paramètres *mode* d'insertion et *rangeUpdate*, et retourne une référence à l'élément picture.<!-- END REF--> L'image sera insérée comme un caractère dans le *targetObj*.
 
-In *targetObj*, you can pass:
+Dans *targetObj*, vous pouvez passer:
 
 - Une plage
 - Un élément (tableau / ligne / paragraphe / corps / en-tête / pied de page / image en ligne / section / sous-section)
@@ -35,9 +38,10 @@ Pour le deuxième paramètre, vous pouvez passer soit :
   - Champ ou variable d'image
   - Chaîne contenant le chemin d'accès à un fichier d'image stocké sur le disque, dans la syntaxe du système.
     Si vous utilisez une chaîne, vous pouvez fournir soit un chemin d'accès complet, soit un chemin d'accès relatif au fichier de structure de la base de données. Vous pouvez également transmettre un nom de fichier, auquel cas le fichier doit être situé à côté du fichier de structure de la base de données. Vous pouvez également transmettre un nom de fichier, auquel cas le fichier doit être situé à côté du fichier de structure de la base de données.
-- Dans *pictureFileObj* : un objet `File` représentant un fichier image.
 
-N'importe quel format d'image [supporté par 4D](../../FormEditor/pictures.md#native-formats-supported) peut être utilisé. Vous pouvez obtenir la liste des formats d'image disponibles en utilisant la commande [PICTURE CODEC LIST](../../commands-legacy/picture-codec-list.md). Si l'image encapsule plusieurs formats (codecs), 4D Write Pro ne conserve qu'un format pour l'affichage et un format pour l'impression (si différent) dans le document ; les "meilleurs" formats sont automatiquement sélectionnés.
+- Dans *pictureFile* : un objet `File` représentant un fichier image ou un chemin.
+
+N'importe quel format d'image [supporté par 4D](../../FormEditor/pictures.md#native-formats-supported) peut être utilisé. Si l'image encapsule plusieurs formats (codecs), 4D Write Pro ne conserve qu'un format pour l'affichage et un format pour l'impression (si différent) dans le document ; les "meilleurs" formats sont automatiquement sélectionnés. Vous pouvez obtenir la liste des formats d'image disponibles en utilisant la commande [PICTURE CODEC LIST](../../commands/picture-codec-list).
 
 Dans le paramètre *mode*, passez l'une des constantes suivantes pour indiquer le mode d'insertion à utiliser pour l'image dans le document :
 
@@ -107,4 +111,4 @@ $pictRef:=WP Insert picture(WParea; $file; wk replace)
 ## Voir également
 
 [WP Insert document body](wp-insert-document-body.md)</br>
-[WP Picture range](../commands-legacy/wp-picture-range.md)
+[WP Picture range](../commands/wp-picture-range)

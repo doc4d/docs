@@ -19,7 +19,7 @@ title: オブジェクト
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) - [4D Write Pro エリア](writeProArea_overview.md) - [ボタン](button_overview.md) - [ボタングリッド](buttonGrid_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [グループボックス](groupBox.md) - [階層リスト](list_overview.md) - [リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) - [ピクチャーボタン](pictureButton_overview.md) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [スピナー](spinner.md) - [スプリッター](splitters.md) - [スタティックピクチャー](staticPicture.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md) - [テキストエリア](text.md) - [Web エリア](webArea_overview.md)
+[4D View Pro エリア](viewProArea_overview.md) - [4D Write Pro エリア](writeProArea_overview.md) - [ボタン](button_overview.md) - [ボタングリッド](buttonGrid_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [グループボックス](groupBox.md) - [階層リスト](list_overview.md) - [リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#フッター) - [リストボックスヘッダー](listbox-header-footer.md#ヘッダー) - [ピクチャーボタン](pictureButton_overview.md) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [スピナー](spinner.md) - [スプリッター](splitters.md) - [スタティックピクチャー](staticPicture.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md) - [テキストエリア](text.md) - [Web エリア](webArea_overview.md)
 
 ---
 
@@ -52,7 +52,7 @@ title: オブジェクト
 
 「値」を保存できるオブジェクトは以下のとおりです:
 
-| Object                                 | 保存される値                                       |
+| オブジェクト                                 | 保存される値                                       |
 | -------------------------------------- | -------------------------------------------- |
 | [チェックボックス](checkbox_overview.md)       | 関連付けられた変数の値 (0, 1, 2)                        |
 | [ドロップダウンリスト](dropdownList_Overview.md) | 選択されている項目の番号                                 |
@@ -130,20 +130,20 @@ title: オブジェクト
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) - [4D Write Pro エリア](writeProArea_overview.md) - [ボタン](button_overview.md) - [ボタングリッド](buttonGrid_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [階層リスト](list_overview.md) - [リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) - [リストボックスフッター](listbox_overview.md#リストボックスフッター) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [スピナー](spinner.md) - [スプリッター](splitters.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md) - [Webエリア](webArea_overview.md)
+[4D View Pro エリア](viewProArea_overview.md) - [4D Write Pro エリア](writeProArea_overview.md) - [ボタン](button_overview.md) - [ボタングリッド](buttonGrid_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [階層リスト](list_overview.md) - [リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスヘッダー](listbox-header-footer.md#ヘッダー) - [リストボックスフッター](listbox-header-footer.md#フッター) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [スピナー](spinner.md) - [スプリッター](splitters.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md) - [Webエリア](webArea_overview.md)
 
 ---
 
 ## 式の型/式タイプ
 
-> [セレクション型](listbox_overview.md#セレクションリストボックス) および [コレクション型](listbox_overview.md#コレクションまたはエンティティセレクションリストボックス) のリストボックス列や、[オブジェクト](FormObjects/dropdownList_Overview.md#オブジェクトの使用) や [配列](FormObjects/dropdownList_Overview.md#配列の使用) に関連付けられた[ドロップダウンリスト](dropdownList_Overview.md) のプロパティリストでは、このプロパティは、[**データタイプ**](properties_DataSource.md#データタイプ-式の型) と呼ばれています。
+> このプロパティは[セレクション型](listbox-object.md#セレクションリストボックス) および [コレクション型](listbox-object.md#コレクションまたはエンティティセレクションリストボックス) のリストボックスカラム、および[オブジェクト](FormObjects/dropdownList_Overview.md#オブジェクトの使用) または [配列](FormObjects/dropdownList_Overview.md#配列の使用) が割り当てられた[ドロップダウンリスト](dropdownList_Overview.md) のプロパティリストにおいて、[**データタイプ**](properties_DataSource.md#データタイプ-式の型) と呼ばれています。
 
 オブジェクトに関連付けられた式または変数のデータ型を指定します。 この設定の主な目的は、プロパティリスト内で提供されるテーマとオプションが、データの型と対応するようにするためです。 つまり、実際に変数の型そのものを決めるわけではありません。 プロジェクトをコンパイルするには、[変数を宣言](Concepts/variables.md#変数の宣言) する必要があります。
 
 ただし、次の特定の場合には、このプロパティは型宣言の機能を持ちえます:
 
 - **[ダイナミック変数](#ダイナミック変数)**: このプロパティを使って、ダイナミック変数の型を宣言することができます。
-- **[リストボックス列](listbox_overview.md#リストボックス列)**: このプロパティは列データに表示フォーマットを関連づけるのに使用されます。 提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。 使用できる標準の 4D フォーマットはテキスト、数値、整数、日付、時間、ピクチャー、そしてブールです。 テキストの場合は専用の表示フォーマットがありません。 標準フォーマットのほかに、定義したカスタムフォーマットも選択することができます。
+- **[リストボックスカラム](listbox-column.md)**: このプロパティは列データに表示フォーマットを関連づけるのに使用されます。 提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。 使用できる標準の 4D フォーマットはテキスト、数値、整数、日付、時間、ピクチャー、そしてブールです。 テキストの場合は専用の表示フォーマットがありません。 標準フォーマットのほかに、定義したカスタムフォーマットも選択することができます。
 - **[ピクチャー変数](input_overview.md)**: このプロパティを使うと、インタープリタモードにおいてフォームロード前に変数を宣言することができます。 フォーム上のピクチャー変数にピクチャーを表示する際には特別なメカニズムが使用されます。 そのため、他の型の変数とは違って、ピクチャー変数の宣言は、フォームロード前 (`On Load` フォームイベントよりも先) におこなう必要があります。 このため、フォームを呼び出す前 (たとえば `DIALOG` コマンドを呼び出す前) に`C_PICTURE(varName)` を実行するか、あらかじめプロパティリストの式の型にピクチャーを選択しておく必要があります。 このいずれかをおこなわない場合、ピクチャー変数はピクチャーを正しく表示できません (インタープリターモードのみ)。
 
 #### JSON 文法
@@ -154,7 +154,7 @@ title: オブジェクト
 
 #### 対象オブジェクト
 
-[チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox_overview.md#list-box-columns) - [リストボックスフッター](listbox_overview.md#list-box-footers) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [ルーラー](ruler.md) - [スピナー](spinner.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md)
+[チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#footers) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [ルーラー](ruler.md) - [スピナー](spinner.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md)
 
 ---
 
@@ -184,7 +184,7 @@ title: オブジェクト
 
 - オブジェクトのコレクションを使用した場合、データソース式内で **This** コマンドを呼び出すことで、各プロパティ値にアクセスすることが可能です。 例: `This.<propertyPath>`。
 - エンティティセレクションを使用した場合、データソース式内で **This** コマンドを呼び出すことで、各属性値へとアクセスすることが可能です。
-> (オブジェクトでない) スカラー値のコレクションを使用した場合、データソース式内で **This.value** を呼び出すことで、各値にアクセスすることが可能です。 ただしこの場合、値の変更や現在のオブジェクトへのアクセスはできません。
+> エンティティセレクションを使用した場合、データソース式内で **This** コマンドを呼び出すことで、各属性値へとアクセスすることが可能です。 > (オブジェクトでない) スカラー値のコレクションを使用した場合、データソース式内で **This.value** を呼び出すことで、各値にアクセスすることが可能です。 ただしこの場合、値の変更や現在のオブジェクトへのアクセスはできません。
 
 
 #### JSON 文法
@@ -276,28 +276,28 @@ title: オブジェクト
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) - [チェックボックス](checkbox_overview.md) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) - [ラジオボタン](radio_overview.md) - [テキストエリア](text.md)
+[ボタン](button_overview.md) - [チェックボックス](checkbox_overview.md) - [リストボックスヘッダー](./listbox-header-footer.md#ヘッダー) - [ラジオボタン](radio_overview.md) - [テキストエリア](text.md)
 
 ---
 
 ## 変数の計算
 
-このプロパティは、[リストボックスフッター](listbox_overview.md#リストボックスフッター) エリアに適用される計算タイプを設定します。
-> リストボックスのフッターに割り当てる自動計算は [`LISTBOX SET FOOTER CALCULATION`](https://doc.4d.com/4dv19/help/command/ja/page1140.html) 4Dコマンドを使用しても設定できます。
+このプロパティは、[カラムフッター](./listbox-header-footer.md#フッター) エリアに適用される計算タイプを設定します。
+> リストボックスのフッターに割り当てる自動計算は [`LISTBOX SET FOOTER CALCULATION`](https://doc.4d.com/4dv20/help/command/ja/page1140.html) 4Dコマンドを使用しても設定できます。
 
 様々な自動計算が利用可能です。 以下の表は、列のデータ型に応じて使用することのできる計算と、(コードで明示的に宣言されていないとき) 4D によってフッター変数に自動で割り当てられる型を示しています:
 
-| 計算タイプ                 | Num | Text | Date | Time | Bool | ピクチャー | フッター変数の型 |
-| --------------------- | --- | ---- | ---- | ---- | ---- | ----- | -------- |
-| 最小                    | X   | X    | X    | X    | X    |       | 列の型と同じ   |
-| 最大                    | X   | X    | X    | X    | X    |       | 列の型と同じ   |
-| 合計                    | X   |      |      | X    | X    |       | 列の型と同じ   |
-| カウント                  | X   | X    | X    | X    | X    | X     | Integer  |
-| 平均                    | X   |      |      | X    |      |       | Real     |
-| 標準偏差(*)               | X   |      |      | X    |      |       | Real     |
-| 分散(*)                 | X   |      |      | X    |      |       | Real     |
-| 平方和(*)                | X   |      |      | X    |      |       | Real     |
-| カスタム (JSON では "none") | X   | X    | X    | X    | X    | X     | 制限なし     |
+| 計算タイプ                 | Num | Text | Date | Time | Bool | Pict | フッター変数の型 |
+| --------------------- | --- | ---- | ---- | ---- | ---- | ---- | -------- |
+| 最小                    | ○   | ○    | ○    | ○    | ○    |      | 列の型と同じ   |
+| 最大                    | ○   | ○    | ○    | ○    | ○    |      | 列の型と同じ   |
+| 合計                    | ○   |      |      | ○    | ○    |      | 列の型と同じ   |
+| カウント                  | ○   | ○    | ○    | ○    | ○    | ○    | Integer  |
+| 平均                    | ○   |      |      | ○    |      |      | Real     |
+| 標準偏差(*)               | ○   |      |      | ○    |      |      | Real     |
+| 分散(*)                 | ○   |      |      | ○    |      |      | Real     |
+| 平方和(*)                | ○   |      |      | ○    |      |      | Real     |
+| カスタム (JSON では "none") | ○   | ○    | ○    | ○    | ○    | ○    | 制限なし     |
 
 (*) 配列型のリストボックスのみ
 
@@ -328,4 +328,4 @@ title: オブジェクト
 
 #### 対象オブジェクト
 
-[リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[リストボックスフッター](listbox-header-footer.md#footers)

@@ -100,7 +100,7 @@ L’événement formulaire [Sur modif variable liée](../Events/onBoundVariableC
 
 A noter que, comme dans l'exemple ci-dessus, il est préférable d'utiliser la commande `OBJECT Get subform container value` qui renvoie la valeur de l'expression dans le conteneur du sous-formulaire plutôt que l'expression elle-même car il est possible d'insérer plusieurs sous-formulaires dans le même formulaire parent (par exemple, une fenêtre affichant différents fuseaux horaires contient plusieurs horloges).
 
-La modification de la variable ou de l'expression liée déclenche des événements formulaire qui vous permettent de synchroniser les valeurs du formulaire parent et du sous-formulaire :
+Modifier la variable ou l'expression liée déclenche des événements formulaire qui vous permettent de synchroniser les valeurs du formulaire parent et du sous-formulaire :
 
 - Utilisez l'événement formulaire [On Bound Variable Change](../Events/onBoundVariableChange.md) pour indiquer au sous-formulaire (méthode formulaire du sous-formulaire) que la variable ou l'expression a été modifiée dans le formulaire parent.
 - Utilisez l'événement formulaire [On Data Change](../Events/onDataChange.md) pour indiquer au conteneur du sous-formulaire que la valeur de la variable ou de l'expression a été modifiée dans le sous-formulaire.
@@ -134,7 +134,7 @@ Chaque fois que la valeur de `Form.clockValue` change dans le sous-formulaire, `
 
 Par défaut, 4D associe une variable ou une expression de [type objet](properties_Object.md#expression-type) à chaque sous-formulaire. Le contenu de cet objet peut être lu et/ou modifié à partir du formulaire parent et du sous-formulaire, ce qui permet de partager plusieurs valeurs dans un contexte local.
 
-Lorsqu'il est lié à un conteneur de sous-formulaire, cet objet est renvoyé par la commande `Form` directement dans le sous-formulaire. Comme les objets sont toujours passés par référence, si l'utilisateur modifie la valeur d'une propriété dans le sous-formulaire, cette valeur sera automatiquement enregistrée dans l'objet lui-même et donc disponible pour le formulaire parent. En revanche, si une propriété de l'objet est modifiée par l'utilisateur dans le formulaire parent ou par programmation, elle sera automatiquement mise à jour dans le sous-formulaire. Aucune gestion d'événement n'est nécessaire.
+Lorsqu'il est lié à un conteneur de sous-formulaire, cet objet est renvoyé par la commande `Form` directement dans le sous-formulaire. Comme les objets sont toujours passés par référence, si l'utilisateur modifie la valeur d'une propriété dans le sous-formulaire, cette valeur sera automatiquement enregistrée dans l'objet lui-même et donc disponible pour le formulaire parent. De même, si une propriété de l'objet est modifiée par l'utilisateur dans le formulaire parent ou par programmation, elle sera automatiquement mise à jour dans le sous-formulaire. Aucune gestion d'événement n'est nécessaire.
 
 Par exemple, dans un sous-formulaire, les inputs sont liés aux propriétés de l'objet `Form` (du sous-formulaire) :
 
@@ -187,11 +187,20 @@ Pour répondre à ces besoins, 4D propose les mécanismes suivants :
 > La commande `GOTO OBJECT` peut rechercher l’objet de destination dans le formulaire parent même si elle exécutée depuis un sous-formulaire.
 
 
-#### Commande CALL SUBFORM CONTAINER
+#### Commande CALL SUBFORM CONTAINER {#call-subform-container-command}
 
 La commande `CALL SUBFORM CONTAINER` permet à une instance de sous-formulaire d'envoyer un [événement](../Events/overview.md) à l'objet conteneur de sous-formulaire, qui peut alors le traiter dans le contexte du formulaire parent. L’événement est reçu dans la méthode de l’objet conteneur. Il peut s’agir à l’origine de tout événement détecté par le sous-formulaire (clic, glisser-déposer, etc.).
 
 Le code de l’événement est libre (par exemple, 20000 ou -100). Vous pouvez soit utiliser un code correspondant à un événement existant (par exemple, 3 pour `Sur validation`), soit utiliser un code personnalisé. Dans le premier cas, seuls les événements présents dans la liste des événements "cochables" des conteneurs de sous-formulaire peuvent être utilisés (cf. Liste des propriétés). Dans le second cas, le code ne doit correspondre à aucun événement formulaire existant. Il est conseillé d’utiliser une valeur négative pour avoir l’assurance que 4D n’utilisera pas ce code dans les versions futures.
+
+Les événements pris en charge pour les sous-formulaires sont les suivants :
+- [On Load](../Events/onLoad.md)
+- [On Validate](../Events/onValidate.md)
+- [On Getting Focus](../Events/onGettingFocus.md)
+- [On Losing Focus](../Events/onLosingFocus.md)
+- [On Data Change](../Events/onDataChange.md)
+- [On Unload](../Events/onUnload.md)
+
 
 Pour plus d'informations, reportez-vous à la description de la commande `CALL SUBFORM CONTAINER`.
 

@@ -4,17 +4,20 @@ title: WP SET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *...attribName* ; *...attribValue* )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
+<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* : Object ; ...(*attribName* : Text {; *attribValue* : any }) )<br/>**WP SET ATTRIBUTES** ( *targetObj* : Object ; *attribObj* : Object )<!-- END REF-->
 
 <!--REF #_command_.WP SET ATTRIBUTES.Params-->
 
-| Paramètres  | Type                                            |                             | Description                                                                       |
-| ----------- | ----------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------- |
-| targetObj   | Object                                          | &#8594; | Plage ou élément ou document 4D Write Pro                                         |
-| attribName  | Text                                            | &#8594; | Nom de l'attribut à définir                                                       |
-| attribValue | Text, Number, Object, Collection, Picture, Date | &#8594; | Nouvelle valeur d'attribut                                                        |
-| attribObj   | Object                                          | &#8594; | Objet contenant les noms des attributs et leurs valeurs correspondantes à définir |
+<div class="no-index">
 
+| Paramètres  | Type   |                             | Description                                                                       |
+| ----------- | ------ | --------------------------- | --------------------------------------------------------------------------------- |
+| targetObj   | Object | &#8594; | Plage ou élément ou document 4D Write Pro                                         |
+| attribName  | Text   | &#8594; | Nom de l'attribut à définir                                                       |
+| attribValue | any    | &#8594; | Nouvelle valeur d'attribut                                                        |
+| attribObj   | Object | &#8594; | Objet contenant les noms des attributs et leurs valeurs correspondantes à définir |
+
+</div>
 <!-- END REF-->
 
 ## Description
@@ -33,7 +36,7 @@ Vous pouvez spécifier les attributs à définir pour *targetObj* d'une des deux
 
 - Utilisez le paramètre *attribObj* pour passer un seul objet contenant les noms d'attributs et leurs valeurs correspondantes en tant que propriétés d'objet.
 
-For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
+Pour une liste complète des attributs à passer, ainsi que leur portée et leurs valeurs respectives, veuillez vous référer à la section [Attributs 4D Write Pro](../4d-write-pro-attributes) .
 
 ## Exemple 1
 
@@ -149,5 +152,5 @@ Le résultat est:
 ## Voir également
 
 [4D Write Pro Attributes](../4d-write-pro-attributes)  
-[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)  
-[WP RESET ATTRIBUTES](../commands/wp-reset-attributes.md)
+[WP GET ATTRIBUTES](../commands/wp-get-attributes)  
+[WP RESET ATTRIBUTES](../commands/wp-reset-attributes)

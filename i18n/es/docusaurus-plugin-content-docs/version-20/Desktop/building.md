@@ -86,7 +86,7 @@ Esta funcionalidad crea un archivo *.4dz* en una carpeta `Compiled Database/<pro
 
 `<destination>/Compiled Database/MyProject/MyProject.4dz`
 
-Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. El tamaño compacto y optimizado de los archivos .4dz hace que los paquetes de proyectos sean fáciles de desplegar.
+Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto.
 
 > Al generar archivos .4dz, 4D utiliza por defecto un formato zip **estándar**. La ventaja de este formato es que es fácilmente legible por cualquier herramienta unzip. Si no desea utilizar este formato estándar, añada la llave XML `UseStandardZipFormat` con el valor `False` en su archivo [`buildApp.4DSettings`](#buildapp4dsettings) (para más información, consulte el manual [4D XML Keys BuildApplication](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-5447429.en.html)).
 
@@ -180,7 +180,7 @@ Cuando se construye una aplicación independiente, 4D copia el contenido de la c
 * Instalar una versión de 4D Volume Desktop correspondiente a un lenguaje específico;
 * Añadir una carpeta *PlugIns* personalizada;
 * Personalizar el contenido de la carpeta *Resources*.
-> En macOS, 4D Volume Desktop se ofrece en forma de paquete de software. You can display their contents (**Control+click** on the icon) in order to be able to modify them.
+> Los paquetes macOS generados contienen los mismos elementos que las subcarpetas Windows. You can display their contents (**Control+click** on the icon) in order to be able to modify them.
 
 #### Ubicación de los archivos web
 
@@ -203,7 +203,7 @@ Una aplicación autónoma requiere una licencia de despliegue. Puede ser anidada
 | ---------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | *4D OEM Desktop*       | Licencia personalizada incorporada, contacte al equipo de ventas 4D para obtener información | [Página Licencias](#licenses) del diálogo Crear aplicación                                |
 | *4D Unlimited Desktop* | **Descontinuado** - Licencia personalizada integrada                                         | [Página Licencias](#licenses) del diálogo Crear aplicación                                |
-| *4D Desktop*           | Licencia por usuario, que permite utilizar aplicaciones 4D independientes                    | Diálogo [Primera activación](../Admin/licenses.md#first-activation) en la máquina usuario |
+| *4D Desktop*           | Licencia por equipo, que permite el uso de aplicaciones 4D autónomas                         | Diálogo [Primera activación](../Admin/licenses.md#first-activation) en la máquina usuario |
 
 
 
@@ -332,12 +332,12 @@ Puede marcar la opción **Permitir la actualización automática...** para las a
 
 Esta funcionalidad requiere que haga clic en el botón **[...]** y designe la ubicación en su disco del archivo que se utilizará para la actualización. El archivo a seleccionar depende de la plataforma actual del servidor:
 
-| Plataforma del servidor actual | Archivo requerido                                           | Detalles                                                                                                                                                                                              |
-| ------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| macOS                          | Windows 4D Volume Desktop *o* Windows client update archive | Por defecto, se selecciona la aplicación `4D Volume Desktop` para Windows. Para seleccionar un archivo `.4darchive` previamente construido en Windows, presione **Shift** mientras hace clic en [...] |
-| Windows                        | macOS client update archive                                 | Seleccione un archivo `.4darchive` firmado previamente creado en macOS                                                                                                                                |
+| Plataforma del servidor actual | Archivo requerido                                           | Detalles                                                                                                                                                                                                                                                                                                                            |
+| ------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| macOS                          | Windows 4D Volume Desktop *o* Windows client update archive | Por defecto, puede seleccionar la aplicación `Volumen 4D` para Windows. Sin embargo, **se recomienda** seleccionar un `.4darchive` previamente compilado en Windows para una correcta gestión de iconos y para preservar un .exe firmado después de las actualizaciones. Para ello, presione **Mayús** mientras haces clic en [...] |
+| Windows                        | macOS client update archive                                 | Seleccione un archivo `.4darchive` firmado previamente creado en macOS                                                                                                                                                                                                                                                              |
 
-Puede construir un archivo `.4darchive` específicamente en la plataforma concurrente seleccionando únicamente la opción [**Construir aplicación cliente**](#build-client-application) y la opción apropiada [**Permitir actualización automática...**](#copy-of-client-applications-inside-the-server-application).
+Puede compilar un archivo específico `.4darchive` en la plataforma concurrente seleccionando únicamente la opción [**Compilar aplicación cliente**](#build-client-application) y la opción correspondiente [**Permitir actualización automática... **](#copy-of-client-applications-inside-the-server-application).
 
 #### Visualización de la notificación de actualización
 
@@ -501,7 +501,7 @@ Los siguientes módulos opcionales pueden ser deseleccionados:
 
 ## Página licencias y certificados
 
-La página de Licencias y certificados puede utilizarse para:
+La página Licencias y certificado se puede utilizar para:
 
 * designe el número o los números de licencia que desea integrar en su [aplicación ejecutable monopuesto](#application-page),
 * firmar la aplicación mediante un certificado en macOS.
@@ -536,7 +536,7 @@ Una vez seleccionado un archivo, la lista indicará las características de la l
 Si una licencia no es válida, un mensaje le avisará.
 
 Puede designar tantos archivos válidos como desee. Al generar una aplicación ejecutable, 4D utilizará la licencia más apropiada disponible.
-> Se necesitan licencias "R" dedicadas para generar aplicaciones basadas en las versiones "R-release" (los números de licencia de los productos "R" empiezan por "R-4DDP").
+> Se requieren licencias "R" dedicadas para generar aplicaciones basadas en las versiones "R-release" (los números de licencia de los productos "R" empiezan con "R-").
 
 Una vez generada la aplicación, se incluye automáticamente un nuevo archivo de licencia de despliegue en la carpeta Licencias junto a la aplicación ejecutable (Windows) o en el paquete (macOS).
 

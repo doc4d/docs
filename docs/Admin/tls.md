@@ -72,11 +72,6 @@ TLS certificates managed by 4D must be in the **PEM format**. If your certificat
 - [**RSA**](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 - [**ECDSA**](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) 
 
-:::info Compatibility
-
-The ECDSA encryption format is not supported by the 4D [legacy network layer](../settings/client-server.md#network-layer).
-
-::: 
 
 :::note
 
@@ -94,7 +89,7 @@ Certificate files include:
 Both **key.pem** and **cert.pem** files must be located:
 
 - with 4D Server or 4D in local mode, next to the [project folder](Project/architecture.md#project-folder)
-- with 4D in remote mode, in the client database folder on the remote machine (for more information about the location of this folder, see the [`Get 4D folder`](../commands-legacy/get-4d-folder.md) command). You must copy these files manually on the remote machine.
+- with 4D in remote mode, in the client database folder on the remote machine (for more information about the location of this folder, see the [`Get 4D folder`](../commands/get-4d-folder) command). You must copy these files manually on the remote machine.
 
 ### Enabling TLS
 
@@ -121,7 +116,7 @@ If you use a [custom cipher list](WebServer/webServerConfig.md#cipher-list) and 
 
 To use TLS with the 4D application server (client-server desktop applications) or the SQL server, you only have to enable TLS communications and the server automatically configures the connections at startup.
 
-- With the application server, select the **Encrypt Client-Server Communications** option in the ["Client-server/Network options" page of the Settings dialog box](../settings/client-server#encrypt-client-server-communications).
+- With the application server when [QUIC network layer](../settings/client-server.md#network-layer) is enabled, you don't have anything to do: QUIC communications are always in TLS. When ServerNet network layer is enabled select the **Encrypt Client-Server Communications** option in the ["Client-server/Network options" page of the Settings dialog box](../settings/client-server#encrypt-client-server-communications).
 - With the SQL server, select the **Enable TLS** option in the ["SQL" page of the Settings dialog box](../settings/sql#sql-server-publishing).
 
 
@@ -156,3 +151,4 @@ You can receive a certificate in different ways (usually by email or HTML form).
 5. Place the “cert.pem” file in the [appropriate location](#installing-certificate-files).
 
 The 4D server can now work in a secured mode. A certificate is usually valid between 3 months to a year.
+

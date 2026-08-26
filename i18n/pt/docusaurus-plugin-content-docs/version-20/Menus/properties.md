@@ -13,7 +13,7 @@ A propriedade **Title** contém a etiqueta de um menu ou item de menu, uma vez q
 No editor do Menu, pode introduzir directamente a etiqueta como "hard coded". Ou, pode introduzir uma referência para uma variável ou um elemento XLIFF, o que facilitará a manutenção e tradução das aplicações. Pode utilizar os seguintes tipos de referências:
 
 - Uma referência de recurso XLIFF do tipo :xliff:MyLabel. Para mais informações sobre referências XLIFF, consulte *XLIFF Architecture* secção em *4D Design Reference*.
-- Um nome de variável interprocesso seguido de um número, por exemplo:`<>vlang,3`. A alteração do conteúdo desta variável modificará a etiqueta do menu quando esta for exibida. Neste caso, a etiqueta chamará um recurso XLIFF. O valor contido na variável `<>vlang` corresponde ao atributo *id* do elemento *do grupo* . O segundo valor (3 neste exemplo) designa o atributo *id* do elemento *trans-unit* .
+- (**Deprecated**) An interprocess variable name followed by a number, for example: `:<>vlang,3`. A alteração do conteúdo desta variável modificará a etiqueta do menu quando esta for exibida. Neste caso, a etiqueta chamará um recurso XLIFF. O valor contido na variável `<>vlang` corresponde ao atributo *id* do elemento *do grupo* . O segundo valor (3 neste exemplo) designa o atributo *id* do elemento *trans-unit* .
 
 Usando a linguagem 4D, define a propriedade título através do parâmetro *itemText* dos comandos `APPEND MENU ITEM`, `INSERT MENU ITEM`, e `SET MENU ITEM`.
 
@@ -89,7 +89,8 @@ Adiciona-se uma linha separadora através da criação de um comando de menu esp
 
 No editor do Menu, em vez de introduzir o texto do comando do menu na área do título, basta seleccionar a opção **Linha Separadora** . Em vez de texto, aparece uma linha na área actual da barra de menu. Quando esta opção é verificada, as outras propriedades não têm qualquer efeito. **Nota:** Sob macOS, se usar o traço "-" como primeiro caracter de um item do menu, aparecerá como uma linha separadora.
 
-Na língua 4D, insere-se uma linha separadora introduzindo `-` ou `(-` como itemTexto para `APPEND MENU ITEM`, `INSERT MENU ITEM`, ou `SET MENU ITEM` comandos.
+In the 4D language, you insert a separator line by entering `-` or `(-` as itemText for `APPEND MENU ITEM`, `INSERT MENU ITEM`, or `SET MENU ITEM`] commands.
+
 
 
 ### Atalhos do teclado
@@ -149,13 +150,13 @@ A menos que especifique o contrário, 4D activa automaticamente cada item de men
 
 ### Marca de verificação
 
-Esta opção de menu editor pode ser usada para associar uma marca de verificação do sistema com um item de menu. Pode então gerir a exibição da marca de verificação usando comandos de língua (`SET MENU ITEM MARK` e `Obter a marca do item do menu`).
+Esta opção de menu editor pode ser usada para associar uma marca de verificação do sistema com um item de menu. You can then manage the display of the check mark using language commands `SET MENU ITEM MARK` and `Get menu item mark`.
 
 As marcas de verificação são geralmente utilizadas para itens do menu de acção contínua e indicam que a acção está actualmente em curso.
 
 ### Font-style
 
-4D permite-lhe personalizar os menus aplicando diferentes estilos de fontes aos comandos do menu. Pode personalizar os seus menus com os estilos Bold, Italic ou Underline através de opções no editor de menus, ou usando o comando de linguagem `SET MENU ITEM STYLE` .
+4D permite-lhe personalizar os menus aplicando diferentes estilos de fontes aos comandos do menu. You can customize your menus with the Bold, Italic or Underline styles through options in the Menu editor, `SET MENU ITEM STYLE`.
 
 Como regra geral, aplique estilos de fonte moderadamente aos seus menus - demasiados estilos distrairão o utilizador e darão um aspecto desorganizado à sua aplicação.
 > Também se pode aplicar estilos inserindo caracteres especiais no título do menu (ver [Utilizando caracteres de controlo](properties.md#using-control-characters) acima).

@@ -9,7 +9,7 @@ title: Imagens
 
 4D integra a gestão nativa dos formatos de imagem. Isso significa que imagens serão mostradas e armazenadas em seu formato original, sem qualquer interpretação em 4D. As funcionalidades específicas dos diferentes formatos (sombreado, áreas transparentes, etc.) serão mantidos quando forem copiados e colados, e serão exibidos sem alterações. Esse suporte nativo é válido para todas as imagens armazenadas em formulários 4D: [imagens estáticas](FormObjects/staticPicture.md) coladas no modo Desenho, imagens coladas em [objetos de entrada](FormObjects/input_overview.md) em execução, etc.
 
-Os formatos de imagem mais comuns são compatíveis com ambas as plataformas: .jpeg, .gif, .png, .tiff, .bmp, etc. Em macOS, o formato pdf também está disponível para codificar e decodificar.
+Os formatos de imagem mais comuns são compatíveis com ambas as plataformas: .jpeg, .gif, .png, .tiff, .bmp, etc. Em macOS, o formato pdf também está disponível para codificar e decodificar. Em macOS, o formato pdf também está disponível para codificar e decodificar.
 
 > A lista completa dos formatos suportados varia de acordo com o sistema operativo e os codecs personalizados que são instalados nas máquinas. Para descobrir quais codecs estão disponíveis, você deve usar o comando `PICTURE CODEC LIST` (veja também a descrição de [tipo de dados imagem](Concepts/dt_picture.md)).
 
@@ -46,7 +46,7 @@ As imagens de alta resolução com a convenção @nx podem ser utilizadas nos se
 - [Botones](FormObjects/button_overview.md)/[radio](FormObjects/radio_overview.md)/[casillas de selección](FormObjects/checkbox_overview.md)
 - [Botones imagen](FormObjects/pictureButton_overview.md)/[imagen Pop-up](FormObjects/picturePopupMenu_overview.md)
 - [Controles de tabulação](FormObjects/tabControl.md)
-- [Cabeçalhos List box](FormObjects/listbox_overview.md#list-box-headers)
+- [Cabeçalhos List box](FormObjects/listbox-header-footer.md#headers)
 - [Ícones de menu](Menus/properties.md#item-icon)
 
 4D dá automaticamente prioridade às imagens com a resolução mais alta. 4D dá automaticamente prioridade às imagens com a resolução mais alta. Mesmo que um comando ou propriedade especifique *circle.png*, *circle@3x.png* será usado (se existir).
@@ -64,7 +64,7 @@ Embora 4D priorize automaticamente a resolução mais alta, há, no entanto, alg
 
 *(\*) Normalmente, macOS = 72 dpi, Windows = 96 dpi*
 
-## Imagens em modo escuro (apenas macOS)
+## Dark mode pictures
 
 Você pode definir imagens e ícones específicos a serem usados em vez de imagens padrão quando [os formulários usam o esquema escuro](properties_FormProperties.md#color-scheme).
 
@@ -76,6 +76,12 @@ Uma imagem em modo escuro é definida da seguinte forma:
 Em tempo de execução, 4D carregará automaticamente a imagem clara ou escura de acordo com o [esquema de cores do formulário atual](../FormEditor/properties_FormProperties.md#color-scheme).
 
 ![](../assets/en/FormEditor/darkicon.png)
+
+:::note
+
+The dark mode is not available on Windows with [Classic theme](../settings/interface.md#use-fluent-ui-on-windows).
+
+:::
 
 ## Coordenadas do mouse numa imagem
 

@@ -19,7 +19,7 @@ title: Document Class
 
 #### Description
 
-La propriété `.creationDate` retourne <!-- REF #document.creationDate.Summary -->la date de création du fichier<!-- END REF -->.
+La propriété `.creationDate` retourne <!-- REF #document.creationDate.Summary -->La propriété `.creationDate` retourne<!-- END REF -->.
 
 Cette propriété est en **lecture seule**.
 
@@ -160,7 +160,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-La propriété `.isFile` retourne <!-- REF #document.isFile.Summary -->toujours vrai pour un fichier<!-- END REF -->.
+La propriété `.isFile` retourne <!-- REF #document.isFile.Summary -->La fonction `.copyTo()`<!-- END REF -->.
 
 Cette propriété est en **lecture seule**.
 
@@ -230,7 +230,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-La propriété `.modificationDate` retourne <!-- REF #document.modificationDate.Summary -->la date de la dernière modification du fichier<!-- END REF -->.
+La propriété `.modificationDate` retourne <!-- REF #document.modificationDate.Summary -->La propriété `.modificationDate` retourne<!-- END REF -->.
 
 Cette propriété est en **lecture seule**.
 
@@ -250,7 +250,7 @@ Cette propriété est en **lecture seule**.
 
 ##### Description
 
-La propriété `.modificationTime` retourne <!-- REF #document.modificationTime.Summary -->l'heure de la dernière modification du fichier<!-- END REF --> (exprimé en nombre de secondes commençant à 00:00).
+La propriété `.modificationTime` retourne <!-- REF #document.modificationTime.Summary -->La propriété `.modificationTime` retourne<!-- END REF --> (exprimé en nombre de secondes commençant à 00:00).
 
 Cette propriété est en **lecture seule**.
 
@@ -315,7 +315,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-La propriété `.parent` retourne <!-- REF #document.parent.Summary -->l'objet dossier parent du fichier<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
+La propriété `.parent` retourne <!-- REF #document.parent.Summary -->La propriété `.parent` retourne<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
 
 Cette propriété est en **lecture seule**.
 
@@ -335,7 +335,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-La propriété `.path` retourne <!-- REF #document.path.Summary -->le chemin POSIX du fichier<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
+La propriété `.path` retourne <!-- REF #document.path.Summary -->La propriété `.path` retourne<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
 
 Cette propriété est en **lecture seule**.
 
@@ -355,7 +355,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-La propriété `.platformPath` retourne <!-- REF #document.platformPath.Summary -->le chemin du fichier exprimé avec la syntaxe de la plate-forme courante<!-- END REF -->.
+La propriété `.platformPath` retourne <!-- REF #document.platformPath.Summary -->La propriété `.platformPath` retourne<!-- END REF -->.
 
 Cette propriété est en **lecture seule**.
 
@@ -395,18 +395,20 @@ Cette propriété est en **lecture seule**.
 
 
 <!-- REF #document.copyTo().Params -->
-| Paramètres         | Type      |    | Description                                        |
-| ------------------ | --------- |:--:| -------------------------------------------------- |
-| dossierDestination | 4D.Folder | -> | Dossier de destination                             |
-| nouveauNom         | Text      | -> | Nom de la copie                                    |
-| overwrite          | Integer   | -> | `fk overwrite` pour écraser les éléments existants |
-| Résultat           | 4D.File   | <- | Fichier copié|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|destinationFolder |4D.Folder |->|Dossier de destination|
+|newName|Text|->|Nom de la copie|
+|overwrite|Integer|->|`fk overwrite` pour remplacer les éléments existants|
+|Résultat|4D.File|<-|Copied file|
+</div>
+<!-- END REF -->
 
 #### Description
 
-La fonction `.copyTo()` <!-- REF #document.copyTo().Summary -->copie l'objet `File` dans le dossier *destinationFolder* spécifié <!-- END REF -->.
+La fonction `.copyTo()` <!-- REF #document.copyTo().Summary -->La propriété `.isFolder` retourne <!-- END REF -->.
 
 Le *destinationFolder* doit exister sur disque, sinon une erreur est générée.
 
@@ -449,11 +451,13 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 
 <!-- REF #document.getContent().Params -->
-| Paramètres | Type    |    | Description                                   |
-| ---------- | ------- | -- | --------------------------------------------- |
-| Résultat   | 4D.Blob | <- | Contenu du fichier|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----||---|
+|Résultat | 4D.Blob |<-|File content|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -491,12 +495,14 @@ Pour sauvegarder le contenu d'un document dans un champ `BLOB` :
 
 
 <!-- REF #document.getIcon().Params -->
-| Paramètres | Type    |    | Description                                    |
-| ---------- | ------- | -- | ---------------------------------------------- |
-| size       | Integer | -> | Longueur du côté de l'image retournée (pixels) |
-| Résultat   | Picture | <- | Icône|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|
+|size|Integer|->|Longueur du côté de l'image renvoyée (pixels)|
+|Résultat|Picture|<-|Icon|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -526,14 +532,16 @@ Si le fichier n'existe pas sur disque, une icône par défaut vide est retourné
 
 
 <!-- REF #document.getText().Params -->
-| Paramètres  | Type    |    | Description                                  |
-| ----------- | ------- | -- | -------------------------------------------- |
-| charSetName | Text    | -> | Nom du jeu de caractères                     |
-| charSetNum  | Integer | -> | Numéro du jeu de caractères                  |
-| breakMode   | Integer | -> | Mode de traitement des retours à la ligne    |
-| Résultat    | Text    | <- | Texte du document|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---|---|
+|charSetName |Text |-> |Nom du jeu de caractères|
+|charSetNum |Integer |-> |Numéro du jeu de caractères|
+|breakMode|Integer |-> |Mode de traitement des sauts de ligne|
+|Résultat |Texte |<- |Texte de the document|
+</div>
+<!-- END REF -->
 
 #### Description
 

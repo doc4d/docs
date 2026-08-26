@@ -5,13 +5,16 @@ title: WebServer
 
 `WebServer` クラス API を使って、メイン (ホスト) アプリケーションおよび、各コンポーネントの Webサーバーを開始・モニターすることができます ([Webサーバーオブジェクト](WebServer/webServerObject.md) 参照)。 このクラスは `4D` クラスストアより提供されます。
 
+### プロパティ
+
+- **ストリーム可能**: いいえ
+- **共有可能**: いいえ
+
 ### Webサーバーオブジェクト
 
-Webサーバーオブジェクトは [`WEB Server`](../commands/web-server.md) コマンドによってインスタンス化されます。
+Webサーバーオブジェクトは [`WEB Server`](../commands/web-server) コマンドによってインスタンス化されます。
 
 これらは、次のプロパティや関数を持ちます:
-
-### 概要
 
 |                                                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,6 +26,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server.md) �
 | [<!-- INCLUDE #WebServerClass.CORSSettings.Syntax -->](#corssettings)<br/><!-- INCLUDE #WebServerClass.CORSSettings.Summary -->                                           |
 | [<!-- INCLUDE #WebServerClass.debugLog.Syntax -->](#debuglog)<br/><!-- INCLUDE #WebServerClass.debugLog.Summary -->                                                       |
 | [<!-- INCLUDE #WebServerClass.defaultHomepage.Syntax -->](#defaulthomepage)<br/><!-- INCLUDE #WebServerClass.defaultHomepage.Summary -->                                  |
+| [<!-- INCLUDE #WebServerClass.handlers.Syntax -->](#handlers)<br/><!-- INCLUDE #WebServerClass.handlers.Summary -->                                                       |
 | [<!-- INCLUDE #WebServerClass.HSTSEnabled.Syntax -->](#hstsenabled)<br/><!-- INCLUDE #WebServerClass.HSTSEnabled.Summary -->                                              |
 | [<!-- INCLUDE #WebServerClass.HSTSMaxAge.Syntax -->](#hstsmaxage)<br/><!-- INCLUDE #WebServerClass.HSTSMaxAge.Summary -->                                                 |
 | [<!-- INCLUDE #WebServerClass.HTTPCompressionLevel.Syntax -->](#httpcompressionlevel)<br/><!-- INCLUDE #WebServerClass.HTTPCompressionLevel.Summary -->                   |
@@ -46,6 +50,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server.md) �
 | [<!-- INCLUDE #WebServerClass.openSSLVersion.Syntax -->](#opensslversion)<br/><!-- INCLUDE #WebServerClass.openSSLVersion.Summary -->                                     |
 | [<!-- INCLUDE #WebServerClass.perfectForwardSecrecy.Syntax -->](#perfectforwardsecrecy)<br/><!-- INCLUDE #WebServerClass.perfectForwardSecrecy.Summary -->                |
 | [<!-- INCLUDE #WebServerClass.rootFolder.Syntax -->](#rootfolder)<br/><!-- INCLUDE #WebServerClass.rootFolder.Summary -->                                                 |
+| [<!-- INCLUDE #WebServerClass.rules.Syntax -->](#rules)<br/><!-- INCLUDE #WebServerClass.rules.Summary -->                                                                |
 | [<!-- INCLUDE #WebServerClass.scalableSession.Syntax -->](#scalablesession)<br/><!-- INCLUDE #WebServerClass.scalableSession.Summary -->                                  |
 | [<!-- INCLUDE #WebServerClass.sessionCookieDomain.Syntax -->](#sessioncookiedomain)<br/><!-- INCLUDE #WebServerClass.sessionCookieDomain.Summary -->                      |
 | [<!-- INCLUDE #WebServerClass.sessionCookieName.Syntax -->](#sessioncookiename)<br/><!-- INCLUDE #WebServerClass.sessionCookieName.Summary -->                            |
@@ -67,7 +72,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server.md) �
 
 <!-- REF #WebServerClass.certificateFolder.Syntax -->**.certificateFolder** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.certificateFolder.Summary -->認証ファイルが保存されているフォルダー<!-- END REF -->のパス。 パスは、ファイルシステムを使用した POSIXフルパスの形式です。 [`.start()`](#start) 関数に渡す `settings` 引数内でこのプロパティを使用する場合、[`Folder` オブジェクト](FolderClass.md) も使用可能です。
+<!-- REF #WebServerClass.certificateFolder.Summary -->証明書ファイルが保存されているフォルダー<!-- END REF -->のパス。 パスは、ファイルシステムを使用した POSIXフルパスの形式です。 [`.start()`](#start) 関数に渡す `settings` 引数内でこのプロパティを使用する場合、[`Folder` オブジェクト](FolderClass.md) も使用可能です。
 
 <!-- END REF -->
 
@@ -133,7 +138,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
   - 192.168.\*
   - 192.168.\*:8081
   - <http://192.168.5.17:8081>
-  - <http://\*.myDomain.com>
+  - <http://\\*.myDomain.com>
   - <http://myProject.myDomain.com>
   - \*.myDomain.com
   - myProject.myDomain.com
@@ -165,7 +170,27 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.defaultHomepage.Syntax -->**.defaultHomepage** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.defaultHomepage.Summary -->デフォルトのホームページの名称<!-- END REF --> または、カスタムのホームページを送信しない場合は ""。
+デフォルトのホームページの名称 または、カスタムのホームページを送信しない場合は ""。
+
+<!-- END REF -->
+
+<!-- REF WebServerClass.handlers.Desc -->
+
+## .handlers
+
+<details><summary>履歴</summary>
+
+| リリース | 内容 |
+| ---- | -- |
+| 21   | 追加 |
+
+</details>
+
+<!-- REF #WebServerClass.handlers.Syntax -->**.handlers** : Collection<!-- END REF -->
+
+*読み取り専用プロパティ*
+
+<!-- REF #WebServerClass.handlers.Summary -->カスタム HTTPハンドラーオブジェクトのコレクション<!-- END REF -->。 HTTPハンドラーオブジェクトには聞いている URLパターン、管理される動詞 (メソッド)、そして呼び出されるべきコードが格納されています。 HTTPハンドラーは HTTPHandlers.json ファイルまたは [`.start()`](#start) 関数の *settings* 引数で定義することができます。 詳細については [HTTPリクエストハンドラー](../WebServer/http-request-handler.md)のページを参照してください。
 
 <!-- END REF -->
 
@@ -185,7 +210,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.HSTSMaxAge.Syntax -->**.HSTSMaxAge** : Integer<!-- END REF -->
 
-<!-- REF #WebServerClass.HSTSMaxAge.Summary -->新規クライアント接続ごとに HSTS がアクティブな最長時間 (秒単位)<!-- END REF -->。 この情報はクライアント側で指定された時間のあいだ保存されます。
+新規クライアント接続ごとに HSTS がアクティブな最長時間 (秒単位)。 この情報はクライアント側で指定された時間のあいだ保存されます。 この情報はクライアント側で指定された時間のあいだ保存されます。
 
 デフォルト値: 63072000 (2年)。
 
@@ -236,7 +261,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.HTTPPort.Syntax -->**.HTTPPort** : Integer<!-- END REF -->
 
-<!-- REF #WebServerClass.HTTPPort.Summary -->HTTP のリッスンIPポート番号<!-- END REF -->。
+HTTP のリッスンIPポート番号。
 
 デフォルト = 80
 
@@ -268,7 +293,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.HTTPSPort.Syntax -->**.HTTPSPort** : Integer<!-- END REF -->
 
-<!-- REF #WebServerClass.HTTPSPort.Summary -->HTTPS のリッスンIPポート番号<!-- END REF -->。
+HTTPS のリッスンIPポート番号。
 
 デフォルト = 443
 
@@ -318,7 +343,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.isRunning.Syntax -->**.isRunning** : Boolean<!-- END REF -->
 
-*内容*
+*読み取り専用プロパティ*
 
 <!-- REF #WebServerClass.isRunning.Summary -->Webサーバーで旧式セッションが有効されている場合に true、それ以外は false<!-- END REF -->。
 
@@ -330,7 +355,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.keepSession.Syntax -->**.keepSession** : Boolean<!-- END REF -->
 
-<!-- REF #WebServerClass.keepSession.Summary -->Webサーバーで旧式セッションが有効されている場合に `true`、それ以外は `false`<!-- END REF -->。
+Webサーバーで旧式セッションが有効されている場合に `true`、それ以外は `false`。
 
 ##### 参照
 
@@ -344,7 +369,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.logRecording.Syntax -->**.logRecording** : Integer<!-- END REF -->
 
-<!-- REF #WebServerClass.logRecording.Summary -->リクエストログ (logweb.txt) の記録オプション値<!-- END REF -->。
+リクエストログ (logweb.txt) の記録オプション値。
 
 - 0 = 記録しない (デフォルト)
 - 1 = CLF形式で記録する
@@ -417,7 +442,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.name.Syntax -->**.name** : Text<!-- END REF -->
 
-*内容*
+*読み取り専用プロパティ*
 
 <!-- REF #WebServerClass.name.Summary -->Webサーバーアプリケーションの名称<!-- END REF -->。
 
@@ -429,9 +454,9 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.openSSLVersion.Syntax -->**.openSSLVersion** : Text<!-- END REF -->
 
-*内容*
+*読み取り専用プロパティ*
 
-<!-- REF #WebServerClass.openSSLVersion.Summary -->使用されている OpenSSLライブラリのバージョン<!-- END REF -->。
+使用されている OpenSSLライブラリのバージョン。
 
 <!-- END REF -->
 
@@ -441,7 +466,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.perfectForwardSecrecy.Syntax -->**.perfectForwardSecrecy** : Boolean<!-- END REF -->
 
-*内容*
+*読み取り専用プロパティ*
 
 <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->サーバーの PFS利用可否状況<!-- END REF -->。
 
@@ -457,13 +482,33 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- END REF -->
 
+<!-- REF WebServerClass.rules.Desc -->
+
+## .rules
+
+<details><summary>履歴</summary>
+
+| リリース | 内容 |
+| ---- | -- |
+| 21   | 追加 |
+
+</details>
+
+<!-- REF #WebServerClass.rules.Syntax -->**.rules** : Collection<!-- END REF -->
+
+*読み取り専用プロパティ*
+
+<!-- REF #WebServerClass.rules.Summary -->HTTP ヘッダーをカスタマイズするために現在管理されているルールオブジェクトのコレクション<!-- END REF -->。 ルールオブジェクトには"regexPattern" プロパティに加え、アクション名と値が格納されています。 HTTP ルールはHTTPRules.json ファイルまたは[`.start()`](#start) 関数の*settings* 引数で定義することができます。 詳細については[HTTP ルール](../WebServer/http-rules.md) のページを参照してください。
+
+<!-- END REF -->
+
 <!-- REF WebServerClass.scalableSession.Desc -->
 
 ## .scalableSession
 
 <!-- REF #WebServerClass.scalableSession.Syntax -->**.scalableSession** : Boolean<!-- END REF -->
 
-<!-- REF #WebServerClass.scalableSession.Summary -->Webサーバーがスケーラブルセッションを使用している場合に `true`、それ以外は `false`<!-- END REF -->。
+Webサーバーがスケーラブルセッションを使用している場合に `true`、それ以外は `false`。
 
 ##### 参照
 
@@ -477,7 +522,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.sessionCookieDomain.Syntax -->**.sessionCookieDomain** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.sessionCookieDomain.Summary -->セッションcookie の "path" フィールド<!-- END REF -->。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
+<!-- REF #WebServerClass.sessionCookieDomain.Summary -->セッションcookie の "path" フィールド<!-- END REF -->。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。
 
 <!-- END REF -->
 
@@ -487,9 +532,9 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.sessionCookieName.Syntax -->**.sessionCookieName** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.sessionCookieName.Summary -->セッションID の保存に使用されるセッションcookie の名称<!-- END REF -->。
+セッションID の保存に使用されるセッションcookie の名称。
 
-*内容*
+*読み取り専用プロパティ*
 
 <!-- END REF -->
 
@@ -499,7 +544,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.sessionCookiePath.Syntax -->**.sessionCookiePath** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.sessionCookiePath.Summary -->セッションcookie の "path" フィールド<!-- END REF -->。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。
+<!-- REF #WebServerClass.sessionCookiePath.Summary -->セッションcookie の "path" フィールド<!-- END REF -->。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
 
 <!-- END REF -->
 
@@ -517,13 +562,13 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.sessionCookieSameSite.Syntax -->**.sessionCookieSameSite** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.sessionCookieSameSite.Summary -->セッションcookie の "SameSite" 属性の値<!-- END REF -->。 とりうる値 (定数使用):
+セッションcookie の "SameSite" 属性の値。 とりうる値 (定数使用): とりうる値 (定数使用):
 
 | 定数                  | 値        | 説明                                                              |
 | ------------------- | -------- | --------------------------------------------------------------- |
-| Web SameSite Strict | "Strict" | *デフォルト値* - ファーストパーティーのコンテキストでのみ cookie が送信されます。                 |
+| Web SameSite Strict | "Strict" | *デフォルト値* - ファーストパーティのコンテキストでのみ cookie が送信されます。                  |
 | Web SameSite Lax    | "Lax"    | サイト間のサブリクエストにおいても cookie が送信されますが、ユーザーがリンクを辿って大元のサイトに戻る場合に限ります。 |
-| Web SameSite None   | "None"   | ファーストパーティーやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。      |
+| Web SameSite None   | "None"   | ファーストパーティやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。       |
 
 詳細については [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-samesite) の説明を参照ください。
 
@@ -537,7 +582,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 > [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは使用されません (IPアドレスを検証しません)。
 
-<!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->セッションcookie の IP アドレス検証<!-- END REF -->。 セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。このアドレスが、cookie作成時の IPアドレスと合致しない場合、リクエストは拒否されます。 アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。 このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。
+<!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->セッションcookie の IP アドレス検証<!-- END REF -->。 セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。 アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。 このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。
 
 <!-- END REF -->
 
@@ -557,18 +602,21 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.start().Params -->
 
+<div class="no-index">
+
 | 引数       | 型      |                             | 説明              |
 | -------- | ------ | --------------------------- | --------------- |
 | settings | Object | ->                          | 開始時の Webサーバー設定  |
 | 戻り値      | Object | <- | Webサーバー開始のステータス |
 
+</div>
 <!-- END REF -->
 
 `.start()` 関数は、任意の *settings* オブジェクト引数に設定したプロパティを使用して、<!-- REF #WebServerClass.start().Summary -->対象の Webサーバーを開始させます<!-- END REF -->。
 
 プロジェクトの設定ファイルに定義されているデフォルトの設定、または `WEB SET OPTION` コマンドで定義された設定 (ホストデータベースのみ) を使用して、Webサーバーは開始されます。 しかし、*settings* 引数を渡せば、Webサーバーセッションにおいてカスタマイズされた設定を定義することができます。
 
-[Web Server オブジェクト](../commands/web-server.md) の設定は、読み取り専用プロパティ ([.isRunning](#isrunning), [.name](#name)、 [.openSSLVersion](#opensslversion)、 [.perfectForwardSecrecy](#perfectforwardsecrecy)、および [.sessionCookieName](#sessioncookiename)) を除いて、すべてカスタマイズ可能です。
+[Web Server オブジェクト](../commands/web-server) の設定は、読み取り専用プロパティ ([.isRunning](#isrunning), [.name](#name)、 [.openSSLVersion](#opensslversion)、 [.perfectForwardSecrecy](#perfectforwardsecrecy)、および [.sessionCookieName](#sessioncookiename)) を除いて、すべてカスタマイズ可能です。
 
 カスタマイズされた設定は [`.stop()`](#stop) が呼び出されたときにリセットされます。
 
@@ -619,10 +667,13 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.stop().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |   | 説明         |
 | -- | - | - | ---------- |
 |    |   |   | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 `.stop()` 関数は、<!-- REF #WebServerClass.stop().Summary -->対象の Webサーバーを停止します<!-- END REF -->。
@@ -643,3 +694,4 @@ Webサーバーが開始されている場合は、処理中のリクエスト�
 ```
 
 <!-- END REF -->
+

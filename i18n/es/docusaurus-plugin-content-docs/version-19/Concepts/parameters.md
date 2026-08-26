@@ -6,7 +6,7 @@ title: Parámetros
 
 A menudo encontrará que necesita pasar datos a sus métodos y funciones. Esto se hace fácilmente con parámetros.
 
-## Generalidades
+## Paso de parámetros
 
 **Los parámetros** (o **argumentos**) son piezas de datos que un método o una función de clase necesita para realizar su tarea. Los términos *parámetros* y *argumentos* se utilizan indistintamente en este manual. Los parámetros también se pasan a los comandos integrados de 4D. En este ejemplo, la cadena "Hello" es un argumento para el comando integrado `ALERT`:
 
@@ -34,6 +34,8 @@ Los mismos principios se aplican cuando los métodos se ejecutan a través de co
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)  
 //pass the !05/05/20! date as parameter to the SetCalendarDate  
 //in the context of a subform  
+//pase la fecha !05/05/20! como parámetro de SetCalendarDate  
+//en el contexto de un subformulario  
 //pase la fecha !05/05/20! como parámetro de SetCalendarDate  
 //en el contexto de un subformulario
 ```
@@ -120,6 +122,12 @@ Todos los tipos de métodos de 4D soportan la palabra clave `#DECLARE`, incluido
 $entitySelection:=ds.User.query("login=:1"; $user)
 // Verificar la contraseña hash...
 ```
+
+:::note
+
+Do not confuse **parameter declarations** with [**variable declarations**](variables.md#declaring-variables). El uso de la palabra clave `var` con parámetros generará errores.
+
+:::
 
 ### Valor devuelto
 
@@ -265,7 +273,7 @@ End for
 Este método se puede llamar:
 
 ```4d
-foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed //se pasan parámetros adicionales
+foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed //se pasan parámetros adicionales
 ```
 
 > La indirección de parámetros se gestiona mejor si se respeta la siguiente convención: si sólo algunos de los parámetros se dirigen por indirección, deben pasarse después de los demás.
@@ -354,13 +362,13 @@ C_TEXT($1;$2;$3;$4;$5;$6)
 - Objetos formulario que aceptan el evento formulario `On Drag Over` - El parámetro $0 (Entero largo), que es el resultado del evento formulario `On Drag Over`, será digitado por el compilador si el parámetro no ha sido declarado explícitamente. Sin embargo, si quiere declararlo, debe hacerlo en el propio método proyecto. **Nota:** el compilador no inicializa el parámetro $0. Por lo tanto, tan pronto como utilice el evento formulario `On Drag Over`, debe inicializar $0. Por ejemplo:
 
 ```4d
- C_LONGINT($0)
- If(Form event code=On Drag Over)
-    $0:=0
-    ...
-    If($DataType=Is picture)
+ If($DataType=Is picture)
        $0:=-1
     End if
+    ...
+    C_LONGINT($0)
+ If(Form event code=On Drag Over)
+    $0:=0
     ...
  End if
 ```

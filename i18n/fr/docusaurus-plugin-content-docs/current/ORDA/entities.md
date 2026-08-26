@@ -120,7 +120,7 @@ $entity.save() //sauvegarder les modifications
 
 :::note Notes
 
-- Database Object fields can be [associated with classes](../Develop/field-properties.md), in which case only objects of the defined class can be assigned to the entity attribute.
+- Les champs objet de la base de données peuvent être [associés à des classes](../Develop/field-properties.md), auquel cas seuls les objets de la classe définie peuvent être affectés à l'attribut de l'entité.
 - Les champs Blob des bases de données ([blobs scalaires](Concepts/dt_blob.md)) sont automatiquement convertis en attributs d'objets blob ([`4D.Blob`](Concepts/dt_blob.md)) lorsqu'ils sont traités par ORDA. Lorsque vous sauvegardez un attribut d'objet blob, gardez à l'esprit que, contrairement à la taille de l'objet blob qui n'est limitée que par la mémoire disponible, la taille du champ Blob est limitée à 2 Go.
 
 :::
@@ -160,7 +160,7 @@ La référence du fichier peut être :
 - un objet 4D.File
 - un chemin au format POSIX
 
-Voici un exemple :
+Exemple :
 
 ```4d
 Function createCompany($name : Text; $logo : 4D.File)
@@ -244,7 +244,7 @@ Vous pouvez créer un objet de type [entity selection](dsMapping.md#entity-selec
 
 - En lançant une requête sur les entités [dans une dataclass](API/DataClassClass.md#query) ou dans une [entity selection existante](API/EntitySelectionClass.md#query) ;
 - En utilisant la fonction [`.all()`](API/DataClassClass.md#all) pour sélectionner toutes les entités d'une dataclass ;
-- En utilisant la commande [`Create entity selection`](../commands/create-entity-selection.md) ou la fonction [`.newSelection()`](API/DataClassClass.md#newselection) de la classe data pour créer une entity selection vide ;
+- En utilisant la commande [`Create entity selection`](../commands/create-entity-selection) ou la fonction [`.newSelection()`](API/DataClassClass.md#newselection) de la classe data pour créer une entity selection vide ;
 - En utilisant la fonction [`.copy()`](API/EntitySelectionClass.md#copy) pour dupliquer une entity selection existante ;
 - En utilisant l'une des différentes fonctions de la [classe Entity selection](API/EntitySelectionClass.md) qui retourne une nouvelle entity selection, comme [`.or()`](API/EntitySelectionClass.md#or) ;
 - En utilisant un attribut de relation de type "related entities" (voir ci-dessous).
@@ -288,11 +288,11 @@ La nature **partageable** ou **modifiable** d'une entity selection est définie 
 
 Une nouvelle entity selection est **partageable** dans les cas suivants :
 
-- la nouvelle entity selection résulte d'une fonction de classe ORDA appliquée à une dataClass : [dataClass.all()](API/DataClassClass.md#all), [dataClass.fromCollection()](API/DataClassClass.md#fromcollection), [dataClass.query()](API/DataClassClass.md#quer
+- la nouvelle entity selection résulte d'une fonction de classe ORDA appliquée à une dataClass : [dataClass.all()](API/DataClassClass.md#all), [dataClass.fromCollection()](API/DataClassClass.md#fromcollection), [dataClass.query()](API/DataClassClass.md#query),
 - la nouvelle entity selection est basée sur une relation [entity.*attributeName*](API/EntityClass.md#attributename) (par exemple, "company.employees") lorsque *attributeName* est un attribut lié 1-vers-N mais que l'entité n'appartient pas à une entity selection.
 - la nouvelle entity selection est explicitement copiée comme partageable avec [entitySelection.copy()](API/EntitySelectionClass.md#copy) ou `OB Copy` (c'est-à-dire avec l'option `ck shared`).
 
-Voici un exemple :
+Exemple :
 
 ```4d
 var $myComp : cs.CompanyEntity
@@ -306,7 +306,7 @@ Une nouvelle entity selection est **modifiable** dans les cas suivants :
 - nouvelle entity selection créée vide à l'aide de la fonction [dataClass.newSelection()](API/DataClassClass.md#newselection) ou de la commande `Create entity selection`,
 - nouvelle entity selection explicitement copiée comme modifiable avec [entitySelection.copy()](API/EntitySelectionClass.md#copy) ou `OB Copy` (c'est-à-dire sans l'option `ck shared`).
 
-Voici un exemple :
+Exemple :
 
 ```4d
 var $toModify : cs.CompanySelection
@@ -339,7 +339,7 @@ $comp2:=$lowSal.employer //$comp2 est modifiable car $lowSal est modifiable
 
 :::note Entity selections retournées depuis le serveur
 
-Dans l'architecture client/serveur, les entity selections renvoyées par le serveur sont toujours partageables sur le client, même si [`copy()`](API/EntitySelectionClass.md#copy) a été appelée sur le serveur. Pour rendre une telle entity selection modifiable côté client, vous devez exécuter [`copy()`](API/EntitySelectionClass.md#copy) côté client. Voici un exemple :
+Dans l'architecture client/serveur, les entity selections renvoyées par le serveur sont toujours partageables sur le client, même si [`copy()`](API/EntitySelectionClass.md#copy) a été appelée sur le serveur. Pour rendre une telle entity selection modifiable côté client, vous devez exécuter [`copy()`](API/EntitySelectionClass.md#copy) côté client. Exemple :
 
 ```4d
 	//une fonction est toujours exécutée sue le serveur
@@ -433,9 +433,9 @@ $myInvoices:=$myParts.invoiceItems.invoice
   //Toutes les factures avec au moins une ligne liée à une pièce de $myParts
 ```
 
-La dernière ligne renverra dans *$myInvoices* une entity selection de toutes les factures qui ont au moins une ligne liée à une pièce dans l'entity selection myParts. Lorsqu'un attribut relationnel est utilisé comme propriété d'une entity selection, le résultat est toujours une autre entity selection, même si une seule entité est retournée. Lorsqu'un attribut relationnel est utilisé comme propriété d'une entity selection et qu'aucune entité n'est retournée, le résultat est une entity selection vide, et non nulle.
+La dernière ligne renverra dans *$myInvoices* une entity selection de toutes les factures qui ont au moins une ligne liée à une pièce dans l'entity selection myParts. Lorsqu'un attribut relationnel est utilisé comme propriété d'une entity selection, le résultat est toujours une autre entity selection, même si une seule entité est retournée. Lorsqu'un attribut relationnel est utilisé comme propriété d'une entity selection, le résultat est toujours une autre entity selection, même si une seule entité est retournée.
 
-## Entity selections restreintes
+## Restreindre les entity selections {#restricting-entity-selections}
 
 Dans ORDA, vous pouvez créer des filtres pour restreindre l'accès aux entités de n'importe quelle dataclass. Une fois implémenté, un filtre est automatiquement appliqué chaque fois qu'on accède aux entités de la dataclass soit par les fonctions de classe **ORDA** telles que [`all()`](../API/DataClassClass.md#all) ou [`query()`](../API/EntitySelectionClass.md#query), soit par l'[**API REST**](../category/api-dataclass) (ce qui inclut l'[Explorateur de données](../Admin/dataExplorer.md) et les [datastores distants](remoteDatastores.md)).
 
@@ -449,7 +449,7 @@ Les filtres s'appliquent aux **entités**. Si vous souhaitez restreindre l'accè
 
 ### Comment définir un filtre de restriction
 
-You create a filter for a dataclass by defining an `event restrict` function in the [**dataclass class**](dsMapping.md#dataclass) of the dataclass. Le filtre est alors automatiquement activé.
+Vous créez un filtre pour une dataclass en définissant une fonction `event restrict` dans la [**classe**](dsMapping.md#dataclass) de la dataclasse. Le filtre est alors automatiquement activé.
 
 ### `Function event restrict`
 
@@ -462,11 +462,11 @@ Function event restrict() -> $result : cs.*DataClassName*Selection
 
 Cette fonction est appelée chaque fois qu'une entity selection ou une entité de la dataclass est demandée. Le filtre est exécuté une seule fois, lors de la création de l'entity selection.
 
-Le filtre doit retourner une entity selection de la dataclass. Il peut s'agir d'une entity selection basée sur une recherche, stockée dans le [`Storage`], etc.
+Le filtre doit retourner une entity selection de la dataclass. Il peut s'agir d'une entity selection basée sur une requête, stockée dans le [`Storage`](../API/SessionClass.md#storage), etc.
 
 :::note
 
-Pour des raisons de performances, nous recommandons d'utiliser les **attributs indexés** dans la définition du filtre.
+Pour des raisons de performances, nous recommandons d'utiliser des **attributs indexés** dans la définition du filtre.
 
 :::
 
@@ -532,7 +532,7 @@ Les filtres ne s'appliquent pas aux sélections d'enregistrements classiques gé
 | [entitySelection.query()](../API/EntitySelectionClass.md#query)       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | [entitySelection.attributeName](../API/EntitySelectionClass.md#attributename)            | Filtre appliqué si *attributeName* est une entité liée ou des entités liées d'une dataclass filtrée (y compris alias ou attribut calculé)                                                                                                                                                                                                                                                                 |
 | [entity.attributeName](../API/EntityClass.md#attributename)                              | Filtre appliqué si *attributeName* correspond aux entités liées d'une dataclass filtrée (y compris alias ou attribut calculé)                                                                                                                                                                                                                                                                             |
-| [Create entity selection](../commands/create-entity-selection.md)                                        |                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| [Create entity selection](../commands/create-entity-selection)                                           |                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 Les autres fonctions ORDA accédant aux données ne déclenchent pas directement le filtre, mais elles en bénéficient néanmoins. Par exemple, la fonction [`entity.next()`](../API/EntityClass.md#next) renverra l'entité suivante dans l'entity selection déjà filtrée. En revanche, si l'entity selection n'est pas filtrée, [`entity.next()`](../API/EntityClass.md#next) fonctionnera sur les entités non filtrées.
 
@@ -544,7 +544,7 @@ Si une erreur survient dans le filtre au moment de l'exécution, elle est géné
 
 ## Verrouillage d'une entité
 
-Vous devez souvent gérer d'éventuels conflits pouvant survenir lorsque plusieurs utilisateurs ou process se chargent et tentent de modifier les mêmes entités en même temps. Le verrouillage des enregistrements est une méthodologie utilisée dans les bases de données relationnelles pour éviter les mises à jour incohérentes des données. Le concept consiste soit à verrouiller un enregistrement lors de sa lecture afin qu'aucun autre process ne puisse le mettre à jour, soit à vérifier lors de la sauvegarde d'un enregistrement qu'un autre process ne l'a pas modifié depuis sa lecture. Le premier est appelé **verrouillage d'enregistrement pessimiste** et garantit qu'un enregistrement modifié peut être écrit au détriment du verrouillage des enregistrements pour d'autres utilisateurs. Ce dernier est appelé **verrouillage d'enregistrement optimiste** et il échange la garantie des privilèges d'écriture sur l'enregistrement contre la flexibilité de décider des privilèges d'écriture uniquement si l'enregistrement doit être mis à jour. Dans le verrouillage d'enregistrement pessimiste, l'enregistrement est verrouillé même s'il n'est pas nécessaire de le mettre à jour. Dans le verrouillage d'enregistrement optimiste, la validité de la modification d'un enregistrement est évaluée au moment de la mise à jour.
+Vous devez souvent gérer d'éventuels conflits pouvant survenir lorsque plusieurs utilisateurs ou process se chargent et tentent de modifier les mêmes entités en même temps. Le verrouillage des enregistrements est une méthodologie utilisée dans les bases de données relationnelles pour éviter les mises à jour incohérentes des données. Le concept consiste soit à verrouiller un enregistrement lors de sa lecture afin qu'aucun autre process ne puisse le mettre à jour, soit à vérifier lors de la sauvegarde d'un enregistrement qu'un autre process ne l'a pas modifié depuis sa lecture. Le premier est appelé **verrouillage d'enregistrement pessimiste** et garantit qu'un enregistrement modifié peut être écrit au détriment du verrouillage des enregistrements pour d'autres utilisateurs. Le second est appelé **verrouillage d'enregistrement optimiste** et il échange la garantie des privilèges d'écriture sur l'enregistrement contre la flexibilité de décider des privilèges d'écriture uniquement si l'enregistrement doit être mis à jour. Dans le verrouillage pessimiste, l'enregistrement est verrouillé même s'il n'est pas nécessaire de le mettre à jour. Dans le verrouillage optimiste, la validité de la modification d'un enregistrement est évaluée au moment de la mise à jour.
 
 ORDA vous propose deux modes de verrouillage d'entité :
 
@@ -615,3 +615,4 @@ Les **verrouillages de transaction** s'appliquent également aux commandes class
 
 - Exemple avec un verrou mis en place par une commande classique:<br/><br/>![](../assets/en/ORDA/concurrent2.png)
 - Exemple avec un verrou mis en place par une fonction ORDA:<br/><br/>![](../assets/en/ORDA/concurrent3.png)
+

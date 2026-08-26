@@ -18,7 +18,7 @@ Vous pouvez également définir cette propriété en utilisant la commande [`OBJ
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
 
 ---
 
@@ -38,7 +38,7 @@ Vous pouvez également définir cette propriété en utilisant la commande [`OBJ
 
 #### Objets pris en charge
 
-[Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
+[Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
 
 #### Voir également
 
@@ -63,7 +63,7 @@ Vous pouvez également définir cette propriété en utilisant la commande [`LIS
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
 
 ---
 
@@ -89,9 +89,9 @@ Décrit le type de ligne en pointillé comme une séquence de points noirs et bl
 
 #### Grammaire JSON
 
-| Nom             | Type de données            | Valeurs possibles                                                            |
-| --------------- | -------------------------- | ---------------------------------------------------------------------------- |
-| strokeDashArray | tableau numérique ou texte | Ex : "6 1" ou \[6,1\] pour une séquence de 6 points noirs et 1 point blanc |
+| Nom             | Type de données            | Valeurs possibles                                                                 |
+| --------------- | -------------------------- | --------------------------------------------------------------------------------- |
+| strokeDashArray | tableau numérique ou texte | Ex : Ex : "6 1" ou \[6,1\] pour une séquence de 6 points noirs et 1 point blanc |
 
 #### Objets pris en charge
 
@@ -199,7 +199,7 @@ Vous pouvez obtenir le même résultat en utilisant les commandes [`LISTBOX SET 
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
 
 ---
 

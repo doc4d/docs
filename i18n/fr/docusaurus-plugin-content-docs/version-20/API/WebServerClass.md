@@ -71,12 +71,13 @@ Leurs propriétés et fonctions sont les suivantes :
 
 
 <!-- REF #_command_.WEB Server.Params -->
+<div class="no-index">
 
-| Paramètres | Type         |    | Description                                                       |
-| ---------- | ------------ | -- | ----------------------------------------------------------------- |
-| option     | Integer      | -> | Serveur Web à référencer (défaut si omis = `Web server database`) |
-| Résultat   | 4D.WebServer | <- | Objet Serveur Web                                                 |
-
+|Paramètre|Type||Description|
+|---|---|----|---|
+|option|Integer|->|Serveur Web à utiliser (par défaut si non spécifié = `Web server database`)|  
+|Résultat|4D.WebServer|<-|Web server object|
+</div>
 <!-- END REF -->
 
 La commande `WEB Server` <!-- REF #_command_.WEB Server.Summary -->retourne l'objet Web server par défaut ou l'objet Web server désigné par le paramètre *option*<!-- END REF -->.
@@ -117,11 +118,12 @@ L'objet Web server retourné contient les valeurs courantes des propriétés du 
 
 
 <!-- REF #_command_.WEB Server list.Params -->
+<div class="no-index">
 
-| Paramètres | Type       |    | Description                                  |
-| ---------- | ---------- | -- | -------------------------------------------- |
-| Résultat   | Collection | <- | Collection des objets Web server disponibles |
-
+|Paramètre|Type||Description|
+|---|---|----|---|
+|Résultat|Collection|<-|Collection of the available Web server objects|
+</div>
 <!-- END REF -->
 
 La commande `WEB Server list` <!-- REF #_command_.WEB Server list.Summary -->renvoie une collection de tous les objets Web server disponibles dans l'application 4D<!-- END REF -->.
@@ -569,7 +571,7 @@ Le <!-- REF #WebServerClass.openSSLVersion.Summary -->version de la bibliothèqu
 
 *Propriété en lecture seulement.*
 
-Le <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->disponibilité de PFS sur le serveur<!-- END REF -->.
+Le <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->Le disponibilité de PFS sur le serveur<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -648,7 +650,7 @@ Le <!-- REF #WebServerClass.sessionCookiePath.Summary -->Champ "path" du cookie 
 <!-- REF #WebServerClass.sessionCookieSameSite.Syntax -->**.sessionCookieSameSite** : Text<!-- END REF -->
 
 
-Le <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->valeur du cookie de session "SameSite"<!-- END REF -->. Valeurs possibles (avec constantes) :
+La <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->valeur du cookie de session "SameSite"<!-- END REF -->. Valeurs possibles (avec constantes) :
 
 | Constante           | Valeur   | Description                                                                                                                               |
 | ------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -689,12 +691,13 @@ Le <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validation d'a
 
 
 <!-- REF #WebServerClass.start().Params -->
+<div class="no-index">
 
-| Paramètres | Type   |    | Description                            |
-| ---------- | ------ | -- | -------------------------------------- |
-| settings   | Object | -> | Paramètres du serveur web au démarrage |
-| Résultat   | Object | <- | État du démarrage du serveur web       |
-
+|Paramètre|Type||Description|
+|---|---|----|---|
+|settings|Object|->|Paramètres du serveur Web à définir au démarrage|  
+|Résultat|Object|<-|Status of the web server startup|
+</div>
 <!-- END REF -->
 
 La fonction `.start()` <!-- REF #WebServerClass.start().Summary -->démarre le serveur web sur lequel elle est appliquée<!-- END REF -->, en utilisant les propriétés définies dans le paramètre optionnel *settings* .
@@ -750,11 +753,13 @@ La fonction retourne un objet décrivant le statut démarré du serveur Web. Cet
 
 
 <!-- REF #WebServerClass.stop().Params -->
-| Paramètres | Type |  | Description                                            |
-| ---------- | ---- |  | ------------------------------------------------------ |
-|            |      |  | Ne requiert aucun paramètre|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---|----|---|
+||||Ne nécessite aucun paramètre|
+</div>
+<!-- END REF -->
 
 La fonction `.stop()` <!-- REF #WebServerClass.stop().Summary -->arrête le serveur web sur lequel elle est appliquée<!-- END REF -->.
 

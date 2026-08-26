@@ -5,9 +5,9 @@ title: OutgoingMessage
 
 `4D.OutgoingMessage` クラスを使うと、アプリケーションの関数が[REST リクエスト](../REST/REST_requests.md) に応答して返すメッセージを作成することができます。 レスポンスが`4D.OutgoingMessage` 型であった場合、REST サーバーはオブジェクトを返すのではなく、`OutgoingMessage` クラスのオブジェクトインスタンスを返します。
 
-通常、このクラスは、カスタムの[HTTP リクエストハンドラー関数](../WebServer/http-request-handler.md#関数の設定) またはHTTP GET リクエストを管理するようにデザインされた、[`onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword) キーワードで宣言された関数内で使用することができます。 このようなリクエストは、例えば、ファイルのダウンロード、画像の生成、ダウンロードなどの機能を実装するためや、ブラウザを介して任意のコンテンツタイプを受信するために使用されます。
+通常、このクラスは、カスタムの[HTTP リクエストハンドラー関数](../WebServer/http-request-handler.md#関数の設定) またはHTTP GET リクエストを管理するようにデザインされた、[`onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword) キーワードで宣言された関数内で使用することができます。 このようなリクエストは、例えば、ファイルのダウンロード、画像の生成、ダウンロードなどの機能を実装するためや、ブラウザーを介して任意のコンテンツタイプを受信するために使用されます。
 
-このクラスのインスタンスは4D Server 上にビルドされ、[4D REST サーバー](../REST/gettingStarted.md) によってのみブラウザに送信することができます。 このクラスを使用することで、HTTP 以外のテクノロジー(例: モバイルなど)を使用することができます。
+このクラスのインスタンスは4D Server 上にビルドされ、[4D REST サーバー](../REST/gettingStarted.md) によってのみブラウザーに送信することができます。 このクラスを使用することで、HTTP 以外のテクノロジー(例: モバイルなど)を使用することができます。
 
 <details><summary>履歴</summary>
 
@@ -96,10 +96,13 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 <!-- REF #OutgoingMessageClass.setBody().Params -->
 
+<div class="no-index">
+
 | 引数   | 型   |    | 説明         |
 | ---- | --- | -- | ---------- |
 | body | any | -> | 送信メッセージの本文 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -132,22 +135,25 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 <!-- REF #OutgoingMessageClass.setHeader().Params -->
 
+<div class="no-index">
+
 | 引数    | 型    |    | 説明            |
 | ----- | ---- | -- | ------------- |
 | key   | Text | -> | 設定するヘッダープロパティ |
 | value | Text | -> | ヘッダープロパティの値   |
 
+</div>
 <!-- END REF -->
 
 #### 説明
 
 `.setHeader()` 関数は、<!-- REF #OutgoingMessageClass.setHeader().Summary -->送信するメッセージのヘッダーの、*key* 引数で指定したキーを、*value* 引数で指定した値で設定します<!-- END REF -->。 両方の引数ともテキスト値でない場合、エラーが発生します。
 
-When returning a 4D.OutgoingMessage object instance, 4D automatically sets some headers (e.g. `Set-Cookie` with `4DSID__ProjectName_=....`).4D.OutgoingMessage オブジェクトインスタンスを返す場合、4D は自動的に一部のヘッダーを自動的に設定します(例: `Set-Cookie` を `4DSID__ProjectName_=....` で設定するなど)。
+4D.OutgoingMessage オブジェクトインスタンスを返す場合、4D は一部のヘッダーを自動的に設定します(例: `Set-Cookie` を `4DSID__ProjectName_=....` で設定するなど)。
 
 :::note
 
-*value* 引数の値を、*key* 引数で"Content-Type" ヘッダーを指定して設定しようとする場合、この関数を、[`setBody()`](#setbody) の後に呼び出すようにして下さい。`setBody()` は自動的にヘッダーに値を入れるからです。 "Content-Type" ヘッダーの値の一覧については、の[`WEB SEND BLOB`](../commands-legacy/web-send-blob.md) ドキュメンテーションを参照して下さい。
+*value* 引数の値を、*key* 引数で"Content-Type" ヘッダーを指定して設定しようとする場合、この関数を、[`setBody()`](#setbody) の後に呼び出すようにして下さい。`setBody()` は自動的にヘッダーに値を入れるからです。 "Content-Type" ヘッダーの値の一覧については、の[`WEB SEND BLOB`](../commands/web-send-blob) ドキュメンテーションを参照して下さい。
 
 :::
 
@@ -161,10 +167,13 @@ When returning a 4D.OutgoingMessage object instance, 4D automatically sets some 
 
 <!-- REF #OutgoingMessageClass.setStatus().Params -->
 
+<div class="no-index">
+
 | 引数     | 型       |    | 説明        |
 | ------ | ------- | -- | --------- |
 | status | Integer | -> | 設定するステータス |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -188,3 +197,4 @@ HTTP ステータスコードの一覧については、[Wikipedia のHTTP ス�
 `.status` プロパティには、<!-- REF #OutgoingMessageClass.status.Summary -->送信メッセージのカレントのステータス<!-- END REF -->が格納されています。 このプロパティは、[`setStatus()`](setstatus) 関数を使用して設定することができます。
 
 <!-- END REF -->
+

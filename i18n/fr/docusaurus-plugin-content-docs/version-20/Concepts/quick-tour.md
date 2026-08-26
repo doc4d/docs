@@ -32,7 +32,7 @@ $myHour:=?08:12:55? //assigne une heure littérale
 
 Vous devez impérativement distinguer l'opérateur d'affectation := des autres opérateurs. Plutôt que de combiner des expressions dans une nouvelle expression, l'opérateur d'affectation copie la valeur de l'expression à droite de l'opérateur d'affectation dans la variable ou le champ situé à gauche de l'opérateur.
 
-**Important :** Ne confondez pas l’opérateur d’assignation (:=) avec le signe égal (=). Un opérateur d'affectation différent (et non pas =) a été choisi délibérément pour éviter les problèmes et la confusion qui surviennent souvent avec == ou === dans d'autres langages de programmation. De telles erreurs sont souvent difficiles à reconnaître pour le compilateur et conduisent à un dépannage fastidieux.
+**Important :** Ne confondez pas l’opérateur d’assignation (:=) avec le signe égal (=). Un opérateur d'assignation différent (et non pas =) a été choisi délibérément pour éviter les problèmes et la confusion qui surviennent souvent avec == ou === dans d'autres langages de programmation. De telles erreurs sont souvent difficiles à reconnaître pour le compilateur et conduisent à un dépannage fastidieux.
 
 ## Variables
 
@@ -56,11 +56,11 @@ Même si cela est généralement déconseillé, vous pouvez créer des variables
 MyOtherDate:=Current date+30
 ```
 
-La ligne de code se lit "MyOtherDate obtient la date actuelle plus 30 jours." Cette ligne crée la variable, lui attribue à la fois le type de date (temporaire) et un contenu. Une variable créée par affectation est interprétée comme étant sans type, c'est-à-dire qu'elle peut être affectée à d'autres types dans d'autres lignes et changer de type dynamiquement. Cette flexibilité ne s'applique pas aux variables déclarées avec le mot-clé `var` (leur type ne peut pas changer) et en [mode compilé](interpreted.md) où le type ne peut jamais être modifié, quelle que soit la manière dont la variable a été créée.
+La ligne de code se lit "MyOtherDate obtient la date actuelle plus 30 jours." Cette ligne crée la variable, lui attribue à la fois le type de date (temporaire) et un contenu. Une variable créée par affectation est interprétée comme étant sans type, c'est-à-dire qu'elle peut être affectée à d'autres types dans d'autres lignes et changer de type dynamiquement. Cette ligne crée la variable, lui attribue à la fois le type de date (temporaire) et un contenu.
 
 ## Commandes
 
-Les commandes 4D sont des méthodes intégrées qui permettent d'effectuer une action. Les commandes sont souvent utilisées avec des paramètres qui sont passés entre parenthèses () et séparés par des points-virgules (;). Voici un exemple :
+Les commandes 4D sont des méthodes intégrées qui permettent d'effectuer une action. Les commandes sont souvent utilisées avec des paramètres qui sont passés entre parenthèses () et séparés par des points-virgules (;). Exemple :
 
 ```4d
 COPY DOCUMENT("dossier1\\nom1";"dossier2\\" ; "nouveau")
@@ -188,6 +188,7 @@ A noter que si la valeur de la propriété de l'objet est un objet qui encapsule
 $f:=New object
 $f.message:=Formula(ALERT("Hello world !"))
 $f.message() //affiche "Hello world!"
+$f.message() //affiche "Hello world!"
 ```
 
 Pour accéder à un élément de collection, vous devez passer le numéro de l'élément situé entre crochets :
@@ -290,7 +291,7 @@ Les expressions sont rarement «autonomes». Il existe plusieurs endroits dans 4
 
 
 ### Types d’expressions
-Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
+Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
 
 | Expression              | Type                  | Description                                                                                                                                                                          |
 | ----------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -317,7 +318,7 @@ Vous vous référez à une expression via le type de données qu’elle retourne
 | Col[5]                  | Élément de collection | Un élément de collection est une expression qui peut être de tout type                                                                                                               |
 | $entitySel[0]           | Entity                | Un élément d'une sélection d'entité ORDA est une expression de type entité. Ce type d'expression n'est **pas affectable**                                                            |
 
-### Expressions assignables et non-assignables
+### Expressions assignables et non-assignables {#assignable-vs-non-assignable-expressions}
 
 Une expression peut simplement être une constante littérale, telle que le chiffre 4 ou la chaîne "Hello", ou une variable telle que `$myButton`. Elle peut également utiliser des opérateurs. Par exemple, 4 + 2 est une expression qui utilise l'opérateur d'addition pour additionner deux nombres et renvoyer le résultat 6. Dans tous les cas, ces expressions sont **non-assignables**, ce qui signifie que vous ne pouvez pas leur affecter de valeur. Dans 4D, les expressions peuvent être **assignables**. Une expression est assignable quand elle peut être utilisée à gauche de l'opérateur d'assignation. Par exemple :
 
@@ -329,7 +330,7 @@ Form.pageNumber:=10 //assigne 10 à Form.pageNumber
 //Form.pageTotal-Form.pageNumber n'est pas assignable :
 Form.pageTotal- Form.pageNumber:=10 //erreur, non assignable
 ```
-En général, les expressions qui utilisent un opérateur ne sont pas assignables. Par exemple, `[Personne] Prénom " " +[Personne]Nom` n'est pas assignable.
+En général, les expressions qui utilisent un opérateur ne sont pas assignables. Par exemple, `[Personne]Prénom " " +[Personne]Nom` n'est pas assignable.
 
 
 ## Pointeurs
@@ -371,7 +372,7 @@ Les deux styles de commentaires peuvent être utilisés simultanément.
 
 #### Commentaires sur une seule ligne (`//commentaire`)
 
-Insérez les caractères `//` au début de la ligne ou après une instruction pour ajouter une ligne de commentaire. Voici un exemple :
+Insérez les caractères `//` au début de la ligne ou après une instruction pour ajouter une ligne de commentaire. Exemple :
 
 ```4d
 //Ceci est un commentaire
@@ -386,7 +387,7 @@ End for
 
 Entourez le contenu avec des caractères `/*` ... `*/` pour créer des commentaires en ligne ou des blocs de commentaires multilignes. Les blocs de commentaire en ligne et multi-lignes commencent par `/*` et se terminent par `*/`.
 
-- Les **lignes de commentaires en ligne** - peuvent être insérées n'importe où dans le code. Voici un exemple :
+- Les **lignes de commentaires en ligne** - peuvent être insérées n'importe où dans le code. Exemple :
 
 ```4d
 For /* ligne de commentaire */ ($vCounter;1;100)
@@ -394,7 +395,7 @@ For /* ligne de commentaire */ ($vCounter;1;100)
 End for
 ```
 
-- Les **blocs de commentaires multi-lignes** permettent de commenter un nombre illimité de lignes. Les blocs de commentaires peuvent être imbriqués (ce qui est utile, étant donné que l'éditeur de code 4D prend en charge les blocs condensés). Voici un exemple :
+- Les **blocs de commentaires multi-lignes** permettent de commenter un nombre illimité de lignes. Les blocs de commentaires peuvent être imbriqués (ce qui est utile, étant donné que l'éditeur de code 4D prend en charge les blocs condensés). Exemple :
 
 ```4d
 For ($vCounter;1;100)

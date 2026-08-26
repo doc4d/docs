@@ -6,7 +6,7 @@ title: Área Web
 ---
 ## Acceder a los métodos 4D
 
-Puede llamar a los métodos 4D desde el código JavaScript ejecutado en un área web y recibir valores a cambio. Para poder llamar a los métodos 4D desde un área Web, debe activar la propiedad de accesibilidad de los métodos 4D ("todos").
+Puede llamar a los métodos 4D desde el código JavaScript ejecutado en un área web y recibir valores a cambio. Puede llamar a los métodos 4D desde el código JavaScript ejecutado en un área web y recibir valores a cambio.
 
 > Esta propiedad solo está disponible si el área web [utiliza el motor de renderizado web integrado](properties_WebArea.md#use-embedded-web-rendering-engine).
 
@@ -30,7 +30,7 @@ Cuando esta propiedad está activada, se instancia un objeto JavaScript especial
 
 Nombre de una variable de tipo Longint. Esta variable recibirá un valor entre 0 y 100, que representa el porcentaje de finalización de la carga de la página en el área web. Actualizado automáticamente por 4D, no puede ser modificado manualmente.
 
-> A partir de 4D v19 R5, esta variable solo se actualiza en Windows si el área Web [utiliza el motor de renderizado Web integrado](properties_WebArea.md#use-embedded-web-rendering-engine).
+> A partir de 4D 19 R5, esta variable solo se actualiza en Windows si el área Web [utiliza el motor de renderizado Web integrado](properties_WebArea.md#use-embedded-web-rendering-engine).
 
 #### Gramática JSON
 
@@ -87,12 +87,12 @@ Esta opción permite elegir entre dos motores de renderizado para el área web, 
 
 > En Windows, si Microsoft Edge WebView2 no está instalado, 4D utiliza el motor integrado como motor de renderizado del sistema. Para saber si está instalado en su sistema, busque "Microsoft Edge WebView2 Runtime" en su panel de aplicaciones.
 
-*   **marcado** - `valor JSON: anidado`: en este caso, 4D utiliza Chromium Embedded Framework (CEF). La utilización del motor web integrado significa que la representación de las áreas web y su funcionamiento en su aplicación son idénticos independientemente de la plataforma utilizada para ejecutar 4D (no obstante, pueden observarse ligeras variaciones de píxeles o diferencias relacionadas con la implementación de la red). La utilización del motor web integrado significa que la representación de las áreas web y su funcionamiento en su aplicación son idénticos independientemente de la plataforma utilizada para ejecutar 4D (no obstante, pueden observarse ligeras variaciones de píxeles o diferencias relacionadas con la implementación de la red).
+*   **marcado** - `valor JSON: anidado`: en este caso, 4D utiliza Chromium Embedded Framework (CEF). La utilización del motor web integrado significa que la representación de las áreas web y su funcionamiento en su aplicación son idénticos independientemente de la plataforma utilizada para ejecutar 4D (no obstante, pueden observarse ligeras variaciones de píxeles o diferencias relacionadas con la implementación de la red). Cuando se elige esta opción, ya no se beneficia de las actualizaciones automáticas del motor Web realizadas por el sistema operativo; sin embargo, [las nuevas versiones de los motores se ofrecen regularmente a través de 4D](../Notes/updates.md#library-table-4d-20-lts).
 
 El motor CEF tiene las siguientes limitaciones:
 
-- [WA SET PAGE CONTENT](https://doc.4d.com/4dv19/help/command/en/page1037.html): utilizar este comando requiere que al menos una página ya esté cargada en el área (a través de una llamada a [`WA OPEN URL`](https://doc.4d.com/4dv19/help/command/en/page1020.html) o una asignación a la variable URL asociada al área).
-- Cuando se activa soltar URLs mediante el selector `WA enable URL drop` del comando [WA SET PREFERENCE](https://doc.4d.com/4Dv18/4D/18.4/WA-SET-PREFERENCE.301-5232962.en.html), la primera soltada debe ir precedida de al menos una llamada a [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18.4/WA-OPEN-URL.301-5232954.en.html) o una asignación a la variable URL asociada al área.
+- [WA SET PAGE CONTENT](https://doc.4d.com/4dv20/help/command/en/page1037.html): el uso de este comando requiere que al menos una página ya esté cargada en el área (mediante una llamada a [`WA OPEN URL`](https://doc.4d.com/4dv20/help/command/en/page1020.html)o una asignación a la variable URL asociada al área).
+- Cuando se habilitan las caídas de URL mediante el selector `WA enable URL drop` del comando [WA SET PREFERENCE](https://doc.4d.com/4dv20/help/command/en/page1041.html), la primera caída debe ir precedida de al menos una llamada a [WA OPEN URL](https://doc.4d.com/4dv20/help/command/en/page1020.html) o una asignación a la variable URL asociada al área.
 
 #### Gramática JSON
 

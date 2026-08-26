@@ -20,7 +20,7 @@ You send `Email` objects using the SMTP [`.send()`](SMTPTransporterClass.md#send
 
 Email objects provide the following properties:
 
-> 4D follows the [JMAP specification](https://jmap.io/spec-mail.html) to format the Email object.
+> 4D follows the [JMAP specification](https://jmap.io/spec/rfc8621/) to format the Email object.
 
 ||
 |---|
@@ -374,16 +374,20 @@ The `.to` property contains the <!-- REF #EmailObjectClass.to.Summary -->primary
 
 
 <!-- REF #_command_.MAIL Convert from MIME.Params -->
+<div class="no-index">
+
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |mime|Blob, Text|->|Email in MIME|
-|Result|Object|<-|Email object|<!-- END REF -->
+|Result|Object|<-|Email object|
+</div>
+<!-- END REF -->
 
 #### Description
 
 The `MAIL Convert from MIME` command <!-- REF #_command_.MAIL Convert from MIME.Summary -->converts a MIME document into a valid email object<!-- END REF -->.
 
->4D follows the [JMAP specification](https://jmap.io/spec-mail.html) to format the returned email object.
+>4D follows the [JMAP specification](https://jmap.io/spec/rfc8621/) to format the returned email object.
 
 Pass in *mime* a valid MIME document to convert. It can be provided by any mail server or application. You can pass a BLOB or a text *mime* parameter. If the MIME comes from a file, it is recommended to use a BLOB parameter to avoid issues related to charset and line break conversions.
 
@@ -459,11 +463,15 @@ $status:=$transporter.send($email)
 
 
 <!-- REF #_command_.MAIL Convert to MIME.Params -->
+<div class="no-index">
+
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |mail|Object|->|Email object|
 |options|Object|->|Charset and encoding mail options|
-|Result|Text|<-|Email object converted to MIME|<!-- END REF -->
+|Result|Text|<-|Email object converted to MIME|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -471,7 +479,7 @@ The `MAIL Convert to MIME` command <!-- REF #_command_.MAIL Convert to MIME.Summ
 
 In *mail*, pass the content and the structure details of the email to convert. This includes information such as the email addresses (sender and recipient(s)), the message itself, and the type of display for the message.
 
->4D follows the [JMAP specification](https://jmap.io/spec-mail.html) to format the email object.
+>4D follows the [JMAP specification](https://jmap.io/spec/rfc8621/) to format the email object.
 
 In *options*, you can set a specific charset and encoding configuration for the mail. The following properties are available:
 

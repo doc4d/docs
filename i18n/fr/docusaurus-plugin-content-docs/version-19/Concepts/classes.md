@@ -278,11 +278,12 @@ $area:=$rect.getArea() //5000
 // Class: MyClass
 Class constructor({$parameterName : type; ...})
 // code
+// code
 ```
 
 :::note
 
-Il n'y a pas de mot-clé de fin pour le code d'une fonction class constructor. Il n'y a pas de mot-clé de fin pour le code d'une fonction.
+Il n'y a pas de mot-clé de fin pour le code d'une fonction de constructeur de classe. Il n'y a pas de mot-clé de fin pour le code d'une fonction.
 
 :::
 
@@ -424,6 +425,11 @@ Function getArea()
 Function getArea()
  var $0 : Integer
  $0:=(This.height)*(This.width)
+
+// Function definition
+Function getArea()
+ var $0 : Integer
+ $0:=(This.height)*(This.width)
 ```
 
 ```4d
@@ -504,12 +510,12 @@ $val:=$o.f() //42
 Lorsqu'une fonction [class constructor](#class-constructor) est utilisée (avec la fonction [`new()`](API/ClassClass.md#new)), son `This` désigne le nouvel objet en cours de construction.
 
 ```4d
-//Class: ob
+//Classe : ob
 
 Class constructor  
 
- // Create properties on This as
- // desired by assigning to them
+ // Créer des propriétés sur This comme
+ // souhaité par assignation
  This.a:=42 
 ```
 

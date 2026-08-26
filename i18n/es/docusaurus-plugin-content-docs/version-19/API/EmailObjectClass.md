@@ -198,7 +198,7 @@ Para mejorar la entregabilidad, se recomienda utilizar las mismas direcciones pa
 
 #### Descripción
 
-La propiedad `.headers` contiene una <!-- REF #EmailObjectClass.headers.Summary -->colección de objetos `EmailHeader`, en el orden en que aparecen en el mensaje<!-- END REF -->. Esta propiedad permite a los usuarios añadir encabezados extendidos (registrados) o definidos por el usuario (no registrados, que comienzan por "X").
+La propiedad `.htmlBody` contiene la <!-- REF #EmailObjectClass.headers.Summary -->representación HTML del mensaje de correo electrónico (el conjunto de caracteres por defecto es UTF-8) (opcional, sólo SMTP)<!-- END REF -->. .
 
 > Si una propiedad del objeto `EmailHeader` define un encabezado como "from" o "cc" que ya está definido como una propiedad a nivel de correo, la propiedad `EmailHeader` se ignora.
 
@@ -215,7 +215,7 @@ Cada objeto de la colección de encabezados puede contener las siguientes propie
 
 #### Descripción
 
-La propiedad `.htmlBody` contiene la <!-- REF #EmailObjectClass.htmlBody.Summary -->representación HTML del mensaje de correo electrónico (el conjunto de caracteres por defecto es UTF-8) (opcional, sólo SMTP)<!-- END REF -->. .
+La propiedad `.textBody` contiene el <!-- REF #EmailObjectClass.htmlBody.Summary -->Representación en texto plano del mensaje de correo electrónico (el conjunto de caracteres por defecto es UTF-8) (opcional, sólo SMTP)<!-- END REF -->. .
 
 ## .id
 
@@ -351,7 +351,7 @@ La propiedad `.subject` contiene la <!-- REF #EmailObjectClass.subject.Summary -
 
 #### Descripción
 
-La propiedad `.textBody` contiene el <!-- REF #EmailObjectClass.textBody.Summary -->Representación en texto plano del mensaje de correo electrónico (el conjunto de caracteres por defecto es UTF-8) (opcional, sólo SMTP)<!-- END REF -->. .
+La propiedad `.headers` contiene una <!-- REF #EmailObjectClass.textBody.Summary -->colección de objetos `EmailHeader`, en el orden en que aparecen en el mensaje<!-- END REF -->. .
 
 ## .to
 
@@ -375,12 +375,14 @@ La propiedad `.to` contiene la(s) <!-- REF #EmailObjectClass.to.Summary -->[dire
 
 
 <!-- REF #_command_.MAIL Convert from_MIME.Params -->
-| Parámetros | Tipo       |    | Descripción                             |
-| ---------- | ---------- |:--:| --------------------------------------- |
-| mime       | Blob, Text | -> | Email en MIME                           |
-| Resultado  | Object     | <- | Objeto Email|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|mime|Blob, Text|->|Email en MIME|
+|Resultado|Object|<-|Email object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -461,13 +463,15 @@ $status:=$transporter.send($email)
 
 
 <!-- REF #_command_.MAIL Convert to MIME.Params -->
-| Parámetros | Tipo   |    | Descripción                                                |
-| ---------- | ------ |:--:| ---------------------------------------------------------- |
-| mail       | Object | -> | Objeto Email                                               |
-| options    | Object | -> | Opciones de codificación y de charset del mail             |
-| Resultado  | Text   | <- | Objeto email convertido en MIME|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|mail|Object|->|Email object|
+|options|Object|->|Charset and encoding mail options|
+|Result|Text|<-|Email object converted to MIME|
+</div>
+<!-- END REF -->
 
 #### Descripción
 

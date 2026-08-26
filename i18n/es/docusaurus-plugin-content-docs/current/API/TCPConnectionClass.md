@@ -5,6 +5,15 @@ title: TCPConnection
 
 La clase `TCPConnection` permite gestionar conexiones cliente del Protocolo de Control de Transmisión (TCP) a un [servidor](./TCPListenerClass.md), permitiendo enviar y recibir datos, y manejar eventos del ciclo de vida de la conexión mediante retrollamadas.
 
+<details><summary>Historia</summary>
+
+| Lanzamiento | Modificaciones                                  |
+| ----------- | ----------------------------------------------- |
+| 20 R9       | Nuevos atributos `listener`, `address` y `port` |
+| 20 R8       | Clase añadida                                   |
+
+</details>
+
 La clase `TCPConnection` está disponible en el class store `4D`. Puede crear una conexión TCP utilizando la función [4D.TCPConnection.new()](#4dtcpconnectionnew) que devuelve un [TCPConnection object](#tcpconnection-object).
 
 Todas las funciones de la clase `TCPConnection` son hilo seguro.
@@ -15,18 +24,13 @@ Los objetos TCPConnection se liberan cuando ya no existen referencias a ellos en
 
 :::info 4DTCPUDPLog.txt file
 
-For debugging and monitoring, you can use the [4DTCPUDPLog.txt log file](../Debugging/debugLogFiles.md#4dtcpudplogtxt) that records events related to TCP connections. Los eventos incluyen transmisión de datos, errores e información del ciclo de vida de la conexión.
+Para la depuración y monitorización, puede utilizar el [archivo de registro 4DTCPUDPLog.txt](../Debugging/debugLogFiles.md#4dtcpudplogtxt) que registra los eventos relacionados con las conexiones TCP. Los eventos incluyen transmisión de datos, errores e información del ciclo de vida de la conexión.
 
 :::
 
-<details><summary>Historia</summary>
+### Programación asíncrona
 
-| Lanzamiento | Modificaciones                                  |
-| ----------- | ----------------------------------------------- |
-| 20 R9       | Nuevos atributos `listener`, `address` y `port` |
-| 20 R8       | Clase añadida                                   |
-
-</details>
+Esta clase soporta programación asíncrona en 4D como se describe en la página [Ejecución Asíncrona](../Develop/async.md).
 
 ### Ejemplos
 
@@ -166,7 +170,7 @@ Los objetos TCPConnection ofrecen las siguientes propiedades y funciones:
 
 #### Descripción
 
-The `4D.TCPConnection.new()` function <!-- REF #4D.TCPConnection.new().Summary -->creates a new TCP connection to the specified *serverAddress* and *serverPort*, using the defined *options*, and returns a `4D.TCPConnection` object<!-- END REF -->.
+La función `4D.TCPConnection.new()` <!-- REF #4D.TCPConnection.new().Summary -->crea una nueva conexión TCP a la *serverAddress* y *serverPort* especificados, usando las *opciones* definidas, y devuelve un objeto `4D.TCPConnection`<!-- END REF -->.
 
 #### Parámetro *options*
 

@@ -68,19 +68,21 @@ Los objetos `Folder` soportan varios nombres de ruta, incluyendo las sintaxis `f
 
 
 <!-- REF #_command_.Folder.Params -->
-| Parámetros     | Tipo      |    | Descripción                                        |
-| -------------- | --------- |:--:| -------------------------------------------------- |
-| path           | Text      | -> | Ruta de la carpeta                                 |
-| folderConstant | Integer   | -> | Constante de la carpeta 4D                         |
-| pathType       | Integer   | -> | `fk posix path` (por defecto) o `fk platform path` |
-| *              |           | -> | * para devolver la carpeta de la base local        |
-| Resultado      | 4D.Folder | <- | Nuevo objeto de carpeta|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|path|Text|->|Ruta de la carpeta|
+|folderConstant|Integer|->|Constante de la carpeta 4D|
+|pathType|Integer|->|`fk posix path` (por defecto) o `fk platform path`|
+|*||->|* para devolver la carpeta de la base de datos local|
+|Resultado|4D.Folder|<-|New folder object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
-El comando `Folder` <!-- REF #_command_.Folder.Summary -->crea y devuelve un nuevo objeto del tipo `4D.Folder`<!-- END REF -->. El comando acepta dos sintaxis:
+crea y devuelve un nuevo objeto del tipo `4D.Folder` <!-- REF #_command_.Folder.Summary -->El comando `Folder`<!-- END REF -->. El comando acepta dos sintaxis:
 
 **Folder ( path { ; pathType } { ; \* } )**
 
@@ -134,7 +136,7 @@ Si el comando se llama desde un componente, pase el *parámetro opcional para ob
 
 #### Descripción
 
-La función `4D.Folder.new()` <!-- REF #4D.Folder.new().Summary -->crea y devuelve un nuevo objeto del tipo `4D.Folder`<!-- END REF -->. Es idéntico al comando [`Folder`](#folder) (acceso directo).
+La función `4D.Folder.new()` <!-- REF #4D.Folder.new().Summary -->El comando `Folder`<!-- END REF -->. Es idéntico al comando [`Folder`](#folder) (acceso directo).
 
 > Se recomienda utilizar el comando de acceso directo[`Folder<`](#folder) en lugar de `4D.Folder.new()`.
 
@@ -154,12 +156,13 @@ La función `4D.Folder.new()` <!-- REF #4D.Folder.new().Summary -->crea y devuel
 
 
 <!--REF #FolderClass.create().Params -->
-| Parámetros | Tipo    |    | Descripción                                                                                   |
-| ---------- | ------- | -- | --------------------------------------------------------------------------------------------- |
-| Resultado  | Boolean | <- | True si la carpeta se ha creado con éxito, false en caso contrario|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|-|
+|Resultado|Boolean|<-|True if the folder was created successfully, false otherwise|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -196,6 +199,9 @@ End if
 Else
  ALERT("Impossible to create a "+$newFolder.name+" folder.")
 End if
+Else
+ ALERT("Impossible to create a "+$newFolder.name+" folder.")
+End if
 ```
 
 <!-- END REF -->
@@ -214,14 +220,16 @@ End if
 
 
 <!--REF #FolderClass.createAlias().Params -->
-| Parámetros        | Tipo      |    | Descripción                                                        |
-| ----------------- | --------- | -- | ------------------------------------------------------------------ |
-| destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo               |
-| aliasName         | Text      | -> | Nombre del alias o del atajo                                       |
-| aliasType         | Integer   | -> | Tipo de enlace del alias                                           |
-| Resultado         | 4D.File   | <- | Referencia de alias o de acceso directo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|-|---|
+|destinationFolder|4D.Folder|->|Carpeta de destino para el alias o acceso directo|
+|aliasName|Text|->|Nombre del alias o acceso directo|
+|aliasType|Integer|->|Tipo del enlace del alias|
+|Result|4D.File|<-|Alias or shortcut reference|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -270,11 +278,13 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!-- REF #FolderClass.delete().Params -->
-| Parámetros | Tipo    |    | Descripción                                                 |
-| ---------- | ------- | -- | ----------------------------------------------------------- |
-| option     | Integer | -> | Opción de eliminación de carpeta|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|opción |Integer|->|Opciones de eliminación de carpetas|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -344,13 +354,15 @@ Cuando se pasa `Delete with contents`:
 
 
 <!--REF #FolderClass.moveTo().Params -->
-| Parámetros        | Tipo      |    | Descripción                               |
-| ----------------- | --------- | -- | ----------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Carpeta de destino                        |
-| newName           | Text      | -> | Nombre completo de la carpeta trasladada  |
-| Resultado         | 4D.Folder | <- | Carpeta movida|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|destinationFolder|4D.Folder|->|Carpeta de destino|
+|newName|Text|->|Nombre completo de la carpeta movida|
+|Resultado|4D.Folder|<-|Moved folder|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -400,12 +412,14 @@ Quiere mover y renombrar una carpeta:
 
 
 <!--REF #FolderClass.rename().Params -->
-| Parámetros | Tipo      |    | Descripción                                   |
-| ---------- | --------- | -- | --------------------------------------------- |
-| newName    | Text      | -> | Nuevo nombre completo para la carpeta         |
-| Resultado  | 4D.Folder | <- | Carpeta renombrada|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|newName|Text|->|Nuevo nombre completo para la carpeta|
+|Resultado|4D.Folder|<-|Renamed folder|
+</div>
+<!-- END REF -->
 
 #### Descripción
 

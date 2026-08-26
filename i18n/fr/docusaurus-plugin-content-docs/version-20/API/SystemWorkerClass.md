@@ -61,11 +61,14 @@ $myMacWorker:= 4D.SystemWorker.new("chmod x /folder/myfile.sh")
 
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| Paramètres  | Type            |    | Description                                                            |
-| ----------- | --------------- |:--:| ---------------------------------------------------------------------- |
-| commandLine | Text            | -> | Ligne de commande à exécuter                                           |
-| options     | Object          | -> | Paramètres du worker                                                   |
-| Résultat    | 4D.SystemWorker | <- | Nouveau System worker asynchrone ou null si le process n'a pas démarré |  
+<div class="no-index">
+
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|commandLine|Text|->|Ligne de commande à exécuter|
+|options|Object|->|Paramètres du Worker|
+|Résultat|4D.SystemWorker|<-|New asynchronous System worker or null if process not started|
+</div>
 <!-- END REF -->
 
 #### Description
@@ -265,11 +268,13 @@ Function _createFile($title : Text; $textBody : Text)
 
 
 <!-- REF #SystemWorkerClass.closeInput().Params -->
-| Paramètres | Type |  | Description                                            |
-| ---------- | ---- |::| ------------------------------------------------------ |
-|            |      |  | Ne requiert aucun paramètre|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+||||Ne nécessite aucun paramètre|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -336,7 +341,7 @@ La propriété `.currentDirectory` <!-- REF #SystemWorkerClass.currentDirectory.
 
 #### Description
 
-La propriété `.dataType` <!-- REF #SystemWorkerClass.dataType.Summary -->contient le type du contenu du corps de la réponse<!-- END REF -->. Valeurs possibles : "text" ou "blob".
+La propriété `.dataType` <!-- REF #SystemWorkerClass.dataType.Summary -->contient le type du contenu du corps de la réponse<!-- END REF -->. .
 
 Cette propriété est en **lecture seule**.
 
@@ -428,12 +433,14 @@ Cette propriété est en **lecture seule**.
 
 
 <!-- REF #SystemWorkerClass.postMessage().Params -->
-| Paramètres  | Type |    | Description                                                     |
-| ----------- | ---- |:--:| --------------------------------------------------------------- |
-| message     | Text | -> | Texte à écrire dans le flux d'entrée (stdin) du process externe |
-| messageBLOB | Blob | -> | Octets écrits dans le flux d'entrée|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|message|Text|->|Texte à écrire sur le flux d'entrée (stdin) du processus externes|
+|messageBLOB|Blob|->|Octets à écrire sur le flux d'entrée|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -481,15 +488,17 @@ La propriété `.responseError` <!-- REF #SystemWorkerClass.responseError.Summar
 
 
 <!-- REF #SystemWorkerClass.terminate().Params -->
-| Paramètres | Type |  | Description                                            |
-| ---------- | ---- |::| ------------------------------------------------------ |
-|            |      |  | Ne requiert aucun paramètre|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+||||Ne nécessite aucun paramètre|
+</div>
+<!-- END REF -->
 
 #### Description
 
-La fonction `.terminate()` <!-- REF #SystemWorkerClass.terminate().Summary -->force le `SystemWorker` à mettre fin à son exécution<!-- END REF -->.
+La fonction `.terminate()` <!-- REF #SystemWorkerClass.terminate().Summary -->La fonction `.terminate()`<!-- END REF -->.
 
 Cette fonction envoie l'instruction de terminer et de redonner le contrôle au script en cours d'exécution.
 
@@ -541,12 +550,14 @@ Cette propriété est en **lecture seule**.
 
 
 <!-- REF #SystemWorkerClass.wait().Params -->
-| Paramètres | Type            |    | Description                                  |
-| ---------- | --------------- |:--:| -------------------------------------------- |
-| timeout    | Real            | -> | Temps d'attente (en secondes)                |
-| Résultat   | 4D.SystemWorker | <- | Objet SystemWorker<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|timeout|Real|->|Temps d'attente (en secondes)|
+|Résultat|4D.SystemWorker|<-|SystemWorker object|
+</div>
+<!-- END REF -->
 
 #### Description
 

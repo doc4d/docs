@@ -77,9 +77,9 @@ Para mayor comodidad, cuando la fórmula se compone de un único método proyect
  var $f : 4D.Function
 
  $f:=Formula(myMethod)
-  //Writing Formula(myMethod($1;$2)) is not necessary
- $text:=$f.call(Null;"Hello";"World") //returns "Hello World"
- $text:=$f.call() //returns "How are you?"
+  //Writing Formula(myMethod($1;$2)) no es necesario
+ $text:=$f.call(Null;"Hello";"World") //devuelve "Hello World"
+ $text:=$f.call() //devuelve "How are you?"
 
   //myMethod
  #DECLARE ($param1 : Text; $param2 : Text)->$return : Text
@@ -129,13 +129,14 @@ Los parámetros se reciben en el método, en el orden en que se especifican en l
 
 
 <!-- REF #_command_.Formula.Params -->
-| Parámetros | Tipo        |    | Descripción                                                        |
-| ---------- | ----------- |:--:| ------------------------------------------------------------------ |
-| formulaExp | Expression  | -> | Fórmula a devolver como objeto                                     |
-| Resultado  | 4D.Function | <- | Función nativa que encapsula la fórmula|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|formulaExp|Expression|->|Fórmula a devolver como objeto|
+|Resultado|4D.Function|<-|Native function encapsulating the formula|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -268,13 +269,14 @@ Llamar a una fórmula utilizando la notación de objetos:
 
 
 <!-- REF #_command_.Formula from string.Params -->
-| Parámetros    | Tipo        |    | Descripción                                                       |
-| ------------- | ----------- |:--:| ----------------------------------------------------------------- |
-| formulaString | Text        | -> | Fórmula texto a devolver como objeto                              |
-| Resultado     | 4D.Function | <- | Objeto nativo que encapsula la fórmula|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|formulaString|Text|->|Fórmula de texto a devolver como objeto|
+|Resultado|4D.Function|<-|Native object encapsulating the formula|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -327,14 +329,15 @@ El siguiente código creará un diálogo que acepta una fórmula en formato text
 
 
 <!-- REF #FunctionClass.apply().Params -->
-| Parámetros    | Tipo       |    | Descripción                                                                   |
-| ------------- | ---------- |:--:| ----------------------------------------------------------------------------- |
-| thisObj       | Object     | -> | Objeto a devolver por el comando This en la fórmula                           |
-| formulaParams | Collection | -> | Colección de valores que se pasan como $1...$n cuando se ejecuta la `fórmula` |
-| Resultado     | any        | <- | Valor de la ejecución de la fórmula|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|thisObj|Object|->|Objeto a devolver por el comando This en la fórmula||
+|formulaParams ||Collection|->|Colección de valores a pasar como $1...$n cuando se ejecute `formula`|
+|Result|any|<-|Value from formula execution|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -397,18 +400,19 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 </details>
 
-<!-- REF #FunctionClass.call().Syntax -->**.call**() : any<br/>**.call**( *thisObj* : Object { ; ...*params* : any } ) : any<!-- END REF -->
+<!-- REF #FunctionClass.call().Syntax -->**.call**() : any<br/>**.call**( *thisObj* : Object { ; *...params* : any } ) : any<!-- END REF -->
 
 
 <!-- REF #FunctionClass.call().Params -->
-| Parámetros | Tipo   |    | Descripción                                                        |
-| ---------- | ------ | -- | ------------------------------------------------------------------ |
-| thisObj    | Object | -> | Objeto a devolver por el comando This en la fórmula                |
-| params     | any    | -> | Valor(es) que se pasa(n) como $1...$n cuando se ejecuta la fórmula |
-| Resultado  | any    | <- | Valor de la ejecución de la fórmula|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|---|
+|thisObj|Object|->|Objeto a devolver por el comando This en la fórmula|
+|params |any|->|Valor(es) a pasar como $1...$n cuando se ejecuta la fórmula|
+|Resultado|any||<-|Value from formula execution|
+</div>
+<!-- END REF -->
 
 
 #### Descripción

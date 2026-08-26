@@ -40,24 +40,26 @@ If you assign an element's index that surpasses the last existing element of the
   //myCol[4]=null
 ```
 
+
+
 ## Instantiation 
 
 Collections must have been instantiated, otherwise trying to read or modify their elements will generate a syntax error.
 
 Collection instantiation can be done in one of the following ways:
 
-- using the [`New collection`](../commands/new-collection.md) command,
+- using the [`New collection`](../commands/new-collection) command,
 - using the `[]` operator.
 
 :::info
 
-Several 4D commands and functions return collections, for example [`Monitored activity`](../commands-legacy/monitored-activity.md) or [`collection.copy`](../API/CollectionClass.md#copy). In this case, it is not necessary to instantiate explicitely the collection, the 4D language does it for you.
+Several 4D commands and functions return collections, for example [`Monitored activity`](../commands/monitored-activity) or [`collection.copy`](../API/CollectionClass.md#copy). In this case, it is not necessary to instantiate explicitely the collection, the 4D language does it for you.
 
 :::
 
 ### `New collection` command
 
-The [`New collection`](../commands/new-collection.md) command creates a new empty or prefilled collection and returns its reference. 
+The [`New collection`](../commands/new-collection) command creates a new empty or prefilled collection and returns its reference. 
 
 Examples:
 
@@ -107,10 +109,50 @@ If you create a collection literal containing a single element, make sure you do
 
 You can create two types of collections:
 
-- regular (non-shared) collections, using the [`New collection`](commands/new-collection.md) command or collection literal syntax (`[]`). These collections can be edited without any specific access control but cannot be shared between processes. 
-- shared collections, using the [`New shared collection`](commands/new-shared-collection.md) command. These collections can be shared between processes, including preemptive threads. Access to these collections is controlled by [`Use...End use`](Concepts/shared.md#useend-use) structures. 
+- regular (non-shared) collections, using the [`New collection`](../commands/new-collection) command or collection literal syntax (`[]`). These collections can be edited without any specific access control but cannot be shared between processes. 
+- shared collections, using the [`New shared collection`](../commands/new-shared-collection) command. These collections can be shared between processes, including preemptive threads. Access to these collections is controlled by [`Use...End use`](Concepts/shared.md#useend-use) structures. 
 
 For more information, refer to the [Shared objects and collections](shared.md) section.
+
+
+## Assignment
+
+Collection and [object](./dt_object.md) data types are handled in the 4D language through **references** (i.e., internal pointers), unlike scalar data types (integer, date, etc.). As a result, when assigning a collection to a variable (e.g. `$myVar:=[1;2;3]`), it is the **reference** that is assigned, not the value itself. Any subsequent modification of the *$myVar* variable will therefore be reflected everywhere the original collection is referenced. This follows the same principle as [pointers](./dt_collection.md), except that the *$myVar* variable does not need to be dereferenced.
+
+For example:
+
+```4d
+var $col1; $col2 : Collection
+var $o : Object
+
+$col1:=[1;2;3] //a reference to the collection is created
+$col2:=$col1 //both variables share the same collection reference
+$o:={ list:$col1 } //the object stores a reference to the same collection
+
+$col1.push(4)
+//$col2 = [1,2,3,4]
+//$o = {"list":[1,2,3,4]}
+
+$col2[0]:=10
+//$col1 = [10,2,3,4]
+//$o = {"list":[10,2,3,4]}
+
+$o.list.push(5)
+//$col1 = [10,2,3,4,5]
+//$col2 = [10,2,3,4,5]
+
+ASSERT($col1=$col2) //True
+```
+
+This principle applies wherever objects or collections are assigned, including in [parameters](./parameters.md) or [formula](../commands/formula) expressions.
+
+:::note
+
+If you want to create a **deep copy** of a collection, use the [`collection.copy()`](../API/CollectionClass.md#copy) function. 
+
+:::
+
+
 
 ## Collection functions  
 
@@ -174,3 +216,45 @@ Reading the **length** property of an undefined collection produces 0:
      var $c : Collection //variable created but no collection is defined
      $size:=$c.length //$size = 0
 ```
+
+## Type conversions between collections and 4D arrays
+
+When moving values between [arrays](./arrays.md) (typed) and collections (non-typed), 4D applies automatic conversions according to the values and the array type declarations.
+
+### Converting collections to arrays
+
+The following conversions are applied to values handled by the following commands:
+
+- [`COLLECTION TO ARRAY`](../commands/collection-to-array)
+- [`OB GET ARRAY`](../commands/ob-get-array)
+
+|Collection element type|null|boolean|Infinity|real|string|date|picture|object|collection|4D.BLOB|
+|----|----|----|----|----|----|----|----|----|----|----|
+|[`ARRAY TEXT`](../commands/array-text)|""	|"false" or "true"	|"Infinity"	|number with dot separator (if necessary)|Text|	Conversion of date in text according to [Dates inside objects](../commands/set-database-parameter#dates-inside-objects-85) parameter|"[object Object]"	|"[object Object]"|Collection elements separated by ,|"[object Object]"|
+|[`ARRAY LONGINT`](../commands/array-longint)|0|0 or 1|not defined behavior|rounded according to standard rounding rules|0 if string does not start with [0-9,+,-,e,.,x], otherwise standard conversion. Supports hexa notation prefix 0x|0|0|0|0|0
+|[`ARRAY REAL`](../commands/array-real)|	0|	0 or 1	|INF|	real|	same as ARRAY LONGINT|	0|	0|	0|	0|	0|
+|[`ARRAY INTEGER`](../commands/array-integer)|0|	0 or 1	|0|	rounded according to std rounding rules|	same as ARRAY LONGINT|	0|	0|	0|	0|	0|
+|[`ARRAY BOOLEAN`](../commands/array-boolean)|	False|	false or true	|true	|true if #0	|true if string#""|	true if date#"00/00/00"|	True|	True|	True|	True|
+|[`ARRAY OBJECT`](../commands/array-object)|	undefined|	undefined|	undefined|	undefined|	undefined|	undefined|	Object picture|	Object|	Undefined|	4D.Blob|
+|[`ARRAY BLOB`](../commands/array-blob)|0 bytes|	0 bytes|	0 bytes	|0 bytes|	0 bytes|	0 bytes	|0 bytes|	0 bytes	|0 bytes|	Blob|
+|[`ARRAY PICTURE`](../commands/array-picture)|	0 bytes	|0 bytes	|0 bytes|	0 bytes	|0 bytes|	0 bytes	|Picture	|0 bytes	|0 bytes|	0 bytes|
+|[`ARRAY DATE`](../commands/array-date)|00/00/00|	00/00/00	|00/00/00	|00/00/00|	00/00/00 or a date if ISO8601 compliant format|	date|	00/00/00|	00/00/00|	00/00/00|	00/00/00|
+|[`ARRAY TIME`](../commands/array-time)|	00:00:00|	00:00:00	|not defined behavior	|number of seconds in 00:00:00 format|	number of seconds in 00:00:00 format|	00:00:00|	00:00:00|	00:00:00|	00:00:00|	00:00:00|
+
+:::note
+
+Blob objects (4D.Blob) are [automatically converted to scalar blobs](dt_blob.md#automatic-conversion-of-blob-type) and vice versa when necessary.
+
+:::
+
+
+### Converting arrays to collections 
+
+The following conversions are applied to values handled by the following commands:
+
+- [`ARRAY TO COLLECTION`](../commands/array-to-collection)
+- [`OB SET ARRAY`](../commands/ob-set-array)
+
+||[`ARRAY TEXT`](../commands/array-text)|[`ARRAY LONGINT`](../commands/array-longint)|[`ARRAY REAL`](../commands/array-real)|[`ARRAY INTEGER`](../commands/array-integer)|[`ARRAY BOOLEAN`](../commands/array-boolean)|[`ARRAY OBJECT`](../commands/array-object)|[`ARRAY PICTURE`](../commands/array-picture)|[`ARRAY DATE`](../commands/array-date)|[`ARRAY TIME`](../commands/array-time)	|[`ARRAY BLOB`](../commands/array-blob)|
+|---|----|----|----|----|----|----|----|---|----|----|
+|Collection element types|text|number|number|number|boolean|object or null|picture|text or date according to the [Dates inside objects](../commands/set-database-parameter#dates-inside-objects-85) parameter|number of seconds|4D.Blob|

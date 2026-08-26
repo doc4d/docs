@@ -20,7 +20,7 @@ title: Email
 
 Email オブジェクトは次のプロパティを提供します:
 
-> 4D は Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec-mail.html) に準拠します。
+> 4D は Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec/rfc8621/) に準拠します。
 
 |                                                                                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,13 +51,13 @@ Email オブジェクトは次のプロパティを提供します:
 
 メールアドレスを格納するプロパティ ([`from`](#from), [`cc`](#cc), [`bcc`](#bcc), [`to`](#to), [`sender`](#sender), [`replyTo`](#replyto)) はすべて、テキスト・オブジェクト・コレクション型の値を受け付けます。
 
-#### Text
+#### テキスト
 
 - 単一のメールアドレス: "somebody@domain.com"
 - 単一の表示名+メールアドレス: "Somebody <somebody@domain.com>"
 - 複数のメールアドレス: "Somebody <somebody@domain.com>,me@home.org"
 
-#### Object
+#### オブジェクト
 
 2つのプロパティを持つオブジェクト:
 
@@ -66,7 +66,7 @@ Email オブジェクトは次のプロパティを提供します:
 | name  | Text | 表示名 (null も可能) |
 | email | Text | メールアドレス        |
 
-#### Collection
+#### コレクション
 
 アドレスオブジェクトのコレクション
 
@@ -190,7 +190,7 @@ MailAttachment オブジェクトは [`MAIL New attachment`](MailAttachmentClass
 - sender ドメインは、受信側のメールサーバーがセッションを開いたときに受け取るドメインです。
 - from アドレスは、受信者から見えるアドレスです。
 
-混乱を避けるため、sender および from アドレスには同じアドレスを使用することが推奨されます。
+配信性向上のため、sender および from アドレスには同じアドレスを使用することが推奨されます。
 
 ## .headers
 
@@ -324,7 +324,7 @@ MailAttachment オブジェクトは [`MAIL New attachment`](MailAttachmentClass
 - sender ドメインは、受信側のメールサーバーがセッションを開いたときに受け取るドメインです。
 - from アドレスは、受信者から見えるアドレスです。
 
-混乱を避けるため、sender および from アドレスには同じアドレスを使用することが推奨されます。
+配信性向上のため、sender および from アドレスには同じアドレスを使用することが推奨されます。
 
 ## .size
 
@@ -374,17 +374,19 @@ MailAttachment オブジェクトは [`MAIL New attachment`](MailAttachmentClass
 
 
 <!-- REF #_command_.MAIL Convert from MIME.Params -->
-| 引数   | 型          |    | 説明                                      |
-| ---- | ---------- |:--:| --------------------------------------- |
-| mime | Blob, Text | -> | MIME形式のメール                              |
-| 戻り値  | Object     | <- | Email オブジェクト|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|mime|Blob, Text|->|MIME形式のEメール|
+|戻り値|Object|<-|Email object|
+</div>
+<!-- END REF -->
 
 #### 説明
 
 `MAIL Convert from MIME` コマンドは、 <!-- REF #_command_.MAIL Convert from MIME.Summary -->MIMEドキュメントを有効な Emailオブジェクトへと変換します<!-- END REF -->。
-> 戻り値の Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec-mail.html) に準拠します。
+> 4Dは戻り値の Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec/rfc8621/) に準拠します。
 
 *mime* には、変換する有効な MIME ドキュメントを渡します。 これはどのメールサーバーまたはアプリケーションから提供されたものでも可能です。 *mime* 引数として、BLOB またはテキストを渡すことができます。 MIME がファイルから渡された場合、文字セットと改行コード変換に関する問題を避けるため、BLOB型の引数を使用することが推奨されます。
 
@@ -460,20 +462,22 @@ $status:=$transporter.send($email)
 
 
 <!-- REF #_command_.MAIL Convert to MIME.Params -->
-| 引数      | 型      |    | 説明                                                 |
-| ------- | ------ |:--:| -------------------------------------------------- |
-| mail    | Object | -> | Email オブジェクト                                       |
-| options | Object | -> | 文字セットとエンコーディングのメールオプション                            |
-| 戻り値     | Text   | <- | MIME に変換された Emailオブジェクト|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|mail|Object|->|Email オブジェクト|
+|options|Object|->|文字セットおよびエンコーディングのメールオプション|
+|戻り値|Text|<-|Email object converted to MIME|
+</div>
+<!-- END REF -->
 
 #### 説明
 
 `MAIL Convert to MIME` コマンドは、 <!-- REF #_command_.MAIL Convert to MIME.Summary -->Emailオブジェクトを MIMEテキストへと変換します<!-- END REF -->。 このコマンドは、Email オブジェクトを送信する前に整形する目的で[SMTP_transporter.send()](SMTPTransporterClass.md#send) コマンドによって内部的に呼び出されます。 また、オブジェクトの MIME フォーマットを解析するためにも使用されます。
 
 *mail* には、変換するメールのコンテンツとストラクチャーの詳細を渡します。 この情報には、メールアドレス (送信者と受信者)、メッセージそのもの、メッセージの表示タイプなどが含まれます。
-> Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec-mail.html) に準拠します。
+> 4D は Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec/rfc8621/) に準拠します。
 
 *options* 引数を渡すと、メールに対して特定の文字セットとエンコーディング設定を指定することができます。 次のプロパティを利用することができます:
 

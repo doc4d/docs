@@ -70,15 +70,17 @@ Les objets `Folder` prennent en charge plusieurs formes de chemin d'accès, y co
 
 
 <!-- REF #_command_.Folder.Params -->
-| Paramètres     | Type      |    | Description                                        |
-| -------------- | --------- |:--:| -------------------------------------------------- |
-| path           | Text      | -> | Chemin du dossier                                  |
-| folderConstant | Integer   | -> | Constante de dossier 4D                            |
-| pathType       | Integer   | -> | `fk posix path` (par défaut) ou `fk platform path` |
-| *              |           | -> | * pour retourner le dossier de la base hôte        |
-| Résultat       | 4D.Folder | <- | Nouvel objet dossier|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|path|Text|->|Chemin d'accès du dossier|
+|folderConstant|Integer|->|Constante de dossier 4D|
+|pathType|Integer|->|`fk posix path` (par défaut) ou `fk platform path`|
+|*||->|* pour renvoyer le dossier de la base de données hôte|
+|Résultat|4D.Folder|<-|New folder object|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -157,17 +159,18 @@ La fonction `.4D.Folder.new()` <!-- REF #4D.Folder.new().Summary -->crée et ren
 
 
 <!--REF #FolderClass.create().Params -->
-| Paramètres | Type    |    | Description                                                                      |
-| ---------- | ------- | -- | -------------------------------------------------------------------------------- |
-| Résultat   | Boolean | <- | Vrai si le dossier a été créé avec succès, sinon Faux|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|Résultat|Booléen|<-|True if the folder was created successfully, false otherwise|
+</div>
+<!-- END REF -->
 
 
 #### Description
 
-La fonction `.create()` <!-- REF #FolderClass.create().Summary -->crée un dossier sur le disque selon les propriétés de l'objet `Folder`<!-- END REF -->.
+La fonction `.create()` <!-- REF #FolderClass.create().Summary -->La fonction `.create()`<!-- END REF -->.
 
 Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur la description des propriétés [platformPath](#platformpath) ou [path](#path). Si le dossier existe déjà sur disque, la fonction ne fait rien (aucune erreur n'est générée) et retourne faux.
 
@@ -214,14 +217,16 @@ End if
 
 
 <!--REF #FolderClass.createAlias().Params -->
-| Paramètres         | Type      |    | Description                                                                |
-| ------------------ | --------- | -- | -------------------------------------------------------------------------- |
-| dossierDestination | 4D.Folder | -> | Dossier de destination pour l'alias ou le raccourci                        |
-| aliasName          | Text      | -> | Nom de l'alias ou du raccourci                                             |
-| aliasType          | Integer   | -> | Type de lien de l'alias                                                    |
-| Résultat           | 4D.File   | <- | Référence de l'alias ou du raccourci du dossier|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---||
+|destinationFolder|4D.Folder|->|Dossier de destination pour l'alias ou le raccourci|
+|aliasName|Text|->|Nom de l'alias ou du raccourci|
+|aliasType|Integer|->|Type du lien de l'alias|
+|Résultat|4D.File|<-|Alias or shortcut reference|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -270,11 +275,13 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!-- REF #FolderClass.delete().Params -->
-| Paramètres | Type    |    | Description                                                 |
-| ---------- | ------- | -- | ----------------------------------------------------------- |
-| option     | Integer | -> | Option de suppression du dossier|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|---|
+|option |Integer|->|Option de suppression de dossier|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -344,13 +351,15 @@ Lorsque la constante `Delete with contents` est passée :
 
 
 <!--REF #FolderClass.moveTo().Params -->
-| Paramètres         | Type      |    | Description                                |
-| ------------------ | --------- | -- | ------------------------------------------ |
-| dossierDestination | 4D.Folder | -> | Dossier de destination                     |
-| nouveauNom         | Text      | -> | Nom complet du dossier déplacé             |
-| Résultat           | 4D.Folder | <- | Dossier déplacé|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|---|
+|destinationFolder|4D.Folder|->Dossier de destination|
+|newName|Text|->|Nom complet du dossier déplacé|
+|Résultat|4D.Folder|<-|Moved folder|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -400,12 +409,14 @@ Vous souhaitez déplacer et renommer un dossier :
 
 
 <!--REF #FolderClass.rename().Params -->
-| Paramètres | Type      |    | Description                                |
-| ---------- | --------- | -- | ------------------------------------------ |
-| nouveauNom | Text      | -> | Nouveau nom complet du dossier             |
-| Résultat   | 4D.Folder | <- | Dossier renommé|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---|---|---|
+|newName|Text|->|Nouveau nom complet du dossier|
+|Résultat|4D.Folder|<-|Renamed folder|
+</div>
+<!-- END REF -->
 
 #### Description
 

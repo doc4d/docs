@@ -6,7 +6,7 @@ title: Paramètres
 
 Vous aurez souvent besoin de fournir des valeurs à vos méthodes et fonctions. Vous pouvez facilement effectuer cette opération grâce aux paramètres.
 
-## Vue d’ensemble
+## Passer des paramètres
 
 **Les paramètres** (ou **arguments**) sont des données dont une méthode ou une fonction de classe a besoin pour s’exécuter. Le terme *paramètres* ou *arguments* est utilisé indifféremment dans ce manuel. Des paramètres sont également passés aux commandes intégrées de 4D. Dans l’exemple ci-dessous, la chaîne “Bonjour” est un paramètre de la commande `ALERT` :
 
@@ -107,6 +107,12 @@ Tous les types de méthodes 4D prennent en charge le mot-clé `#DECLARE`, y comp
 $entitySelection:=ds.User.query("login=:1"; $user)
 // vérifier le hash du mot de passe...
 ```
+
+:::note
+
+Ne pas confondre les **déclarations de paramètres** avec les [**déclarations de variables**](variables.md#declaring-variables). L'utilisation du mot-clé `var` avec des paramètres génère des erreurs.
+
+:::
 
 ### Valeur retournée
 
@@ -270,7 +276,7 @@ Lors de l'utilisation du mot-clé `#DECLARE`, les paramètres sont automatiqueme
 
 ```4d
 #DECLARE($myParam : Text; $myOtherParam : Integer) : Boolean
-	// tous les paramètres de la méthode sont déclarés avec leur type
+    // tous les paramètres de la méthode sont déclarés avec leur type
 ```
 
 Cependant, une fonctionnalité du compilateur 4D vous permet de déclarer tous vos paramètres dans une méthode spécifique à l'aide d'une syntaxe spéciale :
@@ -318,13 +324,13 @@ Function add($x : Variant; $y : Integer)-> $result : Integer
 - Objets formulaires qui acceptent l'événement formulaire `Sur glisser` - Le paramètre $0 (Entier long), qui résulte de l'événement formulaire `Sur glisser` est typé par le compilateur si le paramètre n'a pas été explicitement déclaré. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans la méthode projet. **Note :** Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire `Sur glisser`, vous devez initialiser $0. Par exemple :
 
 ```4d
- C_LONGINT($0)
- If(Form event code=On Drag Over)
-    $0:=0
-    ...
-    If($DataType=Is picture)
+ If($DataType=Is picture)
        $0:=-1
     End if
+    ...
+    C_LONGINT($0)
+ If(Form event code=On Drag Over)
+    $0:=0
     ...
  End if
 ```

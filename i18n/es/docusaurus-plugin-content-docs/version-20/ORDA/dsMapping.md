@@ -3,7 +3,7 @@ id: dsmapping
 title: Objeto del modelo de datos
 ---
 
-The ORDA technology is based upon an automatic mapping of an underlying [database structure](https://doc.4d.com/4Dv20/4D/20.2/Creating-a-database-structure.200-6750097.en.html). También ofrece acceso a los datos a través de los objetos selección de entidades (entity selection) y entidad (entity). Como resultado, ORDA expone toda la base de datos como un conjunto de objetos del modelo de datos.
+La tecnología ORDA se basa en un mapeo automático de una estructura de una base de datos [subyacente](https://doc.4d.com/4Dv20/4D/20.2/Creating-a-database-structure.200-6750097.en.html). También ofrece acceso a los datos a través de los objetos selección de entidades (entity selection) y entidad (entity). Como resultado, ORDA expone toda la base de datos como un conjunto de objetos del modelo de datos.
 
 
 ## Mapeo de la estructura
@@ -146,7 +146,7 @@ Las propiedades de dataclass son objetos atributo que describen los campos o rel
  $revenuesAttribute:=ds.Company["revenues"] //forma alternativa
 ```
 
-Este código asigna a `$nameAttribute` y `$revenuesAttribute` las referencias a los atributos name y revenues de la clase `Company`. Esta sintaxis NO devuelve valores contenidos dentro del atributo, sino que devuelve referencias a los propios atributos [con sus **propiedades de atributo**](../API/DataClassClass.md#attributename). Para manejar los valores, es necesario pasar por [Entidades](#entity).
+Este código asigna a `$nameAttribute` y `$revenuesAttribute` las referencias a los atributos name y revenues de la clase `Company`. Para manejar los valores, es necesario pasar por [Entidades](#entity). Esta sintaxis NO devuelve valores contenidos dentro del atributo, sino que devuelve referencias a los propios atributos [con sus **propiedades de atributo**](../API/DataClassClass.md#attributename).
 
 Todos los campos elegibles de una tabla están disponibles como atributos de su [dataclass](#dataclass) padre. Para los datastores remotos a los que se accede a través de `Open datastore` o [peticiones REST](REST/gettingStarted.md), se debe seleccionar la opción **Exponer como recurso REST** al nivel de la estructura 4D para cada campo que se desee exponer como atributo de dataclass.
 
@@ -171,7 +171,7 @@ Además, los siguientes atributos relacionales también estarán disponibles aut
 
 *   en la dataclass Project: el atributo **theClient**, del tipo "relatedEntity"; hay como máximo una Empresa para cada Proyecto (el cliente)
 *   en la dataclass Company: el atributo **companyProjects**, del tipo "relatedEntities"; para cada empresa existe un cierto número de proyectos relacionados.
-> La propiedad Manual o Automática de una relación de base de datos no tiene efecto en ORDA.
+> > La propiedad Manual o Automática de una relación de base de datos no tiene efecto en ORDA.
 
 Todos los atributos de la dataclass se exponen como propiedades de la dataclass:
 

@@ -68,10 +68,13 @@ Esta propriedade é só de leitura.
 
 <!-- REF #WebSocketConnectionClass.send().Params -->
 
-| Parâmetro | Tipo                 |     | Descrição           |
-| --------- | -------------------- | :-: | ------------------- |
-| message   | Text / Blob / Object |  -> | A mensagem a enviar |
+<div class="no-index">
 
+| Parâmetro | Tipo               |     | Descrição           |
+| --------- | ------------------ | :-: | ------------------- |
+| message   | Text, Blob, Object |  -> | A mensagem a enviar |
+
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -80,11 +83,11 @@ A função `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->envia 
 
 Os conteúdos seguintes são enviados em função do tipo de *message*:
 
-| Tipo   | Conteúdo                                                                                                                    |
-| ------ | --------------------------------------------------------------------------------------------------------------------------- |
-| Text   | Texto em UTF-8                                                                                                              |
-| Blob   | Dados binários                                                                                                              |
-| Object | Texto em JSON UTF-8 (o mesmo resultado que com [`JSON Stringify`](../commands-legacy/json-stringify.md)) |
+| Tipo   | Conteúdo                                                                                                          |
+| ------ | ----------------------------------------------------------------------------------------------------------------- |
+| Text   | Texto em UTF-8                                                                                                    |
+| Blob   | Dados binários                                                                                                    |
+| Object | Texto em JSON UTF-8 (o mesmo resultado que com [`JSON Stringify`](../commands/json-stringify)) |
 
 <!-- END REF -->
 
@@ -110,11 +113,14 @@ Esta propriedade é só de leitura.
 
 <!-- REF #WebSocketConnectionClass.terminate().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo    |     | Descrição                                                                                                       |
 | --------- | ------- | :-: | --------------------------------------------------------------------------------------------------------------- |
 | code      | Integer |  -> | Código de erro enviado ao cliente (deve ser > 3000, caso contrário a mensagem não é enviada) |
 | message   | Text    |  -> | Mensagem de erro enviada ao cliente                                                                             |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -138,4 +144,5 @@ A propriedade `.wss` contém <!-- REF #WebSocketConnectionClass.wss.Summary -->o
 Esta propriedade é só de leitura.
 
 <!-- END REF -->
+
 

@@ -399,14 +399,16 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!-- REF #directory.copyTo().Params -->
-| Parámetros        | Tipo      |    | Descripción                                            |
-| ----------------- | --------- |:--:| ------------------------------------------------------ |
-| destinationFolder | 4D.Folder | -> | Carpeta de destino                                     |
-| newName           | Text      | -> | Nombre para la copia                                   |
-| overwrite         | Integer   | -> | `fk overwrite` para sustituir los elementos existentes |
-| Resultado         | 4D.Folder | <- | Carpeta o archivo copiado|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|destinationFolder | 4D.Folder |->|carpeta Destino|
+|newName|Text|->|Nombre para la copia|
+|overwrite|Integer|->|`fk overwrite` para reemplazar elementos existentes|
+|Result|4D.Folder|<-|Copied file or folder|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -454,12 +456,14 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 
 
 <!-- REF #directory.file().Params -->
-| Parámetros | Tipo    |    | Descripción                                                             |
-| ---------- | ------- | -- | ----------------------------------------------------------------------- |
-| path       | Text    | -> | Ruta POSIX relativa                                                     |
-| Resultado  | 4D.File | <- | Objeto `File` (null si la ruta no es válida)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|path|Text|->|Nombre de ruta del archivo POSIX relativo|
+|Resultado|4D.File|<-|`File` object (null if invalid path)|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -496,19 +500,21 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 
 <!-- REF #directory.files().Params -->
-| Parámetros | Tipo       |    | Descripción                                                     |
-| ---------- | ---------- | -- | --------------------------------------------------------------- |
-| options    | Integer    | -> | Opciones de la lista de archivos                                |
-| Resultado  | Collection | <- | Colección de objetos de archivo hijo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|-|
+|opciones|Integer|->|Opciones de lista de archivos|
+|Resultado|Collection|<-|Collection of children file objects|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
 La función `.files()` devuelve <!-- REF #directory.files().Summary -->una colección de objetos `File` contenidos en la carpeta<!-- END REF -->.
 > Los alias o enlaces simbólicos no se resuelven.
 
-Por defecto, si se omite el parámetro *options*, sólo se devuelven en la colección los archivos del primer nivel de la carpeta, así como los archivos o carpetas invisibles. Puede modificar esto pasando, en el parámetro *options*, una o varias de las siguientes constantes:
+Por defecto, si omite el parámetro *options,*, sólo los archivos del primer nivel de la carpeta se devuelven en la colección, incluyendo archivos invisibles. Puede modificar esto pasando, en el parámetro *options*, una o varias de las siguientes constantes:
 
 | Constante             | Valor | Comentario                                                                      |
 | --------------------- | ----- | ------------------------------------------------------------------------------- |
@@ -529,6 +535,7 @@ Quiere saber si hay archivos invisibles en la carpeta de la base:
  $noInvisible:=Folder(fk database folder).files(fk ignore invisible)
  If($all.length#$noInvisible.length)
     ALERT("Database folder contains hidden files.")
+ End if
  End if
  End if
 ```
@@ -560,12 +567,14 @@ Quiere obtener todos los archivos que no son invisibles en la carpeta Documents:
 
 
 <!-- REF #directory.folder().Params -->
-| Parámetros | Tipo      |    | Descripción                                                                   |
-| ---------- | --------- | -- | ----------------------------------------------------------------------------- |
-| path       | Text      | -> | Ruta POSIX relativa                                                           |
-| Resultado  | 4D.Folder | <- | Objeto carpeta creado (null si *path*no es válido)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|path|Text|->|Nombre de ruta del archivo POSIX relativo|
+|Resultado|4D.Folder|<-|Created folder object (null if invalid *path*)|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -602,12 +611,14 @@ Un objeto `Folder` o null si *path* no es válido.
 
 
 <!-- REF #directory.folders().Params -->
-| Parámetros | Tipo       |    | Descripción                                                     |
-| ---------- | ---------- | -- | --------------------------------------------------------------- |
-| options    | Integer    | -> | Opciones de la lista de carpetas                                |
-| Resultado  | Collection | <- | Colección de objetos de carpeta hijo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|-|
+|opciones|Integer|->|Opciones de lista de carpetas|
+|Resultado|Collection|<-|Collection of children folder objects|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -651,12 +662,14 @@ Quiere obtener la colección de todas las carpetas y subcarpetas de la carpeta d
 
 
 <!-- REF #directory.getIcon().Params -->
-| Parámetros | Tipo    |    | Descripción                                       |
-| ---------- | ------- | -- | ------------------------------------------------- |
-| size       | Integer | -> | Longitud del lado de la imagen devuelta (píxeles) |
-| Resultado  | Picture | <- | Icono|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|size|Integer|->|Longitud lateral para la imagen devuelta (píxeles)|
+|Resultado|Image|<-|Icon|
+</div>
+<!-- END REF -->
 
 #### Descripción
 

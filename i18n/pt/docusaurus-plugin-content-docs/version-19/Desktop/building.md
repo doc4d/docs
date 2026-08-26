@@ -170,7 +170,7 @@ Ao criar um aplicativo autônomo, o 4D copia o conteúdo da pasta 4D Volume Desk
 * Instalar uma versão 4D Volume Desktop correspondente a um idioma específico;
 * Adicionar uma pasta personalizada *PlugIns*;
 * Construir um pacote de projeto
-> Construir um pacote de projeto > Construir um pacote de projeto > No macOS, o 4D Volume Desktop é fornecido na forma de um pacote de software. Para modificá-lo, primeiro é preciso exibir seu conteúdo (**Control+clique** no ícone).
+> Construir um pacote de projeto > Construir um pacote de projeto > Construir um pacote de projeto > No macOS, o 4D Volume Desktop é fornecido na forma de um pacote de software. Para modificá-lo, primeiro é preciso exibir seu conteúdo (**Control+clique** no ícone).
 
 #### Localização dos arquivos da Web
 
@@ -349,8 +349,8 @@ executable\&#060;ApplicationName&#062;Server\Server Database`.
 
 Para ativar este recurso, adicione as chaves `DatabaseToEmbedInClientWinFolder` e/ou `DatabaseToEmbedInClientMacFolder` no arquivo de configurações do *buildApp*. Quando uma das chaves estiver presente, a aplicação cliente gera uma aplicação monousuário: a estrutura compilada, ao inves do arquivo *EnginedServer.4Dlink* é colocada na pasta "Database".
 
-* Se existir uma pasta de dados padrão no aplicativo de usuário único, uma licença será incorporada.
-* Se não existir uma pasta de dados padrão no aplicativo de usuário único, ela será executada sem arquivo de dados e sem licença.
+* If a default data folder exists in the single-user application, a license is embedded.
+* If no default data folder exists in the single-user application, it will be executed without data file and without license.
 
 O cenário básico é o seguinte:
 
@@ -423,7 +423,7 @@ Se houver um conflito entre duas versões diferentes do mesmo plug-in (uma carre
 
 ## Página Licenças e certificados
 
-A página Licences & Certificate pode ser utilizada para:
+The Licenses & Certificate page can be used to:
 
 * designar o(s) número(s) da licença que você deseja integrar em seu aplicativo de stand-alone de usuário único
 * assinar a aplicação através de um certificado no macOS.
@@ -500,7 +500,7 @@ Para obter mais informações sobre o conceito de notarização, consulte [nesta
 
 * **Windows** - Ao construir uma aplicação clicável e dupla, o 4D lida com a personalização do seu ícone. Para fazer isso, você deve criar um arquivo de ícone (*. extensão co* , antes de construir o arquivo do aplicativo e colocá-lo ao lado da pasta do projeto.
 
- Seu arquivo de ícone deve ter o mesmo nome do arquivo de projeto e incluir a extensão *.icns*. 4D leva automaticamente este arquivo em conta ao construir o aplicativo clicável duplo (o arquivo *.icns* é renomeado *ApplicationName.</p></li> </ul>
+ Seu arquivo de ícone deve ter o mesmo nome do arquivo de projeto e incluir a extensão *.icns*. 4D leva automaticamente este arquivo em conta ao construir o aplicativo clicável duplo (o arquivo *.icns* é renomeado *ApplicationName.
 
 Você também pode definir as [chaves XML ](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html) específicas no arquivo buildApp.4DSettings para designar cada ícone a ser usado. Estão disponíveis as seguintes chaves:
 

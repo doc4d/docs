@@ -109,13 +109,14 @@ Méthode ***OpenForm*** :
 
 
 <!-- REF #_command_.New signal.Params -->
-| Paramètres  | Type      |    | Description                                             |
-| ----------- | --------- |:--:| ------------------------------------------------------- |
-| Description | Text      | -> | Description du signal                                   |
-| Résultat    | 4D.Signal | <- | Object encapsulant le signal|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|description|Text|->|Description du signal|
+|Résultat|4D.Signal|<-|Native object encapsulating the signal|
+</div>
+<!-- END REF -->
 
 
 #### Description
@@ -209,7 +210,7 @@ Cette propriété est en **lecture-écriture**.
 
 #### Description
 
-La propriété `.signaled` <!-- REF #SignalClass.signaled.Summary -->contient l'état courant de l'objet `Signal`<!-- END REF -->. Lorsque le signal est créé, `.signaled` est **False**. Elle devient **True** lorsque la fonction `.trigger( )` est appelée sur l'objet.
+La propriété `.signaled` <!-- REF #SignalClass.signaled.Summary -->contient l'état courant de l'objet `Signal`<!-- END REF -->. . Lorsque le signal est créé, `.signaled` est **False**.
 
 Cette propriété est en **lecture seule**.
 
@@ -232,12 +233,13 @@ Cette propriété est en **lecture seule**.
 
 
 <!-- REF #SignalClass.trigger().Params -->
-| Paramètres | Type |  | Description                                            |
-| ---------- | ---- |::| ------------------------------------------------------ |
-|            |      |  | Ne requiert aucun paramètre|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+||||Ne nécessite aucun paramètre|
+</div>
+<!-- END REF -->
 
 
 #### Description
@@ -265,13 +267,14 @@ Si le signal est déjà dans l'état signaled (i.e., la propriété `signaled` e
 
 
 <!-- REF #SignalClass.wait().Params -->
-| Paramètres | Type    |    | Description                                                 |
-| ---------- | ------- | -- | ----------------------------------------------------------- |
-| timeout    | Real    | -> | Délai d'attente maximum du signal en secondes               |
-| Résultat   | Boolean | <- | Etat de la propriété `.signaled`|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Paramètre|Type||Description|
+|---|---|---|---|
+|timeout|Real|->|Durée maximale d'attente pour le signal, en secondes|
+|Résultat|Boolean|<-|State of the `.signaled` property|
+</div>
+<!-- END REF -->
 
 
 #### Description

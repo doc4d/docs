@@ -111,11 +111,14 @@ WebSocketサーバーオブジェクトは、以下のプロパティと機能�
 
 
 <!-- REF #4D.WebSocketServer.new().Params -->
-| 引数                           | 型                  |    | 説明                                        |
-| ---------------------------- | ------------------ |:--:| ----------------------------------------- |
-| [WSSHandler](#wsshandler-引数) | Object             | -> | WebSocketサーバー用コールバックを宣言しているユーザークラスのオブジェクト |
-| [options](#options-引数)       | Object             | -> | WebSocket の設定パラメーター                       |
-| 戻り値                          | 4D.WebSocketServer | <- | 新しい WebSocketServer オブジェクト                |
+<div class="no-index">
+
+|引数|型||説明|
+|---------|--- |:---:|------|
+|[WSSHandler](#wsshandler-parameter)|Object|->|WebSocketサーバー用コールバックを宣言しているユーザークラスのオブジェクト|
+|[options](#options-parameter)|Object|->|WebSocket の設定パラメーター|
+|戻り値|4D.WebSocketServer|<-|New WebSocketServer object|
+</div>
 <!-- END REF -->
 
 
@@ -231,7 +234,7 @@ LogFile("!!! サーバーエラー: "+$event.errors.first().message)
 
 ### `connectionHandler` オブジェクト
 
-`WSHandler.onConnection` コールバックの結果として、`connectionHandler` オブジェクトを渡します。これは、WebSocket 接続でイベントが発生するたび (主にメッセージが受信されるたび) に呼び出されるユーザークラスのインスタンスです。 このクラスでは、以下のコールバック関数を定義します (`onMessage` のみ必須):
+`WSHandler.onConnection` コールバックの結果として、`connectionHandler` オブジェクトを渡します。 これは、WebSocket 接続でイベントが発生するたび (主にメッセージが受信されるたび) に呼び出されるユーザークラスのインスタンスです。 このクラスでは、以下のコールバック関数を定義します (`onMessage` のみ必須):
 
 | 引数          | 型                            | 説明                                         |
 | ----------- | ---------------------------- | ------------------------------------------ |
@@ -300,7 +303,8 @@ Function onMessage($ws : 4D.WebSocketConnection; $message : Object)
 
 Function onOpen($ws : 4D.WebSocketConnection; $message : Object)
     // 新規接続ユーザーにメッセージを送信します
-    $ws.send("チャットへようこそ！")
+    $ws.send("チャットへようこそ！
+    ")
     // その他の接続済チャットクライアントに "新規クライアントが接続しました" メッセージを送信します
     This.broadcast($ws;"新規クライアントが接続しました")
 
@@ -366,7 +370,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 
 #### 説明
 
-`.handler` プロパティは、 <!-- REF #WebSocketServerClass.handler.Summary -->WebSocketサーバーの開始に使用された `WSSHandler` オブジェクトを取得するアクセサーです<!-- END REF -->。
+`.handler` プロパティは、 <!-- REF #WebSocketServerClass.handler.Summary -->`.handler` プロパティは、<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -391,9 +395,12 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 
 
 <!-- REF #WebSocketServerClass.terminate().Params -->
-| 引数      | 型       |    | 説明                              |
-| ------- | ------- |:--:| ------------------------------- |
-| timeout | Integer | -> | WebSocketサーバーを終了するまでの待機時間 (秒単位) |
+<div class="no-index">
+
+|引数|型||説明|
+|---------|--- |:---:|------|
+|timeout|Integer|->|WebSocket サーバーを終了するまでの待機時間 (秒単位)|
+</div>
 <!-- END REF -->
 
 

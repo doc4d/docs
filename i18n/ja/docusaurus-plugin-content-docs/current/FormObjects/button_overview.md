@@ -118,7 +118,7 @@ title: ボタン
 
 ベベルボタンは、明るいグレーの背景に中央配置のラベルがデフォルトで付いています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
-- *Windows* - ボタンがハイライト表示されます。 "ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
+- *Windows* - ボタンがハイライト表示されます。 "ポップアップメニューあり" プロパティを使用ていると、ボタンの右側中央に三角形が表示されます。
 
 ![](../assets/en/FormObjects/button_bevel.png)
 
@@ -146,7 +146,7 @@ title: ボタン
 
 角の丸いベベルボタンは、明るいグレーの背景に中央配置のラベルがデフォルトで付いています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
-- *Windows* - ベベルボタンと同じです。 "ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
+- *Windows* - ベベルボタンと同じです。 "ポップアップメニューあり" プロパティを使用ていると、ボタンの右側中央に三角形が表示されます。
 
 ![](../assets/en/FormObjects/button_roundedbevel.png)
 
@@ -202,7 +202,7 @@ OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルとほ
 
 デフォルトで、OS Xテクスチャーボタンの外観は次の通りです:
 
-- *Windows* - 明るいブルーの背景に中央配置のラベルが付いた標準のシステムボタンです。 Vistaにおいては透明になる特別機能を持っています。
+- *Windows* - 明るいブルーの背景に中央配置のラベルが付いた標準のシステムボタンです。
 
 ![](../assets/en/FormObjects/button_osxtextured.png)
 
@@ -277,11 +277,13 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 ### サークル
 
-サークルスタイルのボタンは、円形のシステムボタンとして表示されます。 このボタンスタイルは macOS 用に用意されています。
+サークルスタイルのボタンは、円形のシステムボタンとして表示されます。
 
 ![](../assets/en/FormObjects/button_circleM.png)
 
-Windows の場合、サークルは表示されません。
+このボタンスタイルはmacOS および[Windows Fluent UI テーマ](../FormEditor/forms.md#fluent-ui-レンダリングを有効化する)でサポートされています。
+
+Windows Classic UI テーマでは、このスタイルはサポートされません。
 
 #### JSON 例:
 
@@ -337,3 +339,7 @@ Windows の場合、サークルは表示されません。
   [横方向マージン](properties_TextAndPicture.md#横方向マージン) -
   [縦方向マージン](properties_TextAndPicture.md#縦方向マージン)
 - 通常、フラット: [デフォルトボタン](properties_Appearance.md#デフォルトボタン)
+
+## サポートされるイベント
+
+[On Alternative Click](../Events/onAlternativeClick.md) - [On Begin Drag Over](../Events/onBeginDragOver.md) - [On Clicked](../Events/onClicked.md) - [On Double Clicked](../Events/onDoubleClicked.md) - [On Drag Over](../Events/onDragOver.md) - [On Drop](../Events/onDrop.md) - [On Getting focus](../Events/onGettingFocus.md) - [On Header](../Events/onHeader.md) - [On Load](../Events/onLoad.md) - [On Long Click](../Events/onLongClick.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Mouse Enter](../Events/onMouseEnter.md) - [On Mouse Leave](../Events/onMouseLeave.md) - [On Mouse Move](../Events/onMouseMove.md) - [On Printing Break](../Events/onPrintingBreak.md) - [On Printing Detail](../Events/onPrintingDetail.md) - [On Printing Footer](../Events/onPrintingFooter.md) - [On Unload](../Events/onUnload.md) - [On Validate](../Events/onValidate.md)

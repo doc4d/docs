@@ -45,7 +45,7 @@ Le champ contient en fait "proportion". 4D accepte et stocke la saisie complète
 
 #### Objets pris en charge
 
-[Liste déroulante](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Colonne listbox](listbox_overview.md#list-box-columns) - [Pied de page listbox](listbox_overview.md#list-box-footers)
+[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)
 
 ---
 
@@ -56,16 +56,16 @@ Les formats de date contrôlent la façon dont les dates apparaissent lorsqu'ell
 
 Le tableau ci-dessous montre les choix disponibles :
 
-| Nom du format               | Chaine JSON              | Exemple (système US)          |
-| --------------------------- | ------------------------ | ----------------------------- |
-| Système date court          | systemShort (par défaut) | 03/25/20                      |
-| Système date abrégé *(1)*   | systemMedium             | Wed, Mar 25, 2020             |
-| Système date long           | systemLong               | Wednesday, March 25, 2020     |
-| RFC 822                     | rfc822                   | Tue, 25 Mar 2020 22:00:00 GMT |
-| Siècle court                | shortCentury             | 03/25/20 but 04/25/2032 *(2)* |
-| Interne date long           | long                     | March 25, 2020                |
+| Nom du format             | Chaine JSON              | Exemple (système US)          |
+| ------------------------- | ------------------------ | ----------------------------- |
+| Système date court        | systemShort (par défaut) | 03/25/20                      |
+| Système date abrégé *(1)* | systemMedium             | Wed, Mar 25, 2020             |
+| Système date long         | systemLong               | Wednesday, March 25, 2020     |
+| RFC 822                   | rfc822                   | Tue, 25 Mar 2020 22:00:00 GMT |
+| Siècle court              | shortCentury             | 03/25/20 but 04/25/2032 *(2)* |
+| Interne date long         | long                     | March 25, 2020                |
 | Interne date abrégé *(1)* | abbreviated              | Mar 25, 2020                  |
-| Interne date court          | short                    | 03/25/2020                    |
+| Interne date court        | short                    | 03/25/2020                    |
 | ISO Date Heure *(3)*      | iso8601                  | 2020-03-25T00:00:00           |
 
 *(1)* Pour éviter toute ambiguïté et conformément à la pratique actuelle, les formats de date abrégés affichent "jun" pour juin et "jul" pour juillet. Cette particularité ne s'applique qu'aux versions françaises de 4D.
@@ -83,7 +83,7 @@ Le tableau ci-dessous montre les choix disponibles :
 
 #### Objets pris en charge
 
-[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)
 
 ---
 
@@ -240,7 +240,7 @@ Le tableau suivant montre comment les différents formats affectent l'affichage 
 
 #### Objets pris en charge
 
-[Boîte de ComboBox](comboBox_overview.md) - [Liste déroulante](dropdownList_Overview.md) - [Entrée](input_overview.md) - [Colonne de la liste](listbox_overview.md#list-box-columns) - [Pied de list box](listbox_overview.md#list-box-footers) - [Indicateurs de progression](progressIndicator.md)
+[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [Progress Indicators](progressIndicator.md)
 
 ---
 
@@ -299,7 +299,7 @@ Si le champ est réduit à une taille plus petite que celle de l'image d'origine
 
 #### Objets pris en charge
 
-\[Input\](input_overview.md) - \[Colonne de List box\](listbox_overview.md#list-box-columns) - \[Pied List Box\](listbox_overview.md#list-box-footers)
+[Input](input_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)
 
 ---
 
@@ -321,8 +321,8 @@ Le tableau ci-dessous montre les formats d'affichage du champ Heure et donne des
 | Minutes Secondes          | MM_SS        | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                                                                       | 270 Minutes 25 Secondes         |
 | ISO Date Heure            | iso8601      | Correspond à la norme XML pour représenter des données liées au temps. Il est principalement destiné à être utilisé lors de l'import/export de données au format XML et dans les services Web | 0000-00-00T04:30:25             |
 | Système heure court       | - (default)  | Format heure standard défini dans le système                                                                                                                                                  | 04:30:25                        |
-| Système heure long abrégé | systemMedium | macOS seulement : Format d'heure abrégé défini dans le système. <br/>Windows : ce format est le même que le format système heure court                                                  | 4•30•25 AM                      |
-| Système heure long        | systemLong   | macOS seulement : Format d'heure long défini dans le système. <br/>Windows : ce format est le même que le format système heure court                                                    | 4:30:25 AM HNEC                 |
+| Système heure long abrégé | systemMedium | macOS seulement : Format d'heure long défini dans le système. <br/>Windows : ce format est le même que le format système heure court                                                    | 4•30•25 AM                      |
+| Système heure long        | systemLong   | macOS seulement : Format d'heure abrégé défini dans le système. <br/>Windows : ce format est le même que le format système heure court                                                  | 4:30:25 AM HNEC                 |
 
 #### Grammaire JSON
 
@@ -332,7 +332,7 @@ Le tableau ci-dessous montre les formats d'affichage du champ Heure et donne des
 
 #### Objets pris en charge
 
-[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)
 
 ---
 
@@ -341,7 +341,7 @@ Le tableau ci-dessous montre les formats d'affichage du champ Heure et donne des
 Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est affichée comme suit :
 
 * un texte dans un [objet de saisie](input_overview.md)
-* un ["popup"](properties_Display.md#display-type) dans une [colonne de list box](listbox_overview.md#list-box-columns)
+* a ["popup"](properties_Display.md#display-type) in a [list box column](listbox-column.md),
 
 ... vous pouvez sélectionner le texte à afficher pour chaque valeur :
 
@@ -356,7 +356,7 @@ Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est aff
 
 #### Objets pris en charge
 
-\[Colonne de list box\](listbox_overview.md#list-box-columns)
+[List Box Column](listbox-column.md) - [Input](input_overview.md)
 
 ---
 
@@ -376,7 +376,7 @@ Les colonnes booléennes peuvent également être affichées sous forme de pop u
 
 #### Objets pris en charge
 
-[\[Colonne de list box\](listbox_overview.md#list-box-columns)](listbox_overview.md#list-box-columns)
+[\[Colonne de list box\](listbox_overview.md#list-box-columns)](listbox-column.md)
 
 ---
 
@@ -398,7 +398,7 @@ En particulier, cette propriété permet de mettre en œuvre des boutons "invisi
 
 ---
 
-## Trois États
+## Trois états
 
 Permet à un objet case à cocher d'accepter un troisième état. La variable associée à la case à cocher retourne la valeur 2 lorsque celle-ci se trouve dans le troisième état.
 
@@ -424,7 +424,7 @@ Dans ce cas également, la propriété \[Titre\](#titre) est également disponib
 
 #### Objets pris en charge
 
-[Case à cocher](checkbox_overview.md) - [Colonne de list box](listbox_overview.md#list-box-columns)
+[Check box](checkbox_overview.md) - [List Box Column](listbox-column.md)
 
 ---
 
@@ -445,7 +445,7 @@ Dans ces cas, le titre de la case à cocher peut être saisi en utilisant cette 
 
 #### Objets pris en charge
 
-[\[Colonne de list box\](listbox_overview.md#list-box-columns)](listbox_overview.md#list-box-columns)
+[\[Colonne de list box\](listbox_overview.md#list-box-columns)](listbox-column.md)
 
 ---
 
@@ -481,7 +481,7 @@ La propriété Tronquer avec ellipse peut être appliquée aux colonnes de type 
 
 #### Objets pris en charge
 
-[List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)
 
 ---
 
@@ -512,7 +512,7 @@ Cette propriété est utilisée uniquement lors du dessin d'objets situés dans 
 
 #### Objets pris en charge
 
-\[Zone 4D View Pro\](viewProArea_overview.md) - \[Zone 4D Write Pro\](writeProArea_overview.md) - \[Bouton\](button_overview.md) - \[Grille de boutons\](buttonGrid_overview.md) - \[Case à cocher\](checkbox_overview.md) - \[Combo Box\](comboBox_overview.md) - \[Liste déroulante\](dropdownList_Overview.md) - \[Zone de groupe\](groupBox.md) - \[Liste hiérarchique\](list_overview.md) - \[List Box\](listbox_overview.md) - \[Colonne de list box\](listbox_overview.md#list-box-columns) - \[Pied de list box\](listbox_overview.md#list-box-footers) - \[En-tête de list box\](listbox_overview.md#list-box-headers) - \[Bouton image\](pictureButton_overview.md) - \[Pop up menu image\](picturePopupMenu_overview.md) - \[Zone de Plug-in\](pluginArea_overview.md) - \[Indicateur de progression\](progressIndicator.md) - \[Bouton radio\](radio_overview.md) - \[Spinner\](spinner.md) - \[Splitter\](splitters.md) - \[Image statique\](staticPicture.md) - \[Stepper\](stepper.md) - \[Sous-formulaire\](subform_overview.md) - \[Onglet\](tabControl.md) - \[Zone de texte\](text.md) - \[Zone Web\](webArea_overview.md)
+[4D View Pro area](viewProArea_overview.md) - [4D Write Pro area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress indicator](progressIndicator.md) - [Radio Button](radio_overview.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 ---
 
@@ -567,4 +567,4 @@ Notez que quelle que soit la valeur de l'option de renvoi à la ligne automatiqu
 
 #### Objets pris en charge
 
-\[Input\](input_overview.md) - \[Colonne de List box\](listbox_overview.md#list-box-columns) - \[Pied List Box\](listbox_overview.md#list-box-footers)
+[Input](input_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)

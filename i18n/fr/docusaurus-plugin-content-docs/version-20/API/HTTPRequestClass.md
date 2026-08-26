@@ -88,13 +88,15 @@ Les objets HTTPRequest fournissent les propriétés et fonctions suivantes :
 
 
 <!-- REF #4D.HTTPRequest.new().Params -->
-| Paramètres | Type           |    | Description                                        |
-| ---------- | -------------- |:--:| -------------------------------------------------- |
-| url        | Text           | -> | URL à laquelle envoyer la requête                  |
-| options    | Object         | -> | Propriétés de configuration de la requête          |
-| Résultat   | 4D.HTTPRequest | <- | Nouvel objet HTTPRequest<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|url|Text|->|URL vers laquelle envoyer la requête|
+|options|Object|->|Propriétés de configuration de la requête|
+|Résultat|4D.HTTPRequest|<-|New HTTPRequest object|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -315,11 +317,13 @@ La propriété `.returnResponseBody` contient <!-- REF #HTTPRequestClass.returnR
 
 
 <!-- REF #HTTPRequestClass.terminate().Params -->
-| Paramètres | Type |  | Description                                            |
-| ---------- | ---- |::| ------------------------------------------------------ |
-|            |      |  | Ne requiert aucun paramètre|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+||||Ne nécessite aucun paramètre|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -369,12 +373,14 @@ La propriété `.url` contient <!-- REF #HTTPRequestClass.url.Summary -->l'URL d
 
 
 <!-- REF #HTTPRequestClass.wait().Params -->
-| Paramètres | Type           |    | Description                                         |
-| ---------- | -------------- |:--:| --------------------------------------------------- |
-| time       | Real           | -> | Délai d'attente maximum en secondes pour la réponse |
-| Résultat   | 4D.HTTPRequest | <- | Objet HTTPRequest<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|time|Real|->|Durée maximale d'attente de la réponse, en secondes|
+|Résultat|4D.HTTPRequest|<-|HTTPRequest object|
+</div>
+<!-- END REF -->
 
 #### Description
 

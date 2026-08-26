@@ -90,10 +90,13 @@ El tipo de valor del atributo depende del tipo [kind](DataClassClass.md#attribut
 
 <!-- REF #EntityClass.clone().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                      |                             | Descripción                                   |
 | ---------- | ------------------------- | :-------------------------: | --------------------------------------------- |
 | Resultado  | 4D.Entity | <- | Nueva entidad que hace referencia al registro |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -104,7 +107,7 @@ Esta función permite actualizar las entidades por separado. Sin embargo, tenga 
 
 > Tenga en cuenta que toda modificación realizada a las entidades se guardará en el registro referenciado sólo cuando se ejecute la función [`.save()`](#save).
 
-Esta función sólo puede utilizarse con entidades ya guardadas en la base de datos. No se puede llamar a una entidad recién creada (para la que [`isNew()`](#isnew) devuelve **True**).
+Esta función sólo puede utilizarse con entidades ya guardadas en la base de datos. La función `.touched()` <!-- REF #EntityClass.touched().Summary -->devuelve True si al menos un atributo de la entidad ha sido modificado desde que la entidad fue cargada en memoria o guardada<!-- END REF -->.
 
 #### Ejemplo 1
 
@@ -146,12 +149,15 @@ Si no desea que la nueva entidad comparta referencias de atributos de tipo objet
 
 <!-- REF #EntityClass.diff().Params -->
 
+<div class="no-index">
+
 | Parámetros          | Tipo                      |                             | Descripción                                |
 | ------------------- | ------------------------- | :-------------------------: | ------------------------------------------ |
 | entityToCompare     | 4D.Entity |              ->             | Entidad a comparar con la entidad original |
 | attributesToCompare | Collection                |              ->             | Nombre de los atributos a comparar         |
 | Resultado           | Collection                | <- | Diferencias entre las entidades            |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -338,9 +344,10 @@ vCompareResult1 (se devuelven todas las diferencias):
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 17          | Añadidos       |
+| Lanzamiento | Modificaciones             |
+| ----------- | -------------------------- |
+| 21          | Añadidos los estados 7 y 8 |
+| 17          | Añadidos                   |
 
 </details>
 
@@ -348,11 +355,14 @@ vCompareResult1 (se devuelven todas las diferencias):
 
 <!-- REF #EntityClass.drop().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                                                        |
 | ---------- | ------- | :-------------------------: | -------------------------------------------------------------------------------------------------- |
 | mode       | Integer |              ->             | `dk force drop if stamp changed`: activa el soltar incluso si el sello ha cambiado |
 | Resultado  | Object  | <- | Resultado de la operación soltar                                                                   |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -392,13 +402,15 @@ El objeto devuelto por `.drop()` contiene las siguientes propiedades:
 
 (\*) Los siguientes valores pueden ser devueltos en las propiedades *status* y *statusText* del objeto *Result* en caso de error:
 
-| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ----------------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). Cuando se utiliza entity.drop( ), este error puede ser devuelto cuando se utiliza la opción dk force drop if stamp changed. Cuando se utiliza entity.lock(), se puede devolver este error cuando la opción dk reload if stamp changed es utilizada</li> **statusText asociado**: "Entity does not exist anymore" |
-| `dk status locked`                        | 3     | La entidad está bloqueada por un bloqueo pesimista.<br/> **statusText asociado**: "Already locked"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<br/>**statusText asociado**: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `dk status stamp has changed`             | 2     | El valor del marcador interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).<br/><li>con `.save()`: error solo si no se utiliza la opción `dk auto merge`</li><li>con `.drop()`: error solo si no se utiliza la opción `dk force drop if stamp changed`</li><li>con `.lock()`: error solo si no se utiliza la opción `dk reload if stamp changed`</li><li>**Estado asociado**: "Stamp has changed"</li>                                                                                                                                                                                                                                                                                                                          |
-| `dk status wrong permission`              | 1     | Los privilegios actuales no permiten suprimir la entidad. **Associated statusText**: "Permission Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). Cuando se utiliza entity.drop(), este error puede ser devuelto cuando se utiliza la opción dk force drop if stamp changed. Cuando se utiliza entity.lock(), se puede devolver este error cuando la opción dk reload if stamp changed es utilizada.</li> **statusText asociado**: "Entity does not exist anymore" |
+| `dk status locked`                        | 3     | La entidad está bloqueada por un bloqueo pesimista.<br/> **statusText asociado**: "Already locked"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `dk status validation failed`             | 7     | Error no crítico enviado por el desarrollador para un [evento de validación](../ORDA/orda-events.md). **statusText asociado**: "Mild Validation Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<br/>**statusText asociado**: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `dk status serious validation error`      | 8     | Error crítico enviado por el desarrollador para un [evento de validación](../ORDA/orda-events.md). **statusText asociado**: "Serious Validation Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `dk status stamp has changed`             | 2     | El valor del marcador interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).<br/><li>con `.save()`: error solo si no se utiliza la opción `dk auto merge`</li><li>con `.drop()`: error solo si no se utiliza la opción `dk force drop if stamp changed`</li><li>con `.lock()`: error solo si no se utiliza la opción `dk reload if stamp changed`</li><li>**statusText asociado**: "Stamp has changed"</li>                                                                                                                                                                                                                                                                                                                                      |
+| `dk status wrong permission`              | 1     | Los privilegios actuales no permiten suprimir la entidad. **StatusText asociado**: "Permission Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 #### Ejemplo 1
 
@@ -456,10 +468,13 @@ Ejemplo con la opción `dk force drop if stamp changed`:
 
 <!-- REF #EntityClass.first().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                      |                             | Descripción                                                                                                |
 | ---------- | ------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------------------- |
 | Resultado  | 4D.Entity | <- | Referencia a la primera entidad de una selección de entidades (Null si no se encuentra) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -496,10 +511,13 @@ Si la entidad no pertenece a ninguna entity selection (es decir, [.getSelection(
 
 <!-- REF #EntityClass.fromObject().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo   |     | Descripción                                  |
 | ---------- | ------ | :-: | -------------------------------------------- |
 | filler     | Object |  -> | Objeto a partir del cual se llena la entidad |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -583,15 +601,18 @@ También puede utilizar una entidad relacionada dada como objeto:
 
 <!-- REF #EntityClass.getDataClass().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                         |                             | Descripción                                  |
 | ---------- | ---------------------------- | :-------------------------: | -------------------------------------------- |
 | Resultado  | 4D.DataClass | <- | Objeto DataClass al que pertenece la entidad |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
 
-La función `.getDataClass()` <!-- REF #EntityClass.getDataClass().Summary -->devuelve la dataclass de la entidad<!-- END REF -->. .
+La función `.getDataClass()` <!-- REF #EntityClass.getDataClass().Summary -->devuelve la dataclass de la entidad<!-- END REF -->. . .
 
 #### Ejemplo
 
@@ -629,11 +650,14 @@ El siguiente código genérico duplica cualquier entidad:
 
 <!-- REF #EntityClass.getKey().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                                                                               |
 | ---------- | ------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
 | mode       | Integer |              ->             | `dk key as string`: la llave primaria se devuelve como una cadena, sin importar el tipo de llave primaria |
 | Resultado  | any     | <- | Valor de la llave primaria de la entidad (Integer or Text)                                             |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -668,10 +692,13 @@ Las llaves primarias pueden ser números (enteros) o cadenas. Puede "forzar" que
 
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo |                             | Descripción                                                           |
 | ---------- | ---- | --------------------------- | --------------------------------------------------------------------- |
 | resultado  | Text | <- | Atributos de contexto vinculados a la entidad, separados por una coma |
 
+</div>
 <!-- END REF -->
 
 > **Modo avanzado**: esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.
@@ -727,10 +754,13 @@ $info:=$address.getRemoteContextAttributes()
 
 <!-- REF #EntityClass.getSelection().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                               |                             | Descripción                                                                                 |
 | ---------- | ---------------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------- |
 | Resultado  | 4D.EntitySelection | <- | Entity selection a la que pertenece la entidad (nula si no se encuentra) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -771,10 +801,13 @@ Si la entidad no pertenece a una selección de entidades, la función devuelve N
 
 <!-- REF #EntityClass.getStamp().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                                  |
 | ---------- | ------- | :-------------------------: | ---------------------------------------------------------------------------- |
 | Resultado  | Integer | <- | Sello de la entidad (0 si la entidad acaba de ser creada) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -819,11 +852,14 @@ El sello interno se incrementa automáticamente en 4D cada vez que se guarda la 
 
 <!-- REF #EntityClass.indexOf().Params -->
 
+<div class="no-index">
+
 | Parámetros      | Tipo                               |                             | Descripción                                                               |
 | --------------- | ---------------------------------- | :-------------------------: | ------------------------------------------------------------------------- |
 | entitySelection | 4D.EntitySelection |              ->             | La posición de la entidad se da en función de esta selección de entidades |
 | Resultado       | Integer                            | <- | Posición de la entidad en una selección de entidades                      |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -868,15 +904,18 @@ El valor resultante se incluye entre 0 y la longitud de la selección de entidad
 
 <!-- REF #EntityClass.isNew().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                                                                               |
 | ---------- | ------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
 | Resultado  | Boolean | <- | True si la entidad acaba de ser creada y aún no se ha guardado. En caso contrario, False. |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
 
-La función `.isNew()` <!-- REF #EntityClass.isNew().Summary --> devuelve True si la entidad a la que se aplica acaba de ser creada y aún no ha sido guardada en el datastore<!-- END REF -->. .
+True si la entidad acaba de ser creada y aún no se ha guardado. .
 
 #### Ejemplo
 
@@ -908,10 +947,13 @@ La función `.isNew()` <!-- REF #EntityClass.isNew().Summary --> devuelve True s
 
 <!-- REF #EntityClass.last().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                      |                             | Descripción                                                                                               |
 | ---------- | ------------------------- | :-------------------------: | --------------------------------------------------------------------------------------------------------- |
 | Resultado  | 4D.Entity | <- | Referencia a la última entidad de una selección de entidades (Null si no se encuentra) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -948,11 +990,14 @@ Si la entidad no pertenece a ninguna entity selection (es decir, [.getSelection(
 
 <!-- REF #EntityClass.lock().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                                                         |
 | ---------- | ------- | :-------------------------: | --------------------------------------------------------------------------------------------------- |
 | mode       | Integer |              ->             | `dk reload if stamp changed`: recargar antes de bloquear si el marcador ha cambiado |
 | Resultado  | Object  | <- | Resultado de la operación de bloqueo                                                                |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -1012,12 +1057,12 @@ El objeto devuelto por `.lock()` contiene las siguientes propiedades:
 
 (\*) Los siguientes valores pueden ser devueltos en las propiedades *status* y *statusText* del objeto *Result* en caso de error:
 
-| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). Cuando se utiliza `.drop( )`, este error puede devolverse cuando se utiliza la opción `dk force drop if stamp changed`. Cuando se utiliza `.lock()`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Entity does not exist anymore" |
-| `dk status locked`                        | 3     | La entidad está bloqueada por un bloqueo pesimista. **statusText asociado**: "Already locked"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<br/>**statusText asociado**: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `dk status stamp has changed`             | 2     | El valor del marcador interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).<li>con `.save()`: error solo si no se utiliza la opción `dk auto merge`</li><li>con `.drop()`: error solo si no se utiliza la opción `dk force drop if stamp changed`</li><li>con `.lock()`: error solo si no se utiliza la opción `dk reload if stamp changed`</li><br/>**Estado asociado**: "Stamp has changed"                                                                                                                                                                                                                                                          |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). Cuando se utiliza `.drop()`, este error puede devolverse cuando se utiliza la opción dk force drop if stamp changed. Cuando se utiliza `.lock()`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Entity does not exist anymore" |
+| `dk status locked`                        | 3     | La entidad está bloqueada por un bloqueo pesimista. **statusText asociado**: "Already locked"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<br/>**statusText asociado**: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `dk status stamp has changed`             | 2     | El valor del marcador interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).<li>con `.save()`: error solo si no se utiliza la opción `dk auto merge`</li><li>con `.drop()`: error solo si no se utiliza la opción `dk force drop if stamp changed`</li><li>con `.lock()`: error solo si no se utiliza la opción `dk reload if stamp changed`</li><br/>**Estado asociado**: "Stamp has changed"                                                                                                                                                                                                                                                       |
 
 #### Ejemplo 1
 
@@ -1071,10 +1116,13 @@ Ejemplo con la opción `dk reload if stamp changed`:
 
 <!-- REF #EntityClass.next().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                      |                             | Descripción                                                                                                 |
 | ---------- | ------------------------- | :-------------------------: | ----------------------------------------------------------------------------------------------------------- |
 | Resultado  | 4D.Entity | <- | Referencia a la siguiente entidad en la selección de entidades (Null si no se encuentra) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -1115,10 +1163,13 @@ selection $employees
 
 <!-- REF #EntityClass.previous().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                      |                             | Descripción                                                                                                |
 | ---------- | ------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------------------- |
 | Resultado  | 4D.Entity | <- | Referencia a la entidad anterior en la selección de entidades (Null si no se encuentra) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -1157,10 +1208,13 @@ Si no hay una entidad anterior válida en la selección de entidades (es decir, 
 
 <!-- REF #EntityClass.reload().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo   |                             | Descripción   |
 | ---------- | ------ | :-------------------------: | ------------- |
 | Resultado  | Object | <- | Objeto estado |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -1179,10 +1233,10 @@ El objeto devuelto por `.reload( )` contiene las siguientes propiedades:
 
 (\*) Los siguientes valores pueden ser devueltos en las propiedades *status* y *statusText* del objeto *Result* en caso de error:
 
-| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Cuando se utiliza `.lock()`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Entity does not exist anymore" |
-| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<br/>***statusText asociado***: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). Cuando se utiliza `.drop()`, este error puede devolverse cuando se utiliza la opción `dk force drop if stamp changed`. Cuando se utiliza `.lock()`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Entity does not exist anymore" |
+| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<br/>***statusText asociado***: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 #### Ejemplo
 
@@ -1211,9 +1265,10 @@ El objeto devuelto por `.reload( )` contiene las siguientes propiedades:
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 17          | Añadidos       |
+| Lanzamiento | Modificaciones             |
+| ----------- | -------------------------- |
+| 21          | Añadidos los estados 7 y 8 |
+| 17          | Añadidos                   |
 
 </details>
 
@@ -1221,11 +1276,14 @@ El objeto devuelto por `.reload( )` contiene las siguientes propiedades:
 
 <!-- REF #EntityClass.save().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                       |
 | ---------- | ------- | :-------------------------: | ----------------------------------------------------------------- |
 | mode       | Integer |              ->             | `dk auto merge`: activa el modo "automatic merge" |
 | Resultado  | Object  | <- | Resultado de la operación guardar                                 |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -1273,14 +1331,16 @@ El objeto devuelto por `.save()` contiene las siguientes propiedades:
 
 Los siguientes valores pueden ser devueltos en las propiedades `status`y `statusText` del objeto Result en caso de error:
 
-| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status automerge failed`              | 6     | (Sólo si se utiliza la opción `dk auto merge`) La opción de fusión automática falló al guardar la entidad. **statusText asociado**: "Auto merge failed"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Cuando se utiliza `.lock()`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Entity does not exist anymore" |
-| `dk status locked`                        | 3     | La entidad está bloqueada por un bloqueo pesimista. **statusText asociado**: "Already locked"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<br/>**statusText asociado**: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `dk status stamp has changed`             | 2     | El valor del marcador interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).<br/><li>con `.save()`: error solo si no se utiliza la opción `dk auto merge`</li><li>con `.drop()`: error solo si no se utiliza la opción `dk force drop if stamp changed`</li><li>con `.lock()`: error solo si no se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Stamp has changed"                                                                                                                                                                                                                                                                                                 |
-| `dk status wrong permission`              | 1     | Los privilegios actuales no permiten guardar la entidad. **Associated statusText**: "Permission Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `dk status automerge failed`              | 6     | (Solo si se utiliza la opción `dk auto merge`) La opción de fusión automática falló al guardar la entidad. **statusText asociado**: "Fallo de la fusión automática"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br/><li>la entidad ha sido eliminada (el marcador ha cambiado y ahora el espacio de memoria está libre)</li><li>la entidad ha sido eliminada y reemplazada por otra con otra clave primaria (el marcador ha cambiado y una nueva entidad ahora utiliza el espacio memoria). Cuando se utiliza `.drop()`, este error puede devolverse cuando se utiliza la opción `dk force drop if stamp changed`. Cuando se utiliza `.lock()`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Entity does not exist anymore" |
+| `dk status locked`                        | 3     | La entidad está bloqueada por un bloqueo pesimista. **statusText asociado**: "Already locked"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `dk status validation failed`             | 7     | Error no crítico enviado por el desarrollador para un [evento de validación](../ORDA/orda-events.md). **statusText asociado**: "Mild Validation Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc. **statusText asociado**: "Other error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `dk status serious validation error`      | 8     | Error crítico enviado por el desarrollador para un [evento de validación](../ORDA/orda-events.md). **statusText asociado**: "Serious Validation Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `dk status stamp has changed`             | 2     | El valor del marcador interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).<br/><li>con `.save()`: error solo si no se utiliza la opción `dk auto merge`</li><li>con `.drop()`: error solo si no se utiliza la opción `dk force drop if stamp changed`</li><li>con `.lock()`: error solo si no se utiliza la opción `dk reload if stamp changed`</li><br/>**statusText asociado**: "Stamp has changed"                                                                                                                                                                                                                                                |
+| `dk status wrong permission`              | 1     | Los privilegios actuales no permiten guardar la entidad. **StatusText asociado**: "Permission Error"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 #### Ejemplo 1
 
@@ -1358,6 +1418,8 @@ Actualización de una entidad con la opción `dk auto merge`:
 
 <!-- REF #EntityClass.toObject().Params -->
 
+<div class="no-index">
+
 | Parámetros   | Tipo       |                             | Descripción                                                                                                                                                                                        |
 | ------------ | ---------- | :-------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | filterString | Text       |              ->             | Atributo(s) a extraer (cadena separada por comas)                                                                                                            |
@@ -1365,6 +1427,7 @@ Actualización de una entidad con la opción `dk auto merge`:
 | options      | Integer    |              ->             | `dk with primary key`: adds the \_\_KEY property;<br/>`dk with stamp`: adds the \_STAMP property |
 | Resultado    | Object     | <- | Objeto creado a partir de la entidad                                                                                                                                                               |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -1647,15 +1710,18 @@ Ejemplo con el tipo <code>relatedEntity</code> con una forma simple:
 
 <!-- REF #EntityClass.touched().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                                                       |
 | ---------- | ------- | :-------------------------: | ------------------------------------------------------------------------------------------------- |
 | Resultado  | Boolean | <- | True si se ha modificado al menos un atributo de la entidad y aún no se ha guardado, si no, False |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
 
-La función `.touched()` <!-- REF #EntityClass.touched().Summary -->devuelve True si al menos un atributo de la entidad ha sido modificado desde que la entidad fue cargada en memoria o guardada<!-- END REF -->. Puede utilizar esta función para determinar si necesita guardar la entidad.
+La función `.isNew()` <!-- REF #EntityClass.isNew().Summary --> devuelve True si la entidad a la que se aplica acaba de ser creada y aún no ha sido guardada en el datastore<!-- END REF -->. . Puede utilizar esta función para determinar si necesita guardar la entidad.
 
 Esto solo se aplica a los atributos de [`kind`](DataClassClass.md#returned-object) "storage" o "relatedEntity".
 
@@ -1693,10 +1759,13 @@ En este ejemplo, comprobamos si es necesario guardar la entidad:
 
 <!-- REF #EntityClass.touchedAttributes().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo       |                             | Descripción                                     |
 | ---------- | ---------- | :-------------------------: | ----------------------------------------------- |
 | Resultado  | Collection | <- | Nombres de atributos tocados, o colección vacía |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -1768,10 +1837,13 @@ En este caso:
 
 <!-- REF #EntityClass.unlock().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo   |                             | Descripción   |
 | ---------- | ------ | :-------------------------: | ------------- |
 | Resultado  | Object | <- | Objeto estado |
 
+</div>
 <!-- END REF -->
 
 #### Descripción

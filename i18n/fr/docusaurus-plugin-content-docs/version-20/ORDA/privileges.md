@@ -4,7 +4,7 @@ title: Privilèges
 ---
 
 
-La protection des données tout en permettant un accès rapide et facile aux utilisateurs autorisés est un défi majeur pour les applications Web. L'architecture de sécurité ORDA est implémentée au cœur de votre datastore et vous permet de définir des privilèges spécifiques à chaque session utilisateur et pour les différentes ressources de votre projet (datastore, dataclasses, fonctions, etc.).
+Protéger les données tout en permettant un accès rapide et facile aux utilisateurs autorisés est un défi majeur pour les applications web. L'architecture de sécurité ORDA est implémentée au cœur de votre datastore et vous permet de définir des privilèges spécifiques à chaque session utilisateur et pour les différentes ressources de votre projet (datastore, dataclasses, fonctions, etc.).
 
 
 
@@ -107,7 +107,7 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
 
 
-## `roles.json`
+## roles.json
 
 
 Le fichier `roles.json` décrit l'ensemble des paramètres de sécurité du projet.
@@ -170,7 +170,7 @@ Class extends Entity
 "applyTo":"City.getPopulation"
 ```
 
-Cela signifie que vous ne pouvez pas utiliser les mêmes noms de fonctions dans les différentes classes ORDA (entité, entity selection, dataclass) si vous souhaitez que des privilèges leur soient attribués. Dans ce cas, vous devez utiliser des noms de fonction distincts. Par exemple, si vous avez créé une fonction "drop" dans les classes `cs.CityEntity` et `cs.CitySelection`, vous devez leur donner des noms différents tels que `dropEntity()` et `dropSelection()`. Vous pouvez ensuite écrire dans le fichier "roles.json" :
+Cela signifie que vous ne pouvez pas utiliser les mêmes noms de fonctions dans les différentes classes ORDA (entité, entity selection, dataclass) si vous souhaitez que des privilèges leur soient attribués. Dans ce cas, vous devez utiliser des noms de fonction distincts. Cela signifie que vous ne pouvez pas utiliser les mêmes noms de fonctions dans les différentes classes ORDA (entité, entity selection, dataclass) si vous souhaitez que des privilèges leur soient attribués. Vous pouvez ensuite écrire dans le fichier "roles.json" :
 
 ```json
     "permissions": {
@@ -193,7 +193,7 @@ Cela signifie que vous ne pouvez pas utiliser les mêmes noms de fonctions dans 
 ```
 
 
-### `Roles_Errors.json`
+### Roles_Errors.json
 
 Le fichier `roles.json` est analysé par 4D au démarrage. Vous devez redémarrer l'application pour que les modifications dans ce fichier soient prises en compte.
 

@@ -399,14 +399,16 @@ Windows 上においては、`.isPackage` は常に **false** を返します。
 
 
 <!-- REF #directory.copyTo().Params -->
-| 引数                | 型         |    | 説明                                     |
-| ----------------- | --------- |:--:| -------------------------------------- |
-| destinationFolder | 4D.Folder | -> | 宛先フォルダー                                |
-| newName           | Text      | -> | コピー先フォルダーの名前                           |
-| overwrite         | Integer   | -> | 既存要素を上書きするには `fk overwrite` を渡します      |
-| 戻り値               | 4D.Folder | <- | コピーされたフォルダー|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|destinationFolder |4D.Folder |->|コピー先フォルダー|
+|newName|Text|->|コピーの新しい名前|
+|overwrite|Integer|->|既存の要素を上書きするためには `fk overwrite`|
+|戻り値|4D.Folder|<-|Copied file or folder|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -414,7 +416,7 @@ Windows 上においては、`.isPackage` は常に **false** を返します。
 
 *destinationFolder* 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
-デフォルトで、フォルダーは元の名前を維持したままコピーされます。 コピーの際にフォルダー名を変更したい場合、新しい名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
+デフォルトで、フォルダーは元の名前を維持したままコピーされます。 コピーの際にフォルダー名を変更したい場合、新しい名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。
 
 *destinationFolder* 引数が指定するフォルダー内に同じ名前のフォルダーが既に存在する場合、4D はデフォルトでエラーを生成します。 *overwrite* に `fk overwrite` 定数を渡すことで、既存のフォルダーを無視して上書きすることができます:
 
@@ -454,12 +456,14 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 
 
 <!-- REF #directory.file().Params -->
-| 引数   | 型       |    | 説明                                                               |
-| ---- | ------- | -- | ---------------------------------------------------------------- |
-| path | Text    | -> | ファイルのPOSIX相対パス名                                                  |
-| 戻り値  | 4D.File | <- | `File` オブジェクト (無効な POSIXパスの場合には null)|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|----|---|---|
+|path|Text|->|相対 POSIX ファイルパス名|
+|戻り値|4D.File|<-|`File` object (null if invalid path)|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -496,19 +500,21 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 
 <!-- REF #directory.files().Params -->
-| 引数      | 型          |    | 説明                                            |
-| ------- | ---------- | -- | --------------------------------------------- |
-| options | Integer    | -> | ファイルリストのオプション                                 |
-| 戻り値     | Collection | <- | 子ファイルオブジェクトのコレクション|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|----|---|---|
+|options|Integer|->|ファイルリスト用のオプション|
+|戻り値|Collection|<-|Collection of children file objects|
+</div>
+<!-- END REF -->
 
 #### 説明
 
 `.files()` 関数は、 <!-- REF #directory.files().Summary -->フォルダーに格納されている `File` オブジェクトのコレクションを返します<!-- END REF -->。
 > エイリアスまたはシンボリックリンクは解決されません。
 
-*options*引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるファイルのみがコレクションに返されます。これには非表示のファイルや、フォルダーも含まれます。 *options* 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:
+By default, if you omit the *options* parameter, only the files at the first level of the folder are returned in the collection, including invisible files. *options* 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:
 
 | 定数                    | 値 | 説明                                    |
 | --------------------- | - | ------------------------------------- |
@@ -528,7 +534,8 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
  $all:=Folder(fk database folder).files()
  $noInvisible:=Folder(fk database folder).files(fk ignore invisible)
  If($all.length#$noInvisible.length)
-    ALERT("データベースフォルダーには非表示のファイルが存在します。")
+    ALERT("データベースフォルダーには非表示のファイルが存在します。
+ ")
  End if
 ```
 
@@ -559,12 +566,14 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 
 <!-- REF #directory.folder().Params -->
-| 引数   | 型         |    | 説明                                                                             |
-| ---- | --------- | -- | ------------------------------------------------------------------------------ |
-| path | Text      | -> | ファイルのPOSIX相対パス名                                                                |
-| 戻り値  | 4D.Folder | <- | 作成された `Folder` オブジェクト (無効な POSIX *path* の場合には null)|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|----|---|---|
+|path|Text|->|相対 POSIX ファイルパス名|
+|戻り値|4D.Folder|<-|Created folder object (null if invalid *path*)|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -601,18 +610,20 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 
 <!-- REF #directory.folders().Params -->
-| 引数      | 型          |    | 説明                                             |
-| ------- | ---------- | -- | ---------------------------------------------- |
-| options | Integer    | -> | フォルダーリストのオプション                                 |
-| 戻り値     | Collection | <- | 子フォルダーオブジェクトのコレクション|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|----|---|---|
+|options|Integer|->|フォルダーリスト用のオプション|
+|戻り値|Collection|<-|Collection of children folder objects|
+</div>
+<!-- END REF -->
 
 #### 説明
 
 `.folders()` 関数は、 <!-- REF #directory.folders().Summary -->親フォルダーに格納されている `Folder` オブジェクトのコレクションを返します<!-- END REF -->。
 
-*options*引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるフォルダーのみがコレクションに返されます。 *options* 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:
+*options*引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるファイルのみがコレクションに返されます。 *options* 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:
 
 | 定数                    | 値 | 説明                                     |
 | --------------------- | - | -------------------------------------- |
@@ -650,12 +661,14 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 
 <!-- REF #directory.getIcon().Params -->
-| 引数   | 型       |    | 説明                              |
-| ---- | ------- | -- | ------------------------------- |
-| size | Integer | -> | 取得するピクチャーの一辺の長さ (ピクセル単位)        |
-| 戻り値  | Picture | <- | アイコン|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|----|---|---|
+|size|Integer|->|返されるピクチャーの一辺の長さ(ピクセル単位)|
+|戻り値|Picture|<-|Icon|
+</div>
+<!-- END REF -->
 
 #### 説明
 

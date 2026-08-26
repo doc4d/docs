@@ -198,7 +198,7 @@ Para uma melhor capacidade de entrega, é recomendado usar o mesmo endereço de 
 
 #### Descrição
 
-A propriedade `.headers` contém a <!-- REF #EmailObjectClass.headers.Summary -->coleção de objectos `EmailHeader` , na ordem em que aparecem na mensagem<!-- END REF -->. Esta propriedade permite que usuários adicionem cabeçalhos estendidos (registrados) ou definidos pelo usuário (não registrados, começando com cabeçalhos "X").
+A propriedade `.htmlBody` contém a <!-- REF #EmailObjectClass.headers.Summary -->Representação HTML da mensagem de correio electrónico (o charset padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. .
 
 > Se uma propriedade de objeto `EmailHeader` define um cabeçalho como "from" ou "cc" que já está definida como uma propriedade no nível de correio, a propriedade `EmailHeader` é ignorada.
 
@@ -215,7 +215,7 @@ Cada objeto da coleção de cabeçalhos pode conter as propriedades abaixo:
 
 #### Descrição
 
-A propriedade `.htmlBody` contém a <!-- REF #EmailObjectClass.htmlBody.Summary -->Representação HTML da mensagem de correio electrónico (o charset padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. .
+A propriedade `.textBody` contém o <!-- REF #EmailObjectClass.htmlBody.Summary -->Representação em texto simples da mensagem de correio electrónico (o conjunto de caracteres padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. .
 
 ## .id
 
@@ -351,7 +351,7 @@ A propriedade `.subject` contém o <!-- REF #EmailObjectClass.subject.Summary --
 
 #### Descrição
 
-A propriedade `.textBody` contém o <!-- REF #EmailObjectClass.textBody.Summary -->Representação em texto simples da mensagem de correio electrónico (o conjunto de caracteres padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. .
+A propriedade `.headers` contém a <!-- REF #EmailObjectClass.textBody.Summary -->coleção de objectos `EmailHeader` , na ordem em que aparecem na mensagem<!-- END REF -->. .
 
 ## .to
 
@@ -375,12 +375,14 @@ The `MAIL Convert from MIME` command <!-- REF #EmailObjectClass.to.Summary -->co
 
 
 <!-- REF #_command_.MAIL Convert from_MIME.Params -->
-| Parâmetro  | Tipo       |    | Descrição                               |
-| ---------- | ---------- |:--:| --------------------------------------- |
-| mime       | Blob, Text | -> | E-mail no MIME                          |
-| Resultados | Object     | <- | Objeto Email|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|mime|Blob, Text|->|Email in MIME|
+|Result|Object|<-|Email object|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -460,13 +462,15 @@ $status:=$transporter.send($email)
 
 
 <!-- REF #_command_.MAIL Convert to MIME.Params -->
-| Parâmetro  | Tipo   |    | Descrição                                                  |
-| ---------- | ------ |:--:| ---------------------------------------------------------- |
-| mail       | Object | -> | Objeto Email                                               |
-| options    | Object | -> | Opções de codificação e Charset                            |
-| Resultados | Text   | <- | Email objeto convertido em MIME|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|mail|Object|->|Email object|
+|options|Object|->|Charset and encoding mail options|
+|Result|Text|<-|Email object converted to MIME|
+</div>
+<!-- END REF -->
 
 #### Descrição
 

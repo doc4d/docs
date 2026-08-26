@@ -20,7 +20,7 @@ Les commandes [`MAIL Convert from MIME`](#mail-convert-from-mime) et [`MAIL Conv
 
 Les objets Email exposent les propriétés suivantes :
 
-> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec-mail.html).
+> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec/rfc8621/).
 
 |                                                                                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -126,7 +126,7 @@ La propriété `.bcc` contient les <!-- REF #EmailObjectClass.bcc.Summary -->[ad
 
 #### Description
 
-La propriété `.bodyStructure` contient l' <!-- REF #EmailObjectClass.bodyStructure.Summary -->objet *EmailBodyPart*, c'est-à-dire la structure MIME complète du corps du message (optionnel)<!-- END REF -->. Voir section [Traitement du body](#traitement-du-body).
+La propriété `.bodyStructure` contient l' <!-- REF #EmailObjectClass.bodyStructure.Summary -->objet *EmailBodyPart*, c'est-à-dire la structure MIME complète du corps du message (optionnel)<!-- END REF -->. .
 
 L'objet `.bodyStructure` contient les propriété suivantes :
 
@@ -148,7 +148,7 @@ L'objet `.bodyStructure` contient les propriété suivantes :
 
 #### Description
 
-La propriété `.bodyValues` contient l' <!-- REF #EmailObjectClass.bodyValues.Summary -->objet *EmailBodyValue*, contenant lui-même un objet pour chaque \<partID\> de `bodyStructure` (optionnel)<!-- END REF -->. Voir section [Traitement du body](#traitement-du-body).
+La propriété `.bodyValues` contient l' <!-- REF #EmailObjectClass.bodyValues.Summary -->objet *EmailBodyValue*, contenant lui-même un objet pour chaque \<partID\> de `bodyStructure` (optionnel)<!-- END REF -->. .
 
 L'objet `.bodyValues` contient les propriété suivantes :
 
@@ -215,7 +215,7 @@ Chaque objet de la collection de headers peut contenir les propriétés suivante
 
 #### Description
 
-La propriété `.htmlBody` contient la <!-- REF #EmailObjectClass.htmlBody.Summary -->représentation HTML de l'email (le jeu de caractères par défaut est UTF-8) (facultatif, SMTP uniquement)<!-- END REF -->. Voir section [Traitement du body](#traitement-du-body).
+La propriété `.htmlBody` contient la <!-- REF #EmailObjectClass.htmlBody.Summary -->représentation HTML de l'email (le jeu de caractères par défaut est UTF-8) (facultatif, SMTP uniquement)<!-- END REF -->. .
 
 ## .id
 
@@ -350,7 +350,7 @@ La propriété `.subject` contient la <!-- REF #EmailObjectClass.subject.Summary
 
 #### Description
 
-La propriété `.textBody` contient la <!-- REF #EmailObjectClass.textBody.Summary -->représentation en texte brut de l'email (le jeu de caractères par défaut est UTF-8) (optionnel, SMTP uniquement)<!-- END REF -->. Voir section [Traitement du body](#traitement-du-body).
+La propriété `.textBody` contient la <!-- REF #EmailObjectClass.textBody.Summary -->représentation en texte brut de l'email (le jeu de caractères par défaut est UTF-8) (optionnel, SMTP uniquement)<!-- END REF -->. .
 
 ## .to
 
@@ -374,17 +374,19 @@ La propriété `.to` contient la ou les <!-- REF #EmailObjectClass.to.Summary --
 
 
 <!-- REF #_command_.MAIL Convert from MIME.Params -->
-| Paramètres | Type       |    | Description                            |
-| ---------- | ---------- |:--:| -------------------------------------- |
-| mime       | Blob, Text | -> | Email en MIME                          |
-| Résultat   | Object     | <- | Objet email|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|mime|Blob, Text|->|Email en MIME|
+|Résultat|Object|<-|Email object|
+</div>
+<!-- END REF -->
 
 #### Description
 
 La commande `MAIL Convert from MIME` <!-- REF #_command_.MAIL Convert from MIME.Summary -->convertit un document MIME en un objet email valide<!-- END REF -->.
-> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec-mail.html).
+> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec/rfc8621/).
 
 Passez dans *mime* un document MIME valide à convertir. Il peut être fourni par tout type de serveur ou d'application de messagerie. Vous pouvez passer un BLOB ou un texte dans le paramètre *mime*. Si le MIME provient d'un fichier, il est recommandé d'utiliser un paramètre BLOB pour éviter les problèmes liés aux conversions de charset et de retours à la ligne.
 
@@ -460,20 +462,22 @@ $status:=$transporter.send($email)
 
 
 <!-- REF #_command_.MAIL Convert to MIME.Params -->
-| Paramètres | Type   |    | Description                                             |
-| ---------- | ------ |:--:| ------------------------------------------------------- |
-| mail       | Object | -> | Objet email                                             |
-| options    | Object | -> | Options d'encodage et de charset du mail                |
-| Résultat   | Text   | <- | Objet email converti en MIME|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|mail|Object|->|Objet mail|
+|options|Object|->|Charset et options d'encodage du mail|
+|Résultat|Text|<-|Email object converted to MIME|
+</div>
+<!-- END REF -->
 
 #### Description
 
 La commande `MAIL Convert to MIME` <!-- REF #_command_.MAIL Convert to MIME.Summary -->convertit un objet email en texte MIME<!-- END REF -->. Cette commande est appelée en interne par [SMTP_transporter.send( )](API/SMTPTransporterClass.md#send) pour formater l'objet email avant de l'envoyer. Elle peut être utilisée pour analyser le format MIME de l'objet.
 
 Dans *mail*, passez les éléments du contenu et de la structure de l'email à convertir. Cela inclut des informations telles que les adresses e-mail (expéditeur et destinataire(s)), le contenu de l'e-mail lui-même et son type d'affichage.
-> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec-mail.html).
+> Le format des objets Email de 4D suit la [spécification JMAP](https://jmap.io/spec/rfc8621/).
 
 Dans *options*, vous pouvez configurer l'encodage et le charset du mail. Les propriétés suivantes sont disponibles :
 

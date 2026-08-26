@@ -3,9 +3,9 @@ id: onAfterEdit
 title: On After Edit
 ---
 
-| Code | Peut être appelé par                                                                                                                                                                                                                                                                                                                                                                              | Définition                                                            |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| 45   | [Zone 4D View Pro](../FormObjects/viewProArea_overview.md) - [Zone 4D Write Pro](../FormObjects/writeProArea_overview.md) - [Combo Box](FormObjects/comboBox_overview.md) - Form - [Input](FormObjects/input_overview.md) - [Hierarchical List](FormObjects/list_overview.md) - [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns) | Le contenu de l'objet saisissable qui a le focus vient d'être modifié |
+| Code | Peut être appelé par                                                                                                                                                                                                                                                                                                                                                         | Définition                                                            |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| 45   | [Zone 4D View Pro](../FormObjects/viewProArea_overview.md) - [Zone 4D Write Pro](../FormObjects/writeProArea_overview.md) - [Combo Box](FormObjects/comboBox_overview.md) - Form - [Input](FormObjects/input_overview.md) - [Hierarchical List](FormObjects/list_overview.md) - [List Box](FormObjects/listbox-object.md) - [List Box Column](FormObjects/listbox-column.md) | Le contenu de l'objet saisissable qui a le focus vient d'être modifié |
 
 ## Description
 
@@ -20,7 +20,7 @@ Lorsqu'il est utilisé, cet événement est généré après chaque modification
 - Toute saisie au clavier effectuée par l'utilisateur ; dans ce cas, l'événement `On After Edit` est généré après les événements [`On Before Keystroke`](onBeforeKeystroke.md) et [`On After Keystroke`](onAfterKeystroke.md), s'ils sont utilisés.
 - Toute modification apportée à l'aide d'une commande de langage qui simule une action de l'utilisateur (c'est-à-dire `POST KEY`).
 
-Dans l'événement `On After Edit`, les données texte saisies sont retournées par la commande [`Get edited text`](../commands-legacy/get-edited-text.md).
+Dans l'événement `On After Edit`, les données texte saisies sont retournées par la commande [`Get edited text`](../commands/get-edited-text).
 
 ### 4D View Pro
 
@@ -112,3 +112,4 @@ L'exemple ci-dessus pourrait générer un objet événement tel que celui-ci :
 "newValue":"jumped over the lazy dog";
 }
 ```
+

@@ -218,7 +218,7 @@ Class constructor($macro : Object)
 | $editor.editor.form              | Object     | フォーム全体                           |
 | $editor.editor.file              | File       | フォームファイルの Fileオブジェクト             |
 | $editor.editor.name              | Text       | フォームの名称                          |
-| $editor.editor.table             | number     | フォームのテーブル番号。プロジェクトフォームの場合は 0。    |
+| $editor.editor.table             | number     | フォームのテーブル番号。 プロジェクトフォームの場合は 0。   |
 | $editor.editor.currentPageNumber | number     | 現在のページの番号                        |
 | $editor.editor.currentPage       | Object     | 現在のページ (フォームオブジェクトおよび入力順序を格納)    |
 | $editor.editor.currentSelection  | Collection | 選択されているオブジェクトの名称のコレクション          |
@@ -287,7 +287,8 @@ Function onInvoke($editor : Object)->$result : Object
         End for each 
 
     Else 
-        ALERT("フォームオブジェクトを選択してください。")
+        ALERT("フォームオブジェクトを選択してください。
+    ")
     End if 
 
     // 4Dに変更を通知します
@@ -306,7 +307,7 @@ Function onInvoke($editor : Object)->$result : Object
 | $error       |                       | Collection | エラースタック                              |
 |              | [].errCode            | Number     | エラーコード                               |
 |              | [].message            | Text       | エラーの詳細                               |
-|              | [].componentSignature | Text       | 内部コンポーネントのシグネチャー                     |
+|              | [].componentSignature | Text       | 内部コンポーネントのシグネチャ                      |
 
 マクロの実行時にエラーが発生した場合、`onError` 関数が実行されます。
 

@@ -16,7 +16,7 @@ title: ラジオボタン
 
 ## ラジオボタンの設定
 
-ラジオボタンは組織的な集合の中で使用されます。その集合のなかから一度にひとつのボタンしか選択できません。 一連のラジオボタンが連携した状態で動作するためには、それらには同じ [ラジオグループ](properties_Object.md#ラジオグループ) プロパティが設定されていなくてはなりません。
+ラジオボタンは組織的な集合の中で使用されます。 その集合のなかから一度にひとつのボタンしか選択できません。 一連のラジオボタンが連携した状態で動作するためには、それらには同じ [ラジオグループ](properties_Object.md#ラジオグループ) プロパティが設定されていなくてはなりません。
 
 ラジオボタンの結果はメソッドを用いて管理します。 あらゆるボタンと同様に、フォームが初めて開かれる時ラジオボタンは 0 に初期化されています。 ラジオボタンが選択されると、ラジオボタンに割り当てられたメソッドが実行されます。 次の例では、ビデオ収集データベースでラジオボタンを使用し、レコーディングの速さ (SP、LP、EP) を入力します:
 
@@ -26,7 +26,7 @@ title: ラジオボタン
 
 > ラジオボタンには [ブール型の式](properties_Object.md#変数あるいは式) を設定することができます。 この場合、グループ内で選択されたラジオボタンの変数には true が代入され、残りのラジオボタンの変数には false が代入されます。
 
-ラジオボタンオブジェクトに格納された値は (ブールフィールドの場合を除き) 自動保存されません。変数に格納されたラジオボタンの値はメソッドで管理しなければなりません。
+ラジオボタンオブジェクトに格納された値は (ブールフィールドの場合を除き) 自動保存されません。 変数に格納されたラジオボタンの値はメソッドで管理しなければなりません。
 
 ## ボタンスタイル
 
@@ -115,7 +115,7 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 ### 折りたたみ/展開
 
-このスタイルは標準の折りたたみ/展開アイコンを表示するのに使用します。 これらは階層リストで使用されます。 Windows では [+] または [-] のように表示されます。macOS では、右や下を指す三角として表示されます。
+このスタイルは標準の折りたたみ/展開アイコンを表示するのに使用します。 これらは階層リストで使用されます。 Windows では [+] または [-] のように表示されます。 macOS では、右や下を指す三角として表示されます。
 
 ![](../assets/en/FormObjects/checkbox_collapse.png)
 
@@ -156,3 +156,7 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
   [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) -
   [横方向マージン](properties_TextAndPicture.md#横方向マージン) -
   [縦方向マージン](properties_TextAndPicture.md#縦方向マージン)
+
+## サポートされるイベント
+
+[On Begin Drag Over](../Events/onBeginDragOver.md) - [On Clicked](../Events/onClicked.md) - [On Double Clicked](../Events/onDoubleClicked.md) - [On Drag Over](../Events/onDragOver.md) - [On Drop](../Events/onDrop.md) - [On Getting focus](../Events/onGettingFocus.md) - [On Header](../Events/onHeader.md) - [On Load](../Events/onLoad.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Mouse Enter](../Events/onMouseEnter.md) - [On Mouse Leave](../Events/onMouseLeave.md) - [On Mouse Move](../Events/onMouseMove.md) - [On Printing Break](../Events/onPrintingBreak.md) - [On Printing Detail](../Events/onPrintingDetail.md) - [On Printing Footer](../Events/onPrintingFooter.md) - [On Unload](../Events/onUnload.md) - [On Validate](../Events/onValidate.md)

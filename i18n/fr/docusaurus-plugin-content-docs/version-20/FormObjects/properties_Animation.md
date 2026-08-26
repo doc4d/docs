@@ -51,9 +51,9 @@ Permet à l'utilisateur de maintenir le bouton de la souris enfoncé pour affich
 
 ---
 
-## Défilement tous les n ticks
+## Défilement toutes les n secondes
 
-Permet de parcourir le contenu du bouton d'image à la vitesse spécifiée (en graduations). Dans ce mode, toutes les autres options sont ignorées.
+Permet de faire défiler le contenu du bouton image à la vitesse spécifiée (en secondes). Dans ce mode, toutes les autres options sont ignorées.
 
 #### Grammaire JSON
 

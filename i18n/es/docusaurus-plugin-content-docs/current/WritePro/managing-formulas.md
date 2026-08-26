@@ -6,9 +6,11 @@ slug: /WritePro/formulas
 
 ## Generalidades
 
-Los documentos 4D Write Pro pueden contener referencias a fórmulas 4D como variables, campos, expresiones, métodos proyecto o comandos 4D. Información específica como el número de página también puede ser referenciada a través de fórmulas (ver [Inserción de documentos y expresiones de página](#inserting-date-and-time-formulas) más abajo).
+Los documentos 4D Write Pro pueden contener referencias a fórmulas 4D como variables, campos, expresiones, métodos proyecto o comandos 4D. Specific information such as the page number can also be referenced through formulas (see below).
 
-La inserción de fórmulas en las áreas de 4D Write Pro se realiza con el comando [**WP INSERT FORMULA**](commands/wp-insert-formula.md) y puede leerse utilizando el comando [**WP Get formulas**](commands-legacy/wp-get-formulas.md). También los devuelve el comando [**WP Get text**](commands-legacy/wp-get-text.md).
+Inserting formulas in 4D Write Pro areas is done with the [**WP Insert formula**](commands/wp-insert-formula.md) command and can be read using the [**WP Get formulas**](commands-legacy/wp-get-formulas.md) command. También los devuelve el comando [**WP Get text**](commands-legacy/wp-get-text.md).
+
+### Evaluación de fórmulas
 
 Las fórmulas son evaluadas:
 
@@ -27,7 +29,7 @@ Las fórmulas no son evaluadas cuando un documento es cargado (usando [**WP New*
 
 Las fórmulas se convierten en valores estáticos si se llama al comando [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) (excepto para el número de página y el recuento de páginas, ver más abajo).
 
-**Nota de compatibilidad**: *el manejo de expresiones utilizando los comandos [**ST INSERT EXPRESSION**](../commands-legacy/st-insert-expression.md), [**ST Get expression**](../commands-legacy/st-get-expression.md), [**ST COMPUTE EXPRESSIONS**](../commands-legacy/st-compute-expressions.md), y [**ST FREEZE EXPRESSIONS**](../commands-legacy/st-freeze-expressions.md) es obsoleto, sin embargo, sigue siendo soportado en 4D Write Pro por compatibilidad*.
+**Nota de compatibilidad**: *el manejo de expresiones utilizando los comandos [**ST INSERT EXPRESSION**](../commands/st-insert-expression), [**ST Get expression**](../commands/st-get-expression), [**ST COMPUTE EXPRESSIONS**](../commands/st-compute-expressions), y [**ST FREEZE EXPRESSIONS**](../commands/st-freeze-expressions) es obsoleto, sin embargo, sigue siendo soportado en 4D Write Pro por compatibilidad*.
 
 :::note
 
@@ -46,34 +48,34 @@ Desea sustituir la selección en un área de 4D Write Pro por el contenido de un
  $sel:=WP Selection range(4DWPArea)
  Case of
     :(Form event code=On Clicked)
-       WP INSERT FORMULA($sel;Formula(fullName);wk replace)
+       WP Insert formula($sel;Formula(fullName);wk replace)
  End case
 ```
 
 ## Objeto de contexto de fórmula
 
-Puede insertar expresiones especiales relacionadas con los atributos del documento en cualquier área del documento (cuerpo, encabezado, pie de página) utilizando el comando [WP Insertar fórmula](commands/wp-insert-formula.md). Dentro de una fórmula, un objeto contextual de la fórmula se expone automáticamente. Puede utilizar las propiedades de este objeto a través de [**This**](../commands/this.md):
+Puede insertar expresiones especiales relacionadas con los atributos del documento en cualquier área del documento (cuerpo, encabezado, pie de página) utilizando el comando [WP Insertar fórmula](commands/wp-insert-formula.md). Dentro de una fórmula, un objeto contextual de la fórmula se expone automáticamente. Puede utilizar las propiedades de este objeto a través de [**This**](../commands/this):
 
-| Propiedades                                                                    | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ------------------------------------------------------------------------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [This](../commands/this.md).title                              | Text   | Título definido en el atributo wk title                                                                                                                                                                                                                                                                                                                                                                     |
-| [This](../commands/this.md).author                             | Text   | Autor definido en el atributo wk author                                                                                                                                                                                                                                                                                                                                                                     |
-| [This](../commands/this.md).subject                            | Text   | Asunto definido en el atributo wk subject                                                                                                                                                                                                                                                                                                                                                                   |
-| [This](../commands/this.md).company                            | Text   | Empresa definida en el atributo wk company                                                                                                                                                                                                                                                                                                                                                                  |
-| [This](../commands/this.md).notes                              | Text   | Notas definidas en el atributo wk notes                                                                                                                                                                                                                                                                                                                                                                     |
-| [This](../commands/this.md).dateCreation                       | Fecha  | Fecha de creación definida en el atributo wk date creation                                                                                                                                                                                                                                                                                                                                                  |
-| [This](../commands/this.md).dateModified                       | Fecha  | Fecha de modificación definida en el atributo wk date modified                                                                                                                                                                                                                                                                                                                                              |
-| [This](../commands/this.md).pageNumber (\*) | Number | Número de página tal y como está definido<li>:- Desde el inicio del documento (por defecto) o </li><li>- Desde el inicio de página de sección si está definido por inicio de página de sección.</li> Esta fórmula es siempre dinámica; no se ve afectada por el comando [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md). |
-| [This](../commands/this.md).pageCount (\*)  | Number | Conteo de páginas: recuento total de páginas.<br/> Esta fórmula es siempre dinámica; no se ve afectada por el comando [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md).                                                                                                                                                                      |
-| [This](../commands/this.md).document                           | Object | Documento 4D Write Pro                                                                                                                                                                                                                                                                                                                                                                                      |
-| [This](../commands/this.md).data                               | Object | Contexto de datos del documento 4D Write Pro definido por [**WP SET DATA CONTEXT**](commands-legacy/wp-set-data-context.md)                                                                                                                                                                                                                                                                                 |
-| [This](../commands/this.md).sectionIndex                       | Number | El índice de la sección en el documento 4D Write Pro a partir de 1                                                                                                                                                                                                                                                                                                                                          |
-| [This](../commands/this.md).pageIndex                          | Number | El número de página real en el documento 4D Write Pro a partir de 1 (independientemente de los números de página de la sección)                                                                                                                                                                                                                                                          |
-| [This](../commands/this.md).sectionName                        | String | El nombre que el usuario da a la sección                                                                                                                                                                                                                                                                                                                                                                    |
+| Propiedades                                             | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| This.title                              | Text   | Título definido en el atributo wk title                                                                                                                                                                                                                                                                                                                                                                          |
+| This.author                             | Text   | Autor definido en el atributo wk author                                                                                                                                                                                                                                                                                                                                                                          |
+| This.subject                            | Text   | Asunto definido en el atributo wk subject                                                                                                                                                                                                                                                                                                                                                                        |
+| This.company                            | Text   | Empresa definida en el atributo wk company                                                                                                                                                                                                                                                                                                                                                                       |
+| This.notes                              | Text   | Notas definidas en el atributo wk notes                                                                                                                                                                                                                                                                                                                                                                          |
+| This.dateCreation                       | Fecha  | Fecha de creación definida en el atributo wk date creation                                                                                                                                                                                                                                                                                                                                                       |
+| This.dateModified                       | Fecha  | Fecha de modificación definida en el atributo wk date modified                                                                                                                                                                                                                                                                                                                                                   |
+| This.pageNumber (\*) | Number | Número de página tal y como está definido:<ul><li>Desde el inicio del documento (por defecto) o </li><li>Desde el inicio de página de sección si está definido por inicio de página de sección.</li></ul> Esta fórmula es siempre dinámica; no se ve afectada por el comando [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md). |
+| This.pageCount (\*)  | Number | Conteo de páginas: recuento total de páginas.<br/> Esta fórmula es siempre dinámica; no se ve afectada por el comando [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md).                                                                                                                                                                           |
+| This.document                           | Object | Documento 4D Write Pro                                                                                                                                                                                                                                                                                                                                                                                           |
+| This.data                               | Object | Contexto de datos del documento 4D Write Pro definido por [**WP SET DATA CONTEXT**](commands-legacy/wp-set-data-context.md)                                                                                                                                                                                                                                                                                      |
+| This.sectionIndex                       | Number | El índice de la sección en el documento 4D Write Pro a partir de 1                                                                                                                                                                                                                                                                                                                                               |
+| This.pageIndex                          | Number | El número de página real en el documento 4D Write Pro a partir de 1 (independientemente de los números de página de la sección)                                                                                                                                                                                                                                                               |
+| This.sectionName                        | String | El nombre que el usuario da a la sección                                                                                                                                                                                                                                                                                                                                                                         |
 
 :::note
 
-Existen propiedades de contexto adicionales cuando se trabaja con tablas. Vea *Gestión de tablas* para más información.
+Cuando **trabajas con tablas**, [expresiones de contexto adicionales](./user-legacy/handling-tables.md#table-formula-object) como `Este.elemento` están disponibles.
 
 :::
 
@@ -86,32 +88,14 @@ Por ejemplo, para insertar el número de página en el pie de página:
 
 ```4d
  $footer:=WP Get footer(4DWP;1)
- WP INSERT FORMULA($footer;Formula(This.pageNumber);wk append)
-  //Usando Formula(myMethod) con myMethod procesando This.pageNumber
-  //no funcionaría correctamente
+ WP Insert formula($footer;Formula(This.pageNumber);wk append)
+  //Using Formula(myMethod) with myMethod processing This.pageNumber
+  //would not work correctly
 ```
-
-## Table formula context object
-
-When used in a formula within the table, the **This** keyword gives access to different data according to the context:
-
-| **Contexto**                                                                                                           | **Expression**                                                               | **Tipo**                                                    | **Devuelve**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| En cualquier sitio                                                                                                     | [This](../commands/this.md).table                            | Object                                                      | Tabla actual                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|                                                                                                                        | [This](../commands/this.md).row                              | Object                                                      | Current table row element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|                                                                                                                        | [This](../commands/this.md).rowIndex                         | Number                                                      | Index of the current row, starting from 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| When a datasource has been defined for the table                                                                       | [This](../commands/this.md).table.dataSource | Objet (fórmula)                          | Datasource as a formula                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|                                                                                                                        | [This](../commands/this.md).tableData                        | Collection or Entity selection (usually) | table.dataSource evaluada                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| In each data row when a table datasource returns a collection or an entity selection                                   | [This](../commands/this.md).item.xxx         | Cualquiera                                                  | Mapped to each item of the table datasource collection or entity selection, for example **This.item.firstName** if the associated entity has the *firstName* attribute                                                                                                                                                                                                                                                                                                                                |
-|                                                                                                                        | [This](../commands/this.md).itemIndex                        | Number                                                      | Index of the current item in the collection or entity selection, starting from 0                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| In any row (except header rows) when a table datasource returns a collection or an entity selection | [This](../commands/this.md).previousItems                    | Collection o entity selection                               | Items displayed on the pages before the bottom carry over row (if any) or before the row of the expression, including the page where is displayed the row containing the expression. <br/>This expression returns the same type of value as the **This.tableData** expression.                                                                                                                                                                                     |
-| In a break row                                                                                                         | [This](../commands/this.md).breakItems                       | Collection o entity selection                               | Items of the collection or entity selection displayed in the rows between:<br/><ul><li>the current break row and the previous break row of the same level (or the start of the table) if the break row(s) are displayed after the data row.</li><li>the current break and the next break row of the same level (or the end of the table) if the break row(s) are displayed before the data row.</li></ul> |
-
-En cualquier otro contexto, estas expresiones devolverán *undefined*.
 
 :::note
 
-Para más información sobre la inserción de fórmulas, ver [WP INSERT FORMULA](../commands/wp-insert-formula).
+For more information about formula insertion, see [WP Insert formula](../commands/wp-insert-formula).
 
 :::
 
@@ -119,11 +103,11 @@ Para más información sobre la inserción de fórmulas, ver [WP INSERT FORMULA]
 
 **Date**
 
-Cuando se inserta en una fórmula el comando [**Current date**](../commands-legacy/current-date.md), una variable de fecha o un método que devuelve una fecha, ésta se transformará automáticamente en texto utilizando el formato abreviado de fecha del sistema.
+Cuando se inserta en una fórmula el comando [**Current date**](../commands/current-date), una variable de fecha o un método que devuelve una fecha, ésta se transformará automáticamente en texto utilizando el formato abreviado de fecha del sistema.
 
 **Time**
 
-Cuando el comando [**Current time**](../commands-legacy/current-time.md), una variable de hora o un método que devuelve una hora es insertado en una fórmula, debe estar encerrado dentro de un comando [**String**](../commands/string.md) porque el tipo de tiempo no está soportado en JSON. Considera los siguientes ejemplos de fórmulas:
+Cuando el comando [**Current time**](../commands/current-time), una variable de hora o un método que devuelve una hora es insertado en una fórmula, debe estar encerrado dentro de un comando [**String**](../commands/string) porque el tipo de tiempo no está soportado en JSON. Considera los siguientes ejemplos de fórmulas:
 
 ```4d
   // Este código es la mejor práctica
@@ -140,7 +124,7 @@ Cuando el comando [**Current time**](../commands-legacy/current-time.md), una va
 
 ## Soporte de estructura virtual
 
-Las expresiones de tablas y campos insertadas en los documentos 4D Write Pro soportan la definición de la estructura virtual de la base de datos. La estructura virtual expuesta a las fórmulas se define mediante los comandos [**SET FIELD TITLES**](../commands-legacy/set-field-titles.md)(...;\*) y [**SET TABLE TITLES**](../commands-legacy/set-table-titles.md)(...;\*).
+Las expresiones de tablas y campos insertadas en los documentos 4D Write Pro soportan la definición de la estructura virtual de la base de datos. La estructura virtual expuesta a las fórmulas se define mediante los comandos [**SET FIELD TITLES**](../commands/set-field-titles)(...;\*) y [**SET TABLE TITLES**](../commands/set-table-titles)(...;\*).
 
 Cuando se define una estructura virtual:
 
@@ -167,7 +151,7 @@ Por defecto, las fórmulas 4D se muestran como valores. Al insertar una fórmula
 
 Para mostrar fórmulas como referencias, puede:
 
-- check the **Show references** option in the Property list (see *Configuring View properties*), or
+- marque la opción **Mostrar referencias** en la lista de propiedades (consulte *Configuración de las propiedades Vista*), o bien
 - utilizar la acción estándar visibleReferences (ver *Expresiones dinámicas*), o bien
 - usa el comando [**WP SET VIEW PROPERTIES**](commands-legacy/wp-set-view-properties.md) con el selector `wk visible references` en **True**.
 
@@ -201,8 +185,8 @@ En este caso, puede mostrar las referencias a fórmulas como símbolos ![](../as
 
 Para mostrar las referencias a fórmulas como símbolos, puede:
 
-- check the **Display formula source as symbol option** in the Property list (see *Configuring View properties*), or
-- utilizar la acción estándar displayFormulaAsSymbol (ver *Uso de las acciones estándar de 4D Write Pro*), o bien
+- active la opción **Mostrar origen de fórmula como símbolo** en la lista de propiedades (consulte *Configuración de las propiedades de la vista*), o
+- use the displayFormulaAsSymbol standard action , or
 - usa el comando [**WP SET VIEW PROPERTIES**](commands-legacy/wp-set-view-properties.md) con el selector `wk display formula as symbol` en **True**.
 
 ### Referencias como nombres
@@ -220,10 +204,10 @@ Si asigna nombres a las fórmulas, se mostrarán en lugar de los textos:
 Para asignar un nombre a una fórmula, debe utilizar el comando [WP Insert formula](commands/wp-insert-formula.md) con un parámetro objeto. Por ejemplo:
 
 ```4d
-  //inserta el día anterior en el documento
- $o:=New object("formula";Formula(Current date-1); "name"; "Yesterday")
+  //inserts the previous day in the document
+ $o:=New object("formula";Formula(Current date-1);"name";"Yesterday")
  $range:=WP Text range(WPArea;wk start text;wk end text)
- WP INSERT FORMULA($range;$o;wk append)
+ WP Insert formula($range;$o;wk append)
  
 ```
 
@@ -252,9 +236,8 @@ En este contexto, puede visualizar el texto fuente de la fórmula pulsando **Ctr
 - Cuando las fórmulas tienen nombres y se muestran como nombres, no se muestra ningún consejo por defecto.
   Puede mostrar el texto original de la fórmula presionando **Ctrl** (Windows) o **Cmd** (macOS) mientras pasa el cursor sobre la fórmula:
 
-  !&#x20;
-
 #### Ver también
 
 [Descargar base de datos HDI](http://download.4d.com/Demos/4D_v16/HDI_4DWP_Filter4DExpressions.zip)</br>
 *Usar comandos del tema Texto con estilo*
+

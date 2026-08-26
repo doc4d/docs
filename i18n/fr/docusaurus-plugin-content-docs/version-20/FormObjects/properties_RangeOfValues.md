@@ -3,7 +3,7 @@ id: propertiesRangeOfValues
 title: Plage de valeurs
 ---
 
-## La valeur par défaut
+## Valeur par défaut
 
 Vous pouvez attribuer une valeur par défaut à saisir dans un objet Zone de saisie. Cette propriété est utile par exemple lorsque la [source de données](properties_Object.md#variable-or-expression) de la zone de saisie est un champ : la valeur par défaut est saisie lors du premier affichage d'un nouvel enregistrement. Vous pouvez modifier la valeur, sauf si la zone de saisie a été définie comme [non saisissable](properties_Entry.md#enterable).
 
@@ -52,7 +52,7 @@ Permet de définir une liste dont les valeurs ne peuvent pas être saisies dans 
 
 #### Objets pris en charge
 
-[Combo Box](comboBox_overview.md) - [Colonne de List Box](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
+[Combo Box](comboBox_overview.md) - [List Box Column](listbox-column.md) - [Input](input_overview.md)
 
 ---
 
@@ -71,4 +71,4 @@ La création d'une liste obligatoire n'affiche pas automatiquement la liste lors
 
 #### Objets pris en charge
 
-[Combo Box](comboBox_overview.md) - [Colonne de List Box](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
+[Combo Box](comboBox_overview.md) - [List Box Column](listbox-column.md) - [Input](input_overview.md)

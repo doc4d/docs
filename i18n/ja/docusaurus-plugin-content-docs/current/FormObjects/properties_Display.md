@@ -5,7 +5,7 @@ title: 表示
 
 ---
 
-## 文字フォ－マット
+## 文字フォーマット
 
 文字フォーマットは、表示や印刷時に文字フィールドや変数にデータを表示する方法を制御します。 以下は文字フィールド用に提供されるフォーマットのリストです:
 
@@ -46,13 +46,11 @@ RB-1762-1
 
 #### 対象オブジェクト
 
-[コンボボックス](comboBox_overview.md)* [ドロップダウンリスト](dropdownList_Overview.md)
-* [リストボックス列](listbox_overview.md#リストボックス列)
-* [リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[ドロップダウンリスト](dropdownList_Overview.md) - [コンボボックス](comboBox_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#フッター)
 
 #### コマンド
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
 ---
 
@@ -83,11 +81,11 @@ RB-1762-1
 
 *(1)* "June" は "Jun"、”July” は "Jul" に省略されます。
 
-*(2)* 年は、1930年~2029年の間は2桁の数字で表示されますが、それ以外の場合は4桁で表示されます。 これはデフォルトでの設定ですが、[SET DEFAULT CENTURY](../commands-legacy/set-default-century.md) コマンドを使用することでこの振る舞いを変更することができます。
+*(2)* 年は、1930年~2029年の間は2桁の数字で表示されますが、それ以外の場合は4桁で表示されます。 これはデフォルトでの設定ですが、[SET DEFAULT CENTURY](../commands/set-default-century) コマンドを使用することでこの振る舞いを変更することができます。
 
 *(3)* `ISO Date Time` フォーマットは XML の日付と時間表現の標準 (ISO8601) に対応します。 これは主に XML フォーマットや Web サービスのデータを読み込んだり書き出したりするために使用します。
 
-> 表示フォーマットにかかわらず、年度を2 桁で入力すると、4D は年が00~29 の間であれば 21 世紀とみなし、30~99 の間であれば 20 世紀とみなします。 これはデフォルトの設定ですが、[SET DEFAULT CENTURY](../commands-legacy/set-default-century.md) コマンドを使用することでこの振る舞いを変更することができます。
+> 表示フォーマットにかかわらず、年度を2 桁で入力すると、4D は年が00~29 の間であれば 21 世紀とみなし、30~99 の間であれば 20 世紀とみなします。 これはデフォルトの設定ですが、[SET DEFAULT CENTURY](../commands/set-default-century) コマンドを使用することでこの振る舞いを変更することができます。
 
 ### カスタムフォーマット
 
@@ -106,18 +104,18 @@ RB-1762-1
 
 :::note blankIfNull
 
-- デフォルトでは、null の日付はゼロで表示されます。例: 00/00/00。 "blankIfNull" オプションを使用すると、null の日付は空白として表示されます。 "blankIfNull" 文字列 (文字の大小を区別) は、選択されたフォーマットの値と組み合わせて使います。 例: "systemShort blankIfNull" または "LLLdd日 ee blankIfNull"。
-- 日付型の [リストボックスの列](listbox_overview.md#リストボックス列]) および [リストボックスのフッター](listbox_overview.md#リストボックスフッター) は常に "blankIfNull" (null値は空白表示) の振る舞いをします (解除できません)。
+- デフォルトでは、 [null 日付](../Concepts/dt_date.md#日付リテラル) は 00/00/00 のように、ゼロとして表示されます。 "blankIfNull" オプションを使用すると、null の日付は空白として表示されます。 "blankIfNull" 文字列 (文字の大小を区別) は、選択されたフォーマットの値と組み合わせて使います。 例: "systemShort blankIfNull" または "LLLdd日 ee blankIfNull"。
+- 日付型の [リストボックスのカラム](listbox-column.md) および [リストボックスのフッター](listbox-header-footer.md#フッター) は常に "blankIfNull" (null値は空白表示) の振る舞いをします (解除できません)。
 
 :::
 
 #### 対象オブジェクト
 
-[コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#フッター)
 
 #### コマンド
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
 ---
 
@@ -144,11 +142,11 @@ RB-1762-1
 
 たとえば、3桁の数字を表示する場合、###というフォーマットを使用できます。 フォーマットにより許可された桁数を超えて入力すると、4Dは <<< をフィールドに表示し、表示フォーマットで指定された桁数を超える入力がおこなわれたことを示します。
 
-ユーザーがマイナスの数値を入力すると、左端の文字はマイナス記号として表示されます (負数の表示フォーマットが指定されていない場合)。 ##0というフォーマットであれば、マイナス 26 は -26 と表示されます。マイナス260 は <<< と表示されますが、これはプレースホルダーが 3桁分しか指定されていないところに、マイナス記号により 1つのプレースホルダが使用されてしまい、桁あふれしたためです。
+ユーザーがマイナスの数値を入力すると、左端の文字はマイナス記号として表示されます (負数の表示フォーマットが指定されていない場合)。 ##0というフォーマットであれば、マイナス 26 は -26 と表示されます。マイナス260 は <<< と表示されますが、これはプレースホルダーが 3桁分しか指定されていないところに、マイナス記号により 1つのプレースホルダーが使用されてしまい、桁あふれしたためです。
 
-> 表示フォ－マットとは関係なく、4Dはフィ－ルドに入力された数値を受け入れ、保存します。 データが失われることはありません。
+> 表示フォーマットとは関係なく、4Dはフィールドに入力された数値を受け入れ、保存します。 データが失われることはありません。
 
-各プレースホルダー文字は、先行のゼロや末尾のゼロを表示する上で、その効果に違いがあります。 先行のゼロとは小数点より左側の数値の先頭にあるゼロのことです。末尾のゼロは小数点より右側の数値の終わりにあるゼロのことです。
+各プレースホルダー文字は、先行のゼロや末尾のゼロを表示する上で、その効果に違いがあります。 先行のゼロとは小数点より左側の数値の先頭にあるゼロのことです。 末尾のゼロは小数点より右側の数値の終わりにあるゼロのことです。
 
 たとえば ##0 というフォーマットを使用して 3桁の数字を表示するものとします。 ユーザーがフィールドに何も入力しないと、フィールドには 0 が表示されます。 26 と入力すると、フィールドには 26 と表示されます。
 
@@ -159,7 +157,7 @@ RB-1762-1
 > Windows 環境下で、テンキーの小数点キーを使用した際、4D はカーソルが位置しているフィールドの型に応じて挙動が変化します:
 >
 > - 実数型のフィールドの場合、このキーを使用するとシステムによって定義された浮動小数点を挿入します。
-> - それ以外の型のフィールドの場合、このキーを使用するとそのキーに割り当てられた文字を挿入します。通常はピリオド (.)  またはカンマ (,) です。
+> - それ以外の型のフィールドの場合、このキーを使用するとそのキーに割り当てられた文字を挿入します。通常はピリオド (.) またはカンマ (,) です。
 
 ### 小数点とその他の表示文字
 
@@ -175,7 +173,7 @@ RB-1762-1
 
 \###.##0
 
-ポイント (点) は、ユーザが少なくとも4桁以上の数値を入力した場合にのみ表示されます。
+ポイント (点) は、ユーザーが少なくとも4桁以上の数値を入力した場合にのみ表示されます。
 
 数値表示フォーマットにおいて、スペースは文字として扱われます。
 
@@ -195,7 +193,7 @@ RB-1762-1
 
 ￥###,##0.00;(￥###,##0.00);
 
-2つ目のセミコロンにより、ゼロの表示には何も使用しないことを 4Dに指示している点に注目してください。 次のフォーマットは前の例と似ていますが、2つ目のセミコロンが指定されていません。これにより、ゼロに対して正数のフォーマットを使用するよう 4Dに指示しています:
+2つ目のセミコロンにより、ゼロの表示には何も使用しないことを 4Dに指示している点に注目してください。 次のフォーマットは前の例と似ていますが、2つ目のセミコロンが指定されていません。 これにより、ゼロに対して正数のフォーマットを使用するよう 4Dに指示しています:
 
 ￥###,##0.00;(￥###,##0.00)
 
@@ -281,13 +279,13 @@ RB-1762-1
 [コンボボックス](comboBox_overview.md) -
 [ドロップダウンリスト](dropdownList_Overview.md) -
 [入力](input_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
 [進捗インジケーター](progressIndicator.md)
 
 #### コマンド
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md) - [String](./commands/string)
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format) - [String](../commands/string)
 
 ---
 
@@ -347,11 +345,11 @@ RB-1762-1
 
 #### 対象オブジェクト
 
-[入力](input_overview.md)* [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[入力](input_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#フッター)
 
 #### コマンド
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
 ---
 
@@ -384,7 +382,7 @@ RB-1762-1
 
 ### カスタムフォーマット
 
-Customized time formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. 例:
+カスタムの日付フォーマットは、[**日付と時間のフォーマット**](../Project/date-time-formats.md) ページで説明されている複数のパターンを使用して作成することができます。 例: 例:
 
 | パターン                       | 例                        |
 | -------------------------- | ------------------------ |
@@ -405,11 +403,11 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#フッター)
 
 #### コマンド
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
 ---
 
@@ -418,7 +416,7 @@ Customized time formats can be built using several patterns described in the [**
 [ブール式](properties_Object.md#式の型) を次のフォームオブジェクトで表示した場合:
 
 - [入力オブジェクト](input_overview.md) にテキストとして
-- [リストボックス列](listbox_overview.md#リストボックス列) に表示タイプ ["ポップアップ"](properties_Display.md#表示タイプ) を選択して
+- [リストボックスカラム](listbox-column.md) に表示タイプ ["ポップアップ"](properties_Display.md#表示タイプ) を選択して
 
 ... 値の代わりに表示するテキストを指定することができます:
 
@@ -433,11 +431,11 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列) - [入力](input_overview.md)
+[リストボックスカラム](listbox-column.md) - [入力](input_overview.md)
 
 #### コマンド
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
 ---
 
@@ -457,11 +455,11 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列)
+[リストボックスカラム](listbox-column.md)
 
 #### コマンド
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
 ---
 
@@ -509,11 +507,11 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[チェックボックス](checkbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[チェックボックス](checkbox_overview.md) - [リストボックスカラム](listbox-column.md)
 
 #### コマンド
 
-[OBJECT Get three states checkbox](../commands-legacy/object-get-three-states-checkbox.md) - [OBJECT SET THREE STATES CHECKBOX](../commands-legacy/object-set-three-states-checkbox.md)
+[OBJECT Get three states checkbox](../commands/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands/object-set-three-states-checkbox)
 
 ---
 
@@ -534,7 +532,7 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列)
+[リストボックスカラム](listbox-column.md)
 
 ---
 
@@ -571,11 +569,11 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#フッター)
 
 #### コマンド
 
-[`LISTBOX Get property`](../commands/listbox-get-property.md) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md)
+[`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property)
 
 ---
 
@@ -583,7 +581,7 @@ Customized time formats can be built using several patterns described in the [**
 
 このプロパティが選択されていると、アプリケーションモードでオブジェクトが非表示になります。
 
-大部分のオブジェクトに対して、表示状態プロパティを指定することができます。 このプロパティは主に、ダイナミックなインターフェースの開発を容易にするために使用されます。 インターフェースを開発するとき、多くの場合はフォームの `On Load` イベント中にプログラムからオブジェクトを非表示にした後で、一部のオブジェクトを再度表示する必要性が頻繁に生じます。 表示状態プロパティを使用すると、特定オブジェクトをあらかじめ非表示にしておくことにより、このロジックを逆に働かせることができます。 この後、必要に応じて [`OBJECT SET VISIBLE`](../commands-legacy/object-set-visible.md) コマンドを使用し、これらのオブジェクトを表示するようプログラミングすることができます。
+大部分のオブジェクトに対して、表示状態プロパティを指定することができます。 このプロパティは主に、ダイナミックなインターフェースの開発を容易にするために使用されます。 インターフェースを開発するとき、多くの場合はフォームの `On Load` イベント中にプログラムからオブジェクトを非表示にした後で、一部のオブジェクトを再度表示する必要性が頻繁に生じます。 表示状態プロパティを使用すると、特定オブジェクトをあらかじめ非表示にしておくことにより、このロジックを逆に働かせることができます。 この後、必要に応じて [`OBJECT SET VISIBLE`](../commands/object-set-visible) コマンドを使用し、これらのオブジェクトを表示するようプログラミングすることができます。
 
 #### リストフォームにおける自動表示
 
@@ -596,7 +594,7 @@ Customized time formats can be built using several patterns described in the [**
 
 ![](../assets/en/FormObjects/select-row.png)
 
-オブジェクトが [`OBJECT SET VISIBLE`](../commands-legacy/object-set-visible.md) コマンドで非表示にされた場合、4D はこのプロパティを無視します。 つまり、レコードの選択状態にかかわらず、当該オブジェクトは非表示のままになります。
+オブジェクトが [`OBJECT SET VISIBLE`](../commands/object-set-visible) コマンドで非表示にされた場合、4D はこのプロパティを無視します。 つまり、レコードの選択状態にかかわらず、当該オブジェクトは非表示のままになります。
 
 #### JSON 文法
 
@@ -616,9 +614,9 @@ Customized time formats can be built using several patterns described in the [**
 [グループボックス](groupBox.md) -
 [階層リスト](list_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ピクチャーボタン](pictureButton_overview.md) -
 [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
 [プラグインエリア](pluginArea_overview.md) -
@@ -630,12 +628,11 @@ Customized time formats can be built using several patterns described in the [**
 [ステッパー](stepper.md) -
 [サブフォーム](subform_overview.md) -
 [タブコントロール](tabControl.md) -
-[テキストエリア](text.md) -
-[Web エリア](webArea_overview.md)
+[テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get visible](../commands-legacy/object-get-visible.md) - [OBJECT SET VISIBLE](../commands-legacy/object-set-visible.md)
+[OBJECT Get visible](../commands/object-get-visible) - [OBJECT SET VISIBLE](../commands/object-set-visible)
 
 ---
 
@@ -651,7 +648,7 @@ Customized time formats can be built using several patterns described in the [**
 
 このオプションがチェックされていると、テキストがカラムやエリアの幅を越えたときに、カラムやエリアの高さが許容する範囲内で自動的に次の行へと改行します。
 
-- 一行のカラムやエリアの場合、全体が表示できる最後の単語までが表示されます。 4Dは改行を挿入します。下矢印キーを押すことで、エリアの内容をスクロールできます。
+- 一行のカラムやエリアの場合、全体が表示できる最後の単語までが表示されます。 4Dは改行を挿入します。 下矢印キーを押すことで、エリアの内容をスクロールできます。
 
 - 複数行のカラムやエリアの場合、4Dは自動改行を実行します。
 
@@ -661,7 +658,7 @@ Customized time formats can be built using several patterns described in the [**
 
 `JSON 文法では: "none"`
 
-このオブションの場合、4D はいっさい自動改行をおこないません。表示可能な最後の単語はエリアをはみ出します。 テキストタイプのエリアでは改行がサポートされます:
+このオブションの場合、4D はいっさい自動改行をおこないません。 表示可能な最後の単語はエリアをはみ出します。 テキストタイプのエリアでは改行がサポートされます:
 
 ![](../assets/en/FormObjects/wordwrap3.png)
 
@@ -690,8 +687,8 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[入力](input_overview.md)* [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[入力](input_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#フッター)
 
 #### コマンド
 
-[`LISTBOX Get property`](../commands/listbox-get-property.md) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md)
+[`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property)

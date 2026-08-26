@@ -7,7 +7,7 @@ title: Text
 
 ## Autoriser sélecteur police/couleur
 
-When this property is enabled, the [OPEN FONT PICKER](../commands-legacy/open-font-picker.md) and [OPEN COLOR PICKER](../commands-legacy/open-color-picker.md) commands can be called to display the system font and color picker windows. A l'aide de ces fenêtres, les utilisateurs peuvent modifier la police ou la couleur d'un objet formulaire dont le focus est accessible directement au clic. Lorsque cette propriété est désactivée (par défaut), les commandes d'ouverture du sélecteur ne produisent aucun effet.
+Lorsque cette propriété est activée, les commandes [OPEN FONT PICKER](../commands/open-font-picker) et [OPEN COLOR PICKER](../commands/open-color-picker) peuvent être appelées pour afficher les fenêtres de sélection des polices et des couleurs du système. A l'aide de ces fenêtres, les utilisateurs peuvent modifier la police ou la couleur d'un objet formulaire dont le focus est accessible directement au clic. Lorsque cette propriété est désactivée (par défaut), les commandes d'ouverture du sélecteur ne produisent aucun effet.
 
 #### Grammaire JSON
 
@@ -25,10 +25,10 @@ When this property is enabled, the [OPEN FONT PICKER](../commands-legacy/open-fo
 
 Le texte sélectionné est plus foncé et plus épais.
 
-Vous pouvez définir cette propriété en utilisant la commande [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md).
+Vous pouvez définir cette propriété en utilisant la commande [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> This is normal text.<br/>
-> **This is bold text.**
+> Ceci est du texte normal.<br/>
+> **Ceci est du texte en gras.**
 
 #### Grammaire JSON
 
@@ -38,11 +38,11 @@ Vous pouvez définir cette propriété en utilisant la commande [**OBJECT SET FO
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands/object-get-font-style) - [OBJECT SET FONT STYLE](../commands/object-set-font-style)
 
 ---
 
@@ -50,10 +50,10 @@ Vous pouvez définir cette propriété en utilisant la commande [**OBJECT SET FO
 
 Fait pencher le texte sélectionné légèrement vers la droite.
 
-Vous pouvez également définir cette propriété via la commande [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md).
+Vous pouvez également définir cette propriété via la commande [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> This is normal text.<br/>
-> *This is text in italics.*
+> Ceci est du texte normal.<br/>
+> *Ceci est du texte en italique.*
 
 #### Grammaire JSON
 
@@ -63,11 +63,11 @@ Vous pouvez également définir cette propriété via la commande [**OBJECT SET 
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands/object-get-font-style) - [OBJECT SET FONT STYLE](../commands/object-set-font-style)
 
 ---
 
@@ -83,11 +83,11 @@ Une ligne est placée sous le texte.
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands/object-get-font-style) - [OBJECT SET FONT STYLE](../commands/object-set-font-style)
 
 ---
 
@@ -124,20 +124,20 @@ Trois thèmes de polices sont disponibles :
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT Get style sheet](../commands-legacy/object-get-style-sheet) - [OBJECT SET STYLE SHEET](../commands-legacy/object-set-style-sheet)
+[OBJECT Get style sheet](../commands/object-get-style-sheet) - [OBJECT SET STYLE SHEET](../commands/object-set-style-sheet)
 
 ### Famille de police
 
 Il existe deux types de noms de familles de polices :
 
 - *family-name :* Le nom d'une famille de polices, comme "times", "courier", "arial", etc.
-- \*generic-family \*: Le nom d'une famille générique, comme "serif", "sans-serif", "cursive", "fantasy", "monospace".
+- *generic-family*: Le nom d'une famille générique, comme "serif", "sans-serif", "cursive", "fantasy", "monospace".
 
-You can set this using the [`OBJECT SET FONT`](../commands-legacy/object-set-font.md) command.
+Vous pouvez le définir en utilisant la commande [`OBJECT SET FONT`](../commands/object-set-font).
 
 #### Grammaire JSON
 
@@ -145,15 +145,15 @@ You can set this using the [`OBJECT SET FONT`](../commands-legacy/object-set-fon
 | ---------- | --------------- | ------------------------------- |
 | fontFamily | string          | Nom d'une famille de police CSS |
 
-> 4D recommande d'utiliser uniquement les polices de [sécurité Web](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
+> 4D recommande d'utiliser uniquement les polices [compatibles Web](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT Get font](../commands-legacy/object-get-font.md) - [OBJECT SET FONT](../commands-legacy/object-set-font.md)
+[OBJECT Get font](../commands/object-get-font) - [OBJECT SET FONT](../commands/object-set-font)
 
 ## Taille
 
@@ -167,11 +167,11 @@ Permet de définir en points la taille de police de l'objet.
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT Get font size](../commands-legacy/object-get-font-size.md) - [OBJECT SET FONT SIZE](../commands-legacy/object-set-font-size.md)
+[OBJECT Get font size](../commands/object-get-font-size) - [OBJECT SET FONT SIZE](../commands/object-set-font-size)
 
 ---
 
@@ -187,7 +187,7 @@ La couleur peut être spécifiée par :
 - une valeur HEX - comme "# ff0000"
 - une valeur RVB - comme "rgb (255,0,0)"
 
-You can also set this property using the [**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors.md) command.
+Vous pouvez également définir cette propriété à l'aide de la commande [**OBJECT SET RGB COLORS**](../commands/object-set-rgb-colors).
 
 #### Grammaire JSON
 
@@ -197,23 +197,23 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](../commands
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT GET RGB COLORS](../commands-legacy/object-get-rgb-colors.md) - [OBJECT SET RGB COLORS](../commands-legacy/object-set-rgb-colors.md)
+[OBJECT GET RGB COLORS](../commands/object-get-rgb-colors) - [OBJECT SET RGB COLORS](../commands/object-set-rgb-colors)
 
 ---
 
 ## Expression couleur police
 
-`Selection and collection/entity selection type list boxes`
+`List box de type collection/sélection/entity selection`
 
-Utilisée pour appliquer une couleur de police personnalisée à chaque ligne de la list box. Vous devez utiliser des valeurs de couleur RVB. For more information about this, refer to the description of the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command.
+Utilisée pour appliquer une couleur de police personnalisée à chaque ligne de la list box. Vous devez utiliser des valeurs de couleur RVB. Pour plus d'informations, voir la description de la commande [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors).
 
-Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou la variable sera évaluée pour chaque ligne affichée. You can use the constants described in the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command.
+Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou la variable sera évaluée pour chaque ligne affichée. Vous pouvez utiliser les constantes décrites dans la commande [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors).
 
-You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) command with `lk font color expression` constant.
+Vous pouvez également définir cette propriété en utilisant la commande [`LISTBOX SET PROPERTY`](../commands/listbox-set-property) avec la constante `lk font color expression`.
 
 > Cette propriété peut également être définie à l'aide d'une [expression Meta Info](properties_Text.md#meta-info-expression).
 
@@ -236,25 +236,25 @@ Foreground color;Dark shadow color)
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
-## Style Expression {#style-expression}
+## Expression style {#style-expression}
 
-`Selection and collection/entity selection type list boxes`
+`List box de type collection/sélection/entity selection`
 
 Utilisé pour appliquer un style de police personnalisé à chaque ligne de list box ou de chaque cellule de la colonne.
 
-Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou variable sera évaluée pour chaque ligne affichée (si elle s'applique à la list box) ou chaque cellule affichée (si elle s'applique à la list box). You can use the constants listed in the [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) command.
+Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou variable sera évaluée pour chaque ligne affichée (si elle s'applique à la list box) ou chaque cellule affichée (si elle s'applique à la list box). Vous pouvez utiliser les constantes listées dans la commande [`LISTBOX SET ROW FONT STYLE`](../commands/listbox-set-row-font-style).
 
-Voici un exemple :
+Exemple :
 
 ```4d
 Choose([Companies]ID;Bold;Plain;Italic;Underline)
 ```
 
-You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) command with `lk font style expression` constant.
+Vous pouvez également définir cette propriété en utilisant la commande [`LISTBOX SET PROPERTY`](../commands/listbox-set-property) avec la constante `lk font style expression`.
 
 > Cette propriété peut également être définie à l'aide d'une [expression Meta Info](properties_Text.md#meta-info-expression).
 
@@ -266,11 +266,11 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/li
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [Colonne de List Box](listbox-column.md)
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -286,18 +286,18 @@ Emplacement horizontal du texte dans la zone où il apparait.
 
 :::note
 
-- "automatic" is not supported by [check boxes](checkbox_overview.md) and [radio buttons](radio_overview.md)
-- "justify" is only supported by [inputs](input_overview.md) and [text areas](text.md)
+- "automatic" n'est pas pris en charge par les [cases à cocher](checkbox_overview.md) et les [boutons radio](radio_overview.md)
+- "justify" n'est pris en charge que par les [zones de saisie](input_overview.md) et les [zones de texte](text.md)
 
 :::
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) (all styles except Regular and Flat) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Header](listbox_overview.md#list-box-headers) - [List Box Footer](listbox_overview.md#list-box-footers) - [Radio Button](radio_overview.md) (all styles except Regular and Flat) - [Text Area](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) (tous styles excepté Regular et Flat) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Header](listbox-header-footer.md#headers) - [List Box Footer](listbox-header-footer.md#footers) - [Radio Button](radio_overview.md) (tous styles excepté Regular et Flat) - [Text Area](text.md)
 
 #### Commandes
 
-[OBJECT Get horizontal alignment](../commands-legacy/object-get-horizontal-alignment.md) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands-legacy/object-set-horizontal-alignment.md)
+[OBJECT Get horizontal alignment](../commands/object-get-horizontal-alignment) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands/object-set-horizontal-alignment)
 
 ---
 
@@ -310,7 +310,7 @@ L'option **Default** (valeur JSON `automatique`) définit l'alignement en foncti
 - `bas` pour toutes les données (sauf les images) et
 - `haut` pour les données de type image.
 
-This property can also be handled by the [`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) and [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md) commands.
+Cette propriété peut également être gérée par les commandes [`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment) et [`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment).
 
 #### Grammaire JSON
 
@@ -320,29 +320,29 @@ This property can also be handled by the [`OBJECT Get vertical alignment`](../co
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers) - [En-tête List Box](listbox_overview.md#list-box-headers)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers)
 
 #### Commandes
 
-[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md)
+[`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment)
 
 ---
 
-## Meta Info expression
+## Meta info expression
 
-`Collection or entity selection type list boxes`
+`List box collection ou entity selection`
 
 Indique une expression ou une variable qui sera évaluée pour chaque ligne affichée. Elle permet de définir un ensemble d'attributs texte des lignes. Vous devez passer une **variable objet** ou une **expression qui retourne un objet**. Les propriétés suivantes sont prises en charge :
 
-| Nom de propriété | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| stroke           | string  | Couleur de la police. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| fill             | string  | Couleur de fond. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| fontStyle        | string  | "normal","italic"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| fontWeight       | string  | "normal","bold"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| textDecoration   | string  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| unselectable     | boolean | Désigne la ligne correspondante comme n'étant pas sélectionnable (c'est-à-dire que le surlignage n'est pas possible). Les zones saisissables ne sont plus saisissables si cette option est activée, à moins que l'option «Single-click Edit » ne soit également activée. Les contrôles tels que les cases à cocher et les listes restent fonctionnels. Ce paramètre est ignoré si le mode de sélection de la listbox est "None". Valeur par défaut : False. |
-| disabled         | boolean | Désactive la ligne correspondante. Les zones saisissables ne sont plus saisissables si cette option est activée. Text and controls (checkboxes, lists, etc.) appear dimmed or grayed out. Valeur par défaut : False.                                                                                                                                                                                                                                        |
+| Nom de propriété | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| stroke           | string  | Couleur de fond. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| fill             | string  | Couleur de la police. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| fontStyle        | string  | "normal","italic"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| fontWeight       | string  | "normal","bold"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| textDecoration   | string  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| unselectable     | boolean | Désigne la ligne correspondante comme n'étant pas sélectionnable (c'est-à-dire que le surlignage n'est pas possible). Les zones saisissables ne sont plus saisissables si cette option est activée, à moins que l'option «Single-click Edit » ne soit également activée. Les contrôles tels que les cases à cocher et les listes restent fonctionnels. Ce paramètre est ignoré si le mode de sélection de la listbox est "None". Ce paramètre est ignoré si le mode de sélection de la listbox est "None". |
+| disabled         | boolean | Désactive la ligne correspondante. Les zones saisissables ne sont plus saisissables si cette option est activée. Les textes et contrôles (cases à cocher, listes, etc.) apparaissent atténués ou grisés. Ce paramètre est ignoré si le mode de sélection de la listbox est "None".                                                                                                                                                                                                                         |
 
 La propriété spéciale "cell" permet d'appliquer un ensemble de propriétés à une seule colonne :
 
@@ -352,20 +352,20 @@ La propriété spéciale "cell" permet d'appliquer un ensemble de propriétés �
 |                  | *columnName* |                | object | *columnName* est le nom d'objet de la colonne de listbox                                                                                                                                                                                                                                                                                    |
 |                  |              | *propertyName* | string | Les propriétés "stroke", "fill", "fontStyle", "fontWeight" ou "textDecoration" (voir ci-dessus). **Note** : les propriétés "unselectable" et "disabled" ne peuvent être définies qu'au niveau de la ligne. Elles sont ignorées si elles sont passées dans l'objet "cell" |
 
-> Style settings made with this property are ignored if other style settings are already defined through expressions (*i.e.*, [Style Expression](#style-expression), [Font Color Expression](#font-color-expression), [Background Color Expression](./properties_BackgroundAndBorder.md#background-color-expression)).
+> Les paramètres de style définis à l'aide de cette propriété sont ignorés si d'autres paramètres de style sont déjà définis à l'aide d'expressions (*i.e.*, [Expression style](#style-expression), [Expression couleur de police](#font-color-expression), [Expression couleur d'arrière-plan](./properties_BackgroundAndBorder.md#background-color-expression)).
 
-**Examples**
+**Exemples**
 
 Dans une méthode projet *Color*, écrivez le code suivant :
 
 ```4d
-//Color method
-//Sets font color for certain rows and background color for Col2 and Col3 columns
+//Méthode Color
+//Définit la couleur de la police pour certaines lignes et la couleur d'arrière-plan pour les colonnes Col2 et Col3
 Form.meta:=New object
-If(This.ID>5) //ID is an attribute of collection objects/entities
+If(This.ID>5) //ID est un attribut de la collection d'objets/entités
   Form.meta.stroke:="purple"
-  Form.meta.cell:=New object("Col2";New object("fill";"black");\
-  	"Col3";New object("fill";"red"))
+  Form.meta.cell:=New object("Col2";New object("fill" ; "black");\
+    "Col3";New object("fill" ; "red"))
 Else
   Form.meta.stroke:="orange"
 End if
@@ -374,25 +374,25 @@ End if
 **Bonne pratique :** Pour des raisons d'optimisation, il est généralement recommandé de créer l'objet `meta.cell` une seule fois dans la méthode du formulaire :
 
 ```4d
-  //form method
+  // méthode formulaire
  Case of
     :(Form event code=On Load)
-       Form.colStyle:=New object("Col2";New object("fill";"black");\
-       	"Col3";New object("fill";"red"))  
- // you can also define other style sets  
-       Form.colStyle2:=New object("Col2";New object("fill";"green");\
-       	"Col3";New object("fontWeight";"bold"))  
+       Form.colStyle:=New object("Col2";New object("fill" ; "black");\
+        "Col3";New object("fill" ; "red"))  
+ // vous pouvez également définir d'autres jeux de styles  
+       Form.colStyle2:=New object("Col2";New object("fill" ; "green");\
+        "Col3";New object("fontWeight" ; "bold"))  
  End case
 ```
 
 La méthode *Color* contiendrait alors :
 
 ```4d
-  //Color method
+  //Méthode Color
  ...
  If(This.ID>5)
     Form.meta.stroke:="purple"
-    Form.meta.cell:=Form.colStyle //reuse the same object for better performance
+    Form.meta.cell:=Form.colStyle //réutiliser le même objet pour de meilleures performances
  Else
  	Form.meta.stroke:="orange"
 	Form.meta.cell:=Form.colStyle2
@@ -412,13 +412,13 @@ La méthode *Color* contiendrait alors :
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
 ## Multistyle
 
-This property enables the possibility of using [specific styles](https://doc.4d.com/4Dv20/4D/20.6/Supported-tags.300-7488021.en.html) in the selected area. Lorsque cette option est cochée, 4D interprète toutes les balises `<SPAN> HTML` trouvées dans la zone.
+Cette propriété permet d'utiliser des [styles spécifiques](https://doc.4d.com/4Dv20/4D/20.6/Supported-tags.300-7488021.en.html) dans la zone sélectionnée. Lorsque cette option est cochée, 4D interprète toutes les balises `<SPAN> HTML` trouvées dans la zone.
 
 Par défaut, cette option n'est pas activée.
 
@@ -430,11 +430,171 @@ Par défaut, cette option n'est pas activée.
 
 #### Objets pris en charge
 
-[Zone de saisie](input_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[Zone de saisie](input_overview.md) - [Colonne List Box](listbox-column.md)
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md) - [OBJECT Is styled text](../commands-legacy/object-is-styled-text.md) -
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property) - [OBJECT Is styled text](../commands/object-is-styled-text) - ["Styled Text" theme](../commands/theme/Styled_Text.md)
+
+### Balises prises en charge
+
+Vous pouvez utiliser les balises suivantes dans les zones de texte multi-styles 4D.
+
+#### Expression 4D
+
+```html
+<span style="-d4-ref:'expression'"> </span>
+```
+
+Cette balise insère une expression 4D (expression, méthode, champ, variable, commande, etc.) dans le texte. L’expression est stockée sous forme de référence (token) et est évaluée :
+
+- à l’insertion de l’expression
+- au chargement de l’objet
+- lorsque l'action standard `computeExpressions` est appelée depuis un objet d'interface ou par la commande [`INVOKE ACTION`](../commands/invoke-action)
+- à l’exécution de la commande [`ST COMPUTE EXPRESSIONS`](../commands/st-compute-expressions)
+- à l’exécution de la commande [`ST FREEZE EXPRESSIONS`](../commands/st-freeze-expressions) si le deuxième paramètre `*` est passé.
+
+La valeur évaluée de l'expression n'est pas enregistrée dans la balise `<span>`, seule sa référence l'est.
+
+Note : Pour assurer une évaluation correcte de l'expression quelle que soit la langue ou la version de 4D, il est recommandé d'utiliser la syntaxe tokenisée pour les éléments dont le nom peut varier au fil des versions (commandes, tables, champs, constantes). Par exemple, pour insérer la commande `Current time`, entrez `Current time:C178`. Pour plus d'informations sur ce point, reportez-vous à la section *Utiliser des tokens dans les formules*.
+
+#### Variable URL
+
+```html
+<span><a href="url">Libellé visible</a></span>
+```
+
+Cette balise insère une URL dans le texte. Exemple :
+
+```html
+<span><a href="http://www.4d.com/">Site Web de 4D</a></span>
+```
+
+#### Lien utilisateur
+
+```html
+<span style="-d4-ref-user:'myUserLink'">Cliquez ici</span>
+```
+
+Les "liens utilisateurs" sont des liens ayant le même rendu visuel que les URLs, à la différence qu’un clic ne déclenche pas automatiquement l’ouverture de la source. Vous pouvez passer la chaîne que vous voulez comme référence, et il vous revient de programmer toute action personnalisée en réponse au clic. Ce principe vous permet de créer des liens qui ne sont pas des URLs mais des références de fichiers, de méthodes 4D, etc., que vous pouvez ouvrir ou exécuter en cas de clic. La commande [`ST Get content type`](../commands/st-get-content-type) détecte si un lien utilisateur a été cliqué.
+
+Les liens utilisateur sont définis en utilisant la commande [`ST SET TEXT`](../commands/st-set-text). Par exemple :
+
+```4d
+ST SET TEXT(txtVar;"Ceci est un lien utilisateur : <span style=\"-d4-ref-user:'UserLink'\">Lien utilisateur</span>";$start;$end)
+```
+
+#### Balises personnalisées
+
+Vous pouvez insérer n'importe quelle balise en texte brut, par exemple `<img src="http://doc.4d.com/pictures/ja.png">`. Elles ne seront ni interprétées ni affichées mais conservées dans le code du texte brut. Ceci est particulièrement utile dans le contexte des courriers électroniques en format HTML et incluant des images.
+
+#### Balises de style
+
+Ce paragraphe liste les attributs des balises \<SPAN> qui sont prise en charge par 4D dans les zones de texte multistyle. Vous pouvez utiliser ces balises pour mettre en place une gestion personnalisée des styles. Seules les balises listées ci-dessous sont prises en charge par 4D pour les variations de style.
+
+- Nom de police : `<SPAN STYLE="font-family: DESDEMONA">... </SPAN>`
+- Taille de police : `<SPAN STYLE="font-size: 20pt">... </SPAN>`
+- Style de police :
+  - Gras `<SPAN STYLE="font-weight: bold"> ... </SPAN>`
+  - Italique `<SPAN STYLE="font-style: italic"> ... </SPAN>`
+  - Normal `<SPAN STYLE="font-style: normal"> ... </SPAN>`
+  - Souligné `<SPAN STYLE="text-decoration: underline"> ... </SPAN>`
+  - Barré `<SPAN STYLE="text-decoration:line-through">...</SPAN>`
+
+*Note: Le style "barré" n'est pas pris en charge sous macOS, mais cette balise peut toujours être gérée par la programmation.*
+
+- Couleurs de police : `<SPAN STYLE="color:green"> ... </SPAN>` ou `<SPAN STYLE="color:#006CCC">...</SPAN>`
+- Couleurs de fond : `<SPAN STYLE="background-color:green"> ... </SPAN>` ou `<SPAN STYLE="background-color:#006CCC">...</SPAN>`
+
+#### Valeurs de couleurs
+
+Pour les attributs de couleur de police et couleur de fond, la valeur de couleur peut être soit le code hexadécimal des couleurs RVB, soit le nom d’une des 16 couleurs HTML définies pour le standard CSS par le W3C :
+
+![](../assets/en/FormObjects/colors1.png)
+![](../assets/en/FormObjects/colors2.png)
+
+### Travailler avec des commandes de gestion de texte
+
+#### Interface utilisateur
+
+Les commandes qui peuvent être utilisées pour manipuler des objets texte par programmation ne prennent pas en compte les balises de style intégrées dans le texte. Elles agissent uniquement sur le texte à l'écran. Ceci concerne les commandes suivantes :
+
+- Commandes du thème [Interface utilisateur](../commands/theme/User_Interface.md)
+- [`HIGHLIGHT TEXT`](../commands/highlight-text)
+- [`GET HIGHLIGHT`](../commands/get-highlight)
+
+Lorsque vous utilisez ces commandes avec des commandes qui manipulent des chaînes de caractères, il est nécessaire de filtrer les caractères de formatage en utilisant la commande [`ST Get plain text`](../commands/st-get-plain-text) :
+
+```4d
+ HIGHLIGHT TEXT([Products]Notes;1;Length(ST Get plain text([Products]Notes))+1)
+```
+
+#### Objets (Formulaires)
+
+Les commandes qui peuvent être utilisées pour modifier le style des objets (par exemple, [`OBJECT SET FONT`](../commands/object-set-font)) s'appliquent à l'objet entier et non à la sélection.
+
+Si l'objet n'a pas le focus lorsque la commande est exécutée, la modification est appliquée simultanément à l'objet (la zone de texte) et à sa variable associée. Si l'objet a le focus, la modification est effectuée sur l'objet mais pas sur la variable associée. La modification n'est appliquée à la variable que lorsque l'objet perd le focus. Gardez ce principe à l'esprit lors de la programmation des zones de texte.
+
+:::note
+
+Si l'option [**Stocker les balises par défaut**](#store-with-default-style-tags) est cochée pour l'objet, l'utilisation de ces commandes provoquera une modification des balises enregistrées avec chaque objet.
+
+:::
+
+Notez aussi que seules les propriétés par défaut sont affectées par ces commandes (ainsi que toutes les propriétés enregistrées par les balises par défaut). Les balises de style personnalisé restent telles quelles. Par exemple, dans une zone multi-style où les balises par défaut ont été enregistrées :
+
+![](../assets/en/FormObjects/multistyle-ex1.png)
+
+Le texte brut de la zone est le suivant :
+
+```html
+<span style="text-align:left;font-family:'Segoe UI';font-size:9pt;color:#009900">This is the word <span style="color:#D81E05">red</span></span>
+```
+
+Si vous exécutez le code suivant :
+
+```4d
+OBJECT SET COLOR(*;"myArea";-(Blue+(256*Yellow)))
+```
+
+La couleur rouge reste :
+
+![](../assets/en/FormObjects/multistyle-ex2.png)
+
+et le code est :
+
+```html
+<span style="text-align:left;font-family:'Segoe UI';font-size:9pt;color:#0000FF">This is the word <span style="color:#D81E05">red</span></span>
+```
+
+Les commandes suivantes sont concernées :
+
+- [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
+- [`OBJECT SET FONT`](../commands/object-set-font)
+- [`OBJECT SET FONT STYLE`](../commands/object-set-font-style)
+- [`OBJECT SET FONT SIZE`](../commands/object-set-font-size)
+
+Dans le contexte des zones de texte multistyles, les commandes génériques doivent être utilisées pour définir les styles par défaut uniquement. Pour gérer les styles lors de l'exécution de la base de données, nous vous recommandons d'utiliser les [commandes du thème "Texte multistyle"](../commands/theme/Styled_Text.md).
+
+#### Get edited text
+
+Lorsqu’elle est utilisée avec une zone de texte riche, la commande [`Get edited text`](../commands/get-edited-text) retourne le texte de la zone courante en incluant les éventuelles balises de style.
+
+Pour récupérer le texte "brut" (texte sans balises) en cours d’édition, vous devez utiliser la commande [`ST Get plain text`](../commands/st-get-plain-text) :
+
+```4d
+ST Get plain text(Get edited text)
+```
+
+#### Commandes de recherche et de tri
+
+Les recherches et les tris effectués parmi des objets multistyles tiennent compte des éventuelles balises de style enregistrées dans l’objet. Si une modification de style a été apportée à l’intérieur d’un mot, une recherche sur ce mot sera infructueuse.
+
+Pour pouvoir effectuer des recherches et des tris valides, vous devez utiliser la commande [`ST Get plain text`](../commands/st-get-plain-text). Par exemple :
+
+```4d
+QUERY BY FORMULA([MyTable];ST Get plain text([MyTable]MyFieldStyle)="very well")
+```
 
 ---
 
@@ -463,17 +623,17 @@ En plus des [zones de texte statiques](text.md), les objets de texte des [zones 
 
 #### Commandes
 
-[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation.md) - [OBJECT SET TEXT ORIENTATION](../commands-legacy/object-set-text-orientation.md)
+[OBJECT Get text orientation](../commands/object-get-text-orientation) - [OBJECT SET TEXT ORIENTATION](../commands/object-set-text-orientation)
 
 ---
 
-## Row Font Color Array {#row-font-color-array}
+## Tableau couleurs de police {#row-font-color-array}
 
 `List box de type tableau`
 
 Permet de définir un style de police personnalisé à chaque ligne de list box ou de chaque cellule de la colonne.
 
-Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. You can use the constants described in the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command. Si vous souhaitez que la cellule hérite de la couleur d'arrière-plan définie au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
+Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. Vous pouvez utiliser les constantes décrites dans la commande [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors). Si vous souhaitez que la cellule hérite de la couleur d'arrière-plan définie au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
 
 #### Grammaire JSON
 
@@ -483,21 +643,21 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [Colonne de List Box](listbox-column.md)
 
 #### Commandes
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands/listbox-set-array)
 
 ---
 
-## Row Style Array {#row-style-array)
+## Row Style Array {#row-style-array}
 
 `List box de type tableau`
 
 <a href="listbox_overview.md">List Box</a> - <a href="listbox_overview.md#list-box-columns">Colonne List Box</a>
 
-Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. To fill the array (using a method), use the constants listed in the [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) command. Vous pouvez ajouter des constantes ensemble pour combiner plusieurs styles. Si vous souhaitez que la cellule hérite du style défini au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
+Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. Pour remplir le tableau (à l'aide d'une méthode), utilisez les constantes listées dans la commande [`LISTBOX SET ROW FONT STYLE`](../commands/listbox-set-row-font-style). Vous pouvez ajouter des constantes ensemble pour combiner plusieurs styles. Si vous souhaitez que la cellule hérite du style défini au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
 
 #### Grammaire JSON
 
@@ -507,11 +667,11 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [Colonne de List Box](listbox-column.md)
 
 #### Commandes
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands/listbox-set-array)
 
 ---
 
@@ -545,3 +705,4 @@ Lorsque la propriété est activée, la zone stocke toutes les informations de m
 #### Objets pris en charge
 
 [Zone de saisie](input_overview.md)
+

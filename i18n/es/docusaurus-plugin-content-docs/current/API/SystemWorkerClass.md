@@ -3,9 +3,13 @@ id: SystemWorkerClass
 title: SystemWorker
 ---
 
-Los System workers permiten que el código 4D llame a cualquier proceso externo (un comando shell, PHP, etc.) en la misma máquina. Los trabajadores del sistema se llaman de forma asíncrona. Mediante el uso de retrollamadas, 4D hace posible la comunicación en ambos sentidos.
+Los System workers permiten que el código 4D llame a cualquier proceso externo (un comando shell, PHP, etc.) en la misma máquina. Los workers del sistema se llaman de forma asíncrona. Mediante el uso de retrollamadas, 4D hace posible la comunicación en ambos sentidos.
 
 La clase `SystemWorker` está disponible en el class store `4D`.
+
+### Programación asíncrona
+
+Esta clase soporta programación asíncrona en 4D como se describe en la página [Ejecución Asíncrona](../Develop/async.md).
 
 ### Ejemplo
 
@@ -61,12 +65,15 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 <!-- REF #4D.SystemWorker.new().Params -->
 
+<div class="no-index">
+
 | Parámetros  | Tipo                            |                             | Descripción                                                          |
 | ----------- | ------------------------------- | :-------------------------: | -------------------------------------------------------------------- |
 | commandLine | Text                            |              ->             | Línea de comando a ejecutar                                          |
 | options     | Object                          |              ->             | Parámetros worker                                                    |
 | resultado   | 4D.SystemWorker | <- | Nuevo System worker asíncrono o null si el proceso no se ha iniciado |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -85,27 +92,27 @@ En el parámetro *commandLine*, pase la ruta completa del archivo de la aplicaci
 
 En el parámetro *options*, pase un objeto que puede contener las siguientes propiedades:
 
-| Propiedad        | Tipo    | Por defecto | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ---------------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onResponse       | Formula | indefinido  | Retrollamada para los mensajes del system worker. Esta retrollamada se llama una vez que se recibe la respuesta completa. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                                                                       |
-| onData           | Formula | indefinido  | Retrollamada para los datos del system worker. Esta retrollamada se llama cada vez que el system worker recibe los datos. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                                                                       |
-| onDataError      | Formula | indefinido  | Callback para los errores del proceso externo (*stderr* del proceso externo). Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                                                                                                                |
-| onError          | Formula | indefinido  | Retrollamada para los errores de ejecución, devueltos por el system worker en caso de condiciones de ejecución inusuales (errores del sistema). Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                                              |
-| onTerminate      | Formula | indefinido  | Retrollamada cuando el proceso externo se termina. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                                                                                                                                                              |
-| timeout          | Number  | indefinido  | Tiempo en segundos antes de que el proceso sea eliminado si aún está activo                                                                                                                                                                                                                                                                                                                                                           |
-| dataType         | Text    | "text"      | Tipo de contenido del cuerpo de la respuesta. Valores posibles: "text" (por defecto), "blob".                                                                                                                                                                                                                                                                      |
-| encoding         | Text    | "UTF-8"     | Sólo si `dataType="text"`. Codificación del contenido del cuerpo de la respuesta. Para la lista de valores disponibles, consulte la descripción del comando [`CONVERT FROM TEXT`](../commands-legacy/convert-from-text.md)                                                                                                                                                                            |
-| variables        | Object  |             | Define las variables de entorno personalizadas para el system worker. Sintaxis: `variables.clave=valor`, donde `key` es el nombre de la variable y `value` su valor. Los valores se convierten en cadenas de caracters cuando es posible. El valor no puede contener un '='. Si no se define, el system worker hereda del entorno 4D. |
-| currentDirectory | Folder  |             | Directorio de trabajo en el que se ejecuta el proceso                                                                                                                                                                                                                                                                                                                                                                                 |
-| hideWindow       | Boolean | true        | (Windows) Ocultar la ventana de la aplicación (si es posible) o la consola Windows                                                                                                                                                                                                                                                                                                              |
+| Propiedad        | Tipo    | Por defecto | Descripción                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---------------- | ------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onResponse       | Formula | indefinido  | Retrollamada para los mensajes del system worker. Esta retrollamada se llama una vez que se recibe la respuesta completa. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                              |
+| onData           | Formula | indefinido  | Retrollamada para los datos del system worker. Esta retrollamada se llama cada vez que el system worker recibe los datos. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                              |
+| onDataError      | Formula | indefinido  | Callback para los errores del proceso externo (*stderr* del proceso externo). Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                                                                       |
+| onError          | Formula | indefinido  | Retrollamada para los errores de ejecución, devueltos por el system worker en caso de condiciones de ejecución inusuales (errores del sistema). Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                     |
+| onTerminate      | Formula | indefinido  | Retrollamada cuando el proceso externo se termina. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                                                                                                                     |
+| timeout          | Number  | indefinido  | Tiempo en segundos antes de que el proceso sea eliminado si aún está activo                                                                                                                                                                                                                                                                                                                  |
+| dataType         | Text    | "text"      | Tipo de contenido del cuerpo de la respuesta. Valores posibles: "text" (por defecto), "blob".                                                                                                                                                                                                                             |
+| encoding         | Text    | "UTF-8"     | Sólo si `dataType="text"`. Codificación del contenido del cuerpo de la respuesta. Para la lista de valores disponibles, consulte la descripción del comando [`CONVERT FROM TEXT`](../commands/convert-from-text)                                                                                                                                             |
+| variables        | Object  |             | Define las variables de entorno personalizadas para el system worker. Define las variables de entorno personalizadas para el system worker. Los valores se convierten en cadenas de caracters cuando es posible. El valor no puede contener un '='. Si no se define, el system worker hereda del entorno 4D. |
+| currentDirectory | Folder  |             | Directorio de trabajo en el que se ejecuta el proceso                                                                                                                                                                                                                                                                                                                                        |
+| hideWindow       | Boolean | true        | (Windows) Ocultar la ventana de la aplicación (si es posible) o la consola Windows                                                                                                                                                                                                                                                                     |
 
 Todas las funciones de retrollamada reciben dos parámetros objeto. Su contenido depende de la retrollamada:
 
-| Parámetros                   | Tipo        | *onResponse* | *onData*        | *onDataError*  | *onError*    | *onTerminate* |
-| ---------------------------- | ----------- | ------------ | --------------- | -------------- | ------------ | ------------- |
-| $param1                      | Object      | SystemWorker | SystemWorker    | SystemWorker   | SystemWorker | SystemWorker  |
-| $param2.type | Text        | "response"   | "data"          | "error"        | "error"      | "termination" |
-| $param2.data | Text o Blob |              | datos recibidos | datos de error |              |               |
+| Parámetros                   | Tipo       | *onResponse* | *onData*        | *onDataError*  | *onError*    | *onTerminate* |
+| ---------------------------- | ---------- | ------------ | --------------- | -------------- | ------------ | ------------- |
+| $param1                      | Object     | SystemWorker | SystemWorker    | SystemWorker   | SystemWorker | SystemWorker  |
+| $param2.type | Text       | "response"   | "data"          | "error"        | "error"      | "termination" |
+| $param2.data | Text, Blob |              | datos recibidos | datos de error |              |               |
 
 Esta es la secuencia de llamadas de retorno:
 
@@ -116,7 +123,7 @@ Esta es la secuencia de llamadas de retorno:
 
 :::info
 
-Para que las funciones de retrollamada se llamen cuando no utilice [`wait()`](#wait) (llamada asíncrona), el proceso debe ser un [worker](../Develop/processes.md#worker-processes) creado con [`CALL WORKER`](../commands-legacy/call-worker.md), NO [`New process`](../commands-legacy/new-process.md).
+Para que las funciones de retrollamada se llamen cuando no utilice [`wait()`](#wait) (llamada asíncrona), el proceso debe ser un [worker](../Develop/processes.md#worker-processes) creado con [`CALL WORKER`](../commands/call-worker), NO [`New process`](../commands/new-process).
 
 :::
 
@@ -272,10 +279,13 @@ Function _createFile($title : Text; $textBody : Text)
 
 <!-- REF #SystemWorkerClass.closeInput().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo |     | Descripción                  |
 | ---------- | ---- | :-: | ---------------------------- |
 |            |      |     | No requiere ningún parámetro |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -344,7 +354,7 @@ La propiedad `.currentDirectory` <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### Descripción
 
-La propiedad `.dataType` <!-- REF #SystemWorkerClass.dataType.Summary -->contiene el tipo de contenido del cuerpo de la respuesta<!-- END REF -->. Valores posibles: "text" o "blob".
+La propiedad `.dataType` <!-- REF #SystemWorkerClass.dataType.Summary -->contiene el tipo de contenido del cuerpo de la respuesta<!-- END REF -->. .
 
 Esta propiedad es de **solo lectura**.
 
@@ -436,11 +446,14 @@ Esta propiedad es de **solo lectura**.
 
 <!-- REF #SystemWorkerClass.postMessage().Params -->
 
+<div class="no-index">
+
 | Parámetros  | Tipo |     | Descripción                                                                            |
 | ----------- | ---- | :-: | -------------------------------------------------------------------------------------- |
 | message     | Text |  -> | Texto a escribir en el flujo de entrada (stdin) del proceso externo |
 | messageBLOB | Blob |  -> | Bytes escritos en el flujo de entrada                                                  |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -489,10 +502,13 @@ La propiedad `.responseError` <!-- REF #SystemWorkerClass.responseError.Summary 
 
 <!-- REF #SystemWorkerClass.terminate().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo |     | Descripción                  |
 | ---------- | ---- | :-: | ---------------------------- |
 |            |      |     | No requiere ningún parámetro |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -548,11 +564,14 @@ Esta propiedad es de **solo lectura**.
 
 <!-- REF #SystemWorkerClass.wait().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo                            |                             | Descripción                         |
 | ---------- | ------------------------------- | :-------------------------: | ----------------------------------- |
 | timeout    | Real                            |              ->             | Tiempo máximo de espera en segundos |
 | Resultado  | 4D.SystemWorker | <- | Objeto SystemWorker                 |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -572,3 +591,4 @@ Durante la ejecución de `.wait()`, se ejecutan funciones de retrollamda, tanto 
 > Esta función no es necesaria si creó el `SystemWorker` desde un proceso worker 4D.
 
 <!-- END REF -->
+

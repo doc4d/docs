@@ -43,9 +43,9 @@ Sintaxe:
 | `--webadmin-access-key`     | Text                                             | Chave de acesso para o servidor web [WebAdmin](webAdmin.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `--webadmin-auto-start`     | Parâmetros                                       | Estado do início automático para o [servidor WebAdmin](webAdmin.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `--webadmin-store-settings` |                                                  | Armazena a chave de acesso e inicia automaticamente os parâmetros nas configurações de arquivo utilizadas (ou seja, o arquivo padrão [`WebAdmin.4DSettings`](webAdmin.md#webadmin-settings) ou um arquivo personalizado designado pelo parâmetro `--webadmin-settings-path`). Use o argumento `--webadmin-store-settings` para salvar essos parâmetros se necessário                                                                                                                                                                                                                                                            |
- (*) Alguns diálogos são exibidos antes do banco de dados ser aberto, para que seja impossível escrever no 
 
-[arquivo Diagnóstico de log](debugLogFiles.md#4ddiagnosticlogtxt) (alerta de licença, diálogo de conversão, seleção de banco de dados, seleção de arquivo de dados). Nesses casos, uma mensagem de erro é criada tanto no stream stderr e no arquivo de eventos do sistema, e então a aplicação fecha.
+
+[Diagnostic log file](debugLogFiles.md#4ddiagnosticlogtxt) (license alert, conversion dialog, database selection, data file selection). Nesses casos, uma mensagem de erro é criada tanto no stream stderr e no arquivo de eventos do sistema, e então a aplicação fecha.
 
 ### Exemplos
 
@@ -76,7 +76,7 @@ Abrir um ficheiro de pacote em macOS:
 --args ~/Documents/myDB.4dbase
 ```
 
-Abrir um ficheiro de projecto:
+Abrir um ficheiro de projecto e um ficheiro de dados:
 
 *   macOS:
 
@@ -95,7 +95,7 @@ Abrir um ficheiro de projecto:
 
 
 
-Abrir um ficheiro de projecto e um ficheiro de dados:
+Abrir um ficheiro de projecto:
 
 *   macOS:
 

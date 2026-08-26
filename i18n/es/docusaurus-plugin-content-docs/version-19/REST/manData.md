@@ -78,8 +78,6 @@ Puede llamar las [funciones de clase usuarios](ClassFunctions.md) ORDA del model
 con los datos en el cuerpo de la petición: `["Paris"]`
 
 
-> Las llamadas a los métodos proyecto 4D que se exponen como servicio REST aún se soportan, pero son obsoletas.
-
 
 ## Selección de atributos a obtener
 
@@ -242,7 +240,7 @@ Si quiere guardar un BLOB almacenado en su clase de datos, puedes escribir lo si
 
 ## Recuperar sólo una entidad
 
-Puede utilizar la sintaxis [`\{dataClass\}:\{attribute\}(value)`](%7BdataClass%7D.html#dataclassattributevalue) cuando quiera recuperar sólo una entidad. Es especialmente útil cuando se quiere hacer una búsqueda relacionada que no se crea en la llave primaria de la clase de datos. Por ejemplo, puede escribir:
+Es especialmente útil cuando se quiere hacer una búsqueda relacionada que no se crea en la llave primaria de la clase de datos. Puede utilizar la sintaxis [`\{dataClass\}:\{attribute\}(value)`](%7BdataClass%7D.html#dataclassattributevalue) cuando quiera recuperar sólo una entidad. Por ejemplo, puede escribir:
 
  `GET  /rest/Company:companyCode("Acme001")`
  

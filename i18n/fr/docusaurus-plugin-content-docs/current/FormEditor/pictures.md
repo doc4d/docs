@@ -46,7 +46,7 @@ Les images haute résolution avec la convention @nx peuvent être utilisées dan
 - [Boutons](FormObjects/button_overview.md)/[radio](FormObjects/radio_overview.md)/[cases à cocher](FormObjects/checkbox_overview.md)
 - [Boutons image](FormObjects/pictureButton_overview.md)/[Pop-up image](FormObjects/picturePopupMenu_overview.md)
 - [Onglets](FormObjects/tabControl.md)
-- [En-têtes de listbox](FormObjects/listbox_overview.md#list-box-headers)
+- [En-têtes de listbox](FormObjects/listbox-header-footer.md#headers)
 - [Icônes de menu](Menus/properties.md#item-icon)
 
 4D priorise automatiquement les images avec la résolution la plus élevée. 4D priorise automatiquement les images avec la résolution la plus élevée. Même si une commande ou une propriété spécifie *circle.png*, *circle@3x.png* sera utilisé (le cas échéant).
@@ -64,7 +64,7 @@ Si 4D donne automatiquement la priorité à la résolution la plus élevée, il 
 
 *(\*) Généralement, macOS = 72 dpi, Windows = 96 dpi*
 
-## Images en mode sombre (macOS uniquement)
+## Images en mode sombre
 
 Vous pouvez définir des images et des icônes spécifiques qui seront utilisées à la place des images standard lorsque [les formulaires utilisent le mode sombre](properties_FormProperties.md#color-scheme).
 
@@ -76,6 +76,12 @@ Une image en mode sombre est définie comme suit :
 Au moment de l'exécution, 4D charge automatiquement l'image en mode clair ou sombre, en fonction du [mode de couleurs du formulaire courant](../FormEditor/properties_FormProperties.md#color-scheme).
 
 ![](../assets/en/FormEditor/darkicon.png)
+
+:::note
+
+Le mode sombre n'est pas disponible sur Windows avec le [Thème classique] (../settings/interface.md#use-fluent-ui-on-windows).
+
+:::
 
 ## Coordonnées de la souris dans une image
 

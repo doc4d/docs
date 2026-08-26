@@ -55,7 +55,7 @@ Os objetos atributos retornados contêm as seguintes propriedades:
 | autoFilled       | Parâmetros | True se o valor do atributo for automaticamente preenchido por 4D. Corresponde às seguintes propriedades de campos 4D: "Autoincrement" para os campos de tipo numérico e "Auto UUID" para os campos UUID (alfa). Não retornado se `.kind` = "relatedEntity" ou "relatedEntities".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | exposed          | Parâmetros | True se o atributo estiver exposto no REST                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | fieldNumber      | integer    | Número interno do campo 4D do atributo. Não retornado se `.kind` = "relatedEntity" ou "relatedEntities".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| fieldType        | Integer    | Tipo de campo de banco de dados 4D do atributo. Depende do atributo `kind`. Valores possíveis: <li>if `.kind` = "storage": corresponding 4D field type pe, consulte [`Value type`](../commands-legacy/value-type.md)</li><li>if `.kind` = "relatedEntity": 38 (`is object`)</li><li>if `. ind` = "relatedEntities": 42 (`is collection`)</li><li>if `. ind` = "calculado" ou "alias" = o mesmo que acima, dependendo do valor resultante (tipo de campo, relatedEntity ou relatedEntities)</li>                                                                                                                                                                                            |
+| fieldType        | Integer    | Tipo de campo de banco de dados 4D do atributo. Depende do atributo `kind`. Valores possíveis: <li>if `.kind` = "storage": corresponding 4D field type pe, consulte [`Value type`](../commands/value-type)</li><li>if `.kind` = "relatedEntity": 38 (`is object`)</li><li>if `. ind` = "relatedEntities": 42 (`is collection`)</li><li>if `. ind` = "calculado" ou "alias" = o mesmo que acima, dependendo do valor resultante (tipo de campo, relatedEntity ou relatedEntities)</li>                                                                                                                                                                                                      |
 | indexed          | Parâmetros | True se houver um índice B-tree ou Cluster B-tree no atributo. Não retornado se `.kind` = "relatedEntity" ou "relatedEntities".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | inverseName      | Text       | Nome do atributo que está do outro lado da relação. Retornado somente quando `.kind` = "relatedEntity" ou "relatedEntities".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | keywordIndexed   | Parâmetros | True se houver um índice de palavras-chave no atributo. Não retornado se `.kind` = "relatedEntity" ou "relatedEntities".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -136,11 +136,14 @@ Considerando as propriedades de tabela abaixo:
 
 <!-- REF #DataClassClass.all().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                                |                             | Descrição                                                               |
 | ---------- | ----------------------------------- | :-------------------------: | ----------------------------------------------------------------------- |
 | settings   | Object                              |              ->             | Opção de construção: context                            |
 | Resultados | 4D. EntitySelection | <- | Referencias sobre todas as entidades relacionadas com a classe de dados |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -184,10 +187,13 @@ No parâmetro opcional *settings*, você pode passar um objeto que contenha opç
 
 <!-- REF #DataClassClass.clearRemoteCache().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo |     | Descrição                  |
 | --------- | ---- | :-: | -------------------------- |
 |           |      |     | Não exige nenhum parâmetro |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -239,12 +245,15 @@ $ds. Persons.clearRemoteCache()
 
 <!-- REF #DataClassClass.fromCollection().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                                |                             | Descrição                                    |
 | ---------- | ----------------------------------- | :-------------------------: | -------------------------------------------- |
 | objectCol  | Collection                          |              ->             | Coleção de objetos a mapear com entidades    |
 | settings   | Object                              |              ->             | Opção de construção: context |
 | Resultados | 4D. EntitySelection | <- | Seleção de entidades preenchidas da coleção  |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -441,12 +450,15 @@ Neste exemplo, a primeira entidade se criará e salvará mas a segunda falhará 
 
 <!-- REF #DataClassClass.get().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                       |                             | Descrição                                            |
 | ---------- | -------------------------- | :-------------------------: | ---------------------------------------------------- |
-| primaryKey | Integer OR Text            |              ->             | Valor da chave primária da entidade a recuperar      |
+| primaryKey | Integer, Text              |              ->             | Valor da chave primária da entidade a recuperar      |
 | settings   | Object                     |              ->             | Opção de construção: context         |
 | Resultados | 4D. Entity | <- | Entidade que coincide com a chave primária designada |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -524,10 +536,13 @@ Este exemplo ilustra o uso da propriedade *context*:
 
 <!-- REF #DataClassClass.getCount().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo    |                             | Descrição                              |
 | --------- | ------- | --------------------------- | -------------------------------------- |
 | resultado | Integer | <- | Número de entidades na classe de dados |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -565,10 +580,13 @@ $number:=$ds. Persons.getCount()
 
 <!-- REF #DataClassClass.getDataStore().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                          |                             | Descrição               |
 | ---------- | ----------------------------- | :-------------------------: | ----------------------- |
 | Resultados | cs. DataStore | <- | Informação da dataclass |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -621,10 +639,13 @@ O método de projeto ***SearchDuplicate*** procura por valores duplicados em qua
 
 <!-- REF #DataClassClass.getInfo().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo   |                             | Descrição              |
 | ---------- | ------ | --------------------------- | ---------------------- |
 | Resultados | Object | <- | Datastore da dataclass |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -692,13 +713,16 @@ A função `.getInfo()` <!-- REF #DataClassClass.getInfo().Summary -->retorna um
 
 <!-- REF #DataClassClass.getRemoteCache().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo   |                             | Descrição                                                                       |
 | --------- | ------ | --------------------------- | ------------------------------------------------------------------------------- |
 | resultado | Object | <- | Objecto que descreve o conteúdo da cache ORDA para o dataclass. |
 
+</div>
 <!-- END REF -->
 
-> **Modo avançado:** Essa função é destinada a desenvolvedores que precisam personalizar os recursos padrão do ORDA para configurações específicas. Na maioria dos casos, não necessitará de o utilizar.
+> **Modo avançado:** essa função é destinada a desenvolvedores que precisam personalizar os recursos padrão do ORDA para configurações específicas. Na maioria dos casos, não necessitará de o utilizar.
 
 #### Descrição
 
@@ -708,20 +732,20 @@ Chamar esta função a partir de uma aplicação 4D monousuário retorna `Null`.
 
 O objeto retornado tem as propriedades abaixo:
 
-| Propriedade | Tipo       | Descrição                                                                                             |
-| ----------- | ---------- | ----------------------------------------------------------------------------------------------------- |
-| maxEntries  | Integer    | Número máximo de entradas recolhidas.                                                 |
-| stamp       | Integer    | Carimbo da cache.                                                                     |
-| timeout     | Integer    | Tempo restante antes que as novas entradas na cache sejam marcadas como expiradas.    |
-| \|          | Collection | Collection \| Collection \| Contém um objecto de entrada para cada entidade na cache. |
+| Propriedade | Tipo       | Descrição                                                                                                           |
+| ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
+| maxEntries  | Integer    | Número máximo de entradas recolhidas.                                                               |
+| stamp       | Integer    | Carimbo da cache.                                                                                   |
+| timeout     | Integer    | Tempo restante antes que as novas entradas na cache sejam marcadas como expiradas.                  |
+| \|          | Collection | Collection \| Collection \| Collection \| Contém um objecto de entrada para cada entidade na cache. |
 
 Cada objeto de entrada na coleção `entries` possui as seguintes propriedades:
 
-| Propriedade | Tipo       | Descrição                                                               |
-| ----------- | ---------- | ----------------------------------------------------------------------- |
-| data        | Object     | Objeto que contém os dados da entrada                                   |
-| expired     | Parâmetros | True se a entrada tiver expirado                                        |
-| \|          | Text       | Text       \| Text       \| Chave primária da entidade. |
+| Propriedade | Tipo       | Descrição                                                                             |
+| ----------- | ---------- | ------------------------------------------------------------------------------------- |
+| data        | Object     | Objeto que contém os dados da entrada                                                 |
+| expired     | Parâmetros | True se a entrada tiver expirado                                                      |
+| \|          | Text       | Text       \| Text       \| Text       \| Chave primária da entidade. |
 
 O objecto `data` em cada entrada contém as seguintes propriedades:
 
@@ -780,10 +804,13 @@ $cacheAddress:=$ds. Adress.getRemoteCache()
 
 <!-- REF #DataClassClass.new().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                       |                             | Descrição                                        |
 | ---------- | -------------------------- | --------------------------- | ------------------------------------------------ |
 | Resultados | 4D. Entity | <- | Nova entidade que coincide com a classe de dados |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -827,11 +854,14 @@ Este exemplo cria uma nova entidade na classe de dados "Log" e registra a inform
 
 <!-- REF #DataClassClass.newSelection().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                                |                             | Descrição                                                                                                                                                                                         |
 | ---------- | ----------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | keepOrder  | Integer                             | ->                          | `dk keep ordered`: cria uma seleção de entidades ordenada,<br/>`dk non ordered`: cria uma seleção de entidade não ordenada (padrão se omitido) |
 | Resultados | 4D. EntitySelection | <- | Nova seleção de entidades em branco relacionadas com a classe de dados                                                                                                                            |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -873,6 +903,8 @@ Quando criada, a seleção de entidades não contém nenhuma entidade (`mySelect
 
 <!-- REF #DataClassClass.query().Params -->
 
+<div class="no-index">
+
 | Parâmetro     | Tipo                                |                             | Descrição                                                                                                                                            |
 | ------------- | ----------------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | queryString   | Text                                | ->                          | Criterios de pesquisa como string                                                                                                                    |
@@ -881,6 +913,7 @@ Quando criada, a seleção de entidades não contém nenhuma entidade (`mySelect
 | querySettings | Object                              | ->                          | Opções de pesquisa: parâmetros, atributos, args, allowFormulas, contexto, queryPath,queryPlan                                        |
 | Resultados    | 4D. EntitySelection | <- | Nova seleção de entidade composta por entidades da classe de dados que atendem aos critérios de pesquisa especificados em *queryString* ou *formula* |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -901,14 +934,14 @@ attributePath|formula comparator value
 
 onde:
 
-- **attributePath**: caminho de atributo no qual se pretende executar a consulta. Os atributos se expressam como pares propriedade/ valor, onde propriedade é o nome do marcador de posição inserido para uma rota de atributo em <em x-id="3">queryString</em> ou <em x-id="3">formula</em> (":placeholder") e valor pode ser uma string ou uma coleção de strings. No caso de um caminho de atributo cujo tipo é `Collection`, a notação `[]` é usada para lidar todas as ocorrências (por exemplo, `children[].age`).
+- **attributePath**: caminho de atributo no qual se pretende executar a consulta. Os atributos se expressam como pares propriedade/ valor, onde propriedade é o nome do marcador de posição inserido para uma rota de atributo em <em x-id="3">queryString</em> ou <em x-id="3">formula</em> (":placeholder") e valor pode ser uma string ou uma coleção de strings. Os atributos se expressam como pares propriedade/ valor, onde propriedade é o nome do marcador de posição inserido para uma rota de atributo em <em x-id="3">queryString</em> ou <em x-id="3">formula</em> (":placeholder") e valor pode ser uma string ou uma coleção de strings.
 
 > *Você não pode usar diretamente atributos cujo nome contém caracteres especiais, como ". , "\[ ]", ou "=", ">", "#"..., porque eles serão avaliados incorretamente na frase da consulta. Se precisar consultar tais atributos, deve considerar o uso de espaços reservados, que permite uma gama extendida de caracteres em caminhos de atributos (veja* **Usando espaços reservados** *abaixo).*
 
 - **formula**: uma fórmula válida passada como `Text` ou `Object`. A fórmula será avaliada para cada entidade processada e deve retornar um valor booleano. Na fórmula, a entidade está disponível através do objeto `This`.
 
   - **Text**: a string de fórmula deve ser precedida pela declaração `eval()`, para que o parser da consulta avalie a expressão corretamente. Por exemplo: "eval(length(This.lastname) =30)"\*
-  - **Objeto**: o [objeto fórmula](FunctionClass.md) é passado como um **marcador de posição** (ver abaixo). A fórmula deve ter sido criada usando o comando [`Formula`](../commands/formula.md) ou [`Formula from string`](../commands/formula-from-string.md).
+  - **Objeto**: o [objeto fórmula](FunctionClass.md) é passado como um **marcador de posição** (ver abaixo). A fórmula deve ter sido criada usando o comando [`Formula`](../commands/formula) ou [`Formula from string`](../commands/formula-from-string).
 
 > * Lembre que as fórmulas 4D só suportam os símbolos `&` e `|` como operadores lógicos.
 > * Se a fórmula não for o único critério de pesquisa, o otimizador de motor debusca poderia processar outros critérios previamente (por exemplo atributos indexados) e assim, a fórmula poderia ser avaliada apenas para um subconjunto de entidades.
@@ -935,14 +968,14 @@ Fórmulas nas consultas podem receber parâmetros através de $1. Este ponto est
 | Contém palavra chave                     | %                           | As palavras chaves podem ser usadas em atributos de string ou imagem                                                                                                                                                              |                                |
 
 - Pode ser um **marcador** (ver **Uso de marcadores** abaixo) ou qualquer expressão que coincida com a propriedade de tipo de dados. **value**: o valor a comparar ao valor atual da propriedade de cada entidade na seleção de entidade. Observe que, em caso de incompatibilidade de tipo com tipos escalares (texto, data, número...), 4D tentará converter o tipo **value** para o tipo de atributo sempre que possível, para um tratamento mais fácil de valores vindos da Internet. Por exemplo, se a string "v20" for digitada como **value** para comparar com um atributo inteiro, ela será convertida em 20.
-  Quando usar um valor constante, as regras abaixo devem ser respeitadas:
+  Observe que, em caso de incompatibilidade de tipo com tipos escalares (texto, data, número...), 4D tentará converter o tipo <strong x-id="1">value</strong> para o tipo de atributo sempre que possível, para um tratamento mais fácil de valores vindos da Internet.
   - A constante de tipo texto pode ser passada com ou sem aspas simples (ver **Uso de aspas mais abaixo**). Para pesquisar uma stirng dentro de uma string (uma pesquisa "contém") use o símbolo coringa (@) em valor para isolar a string a ser pesquisada como mostrado neste exemplo: "@Smith@". As palavras chaves abaixo são proibidas para constantes de texto: true, false.
   - Valores constantes de tipo **booleano**: **true** ou **false** (diferencia maiúscula de minúscula).
   - \*\*Valores constantes de tipo **numérico**: os decimais se separam com um '.' (ponto).
   - constantes de tipo **date**: formato "YYYY-MM-DD"
   - **null** constante: usando a palavra-chave "null" irá encontrar as propriedades **null** e **undefined**.
   - no caso de uma pesquisa com um comparador IN, *valor* deve ser uma coleção, ou valores que coincidam com o tipo da rota do atributo entre \[ ] separados por vírgulas (para as strings, os caracteres `"` devem ser escapados com `\`).
-  - **object**: only [4D.Vector](../API/VectorClass.md) objects are supported, in the context of **vector similarity queries** (*attributePath* must also contain valid 4D.Vector objects).
+  - **object**: only [4D.Vector](../API/VectorClass.md) objects are supported, in the context of [**vector similarity queries**](#query-by-vector-similarity) (*attributePath* must also contain valid 4D.Vector objects).
 - **logicalOperator**: usado para participar de múltiplas condições na consulta (opcional). Pode usaar um dos operadores lógicos abaixo (ou o nome ou o símbolo podem ser usados):
 
 | Conjunção | Símbolos                                                                            |
@@ -953,6 +986,8 @@ Fórmulas nas consultas podem receber parâmetros através de $1. Este ponto est
 - **ordem por attributePath**: você pode incluir uma ordem pela instrução *attributePath* na consulta, para que os dados resultantes sejam classificados de acordo com essa afirmação. Você pode usar várias ordens por declarações, separadas por vírgulas (por exemplo, ordem por *attributePath1* desc, *attributePath2* ascens). Como padrão, a ordem é ascendente. Passe 'desc'' para definir uma ordem descendente e 'asc' para definir uma ordem ascendente.
 
 > Se você usar essa declaração, a seleção de entidade retornada será ordenada (para mais informações, por favor consulte [Seleções de entidades ordenadas vs não ordenadas](ORDA/dsMapping.md#seleção-de-entidades-ordenadas-ou-não-ordenadas)).
+
+If the entity selection attributes contain values of different [types](../Concepts/data-types.md), they will be sorted according to the [4D ordering principles](../Concepts/ordering.md).
 
 ### Usar aspas
 
@@ -1050,23 +1085,19 @@ Ao pesquisar nos atributos de objectos de classe de dados que contêm colecçõe
 
 ```
 Entity 1:
-ds.Class.name: "A"
+ds. Class.name: "A"
 ds.Class.info:
     { "coll" : [ {
                 "val":1,
                 "val":1
-            } ] }
-
-Entity 2:
-ds.Class.name: "B"
+            } ] } Entity 2:
+ds. Class.name: "B"
 ds.Class.info:
     { "coll" : [ {
                 "val":1,
                 "val":0
-            } ] }
-
-Entity 3:
-ds.Class.name: "C"
+            } ] } Entity 3:
+ds. Class.name: "C"
 ds.Class.info:
     { "coll" : [ {
                 "val":0,
@@ -1091,14 +1122,14 @@ ds.Class.query(not("info.coll[].val = :1";0))
 Se você quer implementar uma consulta que encontra entidades onde "pelo menos uma propriedade é diferente de *valor*", você precisa usar uma notação especial usando uma carta no `[]`:
 
 ```4d
-ds.Class.query("info.coll[a].val := :1";0)  
+ds. Class.query("info.coll[a].val := :1";0)  
 // devolve A e B
 // encontra "entidades em que pelo menos uma propriedade val é diferente de 0"
 ```
 
 Você pode usar qualquer letra do alfabeto como a notação `[a]`.
 
-#### Linkar os argumentos de pesquisa com os atributos de coleção
+### Linkar os argumentos de pesquisa com os atributos de coleção
 
 Ao pesquisar nos atributos de objetos de classe de dados que contêm coleções usando vários argumentos de consulta unidos pelo operador AND, você pode querer garantir que somente as entidades que contêm elementos que correspondem a todos os argumentos sejam retornadas, e não as entidades em que os argumentos podem ser encontrados em elementos diferentes. Para tal, é necessário ligar argumentos de consulta a elementos de coleção, de modo a que apenas sejam encontrados elementos individuais que contenham argumentos ligados.
 
@@ -1182,11 +1213,11 @@ If *attributePath* designates an attribute storing [**vector objects**](../API/V
 
 In this case, the *value* parameter must be a **comparison vector object** containing the following properties:
 
-| Propriedade | Tipo                                               | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ----------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| vector      | [4D.Vector](../API/VectorClass.md) | Obrigatório. The vector to be compared                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| metric      | Text                                               | Opcional. [Vector computation](../API/VectorClass.md#understanding-the-different-vector-computations) to use for the query. You can use one of the following (Text) constants:<li>`mk cosine` (default if omitted): calculates the cosine distance between vectors.</li><li>`mk dot`: calculates the dot similarity of vectors.</li><li>`mk euclidean`: calculates the Euclidean distance between vectors. |
-| threshold   | Real                                               | Optional (default: 0.5). A threshold value used to filter vector comparisons based on their cosine, dot or euclidean similarity score according to the selected "metric". It is highly recommended to choose a similarity that best fits your specific use case for optimal results.                                                                                                                                                                                                          |
+| Propriedade | Tipo                                               | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| vector      | [4D.Vector](../API/VectorClass.md) | Obrigatório. The vector to be compared                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| metric      | Text                                               | Opcional. [Vector computation](../API/VectorClass.md#understanding-the-different-vector-computations) to use for the query. You can use one of the following (Text) constants:<li>`mk cosine` (default if omitted): calculates the [cosine similarity](./VectorClass.md#cosinesimilarity) between vectors.</li><li>`mk dot`: calculates the [dot similarity](VectorClass.md#dotsimilarity) of vectors.</li><li>`mk euclidean`: calculates the [Euclidean distance](./VectorClass.md#euclideandistance) between vectors. |
+| threshold   | Real                                               | Optional (default: 0.5). A threshold value used to filter vector comparisons based on their cosine, dot or euclidean similarity score according to the selected "metric". It is highly recommended to choose a similarity that best fits your specific use case for optimal results.                                                                                                                                                                                                                                                                                                                       |
 
 Only a subset of **comparator** symbols are supported. Note that they compare results to the threshold value:
 
@@ -1202,8 +1233,32 @@ For example, you want to return entities of MyClass where the similarity with a 
 ```4d
 var $myVector : 4D.Vector
 $myVector := getVector //method to get a vector, e.g. from 4D.AIKit
-var $comparisonVector := {vector: $myVector; metric: mk euclidean; threshold: 1.2}
+var $comparisonVector := {vector: $myVector; metric: mk cosine; threshold: 1.2}
 var $results := ds.MyClass.query("myVectorField <= :1"; $comparisonVector)
+```
+
+The **order by** statement is supported in the query string so that entities in the resulting entity selection are sorted by similarity. Por exemplo:
+
+```4d
+var $results := ds.MyClass.query("myVectorField > :1 order by myVectorField desc"; $comparisonVector)  
+  //$results.first() entity is the most similar
+```
+
+:::note
+
+You will generally want vector similarity query results to be sorted from "most similar" to "least similar." By default, results returned with an **order by** clause are sorted in ascending order. Depending on the similarity metric used, you may need to adjust the sorting direction to obtain the correct ranking:
+
+- for [**cosine**](./VectorClass.md#cosinesimilarity) and [**dot**](./VectorClass.md#dotsimilarity) similarity, higher values indicate greater similarity. Therefore, you will typically need to include the `desc` keyword in the query string.
+- for [**euclidean distance**](./VectorClass.md#euclideandistance) similarity, lower values indicate greater similarity. In this case, the default ascending order (or explicitly using the `asc` keyword) is appropriate.
+
+:::
+
+You can only order on a single vector field. If the same vector appears multiple times in the query string, the order by will be applied to the results of the first one, for example:
+
+```4d
+var $results := ds.MyClass.query("myVectorField > :1 and myVectorField > :2 order by myVectorField desc"; /
+    {vector : $myVector1 };{vector : $myVector2 })  
+    //myVectorField > :1 is used for the order by
 ```
 
 See [more examples below](#example-4-2) (examples 4 and 5).
@@ -1211,6 +1266,7 @@ See [more examples below](#example-4-2) (examples 4 and 5).
 :::tip Related blog posts
 
 - [4D AI: Searching Entities by Vector Similarity in 4D](https://blog.4d.com/4d-ai-searching-entities-by-vector-similarity-in-4d)
+- [4D AI: Sorting Query Results by Vector Similarity](https://blog.4d.com/4d-ai-sorting-query-results-by-vector-similarity/)
 - [Why Your Search Stack Feels Broken — and How Vector Search Fixes It](https://blog.4d.com/why-your-search-stack-feels-broken-and-how-vector-search-fixes-it)
 
 :::
@@ -1219,11 +1275,11 @@ See [more examples below](#example-4-2) (examples 4 and 5).
 
 Como alternativa à inserção de fórmulas dentro do parâmetro queryString (ver acima), pode passar diretamente um objeto fórmula como critério de pesquisa booleano. Usar um objeto fórmula para consultas é **recomendado** pois você se beneficia da tokenização, e o código é mais fácil de pesquisar/ler.
 
-A fórmula deve ter sido criada usando o comando [`Formula`](../commands/formula.md) ou [`Formula from string`](../commands/formula-from-string.md). Nesse modo:
+A fórmula deve ter sido criada usando o comando [`Formula`](../commands/formula) ou [`Formula from string`](../commands/formula-from-string). Nesse modo:
 
 - a *fórmula* é avaliada por cada entidade e deve retornar verdadeiro ou falso. Durante a execução da pesquisa, se o resultado da fórmula não for booleano, é considerado como False.
 - dentro da *fórmula*, a entidade está disponível através do objeto `This`.
-- if the `Formula` object is **null**, the error 1626 ("Expecting a text or formula") is generated, that you can intercept using a method installed with [`ON ERR CALL`](../commands-legacy/on-err-call.md).
+- if the `Formula` object is **null**, the error 1626 ("Expecting a text or formula") is generated, that you can intercept using a method installed with [`ON ERR CALL`](../commands/on-err-call).
 
 > Por razões de segurança, chamadas de fórmula dentro de funções `query()` podem ser desabilitadas. Veja a descrição do parâmetro *querySettings*.
 
@@ -1289,6 +1345,8 @@ queryPath:
  steps:[{steps:[{description:[index : Company.name ] = Lima West Kilo,time:0,recordsfounds:1}]}]}]},{description:Join on Table : Company  :  Employee.employerID = Company.ID,time:31,recordsfounds:1388132,  
  steps:[{steps:[{description:[index : Company.revenues ] > 10000000,time:0,recordsfounds:933}]}]}]}]}
 ```
+
+### Exemplos
 
 #### Exemplo 1
 
@@ -1576,12 +1634,16 @@ var $result:=$client.embeddings.create("my long text to search"; "text-embedding
 var $vector:=$result.vector
 
   //embedding attribute is based upon a 4D field storing 4D.Vector class objects
+
   //search with default metric (cosine)
-var $employees:=ds.Employee.query("embedding > :1"; {vector : $vector})
+var $employees:=ds.Employee.query("embedding > :1 order by embedding desc"; {vector : $vector})
+
   //search with euclidean metric 
-var $employees:=ds.Employee.query("embedding > :1"; {vector: $vector; metric: mk euclidean})
+var $employees:=ds.Employee.query("embedding < :1 order by embedding"; {vector: $vector; metric: mk euclidean})
+
   //search with explicit cosine metric and custom threshold
-var $employees:=ds.Employee.query("embedding > :1"; {vector: $vector; metric: mk cosine; threshold: 0.9})
+var $employees:=ds.Employee.query("embedding > :1 order by embedding desc"; {vector: $vector; metric: mk cosine; threshold: 0.9})
+
   //search with a formula
 var $employees:=ds.Employee.query(Formula(This.embdedding.cosineSimilarity($vector)>0.9))
 
@@ -1589,17 +1651,11 @@ var $employees:=ds.Employee.query(Formula(This.embdedding.cosineSimilarity($vect
 
 #### Exemplo 2
 
-We want to execute a query by vector similarity using vectors with different metrics and order the results by cosine similarity:
+Vector-based semantic ordering can be combined with traditional ORDA filters in the same query.
 
 ```4d
-  //Create the comparison vectors 
-var $vector1Comparison:={vector: $myvector; metric: mk cosine; threshold: 0.4}
-var $vector2Comparison:={vector: $myvector; metric: mk euclidean; threshold:1}
-
-  //embedding attribute is based upon a 4D field storing 4D.Vector class objects
-ds.VectorTable.query("embedding>:1 and embedding<:2";$vector1Comparison;$vector2Comparison)\
-    .orderByFormula(Formula(This.embedding.cosineSimilarity($vector1Comparison)))
-
+var $comparisonVector := {vector: $myVector; metric: mk cosine; threshold: 0.4} 
+var $results := ds.MyTable.query("myVectorField <= :1 AND salary>100000 order by myVectorField, salary desc"; $comparisonVector)
 ```
 
 #### Veja também
@@ -1622,10 +1678,13 @@ ds.VectorTable.query("embedding>:1 and embedding<:2";$vector1Comparison;$vector2
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo   |    | Descrição                                                                                            |
 | --------- | ------ | -- | ---------------------------------------------------------------------------------------------------- |
 | settings  | Object | -> | Objecto que define o tempo limite e o tamanho máximo da cache ORDA para a dataclass. |
 
+</div>
 <!-- END REF -->
 
 > **Modo avançado:** essa função é destinada a desenvolvedores que precisam personalizar os recursos padrão do ORDA para configurações específicas. Na maioria dos casos, não necessitará de o utilizar.
@@ -1670,3 +1729,4 @@ $ds. Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 35
 #### Veja também
 
 [.clearRemoteCache()](#clearremotecache)<br/>[.getRemoteCache()](#clearremotecache)
+

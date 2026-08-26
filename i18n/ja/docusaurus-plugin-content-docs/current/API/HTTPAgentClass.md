@@ -39,22 +39,26 @@ HTTPAgent オブジェクトは共有可能なため、 シングルトンクラ
 
 <!-- REF #4D.HTTPAgent.new().Syntax -->**4D.HTTPAgent.new**( { *options* : Object } ) : 4D.HTTPAgent<!-- END REF -->
 
-<details><summary>履歴</summary>
-
-| リリース | 内容                                |
-| ---- | --------------------------------- |
-| 21   | *storeCertificateName* プロパティのサポート |
-
-</details>
-
 <!-- REF #4D.HTTPAgent.new().Params -->
+
+<div class="no-index">
 
 | 引数      | 型                                                 |                             | 説明                     |
 | ------- | ------------------------------------------------- | :-------------------------: | ---------------------- |
 | options | Object                                            |              ->             | HTTPAgent のデフォルトのオプション |
 | 戻り値     | [4D.HTTPAgent](#httpagent-オブジェクト) | <- | 新規 HTTPAgent オブジェクト    |
 
+</div>
 <!-- END REF -->
+
+<details><summary>履歴</summary>
+
+| リリース  | 内容                                           |
+| ----- | -------------------------------------------- |
+| 21 R3 | macOS での *storeCertificateName* プロパティのサポート   |
+| 21    | Windows での *storeCertificateName* プロパティのサポート |
+
+</details>
 
 #### 説明
 
@@ -72,17 +76,23 @@ HTTPAgent のオプションは [HTTPRequest のオプション](HTTPRequestClas
 
 :::
 
-| プロパティ                  | 型       | デフォルト                                                                                                                            | 説明                                                                                                                                                                                                                                                                                                      |
-| ---------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| certificatesFolder     | Folder  | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使ったリクエストに使用するクライアント証明書フォルダー。 "storeCertificateName" によって上書き可能(下記参照)                                                                                                                                                                                                         |
-| keepAlive              | Boolean | true                                                                                                                             | 当該エージェントについて keep-alive を有効にします                                                                                                                                                                                                                                                                         |
-| maxSockets             | Integer | 65535                                                                                                                            | サーバーあたりの最大ソケット数                                                                                                                                                                                                                                                                                         |
-| maxTotalSockets        | Integer | 65535                                                                                                                            | エージェントの最大ソケット数                                                                                                                                                                                                                                                                                          |
-| minTLSVersion          | Text    | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使ったリクエストに設定する TLS の最小バージョン                                                                                                                                                                                                                                                                     |
-| protocol               | Text    | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使ったリクエストに使用されるプロトコル                                                                                                                                                                                                                                                                            |
-| storeCertificateName   | Text    | undefined                                                                                                                        | (Windows のみ) エージェントを使用したリクエストに対する証明書フォルダに格納された証明書の代わりに使用する証明書を保存するOS 証明書ストアの名前(例: "LocalMachine")。 証明書ストアが見つからなかった場合、エラーが返されます。 より詳細な情報に関しては、 [こちらの blog 記事](https://blog.4d.com/https-requests-now-support-windows-certificate-store) を参照してください。 |
-| timeout                | Real    | undefined                                                                                                                        | 定義されている場合、未使用のソケットが閉じられるまでのタイムアウト                                                                                                                                                                                                                                                                       |
-| validateTLSCertificate | Boolean | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使用したリクエストについて、TLS 証明書の検証をおこなうか                                                                                                                                                                                                                                                                 |
+| プロパティ                  | 型       | デフォルト                                                                                                                            | 説明                                                                                                                                                                                                                                                                                                                                                                                   |
+| ---------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| certificatesFolder     | Folder  | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使ったリクエストに使用するクライアント証明書フォルダー。 "storeCertificateName" によって上書き可能(下記参照) "storeCertificateName" によって上書き可能(下記参照)                                                                                                                                                                                                                            |
+| keepAlive              | Boolean | true                                                                                                                             | 当該エージェントについて keep-alive を有効にします                                                                                                                                                                                                                                                                                                                                                      |
+| maxSockets             | Integer | 65535                                                                                                                            | サーバーあたりの最大ソケット数                                                                                                                                                                                                                                                                                                                                                                      |
+| maxTotalSockets        | Integer | 65535                                                                                                                            | エージェントの最大ソケット数                                                                                                                                                                                                                                                                                                                                                                       |
+| minTLSVersion          | Text    | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使ったリクエストに設定する TLS の最小バージョン                                                                                                                                                                                                                                                                                                                                                  |
+| protocol               | Text    | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使ったリクエストに使用されるプロトコル                                                                                                                                                                                                                                                                                                                                                         |
+| storeCertificateName   | Text    | undefined                                                                                                                        | 証明書フォルダーに保存されているものの代わりに使用する、証明書ストア(Windows) または *keychain* (macOS) に保存されている証明書の名前。 証明書がストアに見つからなかった場合、エラーが返されます。 より詳細な情報については、[Windows についてはこちらのblog 記事を](https://blog.4d.com/https-requests-now-support-windows-certificate-store) 、また [macOS についてはこちらのblog 記事を](https://blog.4d.com/https-requests-macos-keychain-support-is-here)を参照してください。 |
+| timeout                | Real    | undefined                                                                                                                        | 定義されている場合、未使用のソケットが閉じられるまでのタイムアウト                                                                                                                                                                                                                                                                                                                                                    |
+| validateTLSCertificate | Boolean | undefined (デフォルト値は [HTTPRequest.new()](HTTPRequestClass.md#options-引数) 参照) | 当該エージェントを使用したリクエストについて、TLS 証明書の検証をおこなうか                                                                                                                                                                                                                                                                                                                                              |
+
+:::note
+
+macOS では、新しいアプリケーション(新しい [UUID](./FileClass.md#setappinfo)) がキーチェーンへのアクセスを最初にリクエストする場合、ローカルのキーチェーン設定によっては、ユーザーに対してパスワードが要求される可能性があります。
+
+:::
 
 :::note
 

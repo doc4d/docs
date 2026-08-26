@@ -22,7 +22,7 @@ ORDA のセキュリティアーキテクチャーは、権限、許諾アクシ
 
 
 
-## Resources
+## リソース
 
 プロジェクト内の以下のリソースに対して、許諾アクションと権限名を割り当てることができます (この設定をパーミッションと呼びます):
 
@@ -61,7 +61,7 @@ ORDA のセキュリティアーキテクチャーは、権限、許諾アクシ
 - 計算属性を構成する属性に対するアクセス権をセッションが持っていない場合でも、計算属性へのアクセス権があれば、これを読み取ることができます。
 - デフォルト値: 現在の実装では、*Null* のみデフォルト値として利用可能です。
 
-許諾の設定は一貫している必要があります。とくに:
+許諾の設定は一貫している必要があります。 とくに:
 
 - **update** および **drop** アクションには **read** が必要です (**create** には不要です)
 - **promote** アクションには **describe** が必要です
@@ -123,16 +123,16 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
 | プロパティ名      |                 |               | 型                          | 必須 | 説明                                                                 |
 | ----------- | --------------- | ------------- | -------------------------- | -- | ------------------------------------------------------------------ |
-| privileges  |                 |               | `privilege` オブジェクトのコレクション  | X  | 定義された権限のリスト                                                        |
+| privileges  |                 |               | `privilege` オブジェクトのコレクション  | ○  | 定義された権限のリスト                                                        |
 |             | \[].privilege  |               | Text                       |    | アクセス権の名称                                                           |
 |             | \[].includes   |               | String の Collection        |    | 内包する権限名のリスト                                                        |
 | roles       |                 |               | `role` オブジェクトのコレクション       |    | 定義されたロールのリスト                                                       |
 |             | \[].role       |               | Text                       |    | ロール名                                                               |
 |             | \[].privileges |               | String の Collection        |    | 内包する権限名のリスト                                                        |
-| permissions |                 |               | Object                     | X  | 設定されたパーミッションのリスト                                                   |
+| permissions |                 |               | Object                     | ○  | 設定されたパーミッションのリスト                                                   |
 |             | allowed         |               | `permission` オブジェクトのコレクション |    | 許可されたパーミッションのリスト                                                   |
-|             |                 | \[].applyTo  | Text                       | X  | 対象の [リソース](#リソース) 名                                                |
-|             |                 | \[].type     | Text                       | X  | [リソース](#リソース) タイプ: "datastore", "dataclass", "attribute", "method" |
+|             |                 | \[].applyTo  | Text                       | ○  | 対象の [リソース](#リソース) 名                                                |
+|             |                 | \[].type     | Text                       | ○  | [リソース](#リソース) タイプ: "datastore", "dataclass", "attribute", "method" |
 |             |                 | \[].read     | String の Collection        |    | 権限名のリスト                                                            |
 |             |                 | \[].create   | String の Collection        |    | 権限名のリスト                                                            |
 |             |                 | \[].update   | String の Collection        |    | 権限名のリスト                                                            |
@@ -156,7 +156,7 @@ ORDA クラス関数の権限は、以下の形式で`applyTo` 要素に記述�
 ```json
 <データクラス名>.<関数名>
 ```
-For example, if you want to apply a permission to the following function:
+例えば、以下の関数にパーミッションを適用したい場合を考えます:
 
 ```4d
 // cs.CityEntity class
@@ -170,7 +170,7 @@ Class extends Entity
 "applyTo":"City.getPopulation"
 ```
 
-It means that you cannot use the same function names in the various ORDA classes (entity, entity selection, dataclass) if you want them to be assigned privileges. In this case, you need to use distinct function names. たとえば、`cs.CityEntity` および `cs.CitySelection` クラスの両方に "drop" 関数を作成するのであれば、`dropEntity()`、`dropSelection()` といった具合に別々の関数名を設定する必要があります。 You can then write in the "roles.json" file:
+これはつまり、関数に対して権限を割り当てたい場合には、異なるORDA クラス(エンティティ、エンティティセレクション、データクラス)間で同じ関数名を使用することができないということです。 この場合には、異なる関数名を使用する必要があります。 これはつまり、関数に対して権限を割り当てたい場合には、異なるORDA クラス(エンティティ、エンティティセレクション、データクラス)間で同じ関数名を使用することができないということです。 その後で、 "roles.json" ファイルに以下のように記述することができます:
 
 ```json
     "permissions": {
@@ -197,15 +197,16 @@ It means that you cannot use the same function names in the various ORDA classes
 
 `roles.json` ファイルは、4D 起動時に解析されます。 このファイルへの変更を反映させるには、アプリケーションを再起動する必要があります。
 
-`roles.json` ファイルを解析する際にエラーが発生した場合、4D はプロジェクトを読み込みますが、グローバルアクセス保護は無効になります。これにより、開発者はエラー修正のためファイルにアクセスすることができます。 また、`Roles_Errors.json` という名前のエラーファイルが [プロジェクトの `Logs` フォルダー](../Project/architecture.md#logs) に生成され、エラー行が記述されています。 このファイルは、`roles.json` ファイルのエラーがすべて修正されると、自動的に削除されます。
+`roles.json` ファイルを解析する際にエラーが発生した場合、4D はプロジェクトを読み込みますが、グローバルアクセス保護は無効になります。 これにより、開発者はエラー修正のためファイルにアクセスすることができます。 また、`Roles_Errors.json` という名前のエラーファイルが [プロジェクトの `Logs` フォルダー](../Project/architecture.md#logs) に生成され、エラー行が記述されています。 このファイルは、`roles.json` ファイルのエラーがすべて修正されると、自動的に削除されます。
 
-`Roles_Errors.json` ファイルが [Logs フォルダー](../Project/architecture.md#logs) に存在するかどうか、起動時に確認することをお勧めします。存在する場合、解析エラーが発生し、アクセスが制限されないことを意味します。 たとえば、次のように書くことができます:
+`Roles_Errors.json` ファイルが [Logs フォルダー](../Project/architecture.md#logs) に存在するかどうか、起動時に確認することをお勧めします。 存在する場合、解析エラーが発生し、アクセスが制限されないことを意味します。 たとえば、次のように書くことができます:
 
 ```4d title="/Sources/DatabaseMethods/onStartup.4dm"
 If (Not(File("/LOGS/"+"Roles_Errors.json").exists))
 …
 Else // プロジェクトが開かれるのを防ぐことができます
- ALERT("roles.json ファイルが不正なため、アプリケーションを終了します。")
+ ALERT("roles.json ファイルが不正なため、アプリケーションを終了します。
+ ")
  QUIT 4D
 End if 
 ```

@@ -28,7 +28,7 @@ Permet à l'utilisateur d'accéder à un menu contextuel standard dans l'objet l
 
 Pour une [zone de saisie](input_overview.md) image, en plus des commandes d'édition standard (Couper, Copier, Coller et Effacer), le menu contient la commande **Omporter...** qui peut être utilisée pour importer une image stockée dans un fichier, ainsi que la commande **Enregistrer sous...** , qui peut être utilisée pour enregistrer l'image sur le disque. Le menu peut également être utilisé pour modifier le format d"affichage de l'image : les options **Tronquée non centrée**, **Non tronquée** et **Proportionnelle centrée** sont proposées. La modification du [format d'affichage](properties_Display#picture-format) en utilisant ce menu est temporaire ; elle n'est pas stockée avec l'enregistrement.
 
-Pour une [zone de saisie](input_overview.md) de type texte et [multi-style](properties_Text.md#multi-style), en plus des commandes d'édition standard, le menu contextuel fournit les commandes suivantes :
+Pour une [zone de saisie](input_overview.md) type texte [multi-style](properties_Text.md#multi-style) ou une [colonne de list box](listbox-column.md), en plus des commandes d'édition standard, le menu contextuel propose les commandes suivantes :
 
 - **Polices...**: affiche la boîte de dialogue système de police
 - **Polices récentes**: affiche les noms des polices récentes sélectionnées pendant la session. La liste peut stocker jusqu'à 10 polices (au-delà, la dernière police utilisée remplace la plus ancienne). Par défaut, cette liste est vide et l'option n'est pas affichée. Vous pouvez gérer cette liste en utilisant les commandes `SET RECENT FONTS` et `FONT LIST`.
@@ -64,7 +64,7 @@ Lorsque cette propriété est désactivée, tous les pop-up menus associés à u
 
 #### Objets pris en charge
 
-[Zones 4D Write Pro](writeProArea_overview.md) - [Check Box](checkbox_overview.md) - [Liste hiérarchique](list_overview.md) - [Zone de saisie](input_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns) - [Barre de progression](progressIndicator.md) - [Règle](ruler.md) - [Stepper](stepper.md)
+[4D Write Pro areas](writeProArea_overview.md) - [Check Box](checkbox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
 
 ---
 
@@ -101,7 +101,7 @@ Ce tableau explique chaque filtre présent dans la liste déroulante Filtre de s
 | ~a##                            | Abréviation du nom de l'état (par exemple, CA). Permet la saisie de deux lettres, mais les transforme en caractères majuscules.                                               |
 | !0&9##/##/##                    | Filtre standard de saisie des dates. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre.                                                          |
 | !0&9 Day: ## Month: ## Year: ## | Filtre personnalisé de saisie des dates. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre. Deux entrées après chaque mot.                       |
-| !0&9##:##                       | Filtre de saisie d’heure. Limité aux heures et aux minutes. Affiche des zéros aux emplacements de saisie. Autorise quatre chiffres, séparés par un deux-points.               |
+| !0&9##:##                       | Filtre de saisie d’heure. Limité aux heures et aux minutes. Affiche des zéros aux emplacements de saisie. Affiche des zéros aux emplacements de saisie.                       |
 | !0&9## Hrs ## Mins ## Secs      | Filtre de saisie d’heure. Affiche des zéros aux emplacements de saisie. Autorise deux chiffres avant chaque mot.                                                              |
 | !0&9Hrs: ## Mins: ## Secs: ##   | Filtre de saisie d’heure. Affiche des zéros aux emplacements de saisie. Autorise deux chiffres après chaque mot.                                                              |
 | !0&9##-##-##-##                 | Format de numéro de téléphone local. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre. Deux entrées, trait d'union, deux entrées, etc.          |
@@ -120,7 +120,7 @@ Ce tableau explique chaque filtre présent dans la liste déroulante Filtre de s
 
 #### Objets pris en charge
 
-[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Liste hiérarchique](list_overview.md) - [Zone de saisie](input_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md)
 
 ---
 
@@ -275,7 +275,7 @@ Pour afficher une liste de tous les raccourcis utilisés dans l'environnement de
 | shortcutControl | boolean         | true, false (macOS Control)                        |
 | shortcutShift   | boolean         | true, false                                        |
 |                 |                 |                                                    |
-| shortcutKey     | string          | <li>toute touche de caractère : "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| shortcutKey     | string          | <li>toute touche de caractère : "a", "b"...</li><li>"[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### Objets pris en charge
 

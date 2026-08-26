@@ -13,7 +13,7 @@ title: HTTPリクエストの処理
 
 :::info
 
-また受信リクエストと送信リクエストに対してカスタマイズされた管理をするために、独自のHTTP リクエストハンドラーを実装することもできます。 カスタムHTTP リクエストハンドラがトリガーされた場合、データベースメソッドは呼び出されません。 詳細については、[**HTTP Request Handler**](http-request-handler.md) の章を参照して下さい。
+また受信リクエストと送信リクエストに対してカスタマイズされた管理をするために、独自の HTTPリクエストハンドラーを実装することもできます。 カスタム HTTPリクエストハンドラーがトリガーされた場合、データベースメソッドは呼び出されません。 詳細については、[**HTTP Request Handler**](http-request-handler.md) の章を参照して下さい。
 
 :::
 
@@ -23,7 +23,7 @@ title: HTTPリクエストの処理
 
 ### データベースメソッドの呼び出し
 
-`On Web Connection` データベースメソッドは、サーバー上の既存のページへの有効なパスではないURL (かつ[カスタムのHTTP リクエストハンドラー](http-request-handler.md)をトリガーするパターンを持ったURL ではない)をサーバーが受信した時に自動的に呼び出されます。
+`On Web Connection` データベースメソッドは、サーバー上の既存のページへの有効なパスではない URL (かつ[カスタムの HTTPリクエストハンドラー](http-request-handler.md)をトリガーするパターンを持った URL ではない) をサーバーが受信した時に自動的に呼び出されます。
 
 データベースメソッドは、URL とともに呼び出されます。
 
@@ -75,7 +75,7 @@ title: HTTPリクエストの処理
 
 ### $header - HTTP リクエストのヘッダーと本文
 
-二番目の引数($header) はWeb ブラウザから送信されたHTTP リクエストのヘッダーと本文部分です。 この情報は `On Web Connection` データベースメソッドに "そのまま" 渡されることに留意してください。 その内容は、接続を試みた Webブラウザーの仕様により異なります。
+二番目の引数 ($header) は Webブラウザーから送信された HTTPリクエストのヘッダーと本文部分です。 この情報は `On Web Connection` データベースメソッドに "そのまま" 渡されることに留意してください。 その内容は、接続を試みた Webブラウザーの仕様により異なります。
 
 アプリケーションでこの情報を使用するには、開発者がヘッダーとボディを解析しなければなりません。 `WEB GET HTTP HEADER` や `WEB GET HTTP BODY` コマンドを使うことができます。
 
@@ -83,9 +83,9 @@ title: HTTPリクエストの処理
 
 ### $BrowserIP - Web クライアントIP アドレス
 
-$BrowserIP 引数はブラウザマシンの IPアドレスを受け取ります。 この情報を使用して、イントラネットアクセスとインターネットアクセスを区別できます。
+$BrowserIP 引数はブラウザーマシンの IPアドレスを受け取ります。 この情報を使用して、イントラネットアクセスとインターネットアクセスを区別できます。
 
-> 4D は IPv4 アドレスを、96-bit の接頭辞付きのハイブリッド型 IPv6/IPv4 フォーマットで返します。たとえば、::ffff:192.168.2.34 は、192.168.2.34 という IPv4 アドレスを意味します。 詳細については、[IPv6 のサポートについて](webServerConfig.md#IPv6-のサポートについて) の章を参照ください。
+> 4D は IPv4 アドレスを、96-bit の接頭辞付きのハイブリッド型 IPv6/IPv4 フォーマットで返します。 たとえば、::ffff:192.168.2.34 は、192.168.2.34 という IPv4 アドレスを意味します。 詳細については、[IPv6 のサポートについて](webServerConfig.md#IPv6-のサポートについて) の章を参照ください。
 
 ### $ServerIP - サーバーIP アドレス
 
@@ -122,7 +122,7 @@ $user と $password 引数は、ブラウザーが表示する標準の認証ダ
 
 `MyMethod` プロジェクトメソッドは通常レスポンスを返すべきです (`WEB SEND FILE` や `WEB SEND BLOB` で HTMLページを送信するなど)。 ブラウザーをブロックしないように、処理は可能な限り短時間でおこなわれるようにします。
 
-> `4DACTION/` から呼び出されるメソッドは、インタフェース要素 (`DIALOG`, `ALERT` など) を呼び出してはいけません。
+> `4DACTION/` から呼び出されるメソッドは、インターフェース要素 (`DIALOG`, `ALERT` など) を呼び出してはいけません。
 
 #### 例題
 
@@ -140,7 +140,7 @@ var $path : Text
 var $PictVar : Picture
 var $BlobVar : Blob
 
- // Resources フォルダ内のImages フォルダからピクチャーを検索します
+ // Resources フォルダー内のImages フォルダーからピクチャーを検索します
 $path:=Get 4D folder(Current resources folder)+"Images"+Folder separator+$url+".psd"
 
 READ PICTURE FILE($path;$PictVar) // ピクチャーをピクチャー変数に渡します
@@ -181,7 +181,7 @@ Webアプリケーションにおいて、スタティックなHTMLページを�
 </FORM>
 ```
 
-データ入力エリアに "ABCD" とタイプし、"Whole word (句として検索)" オプションをチェックして **Search** (検索) ボタンをクリックします。 Webサーバーに送信されるリクエスト内部は以下の通りです: Webサーバーに送信されるリクエスト内部は以下の通りです:
+データ入力エリアに "ABCD" とタイプし、"Whole word (句として検索)" オプションをチェックして **Search** (検索) ボタンをクリックします。 Webサーバーに送信されるリクエスト内部は以下の通りです:
 
 ```
 vName="ABCD"
@@ -220,9 +220,9 @@ End if
 
 4D Web サーバーでは、Webフォームや URL を介して POST や GET リクエストで送信されたデータを復元することができます。
 
-ヘッダーや URL にデータが含まれたリクエストを Webサーバーが受信すると、4D はそれに含まれる HTMLオブジェクトの値を受け取ることができます。 たとえば [`WEB SEND FILE`](../commands-legacy/web-send-file.md) コマンドまたは[`WEB SEND BLOB`](../commands-legacy/web-send-blob.md) コマンドで送信され、ユーザーが値を入力・修正して確定ボタンをクリックするような Webフォームにおいてもこの原理は使用可能です。
+ヘッダーや URL にデータが含まれたリクエストを Webサーバーが受信すると、4D はそれに含まれる HTMLオブジェクトの値を受け取ることができます。 たとえば [`WEB SEND FILE`](../commands/web-send-file) コマンドまたは[`WEB SEND BLOB`](../commands/web-send-blob) コマンドで送信され、ユーザーが値を入力・修正して確定ボタンをクリックするような Webフォームにおいてもこの原理は使用可能です。
 
-この場合 4D は[`WEB GET VARIABLES`](../commands-legacy/web-get-variables.md) コマンドを使って、リクエスト内の HTMLオブジェクトの値を取得することができます。 `WEB GET VARIABLES` コマンドは、値をテキストとして受け取ります。
+この場合 4D は[`WEB GET VARIABLES`](../commands/web-get-variables) コマンドを使って、リクエスト内の HTMLオブジェクトの値を取得することができます。 `WEB GET VARIABLES` コマンドは、値をテキストとして受け取ります。
 
 以下の HTMLページのソースコードがあるとき:
 
@@ -326,18 +326,19 @@ HTMLではすべてのオブジェクトがテキストオブジェクトであ�
 
 4D Webサーバーには、リクエストの処理をカスタマイズするための、低レベル Webコマンドがいくつか用意されています。
 
-- [`WEB GET HTTP BODY`](../commands-legacy/web-get-http-body.md) コマンドは本文を標準テキストとして返すため、必要な解析を行うことができます。
-- [`WEB GET HTTP HEADER`](../commands-legacy/web-get-http-header.md) コマンドはリクエストのヘッダーを返します。 カスタムcookie などを処理するのに便利です (`WEB SET HTTP HEADER` コマンドも使用できます)。
-- [`WEB GET BODY PART`](../commands-legacy/web-get-body-part.md) と[`WEB Get body part count`](../commands-legacy/web-get-body-part-count.md) コマンドは、マルチパートリクエストのボディパートを解析して、テキスト値を取得するだけでなく、ポストされたファイルもBLOBに取得します。
+- [`WEB GET HTTP BODY`](../commands/web-get-http-body) コマンドは本文を標準テキストとして返すため、必要な解析を行うことができます。
+- [`WEB GET HTTP HEADER`](../commands/web-get-http-header) コマンドはリクエストのヘッダーを返します。 カスタムcookie などを処理するのに便利です (`WEB SET HTTP HEADER` コマンドも使用できます)。
+- [`WEB GET BODY PART`](../commands/web-get-body-part) と[`WEB Get body part count`](../commands/web-get-body-part-count) コマンドは、マルチパートリクエストのボディパートを解析して、テキスト値を取得するだけでなく、ポストされたファイルもBLOBに取得します。
 
 これらのコマンドは次の図にまとめられています:
 
 ![](../assets/en/WebServer/httpCommands.png)
 
-4D Webサーバーは、どの Webクライアントからでもチャンクド・エンコーディングでアップロードされたファイルをサポートするようになりました。 チャンクド・エンコーディングは HTTP/1.1 にて定義されているデータ転送方式です。 これを使用することにより、最終的なデータサイズを知る事なく、データを複数の "チャンク" (部分) に分けて転送することができます。 4D Webサーバーでは、サーバーから Webクライアントへのチャンクド・エンコーディングもサポートしています ([`WEB SEND RAW DATA`](../commands-legacy/web-send-raw-data.md) を使用します)。
+4D Webサーバーは、どの Webクライアントからでもチャンクド・エンコーディングでアップロードされたファイルをサポートするようになりました。 チャンクド・エンコーディングは HTTP/1.1 にて定義されているデータ転送方式です。 これを使用することにより、最終的なデータサイズを知る事なく、データを複数の "チャンク" (部分) に分けて転送することができます。 4D Webサーバーでは、サーバーから Webクライアントへのチャンクド・エンコーディングもサポートしています ([`WEB SEND RAW DATA`](../commands/web-send-raw-data) を使用します)。
 
 ## COMPILER_WEB プロジェクトメソッド
 
 COMPILER_WEB メソッドが存在する場合、それは HTTPサーバーが動的なリクエストを受け取り、4Dエンジンを呼び出した場合に、システムを通して呼び出されます。 これはたとえば 4D Webサーバーが、ポストされたフォーム、または処理すべき URL を [`On Web Connection`](#on-web-connection) に受け取る場合が該当します。 このメソッドは Web通信時に使用される型指定または変数初期化指示子を含めることを目的としています。 これはデータベースのコンパイル時にコンパイラーによって使用されます。 COMPILER_WEB メソッドはすべての Webフォームで共通です。 デフォルトでは、COMPILER_WEB メソッドは存在しません。 明示的に作成する必要があります。
 
 > COMPILER_WEB プロジェクトメソッドは (存在すれば)、SOAPリクエストが受け入れられるごとに実行されます。
+

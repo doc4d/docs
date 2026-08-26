@@ -65,14 +65,8 @@ Certificados TLS gerenciados por 4D devem ser no **PEM format**. Se seu forneced
 
 4D fornece certificados nos formatos de criptografia abaixo:
 
-- [**RSA**](https://en.wikipedia.org/wiki/RSA_\\(cryptosystem\\))
+- [**RSA**](https://en.wikipedia.org/wiki/RSA_\(cryptosystem\))
 - [**ECDSA**](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
-
-:::info Compatibidade
-
-O formato de criptografia ECDSA não é compatível com [a camada de rede legado 4D](../settings/client-server.md#network-layer).
-
-:::
 
 :::note
 
@@ -90,7 +84,7 @@ Os arquivos de certificado incluem:
 Os arquivos **key.pem** e **cert.pem** devem estar localizados:
 
 - com 4D Server ou 4D no modo local, ao lado da [pasta do projeto](Project/architecture.md#project-folder)
-- com 4D em modo remoto, na pasta do banco de dados cliente na máquina remota (para obter mais informações sobre a localização dessa pasta, consulte o comando [`Get 4D folder`](../commands-legacy/get-4d-folder.md)). Deve copiar esses arquivos manualmente na máquina remota.
+- com 4D em modo remoto, na pasta do banco de dados cliente na máquina remota (para obter mais informações sobre a localização dessa pasta, consulte o comando [`Get 4D folder`](../commands/get-4d-folder)). Deve copiar esses arquivos manualmente na máquina remota.
 
 ### Ativar TLS
 
@@ -114,7 +108,7 @@ Se utilizar uma [lista de cifrado personalizada](WebServer/webServerConfig.md#ci
 
 Para usar TLS com o servidor de aplicações 4D (aplicações cliente-servidor de desktop) ou o servidor SQL, você só precisa ativar comunicações TLS e o servidor automaticamente configura as conexões na inicialização.
 
-- Com o servidor de aplicações, selecione a opção **Encriptar comunicações cliente-servidor** na página ["Opções cliente-servidor/rede" da caixa de diálogo Parâmetros](.../settings/client-server#encrypt-client-server-communications).
+- With the application server when [QUIC network layer](../settings/client-server.md#network-layer) is enabled, you don't have anything to do: QUIC communications are always in TLS. When ServerNet network layer is enabled select the **Encrypt Client-Server Communications** option in the ["Client-server/Network options" page of the Settings dialog box](../settings/client-server#encrypt-client-server-communications).
 - Com o servidor SQL, selecione a opção **Habilitar TLS** na página ["SQL" na caixa de diálogo Parâmetros](../settings/sql#sql-server-publishing).
 
 ## Como obter o certificado RSA? (tutorial)
@@ -146,3 +140,4 @@ Para obter um certificado digital:
 5. Coloque o arquivo “cert.pem” no [local apropriado](#installing-certificate-files).
 
 O servidor 4D pode trabalhar em modo seguro. Um certificado é normalmente válido entre 3 meses e um ano.
+

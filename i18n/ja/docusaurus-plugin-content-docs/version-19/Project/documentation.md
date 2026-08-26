@@ -153,10 +153,10 @@ $txt:="Hello world!"
 - テーブルタグ:
 
 ```
-| Parameter | Type   | Description  |
+| 引数 | 型   | 説明  |
 | --------- | ------ | ------------ |
-| wpArea    | Text |Write pro area|
-| toolbar   | Text |Toolbar name  |
+| wpArea    | テキスト |Write pro エリア|
+| toolbar   | テキスト |ツールバー名  |
 ```
 
 - リンクタグ:
@@ -205,6 +205,17 @@ GetLogo (size) -> logo
 ## Description
 
 このメソッドは、*size* 引数の値に応じて、特定サイズのロゴを返します。
+1 = 最小値, 5 = 最大値
+
+## Example
+
+C_PICTURE($logo)
+C_LONGINT($size)
+
+// 最大ロゴを取得します
+$logo:=GetLogo(5)
+1 = 最小値, 5 = 最大値
+
 1 = 最小値, 5 = 最大値
 
 ## Example

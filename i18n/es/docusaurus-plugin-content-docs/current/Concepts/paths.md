@@ -18,7 +18,7 @@ Además, los objetos archivo y carpeta soportan los `fileSystems`, que ofrecen u
 Las rutas de los filesystem son útiles por dos razones principales:
 
 - Independencia: puede trasladar su solución de un lugar a otro independientemente del sistema operativo, sin tener que preocuparse por las rutas,
-- Seguridad: ningún código puede acceder a los elementos situados por encima de la raíz del sistema de los file system en el disco (sandboxing).
+- Seguridad: ningún código puede acceder a los elementos situados por encima de la raíz del sistema de archivos en el disco (sandboxing).
 
 Se soportan los siguientes nombres de rutas de filesystem:
 
@@ -39,9 +39,9 @@ Con esta sintaxis:
 
 - las carpetas están separadas por "/"
 - los nombres de ruta absolutos empiezan por "/"
-- para subir una carpeta en una ruta relativa, utilice "../" delante del nombre de la ruta (por seguridad, no puede subir en el sistema de archivos).
+- para subir un nivel en una ruta relativa, utilice "../" delante del nombre de la ruta (por seguridad, no puede subir por encima de la raíz del sistema de archivos).
 
-En la sintaxis POSIX, generalmente usará los nombres de ruta `filesystem` con comandos [`File`](../commands/file.md) y [`Folder`](../commands/folder.md), por ejemplo:
+En la sintaxis POSIX, generalmente usará los nombres de ruta `filesystem` con comandos [`File`](../commands/file) y [`Folder`](../commands/folder), por ejemplo:
 
 ```4d
 var $pathFile : 4D.File
@@ -58,11 +58,11 @@ La sintaxis específica de la plataforma depende del sistema operativo en el que
 
 Se soportan los siguientes modelos:
 
-- los separadores de carpetas son "\"
-- el texto contiene ":" y "\" como segundo y tercer caracter,
-- el texto comienza con "\\".
+- los separadores de carpetas son "\\"
+- el texto contiene ":" y "\\" como segundo y tercer carácter,
+- el texto comienza por "\\\".
 
-Ejemplos con [`Folder`](../commands/folder.md):
+Ejemplos con [`Folder`](../commands/folder):
 
 ```4d
 $ok:=Folder("C:\\Monday";fk platform path).create()
@@ -82,18 +82,18 @@ Se soportan los siguientes modelos (sintaxis HFS+):
 - los separadores de carpetas son ":"
 - la ruta no debe comenzar con un ":"
 
-Ejemplos con [`Folder`](../commands/folder.md):
+Ejemplos con [`Folder`](../commands/folder):
 
 ```4d
 $ok:=Folder("macintosh hd:";fk platform path).create()
-$ok:=Folder("Monday:Tuesday";fk platform path).create() //un volume debe llamarse Monday
+$ok:=Folder("Monday:Tuesday";fk platform path).create() //un volumen debe llamarse Monday
 ```
 
 ## Rutas absolutas y relativas
 
 ### Constructores `File` y `Folder`
 
-Los comandos [`File`](../commands/file.md) y [`Folder`](../commands/folder.md) sólo aceptan **rutas absolutas**. Las rutas relativas no están soportadas y devolverán errores. Por ejemplo, el siguiente código no es permitido:
+Los comandos [`File`](../commands/file) y [`Folder`](../commands/folder) sólo aceptan **rutas absolutas**. Las rutas relativas no están soportadas y devolverán errores. Por ejemplo, el siguiente código no está permitido:
 
 ```4d
 //ERROR
@@ -137,3 +137,4 @@ $file:=File("/DATA/info.txt")
 $file:=File("c:\\archives\\local\\jan2019.txt";fk platform path)
 $file:=File(fk backup log file)
 ```
+

@@ -58,29 +58,32 @@ To update any other client machines that are not connected, you just need to ent
 
 #### Authentication of user with domain server
 
-This option allows you to implement SSO (*Single Sign On*) capabilities in your 4D Server database on Windows. When you check this option, 4D transparently connects to the Active directory of the Windows domain server and gets the available authentication tokens. This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv20/4D/20/Single-Sign-On-SSO-on-Windows.300-6330537.en.html) section.
+This option allows you to implement SSO (*Single Sign On*) capabilities in your 4D Server database on Windows. When you check this option, 4D transparently connects to the Active directory of the Windows domain server and gets the available authentication tokens. This option is described in the [Single Sign On (SSO) on Windows](../server/sso.md) page.
 
 #### Service Principal Name
 
-When Single Sign On (SSO) is enabled (see above), you must fill in this field if you want to use Kerberos as your authentication protocol. This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv20/4D/20/Single-Sign-On-SSO-on-Windows.300-6330537.en.html) section.
+When Single Sign On (SSO) is enabled (see above), you must fill in this field if you want to use Kerberos as your authentication protocol. This option is described in the [Enablig Kerberos](../server/sso.md#enabling-kerberos) section.
 
 #### Network Layer
 
-This drop-down box contains 3 network layer options to choose between: **legacy**, **ServerNet** and **QUIC** (only in project mode), which are used to handle communications between 4D Server and remote 4D machines (clients).
--   **Legacy**: This former "legacy" network layer is still supported in order to ensure compatibility for databases created prior to v15. This network layer can also be enabled by programming using the [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md) command.
--   **ServerNet** (by default): Enables the ServerNet network layer on the server (available since 4D v15).
--   **QUIC** (available only in project mode): Enables the QUIC network layer on the server.
+This drop-down box contains the available network layers, which are used to handle communications between 4D Server and remote 4D machines (clients).
+-   **QUIC** (projects only): Enables the QUIC network layer on the server.
 
- 	 **Notes**:
-	- Selecting this option overrides the Use legacy network layer option in case it has been set using the [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md) command.
-	- You can know if a 4D application is running with a QUIC network layer using the [Application info](../commands-legacy/application-info.md) command.
+ 	 **Notes about QUIC**:
+	- You can know if a 4D application is running with the QUIC network layer using the [`Application info`](../commands/application-info) command.
 	- Since QUIC uses the UDP protocol, make sure UDP is allowed in your network security settings.
-	- QUIC automatically connects to the port 19813 for both application server and DB4D server.
+	- QUIC automatically connects to the port 19813 for both [application server and DB4D server](#4d-server-and-port-numbers).
 	- When the QUIC layer option is selected:
-		-	A beta message and an alert icon are displayed near the selector.
 		-	[Client-server Connections Timeout settings](#client-server-connections-timeout) are hidden
-		-	The [Encrypt Client-Server communication checkbox](#encrypt-client-server-communications) is hidden (QUIC communications are always in TLS, whatever your secured mode is.).
-	- **Compatibility**: You need to deploy your client/server applications with 4D v20 or higher before switching to the QUIC network layer.
+		-	The [Encrypt Client-Server communication checkbox](#encrypt-client-server-communications) is hidden (QUIC communications are always in TLS, whatever your secured mode is).
+	- **Compatibility**: You need to deploy your client/server applications with 4D 20 or higher before switching to the QUIC network layer.
+-   **ServerNet** (only option available for binary databases): Enables the ServerNet network layer on the server.
+
+:::info
+
+Using QUIC network layer is **recommended** for projects.
+
+:::
 
 :::note
 
@@ -88,7 +91,21 @@ In case of a modification, you need to restart the application for the change to
 
 :::
 
+:::tip Related blog posts
+
+[QUIC Network Layer is Production Ready!](https://blog.4d.com/quic-network-layer-is-production-ready/)  
+[QUIC network layer: Automatic update and sleep mode](https://blog.4d.com/quic-network-layer-automatic-update-and-sleep-mode/)   
+[Work and Move with QUIC and Network Switching](https://blog.4d.com/work-and-move-with-quic-and-network-switching/)  
+
+:::
+
 #### Client-Server Connections Timeout  
+
+:::note
+
+This option is not available when the [QUIC](#network-layer) network layer is selected. 
+
+:::
 
 This device is used to set the timeout (period of inactivity beyond which the connection is closed) between 4D Server and the client machines connecting to it. The Unlimited option removes the timeout. When this option is selected, client activity control is eliminated.
 
@@ -98,11 +115,17 @@ When a timeout is selected, the server will close the connection of a client if 
 
 #### Register Clients at Startup For Execute On Client  
 
-When this option is checked, all the 4D remote machines connecting to the database can execute methods remotely. This mechanism is detailed in the section [Stored procedures on client machines](https://doc.4d.com/4Dv20/4D/20/Stored-procedures-on-client-machines.300-6330550.en.html).
+When this option is checked, all the 4D remote machines connecting to the database can execute methods remotely. This mechanism is detailed in the section [Stored procedures on client machines](../Desktop/clientServer.md#stored-procedures-on-client-machines).
 
 #### Encrypt Client-Server Communications  
 
-This option lets you activate the secured mode for communications between the server machine and the 4D remote machines. This option is detailed in the [Encrypting Client/Server Connections](https://doc.4d.com/4Dv20/4D/20/Encrypting-ClientServer-Connections.300-6330533.en.html) section.
+:::note
+
+This option is not available when the [QUIC](#network-layer) network layer option is selected. QUIC communications are always in TLS, whatever your secured mode is.
+
+:::
+
+This option activates the [secured mode for communications](../Admin/tls.md#enabling-tls-with-the-other-servers) between the server machine and the 4D remote machines with ServerNet netword layer. 
 
 #### Update Resources folder during a session  
 
@@ -111,7 +134,7 @@ This setting can be used to globally set the updating mode for the local instanc
 -   **Never**: The local **Resources** folder is not updated during the session. The notification sent by the server is ignored. The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv20/4D/20.2/Using-the-Resources-explorer.300-6750254.en.html)).
 -   **Always**: The synchronization of the local **Resources** folder is automatically carried out during the session whenever notification is sent by the server.
 -   **Ask**: When the notification is sent by the server, a dialog box is displayed on the client machines, indicating the modification. The user can then accept or refuse the synchronization of the local **Resources** folder.\
-    The **Resources** folder centralizes the custom files required for the database interface (translation files, pictures, etc.). Automatic or manual mechanisms can be used to notify each client when the contents of this folder have been modified. For more information, please refer to the [Managing the Resources folder](https://doc.4d.com/4Dv20/4D/20/Managing-the-Resources-folder.300-6330534.en.html) section.
+    The **Resources** folder centralizes the custom files required for the database interface (translation files, pictures, etc.). Automatic or manual mechanisms can be used to notify each client when the contents of this folder have been modified. For more information, please refer to the [Managing the Resources folder](../Desktop/clientServer.md#managing-the-resources-folder) section.
 
 
 ## IP configuration page
@@ -132,3 +155,21 @@ The behavior of the configuration table is as follows:
     - Allow * (but allow all other addresses)
 
 By default, no connection restrictions are applied by 4D Server: the first row of the table contains the Allow label and the * (all addresses) character.
+
+### Support of IPv6 
+
+4D application server supports IPv6 address notation. Support of IPv6 is transparent for users and 4D developers: 4D Server accepts either IPv6 or IPv4 connections without distinction. The following table lists supported combinations:
+
+||4D remote IPv4 only|4D remote IPv6 only|4D remote both|
+|---|---|---|----|
+|4D Server IPv4 only|IPv4|*not supported*|IPv4|
+|4D Server IPv6 only|*not supported*|IPv6|IPv6|
+|4D Server both|IPv4|IPv6|IPv6|
+
+For detailed information about IPv6, please refer to the [RFC 2460 specification](https://datatracker.ietf.org/doc/html/rfc2460).
+
+:::note Compatibility 
+
+IPv6 support is only available with the ServerNet and QUIC [network layers](#network-layer).
+
+:::

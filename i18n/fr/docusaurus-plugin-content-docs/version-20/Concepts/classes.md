@@ -105,11 +105,13 @@ Les classes disponibles sont accessibles depuis leurs class stores. Il existe de
 <!-- REF #_command_.cs.Syntax -->**cs** : Object <!-- END REF -->
 
 <!-- REF #_command_.cs.Params -->
-| Paramètres | Type   |    | Description                                                                       |
-| ---------- | ------ | -- | --------------------------------------------------------------------------------- |
-| classStore | Object | <- | Class store utilisateur pour le projet ou le composant|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---|---|---|
+|classStore|Object|<-|User class store for the project or component|
+</div>
+<!-- END REF -->
 
 La commande `cs` <!-- REF #_command_.cs.Summary -->renvoie le class store utilisateur pour le projet ou le composant courant<!-- END REF -->. Elle retourne toutes les classes utilisateur [définies](#class-definition) dans le projet ou le composant ouvert. Par défaut, seules les [classes ORDA](ORDA/ordaClasses.md) du projet sont disponibles.
 
@@ -127,11 +129,13 @@ $instance:=cs.myClass.new()
 <!-- REF #_command_.4D.Syntax -->**4D** : Object <!-- END REF -->
 
 <!-- REF #_command_.4D.Params -->
-| Paramètres | Type   |    | Description                               |
-| ---------- | ------ | -- | ----------------------------------------- |
-| classStore | Object | <- | Class store 4D|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---|---|---|
+|classStore|Object|<-|4D class store|
+</div>
+<!-- END REF -->
 
 La commande `4D` <!-- REF #_command_.4D.Summary -->retourne le class store des classes 4D intégrées disponibles<!-- END REF -->. Elle donne accès à des API spécifiques telles que [CryptoKey](API/CryptoKeyClass.md).
 
@@ -303,11 +307,12 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 // Class: MyClass
 Class constructor({$parameterName : type; ...})
 // code
+// code
 ```
 
 :::note
 
-Il n'y a pas de mot-clé de fin pour le code d'une fonction class constructor. Il n'y a pas de mot-clé de fin pour le code d'une fonction.
+Il n'y a pas de mot-clé de fin pour le code d'une fonction de constructeur de classe. Il n'y a pas de mot-clé de fin pour le code d'une fonction.
 
 :::
 
@@ -377,7 +382,7 @@ Le type de propriété peut être l'un des suivants :
 
 :::info
 
-The `property` keyword can only be used in class methods and outside any `Function` or `Class constructor` block.
+Le mot-clé `property` ne peut être utilisé que dans les méthodes de classe et en dehors de tout bloc `Function` ou `Class constructor`.
 
 :::
 
@@ -530,12 +535,14 @@ Class constructor ($side : Integer)
 <!-- REF #_command_.Super.Syntax -->**Super**( ...param : any )<br/>**Super** : Object<!-- END REF -->
 
 <!-- REF #_command_.Super.Params -->
-| Paramètres | Type   |    | Description                                                |
-| ---------- | ------ | -- | ---------------------------------------------------------- |
-| param      | any    | -> | Paramètre(s) à passer au constructeur de la classe parente |
-| Résultat   | Object | <- | Parent de l'objet|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---|---|---|
+|param|any|->|Paramètre(s) à transmettre au constructeur parent|
+|Résultat|Object|<-|Object's parent|
+</div>
+<!-- END REF -->
 
 Le mot-clé `Super` <!-- REF #_command_.Super.Summary -->permet d'appeler la `superclass`, c'est-à-dire la classe parente<!-- END REF -->.
 
@@ -584,6 +591,12 @@ Function getArea()
 // Function definition
 Function getArea()
  var $0 : Integer
+ $0:=(This.height)*(This.width)
+
+// Function definition
+Function getArea()
+ var $0 : Integer
+
  $0:=(This.height)*(This.width)
 
 // Function definition
@@ -650,11 +663,13 @@ $message:=$square.description() //I have 4 sides which are all equal
 <!-- REF #_command_.This.Syntax -->**This** : Object<!-- END REF -->
 
 <!-- REF #_command_.This.Params -->
-| Paramètres | Type   |    | Description                              |
-| ---------- | ------ | -- | ---------------------------------------- |
-| Résultat   | Object | <- | Objet courant|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|---|---|---|
+|Résultat|Object|<-|Current object|
+</div>
+<!-- END REF -->
 
 Le mot-clé `This` <!-- REF #_command_.This.Summary -->retourne une référence vers l'objet en cours de traitement<!-- END REF -->.
 
@@ -670,12 +685,12 @@ $val:=$o.f() //42
 Lorsqu'une fonction [class constructor](#class-constructor) est utilisée (avec la fonction [`new()`](API/ClassClass.md#new)), son `This` désigne le nouvel objet en cours de construction.
 
 ```4d
-//Class: ob
+//Classe : ob
 
 Class constructor  
 
- // Create properties on This as
- // desired by assigning to them
+ // Créer des propriétés sur This comme
+ // souhaité par assignation
  This.a:=42
 ```
 

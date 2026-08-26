@@ -3,7 +3,7 @@ id: DataStoreClass
 title: DataStore
 ---
 
-[データストア](ORDA/dsMapping.md#datastore) とは、ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 `Datastore` オブジェクトは以下のコマンドによって返されます:
+[データストア](ORDA/dsMapping.md#datastore) とは、ORDA によって提供されるインターフェースオブジェクトです。 データストアはデータベースへの参照とアクセスを提供します。 `Datastore` オブジェクトは以下のコマンドによって返されます:
 
 * [ds](#ds): メインデータストアへのショートカット
 * [Open datastore](#open-datastore): リモートデータストアを開きます
@@ -47,12 +47,14 @@ title: DataStore
 
 
 <!-- REF #_command_.ds.Params -->
-| 引数      | 型            |    | 説明                                  |
-| ------- | ------------ | -- | ----------------------------------- |
-| localID | Text         | -> | 参照を取得したいリモートデータストアのローカルID           |
-| 戻り値     | cs.DataStore | <- | データストア参照|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|localID|Text|->|参照を取得したいリモートデータストアのローカルID|
+|戻り値|cs.DataStore|<-|Reference to the datastore|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -116,19 +118,21 @@ $foreignStudents:=Open datastore($connectTo;"foreign")
 
 
 <!-- REF #_command_.Open datastore.Params -->
-| 引数             | 型                          |    | 説明                                         |
-| -------------- | -------------------------- | -- | ------------------------------------------ |
-| connectionInfo | Object                     | -> | リモートデータストアへの接続に使用する接続プロパティ                 |
-| localID        | Text                       | -> | ローカルアプリケーション内で、開かれたデータストアに対して割り当てる ID (必須) |
-| 戻り値            | 4D.DataStoreImplementation | <- | データストアオブジェクト|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|connectionInfo|Object|->|リモートデータストアへの接続に使用する接続プロパティ|
+|localID |Text|->|ローカルアプリケーション内で、開かれたデータストアに対して割り当てる ID (必須)|
+|戻り値|4D.DataStoreImplementation|<-|Datastore object|
+</div>
+<!-- END REF -->
 
 #### 説明
 
 `Open datastore` コマンドは、 <!-- REF #_command_.Open datastore.Summary -->*connectionInfo* 引数が指定する 4Dデータベースにアプリケーションを接続します。<!-- END REF --> ローカルエイリアス*localID*と紐づけられた`4D.DataStoreImplementation`オブジェクトが返されます。
 
-*connectionInfo* で指定する 4Dデータベースはリモートデーターストアとして利用可能でなければなりません。つまり、以下の条件を満たしている必要があります:
+*connectionInfo* で指定する 4Dデータベースはリモートデーターストアとして利用可能でなければなりません。 つまり、以下の条件を満たしている必要があります:
 
 * データベースの Webサーバーは、http または https が有効化された状態で開始されていなければなりません。
 * データベースの [**REST サーバーとして公開**](REST/configuration.md#restサーバーを開始する) オプションがチェックされている必要があります。
@@ -150,15 +154,15 @@ $foreignStudents:=Open datastore($connectTo;"foreign")
 
 *connectionInfo* には、接続したいリモートデータストアの詳細を格納したオブジェクトを渡します。 オブジェクトは以下のプロパティを格納することができます (*hostname* を除き、すべてのプロパティは任意です):
 
-| プロパティ             | 型       | 説明                                                                                                                                                                                                                                          |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hostname          | Text    | リモートデータストアの名前または IPアドレス + ":" + ポート番号 (ポート番号は必須)                                                                                                                                                                                            |
-| user              | Text    | ユーザー名                                                                                                                                                                                                                                       |
-| password          | Text    | ユーザーパスワード。 デフォルトでは、パスワードは平文で送信されるため、`tls` プロパティに `true` を渡して暗号化通信を使用することが**強く推奨**されます。                                                                                                                                                      |
-| idleTimeout       | Integer | アクティビティがなかった場合に、セッションがタイムアウトするまでの時間 (分単位)。この時間を過ぎると、4D によって自動的にセッションが閉じられます。 省略時のデフォルトは 60 (1時間) です。 60 (分) 未満の値を指定することはできません (60 未満の値を渡した場合、タイムアウトは 60 (分) に設定されます)。 詳細については、[**セッションの終了**](../ORDA/remoteDatastores.md#セッションの終了) を参照ください。 |
-| tls               | Boolean | 安全な接続を使用します(*)。 省略時のデフォルトは false です。 可能なかぎり安全な接続を使用することが推奨されます。                                                                                                                                                                             |
-| passwordAlgorithm | Text    | [`Validate password`](https://doc.4d.com/4dv20/help/command/ja/page638.html) コマンドで *digest* パラメーターを `true` に設定してサーバーがパスワードを検証する場合は、"4d-rest-digest" を指定します。                                                                                 |
-| type              | Text    | "4D Server" でなければなりません                                                                                                                                                                                                                      |
+| プロパティ             | 型       | 説明                                                                                                                                                                                                                                           |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hostname          | Text    | リモートデータストアの名前または IPアドレス + ":" + ポート番号 (ポート番号は必須)                                                                                                                                                                                             |
+| user              | Text    | ユーザー名                                                                                                                                                                                                                                        |
+| password          | Text    | ユーザーパスワード。 デフォルトでは、パスワードは平文で送信されるため、`tls` プロパティに `true` を渡して暗号化通信を使用することが**強く推奨**されます。                                                                                                                                                       |
+| idleTimeout       | Integer | アクティビティがなかった場合に、セッションがタイムアウトするまでの時間 (分単位)。 この時間を過ぎると、4D によって自動的にセッションが閉じられます。 省略時のデフォルトは 60 (1時間) です。 60 (分) 未満の値を指定することはできません (60 未満の値を渡した場合、タイムアウトは 60 (分) に設定されます)。 詳細については、[**セッションの終了**](../ORDA/remoteDatastores.md#セッションの終了) を参照ください。 |
+| tls               | Boolean | 安全な接続を使用します(*)。 省略時のデフォルトは false です。 可能なかぎり安全な接続を使用することが推奨されます。                                                                                                                                                                              |
+| passwordAlgorithm | Text    | [`Validate password`](https://doc.4d.com/4dv20/help/command/ja/page638.html) コマンドで *digest* パラメーターを `true` に設定してサーバーがパスワードを検証する場合は、"4d-rest-digest" を指定します。                                                                                  |
+| type              | Text    | "4D Server" でなければなりません                                                                                                                                                                                                                       |
 
 (*) tls が true だった場合、以下の条件が満たされていれば、HTTPSプロトコルが使用されます:
 
@@ -257,15 +261,17 @@ ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign stude
 
 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |::| -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 #### 説明
 
-`.cancelTransaction()` 関数は、 <!-- REF #DataStoreClass.cancelTransaction().Summary -->トランザクションをキャンセルします<!-- END REF --> 。このトランザクションは、指定データストアのカレントプロセスにおいて、[`.startTransaction()`](#starttransaction) によって開かれたものです。
+`.cancelTransaction()` 関数は、 <!-- REF #DataStoreClass.cancelTransaction().Summary -->トランザクションをキャンセルします<!-- END REF --> このトランザクションは、指定データストアのカレントプロセスにおいて、[`.startTransaction()`](#starttransaction) によって開かれたものです。
 
 `.cancelTransaction()` 関数は、トランザクション中におこなわれたデータ変更をすべてキャンセルします。
 
@@ -291,11 +297,13 @@ ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign stude
 
 
 <!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |::| -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -324,15 +332,17 @@ ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign stude
 
 
 <!-- REF #DataStoreClass.encryptionStatus().Params -->
-| 引数  | 型      |    | 説明                                                      |
-| --- | ------ |:--:| ------------------------------------------------------- |
-| 戻り値 | Object | <- | カレントデータストアと、各テーブルの暗号化についての情報|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|戻り値|Object|<-|Information about the encryption of the current datastore and of each table|
+</div>
+<!-- END REF -->
 
 #### 説明
 
-`.encryptionStatus()` 関数は、 <!-- REF #DataStoreClass.encryptionStatus().Summary -->カレントデータファイルの暗号化状態を示すオブジェクトを返します<!-- END REF --> 。カレントデータファイルとはつまり、`ds` データストアのデータファイルです。 各テーブルの状態も提供されます。
+`.encryptionStatus()` 関数は、 <!-- REF #DataStoreClass.encryptionStatus().Summary -->カレントデータファイルの暗号化状態を示すオブジェクトを返します<!-- END REF --> 。 カレントデータファイルとはつまり、`ds` データストアのデータファイルです。 各テーブルの状態も提供されます。
 > その他のデータファイルの暗号化状態を調べるには、`Data file encryption status` コマンドを使います。
 
 **戻り値**
@@ -373,9 +383,11 @@ ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign stude
           $vcount:=$vcount+1
        End if
     End for each
-    ALERT("データベースには "+String($vcount)+" 件の暗号化されたテーブルが存在しています。")
+    ALERT("データベースには "+String($vcount)+" 件の暗号化されたテーブルが存在しています。
+ ")
  Else
-    ALERT("このデータベースは暗号化されていません。")
+    ALERT("このデータベースは暗号化されていません。
+ ")
  End if
 ```
 
@@ -396,12 +408,13 @@ ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign stude
 
 
 <!-- REF #DataStoreClass.flushAndLock().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |  | -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|引数|型||説明|
+|---|---|---|---|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 
 #### 説明
@@ -477,11 +490,13 @@ ds.unlock() // コピー操作をおこなったので、データストアの�
 
 
 <!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
-| 引数  | 型          |    | 説明                                                |
-| --- | ---------- | -- | ------------------------------------------------- |
-| 戻り値 | Collection | <- | 最適化コンテキストオブジェクトのコレクション|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|戻り値|Collection|<-|Collection of optimization context objects|
+</div>
+<!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
@@ -554,11 +569,13 @@ $info:=$ds.getAllRemoteContexts()
 
 
 <!-- REF #DataStoreClass.getInfo().Params -->
-| 引数  | 型      |    | 説明                                      |
-| --- | ------ |:--:| --------------------------------------- |
-| 戻り値 | Object | <- | データストアのプロパティ|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|戻り値|Object|<-|Datastore properties|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -568,7 +585,7 @@ $info:=$ds.getAllRemoteContexts()
 
 | プロパティ      | 型       | 説明                                                                                        |
 | ---------- | ------- | ----------------------------------------------------------------------------------------- |
-| type       | string  | <li>"4D": ds で利用可能なメインデータストア </li><li>"4D Server": Open datastore で開かれたリモートデータストア</li>                                       |
+| type       | string  | <li>"4D": ds で利用可能なメインデータストア </li><li>"4D Server": Open datastore で開かれたリモートデータストア</li>                                      |
 | networked  | boolean | <li>true: ネットワーク接続を介してアクセスされたデータストア</li><li>false: ネットワーク接続を介さずにアクセスしているデータストア (ローカルデータベース)</li>                                      |
 | localID    | text    | マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。  |
 | connection | object  | リモートデータストア接続の情報を格納したオブジェクト (メインデータストアの場合は返されません)。 次のプロパティを含みます:<table><tr><th>プロパティ</th><th>型</th><th>説明</th></tr><tr><td>hostname</td><td>text</td><td>リモートデータストアの IPアドレスまたは名称 + ":" + ポート番号</td></tr><tr><td>tls</td><td>boolean</td><td>リモートデータストアとセキュア接続を利用している場合は true</td></tr><tr><td>idleTimeout</td><td>number</td><td>セッション非アクティブタイムアウト (分単位)。</td></tr><tr><td>user</td><td>text</td><td>リモートデータストアにて認証されたユーザー</td></tr></table> |
@@ -623,12 +640,14 @@ $info:=$remoteDS.getInfo()
 
 
 <!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
-| 引数          | 型      |    | 説明                                      |
-| ----------- | ------ | -- | --------------------------------------- |
-| contextName | Text   | -> | コンテキストの名称                               |
-| 戻り値         | Object | <- | 最適化コンテキストの詳細|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|contextName|Text|->|コンテキストの名前|
+|戻り値|Object|<-|Description of the optimization context|
+</div>
+<!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
@@ -674,11 +693,13 @@ $info:=$remoteDS.getInfo()
 
 
 <!-- REF #DataStoreClass.getRequestLog().Params -->
-| 引数  | 型          |    | 説明                                                            |
-| --- | ---------- |:--:| ------------------------------------------------------------- |
-| 戻り値 | Collection | <- | オブジェクトのコレクション (要素毎に一つのリクエストを記述します)|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|戻り値|Collection|<-|Collection of objects, where each object describes a request|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -713,11 +734,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
-| 引数  | 型       |    | 説明                                                                                   |
-| --- | ------- |:--:| ------------------------------------------------------------------------------------ |
-| 戻り値 | Boolean | <- | データエクスプローラーへのアクセスが無効に設定されている場合は true、有効の場合は false (デフォルト)|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|戻り値|Boolean|<-|True if the Data Explorer access is disabled, False if it is enabled (default)|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -747,12 +770,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #DataStoreClass.locked().Params -->
-| 引数  | 型       |    | 説明                                          |
-| --- | ------- | -- | ------------------------------------------- |
-| 戻り値 | Boolean | <- | ロックされている場合は true|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|引数|型||説明|
+|---|---|---|---|
+|戻り値|Boolean|<-|True if locked|
+</div>
+<!-- END REF -->
 
 
 #### 説明
@@ -788,11 +812,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |::| -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -802,7 +828,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 > この関数は、`OB Copy` または [`.copy()`](./EntitySelectionClass.md#copy) に `ck shared` オプションを明示的に使用して作成されたエンティティセレクションには適用されません。
 
-> **互換性に関する注記**: このメソッドは 4D v18 R5 より前のバージョンから変換されたプロジェクトで、[.add()](EntitySelectionClass.md#add) の呼び出しを使用しているものにおいてのみ使用してください。 このコンテキストにおいては、`.makeSelectionsAlterable()` を使用することで、既存プロジェクト内で以前の 4D のふるまいを再現し、時間を節約できます。 逆に、4D v18 R5 以降のバージョンで作成された新規プロジェクトにおいては、この関数の使用は **推奨されていません**。エンティティセレクションを共有可能にできないため、パフォーマンスとスケーラビリティの観点で妨げになるからです。
+> **互換性に関する注記**: このメソッドは 4D v18 R5 より前のバージョンから変換されたプロジェクトで、[.add()](EntitySelectionClass.md#add) の呼び出しを使用しているものにおいてのみ使用してください。 このコンテキストにおいては、`.makeSelectionsAlterable()` を使用することで、既存プロジェクト内で以前の 4D のふるまいを再現し、時間を節約できます。 逆に、4D v18 R5 以降のバージョンで作成された新規プロジェクトにおいては、この関数の使用は **推奨されていません**。 エンティティセレクションを共有可能にできないため、パフォーマンスとスケーラビリティの観点で妨げになるからです。
 
 <!-- END REF -->
 
@@ -821,13 +847,15 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #DataStoreClass.provideDataKey().Params -->
-| 引数            | 型      |    | 説明                                       |
-| ------------- | ------ | -- | ---------------------------------------- |
-| curPassPhrase | Text   | -> | カレントのパスフレーズ                              |
-| curDataKey    | Object | -> | カレントのデータ暗号化キー                            |
-| 戻り値           | Object | <- | 暗号化キーのチェックの結果|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|curPassPhrase |Text|->|カレントの暗号化パスフレーズ|
+|curDataKey |Object|->|カレントのデータ暗号化キー|
+|戻り値|Object|<-|Result of the encryption key matching|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -841,7 +869,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 有効な暗号化キーが提供された場合、そのキーはメモリ内の *keyChain* に追加され、暗号化モードが有効になります:
 
-* 暗号化可能テーブルに対するデータ編集はすべて、ディスク上 (.4DD、.journal、 .4Dindx ファイル) で暗号化されます。
+* 暗号化可能テーブルに対するデータ編集はすべて、ディスク上 (.4DD、.journal、 .4Dindx ファイル) で暗号化されます。 .4Dindx ファイル) で暗号化されます。
 * 暗号化可能テーブルから読み出したすべてのデータは、メモリ内で復号化されます。
 
 **戻り値**
@@ -867,15 +895,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
  var $keyStatus : Object
  var $passphrase : Text
 
- $passphrase:=Request("パスフレーズを入力してください。")
+ $passphrase:=Request("パスフレーズを入力してください。 ")
  If(OK=1)
     $keyStatus:=ds.provideDataKey($passphrase)
     If($keyStatus.success)
-       ALERT("提供された暗号化キーは有効です。")
+       ALERT("提供された暗号化キーは有効です。 ")
     Else
-       ALERT("提供された暗号化キーは無効です。暗号化データの編集はできません。")
-    End if
- End if
+       ALERT("提供された暗号化キーは無効です。
 ```
 
 <!-- END REF -->
@@ -896,11 +922,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
-| 引数     | 型       |    | 説明                                                                                                       |
-| ------ | ------- | -- | -------------------------------------------------------------------------------------------------------- |
-| status | Boolean | -> | `webAdmin`ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト)|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|status|Boolean|->|`webAdmin` ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト)|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -939,17 +967,19 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
-| 引数              | 型            |    | 説明                                                                    |
-| --------------- | ------------ | -- | --------------------------------------------------------------------- |
-| contextName     | Text         | -> | コンテキストの名称                                                             |
-| dataClassName   | Text         | -> | データクラスの名称                                                             |
-| dataClassObject | 4D.DataClass | -> | DataClass オブジェクト (例: datastore.Employee)                              |
-| attributes      | Text         | -> | カンマ区切りの属性リスト                                                          |
-| attributesColl  | Collection   | -> | 属性名 (テキスト) のコレクション                                                    |
-| contextType     | Text         | -> | 渡す場合、値は "main" または "currentItem" のいずれか                                |
-| pageLength      | Integer      | -> | コンテキストにリンクされたエンティティセレクションのページ長 (デフォルトは 80)|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|contextName|Text|->|コンテキストの名称|
+|dataClassName|Text|->|データクラスの名称|
+|dataClassObject|4D.DataClass|->|DataClass オブジェクト (例: datastore.Employee)|
+|attributes|Text|->|カンマ区切りの属性リスト|
+|attributesColl|Collection|->|属性名 (テキスト) のコレクション|
+|contextType|Text|->|渡す場合、値は "main" または "currentItem" のいずれか|
+|pageLength|Integer|->|コンテキストにリンクされたエンティティセレクションのページ長 (デフォルトは 80)|
+</div>
+<!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
@@ -1071,13 +1101,15 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| 引数      | 型       |    | 説明                                                     |
-| ------- | ------- | -- | ------------------------------------------------------ |
-| file    | 4D.File | -> | File オブジェクト                                            |
-| options | Integer | -> | ログレスポンスオプション (サーバーのみ)                                  |
-| reqNum  | Integer | -> | メモリ内に保管するリクエストの数 (クライアントのみ)|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|file |4D.File|->|File オブジェクト|
+|options |Integer|->|ログレスポンスオプション (サーバーのみ)|
+|reqNum |Integer|->|メモリ内に保管するリクエストの数 (クライアントのみ)|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -1093,12 +1125,12 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 クライアント側の ORDAリクエストログを作成するには、リモートマシン上でこの関数を呼び出します。 ログは、渡した引数によってファイルまたはメモリに送ることができます:
 
-* `File` コマンドで作成された *file* オブジェクトを渡した場合、ログデータはオブジェクト (JSON フォーマット) のコレクションとしてこのファイルに書き込まれます。 各オブジェクトは一つのリクエストを表します。<br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。 メモリへのログ記録が既に始まっている状態で、 `.startRequestLog()`が file 引数付きで呼び出された場合、メモリに記録されていたログは停止され消去されます。
+* `File` コマンドで作成された *file* オブジェクトを渡した場合、ログデータはオブジェクト (JSON フォーマット) のコレクションとしてこのファイルに書き込まれます。 各オブジェクトは一つのリクエストを表します。 <br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。 メモリへのログ記録が既に始まっている状態で、 `.startRequestLog()`が file 引数付きで呼び出された場合、メモリに記録されていたログは停止され消去されます。
 > JSON 評価を実行するには、ファイルの終わりに手動で \] 文字を追加する必要があります。
 
-* *reqNum* (倍長整数) 引数を渡した場合、メモリ内のログは (あれば) 消去され、新しいログが初期化されます。 *reqNum* 引数が指定する数にリクエスト数が到達するまでは、ログはメモリに保管され、到達した場合には古いエントリーから消去されていきます (FIFO スタック)。<br/> ファイルへのログ記録が既に始まっている状態で、`.startRequestLog()` が *reqNum* 引数付きで呼び出された場合、ファイルへのログは停止されます。
-
 * 引数を何も渡さなかった場合、ログはメモリに記録されていきます。 前もって `.startRequestLog()` が*reqNum* 引数付きで 呼び出されていた場合 (ただし `.stopRequestLog()` の前)、ログが次回消去されるかまたは`.stopRequestLog()` が呼び出されるまで、ログデータはメモリ内にスタックされます。
+
+* 引数を何も渡さなかった場合、ログはメモリに記録されていきます。 <br/> ファイルへのログ記録が既に始まっている状態で、`.startRequestLog()` が *reqNum* 引数付きで呼び出された場合、ファイルへのログは停止されます。
 
 #### サーバー側
 
@@ -1184,20 +1216,20 @@ SET DATABASE PARAMETER(4D Server Log Recording;0)
 
 
 <!-- REF #DataStoreClass.startTransaction().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |::| -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-
-
-|
+|引数|型||説明|
+|---|---|:---:|---|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 
 
 #### 説明
 
 `.startTransaction()` 関数は、 <!-- REF #DataStoreClass.startTransaction().Summary -->対象データストアに対応するデータベース上で、カレントプロセス内のトランザクションを開始します<!-- END REF -->。 トランザクションプロセス中にデータストアのエンティティに加えられた変更は、トランザクションが確定されるかキャンセルされるまで一時的に保管されたままになります。
-> このメソッドがメインのデータストア (`ds` コマンドで返されるデータストア) で呼ばれた場合、トランザクションはメインのデータストアとそのデータベースで実行されるすべてのオペレーションに適用されます。これには、そこで実行される ORDA とクラシック言語も含まれます。
+> このメソッドがメインのデータストア (`ds` コマンドで返されるデータストア) で呼ばれた場合、トランザクションはメインのデータストアとそのデータベースで実行されるすべてのオペレーションに適用されます。 これには、そこで実行される ORDA とクラシック言語も含まれます。
 
 複数のトランザクションをネストすること (サブトランザクション) が可能です。 個々のトランザクションまたはサブトランザクションは、それぞれキャンセルするか確定される必要があります。 メイントランザクションがキャンセルされると、サブトランザクションも (たとえ個々に`.validateTransaction()` 関数で承認されていても) すべてキャンセルされます。
 
@@ -1252,11 +1284,13 @@ End if
 
 
 <!-- REF #DataStoreClass.stopRequestLog().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |  | -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -1288,12 +1322,13 @@ ORDAリクエストログがマシン上で開始されていない場合、こ�
 
 
 <!-- REF #DataStoreClass.unlock().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |  | -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|引数|型||説明|
+|---|---|---|---|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 
 #### 説明
@@ -1302,7 +1337,7 @@ ORDAリクエストログがマシン上で開始されていない場合、こ�
 
 現在のロックがデータストアの唯一のロックであった場合、書き込み操作は直ちに可能になります。 `.flushAndLock()` 関数がプロセス内で複数回呼ばれている場合、データストアのロックを解除するには、同じ回数だけ `.unlock()` を呼び出す必要があります。
 
-`.unlock()` 関数は、対応する `.flushAndLock()` を呼び出したプロセス内で呼び出す必要があります。そうでない場合には、この関数は何もおこなわず、ロックも解除されません。
+`.unlock()` 関数は、対応する `.flushAndLock()` を呼び出したプロセス内で呼び出す必要があります。
 
 ロックが解除されているデータストアで `.unlock()` 関数を呼び出した場合、何もおこりません。
 
@@ -1327,15 +1362,17 @@ ORDAリクエストログがマシン上で開始されていない場合、こ�
 
 
 <!-- REF #DataStoreClass.validateTransaction().Params -->
-| 引数 | 型 |  | 説明                                           |
-| -- | - |  | -------------------------------------------- |
-|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+||||引数を必要としません|
+</div>
+<!-- END REF -->
 
 #### 説明
 
-`.validateTransaction()` 関数は、 <!-- REF #DataStoreClass.validateTransaction().Summary -->トランザクションを受け入れます <!-- END REF -->。このトランザクションは、対象データストアの対応するレベルで [`.startTransaction()`](#starttransaction) で開始されたものです。
+`.validateTransaction()` 関数は、 <!-- REF #DataStoreClass.validateTransaction().Summary -->トランザクションを受け入れます <!-- END REF -->このトランザクションは、対象データストアの対応するレベルで [`.startTransaction()`](#starttransaction) で開始されたものです。
 
 この関数は、トランザクション中におこなわれたデータストア上のデータの変更を保存します。
 

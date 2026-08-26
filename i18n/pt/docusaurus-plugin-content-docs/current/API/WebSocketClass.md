@@ -15,6 +15,10 @@ As ligações cliente WebSocket são úteis, por exemplo, para receber dados fin
 
 </details>
 
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
+
 ### Exemplo
 
 Neste exemplo, criamos um cliente WebSocket muito básico.
@@ -74,12 +78,15 @@ Os objetos WebSocket fornecem as seguintes propriedades e funções:
 
 <!-- REF #4D.WebSocket.new().Params -->
 
+<div class="no-index">
+
 | Parâmetro                                         | Tipo                         |                             | Descrição                                           |
 | ------------------------------------------------- | ---------------------------- | :-------------------------: | --------------------------------------------------- |
 | url                                               | Text                         |              ->             | URL a que se deve ligar                             |
 | [connectionHandler](#connectionhandler-parameter) | Object                       |              ->             | Objeto que declara as chamadas de retorno WebSocket |
 | Resultados                                        | 4D.WebSocket | <- | Novo [objeto WebSocket](#websocket-object)          |
 
+</div>
 <!-- END REF -->
 
 A função `4D.WebSocket.new()` <!-- REF #4D.WebSocket.new().Summary --> cria e retorna um novo [objeto `4D.WebSocket`](#websocket-object) conectado ao servidor de WebSocket no endereço que você passou em *url*<!-- END REF -->. O objeto `4D.WebSocket` fornece uma API para criar e gerir uma ligação WebSocket a um servidor, bem como para enviar e receber dados de e para o servidor.
@@ -102,7 +109,7 @@ Em *connectionHandler*, você pode passar um objeto que contém funções de cal
 | ----------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | onMessage   | [Function](FunctionClass.md) | Função de retorno de chamada para dados WebSocket. Chamado sempre que o WebSocket tiver recebido dados. A chamada de retorno recebe os seguintes parâmetros<li>:`$1`: Objeto WebSocket`$2`</li><li>: Objeto</li><ul><li>`$2.type` (texto): sempre "message"</li><li>`$2.data` (texto, blob ou objeto, consulte `dataType`): Dados recebidos</li></ul>                                                                                                                                                                                                                                            |
 | onError     | [Function](FunctionClass.md) | Função de retorno de chamada para erros de execução. A chamada de retorno recebe os seguintes parâmetros<li>:`$1`: Objeto WebSocket`$2`</li><li>: Objeto</li><ul><li>`$2.type` (texto): sempre "error"</li><li>`$2.errors`: coleção de pilha de erros 4D em caso de erro de execução.<ul><li>`[].errCode` (número): código de erro 4D</li><li>`[].message` (texto): descrição do erro 4D</li><li>`[].componentSignature` (texto): assinatura do componente interno que retornou o erro</li></ul></li></ul> |
-| onTerminate | [Function](FunctionClass.md) | Função de retorno de chamada quando o WebSocket é terminado. A chamada de retorno recebe os seguintes parâmetros<li>:`$1`: objeto WebSocket</li><li>`$2`: objeto</li><ul><li>`$2.code` (number, read-only): short sem sinal que contém o código de fechamento enviado pelo servidor.</li><li>`$2.reason` (text, read-only): motivo pelo qual o servidor fechou a conexão. Isto é específico do servidor e do subprotocolo em causa.</li></ul>                                                                                                                    |
+| onTerminate | [Function](FunctionClass.md) | Função de retorno de chamada quando o WebSocket é terminado. A chamada de retorno recebe os seguintes parâmetros<li>:`$1`: objeto WebSocket</li><li>`$2`: objeto</li><ul><li>`$2.code` (number, read-only): short sem sinal que contém o código de fechamento enviado pelo servidor.</li><li>`$2.reason` (text, read-only): motivo pelo qual o servidor fechou a conexão. Isto é específico do servidor e do subprotocolo em causa.</li></ul> Isto é específico do servidor e do subprotocolo em causa.</li></ul>                                |
 | onOpen      | [Function](FunctionClass.md) | Função de retorno de chamada quando o websocket está aberto. A chamada de retorno recebe os seguintes parâmetros<li>:`$1`: objeto WebSocket</li><li>`$2`: objeto</li><ul><li>`$2.type` (texto): sempre "open"</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | dataType    | Text                         | Tipo de dados recebidos ou enviados. Valores disponíveis: "text" (padrão), "blob", "object". "text" = utf-8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | headers     | Object                       | Cabeçalhos do WebSocket.<li>Sintaxe para atribuição de chave padrão: `headers.*key*:=*value*` (*value* pode ser uma coleção se a mesma chave aparecer várias vezes)</li><li>Sintaxe para atribuição de cookie (caso específico): `headers.Cookie:="*name*=*value* {; *name2*=*value2*{; ... } }"`</li>                                                                                                                                                                                                                                                                                                                                                           |
@@ -181,10 +188,13 @@ Esta propriedade é só de leitura.
 
 <!-- REF #WebSocketClass.send().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo               |     | Descrição         |
 | --------- | ------------------ | :-: | ----------------- |
 | message   | Text, Blob, Object |  -> | Mensagem a enviar |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -193,11 +203,11 @@ A função `.send()` <!-- REF #WebSocketClass.send().Summary -->envia *mensagem*
 
 Os conteúdos seguintes são enviados em função do tipo de *message*:
 
-| Tipo   | Conteúdo                                                                                                                    |
-| ------ | --------------------------------------------------------------------------------------------------------------------------- |
-| Text   | Texto em UTF-8                                                                                                              |
-| Blob   | Dados binários                                                                                                              |
-| Object | Texto em JSON UTF-8 (o mesmo resultado que com [`JSON Stringify`](../commands-legacy/json-stringify.md)) |
+| Tipo   | Conteúdo                                                                                                          |
+| ------ | ----------------------------------------------------------------------------------------------------------------- |
+| Text   | Texto em UTF-8                                                                                                    |
+| Blob   | Dados binários                                                                                                    |
+| Object | Texto em JSON UTF-8 (o mesmo resultado que com [`JSON Stringify`](../commands/json-stringify)) |
 
 <!-- END REF -->
 
@@ -223,11 +233,14 @@ Esta propriedade é só de leitura.
 
 <!-- REF #WebSocketClass.terminate().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo    |     | Descrição                                                                |
 | --------- | ------- | :-: | ------------------------------------------------------------------------ |
 | code      | Integer |  -> | Código de estado que explica porque é que a ligação está a ser encerrada |
 | reason    | Text    |  -> | O motivo pelo qual a ligação está a fechar                               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -256,3 +269,4 @@ A propriedade `.url` contém <!-- REF #WebSocketClass.url.Summary --> a URL à q
 Esta propriedade é só de leitura.
 
 <!-- END REF -->
+

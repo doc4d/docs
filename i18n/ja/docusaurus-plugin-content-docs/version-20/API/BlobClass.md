@@ -27,13 +27,14 @@ Blobクラスを使って、[BLOB オブジェクト](../Concepts/dt_blob.md#BLO
 
 
 <!-- REF #4D.Blob.new().Params -->
+<div class="no-index">
 
-| 引数   | 型                |    | 説明                                      |
-| ---- | ---------------- |:--:| --------------------------------------- |
-| blob | BLOB または 4D.Blob | -> | コピーする BLOB                              |
-| 戻り値  | 4D.Blob          | <- | 新規 4D.Blob  |<!-- END REF -->
-
-|
+| 引数 | 型            |     | 説明  |
+| --------- | --------------- | :-: | ------------ |
+| blob      | Blob | ->  | コピーする BLOB |
+| 戻り値    | 4D.Blob         | <-  | 新規 4D.Blobb  |
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -62,13 +63,15 @@ Blobクラスを使って、[BLOB オブジェクト](../Concepts/dt_blob.md#BLO
 
 
 <!-- REF #Blob.slice().Params -->
-| 引数    | 型       |    | 説明                                      |
-| ----- | ------- |:--:| --------------------------------------- |
-| start | Real    | -> | 新しい `4D.Blob` に含める最初のバイトのインデックス         |
-| end   | Real    | -> | 新しい `4D.Blob` に含めない最初のバイトのインデックス        |
-| 戻り値   | 4D.Blob | <- | 新規 `4D.Blob`|<!-- END REF -->
+<div class="no-index">
 
-|
+| 引数 | 型 ||説明 |
+| --------- | ------- | :-: | --- |
+| start| Real    | ->  | 新しい`4D.Blob` に含める最初のバイトのインデックス。               |
+| end| Real    | ->  | 新しい`4D.Blob` に含まれない最初のバイトのインデックス |
+| 戻り値| 4D.Blob | <-  | New `4D.Blob`|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -76,7 +79,7 @@ Blobクラスを使って、[BLOB オブジェクト](../Concepts/dt_blob.md#BLO
 
 `start` 引数は、新しい `4D.Blob` に含める最初のバイトを示す BLOB のインデックスです。 負の値を指定した場合、4D は BLOB の末尾から先頭に向かってオフセットしたものとして扱います。 たとえば、-10 は BLOB の最後から 10番目のバイトを表します。 デフォルト値は 0 です。 start にソースBLOB のサイズより大きな値を指定すると、返される `4D.Blob` のサイズは 0 になり、データは含まれません。
 
-`end` 引数は、新しい `4D.Blob` に含めない最初のバイトを示す BLOB のインデックスです。つまる、指定インデックスのバイトは新しい `4D.Blob` から除外されます。 負の値を指定した場合、4D は BLOB の末尾から先頭に向かってオフセットしたものとして扱います。 たとえば、-10 は BLOB の最後から 10番目のバイトを表します。 デフォルト値は BLOB のサイズです。
+`end` 引数は、新しい `4D.Blob` に含めない最初のバイトを示す BLOB のインデックスです。 負の値を指定した場合、4D は BLOB の末尾から先頭に向かってオフセットしたものとして扱います。 たとえば、-10 は BLOB の最後から 10番目のバイトを表します。 デフォルト値は BLOB のサイズです。
 
 #### 例題
 
@@ -88,7 +91,9 @@ CONVERT FROM TEXT("Hello, World!"; "UTF-8"; $myBlob)
 $is4DBlob:=OB Instance of($myBlob; 4D.Blob);   // True
 
 $myString:=Convert to text($myBlob; "UTF-8")
-// $myString は "Hello, World!" を格納しています
+// $myString は "Hello, World!"
+
+を格納しています
 
 // $myBlob から新しい 4D.Blob を作成します
 $myNewBlob:=$myBlob.slice(0; 5)

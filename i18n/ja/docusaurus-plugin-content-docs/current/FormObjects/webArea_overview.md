@@ -9,6 +9,20 @@ Webエリアは、静的および動的な HTMLページ、ファイル、ピク
 
 いくつかの専用の[標準アクション](#標準アクション) 、多数の [ランゲージコマンド](../category/web-area)、そして汎用および専用の [フォームイベント](#フォームイベント) を使用することで、Webエリアの機能を管理することができます。 特別な変数を使用して、エリアと 4D環境間で情報を交換することも可能です。
 
+## Qodly ページを表示する
+
+Web エリアを使用して、[Qodly ページ](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) を表示することもでき、これによって4D デスクトップアプリケーションユーザーにモダンで、CSS ベースなWeb インターフェースを提供することができます。
+
+Web エリア内にQodly ページを埋め込み、[`WA EXECUTE JAVASCRIPT FUNCTION`](../commands/wa-execute-javascript-function) を呼び出すことで4D から[Qodly ソース](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/qodlySources) を更新することができます。
+
+4D クライアント/サーバーアプリケーションにおいては、Web エリア内のQodly ページは[リモートユーザーとセッションを共有すること](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses) ができ、これによって高レベルなセキュリティを実現できます。
+
+:::tip 関連したblog 記事
+
+[Enhance your Desktop Interface with Web widgets using 4D Qodly Pro](https://blog.4d.com/ja/build-modern-hybrid-desktop-apps-with-4d-and-qodly-pro/)
+
+:::
+
 ## 特有のプロパティ
 
 ### 割り当てられる変数
@@ -18,7 +32,7 @@ Webエリアには 2つの特別な変数が自動で割り当てられます:
 - [`URL`](properties_WebArea.md#url) --Web エリアが表示するURL をコントロールします。
 - [`Progression`](properties_WebArea.md#progression) -- Web エリア内に表示されているページのロード率をコントロールします。
 
-> 4D v19 R5 以降、Progression 変数は、[Windows のシステムレンダリングエンジン](./webArea_overview.md#Webレンダリングエンジン) を使用しているWeb エリアにおいては更新されなくなりました。
+> 4D 19 R5 以降、Progression 変数は、[Windows のシステムレンダリングエンジン](./webArea_overview.md#Webレンダリングエンジン) を使用しているWeb エリアにおいては更新されなくなりました。
 
 ### Webレンダリングエンジン
 
@@ -51,11 +65,11 @@ $4d.HelloWorld();
 
 ### $4d へのアクセスの管理
 
-[`WA SET CONTEXT`](../commands/wa-set-context.md) を使用すると、デベロッパーはWeb エリアから `$4d` を通して何が利用可能かをコントロールすることができます。 このコマンドを使用することで、フォーミュラとクラスインスタンスを通して例えば4D メソッドを宣言する**コンテキストオブジェクト**を定義することができます。
+[`WA SET CONTEXT`](../commands/wa-set-context) を使用すると、デベロッパーはWeb エリアから `$4d` を通して何が利用可能かをコントロールすることができます。 このコマンドを使用することで、フォーミュラとクラスインスタンスを通して例えば4D メソッドを宣言する**コンテキストオブジェクト**を定義することができます。
 
-現在定義されているコンテキストをチェックするためには、[`WA Get context`](../commands/wa-get-context.md) を使用します。
+現在定義されているコンテキストをチェックするためには、[`WA Get context`](../commands/wa-get-context) を使用します。
 
-詳細な情報については、[`WA SET CONTEXT`](../commands/wa-set-context.md) を参照してください。
+詳細な情報については、[`WA SET CONTEXT`](../commands/wa-set-context) を参照してください。
 
 ### JavaScript から4D メソッドを呼び出す
 
@@ -68,11 +82,11 @@ $4d.4DMethodName(param1,paramN,function(result){})
 - `param1...paramN`: 4Dメソッドに対して必要なだけ引数を渡すことができます。
   これらの引数は、JavaScript にサポートされている型であればどんなものでも渡せます (文字列、数値、配列、オブジェクト)。
 
-- `function(result)`: 最後の引数として渡される関数です。  この "コールバック" 関数は、4Dメソッドが実行を終えると同時に呼び出されます。 この関数は `result` 引数を受け取ります。
+- `function(result)`: 最後の引数として渡される関数です。  この "コールバック" 関数は、4Dメソッドが実行を終えると同時に呼び出されます。 この関数は `result` 引数を受け取ります。 この "コールバック" 関数は、4Dメソッドが実行を終えると同時に呼び出されます。 この関数は `result` 引数を受け取ります。
 
 - `result`: 4D メソッドの実行結果。 戻り値は JavaScript でサポートされている型 (文字列、数値、配列、オブジェクト) のいずれかになります。
 
-> デフォルトとして、4Dは UTF-8 文字コードで動作しています。 (アクセントが付いた文字などの) 拡張文字を含むテキストを返す場合には、Webエリアで表示されるページの文字コードが UTF-8 に宣言されていることを確認してください。文字コードが UTF-8 でない場合、文字が正しく表示されない可能性があります。 この場合、HTML ページに以下の行を追加してエンコーディングを宣言して下さい:
+> デフォルトとして、4Dは UTF-8 文字コードで動作しています。 (アクセントが付いた文字などの) 拡張文字を含むテキストを返す場合には、Webエリアで表示されるページの文字コードが UTF-8 に宣言されていることを確認してください。 この場合、HTML ページに以下の行を追加してエンコーディングを宣言して下さい:
 > `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
 
 #### 例題 1
@@ -115,9 +129,9 @@ $4d.today(function(result)
 
 #### 例題 2
 
-スタンドアロンのメソッドを使用する代わりに、この計算を管理する**クラス**を定義することもできます。
+スタンドアロンのメソッドを使用する代わりに、この計算を管理するクラス関数を使用することもできます。
 
-引数を受け入れてその合計を返す、`calcSum` 4D プロジェクトメソッドとそのクラスを定義します:
+引数を受け取り、その合計を返す `calcSum` 関数を持った "SumCalculator" 4D ユーザークラスを定義します:
 
 ```4d
 // SumCalculator ユーザークラス
@@ -151,11 +165,11 @@ $4d.calcSum(33, 45, 75, 102.5, 7, function(theSum)
 
 ## 標準アクション
 
-Webエリアを自動で管理するために、4つの特別な自動アクションを使用できます: `Open Back URL`、 `Open Forward URL`、 `Refresh Current URL` そして`Stop Loading URL` です。 ボタンやメニューコマンドにこれらのアクションを割り当てることで、基本の Webインターフェースを素早く実装できます。 これらのアクションは、[標準アクション](https://doc.4d.com/4Dv20/4D/20.2/Standard-actions.300-6750239.en.html) のページに詳細な説明があります。
+Webエリアを自動で管理するために、4つの特別な自動アクションを使用できます: `Open Back URL`、 `Open Forward URL`、 `Refresh Current URL` そして`Stop Loading URL` です。 ボタンやメニューコマンドにこれらのアクションを割り当てることで、基本の Webインターフェースを素早く実装できます。 これらのアクションは、[標準アクション](/Desktop/standard-actions) のページに詳細な説明があります。
 
 ## フォームイベント
 
-特定のフォームイベントは、Webエリアをプログラミングで管理するこを目的としています。すなわち、リンクの起動に関連しています:
+特定のフォームイベントは、Webエリアをプログラミングで管理するこを目的としています。 すなわち、リンクの起動に関連しています:
 
 - [`On Begin URL Loading`](Events/onBeginUrlLoading.md)
 - [`On URL Resource Loading`](Events/onUrlResourceLoading.md)
@@ -179,9 +193,9 @@ Webエリアを自動で管理するために、4つの特別な自動アクシ�
 フォームが実行されると、他のフォームエリアとの対話を可能にする、標準のブラウザーインタフェース機能が Web エリア内で利用可能になります。
 
 - **編集メニューコマンド**: Webエリアにフォーカスがあるとき、**編集** メニューコマンドを使用してコピーやペースト、すべてを選択などのアクションを選択に応じて実行できます。
-- **コンテキストメニュー**: Web エリアでは、システムの標準の[コンテキストメニュー](properties_Entry.md#コンテキストメニュー) を使用することができます。  コンテキストメニューの表示は[`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md) コマンドを使用することによってコントロール可能です。
+- **コンテキストメニュー**: Web エリアでは、システムの標準の[コンテキストメニュー](properties_Entry.md#コンテキストメニュー) を使用することができます。  コンテキストメニューの表示は[`WA SET PREFERENCE`](../commands/wa-set-preference) コマンドを使用することによってコントロール可能です。
 - **ドラッグ＆ドロップ**: 4D のオブジェクトプロパティに基づき、ユーザーは Webエリア内で、または Webエリアと 4Dフォームオブジェクト間で、テキストやピクチャー、ドキュメントをドラッグ＆ドロップできます。
-  セキュリティ上の理由から、ファイルまたは URL のドラッグ＆ドロップによって Webエリアのコンテンツを変更することは、デフォルトで禁止されています。 この場合、カーソルは"禁止"アイコン![](../assets/en/FormObjects/forbidden.png) を表示します。 "ドロップ" アイコンを表示し、[`On Window Opening Denied`](Events/onWindowOpeningDenied.md) イベントを発生させるには、`WA SET PREFERENCE(*;"warea";WA enable URL drop;True)` 文を使う必要があります。 このイベントにおいては、[`WA OPEN URL`](../commands-legacy/wa-open-url.md) コマンドを呼び出すか、または[URL 変数](properties_WebArea.md#url) を設定することでユーザードロップに対応することができます。
+  セキュリティ上の理由から、ファイルまたは URL のドラッグ＆ドロップによって Webエリアのコンテンツを変更することは、デフォルトで禁止されています。 この場合、カーソルは"禁止"アイコン![](../assets/en/FormObjects/forbidden.png) を表示します。 "ドロップ" アイコンを表示し、[`On Window Opening Denied`](Events/onWindowOpeningDenied.md) イベントを発生させるには、`WA SET PREFERENCE(*;"warea";WA enable URL drop;True)` 文を使う必要があります。 このイベントにおいては、[`WA OPEN URL`](../commands/wa-open-url) コマンドを呼び出すか、または[URL 変数](properties_WebArea.md#url) を設定することでユーザードロップに対応することができます。
 
 > 上記のドラッグ&ドロップ機能は[macOS のシステムレンダリングエンジン](properties_WebArea.md#use-embedded-web-rendering-engine) を使用したWeb エリアではサポートされていません。
 
@@ -196,7 +210,7 @@ Webエリアを自動で管理するために、4つの特別な自動アクシ�
 
 ### Webエリアと Webサーバーのコンフリクト (Windows)
 
-Windows においては、Webエリアから、同じ 4Dアプリケーションで起動中の Webサーバーへのアクセスはお勧めできません。これをおこなうとコンフリクトが発生し、アプリケーションがフリーズすることがあります。 もちろん、リモートの 4D から 4D Server の Webサーバーにアクセスすることはできます。自身の Webサーバーにアクセスできないということです。
+Windows においては、Webエリアから、同じ 4Dアプリケーションで起動中の Webサーバーへのアクセスはお勧めできません。 もちろん、リモートの 4D から 4D Server の Webサーバーにアクセスすることはできます。 自身の Webサーバーにアクセスできないということです。
 
 ### プロトコルの挿入 (macOS)
 
@@ -221,7 +235,7 @@ Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コ�
 
 > [Windows のシステムレンダリングエンジン](properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) の場合にこの環境設定を変更すると、変更を反映するのにエリア内でのナビゲーション操作 (たとえば、ページの更新など) が必要です。
 
-より詳細な情報については、[`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md) コマンドの説明を参照して下さい。
+より詳細な情報については、[`WA SET PREFERENCE`](../commands/wa-set-preference) コマンドの説明を参照して下さい。
 
 上記のとおり設定を完了すると、エリア内のコンテキストメニュー内に **要素を調査** という新しいオプションが追加されているはずです: この項目を選択すると、Webインスペクターウィンドウが表示されます。
 
@@ -229,7 +243,11 @@ Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コ�
 
 ## プロパティ一覧
 
-[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [CSSクラス](properties_Object.md#cssクラス) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) - [表示状態](properties_Display.md#表示状態) - [境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル) - [メソッド](properties_Action.md#メソッド)
+[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [CSSクラス](properties_Object.md#cssクラス) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) - [境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル) - [メソッド](properties_Action.md#メソッド)
+
+## サポートされるイベント
+
+[On Begin URL Loading](../Events/onBeginUrlLoading.md) - [On End URL Loading](../Events/onEndUrlLoading.md) - [On Getting focus](../Events/onGettingFocus.md) - [On Load](../Events/onLoad.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Open External Link](../Events/onOpenExternalLink.md) - [On Unload](../Events/onUnload.md) - [On URL Filtering](../Events/onUrlFiltering.md) - [On URL Loading Error](../Events/onUrlLoadingError.md) - [On URL Resource Loading](../Events/onUrlResourceLoading.md) - [On Window Opening Denied](../Events/onWindowOpeningDenied.md)
 
 ## 4DCEFParameters.json
 
@@ -332,9 +350,12 @@ Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コ�
 }
 ```
 
-### 参照
+:::tip 関連したblog 記事
 
-[Specify your own parameters to initialize the embedded web area (blog 記事)](https://blog.4d.com/specify-your-own-parameters-to-initialize-the-embedded-web-area)
+[Custom Parameters for Initializing Embedded Web Area](https://blog.4d.com/ja/custom-parameters-for-initializing-embedded-web-area/)
+
+:::
+
 
 
 

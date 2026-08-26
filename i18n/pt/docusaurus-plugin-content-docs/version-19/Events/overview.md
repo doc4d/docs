@@ -8,10 +8,8 @@ Eventos de formulário são eventos que podem levar à execução do método de 
 Em seu código, você controla os eventos usando o comando `FORM Event`, que retorna o evento acionado. Por exemplo:
 
 ```4d  
-//código de um botão
-If(FORM Event.code=On Clicked) 
-// faça algo quando o botão for clicado
-End if
+//código de um botão If(FORM Event.code=On Clicked) 
+// faça algo quando o botão for clicado End if
 ```
 
 > Cada formulário e cada objeto ativo no formulário podem ouvir um conjunto predefinido de eventos, mas somente os eventos que você ativou no nível do formulário e/ou em cada nível de objeto ocorrerão de fato.
@@ -24,13 +22,11 @@ Cada evento é retornado como um objeto pelo comando `FORM Event`. Por padrão, 
 | Propriedade | Tipo | Descrição |
 | ----------- | ---- | --------- |
 |             |      |           |
- objectName|text|Nome do objeto que aciona o evento - Não incluído se o evento for acionado pelo formulário| |code|longint|Valor numérico do evento do formulário. Também retornado pelo comando 
-
-`Form event code|` |description|text|Nome do evento do formulário (por exemplo, "On After Edit")|.
+ objectName|text|Nome do objeto que aciona o evento - Não incluído se o evento for acionado pelo formulário| |code|longint|Valor numérico do evento do formulário. Também retornado pelo comando
 
 Propriedades adicionais são retornadas quando o evento ocorre em objetos específicos. Em particular:
 
-- [caixas de listagem](FormObjects/listbox_overview.md#supported-form-events) e [colunas de caixa de listagem](FormObjects/listbox_overview.md#supported-form-events-1) retornam [propriedades adicionais](FormObjects/listbox_overview.md#additional-properties), como `columnName` ou `isRowSelected`.
+- [caixas de listagem](FormObjects/listbox-object.md#supported-form-events) e [colunas de caixa de listagem](FormObjects/listbox-column.md#supported-form-events) retornam [propriedades adicionais](FormObjects/listbox-object.md#supported-form-events), como `columnName` ou `isRowSelected`.
 - [As áreas do 4D View Pro](FormObjects/viewProArea_overview.md) retornam, por exemplo, `sheetName` ou propriedades `de ação` no objeto de evento [On After Edit](onAfterEdit.md).
 
 

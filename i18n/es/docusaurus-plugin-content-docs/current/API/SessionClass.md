@@ -3,13 +3,14 @@ id: SessionClass
 title: Session
 ---
 
-Los objetos de sesión son devueltos por el comando [`Session`](../commands/session.md). Estos objetos ofrecen al desarrollador una interfaz que permite gestionar la sesión de usuario actual y ejecutar acciones como almacenar datos contextuales, compartir información entre procesos de sesión, lanzar procesos preferentes relacionados con la sesión o (sólo web) gestionar [privilegios](../ORDA/privileges.md).
+Los objetos de sesión son devueltos por el comando [`Session`](../commands/session). Estos objetos ofrecen al desarrollador una interfaz que permite gestionar la sesión actual y ejecutar acciones como almacenar datos contextuales, compartir información entre procesos de sesión, lanzar procesos preferentes relacionados con la sesión o (sólo contexto web) gestionar [privilegios](../ORDA/privileges.md).
 
 :::tip Entradas de blog relacionadas
 
 - [Sesiones escalables para aplicaciones web avanzadas](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 - [Permissions: inspeccionar los privilegios de la sesión para facilitar la depuración](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
 - [Generar, compartir y utilizar contraseñas de un solo uso (OTP) para las sesiones web](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/)
+- [Olvídese de los wrappers del lado del servidor, utilice Sesiones 4D desde el cliente](https://blog.4d.com/forget-server-side-wrappers-use-4d-sessions-from-the-client)
 
 :::
 
@@ -17,14 +18,14 @@ Los objetos de sesión son devueltos por el comando [`Session`](../commands/sess
 
 Los siguientes tipos de sesiones están soportados por esta clase:
 
-- [**Sesiones usuario web**](WebServer/sessions.md): las sesiones usuario web están disponibles cuando [las sesiones escalables están activas en su proyecto](WebServer/sessions.md#enabling-web-sessions). Se utilizan para conexiones Web y REST, y se les pueden asignar privilegios.
-- [Sesiones usuario cliente remoto\*\*](../Desktop/clientServer.md#remote-user-sessions): en las aplicaciones cliente/servidor, los usuarios remotos tienen sus propias sesiones gestionadas en el servidor.
-- [**Sesión de procedimientos almacenados**](https://doc.4d.com/4Dv20/4D/20/4D-Server-and-the-4D-Language.300-6330554.en.html): todos los procedimientos almacenados ejecutados en el servidor comparten la misma sesión usuario virtual.
-- [**Sesión independiente**](../Project/overview.md#development): objeto de sesión local devuelto en una aplicación de un solo usuario (útil en las fases de desarrollo y prueba de aplicaciones cliente/servidor).
+- [**Sesiones usuario web**](WebServer/sessions.md): las sesiones usuario web están disponibles cuando [las sesiones escalables están activas en su proyecto](WebServer/sessions.md#enabling-web-sessions). Se utilizan para las conexiones Web (incluidos los accesos REST) y se controlan mediante los [privilegios](../ORDA/privileges.md) asignados.
+- [**Sesiones usuario remoto**](../Desktop/sessions.md#remote-user-sessions): en las aplicaciones cliente/servidor, los usuarios remotos tienen sus propias sesiones gestionadas desde el cliente y el servidor.
+- [**Sesiones procedimientos almacenados**](../Desktop/sessions.md#stored-procedure-sessions): sesión usuario virtual para todos los procedimientos almacenados ejecutados en el servidor.
+- [**Sesiones autónomas**](../Desktop/sessions.md#standalone-sessions): sesión local devuelta en una aplicación mono usuario (útil en las fases de desarrollo y de prueba de las aplicaciones cliente/servidor).
 
-:::note
+:::warning Acerca de los privilegios de sesión
 
-La disponibilidad de las propiedades y funciones del objeto `Session` depende del tipo de sesión.
+Todos los tipos de sesión pueden manejar privilegios, pero sólo el código ejecutado en un **contexto web** está realmente controlado por los privilegios de sesión.
 
 :::
 
@@ -43,6 +44,7 @@ La disponibilidad de las propiedades y funciones del objeto `Session` depende de
 | [<!-- INCLUDE #SessionClass.info.Syntax -->](#info)<br/><!-- INCLUDE #SessionClass.info.Summary -->                                      |
 | [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)<br/><!-- INCLUDE #SessionClass.isGuest().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.promote().Syntax -->](#promote)<br/><!-- INCLUDE #SessionClass.promote().Summary -->                         |
+| [<!-- INCLUDE #SessionClass.quotas.Syntax -->](#quotas)<br/><!-- INCLUDE #SessionClass.quotas.Summary -->                                |
 | [<!-- INCLUDE #SessionClass.restore().Syntax -->](#restore)<br/><!-- INCLUDE #SessionClass.restore().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)<br/><!-- INCLUDE #SessionClass.setPrivileges().Summary -->       |
 | [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)<br/><!-- INCLUDE #SessionClass.storage.Summary -->                             |
@@ -54,9 +56,10 @@ La disponibilidad de las propiedades y funciones del objeto `Session` depende de
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 18 R6       | Añadidos       |
+| Lanzamiento | Modificaciones                          |
+| ----------- | --------------------------------------- |
+| 21          | Soporte de sesiones remotas y autónomas |
+| 18 R6       | Añadidos                                |
 
 </details>
 
@@ -64,39 +67,34 @@ La disponibilidad de las propiedades y funciones del objeto `Session` depende de
 
 <!-- REF #SessionClass.clearPrivileges().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                        |
 | ---------- | ------- | :-------------------------: | -------------------------------------------------- |
 | Resultado  | Boolean | <- | True si la ejecución se ha realizado correctamente |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
 
-:::note
-
-Esta función no hace nada y siempre devuelve **True** con cliente remoto, procedimiento almacenado y sesiones independientes.
-
-:::
-
 La función `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->elimina todos los privilegios asociados a la sesión (excluyendo privilegios promocionados)y devuelve **True** si la ejecución se ha realizado correctamente<!-- END REF -->.
 
-A menos que esté en modo ["forceLogin"](../REST/authUsers.md#force-login-mode), la sesión se convierte automáticamente en una sesión de Invitado. En modo "forceLogin", `.clearPrivileges()` no transforma la sesión a una sesión de invitado, sólo elimina los privilegios de la sesión.
+:::note Notas
 
-:::note
-
-Esta función no elimina los **privilegios promovidos** del proceso web, tanto si se han añadido a través del archivo [roles.json](../ORDA/privileges.md#rolesjson-file) como de la función [`promote()`](#promote).
+- Tenga en cuenta que los privilegios sólo se aplican al código ejecutado a través de accesos web, sea cual sea el [tipo de sesión](#session-types) sobre el que se ejecuta esta función.
+- Esta función no elimina los **privilegios promovidos** del proceso web, tanto si se han añadido a través del archivo [roles.json](../ORDA/privileges.md#rolesjson-file) como de la función [`promote()`](#promote).
+- Por razones de seguridad, esta función no puede llamarse desde el lado del cliente de una sesión de usuario remota (se devuelve un error).
 
 :::
 
 #### Ejemplo
 
 ```4d
-//Invalidar una sesión usuario web
-var $isGuest : Boolean
+//Invalidar una sesión de usuario web
 var $isOK : Boolean
 
 $isOK:=Session.clearPrivileges()
-$isGuest:=Session.isGuest() //$isGuest es True
 ```
 
 <!-- END REF -->
@@ -107,9 +105,10 @@ $isGuest:=Session.isGuest() //$isGuest es True
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 20 R9       | Añadidos       |
+| Lanzamiento | Modificaciones                          |
+| ----------- | --------------------------------------- |
+| 21          | Soporte de sesiones remotas y autónomas |
+| 20 R9       | Añadidos                                |
 
 </details>
 
@@ -117,28 +116,32 @@ $isGuest:=Session.isGuest() //$isGuest es True
 
 <!-- REF #SessionClass.createOTP().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                         |
 | ---------- | ------- | :-------------------------: | --------------------------------------------------- |
 | lifespan   | Integer |              ->             | Duración de la vida del token de sesión en segundos |
-| Resultado  | Text    | <- | UUID de la sesión                                   |
+| Resultado  | Text    | <- | UUID del token                                      |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
 
-:::note
-
-Esta función solo está disponible con sesiones usuario web. Devuelve una cadena vacía en otros contextos.
-
-:::
-
 La función `.createOTP()` <!-- REF #SessionClass.createOTP().Summary -->crea un nuevo OTP (One Time Passcode) para la sesión y devuelve su token UUID<!-- END REF -->. Este token es único en la sesión en la que fue generado.
+
+Puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan*. Por defecto, si el parámetro *lifespan* se omite:
+
+- para sesiones web, el token se crea con la misma duración que el [`.idleTimeOut`](#idletimeout) de la sesión.
+- para sesiones de usuarios remotos, el token se crea con una duración de 10 segundos.
+
+En las sesiones web, el token devuelto puede utilizarse en intercambios con aplicaciones o sitios web de terceros para identificar la sesión de forma segura. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
+
+En las sesiones de usuarios remotas (y las sesiones autónomas con fines de prueba), el token devuelto puede ser utilizado por 4D para identificar las solicitudes provenientes de la web que [comparten la sesión](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses).
 
 Para más información sobre los tokens OTP, por favor consulte [esta sección](../WebServer/sessions.md#session-token-otp).
 
-Por defecto, si se omite el parámetro *lifespan*, el token se crea con el mismo tiempo de vida que el [`.idleTimeOut`](#idletimeout) de la sesión. Puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan*. Si se utiliza un token caducado para restaurar una sesión de usuario web, se ignora.
-
-El token devuelto puede ser utilizado en intercambios con aplicaciones de terceros o sitios web para identificar la sesión de forma segura. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
+Si se utiliza un token caducado para restaurar la sesión, se ignora.
 
 #### Ejemplo
 
@@ -165,25 +168,29 @@ $token := Session.createOTP( 60 ) //el token es válido durante 1 mn
 
 <!-- REF #SessionClass.demote().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |     | Descripción                            |
 | ---------- | ------- | :-: | -------------------------------------- |
 | promoteId  | Integer |  -> | Id devuelto por la función `promote()` |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
-
-:::note
-
-Esta función no hace nada en las sesiones cliente remoto, procedimientos almacenados y autónomos.
-
-:::
 
 La función `.demote()` <!-- REF #SessionClass.demote().Summary -->elimina del proceso web el privilegio promocionado cuyo id pasó en *promoteId*, si fue añadido previamente por la función [`.promote()`](#promote)<!-- END REF -->.
 
 Si ningún privilegio con *promoteId* fue promovido usando [`.promote()`](#promote) en el proceso web, la función no hace nada.
 
 Si se han añadido varios privilegios al proceso web, se debe llamar a la función `demote()` para cada uno de ellos con el *promoteId* apropiado. Los privilegios se apilan en el orden en que se han añadido al proceso, se recomienda desapilar los privilegios en un orden LIFO (*Last In, First Out*).
+
+:::note Notas
+
+- Tenga en cuenta que los privilegios sólo se aplican al código ejecutado a través de accesos web, sea cual sea el [tipo de sesión](#session-types) sobre el que se ejecuta esta función.
+- Esta función no puede llamarse desde el lado del cliente de una sesión de usuario remota (se devuelve un error).
+
+:::
 
 #### Ejemplo
 
@@ -253,9 +260,10 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 20 R6       | Añadidos       |
+| Lanzamiento | Modificaciones                          |
+| ----------- | --------------------------------------- |
+| 21          | Soporte de sesiones remotas y autónomas |
+| 20 R6       | Añadidos                                |
 
 </details>
 
@@ -263,10 +271,13 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 <!-- REF #SessionClass.getPrivileges().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo       |                             | Descripción                                                      |
 | ---------- | ---------- | :-------------------------: | ---------------------------------------------------------------- |
 | Resultado  | Collection | <- | Colección de nombres de privilegios (cadenas) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -279,7 +290,10 @@ Esta función devuelve los privilegios asignados a una Sesión utilizando única
 
 :::
 
-Con clientes remotos, procedimientos almacenados y sesiones independientes, esta función devuelve una colección que sólo contiene "WebAdmin".
+:::note
+
+Tenga en cuenta que los privilegios sólo se aplican al código ejecutado a través de accesos web, sea cual sea el [tipo de sesión](#session-types) sobre el que se ejecuta esta función.
+:::
 
 #### Ejemplo
 
@@ -348,10 +362,10 @@ $privileges := Session.getPrivileges()
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                                |
-| ----------- | --------------------------------------------- |
-| 21          | Devuelve True para los privilegios promovidos |
-| 18 R6       | Añadidos                                      |
+| Lanzamiento | Modificaciones                                                                     |
+| ----------- | ---------------------------------------------------------------------------------- |
+| 21          | Devuelve True para privilegios promovidos, Soporte de sesiones remotas y autónomas |
+| 18 R6       | Añadidos                                                                           |
 
 </details>
 
@@ -359,11 +373,14 @@ $privileges := Session.getPrivileges()
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                  |
 | ---------- | ------- | :-------------------------: | ------------------------------------------------------------ |
 | privilege  | Text    |              ->             | Nombre del privilegio a verificar                            |
 | Resultado  | Boolean | <- | True si la sesión tiene *privilege*, False en caso contrario |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -376,24 +393,28 @@ Esta función devuelve True para el *privilegio* si se llama desde una función 
 
 :::
 
-Con cliente remoto, procedimientos almacenados y sesiones independientes, esta función siempre devuelve True, sea cual sea el *privilege*.
+:::note
+
+Tenga en cuenta que los privilegios sólo se aplican al código ejecutado a través de accesos web, sea cual sea el [tipo de sesión](#session-types) sobre el que se ejecuta esta función.
+
+:::
 
 #### Ejemplo
 
-Quiere comprobar si el privilegio "WebAdmin" está asociado a la sesión usuario web:
+Desea verificar si el privilegio "CreateInvoices" está asociado a la sesión del usuario web:
 
 ```4d
-If (Session.hasPrivilege("WebAdmin"))
-	//Acceso concedido, no hacer nada
+If (Session.hasPrivilege("CreateInvoices"))
+	//Acceso a las funciones de creación de facturas
 Else
-	//Mostrar una página de autenticación
+	//Sin acceso a las funciones de creación de facturas 
 
 End if
 ```
 
 #### Ver también
 
-[*Publicaciones de blog sobre esta funcionalidad*](https://blog.4d.com/?s=hasPrivilege)
+[*Restringir datos según privilegios o información guardada en almacenamiento de sesión* (entrada de blog)](https://blog.4d.com/?s=hasPrivilege)
 
 <!-- END REF -->
 
@@ -413,11 +434,13 @@ End if
 
 #### Descripción
 
-La propiedad `.id` contiene <!-- REF #SessionClass.id.Summary -->el identificador único (UUID) de la sesión de usuario<!-- END REF -->. Con 4D Server, esta cadena única es asignada automáticamente por el servidor para cada sesión y permite identificar sus procesos.
+La propiedad `.id` contiene <!-- REF #SessionClass.id.Summary -->el identificador único (UUID) de la sesión de usuario<!-- END REF -->.
+
+Con 4D Server, esta cadena única es asignada automáticamente por el servidor para cada sesión y permite identificar sus procesos. Está disponible tanto en `Session` del lado del servidor como del lado del cliente.
 
 :::tip
 
-Puede utilizar esta propiedad para obtener el objeto [`.storage`](#storage) de una sesión gracias al comando [`Session storage`](../commands/session-storage.md).
+Puede utilizar esta propiedad para obtener el objeto [`.storage`](#storage) de una sesión gracias al comando [`Session storage`](../commands/session-storage).
 
 :::
 
@@ -431,8 +454,7 @@ Puede utilizar esta propiedad para obtener el objeto [`.storage`](#storage) de u
 
 | Lanzamiento | Modificaciones |
 | ----------- | -------------- |
-
-|18 R6|Añadido|
+| 18 R6       | Añadidos       |
 
 </details>
 
@@ -477,9 +499,10 @@ End if
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 20 R5       | Añadidos       |
+| Lanzamiento | Modificaciones                     |
+| ----------- | ---------------------------------- |
+| 21 R4       | Nueva propiedad *unreachableSince* |
+| 20 R5       | Añadidos                           |
 
 </details>
 
@@ -487,41 +510,35 @@ End if
 
 #### Descripción
 
-:::note
+La propiedad `.info` <!-- REF #SessionClass.info.Summary -->describe la sesión<!-- END REF -->.
 
-Esta propiedad solo está disponible con clientes remotos, procedimientos almacenados y sesiones independientes.
-
-:::
-
-La propiedad `.info` <!-- REF #SessionClass.info.Summary -->describe la sesión del cliente remoto o del procedimiento almacenado en el servidor, o la sesión autónoma<!-- END REF -->.
-
-:::note
-
-- El objeto `.info` es el mismo objeto que el devuelto en la propiedad "session" por el comando [`Process activity`](../commands/process-activity.md) para sesiones de cliente remoto y procedimientos almacenados.
-- El objeto `.info` es el mismo que devuelve el comando [`Session info`](../commands/session-info.md) para una sesión autónoma.
-
-:::
+- **Sesiones usuario remotas** y **Sesiones de procedimientos almacenados**: el objeto `.info` es el mismo objeto que el devuelto en la propiedad "session" por el comando [`Process activity`](../commands/process-activity).
+- **Sesiones estándar**: el objeto `.info` es el mismo objeto que el devuelto por el comando [`Session info`](../commands/session-info).
+- **Sesiones usuario web**: el objeto `.info` contiene las propiedades disponibles para las sesiones de usuario web.
 
 El objeto `.info` contiene las siguientes propiedades:
 
-| Propiedad        | Tipo          | Descripción                                                                                                                                                                                                                            |
-| ---------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | Text          | Tipo de sesión: "remote", "storedProcedure", "standalone"                                                                                                                                                              |
-| userName         | Text          | Nombre de usuario 4D (mismo valor que [`.userName`](#username))                                                                                                                                                     |
-| machineName      | Text          | Sesiones remotas: nombre de la máquina remota. Sesión de procedimientos almacenados: nombre del equipo servidor. Sesión autónoma: nombre de la máquina |
-| systemUserName   | Text          | Sesiones remotas: nombre de la sesión del sistema abierta en la máquina remota.                                                                                                                        |
-| IPAddress        | Text          | Dirección IP de la máquina remota                                                                                                                                                                                                      |
-| hostType         | Text          | Tipo de host: "windows" o "mac"                                                                                                                                                                                        |
-| creationDateTime | Date ISO 8601 | Fecha y hora de creación de la sesión. Sesión autónoma: fecha y hora de inicio de la aplicación                                                                                                        |
-| state            | Text          | Estado de la sesión: "active", "postponed", "sleeping"                                                                                                                                                                 |
-| ID               | Text          | UUID de sesión (el mismo valor que [`.id`](#id))                                                                                                                                                                    |
-| persistentID     | Text          | Sesiones remotas: ID persistente de la sesión                                                                                                                                                                          |
+| Propiedad        | Tipo          | Descripción                                                                                                                                                                                                                                                   |
+| ---------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | Text          | Tipo de sesión: "remote", "storedProcedure", "standalone", "rest", "web"                                                                                                                                                                      |
+| userName         | Text          | Nombre de usuario 4D (mismo valor que [`.userName`](#username))                                                                                                                                                                            |
+| machineName      | Text          | <ul><li>Sesiones remotas: nombre de la máquina remota.</li><li>Sesiones cliente: nombre de la máquina local.</li><li>Sesión de procedimientos almacenados: nombre de la máquina servidor.</li><li> Sesión autónoma: nombre de la máquina</li></ul>            |
+| systemUserName   | Text          | <ul><li>Sesiones remotas: nombre de la sesión del sistema abierta en la máquina remota.</li><li>Sesiones cliente: nombre de la sesión del sistema local.</li><ul>                                                                                             |
+| IPAddress        | Text          | <ul><li>Sesiones remotas: dirección IP de la máquina remota.</li><li>Sesiones cliente: dirección IP de la máquina local.</li><li>Sesión autónoma: "localhost"</li></ul>                                                                                       |
+| hostType         | Text          | Tipo de host: "windows", "mac" o "browser"                                                                                                                                                                                                    |
+| creationDateTime | Date ISO 8601 | Fecha y hora de creación de la sesión (sesión autónoma: fecha y hora de inicio de la aplicación)                                                                                                                           |
+| state            | Text          | Estado de la sesión: "active", "postponed", "sleeping"                                                                                                                                                                                        |
+| ID               | Text          | UUID de sesión (el mismo valor que [`.id`](#id))                                                                                                                                                                                           |
+| persistentID     | Text          | Sesiones remotas servidor/clientes: ID persistente de la sesión                                                                                                                                                                               |
+| unreachableSince | Integer       | Sesiones remotas: número de segundos desde que no se puede contactar con el nodo. En 4D Server, este atributo se puede consultar en la propiedad [`Process activity.sessions`](../commands/process-activity). |
 
 :::note
 
 Dado que `.info` es una propiedad calculada, se recomienda llamarla una vez y luego almacenarla en una variable local si se desea realizar algún procesamiento sobre sus propiedades.
 
 :::
+
+Esta propiedad es **solo lectura**.
 
 <!-- END REF -->
 
@@ -541,21 +558,30 @@ Dado que `.info` es una propiedad calculada, se recomienda llamarla una vez y lu
 
 <!-- REF #SessionClass.isGuest().Params -->
 
-| Parámetros | Tipo    |                             | Descripción                                                    |
-| ---------- | ------- | :-------------------------: | -------------------------------------------------------------- |
-| Resultado  | Boolean | <- | True si la sesión es una sesión Guest, False en caso contrario |
+<div class="no-index">
 
+| Parámetros | Tipo    |                             | Descripción                                                                                      |
+| ---------- | ------- | :-------------------------: | ------------------------------------------------------------------------------------------------ |
+| Resultado  | Boolean | <- | True si la sesión es de invitado, False en caso contrario (sólo sesiones web) |
+
+</div>
 <!-- END REF -->
 
 #### Descripción
 
 :::note
 
-Esta función siempre devuelve **False** con clientes remotos, procedimientos almacenados y sesiones independientes.
+Esta función siempre devuelve **False** con sesiones no web.
 
 :::
 
-La función `.isGuest()` <!-- REF #SessionClass.isGuest().Summary -->devuelve True si la sesión es una sesión Guest (es decir, no tiene privilegios)<!-- END REF -->.
+La función `.isGuest()` <!-- REF #SessionClass.isGuest().Summary -->devuelve True mientras no se llame a `setPrivileges()` en la sesión o después de que se haya ejecutado un [Qodly logout](https://developer.4d.com/qodly/4DQodlyPro/force-login#logout) en la sesión<!-- END REF -->.
+
+:::note Compatibilidad
+
+Cuando el [modo *forcelogin*](../REST/authUsers.md#force-login-mode) está desactivado, `.isGuest()` devuelve True si la sesión no tiene privilegios.
+
+:::
 
 #### Ejemplo
 
@@ -585,20 +611,17 @@ End if
 
 <!-- REF #SessionClass.promote().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                |
 | ---------- | ------- | :-------------------------: | ---------------------------------------------------------- |
 | privilege  | Text    |              ->             | Nombre del privilegio                                      |
 | Resultado  | Integer | <- | id a utilizar al llamar a la función [`demote()`](#demote) |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
-
-:::note
-
-Esta función no hace nada en las sesiones cliente remoto, procedimientos almacenados y autónomos.
-
-:::
 
 La función `.promote()` <!-- REF #SessionClass.promote().Summary -->añade el privilegio definido en el parámetro *privilege* al proceso actual durante la ejecución de la función de llamada y devuelve el id del privilegio promovido<!-- END REF -->.
 
@@ -614,6 +637,13 @@ Puede llamar a la función `promote()` varias veces en el mismo proceso para añ
 El id devuelto se incrementa cada vez que un privilegio se añade dinámicamente al proceso.
 
 Para eliminar un privilegio dinámicamente, llame a la función `demote()` con el id apropiado.
+
+:::note Notas
+
+- Tenga en cuenta que los privilegios sólo se aplican al código ejecutado a través de accesos web, sea cual sea el [tipo de sesión](#session-types) sobre el que se ejecuta esta función.
+- Esta función no puede llamarse desde el lado del cliente de una sesión de usuario remota (se devuelve un error).
+
+:::
 
 #### Ejemplo
 
@@ -648,6 +678,58 @@ End if
 
 <!-- END REF -->
 
+<!-- REF SessionClass.quotas.Desc -->
+
+## .quotas
+
+<details><summary>Historia</summary>
+
+| Lanzamiento | Modificaciones |
+| ----------- | -------------- |
+| 21 R4       | Añadidos       |
+
+</details>
+
+<!-- REF #SessionClass.quotas.Syntax -->**.quotas** : 4D.QuotaManager<!-- END REF -->
+
+#### Descripción
+
+La propiedad `.quotas` contiene <!-- REF #SessionClass.quotas.Summary -->un objeto `4D.QuotaManager` con los valores actuales y los valores definidos para los límites del servidor con respecto a las peticiones REST en la sesión actual <!-- END REF -->. Los límites del servidor se utilizan para controlar las solicitudes dirigidas al servidor y ayudan a evitar un uso excesivo de los recursos (ver la clase [`4D.QuotaManager`](./QuotaManagerClass.md)).
+
+Esta propiedad es **solo lectura**.
+
+Las siguientes propiedades del objeto `4D.QuotaManager` están disponibles para la sesión:
+
+| Propiedad                                                                 |              | Tipo    | Modificable | Descripción                                                                                                                           |
+| ------------------------------------------------------------------------- | ------------ | ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [nbEntitySets](./QuotaManagerClass.md#nbentitysets)                       |              | Integer | sí          | Número máximo permitido de conjuntos de entidades en la memoria del servidor. *Undefined* = no se aplican cuotas      |
+| [defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout) |              | Integer | sí          | Tiempo de espera predeterminado por inactividad para los conjuntos de entidades en memoria (segundos)              |
+| [maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)         |              | Integer | sí          | Tiempo máximo de espera por inactividad para los conjuntos de entidades en memoria (segundos)                      |
+| currentValues                                                             |              | Object  | no          |                                                                                                                                       |
+|                                                                           | nbEntitySets | Integer | no          | Número de conjuntos de entidades actualmente en memoria. *Undefined* = no hay ningún conjunto de entidades en memoria |
+
+Cuando modifique un valor, es tomado inmediatamente en cuenta por el servidor (no es necesario reiniciar) y se aplicará a otras solicitudes REST.
+
+:::tip Entrada de blog relacionada
+
+[Manténga su servidor rest funcionando al máximo rendimiento](https://blog.4d.com/keep-your-rest-server-performing-at-its-best).
+
+:::
+
+#### Ejemplo
+
+```4d
+   //Definir el número máximo de conjuntos de entidades en memoria
+   //para la sesión en 50
+Session.quotas.nbEntitySets:=50
+```
+
+<!-- END REF -->
+
+#### Ver también
+
+[Clase QuotaManager](./QuotaManagerClass.md)
+
 <!-- REF SessionClass.restore().Desc -->
 
 ## .restore()
@@ -664,20 +746,17 @@ End if
 
 <!-- REF #SessionClass.restore().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo    |                             | Descripción                                                                    |
 | ---------- | ------- | :-------------------------: | ------------------------------------------------------------------------------ |
 | token      | Text    |              ->             | UUID del token de sesión                                                       |
 | Resultado  | Boolean | <- | True si la sesión actual ha sido reemplazada con éxito por la sesión del token |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
-
-:::note
-
-Esta función solo está disponible con sesiones usuario web. Devuelve False en otros contextos.
-
-:::
 
 La función `.restore()` <!-- REF #SessionClass.restore().Summary -->sustituye la sesión actual del usuario web por su sesión original correspondiente al *token* UUID<!-- END REF -->. El almacenamiento y los privilegios de la sesión son restaurados.
 
@@ -691,6 +770,13 @@ La función devuelve `false` si:
 - la propia sesión original ha caducado.
 
 En este caso, la sesión actual de usuario web se deja sin tocar (no se restaura la sesión).
+
+:::note Notas
+
+- Tenga en cuenta que los privilegios sólo se aplican al código ejecutado a través de accesos web, sea cual sea el [tipo de sesión](#session-types) sobre el que se ejecuta esta función.
+- Esta función no puede llamarse desde el lado del cliente de una sesión de usuario remota (se devuelve un error).
+
+:::
 
 #### Ejemplo
 
@@ -717,6 +803,7 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 | Lanzamiento | Modificaciones                                      |
 | ----------- | --------------------------------------------------- |
+| 21          | Soporte de sesiones remotas y autónomas             |
 | 19 R8       | Compatibilidad con la propiedad "roles" en Settings |
 | 18 R6       | Añadidos                                            |
 
@@ -726,6 +813,8 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 <!-- REF #SessionClass.setPrivileges().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo       |                             | Descripción                                                                    |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------------------------------------ |
 | privilege  | Text       |              ->             | Nombre del privilegio                                                          |
@@ -733,29 +822,22 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 | settings   | Object     |              ->             | Objeto con una propiedad "privilegios" (cadena o colección) |
 | Resultado  | Boolean    | <- | True si la ejecución se ha realizado correctamente                             |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
 
-:::note
-
-Esta función no hace nada y siempre devuelve **False** con cliente remoto, procedimiento almacenado y sesiones independientes.
-
-:::
-
 La función `.setPrivileges()` <!-- REF #SessionClass.setPrivileges().Summary -->asocia a la sesión los privilegios y/o roles definidos en el parámetro y devuelve **True** si la ejecución se ha realizado correctamente<!-- END REF -->.
 
 - En el parámetro *privilege*, pase una cadena que contenga un nombre de privilegio (o varios nombres de privilegio separados por comas).
-
 - En el parámetro *privileges*, pase una colección de cadenas que contengan nombres de privilegios.
-
 - En el parámetro *settings*, pase un objeto que contenga las siguientes propiedades:
 
-| Propiedad  | Tipo              | Descripción                                                                                                               |
-| ---------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| privileges | Text o Collection | <li>Cadena que contiene un nombre de privilegio, o</li><li>Colección de cadenas que contienen nombres de privilegios</li> |
-| roles      | Text o Collection | <li>Cadena que contiene un rol, o</li><li>Colección de cadenas que contienen roles</li>                                   |
-| userName   | Text              | Nombre de usuario para asociar a la sesión (opcional)                                                  |
+| Propiedad  | Tipo              | Descripción                                                                                                                                                                                                           |
+| ---------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| privileges | Text o Collection | <li>Cadena que contiene un nombre de privilegio, o</li><li>Colección de cadenas que contienen nombres de privilegios</li>                                                                                             |
+| roles      | Text o Collection | <li>Cadena que contiene un rol, o</li><li>Colección de cadenas que contienen roles</li>                                                                                                                               |
+| userName   | Text              | Nombre de usuario a asociar a la sesión (opcional, únicamente para las sesiones web). No disponible en sesiones de clientes remotos (ignorada). |
 
 :::note
 
@@ -768,6 +850,13 @@ Si la propiedad `privileges` o `roles` contiene un nombre que no está declarado
 Por defecto, cuando no hay ningún privilegio o rol asociado a la sesión, la sesión es una [sesión de invitado](#isguest).
 
 La propiedad [`userName`](#username) está disponible a nivel de objeto de sesión (sólo lectura).
+
+:::note Notas
+
+- Tenga en cuenta que los privilegios sólo se aplican al código ejecutado a través de accesos web, sea cual sea el [tipo de sesión](#session-types) sobre el que se ejecuta esta función.
+- Esta función no puede llamarse desde el lado del cliente de una sesión de usuario remota (se devuelve un error).
+
+:::
 
 #### Ejemplo
 
@@ -799,10 +888,10 @@ End if
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                                                     |
-| ----------- | ------------------------------------------------------------------ |
-| 20 R5       | Soporte de cliente remoto y sesiones de procedimientos almacenados |
-| 18 R6       | Añadidos                                                           |
+| Lanzamiento | Modificaciones                    |
+| ----------- | --------------------------------- |
+| 20 R5       | Soporte de sesiones de escritorio |
+| 18 R6       | Añadidos                          |
 
 </details>
 
@@ -812,15 +901,22 @@ End if
 
 La propiedad `.storage` contiene <!-- REF #SessionClass.storage.Summary -->un objeto compartido que puede utilizarse para almacenar información disponible para todos los procesos de la sesión<!-- END REF -->.
 
-Cuando se crea un objeto `Session`, la propiedad `.storage` está vacía. Al ser un objeto compartido, esta propiedad estará disponible en el objeto `Storage` del servidor.
+Cuando se crea un objeto `Session`, la propiedad `.storage` está vacía. Esta propiedad es **sólo lectura** en sí misma pero devuelve un objeto de lectura-escritura.
 
-> Al igual que el objeto `Storage` del servidor, la propiedad `.storage` es siempre "single": añadir un objeto compartido o una colección compartida a `.storage` no crea un grupo compartido.
+:::note Notas
 
-Esta propiedad es **sólo lectura** en sí misma pero devuelve un objeto de lectura-escritura.
+- Al tratarse de un objeto compartido, esta propiedad estará disponible en el objeto `Storage` de la máquina (servidor o cliente).
+- Al igual que el objeto `Storage` de la máquina, la propiedad `.storage` es siempre "single": añadir un objeto compartido o una colección compartida a `.storage` no crea un grupo compartido.
+
+:::
+
+En cliente/servidor, el objeto `.storage` de la sesión de usuario remota **no** es el mismo en el servidor y en el cliente.
+
+Cuando una sesión de usuario remoto y una sesión web se [comparten mediante una OTP](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses), también comparten el mismo objeto `.storage` en el servidor, incluso si la OTP se [creó](#createotp) a partir de la sesión en el lado del cliente.
 
 :::tip
 
-Puede obtener la propiedad `.storage` de una sesión utilizando el comando [`Session storage`](../commands/session-storage.md).
+Puede obtener la propiedad `.storage` de una sesión utilizando el comando [`Session storage`](../commands/session-storage).
 
 :::
 
@@ -854,10 +950,10 @@ End use
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                                                     |
-| ----------- | ------------------------------------------------------------------ |
-| 20 R5       | Soporte de cliente remoto y sesiones de procedimientos almacenados |
-| 18 R6       | Añadidos                                                           |
+| Lanzamiento | Modificaciones                    |
+| ----------- | --------------------------------- |
+| 20 R5       | Soporte de sesiones de escritorio |
+| 18 R6       | Añadidos                          |
 
 </details>
 
@@ -867,10 +963,11 @@ End use
 
 La propiedad `.userName` contiene <!-- REF #SessionClass.userName.Summary -->el nombre de usuario asociado a la sesión<!-- END REF -->. Puede utilizarlo para identificar al usuario dentro de su código.
 
-- Con las sesiones web, esta propiedad es una cadena vacía por defecto. Puede definirse mediante la propiedad `privileges` de la función [`setPrivileges()`](#setprivileges).
-- Con sesiones remotas y de procedimientos almacenados, esta propiedad devuelve el mismo nombre de usuario que el comando [`Current user`](../commands-legacy/current-user.md).
-- Con sesiones independientes, esta propiedad contiene "diseñador" o el nombre definido con el comando [`SET USER ALIAS`](../commands-legacy/set-user-alias.md).
+- **Sesiones web**: esta propiedad es una cadena vacía por defecto. Puede definirse mediante la propiedad `privileges` de la función [`setPrivileges()`](#setprivileges).
+- **Sesiones de procedimiento remoto/almacenado**: esta propiedad devuelve el mismo nombre de usuario que el comando [`Usuario actual`](../commands/current-user).
+- **Sesiones autónomas**: esta propiedad contiene "designer" o el nombre definido con el comando [`SET USER ALIAS`](../commands/set-user-alias).
 
-Esta propiedad es **solo lectura**.
+Esta propiedad es **sólo de lectura** para las sesiones de escritorio.
 
 <!-- END REF -->
+

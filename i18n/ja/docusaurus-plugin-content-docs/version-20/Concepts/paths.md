@@ -41,7 +41,7 @@ POSIX シンタックスはすべてのプラットフォームでサポート�
 - 絶対パス名は "/" で始まります。
 - 相対パスにおいて 1階層上に移動するには、パス名の前に "../" を使用します (セキュリティ上の理由から、filesystem から上へは移動できません)。
 
-POSIX シンタックスでは一般的に、[`File`](../API/FileClass.md#file) および [`Folder`](../API/FolderClass.md#folder) コマンドに `filesystem` パス名を使用します。例:
+POSIX シンタックスでは一般的に、[`File`](../API/FileClass.md#file) および [`Folder`](../API/FolderClass.md#folder) コマンドに `filesystem` パス名を使用します。
 
 ```4d
 var $pathFile : 4D.File
@@ -62,9 +62,9 @@ $pathFolder:=Folder("/RESOURCES/Pictures")
 
 以下のパターンがサポートされています:
 
-- フォルダーは "\" で区切られます。
-- パスは 2番目と 3番目の文字にそれぞれ ":" と "\" を含みます。
-- パスは "\\" で始まります。
+- フォルダーは "\\" で区切られます。
+- パスは 2番目と 3番目の文字にそれぞれ ":" と "\\" を含みます。
+- パスは "\\\" で始まります。
 
 [`Folder`](../API/FolderClass.md#folder) を使用した例:
 

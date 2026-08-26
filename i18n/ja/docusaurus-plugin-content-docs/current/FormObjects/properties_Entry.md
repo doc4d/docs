@@ -5,9 +5,15 @@ title: 入力
 
 ## 自動スペルチェック
 
-4D にはカスタマイズ可能なスペルチェック機能がビルトインされています。 4D にはカスタマイズ可能なスペルチェック機能がビルトインされています。 4D にはカスタマイズ可能なスペルチェック機能がビルトインされています。 スペルチェックはテキスト型の [入力](input_overview.md) オブジェクト、そして [4D Write Pro](writeProArea_overview.md)ドキュメントに対して実行可能です。
+4D にはカスタマイズ可能なスペルチェック機能がビルトインされています。 スペルチェックはテキスト型の [入力](input_overview.md) オブジェクト、そして [4D Write Pro](writeProArea_overview.md)ドキュメントに対して実行可能です。
 
-自動スペルチェックプロパティは、各オブジェクトのスペルチェックを有効にします この場合、スペルチェックはタイプ中に自動的に実行されます。 この場合、スペルチェックはタイプ中に自動的に実行されます。 自動スペルチェックプロパティは、各オブジェクトのスペルチェックを有効にします この場合、スペルチェックはタイプ中に自動的に実行されます。 チェックしたいオブジェクトそれぞれに対して `SPELL CHECKING` 4Dランゲージコマンドを呼び出して実行することもできます。
+自動スペルチェックプロパティは、各オブジェクトのスペルチェックを有効にします この場合、スペルチェックはタイプ中に自動的に実行されます。 この場合、スペルチェックはタイプ中に自動的に実行されます。 チェックしたいオブジェクトそれぞれに対して [`SPELL CHECKING`](../commands/spell-checking) 4Dランゲージコマンドを呼び出して実行することもできます。
+
+:::note ライティングツール(macOS)
+
+macOS において、ユーザーがドキュメントのスペルチェックをできるように、Apple Intelligence ライティングツールを提供したい場合、[ライティングツール](#ライティングツール) プロパティの使用を検討してみてください。
+
+:::
 
 #### JSON 文法
 
@@ -21,7 +27,7 @@ title: 入力
 
 #### コマンド
 
-[`OBJECT Get auto spellcheck`](../commands-legacy/object-get-auto-spellcheck.md) - [`OBJECT SET AUTO SPELLCHECK`](../commands-legacy/object-set-auto-spellcheck.md) - [`WP Get view properties`](../WritePro/commands-legacy/wp-get-view-properties.md) - [`WP SET VIEW PROPERTIES`](../WritePro/commands-legacy/wp-set-view-properties.md)
+[`OBJECT Get auto spellcheck`](../commands/object-get-auto-spellcheck) - [`OBJECT SET AUTO SPELLCHECK`](../commands/object-set-auto-spellcheck) - [`WP Get view properties`](../WritePro/commands-legacy/wp-get-view-properties.md) - [`WP SET VIEW PROPERTIES`](../WritePro/commands-legacy/wp-set-view-properties.md)
 
 ---
 
@@ -29,17 +35,16 @@ title: 入力
 
 このプロパティを有効にすると、フォームの実行中にオブジェクトに対して標準のコンテキストメニューが使用できるようになります。
 
-ピクチャー型の [入力](input_overview.md) オブジェクトの場合、標準の編集コマンド (カット、コピー、ペースト、そしてクリア) に加え、ファイルからピクチャーを読み込むために使用することのできる **読み込み...** コマンド、ピクチャーをディスクに保存するのに使用する **別名で保存...** コマンドなどがあります。 また、メニューを使用してピクチャーの表示フォーマットを変更することもできます。**トランケート (中央合わせなし)**、**スケーリング** そして **スケーリング (中央合わせ/プロポーショナル)** から選択できます。 このメニューを使用した [表示フォーマット](properties_Display.md#ピクチャーフォーマット) の変更は一時的なものであり、レコードには保存されません。 また、メニューを使用してピクチャーの表示フォーマットを変更することもできます。**トランケート (中央合わせなし)**、**スケーリング** そして **スケーリング (中央合わせ/プロポーショナル)** から選択できます。 このメニューを使用した [表示フォーマット](properties_Display.md#ピクチャーフォーマット) の変更は一時的なものであり、レコードには保存されません。
+ピクチャー型の [入力](input_overview.md) オブジェクトの場合、標準の編集コマンド (カット、コピー、ペースト、そしてクリア) に加え、ファイルからピクチャーを読み込むために使用することのできる **読み込み...** コマンド、ピクチャーをディスクに保存するのに使用する **別名で保存...** コマンドなどがあります。 また、メニューを使用してピクチャーの表示フォーマットを変更することもできます。**トランケート (中央合わせなし)**、**スケーリング** そして **スケーリング (中央合わせ/プロポーショナル)** から選択できます。 このメニューを使用した [表示フォーマット](properties_Display.md#ピクチャーフォーマット) の変更は一時的なものであり、レコードには保存されません。
 
-[マルチスタイル](properties_Text.md#マルチスタイル) オプションがチェックされているテキスト型の [入力](input_overview.md) オブジェクトの場合、標準の編集コマンド以外に以下の様なコマンドを使用することができます:
+[マルチスタイル](properties_Text.md#マルチスタイル) オプションがチェックされているテキスト型の [入力](input_overview.md) オブジェクト、または[リストボックスカラム](listbox-column.md) の場合、標準の編集コマンド以外に以下の様なコマンドを使用することができます:
 
 - **フォント...**: フォントシステムダイアログボックスを表示させます。
-- **最近使用したフォント**: セッション中に最近使用されたフォント名を表示します。 リストには最大で 10フォントまで表示されます (それ以上は古いものから置き換えられていきます)。 デフォルトではリストは空になっているので、このオプションは表示されません。 このリストは `SET RECENT FONTS` と `FONT LIST` コマンドを使用して管理することができます。
+- **最近使用したフォント**: セッション中に最近使用されたフォント名を表示します。 リストには最大で 10フォントまで表示されます (それ以上は古いものから置き換えられていきます)。 デフォルトではリストは空になっているので、このオプションは表示されません。 このリストは [`SET RECENT FONTS`](../commands/set-recent-fonts) と [`FONT LIST`](../commands/font-list) コマンドを使用して管理することができます。
 - スタイルの変更をおこなうためのコマンド: スタイル、サイズ、カラー、背景色。
-  スタイルの変更をおこなうためのコマンド: スタイル、サイズ、カラー、背景色。
   このポップアップメニューを使用してユーザーがスタイル属性を編集する と、4D は `On After Edit` フォームイベントを生成します。
 
-[Webエリア](webArea_overview.md) の場合、メニューの内容はプラットフォームの描画エンジンにより設定されます。 [Webエリア](webArea_overview.md) の場合、メニューの内容はプラットフォームの描画エンジンにより設定されます。 It is possible to control access to the context menu via the [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md) command. [Webエリア](webArea_overview.md) の場合、メニューの内容はプラットフォームの描画エンジンにより設定されます。 It is possible to control access to the context menu via the [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md) command.
+[Webエリア](webArea_overview.md) の場合、メニューの内容はプラットフォームの描画エンジンにより設定されます。 コンテキストメニューは[`WA SET PREFERENCE`](../commands/wa-set-preference) コマンドを使用することでアクセスを管理することが可能です。
 
 #### JSON 文法
 
@@ -49,11 +54,14 @@ title: 入力
 
 #### 対象オブジェクト
 
-[入力](input_overview.md)\* [Webエリア](webArea_overview.md)
+[入力](input_overview.md) -
+[リストボックスカラム](listbox-column.md) -
+[Web エリア](webArea_overview.md) -
+[4D Write Pro エリア](writeProArea_overview.md)
 
 #### コマンド
 
-[`OBJECT Get context menu`](../commands-legacy/object-get-context-menu.md) - [`OBJECT SET CONTEXT MENU`](../commands-legacy/object-set-context-menu.md) - [`WA GET PREFERENCE`](../commands-legacy/wa-get-preference.md) - [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md)
+[`OBJECT Get context menu`](../commands/object-get-context-menu) - [`OBJECT SET CONTEXT MENU`](../commands/object-set-context-menu) - [`WA GET PREFERENCE`](../commands/wa-get-preference) - [`WA SET PREFERENCE`](../commands/wa-set-preference)
 
 ---
 
@@ -77,24 +85,24 @@ title: 入力
 [チェックボックス](checkbox_overview.md) -
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
+[リストボックスカラム](listbox-column.md) -
 [進捗インジケーター](progressIndicator.md) -
 [ルーラー](ruler.md) -
 [ステッパー](stepper.md)
 
 #### コマンド
 
-[`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
+[`OBJECT Get enterable`](../commands/object-get-enterable) - [`OBJECT SET ENTERABLE`](../commands/object-set-enterable)
 
-#### 参照:
+#### 参照
 
-[`FORM GET ENTRY ORDER`](../commands-legacy/form-get-entry-order.md) - [`FORM SET ENTRY ORDER`](../commands-legacy/form-set-entry-order.md)
+[`FORM GET ENTRY ORDER`](../commands/form-get-entry-order) - [`FORM SET ENTRY ORDER`](../commands/form-set-entry-order)
 
 ---
 
 ## 入力フィルター
 
-<br /><br /> 入力フィルターを使用するとデータ入力中にユーザーがタイプできる文字を制御できます。 [指定リスト](properties_RangeOfValues.md#指定リスト) とは異なり、入力フィルターは文字ごとに処理がおこなわれます。 たとえば、パーツ番号が常に 2つの文字とそれに続く 3つの数字で構成されるとき、入力フィルターを通してそのパターンを強制することができます。 さらに特定の文字や数字のみを使用するよう制御することもできます。
+入力フィルターを使用するとデータ入力中にユーザーがタイプできる文字を制御できます。 [指定リスト](properties_RangeOfValues.md#指定リスト) とは異なり、入力フィルターは文字ごとに処理がおこなわれます。 たとえば、パーツ番号が常に 2つの文字とそれに続く 3つの数字で構成されるとき、入力フィルターを通してそのパターンを強制することができます。 さらに特定の文字や数字のみを使用するよう制御することもできます。
 
 入力フィルターはデータ入力時にのみ動作します。 オブジェクトの選択をユーザーが解除した後のデータ表示には効果がありません。 通常は、入力フィルターを [表示フォーマット](properties_Display.md) と一緒に使用します。 フィルターはデータ入力を制約し、表示フォーマットはデータ入力後の値の表示を制御します。
 
@@ -136,19 +144,19 @@ title: 入力
 
 #### JSON 文法
 
-| 名称          | データタイプ | とりうる値                                     |
-| ----------- | ------ | ----------------------------------------- |
-| entryFilter | string | <li>入力フィルターコード</li> または <li>入力フィルター名</li> |
+| 名称          | データタイプ | とりうる値                                                                |
+| ----------- | ------ | -------------------------------------------------------------------- |
+| entryFilter | string | <li>入力フィルターコード</li>、または<li>入力フィルター名 (フィルター名は &#124; で始まります)</li> |
 
 #### 対象オブジェクト
 
-[チェックボックス](checkbox_overview.md)\* [コンボボックス](comboBox_overview.md)
+[チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [階層リスト](list_overview.md) - [入力](input_overview.md) - [リストボックスカラム](listbox-column.md)
 
 ---
 
 #### コマンド
 
-[`OBJECT Get filter`](../commands-legacy/object-get-filter.md) - [`OBJECT SET FILTER`](../commands-legacy/object-set-filter.md)
+[`OBJECT Get filter`](../commands/object-get-filter) - [`OBJECT SET FILTER`](../commands/object-set-filter)
 
 ## フォーカス可
 
@@ -156,9 +164,9 @@ title: 入力
 
 > [入力可](#入力可) に設定された [入力オブジェクト](input_overview.md) は常にフォーカス可です。
 
-- ![](../assets/en/FormObjects/property_focusable1.png)<br/>Check box shows focus when selected
+- [](../assets/en/FormObjects/property_focusable1.png)<br/>選択時にフォーカスを表示するチェックボックス
 
-- ![](../assets/en/FormObjects/property_focusable2.png)<br/>Check box is selected but cannot show focus|
+- [](../assets/en/FormObjects/property_focusable2.png)<br/>選択されているが、フォーカスを表示しないチェックボックス|
 
 入力できないオブジェクトに **フォーカス可** プロパティが設定されていると、ユーザーはエリアの内容を選択、コピー、およびドラッグ＆ドロップすることができます。
 
@@ -183,7 +191,7 @@ title: 入力
 
 #### コマンド
 
-[`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
+[`OBJECT Get enterable`](../commands/object-get-enterable) - [`OBJECT SET ENTERABLE`](../commands/object-set-enterable)
 
 ---
 
@@ -197,9 +205,9 @@ title: 入力
 
 #### JSON 文法
 
-| 名称              | データタイプ | とりうる値                                                                                                                                    |
-| --------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| keyboardDialect | text   | 言語コード (例: "ar-ma", "cs" など) RFC3066, ISO639 および ISO3166 を参照ください。 RFC3066, ISO639 および ISO3166 を参照ください。 |
+| 名称              | データタイプ | とりうる値                                                                                               |
+| --------------- | ------ | --------------------------------------------------------------------------------------------------- |
+| keyboardDialect | text   | 言語コード (例: "ar-ma", "cs" など) RFC3066, ISO639 および ISO3166 を参照ください。 |
 
 #### 対象オブジェクト
 
@@ -207,13 +215,13 @@ title: 入力
 
 #### コマンド
 
-[`OBJECT Get keyboard layout`](../commands-legacy/object-get-keyboard-layout.md) - [`OBJECT SET KEYBOARD LAYOUT`](../commands-legacy/object-set-keyboard-layout.md)
+[`OBJECT Get keyboard layout`](../commands/object-get-keyboard-layout) - [`OBJECT SET KEYBOARD LAYOUT`](../commands/object-set-keyboard-layout)
 
 ---
 
 ## 複数行
 
-このプロパティは、テキストタイプの式や、文字およびテキストタイプのフィールドが割り当てられている [入力オブジェクト](input_overview.md) で使用できます。 値は、あり・なし・自動 (デフォルト) が選択できます。 値は、あり・なし・自動 (デフォルト) が選択できます。
+このプロパティは、テキストタイプの式や、文字およびテキストタイプのフィールドが割り当てられている [入力オブジェクト](input_overview.md) で使用できます。 値は、あり・なし・自動 (デフォルト) が選択できます。
 
 #### 自動
 
@@ -221,13 +229,13 @@ title: 入力
 - 複数行の入力オブジェクトの場合、4D は自動で改行します:\
   ![](../assets/en/FormObjects/multilineAuto.png)
 
-#### ×
+#### なし
 
 - 一行の入力オブジェクトでは、行の最後にある単語はエリアからはみ出し、改行はおこなわれません。
 - テキストは常に一行で表示されます。 文字やテキストのフィールドまたは変数が改行文字を含んでいる場合、エリアが更新されるとすぐに最初のキャリッジリターンより後のテキストが取り除かれます:  
   ![](../assets/en/FormObjects/multilineNo.png)
 
-#### ◯
+#### あり
 
 この値を選択すると、追加の [ワードラップ](properties_Display.md#ワードラップ) オプションが表示されます。
 
@@ -243,7 +251,7 @@ title: 入力
 
 #### コマンド
 
-[`OBJECT Get multiline`](../commands-legacy/object-get-multiline.md) - [`OBJECT SET MULTILINE`](../commands-legacy/object-set-multiline.md)
+[`OBJECT Get multiline`](../commands/object-get-multiline) - [`OBJECT SET MULTILINE`](../commands/object-set-multiline)
 
 ---
 
@@ -268,7 +276,7 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 この場合、"プレースホルダー" のフィールドには参照のみを渡します。 参照と静的なテキストを組み合わせることはできません。
 
-> [`OBJECT SET PLACEHOLDER`](../commands-legacy/object-set-placeholder.md) および [`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder.md) コマンドを使用することで、プレースホルダーのテキストをプログラミングによって設定あるいは取得することができます。
+> [`OBJECT SET PLACEHOLDER`](../commands/object-set-placeholder) および [`OBJECT Get placeholder`](../commands/object-get-placeholder) コマンドを使用することで、プレースホルダーのテキストをプログラミングによって設定あるいは取得することができます。
 
 #### JSON 文法
 
@@ -286,7 +294,7 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### コマンド
 
-[`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder.md) - [`OBJECT SET PLACEHOLDER`](../commands-legacy/object-set-placeholder.md)
+[`OBJECT Get placeholder`](../commands/object-get-placeholder) - [`OBJECT SET PLACEHOLDER`](../commands/object-set-placeholder)
 
 ---
 
@@ -320,14 +328,14 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### JSON 文法
 
-| 名称              | データタイプ  | とりうる値                                                                                                                                                                                                                                           |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| shortcutAccel   | boolean | true, false (Windows: Ctrl/macOS: Command)                                                                                                                                                   |
-| shortcutAlt     | boolean | true, false                                                                                                                                                                                                                                     |
-| shortcutControl | boolean | true, false (macOS: Control)                                                                                                                                                                                 |
-| shortcutShift   | boolean | true, false                                                                                                                                                                                                                                     |
-|                 |         |                                                                                                                                                                                                                                                 |
-| shortcutKey     | string  | <li>任意の文字キー: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| 名称              | データタイプ  | とりうる値                                                                                                                                                                                                                                            |
+| --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| shortcutAccel   | boolean | true, false (Windows: Ctrl/macOS: Command)                                                                                                                                                    |
+| shortcutAlt     | boolean | true, false                                                                                                                                                                                                                                      |
+| shortcutControl | boolean | true, false (macOS: Control)                                                                                                                                                                                  |
+| shortcutShift   | boolean | true, false                                                                                                                                                                                                                                      |
+|                 |         |                                                                                                                                                                                                                                                  |
+| shortcutKey     | string  | <li>任意の文字キー: "a", "b"...</li><li>"[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### 対象オブジェクト
 
@@ -335,7 +343,7 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### コマンド
 
-[`OBJECT GET SHORTCUT`](../commands-legacy/object-get-shortcut.md) - [`OBJECT SET SHORTCUT`](../commands-legacy/object-set-shortcut.md)
+[`OBJECT GET SHORTCUT`](../commands/object-get-shortcut) - [`OBJECT SET SHORTCUT`](../commands/object-set-shortcut)
 
 ---
 
@@ -359,5 +367,56 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
+
+---
+
+## ライティングツール
+
+macOS においてこのプロパティを使用するとエンドユーザーが[Apple Intelligence **ライティングツール**](https://support.apple.com/guide/mac-help/find-the-right-words-with-writing-tools-mchldcd6c260/mac) を[4D Write Pro](writeProArea_overview.md) および[入力](input_overview.md) ([複数行](#複数行) サポートつき) フォームオブジェクトのテキストに対して適用することができるようになります。 ライティングツールは、あなたの4D アプリケーション内で直接テキストの校正、書き直し、要約、あるいは文体の変更を行うためにAI を活用します。
+
+![](../assets/en/FormObjects/writing-tools.png)
+
+:::tip 関連したblog 記事
+
+**実際のライティングツールの振る舞いを見る** ためには、[Apple Writing Tools – Now Available in 4D Write Pro and Text Input](https://blog.4d.com/apple-writing-tools-now-available-in-4d-write-pro-and-text-input) のblog 記事を参照してください。
+
+:::
+
+プロパティが有効化されていてフォームが実行された場合、オブジェクトの[コンテキストメニュー](#コンテキストメニュー) に**ライティングツールを表示** というメニュー項目が追加されます。 ユーザーがライティングツール内のアクションを選択した場合、選択状態に応じて以下の様な編集が返されます:
+
+- テキストの一部が選択されていた場合、選択範囲のみが置換されます
+- 選択範囲がない場合、エリアのコンテンツ全体が使用されます([4D Write Pro](writeProArea_overview.md) エリアの場合、カレントコンテナの全てのコンテンツが使用されます)。 ライティングツールが使用するコンテキストは、カーソルが位置しているコンテナ(ヘッダー、フッター、本文、またはテキストボックス)とカレントの選択範囲です。
+
+:::note
+
+ライティングツールを使用する際は通常はスタイルは保持されますが、しかしながら一部のAI 機能によってはスタイルが置き換えられる可能性もあります。
+
+:::
+
+ライティングツールは、**ライティングツール** [標準アクション](properties_Action.md#標準アクション) を通して表示することもでき、これはボタンやメニュー項目に割り当てることができます。
+
+:::note
+
+ライティングツールは**Apple Intelligence** に依存しており、またmacOS に互換性のあるコンピューター上で、システム設定で*Apple Intelligence & Siri* が有効化されている場合のみ利用可能です。 Windows 上、またはApple Intelligence が有効化されていない場合でも、プロパティはプロパティリスト内に引き続き表示されますが、割り当てられた**ライティングツール** 標準アクションはランタイムには無効化されます(プログラミングでそれを呼び出した場合でも、何も起きません)。
+
+:::
+
+プロパティの利用可能状況およびデフォルト値は、オブジェクトタイプによって変わります:
+
+| オブジェクト                                       | プロパティリスト内で利用可能かどうか                         | デフォルト値 |
+| -------------------------------------------- | ------------------------------------------ | ------ |
+| [入力](input_overview.md)                      | [複数行](#複数行) が"はい"または "自動"に設定されている場合にのみ利用可能 | false  |
+| [4D Write Pro エリア](writeProArea_overview.md) | 常に表示されます                                   | true   |
+
+#### JSON 文法
+
+| 名称           | データタイプ  | とりうる値       |
+| ------------ | ------- | ----------- |
+| writingTools | boolean | true, false |
+
+#### 対象オブジェクト
+
+[4D Write Pro エリア](writeProArea_overview.md) - [入力](input_overview.md) ([複数行](#複数行))
+
 

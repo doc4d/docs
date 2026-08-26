@@ -48,7 +48,7 @@ title: データ収集
 | encryptedConnections    | Boolean        | クライアント/サーバー接続が暗号化されている場合は True                                                           |
 | encrypted               | Boolean        | データファイルが暗号化されていれば true                                                                   |
 | compiled                | Boolean        | アプリケーションがコンパイル済みの場合は true                                                                |
-| isEngined               | Boolean        | アプリケーションに 4D Volume Desltop が組み込まれている場合は true                                            |
+| isEngined               | Boolean        | アプリケーションに 4D Volume Desktop が組み込まれている場合は true                                            |
 | projectMode             | Boolean        | アプリケーションがプロジェクトの場合は true                                                                 |
 | mobile                  | Collection     | モバイルセッションに関する情報                                                                          |
 
@@ -120,7 +120,7 @@ title: データ収集
 
 ## 保存先と送信先
 
-収集されたデータは、4D Server の終了時にデータベース毎にテキストファイル (JSON形式) に書き込まれます。 このファイルは、[Active 4D Folder](https://doc.4d.com/4dv20/help/command/ja/page485.html) に格納されます。 つまり:
+収集されたデータは、4D Server の起動やシャットダウンなどの特定のイベントが発生した際に、データベースごとにテキストファイル(JSON 形式)に書き込まれます。 このファイルは、[Active 4D Folder](https://doc.4d.com/4dv20/help/command/ja/page485.html) に格納されます。 つまり:
 
 - Windows: `Users\[userName]\AppData\Roaming\4D Server`
 - macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`

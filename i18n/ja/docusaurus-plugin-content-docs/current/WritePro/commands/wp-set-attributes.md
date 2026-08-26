@@ -4,17 +4,20 @@ title: WP SET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *...attribName* ; *...attribValue* )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
+<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* : Object ; ...(*attribName* : Text {; *attribValue* : any }) )<br/>**WP SET ATTRIBUTES** ( *targetObj* : Object ; *attribObj* : Object )<!-- END REF-->
 
 <!--REF #_command_.WP SET ATTRIBUTES.Params-->
 
-| 引数          | 型                                               |                             | 説明                                  |
-| ----------- | ----------------------------------------------- | --------------------------- | ----------------------------------- |
-| targetObj   | Object                                          | &#8594; | レンジまたは要素または4D Write Pro ドキュメント      |
-| attribName  | Text                                            | &#8594; | 設定する属性名                             |
-| attribValue | Text, Number, Object, Collection, Picture, Date | &#8594; | 新しい属性の値                             |
-| attribObj   | Object                                          | &#8594; | 設定したい属性の名前とそれに対応する設定したい値を格納したオブジェクト |
+<div class="no-index">
 
+| 引数          | 型      |                             | 説明                                  |
+| ----------- | ------ | --------------------------- | ----------------------------------- |
+| targetObj   | Object | &#8594; | レンジまたは要素または4D Write Pro ドキュメント      |
+| attribName  | Text   | &#8594; | 設定する属性名                             |
+| attribValue | any    | &#8594; | 新しい属性の値                             |
+| attribObj   | Object | &#8594; | 設定したい属性の名前とそれに対応する設定したい値を格納したオブジェクト |
+
+</div>
 <!-- END REF-->
 
 ## 説明
@@ -33,7 +36,7 @@ displayed_sidebar: docs
 
 - *attribObj* 引数を使用して、属性の名前と対応する値をオブジェクトのプロパティとして格納した一つのオブジェクトを渡すことができます。
 
-For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
+渡すことのできる属性の包括的な一覧と、そのスコープおよび値については、[4D Write Pro 属性](../4d-write-pro-attributes) の章を参照してください。
 
 ## 例題 1
 
@@ -88,7 +91,7 @@ For a comprehensive list of attributes to pass, as well as their scope and respe
  WP SET ATTRIBUTES(WParea;wk background image;$picture)
 ```
 
-結果は以下のようになります:
+結果は以下のとおりです:
 
 ![](../../assets/en/WritePro/commands/pict3514231.en.png)
 
@@ -108,7 +111,7 @@ For a comprehensive list of attributes to pass, as well as their scope and respe
  WP SET ATTRIBUTES(WParea;$myAttributes)
 ```
 
-結果は以下のようになります:
+結果は以下のとおりです:
 
 ![](../../assets/en/WritePro/commands/pict3514233.en.png)
 
@@ -142,12 +145,12 @@ paper box の値はドキュメントあるいはセクションに対しての�
  WP SET ATTRIBUTES(wpArea;wk tabs;$_tabs)
 ```
 
-結果は以下のようになります:
+結果は以下のとおりです:
 
 ![](../../assets/en/WritePro/commands/pict4251559.en.png)
 
 ## 参照
 
-[4D Write Pro Attributes](../4d-write-pro-attributes)  
-[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)  
-[WP RESET ATTRIBUTES](../commands/wp-reset-attributes.md)
+[4D Write Pro 属性](../4d-write-pro-attributes)  
+[WP GET ATTRIBUTES](../commands/wp-get-attributes)  
+[WP RESET ATTRIBUTES](../commands/wp-reset-attributes)

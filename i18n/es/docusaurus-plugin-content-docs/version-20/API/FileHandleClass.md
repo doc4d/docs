@@ -53,6 +53,25 @@ $fhandle:=$f.open("read")
 While (Not($fhandle.eof))
     $lines.push($fhandle.readLine())
 End while
+For ($line; 1; 4)
+    $fhandle.writeLine($text+String($line))
+End for
+
+//Lectura utilizando un caracter de parada y un parámetro objeto
+$o:=New object()
+$o.mode:="read"
+$o.charset:="UTF-8"
+$o.breakModeRead:=Document with CRLF
+$stopChar:="!"
+$fhandle:=$f.open($o)
+$text:=$fhandle.readText($stopChar)
+
+//Lectura línea a línea
+$lines:=New collection
+$fhandle:=$f.open("read")
+While (Not($fhandle.eof))
+    $lines.push($fhandle.readLine())
+End while
 
 ```
 
@@ -211,11 +230,13 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!--REF #FileHandleClass.getSize().Params -->
-| Parámetros | Tipo |    | Descripción                                              |
-| ---------- | ---- | -- | -------------------------------------------------------- |
-| Resultado  | Real | <- | Tamaño del documento en bytes|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|Resultado|Real|<-|Size of the document in bytes|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -316,14 +337,14 @@ $s:=$fh.readText()
 
 
 <!--REF #FileHandleClass.readBlob().Params -->
-| Parámetros | Tipo                 |    | Descripción                                         |
-| ---------- | -------------------- | -- | --------------------------------------------------- |
-| bytes      | Real                 | -> | Número de bytes a leer                              |
-| Resultado  | [4D.Blob](BlobClass) | <- | Bytes leídos del archivo|<!-- END REF -->
+<div class="no-index">
 
-
-
-|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|---|
+|bytes|Real|->|Número de bytes a leer|
+|Result|[4D.Blob](BlobClass)||<-|Bytes read from the file|
+</div>
+<!-- END REF -->
 
 
 
@@ -356,13 +377,13 @@ Cuando se ejecuta esta función, la posición actual ([.offset](#offset)) se act
 
 
 <!--REF #FileHandleClass.readLine().Params -->
-| Parámetros | Tipo |    | Descripción                               |
-| ---------- | ---- | -- | ----------------------------------------- |
-| Resultado  | Text | <- | Línea de texto|<!-- END REF -->
+<div class="no-index">
 
-
-
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|Resultado|Text|<-|Line of text|
+</div>
+<!-- END REF -->
 
 
 
@@ -402,13 +423,14 @@ Esta función asume que la propiedad [`.offset`](#offset) es un número de carac
 
 
 <!--REF #FileHandleClass.readText().Params -->
-| Parámetros | Tipo |    | Descripción                                  |
-| ---------- | ---- | -- | -------------------------------------------- |
-| stopChar   | Text | -> | Caracter(es) en los que dejar de leer        |
-| Resultado  | Text | <- | Texto del archivo|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|---|-|---|
+|stopChar|Text|->|Carácter(es) en los que parar la lectura|
+|Resultado|Text|<-|Text from the file|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -450,12 +472,13 @@ Si el parámetro *stopChar* se pasa y no se encuentra, `.readText()` devuelve un
 
 
 <!--REF #FileHandleClass.setSize().Params -->
-| Parámetros | Tipo |    | Descripción                                                    |
-| ---------- | ---- | -- | -------------------------------------------------------------- |
-| size       | Real | -> | Nuevo tamaño del documento en bytes|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|-|
+|size|Real|->|Nuevo tamaño del documento en bytes|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -485,12 +508,13 @@ Si el valor del *size* es menor que el tamaño actual del documento, el contenid
 
 
 <!--REF #FileHandleClass.writeBlob().Params -->
-| Parámetros | Tipo                 |    | Descripción                                              |
-| ---------- | -------------------- | -- | -------------------------------------------------------- |
-| blob       | [4D.Blob](BlobClass) | -> | Blob a escribir en el archivo|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|---|
+|blob|[4D.Blob](BlobClass)|->|Blob a escribir en el archivo|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -522,12 +546,13 @@ Cuando se ejecuta esta función, la posición actual ([.offset](#offset)) se act
 
 
 <!--REF #FileHandleClass.writeLine().Params -->
-| Parámetros | Tipo |    | Descripción                                 |
-| ---------- | ---- | -- | ------------------------------------------- |
-| lineOfText | Text | -> | Texto a escribir|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|lineOfText|Text|->|Texto a escribir|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -557,12 +582,13 @@ Cuando se ejecuta esta función, la posición actual ([.offset](#offset)) se act
 
 
 <!--REF #FileHandleClass.writeText().Params -->
-| Parámetros  | Tipo |    | Descripción                                 |
-| ----------- | ---- | -- | ------------------------------------------- |
-| textToWrite | Text | -> | Texto a escribir|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|textToWrite|Text|->|Texto a escribir|
+</div>
+<!-- END REF -->
 
 
 #### Descripción

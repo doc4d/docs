@@ -64,7 +64,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 
 | 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
-| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | Text |
+| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | テキスト |
 
 セキュアプロトコルに使用される暗号リストです。 Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。 コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
@@ -119,10 +119,10 @@ CORS を介したサーバーへのデータリクエスト送信が許可され
 
 ## デバッグログ
 
-| 設定できる場所          | 名称              | コメント   |
-| ---------------- | --------------- | ------ |
-| webServer オブジェクト | `debugLog`      | number |
-| `WEB SET OPTION` | `Web debug log` | number |
+| 設定できる場所          | 名称              | コメント |
+| ---------------- | --------------- | ---- |
+| webServer オブジェクト | `debugLog`      | 数値   |
+| `WEB SET OPTION` | `Web debug log` | 数値   |
 
 Webサーバーの HTTPリクエストログファイル (アプリケーションの "Logs" フォルダーに格納されている [*HTTPDebugLog_nn.txt*](../Debugging/debugLogFiles.md#httpdebuglogtxt) (nn はファイル番号)) の状態を指定します。 このログファイルは、Webサーバーに関連する問題をデバッグするのに便利です。 ログには、各リクエスト・レスポンスが rawモードで記録されます。 ヘッダーを含むリクエスト全体が記録され、オプションでボディ部分も記録することができます。
 
@@ -139,7 +139,7 @@ Webサーバーの HTTPリクエストログファイル (アプリケーショ�
 
 | 設定できる場所             | 名称                                                         | コメント              |
 | ------------------- | ---------------------------------------------------------- | ----------------- |
-| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | Text              |
+| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | テキスト              |
 | `WEB SET HOME PAGE` |                                                            | Webプロセス毎に異なる設定が可能 |
 | 設定ダイアログボックス         | [設定ページ / デフォルトホームページ](../settings/web.md#デフォルトホームページ)      |                   |
 
@@ -178,22 +178,22 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 ## HTTPを有効化
 
-| 設定できる場所          | 名称                                                 | コメント    |
-| ---------------- | -------------------------------------------------- | ------- |
-| webServer オブジェクト | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | boolean |
-| `WEB SET OPTION` | `Web HTTP enabled`                                 |         |
-| 設定ダイアログボックス      | [設定ページ / HTTPを有効化](../settings/web.md#httpを有効化)    |         |
+| 設定できる場所          | 名称                                                 | コメント |
+| ---------------- | -------------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | ブール  |
+| `WEB SET OPTION` | `Web HTTP enabled`                                 |      |
+| 設定ダイアログボックス      | [設定ページ / HTTPを有効化](../settings/web.md#httpを有効化)    |      |
 
 安全でない接続を Webサーバーが受け入れるかどうかを示します。
 
 
 ## HTTPSを有効にする
 
-| 設定できる場所          | 名称                                                   | コメント    |
-| ---------------- | ---------------------------------------------------- | ------- |
-| webServer オブジェクト | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean |
-| `WEB SET OPTION` | `Web HTTPS enabled`                                  |         |
-| 設定ダイアログボックス      | 設定ページ / HTTPSを有効にする                                  |         |
+| 設定できる場所          | 名称                                                   | コメント |
+| ---------------- | ---------------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | ブール  |
+| `WEB SET OPTION` | `Web HTTPS enabled`                                  |      |
+| 設定ダイアログボックス      | 設定ページ / HTTPSを有効にする                                  |      |
 
 Webサーバーがセキュアな接続を受け入れるか受け入れないかを指定します。 このオプションは [TLSプロトコル](Admin/tls.md) で説明しています。
 
@@ -256,15 +256,15 @@ HSTS によって、4D Webサーバーはブラウザーに対し、セキュア
 
 ## HTTP ポート
 
-| 設定できる場所          | 名称                                             | コメント   |
-| ---------------- | ---------------------------------------------- | ------ |
-| webServer オブジェクト | [`HTTPPort`](API/WebServerClass.md#httpport)   | number |
-| `WEB SET OPTION` | `Web port ID`                                  |        |
-| 設定ダイアログボックス      | [設定ページ / HTTPポート](../settings/web.md#http-ポート) |        |
+| 設定できる場所          | 名称                                             | コメント |
+| ---------------- | ---------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPPort`](API/WebServerClass.md#httpport)   | 数値   |
+| `WEB SET OPTION` | `Web port ID`                                  |      |
+| 設定ダイアログボックス      | [設定ページ / HTTPポート](../settings/web.md#http-ポート) |      |
 
 HTTP接続を受け付ける IP (TCP) ポート番号。 デフォルトで、4D は通常の Web HTTPポート (TCPポート) 番号である 80番を使用して Webアプリケーションを公開します。 他の Webサービスによってこのポート番号が既に使用されている場合、4D が使用する HTTPポート番号を変更する必要があります。
 
-> In macOS, modifying the HTTP port allows you to start the 4D web server without being the root user of the machine (see macOS HelperTool).
+> macOS では、HTTPポートを変更することで、rootユーザーでなくても Webサーバーを開始することができるようになります (macOS での Helperツール 参照)。
 
 デフォルトでない HTTPポート番号を使用して公開された Webアプリケーションに接続するには、Webブラウザーで入力するアドレスにポート番号を含めなければなりません。 アドレスの後にコロンに続けてポート番号を指定します。 たとえば、HTTPポート番号 8080を使用する場合、"123.4.567.89:8080" のように書きます。
 > **警告**: デフォルトの TCPポート番号 (標準モードで 80、HTTPSモードで 443) 以外を指定する場合、同時に使用する他のサービスのデフォルトポート番号を使わないよう注意が必要です。 たとえば、Webサーバーマシンで FTPプロトコルを使用する計画である場合、このプロトコルのデフォルトである TCPポート 20 と 21 を使用してはいけません。 256 より下のポート番号は、well-known サービスに予約されています。 また、256 から 1024 は UNIXプラットフォーム由来のサービスに予約されています。 セキュリティのため、これらの数値よりも上、たとえば 2000台や 3000台などを指定します。
@@ -286,11 +286,11 @@ HTTP接続を受け付ける IP (TCP) ポート番号。 デフォルトで、4D
 
 ## HTTPS ポート
 
-| 設定できる場所          | 名称                                               | コメント   |
-| ---------------- | ------------------------------------------------ | ------ |
-| webServer オブジェクト | [`HTTPSPort`](API/WebServerClass.md#httpsport)   | number |
-| `WEB SET OPTION` | `Web HTTPS port ID`                              |        |
-| 設定ダイアログボックス      | [設定ページ / HTTPSポート](../settings/web.md#https-ポート) |        |
+| 設定できる場所          | 名称                                               | コメント |
+| ---------------- | ------------------------------------------------ | ---- |
+| webServer オブジェクト | [`HTTPSPort`](API/WebServerClass.md#httpsport)   | 数値   |
+| `WEB SET OPTION` | `Web HTTPS port ID`                              |      |
+| 設定ダイアログボックス      | [設定ページ / HTTPSポート](../settings/web.md#https-ポート) |      |
 
 TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォルトで HTTPSポート番号は 443です。 ポート番号に関する詳細については、[HTTP ポート](#http-ポート) を参照ください。
 
@@ -432,9 +432,9 @@ Webサーバーに処理を許可する HTTPリクエスト (POST) の最大サ�
 
 ## 最低TLSバージョン
 
-| 設定できる場所          | 名称                                                     | コメント   |
-| ---------------- | ------------------------------------------------------ | ------ |
-| webServer オブジェクト | [`minTLSVersion`](API/WebServerClass.md#mintlsversion) | number |
+| 設定できる場所          | 名称                                                     | コメント |
+| ---------------- | ------------------------------------------------------ | ---- |
+| webServer オブジェクト | [`minTLSVersion`](API/WebServerClass.md#mintlsversion) | 数値   |
 
 接続に必要な最低TLSバージョン。 これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。
 
@@ -576,7 +576,7 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 | webServer オブジェクト | [`sessionCookieDomain`](API/WebServerClass.md#sessioncookiedomain) |      |
 | `WEB SET OPTION` | `Web session cookie domain`                                        |      |
 
-セッションcookie の "path" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
+セッションcookie の "path" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。
 
 
 ## セッションcookie名
@@ -596,7 +596,7 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 | webServer オブジェクト | [`sessionCookiePath`](API/WebServerClass.md#sessioncookiepath) |      |
 | `WEB SET OPTION` | `Web session cookie path`                                      |      |
 
-セッションcookie の "domain" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。
+セッションcookie の "domain" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
 
 ## セッションcookie SameSite
 
@@ -604,15 +604,15 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 | ---------------- | ---------------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`sessionCookieSameSite`](API/WebServerClass.md#sessioncookiesamesite) |      |
 
-セッションcookie の `SameSite` 属性の値。 この属性は、一部のクロスサイトリクエストフォージェリ ([CSRF](https://developer.mozilla.org/en-US/docs/Glossary/CSRF)) 攻撃からの保護として、ファーストパーティーコンテキストまたは同一サイトコンテキストのどちらかに cookie を限定するかを宣言することができます。
+セッションcookie の `SameSite` 属性の値。 この属性は、一部のクロスサイトリクエストフォージェリ ([CSRF](https://developer.mozilla.org/en-US/docs/Glossary/CSRF)) 攻撃からの保護として、ファーストパーティコンテキストまたは同一サイトコンテキストのどちらかに cookie を限定するかを宣言することができます。
 
 > `SameSite` 属性に関する詳細な説明は [Mozilla のドキュメンテーション](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Set-Cookie/SameSite) または [こちらの Web開発ページ (英語)](https://web.dev/samesite-cookies-explained/) を参照ください。
 
 次の値が提供されています:
 
-- "Strict" (4Dセッションcookie の `SameSite` 属性のデフォルト値): ファーストパーティーのコンテキスト、すなわち現在のサイトのドメインに一致するコンテキストでのみ cookie は送信され、サードパーティーの Webサイトには決して送信されません。
-- "Lax": クロスサイトのサブリクエストでは cookie は送信されませんが (たとえば、画像やフレームをサードパーティーのサイトにロードする場合など)、ユーザーがオリジンのサイトに移動するとき (つまり、リンクを辿っているとき) には送信されます。
-- "None": ファーストパーティーやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。 "None" を使用する場合は、cookie の `Secure` 属性も設定する必要があります (設定しないと、cookie がブロックされます)。
+- "Strict" (4Dセッションcookie の `SameSite` 属性のデフォルト値): ファーストパーティのコンテキスト、すなわち現在のサイトのドメインに一致するコンテキストでのみ cookie は送信され、サードパーティの Webサイトには決して送信されません。
+- "Lax": クロスサイトのサブリクエストでは cookie は送信されませんが (たとえば、画像やフレームをサードパーティのサイトにロードする場合など)、ユーザーがオリジンのサイトに移動するとき (つまり、リンクを辿っているとき) には送信されます。
+- "None": ファーストパーティやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。 "None" を使用する場合は、cookie の `Secure` 属性も設定する必要があります (設定しないと、cookie がブロックされます)。
 
 セッションcookie の `Secure` 属性値は、HTTPS接続の場合には (`SameSite` 属性値が何であれ)、自動的に "True" に設定されます。
 

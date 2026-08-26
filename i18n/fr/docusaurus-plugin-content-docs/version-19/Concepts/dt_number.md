@@ -5,7 +5,7 @@ title: Numérique (Réel, Entier, Entier long)
 
 Numérique est un terme générique utilisé pour :
 
-- Les champs, variables ou expression de type Réel. Les nombres de type Réel sont compris dans l'intervalle ±1.7e±308 (13 chiffres significatifs).
+- Les champs, variables ou expression de type Réel. The range for the Real data type is ±1.7e±308 (following the [IEEE 754 standard for double-precision binary floating-point format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)).
 - Les champs, variables ou expression de type Entier long. Les nombres de type Entier long (4 octets) sont compris dans l'intervalle -2^31..(2^31)-1.
 - Les champs, variables ou expression de type Entier. Les nombres de type Entier (2 octets) sont compris dans l'intervalle -32 768..32 767.
 
@@ -75,7 +75,7 @@ L'opérateur modulo % retourne des valeurs significatives avec des nombres appar
 
 ### Division entière
 
-L'opérateur division entière \ retourne des valeurs significatives avec des nombres entiers uniquement.
+L'opérateur de division entière divise un nombre par un autre et renvoie la partie entière du résultat, en rejetant tout reste. `a\b` est équivalent à `Int(a/b)`. Cet opérateur renvoie des valeurs significatives uniquement avec des nombres entiers.
 
 ### Comparaison des réels
 
@@ -107,7 +107,7 @@ retourne 23 car l'expression (4 * 5) est évaluée en premier lieu. Le résultat
 
 Des parenthèses peuvent être incluses dans d'autres parenthèses. Assurez-vous qu'il y ait une parenthèse fermante pour chaque parenthèse ouverte. Une parenthèse manquante ou placée à un mauvais endroit peut soit donner un résultat erroné, soit renvoyer une expression invalide. De plus, si vous avez l'intention de compiler vos applications, vous devez vous assurer d'une bonne utilisation des parenthèses. Le compilateur interprètera toute parenthèse manquante ou superflue comme une erreur de syntaxe.
 
-## Opérateurs sur les bits
+## Opérateurs bit à bit
 
 Les opérateurs sur les bits s'appliquent à des expressions ou valeurs de type **Entier long**.
 
@@ -119,16 +119,16 @@ Comme un bit peut valoir 0 (zéro) ou 1, vous pouvez également considérer une 
 
 Une expression utilisant un opérateur sur les bits retourne une valeur de type Entier long, à l'exception de l'opérateur Tester bit avec lequel l'expression retournée est du type Booléen. Le tableau suivant fournit la liste des opérateurs sur les bits et leur syntaxe :
 
-| Opération             | Opérateur     | Syntaxe                   | Retourne                |
-| --------------------- | ------------- | ------------------------- | ----------------------- |
-| ET                    | &             | long & E. E. long         | E. long                 |
-| OU (inclusif)         | &#124;        | long &#124; E. long       | E. long                 |
-| OU (exclusif)         | &#094; &#124; | Long &#094; &#124; Long   | E. long                 |
-| Décaler bits à gauche | <<            | E. Long << E. Long        | long (voir note n°1)    |
-| Décaler bits à droite | >>            | E. Long >> E. Long        | long (voir note n°1)    |
-| Mettre bit à 1        | ?+            | long ?+ E. E. long        | long (voir note n°2)    |
-| Mettre bit à 0        | ?-            | long ??                   | long (voir note n°2)    |
-| Tester bit            | ??            | long \^&#124; E. E. long | Booléen (voir note n°2) |
+| Opération             | Opérateur     | Syntaxe                 | Retourne                |
+| --------------------- | ------------- | ----------------------- | ----------------------- |
+| ET                    | &             | long & E. E. long       | Long                    |
+| OU (inclusif)         | &#124;        | Long &#124; Long        | Long                    |
+| OU (exclusif)         | &#094; &#124; | Long &#094; &#124; Long | Long                    |
+| Décaler bits à gauche | <<            | Long << E. Long         | long (voir note n°1)    |
+| Décaler bits à droite | >>            | Long >> E. Long         | long (voir note n°1)    |
+| Mettre bit à 1        | ?+            | Long ?+ Long            | long (voir note n°2)    |
+| Mettre bit à 0        | ?-            | Long ?- Long            | long (voir note n°2)    |
+| Tester bit            | ??            | Long ?? Long            | Booléen (voir note n°2) |
 
 #### Notes
 

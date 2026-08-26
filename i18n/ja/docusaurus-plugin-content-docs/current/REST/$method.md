@@ -9,9 +9,8 @@ title: $method
 
 | シンタックス                                          | 例題                                                                                      | 説明                                                                 |
 | ----------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| [**$method=delete**](#methoddelete)             | `POST /Employee?$filter="ID=11"& $method=delete`                                        | エンティティまたはエンティティセレクションを削除します                                        |
+| [**$method=delete**](#methoddelete)             | `POST /Employee?$filter="ID=11"& $method=delete`                                        | カレントエンティティ、エンティティコレクション、またはエンティティセットを削除します                         |
 | [**$method=entityset**](#methodentityset)       | `GET /People/?$filter="ID>320"& $method=entityset& $timeout=600`                        | RESTリクエストで定義されたエンティティのコレクションに基づいて、4D Server のキャッシュにエンティティセットを作成します |
-| [**$method=release**](#methodrelease)           | `GET /Employee/$entityset/<entitySetID>?$method=release`                                | 4D Server のキャッシュからエンティティセットを削除します                                  |
 | [**$method=subentityset**](#methodsubentityset) | `GET /Company(1)/staff?$expand=staff& $method=subentityset&   $subOrderby=lastName ASC` | RESTリクエストで定義されたリレートエンティティのコレクションに基づいて、エンティティセットを作成します              |
 | [**$method=update**](#methodupdate)             | `POST /Person/?$method=update`                                                          | 一つ以上のエンティティを更新または作成します                                             |
 
@@ -53,9 +52,15 @@ RESTリクエストで定義されたエンティティのコレクションに�
 
 ### 説明
 
-RESTでエンティティのコレクションを作成した場合、これをエンティティセットとして 4D Server のキャッシュに保存することができます。 エンティティセットには参照番号が付与されます。これを `$entityset/\{entitySetID\}` に渡すと、当該エンティティセットにアクセスできます。 デフォルトで、エンティティセットは 2時間有効です。$timeout に値 (秒単位) を渡すことで、有効時間を変更できます。
+RESTでエンティティのコレクションを作成した場合、これをエンティティセットとして 4D Server のキャッシュに保存することができます。 エンティティセットには参照番号が付与されます。これを `$entityset/\{entitySetID\}` に渡すと、当該エンティティセットにアクセスできます。 デフォルトで、エンティティセットは 2時間有効です。[`$timeout`](./$timeout.md) に値 (秒単位) を渡すことで、有効時間を変更できます。 また、[`Session.quotas`](../API/SessionClass.md#quotas) プロパティを使用してセッションに対して変更することもできます。
 
 エンティティセットを作成する際に、`$filter` や `$orderby` と同時に`$savedfilter` や `$savedorderby` も使用していた場合には、4D Server のキャッシュからエンティティセットが削除されていても、同じ参照IDで再作成できます。
+
+:::note
+
+デフォルトでは、エンティティセットを必要なだけ作成できます。 ただし、4D Server キャッシュに保持されるエンティティの数は、特定のセッションに対し、[`Session.quotas`](../API/SessionClass.md#quotas)プロパティを使用して制限することができます。
+
+:::
 
 ### 例題
 
@@ -77,41 +82,6 @@ RESTでエンティティのコレクションを作成した場合、これを�
 __ENTITYSET: "http://127.0.0.1:8081/rest/Employee/$entityset/9718A30BF61343C796345F3BE5B01CE7"
 ```
 
-## $method=release
-
-4D Server のキャッシュからエンティティセットを削除します。
-
-### 説明
-
-[`$method=entityset`](#methodentityset) によって作成したエンティティセットを、4D Server のキャッシュから削除することができます。
-
-### 例題
-
-既存のエンティティセットを削除します:
-
-`GET  /rest/Employee/$entityset/4C51204DD8184B65AC7D79F09A077F24?$method=release`
-
-#### レスポンス:
-
-リクエストが成功した場合のレスポンス:
-
-```json
-{
-    "ok": true
-}
-エンティティセットが見つからなかった場合には、エラーが返されます
-
-{
-    "__ERROR": [
-        {
-            "message": "Error code: 1802\nEntitySet  \"4C51204DD8184B65AC7D79F09A077F24\" cannot be found\ncomponent:  'dbmg'\ntask 22, name: 'HTTP connection handler'\n",
-            "componentSignature": "dbmg",
-            "errCode": 1802
-        }
-    ]
-}
-```
-
 ## $method=subentityset
 
 RESTリクエストで定義されたリレートエンティティのコレクションに基づいて、4D Server のキャッシュにエンティティセットを作成します
@@ -120,7 +90,7 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 
 `$method=subentityset` を使うことで、RESTリクエストが定義されたリレーション属性によって返されるデータを並べ替えることができます。
 
-データを並べ替えるには `$subOrderby` を使います。 並べ替えの基準とする各属性について、並べ替え順を指定します。ASC ( asc) が昇順、DESC (desc) が降順です。 デフォルトでは、データは昇順に並べ替えられます。
+データを並べ替えるには `$subOrderby` を使います。 並べ替えの基準とする各属性について、並べ替え順を指定します。 ASC ( asc) が昇順、DESC (desc) が降順です。 デフォルトでは、データは昇順に並べ替えられます。
 
 複数の属性を指定するには、カンマ区切りにします (`例`: $subOrderby="lastName desc, firstName asc")。
 
@@ -230,7 +200,7 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 }
 ```
 
-同じ URL を使って、複数のエンティティを作成・更新することもできます。その場合には、POST データに複数オブジェクトのコレクションを渡します:
+同じ URL を使って、複数のエンティティを作成・更新することもできます。 その場合には、POST データに複数オブジェクトのコレクションを渡します:
 
 `POST  /rest/Person/?$method=update`
 

@@ -7,7 +7,7 @@ title: クラス
 
 4D ランゲージでは **クラス** の概念がサポートされています 。  プログラミング言語では、クラスを利用することによって、属性やメソッドなどを持つ特定のオブジェクト種を定義することができます。
 
-ユーザークラスが定義されていれば、そのクラスのオブジェクトをコード内で **インスタンス化** することができます。  各オブジェクトは、それ自身が属するクラスのインスタンスです。 ユーザークラスが定義されていれば、そのクラスのオブジェクトをコード内で **インスタンス化** することができます。 各オブジェクトは、それ自身が属するクラスのインスタンスです。 クラスは、別のクラスを [継承](#class-extends-classname) することで、その [関数](#function) と、([宣言された](#property) および [計算された](#function-get-と-function-set)) プロパティを受け継ぐことができます。
+ユーザークラスが定義されていれば、そのクラスのオブジェクトをコード内で **インスタンス化** することができます。  各オブジェクトは、それ自身が属するクラスのインスタンスです。 クラスは、別のクラスを [継承](#class-extends-classname) することで、その [関数](#function) と、([宣言された](#property) および [計算された](#function-get-と-function-set)) プロパティを受け継ぐことができます。
 
 > 4D におけるクラスモデルは JavaScript のクラスに類似しており、プロトタイプチェーンに基づきます。
 
@@ -37,81 +37,37 @@ $person:=cs.Person.new("John";"Doe")
 $hello:=$person.sayHello() // "Hello John Doe"
 ```
 
-## クラスの管理
+クラスファイルは、4D エクスプローラーを通して管理されます([クラスの作成](../Project/code-overview.md#クラスの作成)を参照してください)。
 
-### クラス定義
+#### クラスの削除
 
-4D においてユーザークラスとは、`/Project/Sources/Classes/` フォルダーに保存された専用の [メソッド](methods.md) ファイル (.4dm) によって定義されます。  ファイル名がクラス名になります。
+既存のクラスを削除するには、エクスプローラー内でクラスを選択して ![](../assets/en/Users/MinussNew.png) をクリックするか、コンテキストメニューより **移動** ＞ **ゴミ箱** を選択します。
 
-クラスを命名する際には、次のルールに留意してください:
-
-- [クラス名](identifiers.md#クラス) は [プロパティ名の命名規則](identifiers.md#オブジェクトプロパティ) に準拠している必要があります。
-- クラス名の大文字・小文字は区別されます。
-- 競合防止のため、データベースのテーブルと同じ名前のクラスを作成するのは推奨されないこと
-
-たとえば、"Polygon" という名前のクラスを定義するには、次のファイルを作成する必要があります:
-
-```
-Project フォルダー Project Sources Classes Polygon.4dm
-```
-
-### クラスの削除
-
-既存のクラスを削除するには:
-
-- ディスク上で "Classes" フォルダーより .4dm クラスファイルを削除します。
-- 4D エクスプローラーでは、クラスを選択した状態で ![](../assets/en/Users/MinussNew.png) をクリックするか、コンテキストメニューより **移動** ＞ **ゴミ箱** を選択します。
-
-### 4D インターフェースの使用
-
-**ファイル** メニューまたはエクスプローラーなど、4D インターフェースを介してクラスを作成した場合には、クラスファイルは自動的に適切な場所に保存されます。
-
-#### ファイルメニューとツールバー
-
-4D 開発の **ファイル** メニューまたはツールバーより **新規** > **クラス...** を選択することで、開いているプロジェクトにクラスファイルを新規作成することができます。
-
-**Ctrl+Shift+Alt+k** ショートカットも使用できます。
-
-#### エクスプローラー
-
-エクスプローラーの **メソッド** ページにおいて、クラスは **クラス** カテゴリに分類されています。
-
-クラスを新規作成するには次の方法があります:
-
-- **クラス** カテゴリを選択し、![](../assets/en/Users/PlussNew.png) ボタンをクリックします。
-- エクスプローラーウィンドウの下部にあるアクションメニュー、またはクラスグループのコンテキストメニューから **新規クラス...** を選択します。
-  ![](../assets/en/Concepts/newClass.png)
-- エクスプローラーのホームページのコンテキストメニューより **新規** > **クラス...** を選択します。
-
-#### クラスのコードサポート
-
-各種 4Dウィンドウ (コードエディター、コンパイラー、デバッガー、ランタイムエクスプローラー) において、クラスコードは "特殊なプロジェクトメソッド" のように扱われます:
-
-- コードエディター:
-  - クラスは実行できません
-  - クラスメソッドはコードのブロックです
-  - オブジェクトメンバーに対する **定義に移動** 操作はクラスの Function 宣言を探します。例: "$o.f()" の場合、"Function f" を見つけます。
-  - クラスのメソッド宣言に対する **参照箇所を検索** 操作は、そのメソッドがオブジェクトメンバーとして使われている箇所を探します。例: "Function f" の場合 "$o.f()" を見つけます。
-- ランタイムエクスプローラーおよびデバッガーにおいて、クラスメソッドは `<ClassName>` コンストラクターまたは `<ClassName>.<FunctionName>` 形式で表示されます。
+またディスク上の"Classes" フォルダーから.4dm クラスファイルを削除することもできます。
 
 ## クラスストア
 
 定義されたクラスには、クラスストアよりアクセスすることができます。 クラスストアには次の二つが存在します:
 
-- [`cs`](../commands/cs.md) - ユーザークラスストア
-- [`4D`](../commands/4d.md) - ビルトインクラスストア
+- ユーザークラスとコンポーネントクラスストアのための [`cs`](../commands/cs)
+- ビルトインクラスのための [`4D`](../commands/4d)
 
-### `cs`
+#### `cs`
 
 <!-- REF #_command_.cs.Syntax -->**cs** : Object<!-- END REF -->
 
 <!-- REF #_command_.cs.Params -->
 
-| 引数         | 型      |                             | 説明                          |                  |
-| ---------- | ------ | --------------------------- | --------------------------- | ---------------- |
-| classStore | Object | &#8592; | プロジェクトまたはコンポーネントのユーザークラスストア | <!-- END REF --> |
+<div class="no-index">
 
-`cs` コマンドは、<!-- REF #_command_.cs.Summary -->カレントプロジェクトまたはコンポーネントのユーザークラスストアを返します<!-- END REF -->。   これには、プロジェクトまたはコンポーネントにて [定義](#クラス定義) されている、すべてのユーザークラスが含まれます。 デフォルトでは、 [ORDAクラス](ORDA/ordaClasses.md) のみ利用可能です。
+| 引数         | 型                                                          |                             | 説明                          |
+| ---------- | ---------------------------------------------------------- | --------------------------- | --------------------------- |
+| classStore | [4D.ClassStore](../API/ClassStoreClass.md) | &#8592; | プロジェクトまたはコンポーネントのユーザークラスストア |
+
+</div>
+<!-- END REF -->
+
+`cs` コマンドは、<!-- REF #_command_.cs.Summary -->カレントプロジェクトまたはコンポーネントのユーザークラスストアを返します<!-- END REF -->。   開いているプロジェクトまたはコンポーネント内で[定義されている](../Project/code-overview.md#クラスの作成) 全てのユーザークラスを返します。 デフォルトでは、 [ORDAクラス](ORDA/ordaClasses.md) のみ利用可能です。
 
 #### 例題
 
@@ -121,15 +77,20 @@ Project フォルダー Project Sources Classes Polygon.4dm
 $instance:=cs.myClass.new()
 ```
 
-### `4D`
+#### `4D`
 
 <!-- REF #_command_.4D.Syntax -->**4D** : Object <!-- END REF -->
 
 <!-- REF #_command_.4D.Params -->
 
-| 引数         | 型      |                             | 説明       |                  |
-| ---------- | ------ | --------------------------- | -------- | ---------------- |
-| classStore | Object | &#8592; | 4Dクラスストア | <!-- END REF --> |
+<div class="no-index">
+
+| 引数         | 型                                                          |                             | 説明       |
+| ---------- | ---------------------------------------------------------- | --------------------------- | -------- |
+| classStore | [4D.ClassStore](../API/ClassStoreClass.md) | &#8592; | 4Dクラスストア |
+
+</div>
+<!-- END REF -->
 
 `4D` コマンドは、<!-- REF #_command_.4D.Summary -->ビルトイン 4Dクラスのクラスストアを返します<!-- END REF -->。  [CryptoKey](API/CryptoKeyClass.md) などの専用 API へのアクセスを提供します。
 
@@ -144,14 +105,14 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 ビルトイン4Dクラスの数を表示します:
 
 ```4d
- var $keys : collection
+ var $keys : Collection
  $keys:=OB Keys(4D)
  ALERT(String($keys.length)+"件のビルトインクラスが存在します。")
 ```
 
 ## Class オブジェクト
 
-プロジェクトにおいてクラスが [定義](#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます 。  クラスとは、それ自身が ["Class" クラス](API/ClassClass.md) のオブジェクトです。 Class オブジェクトは次のプロパティや関数を持ちます:
+クラスがプロジェクト内で[定義されて](../Project/code-overview.md#クラスの作成) いれば、それは4D ランゲージ環境に読み込まれます。 クラスとは、それ自身が ["Class" クラス](API/ClassClass.md) のオブジェクトです。 Class オブジェクトは次のプロパティや関数を持ちます:
 
 - [`name`](API/ClassClass.md#name) 文字列
 - [`superclass`](API/ClassClass.md#superclass) オブジェクト (無い場合は null)
@@ -159,7 +120,7 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 - [`isShared`](API/ClassClass.md#isshared) プロパティ (クラスが [共有](#共有クラス)されている場合に true)
 - [`isSingleton`](API/ClassClass.md#issingleton) プロパティ ([シングルトン](#シングルトンクラス)の場合に true)
 - [`isSessionSingleton`](API/ClassClass.md#issessionsingleton) プロパティ ([セッションシングルトン](#シングルトンクラス)の場合に true)
-- [`me`](API/ClassClass.md#me) プロパティ ([シングルトン](シングルトンクラス) をインスタンス化および取得します)
+- [`me`](API/ClassClass.md#me) プロパティ ([シングルトン](#シングルトンクラス) をインスタンス化および取得します)
 
 また、Class オブジェクトは [`constructor`](#class-constructor) オブジェクトを参照することも可能です (任意)。
 
@@ -187,7 +148,7 @@ Class オブジェクトそのものは [共有オブジェクト](shared.md) �
 #### シンタックス
 
 ```4d
-{shared} Function <name>({$parameterName : type; ...}){->$parameterName : type}
+{local | server} {shared} Function <name>({$parameterName : type; ...}){->$parameterName : type}
 // コード
 ```
 
@@ -197,9 +158,11 @@ Class オブジェクトそのものは [共有オブジェクト](shared.md) �
 
 :::
 
-クラス関数とは、当該クラスのプロパティです。 クラス関数は [`4D.Function`](API/FunctionClass.md) クラスのオブジェクトです 。  クラス関数とは、当該クラスのプロパティです。 クラス関数とは、当該クラスのプロパティです。 クラス関数は [`4D.Function`](API/FunctionClass.md) クラスのオブジェクトです。 クラス定義ファイルでは、`Function` キーワードに続けて関数名を指定して宣言をおこないます。 クラス定義ファイルでは、`Function` キーワードに続けて関数名を指定して宣言をおこないます。
+クラス関数とは、当該クラスのプロパティです。 クラス関数は [`4D.Function`](API/FunctionClass.md) クラスのオブジェクトです 。  クラス定義ファイルでは、`Function` キーワードに続けて関数名を指定して宣言をおこないます。
 
-[共有クラス](#共有クラス) 内で関数が宣言されている場合は、`shared` キーワードを使用することによって、[`Use...End use` 構文](shared.md#useend-use)なしで関数を呼び出せるようにできます。 詳細については、後述の [共有関数](#共有関数) の項目を参照ください。
+[共有クラス](#共有クラス) 内で関数が宣言されている場合は、`shared` キーワードを使用することによって、[`Use...End use` 構文](shared.md#useend-use) なしで関数を呼び出せるようにできます。 詳細については、後述の [共有関数](#共有関数) の項目を参照ください。
+
+クライアント/サーバーアプリケーションのコンテキストにおいては、 `local` または `server` キーワードを使用することで、どちらのマシン上で関数を実行すべきかを指定することができます。 これらのキーワードはORDA データモデル関数と共有シングルトン/セッションシングルトン関数でのみ使用することができます。 詳細については、後述の [local および server 関数](#local-および-server) の項目を参照ください。
 
 関数名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。
 
@@ -341,7 +304,7 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 
 クラスコンストラクターが定義されていると、[`new()`](API/ClassClass.md#new) 関数を呼び出したときに、当該コンストラクターが呼び出されます (コンストラクターで引数を指定している場合は `new()` 関数に渡します)。
 
-コンストラクター関数は、1つのクラスに 1つしか存在できません (そうでない場合はエラーが返されます)。 [`Super`](../commands/super.md) コマンドを使用すると、[`スーパークラス`](../API/ClassClass#superclass)、つまり関数の親クラスを呼ぶことができます。
+コンストラクター関数は、1つのクラスに 1つしか存在できません (そうでない場合はエラーが返されます)。 [`Super`](#super) キーワードを使用することで、コンストラクターはスーパークラス (親クラス) のコンストラクターを呼び出すことができます。
 
 コンストラクター内でインスタンスのプロパティを作成し、型宣言することができます (例題参照)。 また、インスタンスプロパティの値が、コンストラクターに渡される引数に依存しない場合は、 [`property`](#property) キーワードを使用して定義することができます。
 
@@ -493,12 +456,12 @@ $o.age:="Smith"  // シンタックスチェックでエラー
 #### シンタックス
 
 ```4d
-{shared} Function get <name>()->$result : type
+{local | server} {shared} Function get <name>()->$result : type
 // コード
 ```
 
 ```4d
-{shared} Function set <name>($parameterName : type)
+{local | server} {shared} Function set <name>($parameterName : type)
 // コード
 ```
 
@@ -511,7 +474,7 @@ $o.age:="Smith"  // シンタックスチェックでエラー
 
 :::note
 
-[ORDA エンティティクラス](../ORDA/ordaClasses.md#entity-class) は計算属性の拡張された実装ににおいて[二つの追加された関数](../ORDA/ordaClasses.md#computed-attributes-1)の恩恵を受けることができます: `query` と`orderBy` です。
+[ORDA エンティティクラス](../ORDA/ordaClasses.md#entity-class) は計算属性の拡張された実装において[二つの追加された関数](../ORDA/ordaClasses.md#computed-attributes-1)の恩恵を受けることができます: `query` と`orderBy` です。
 
 :::
 
@@ -521,11 +484,13 @@ $o.age:="Smith"  // シンタックスチェックでエラー
 
 `Function get` はプロパティの型の値を返し、`Function set` はプロパティの型の引数を受け取ります 。  どちらも、標準的な [関数の引数](#引数) のルールに準拠する必要があります。
 
-両方の関数が定義されている場合、計算プロパティは **read-write** となります。   両方の関数が定義されている場合、計算プロパティは **read-write** となります。  `Function get` のみが定義されている場合、計算プロパティは**read-only** です。 この場合、コードがプロパティを変更しようとするとエラーが返されます。 `Function set` のみが定義されている場合、4D はプロパティの読み取り時に *undefined* を返します。 この場合、コードがプロパティを変更しようとするとエラーが返されます。 `Function set` のみが定義されている場合、4D はプロパティの読み取り時に *undefined* を返します。
+両方の関数が定義されている場合、計算プロパティは **read-write** となります。   `Function get` のみが定義されている場合、計算プロパティは**read-only** です。 この場合、コードがプロパティを変更しようとするとエラーが返されます。 `Function set` のみが定義されている場合、4D はプロパティの読み取り時に *undefined* を返します。
 
 関数が[共有クラス](#共有クラス)で宣言されている場合、`shared` キーワードを使用することで、[`Use...End use` 構文](shared.md#useend-use)なしで呼び出せるようにすることができます。 詳細については、後述の [共有関数](#共有関数) の項目を参照ください。
 
-計算プロパティの型は、*ゲッター* の `$return` の型宣言によって定義されます。  [有効なプロパティタイプ](dt_object.md) であれば、いずれも使用可能です。 [有効なプロパティタイプ](dt_object.md) であれば、いずれも使用可能です。
+クライアント/サーバーアプリケーションのコンテキストにおいては、 `local` または `server` キーワードを使用することで、どちらのマシン上で関数を実行すべきかを指定することができます。 これらのキーワードはORDA データモデル関数と共有シングルトン/セッションシングルトン関数でのみ使用することができます。 詳細については、後述の [local および server 関数](#local-および-server) の項目を参照ください。
+
+計算プロパティの型は、*ゲッター* の `$return` の型宣言によって定義されます。  [有効なプロパティタイプ](dt_object.md) であれば、いずれも使用可能です。
 
 > オブジェクトプロパティに *undefined* を代入すると、型を保持したまま値がクリアされます。 このためには、まず `Function get` を呼び出して値の型を取得し、 次にその型の空の値で `Function set` を呼び出します。
 
@@ -631,13 +596,13 @@ Class constructor ($side : Integer)
 
 ### `Super`
 
-[`Super`](../commands/super.md) コマンドを使用すると、[`スーパークラス`](../API/ClassClass#superclass)、つまり関数の親クラスを呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。
+[`Super`](../commands/super) コマンドを使用すると、[`スーパークラス`](../API/ClassClass#superclass)、つまり関数の親クラスを呼び出すことができます。 これは[Class constructor](#class-constructor) またはクラス関数コード内で呼び出すことができます。
 
-詳細な情報については、[`Super`](../commands/super.md) コマンドの説明を参照してください。
+詳細な情報については、[`Super`](../commands/super) コマンドの説明を参照してください。
 
 ### `This`
 
-[`This`](../commands/this.md) コマンドは現在処理されているオブジェクトへの参照を返します。  多くの場合、`This` の値はクラス関数がどのように呼ばれたかによって決まります。 通常、`This` は、まるでその関数がオブジェクト上にあるかのように、関数が呼ばれたオブジェクトを参照します。 多くの場合、`This` の値はクラス関数がどのように呼ばれたかによって決まります。 通常、`This` は、まるでその関数がオブジェクト上にあるかのように、関数が呼ばれたオブジェクトを参照します。
+[`This`](../commands/this) コマンドは現在処理されているオブジェクトへの参照を返します。 多くの場合、`This` の値はクラス関数がどのように呼ばれたかによって決まります。 通常、`This` は、まるでその関数がオブジェクト上にあるかのように、関数が呼ばれたオブジェクトを参照します。
 
 例:
 
@@ -657,11 +622,7 @@ $o.b:=3
 $val:=$o.f() //8
 ```
 
-詳細な情報については、[`This`](../commands/this.md) コマンドの説明を参照してください。
-
-## クラスコマンド
-
-4Dランゲージには、クラス機能を扱う複数のコマンドがあります。
+詳細な情報については、[`This`](../commands/this) コマンドの説明を参照してください。
 
 ### `OB Class`
 
@@ -732,17 +693,17 @@ shared Function Bar($value : Integer)
 
 ## シングルトンクラス
 
-**シングルトンクラス** とは、インスタンスを一つのみ作成するユーザークラスです。   **シングルトンクラス** とは、インスタンスを一つのみ作成するユーザークラスです。  シングルトンのコンセプトに関する詳細については、[シングルトンに関する Wikipedia のページ](https://ja.wikipedia.org/wiki/Singleton_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3) を参照ください。
+**シングルトンクラス** とは、インスタンスを一つのみ作成するユーザークラスです。   シングルトンのコンセプトに関する詳細については、[シングルトンに関する Wikipedia のページ](https://ja.wikipedia.org/wiki/Singleton_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3) を参照ください。
 
 ### シングルトンの種類
+
+アプリケーションやセッション、プロセス内のどこからでも利用可能な値を定義するのにシングルトンは便利です。
 
 4D は 3種類のシングルトンをサポートしています:
 
 - **プロセスシングルトン** は、自身がインスタンス化されたプロセス内において、インスタンスを一つのみ持つことができます。
 - **共有シングルトン** は、マシン上のすべてのプロセスにおいて、共通のインスタンスを一つのみ持つことができます。
-- **セッションシングルトン** も共有シングルトンですが、特定の [セッション](../API/SessionClass.md) 内のすべてのプロセスにおいて、共通のインスタンスを一つのみ持つことができます。  セッションシングルトンは、セッション内で全体的に共有されますが、セッションごとに異なります。 クライアントサーバーまたは Webアプリケーションのコンテキストで セッションシングルトンを使用すると、各セッションごと (つまり各ユーザーごと) に異なるインスタンスを作成して使用することができます。
-
-アプリケーションやセッション、プロセス内のどこからでも利用可能な値を定義するのにシングルトンは便利です。
+- **セッションシングルトン** も共有シングルトンですが、特定の [セッション](../API/SessionClass.md) 内のすべてのプロセスにおいて、共通のインスタンスを一つのみ持つことができます。  セッションシングルトンは、セッション内で全体的に共有されますが、セッションごとに異なります。 クライアントサーバーまたは Webアプリケーションのコンテキストで セッションシングルトンを使用すると、各セッションごと (つまり各ユーザーごと) に異なるインスタンスを作成して使用することができます。 セッションシングルトンは特に [Qodly アプリケーション](https://developer.4d.com/qodly/) において適切といえます。
 
 :::info
 
@@ -782,6 +743,10 @@ shared Function Bar($value : Integer)
 クラスがシングルトンクラスかどうかは、Classオブジェクトの .[`.isSingleton`](../API/ClassClass.md#issingleton)プロパティで確認できます。
 
 クラスがセッションシングルトンかどうかは、Classオブジェクトの .[`.isSessionSingleton`](../API/ClassClass.md#issessionsingleton) プロパティで確認できます。
+
+### 公開されたシングルトン関数
+
+共有関数およびセッションシングルトン関数は[`exposed` キーワード](../ORDA/ordaClasses.md#公開関数vs非公開関数)をサポートします。 公開されたシングルトン関数はREST リクエストから直接呼び出すことが可能です。 この機能は[4D 関数を呼び出すQodly ページ](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/events/bindingActionToEvents#class-functions) をデザインするために有用です。
 
 ### 例題
 
@@ -873,6 +838,182 @@ $myList := cs.ItemInventory.me.itemList
 
 ```
 
-#### 参照
+:::tip 関連したblog 記事
 
-[4D のシングルトン](https://blog.4d.com/ja/singletons-in-4d/) (ブログ記事) <br/> [セッションシングルトン](https://blog.4d.com/ja/introducing-session-singletons) (ブログ記事)
+[4D のシングルトン](https://blog.4d.com/ja/singletons-in-4d/)
+[セッションシングルトン](https://blog.4d.com/ja/introducing-session-singletons)
+
+:::
+
+## `local` および `server`
+
+[クライアント/サーバーアーキテクチャー](../Desktop/clientServer.md) におていは、`local` および `server` キーワードを使用することで関数を実行する場所を指定することができます: クライアント側、またはサーバー側です。 実行場所をコントロールすることは、パフォーマンス上の理由から、またビジネスロジック機能を実装する観点からも有用といえます。
+
+シンタックスは次の通りです:
+
+```4d
+// クライアント/サーバーにおいてクライアント上で実行される関数を宣言する
+local Function <functionName>   
+```
+
+```4d
+// クライアント/サーバーにおいてサーバー上で実行される関数を宣言する
+server Function <functionName>   
+```
+
+`local` および `server` キーワードは以下の場合に該当する関数においてのみ利用可能です:
+
+- [ORDA データモデル](../ORDA/ordaClasses.md) クラス
+- [共有シングルトンまたはセッションシングルトン](#singleton-classes) クラス。
+
+:::tip 関連したblog 記事
+
+[A new way to execute business logic on the server](https://blog.4d.com/a-new-way-to-execute-business-logic-on-the-server)
+
+:::
+
+### 概要
+
+サポートされる関数には、ロケーションキーワードが何も使用されていない場合の **デフォルトの実行場所** があります。 それに加えて、`local` あるいは `server` キーワードを挿入することで実行場所を変更したり、あるいはコードをより明示的にすることができます。
+
+| サポートされる関数                             | デフォルトの実行場所 | `local` キーワードを使用した場合                | `server` キーワードを使用した場合                                                    |
+| ------------------------------------- | ---------- | ----------------------------------- | ------------------------------------------------------------------------ |
+| [ORDA データモデル](../ORDA/ordaClasses.md) | サーバー上      | 関数は、クライアント上で呼ばれた場合にはクライアント上で実行されます。 |                                                                          |
+| [共有シングルトンまたはセッションシングルトン](#シングルトンクラス)  | ローカル       |                                     | 関数はシングルトンのサーバーインスタンスのサーバー上で実行されます。 <br/>サーバー上にシングルトンのインスタンスがない場合、作成されます。 |
+
+`local` および `server` キーワードがこれ以外のコンテキストで使用された場合、エラーが返されます。
+
+:::note
+
+クライアント/サーバーにおいてコードが実際にどこで実行されるかについての全体的な説明については、[こちらの章](../Desktop/clientServer.md#コードの実行場所) を参照してください。
+
+::::
+
+### `local`
+
+[クライアント/サーバーアーキテクチャー](../Desktop/clientServer.md) においては、`local` キーワードは、関数は**呼ばれた場所で実行されなければならない**ということを指定します。
+
+:::note リマインダー
+
+`local` キーワードは [共有シングルトンまたはセッションシングルトンの関数](#シングルトンクラス) においては意味を持ちません。これらはデフォルトでローカルに実行されるからです。
+
+:::
+
+デフォルトで、 [ORDA データモデル関数](../ORDA/ordaClasses.md) はサーバー上で実行されます。 関数リクエストとその結果だけが通信されるため、通常はベストパフォーマンスが提供されます。 しかしながら、[最適化のために](../ORDA/client-server-optimization.md#local-キーワードの使用) 、データモデル関数をクライアント上で実行したい様な場合があるかもしれません。 その場合は `local` キーワードを使用することができます。
+
+#### 例: 年齢を計算する
+
+*birthDate* (生年月日) 属性を持つエンティティがある場合に、リストボックス内で呼び出すための `age()` 関数を定義します。 この関数をクライアントサイドで実行することで、リストボックスの各行がサーバーへのリクエストを生成するのを防ぎます。
+
+*StudentsEntity* クラス:
+
+```4d
+Class extends Entity
+
+local Function age() -> $age: Variant
+
+If (This.birthDate#!00-00-00!)
+    $age:=Year of(Current date)-Year of(This.birthDate)
+Else
+    $age:=Null
+End if
+```
+
+### `server`
+
+[クライアント/サーバーアーキテクチャー](../Desktop/clientServer.md) においては、`server` キーワードは、関数は**サーバー側で実行されなければならない** ということを意味します。
+
+:::note リマインダー
+
+`server` キーワードは、デフォルトでサーバー上で実行される [ORDA データモデル関数](../ORDA/ordaClasses.md) に対しては特に意味を持ちません。
+
+:::
+
+`server` の関数の引数と戻り値は、[**ストリーム可能**](./dt_object.md#ストリーミングサポート) ストリーム可能でなければなりません。 例えば、[4D.Datastore](../API/DataStoreClass.md)、[File handle](../API/FileHandleClass.md)、あるいは [WebServer](../API/WebServerClass.md) などはストリーム不可能なクラスですが、 [4D.File](../API/FileClass.md) クラスはストリーム可能です。
+
+この機能は、特に[リモートユーザーセッション](../Desktop/sessions.md#リモートユーザーセッション) のコンテキストにおいて有用で、これを使用することでビジネスロジックを[セッションシングルトン](../Concepts/classes.md#session-singleton) に実装することでセッションの全てのプロセス間でこれを共有することができ、結果として[`Session`](../commands/session) コマンドの機能を拡張することが可能になります。 この場合、全てのセッション情報がサーバーに集められる様に、関連するビジネスロジックが**サーバー上で**実行されるようにしたい場合があるかもしれません。
+
+デフォルトで、共有シングルトンまたはセッションシングルトンの関数はローカルに実行されます。 `server` キーワードをクラス関数定義に追加することで、4D はシングルトンインスタンスをサーバー上で使用します。 この場合、まだインスタンスが存在していない場合、サーバー上でシングルトンのインスタンス化が起こりうることに注意してください。
+
+[セッションシングルトン](#シングルトンクラス) においては、関数は対応するシングルトンインスタンス(つまりカレントセッションのシングルトンのインスタンス)内においてサーバー上で実行されます。
+
+:::note
+
+共有シングルトン内で `server Function` を宣言した場合、以下のようになります:
+
+- シングルトン *S1* はクライアント上でインスタンス化されます(名前は *s1* )
+- *s1.function()* はクライアント上で実行されます。
+
+その時にサーバー上で *S1* のインスタンスが存在しない場合、*S1* はサーバー上でインスタンス化され(コンストラクターが実行されます)、*function()* 関数はサーバーインスタン上で実行されます。 結果として、それぞれ異なるプロパティ値をもつ、二つの *S1* のインスタンスが(クライアント側とサーバー側で)共存することが有り得ます。 この場合、 *s1.property* は常にローカルにアクセス可能です。 これはサーバーからはアクセスすることはできません。例えば、サーバー側のコードで直接ドット記法からアクセスするなどです(エラーが返されます)。
+
+:::
+
+#### 例: Administration シングルトン
+
+*Administration* 共有シングルトンは[`Process activity`](../commands/process-activity) コマンドを実行する "server" 関数を持っています。 このシングルトンはリモート4D でインスタンス化されますが関数はサーバー上でのサーバーのアクティビティを返します。
+
+```4d
+  // Administration クラス
+
+shared singleton Class constructor
+
+  // この関数はサーバー上で実行される
+server Function processActivity() : Object
+  return Process activity
+
+
+Function localProcessActivity() : Object
+  return Process activity
+```
+
+クライアント上で実行されるコード:
+
+```4d
+var $localActivity; $serverActivity : Object
+var $administration : cs.Administration
+
+// Administration シングルトンは4D クライアントでインスタンス化される
+$administration:=cs.Administration.me
+
+// リモート4D 上で実行中のプロセスを取得
+$localActivity:=$administration.localProcessActivity()
+
+// 4D Server 上で実行中のプロセスとセッションを取得
+$serverActivity:=$administration.processActivity()
+
+```
+
+#### 例題: セッションシングルトン
+
+ユーザーをUsers テーブルに保存し、カスタムの認証を管理します。 このとき認証にセッションシングルトンを使用します:
+
+```4d
+// UserSession セッションシングルトンクラス
+
+server Function checkUser($credentials : Object) : Boolean
+	
+var $user : cs.UsersEntity
+var $result:=False
+	
+If ($credentials#Null)
+	$user:=ds.Users.query("Email === :1"; $credentials.identifier).first()
+		
+	If (($user#Null) && (Verify password hash($credentials.password; $user.Password)))
+		Use (Session.storage)
+			Session.storage.userInfo:=New shared object("userId"; $user.ID)
+		End use 
+			
+		$result:=True
+	End if 
+End if 
+	
+return $result
+```
+
+カレントユーザーを4D クライアントに提供するために、シングルトンはサーバーから取得したユーザー計算プロパティを公開します:
+
+```4d
+server Function get user() : cs.UsersEntity
+	return ds.Users.get(Session.storage.userInfo.userId)
+```
+

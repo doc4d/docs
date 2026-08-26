@@ -17,7 +17,7 @@ Você também pode:
 
 - designa uma dica de ajuda existente, previamente especificada no editor de [dicas de ajuda](https://doc.4d.com/4Dv17R5/4D/17-R5/Help-tips.200-4163423.en.html) do 4D.
 - ou introduzir a mensagem de ajuda diretamente como uma cadeia de caracteres. Isto permite-lhe tirar partido da arquitetura XLIFF. Você pode inserir uma referência XLIFF aqui para exibir uma mensagem no idioma da aplicação (para obter mais informações sobre XLIFF, consulte [Apêndice B: Arquitetura XLIFF](https://doc.4d.com/4Dv17R5/4D/17-R5/Appendix-B-XLIFF-architecture.300-4163748.en.html). Você também pode usar referências 4D ([consulte Usando referências em texto estático](https://doc.4d.com/4Dv17R5/4D/17-R5/Using-references-in-static-text.300-4163725.en.html)).
-> > > In macOS, displaying help tips is not supported in pop-up type windows.
+> > > > In macOS, displaying help tips is not supported in pop-up type windows.
 
 #### Gramática JSON
 
@@ -27,7 +27,7 @@ Você também pode:
 
 #### Objectos suportados
 
-[Botão](button_overview.md) - [Grade de Botões](buttonGrid_overview.md) - [Caixa de Seleção](checkbox_overview.md)  - [Lista suspensa](dropdownList_Overview.md) - [Combo Box](./comboBox_overview.md) - [Lista Hierárquica](list_overview.md) - [Cabeçalho List Box](listbox_overview.md#list-box-headers) - [Rodapé List Box](listbox_overview.md#list-box-footers) - [Botão de Imagem](pictureButton_overview.md) - [Menu Pop-up imagem](picturePopupMenu_overview.md) - [Botão de rádio](radio_overview.md)
+[Botão](button_overview.md) - [Grade de Botões](buttonGrid_overview.md) - [Caixa de Seleção](checkbox_overview.md)  - [Lista suspensa](dropdownList_Overview.md) - [Combo Box](./comboBox_overview.md) - [Lista Hierárquica](list_overview.md) - [Cabeçalho List Box](listbox-header-footer.md#headers) - [Rodapé List Box](listbox-header-footer.md#footers) - [Botão de Imagem](pictureButton_overview.md) - [Menu Pop-up imagem](picturePopupMenu_overview.md) - [Botão de rádio](radio_overview.md)
 
 #### Outras funcionalidades de ajuda
 

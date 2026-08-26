@@ -7,7 +7,7 @@ title: OpenAIImagesAPI
 
 `OpenAIImagesAPI` はOpenAI のAPI を使用して画像を生成する機能を提供します。
 
-https://platform.openai.com/docs/api-reference/images
+https://developers.openai.com/api/reference/resources/images
 
 ## 関数
 
@@ -18,12 +18,12 @@ https://platform.openai.com/docs/api-reference/images
 | 引数           | 型                                                 | 説明               |
 | ------------ | ------------------------------------------------- | ---------------- |
 | *prompt*     | Text                                              | 画像の生成に使用するプロンプト。 |
-| *parameters* | [OpenAIImageParameters](OpenAIImageParameters.md) | 画像生成のためのパラメータ。   |
+| *parameters* | [OpenAIImageParameters](OpenAIImageParameters.md) | 画像生成のためのパラメーター。  |
 | 戻り値          | [OpenAIImagesResult](OpenAIImagesResult.md)       | 生成された画像を格納する結果。  |
 
 プロンプトを与えられると画像を作成します。
 
-https://platform.openai.com/docs/api-reference/images/create
+https://developers.openai.com/api/reference/resources/images/methods/generate
 
 ## 例題
 

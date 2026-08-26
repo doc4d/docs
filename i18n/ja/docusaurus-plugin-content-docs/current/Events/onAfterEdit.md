@@ -3,9 +3,9 @@ id: onAfterEdit
 title: On After Edit
 ---
 
-| コード | 呼び出し元                                                                                                                                                                                                                                                                                                                                                          | 定義                          |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| 45  | [4D View Pro エリア](../FormObjects/viewProArea_overview.md) - [4D Write Pro エリア](../FormObjects/writeProArea_overview.md) - [コンボボックス](FormObjects/comboBox_overview.md) - フォーム - [入力](FormObjects/input_overview.md) - [階層リスト](FormObjects/list_overview.md) - [リストボックス](FormObjects/listbox_overview.md) - [リストボックス列](FormObjects/listbox_overview.md#リストボックス列) | フォーカスのある入力可能オブジェクトの内容が更新された |
+| コード | 呼び出し元                                                                                                                                                                                                                                                                                                                                             | 定義                          |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| 45  | [4D View Pro エリア](../FormObjects/viewProArea_overview.md) - [4D Write Pro エリア](../FormObjects/writeProArea_overview.md) - [コンボボックス](FormObjects/comboBox_overview.md) - フォーム - [入力](FormObjects/input_overview.md) - [階層リスト](FormObjects/list_overview.md) - [リストボックス](FormObjects/listbox-object.md) - [リストボックス列](FormObjects/listbox_column.md) | フォーカスのある入力可能オブジェクトの内容が更新された |
 
 ## 説明
 
@@ -20,7 +20,7 @@ title: On After Edit
 - ユーザーがおこなったキーボードからの入力。この場合、`On After Edit` イベントは [`On Before Keystroke`](onBeforeKeystroke.md) と [`On After Keystroke`](onAfterKeystroke.md) イベントの後に生成されます。
 - ユーザーアクションをシミュレートするランゲージコマンドによる変更 (例: `POST KEY`)。
 
-`On After Edit` イベント内において、入力テキストは [`Get edited text`](../commands-legacy/get-edited-text.md) コマンドによって返されます。
+`On After Edit` イベント内において、入力テキストは [`Get edited text`](../commands/get-edited-text) コマンドによって返されます。
 
 ### 4D View Pro
 
@@ -112,3 +112,4 @@ title: On After Edit
 "newValue":"jumped over the lazy dog";
 }
 ```
+

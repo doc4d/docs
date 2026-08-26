@@ -11,6 +11,12 @@ title: Prise en main
 
 Une tableur est une application contenant une grille de cellules dans lesquelles vous pouvez saisir des informations, effectuer des calculs ou afficher des images. 4D View Pro est alimenté par la [solution de tableur SpreadJS](https://www.grapecity.com/spreadjs/docs/versions/v14/online/overview.html) intégrée à 4D.
 
+:::note
+
+Consultez le [tableau des bibliothèques](../Notes/updates.md#library-table-4d-20-lts) pour connaître la version de SpreadJS intégrée dans votre version de 4D.
+
+:::
+
 L'intégration de zones 4D View Pro dans vos formulaires vous permet d'importer et d'exporter des documents de type tableur à l'aide des commandes 4D View Pro.
 
 

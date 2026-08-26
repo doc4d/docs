@@ -64,7 +64,7 @@ CSS の <strong x-id="1">要素セレクター</strong>と同様に、スタイ�
 
 次の例では、*button* タイプのすべてのオブジェクトについて、表示するフォントを Helvetica Neue に、フォントサイズを 20 ピクセルに指定します:
 
-```
+```css
 button {
     font-family: Helvetica Neue;
     font-size: 20px;
@@ -73,7 +73,7 @@ button {
 
 複数のオブジェクトタイプに同じスタイルを適用するには、それらのオブジェクトタイプをカンマ "," 区切りで併記し、その後の中カッコ { } 内にスタイルを宣言します:
 
-```
+```css
 text, input {
   text-align: left;
   stroke: grey;
@@ -88,29 +88,28 @@ text, input {
 
 :::note
 
-The object name corresponds to the JSON [object name](../FormObjects/properties_Object.md#object-name) property of form objects.
+オブジェクト名とはフォームオブジェクトの[オブジェクト名](../FormObjects/properties_Object.md#オブジェクト名) JSON プロパティを指します。
 
 :::
 
-In the following example, the text of the object with the name "okButton" will be displayed
-in Helvetica Neue font, with a size of 20 pixels:
+以下の例では、という"okButton" 名前のオブジェクトのテキストが、Helvetica Neue フォントで、20 ピクセルのサイズで表示されます:
 
-```
+```css
 #okButton {
     font-family: Helvetica Neue;
     font-size: 20px;
 }
 ```
 
-### Class
+### クラス
 
-CSS の **クラスセレクター**と同様に、スタイルの適用対象をフォームオブジェクトの `クラス` 属性で指定することができます。
+CSS の **クラスセレクター**と同様に、スタイルの適用対象をフォームオブジェクトの `class` 属性で指定することができます。
 
 ドット記号 "." の後にクラス名を指定し、中カッコ { } の中に適用するスタイルを宣言します。
 
 次の例では、`okButtons` クラスを持つすべてのオブジェクトについて、表示するフォントを Helvetica Neue に、フォントサイズを 20 ピクセルに指定します:
 
-```
+```css
 .okButtons {
     font-family: Helvetica Neue;
     font-size: 20px;
@@ -120,16 +119,16 @@ CSS の **クラスセレクター**と同様に、スタイルの適用対象�
 
 さらに、特定のオブジェクトタイプに限定してスタイルを適用するには、そのオブジェクトタイプの後にドット "." 区切りでクラス名を指定し、その後の中カッコ { } 内にスタイルを宣言します:
 
-```
+```css
 text.center {
   text-align: center;
   stroke: red;
 }
 ```
 
-In the 4D form description, you associate a class name to an object using the [CSS Class](../FormObjects/properties_Object.md#css-class) attribute. この属性には一つ以上のクラス名を指定することができます。 複数の場合はクラス名を半角スペースで区切ります:
+4D フォームの詳細では、[CSSクラス](../FormObjects/properties_Object.md#cssクラス) 属性を使用してクラス名を割り当てます。 この属性には一つ以上のクラス名を指定することができます。 複数の場合はクラス名を半角スペースで区切ります:
 
-```
+```css
 class: "okButtons important"       
 ```
 
@@ -141,7 +140,7 @@ class: "okButtons important"
 
 次の例では、すべてのオブジェクトの塗りカラーをグレーにします:
 
-```
+```css
 * {
   fill: gray;
 }
@@ -166,7 +165,7 @@ CSS の **属性セレクター**と同様に、フォームオブジェクト�
 
 `borderStyle` (境界線スタイル) 属性を持つすべてのオブジェクトの描画色を紫に指定します:
 
-```
+```css
 [borderStyle]
 {
      stroke: purple;
@@ -175,7 +174,7 @@ CSS の **属性セレクター**と同様に、フォームオブジェクト�
 
 テキストタイプかつ、タイトルプロパティ (text属性) の値が "Hello" のオブジェクトの文字色を青に指定します:
 
-```
+```css
 text[text=Hello]
 {
      stroke: blue;
@@ -184,7 +183,7 @@ text[text=Hello]
 
 タイトルプロパティ (text属性) の値が "Hello" を含むオブジェクトの描画色を青に指定します:
 
-```
+```css
 [text~=Hello]
 {
      stroke: blue;
@@ -194,7 +193,7 @@ text[text=Hello]
 
 テキストタイプかつ、タイトルプロパティ (text属性) の値が "Hello" で始まるオブジェクトの文字色を黄色に指定します:
 
-```
+```css
 text[text|=Hello]
 {
      stroke: yellow;
@@ -207,26 +206,28 @@ text[text|=Hello]
 
 ### メディアクエリ
 
-メディアクエリは、アプリケーションにカラースキームを適用するのに利用します。
+メディアクエリを使用すると、特定の条件に基づいてスタイルを適用することができるようになります。 4D では、**カラースキーム**と**プラットフォームテーマ**に対してメディアクエリをサポートしています。
 
 メディアクエリは、メディア特性と値によって構成されます (例: `<media feature>:<value>` )。
 
-使用可能なメディア特性:
+利用可能なメディア機能と値:
 
-- `prefers-color-scheme`
+| メディア機能                 | 値                                                                                                        | 説明                                                                                                |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `prefers-color-scheme` | <ul><li>**light**</li><li>**dark**</li></ul>                                                             | 使用するカラースキーム                                                                                       |
+| `form-theme`           | <ul><li>**fluent-ui**</li><li>**win-classic**</li><li>**liquid-glass**</li><li>**mac-classic**</li></ul> | 使用するプラットフォームテーマ。 **fluent-ui** テーマについての詳細な情報については、[こちらの章](./forms.md#fluent-ui-レンダリング) を参照してください。 |
 
-使用可能なメディア特性の値:
+:::note
 
-- **light**<br/>ライトモード
-- **dark**<br/>ダークモード
+カラースキームは **win-classic** プラットフォームテーマではサポートされていません。
 
-> カラースキームは macOS でのみサポートされています。
+:::
 
-##### 例題
+##### 例題 1
 
 ライトモード (デフォルト) およびダークモードにおける、テキストとテキスト背景の色指定を CSS によっておこないます:
 
-```
+```css
 @media (prefers-color-scheme: light) {
  .textScheme {
    fill: LightGrey;
@@ -240,6 +241,39 @@ text[text|=Hello]
     stroke: LightGrey;
   }
 }
+```
+
+##### 例題 2
+
+```css
+/* デフォルトのスタイル (全てのテーマとモード) */
+.textLabel {
+    fontFamily: "Segoe UI";
+}
+ 
+/* Fluent UI テーマ*/
+@media (form-theme: fluent-ui) {
+    .textLabel {
+        stroke: #2A2A2A;
+        fontSize: 14px;
+    }
+ 
+    /* ダークモード */
+    @media (prefers-color-scheme: dark) {
+        .textLabel {
+            stroke: #E0E0E0;
+        }
+    }
+}
+ 
+/* Windows classic テーマ */
+@media (form-theme: win-classic) {
+    .textLabel {
+        stroke: #000000;
+        fontSize: 12px;
+    }
+}
+
 ```
 
 ### オブジェクト属性
@@ -271,13 +305,17 @@ text[text|=Hello]
 | `textDecoration` | `text-decoration`  |
 | `verticalAlign`  | `vertical-align`   |
 
-> CSS の属性名を使用する場合、4D に特有の値 (*例:* `sunken` (くぼみ)) はサポートされません。
+:::note
+
+CSS の属性名を使用する場合、4D に特有の値 (*例:* `sunken` (くぼみ)) はサポートされません。
+
+:::
 
 #### 特殊な属性値
 
 - `icon`, `picture`, および `customBackgroundPicture` のように、値として画像のパスを受け付ける属性の場合、次のように書きます:
 
-```
+```css
 icon: url("/RESOURCES/Images/Buttons/edit.png"); /* 絶対パス */
 icon: url("edit.png"); /* フォームファイルを基準とした相対パス */
 ```
@@ -320,17 +358,17 @@ icon: url("edit.png"); /* フォームファイルを基準とした相対パス
 
 1. 4D フォームはまずデフォルトの CSS ファイル `/SOURCES/styleSheets.css` を読み込みます。
 2. 次に、カレントプラットフォーム専用の CSS ファイル `/SOURCES/styleSheets_mac.css` または `/SOURCES/styleSheets_windows.css` がロードされます。
-3. If a [Form property "css" attribute](../FormEditor/properties_FormProperties.md#css) is defined in the 4D form, it will then load specific CSS file(s). 以下のものを渡すことができます:
+3. [フォームプロパティの"css" 属性](../FormEditor/properties_FormProperties.md#css) が4D フォームで定義されている場合、その4D フォームは特定のCSS ファイルをロードします。 以下のものを渡すことができます:
 
 - 両プラットフォーム用のファイル:
 
-```
+```json
 "css": "<path>" 
 ```
 
 - または、両プラットフォーム用に複数のファイル:
 
-```
+```json
 "css": [
      "<path1>",
      "<path2>" 
@@ -339,17 +377,21 @@ icon: url("edit.png"); /* フォームファイルを基準とした相対パス
 
 - または、プラットフォームごとのファイルリスト:
 
-```
+```json
  "css": [
         {"path": "<path>", "media": "mac"},
         {"path": "<path>", "media": "windows"},
     ],
 ```
 
-> ファイルパスは相対パスと絶対パスが使えます。
->
-> - 相対パスの基準は JSON フォームファイルです。
-> - セキュリティのため、絶対パスとして使用できるのはファイルシステムパスに限られます。 (*例*: "/RESOURCES", "/DATA")
+:::note
+
+ファイルパスは相対パスと絶対パスが使えます。
+
+- 相対パスの基準は JSON フォームファイルです。
+- セキュリティ上の理由から、絶対パスとして受け入れ可能なのは[filesystem パス](../Concepts/paths.md#ファイルシステムパス名) (*例:* "/RESOURCES"、 "/DATA" など)だけです。
+
+:::
 
 ## 参照
 

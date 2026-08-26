@@ -3,18 +3,24 @@ id: sessions
 title: Webセッション
 ---
 
-4D Webサーバーは、**Webセッション** を管理するビルトインの機能を提供します。  Webセッションを作成・維持することで、Webアプリケーション上のユーザーエクスペリエンスを管理・向上することができます。 Webセッションが有効かされていると、Webクライアントはリクエスト間で同じコンテキスト (セレクションや変数の値) を再利用できます。
+4D Webサーバーは、**Webセッション** を管理するビルトインの機能を提供します。  Webセッションを作成・維持することで、Webアプリケーション上のユーザーエクスペリエンスを管理・向上することができます。 Webセッションが有効化されていると、Webクライアントはリクエスト間で同じコンテキスト (セレクションや変数の値) を再利用できます。
 
 Webセッションでは、以下のことが可能です:
 
 - 同一のWebクライアントからの複数のリクエストを、無制限のプリエンプティブプロセスで同時に処理 (Webセッションは **スケーラブル**です)。
 - `Session` オブジェクトと [Session API](API/SessionClass.md) を介したセッションの管理。
 - セッションの [.storage](../API/SessionClass.md#storage) を使用して、Webクライアントのプロセス間でデータを保存および共有。
-- セッションを実行しているユーザーに権限を関連付ける。
+- セッションを実行しているユーザーに[権限](../ORDA/privileges.md) を割り当てる。
 
-:::tip Related blog post
+:::tip 関連したblog 記事
 
 [高度な Webアプリケーションに対応したスケーラブルセッション](https://blog.4d.com/ja/scalable-sessions-for-advanced-web-applications/)
+
+:::
+
+:::note
+
+デスクトップアプリケーション(クライアント/サーバーまたはシングルユーザー)は4D 開発者に[特定のセッション](../Desktop/sessions.md)を提供します。
 
 :::
 
@@ -22,10 +28,11 @@ Webセッションでは、以下のことが可能です:
 
 Webセッションは次のものに使用されます:
 
-- [Web applications](gettingStarted.md) sending http requests (including [SOAP Web services](../commands/theme/Web_Services_Server.md) and [/4DACTION](../WebServer/httpRequests.md#4daction) requests),
-- [リモートデータストア](../ORDA/remoteDatastores.md) や [Qodlyフォーム](qodly-studio.md) が使用する [REST API](../REST/authUsers.md) への呼び出し
+- HTTP リクエスト([SOAP Web サービス](../commands/theme/Web_Services_Server) および [/4DACTION](../WebServer/httpRequests.md#4daction) リクエストを含む)を送信する
+  [Web アプリケーション](gettingStarted.md)
+- [リモートデータストア](../ORDA/remoteDatastores.md) や [Qodly ページ](https://developer.4d.com/qodly/) が使用する [REST API](../REST/authUsers.md) への呼び出し。
 
-## Webセッションの有効化
+## Webセッションの有効化 {#enabling-web-sessions}
 
 セッション管理機能は、4D Webサーバー上で有効または無効にすることができます。 セッション管理を有効化する方法は複数あります:
 
@@ -35,9 +42,9 @@ Webセッションは次のものに使用されます:
 
 - Webサーバーオブジェクトの [`.scalableSession`](API/WebServerClass.md#scalablesession) プロパティを使用する ([`.start()`](API/WebServerClass.md#start) 関数に *settings* 引数として渡します）。  この場合、ストラクチャー設定ダイアログボックスで定義されたオプションよりも、Webサーバーオブジェクトの設定が優先されます (ディスクには保存されません)。
 
-> The [`WEB SET OPTION`](../commands-legacy/web-set-option.md) command can also set the session mode for the main Web server.
+> メインの Webサーバーのセッションモードは、[`WEB SET OPTION`](../commands/web-set-option) コマンドを使って設定することもできます。
 
-いずれの場合も、設定はマシンに対しローカルなものです。つまり、4D Server の Webサーバーと、リモートの 4Dマシンの Webサーバーで異なる設定が可能です。
+いずれの場合も、設定はマシンに対しローカルなものです。 つまり、4D Server の Webサーバーと、リモートの 4Dマシンの Webサーバーで異なる設定が可能です。
 
 > **互換性について**: 4D v18 R6 以前の 4Dバージョンで作成されたプロジェクトでは、**旧式セッション** オプションが使用できます (詳細については、[doc.4d.com](https://doc.4d.com) の Webサイトを参照ください)。
 
@@ -66,15 +73,9 @@ RESTリクエストのための Webセッションを作成するには、利用
 
 :::
 
-カレントセッションの `Session` オブジェクトは、あらゆる Webプロセスのコードにおいて [`Session`](commands/session.md) コマンドを介してアクセスできます。
+カレントセッションの `Session` オブジェクトは、あらゆる Webプロセスのコードにおいて [`Session`](../commands/session) コマンドを介してアクセスできます。
 
 ![alt-text](../assets/en/WebServer/schemaSession.png)
-
-:::info
-
-Webプロセスは通常終了せず、効率化のためにプールされリサイクルされます。 プロセスがリクエストの実行を終えると、プールに戻され、次のリクエストに対応できるようになります。 Since a web process can be reused by any session, [process variables](Concepts/variables.md#process-variables) must be cleared by your code at the end of its execution (using [`CLEAR VARIABLE`](../commands-legacy/clear-variable.md) for example). このクリア処理は、開かれたファイルへの参照など、プロセスに関連するすべての情報に対して必要です。 これが、セッション関連の情報を保持したい場合には、[Session](API/SessionClass.md) オブジェクトを使用することが **推奨** される理由です。
-
-:::
 
 ## セッション情報の保存と共有
 
@@ -87,11 +88,11 @@ Webプロセスは通常終了せず、効率化のためにプールされリ�
 - Webサーバーが停止したとき。
 - セッションcookie がタイムアウトしたとき。
 
-非アクティブな cookie の有効期限は、デフォルトでは 60分です。つまり、Webサーバーは、非アクティブなセッションを 60分後に自動的に閉じます。
+非アクティブな cookie の有効期限は、デフォルトでは 60分です。 つまり、Webサーバーは、非アクティブなセッションを 60分後に自動的に閉じます。
 
-このタイムアウトは、`Session` オブジェクトの [`.idleTimeout`](API/SessionClass.md#idletimeout) プロパティで設定できます (タイムアウトは 60分未満にはできません)。また、[`Open datastore`](../commands/open-datastore.md)コマンドの *connectionInfo* パラメーターを使っても設定できます。
+このタイムアウトは、`Session` オブジェクトの [`.idleTimeout`](API/SessionClass.md#idletimeout) プロパティで設定できます (タイムアウトは 60分未満にはできません)。また、[`Open datastore`](../commands/open-datastore)コマンドの *connectionInfo* パラメーターを使っても設定できます。
 
-Webセッションが閉じられた後に [`Session`](commands/session.md) コマンドが呼び出されると:
+Webセッションが閉じられた後に [`Session`](../commands/session) コマンドが呼び出されると:
 
 - `Session` オブジェクトには権限が含まれていません (ゲストセッション)。
 - [`.storage`](API/SessionClass.md#storage) プロパティは空です。
@@ -99,7 +100,7 @@ Webセッションが閉じられた後に [`Session`](commands/session.md) コ�
 
 :::info
 
-[**ログアウト**](qodly-studio.md#ログアウト) 機能を使用して、Qodly フォームからのセッションを閉じることができます。
+[**logout**](https://developer.4d.com/qodly/4DQodlyPro/force-login#logout) 機能を使用することで、Qodly フォームからセッションを閉じることができます。
 
 :::
 
@@ -201,7 +202,7 @@ Else
 End if
 ```
 
-:::note
+:::tip 関連したblog 記事
 
 [高度な Webアプリケーションに対応したスケーラブルセッション](https://blog.4d.com/ja/scalable-sessions-for-advanced-web-applications/)
 
@@ -211,7 +212,19 @@ End if
 
 4D web サーバーでは、OTP (One-Time Passcode/ワンタイムパスコード) セッショントークンを生成、共有、そして使用することができます。 OTP セッショントークンは、サードパーティのアプリケーションやWebサイトとの通信を保護するために使用されます。 OTP の詳細な情報については、Wikipedia の[ワンタイムパスワードのページ](https://ja.wikipedia.org/wiki/%E3%83%AF%E3%83%B3%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89) を参照して下さい。
 
-4D では、OTP セッショントークンは外部URL を呼び出して、それが他のブラウザや他のデバイス(モバイル/PC) でコールバックされる場合に特に有用です。 通常、こういったサードパーティアプリケーションはコールバックリンクが入った確認メールを送信してきて、ユーザーはこれをクリックする必要があります。 コールバックリンクにはOTP トークンが含まれており、そのコールバックをトリガーしたセッションは、そのデータと権限とともにロードされます。 この原理により、同じセッションを複数のデバイス間で共有することができます。 このアーキテクチャーのおかげで、[セッションクッキー](#session-implementation) はネットワークに公開されることはないため、中間者攻撃のリスクを排除することができます。
+4D では、OTPセッショントークンは外部 URL を呼び出して、それが他のブラウザーや他のデバイス (モバイル/PC) でコールバックされる場合に特に有用です。 通常、こういったサードパーティアプリケーションはコールバックリンクが入った確認メールを送信してきて、ユーザーはこれをクリックする必要があります。 コールバックリンクにはOTP トークンが含まれており、そのコールバックをトリガーしたセッションは、そのデータと権限とともにロードされます。 この原理により、同じセッションを複数のデバイス間で共有することができます。 このアーキテクチャーのおかげで、[セッションクッキー](#session-implementation) はネットワークに公開されることはないため、中間者攻撃のリスクを排除することができます。
+
+:::tip 関連したblog 記事
+
+[Connect Your Web Apps to Third-Party Systems](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/)
+
+:::
+
+:::info
+
+セッショントークンは[リモートユーザーセッション](../Desktop/sessions.md) から作成しWeb セッションと共有することが可能で、これによりWeb ベースのインターフェースを使用したデスクトップアプリケーションを実装することが可能です。 [Webアクセスのためにリモートセッションを共有する](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses) を参照して下さい。
+
+:::
 
 ### 概要
 
@@ -469,7 +482,7 @@ Function validateEmail() : 4D.OutgoingMessage
 - HTTP とHTTPS スキーマの両方がサポートされます。
 - トークンで再使用ができるのは[スケーラブルセッション](#Webセッションの有効化) のみです。
 - 再使用ができるのはホストデータベースのセッションのみです(コンポーネントのWeb サーバーで作成されたセッションは復元することができません)。
-- トークンはクライアント/サーバーセッション、あるいはシングルユーザーセッションにおいてはサポートされていません。
+- トークンは[リモートユーザーセッション](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses) と**共有する**ことができ、これによりハイブリッドアクセス(デスクトップとWeb) を実現することができます。
 
 ### ライフスパン
 
@@ -477,8 +490,5 @@ Function validateEmail() : 4D.OutgoingMessage
 
 セッショントークンのライフパンと、セッションのライフスパンの両方がどちらも失効していない場合に限り、トークンを使用してセッションを復元することができます。 それ以外の場合(セッショントークンが失効している、またはセッション自身が失効している)には、セッショントークンをもったWeb リクエストが受信されたときにゲストセッションが作成されます。
 
-:::note
 
-より詳細な情報に関しては、[Connect Your Web Apps to Third-Party Systems](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/) のblog 記事を参照して下さい。
 
-:::

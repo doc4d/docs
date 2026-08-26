@@ -45,7 +45,7 @@ Syntaxe :
 | `--webadmin-store-settings` |                                                       | Stocke la clé d'accès et les paramètres de démarrage automatique dans le fichier de paramètres courant (c'est-à-dire le fichier [`WebAdmin.4DSettings`](webAdmin.md#webadmin-settings) par défaut ou un fichier personnalisé désigné par le paramètre `--webadmin-settings-path`). Utilisez l'argument `--webadmin-store-settings` pour enregistrer ces paramètres si nécessaire                                                                                                                                                                                                                                                                                                      |
 
 
-[Diagnostic log file](debugLogFiles.md#4ddiagnosticlogtxt) (licence alert, conversion dialog, database selection, data file selection). Dans ce cas, un message d'erreur est envoyé à la fois dans le flux stderr et dans le journal d'événements système, puis l'application se ferme.
+[fichier Diagnostic log](debugLogFiles.md#4ddiagnosticlogtxt) (alerte de licence, boîte de dialogue de conversion, sélection de la base de données, sélection du fichier de données). Dans ce cas, un message d'erreur est envoyé à la fois dans le flux stderr et dans le journal d'événements système, puis l'application se ferme.
 
 ### Exemples
 
@@ -76,7 +76,7 @@ Ouvrez un paquet sur macOS :
 --args ~/Documents/myDB.4dbase
 ```
 
-Ouvrez un fichier de projet :
+Ouvrez un fichier de projet et un fichier de données :
 
 *   Sous macOS :
 
@@ -95,7 +95,7 @@ Ouvrez un fichier de projet :
 
 
 
-Ouvrez un fichier de projet et un fichier de données :
+Ouvrez un fichier de projet :
 
 *   Sous macOS :
 

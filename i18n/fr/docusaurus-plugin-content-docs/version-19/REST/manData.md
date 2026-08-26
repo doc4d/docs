@@ -22,7 +22,7 @@ Pour ajouter et modifier des entités, vous pouvez appeler [`$method=update`]($m
 
 Outre la récupération d'une seule entité dans une dataclass à l'aide de [\{dataClass\}](%7BdataClass%7D_%7Bkey%7D.html), vous pouvez également écrire une [fonction de classe](ClassFunctions.md#function-calls) qui renvoie une entity selection (ou une collection).
 
-Before returning a selection, you can also sort it by using [`$orderby`]($orderby.md) on one or more attributes (even relation attributes).
+Avant de retourner la sélection, vous pouvez également la trier en utilisant [`$orderby`]($orderby.md) sur un ou plusieurs attributs (même des attributs de relation).
 
 
 ## Parcourir les données
@@ -33,7 +33,7 @@ Ajoutez le [`$skip`]($skip.md) (pour définir avec quelle entité commencer) et 
 
 ## Créer et gérer un entity set
 
-An entity set is a collection of entities obtained through a REST request that is stored in 4D Server's cache. L'utilisation d'un entity set vous empêche de lancer continuellement des requêtes à votre application pour obtenir les mêmes résultats. L'accès à un entity set est beaucoup plus rapide et peut améliorer la vitesse de votre application.
+Un entity set est une collection d'entités obtenue par une requête REST et stockée dans le cache de 4D Server. L'utilisation d'un entity set vous empêche de lancer continuellement des requêtes à votre application pour obtenir les mêmes résultats. L'accès à un entity set est beaucoup plus rapide et peut améliorer la vitesse de votre application.
 
 Pour créer un entity set, appelez [`$method=entityset`]($method.md#methodentityset) dans votre requête REST. Par mesure de sécurité, vous pouvez également utiliser [`$savedfilter`]($savedfilter.md) et/ou [`$savedorderby`]($savedorderby.md) lorsque vous appelez [`$filter`]($filter.md) et/ou [`$orderby`]($orderby.md) afin que l'entité définie puisse être rapidement récupérée avec le même ID que précédemment, dans le cas où elle expireait ou serait supprimée du serveur.
 
@@ -77,8 +77,6 @@ Vous pouvez appeler des [fonctions de classe utilisateurs](ClassFunctions.md) OR
 
 avec des données contenues dans le corps de la requête : `["Paris"]`
 
-
-> Les appels aux méthodes projet 4D exposées en tant que service REST sont toujours pris en charge mais sont obsolètes.
 
 
 ## Sélectionner les attributs à obtenir
@@ -242,7 +240,7 @@ Si vous souhaitez enregistrer un BLOB stocké dans votre dataclass, vous pouvez 
 
 ## Récupérer une seule entité
 
-Vous pouvez utiliser la syntaxe[`\{dataClass\}:\{attribute\}(value)`](%7BdataClass%7D.html#dataclassattributevalue) lorsque vous souhaitez récupérer une seule entité. C'est particulièrement utile lorsque vous souhaitez lancer une recherche sur la clé primaire de la dataclass. Par exemple, vous pouvez écrire :
+C'est particulièrement utile lorsque vous souhaitez lancer une recherche sur la clé primaire de la dataclass. Vous pouvez utiliser la syntaxe[`\{dataClass\}:\{attribute\}(value)`](%7BdataClass%7D.html#dataclassattributevalue) lorsque vous souhaitez récupérer une seule entité. Par exemple, vous pouvez écrire :
 
  `GET  /rest/Company:companyCode("Acme001")`
  

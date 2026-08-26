@@ -3,7 +3,7 @@ id: SystemWorkerClass
 title: SystemWorker
 ---
 
-Los System workers permiten que el código 4D llame a cualquier proceso externo (un comando shell, PHP, etc.) en la misma máquina. Los trabajadores del sistema se llaman de forma asíncrona. Mediante el uso de retrollamadas, 4D hace posible la comunicación en ambos sentidos.
+Los System workers permiten que el código 4D llame a cualquier proceso externo (un comando shell, PHP, etc.) en la misma máquina. Los workers del sistema se llaman de forma asíncrona. Mediante el uso de retrollamadas, 4D hace posible la comunicación en ambos sentidos.
 
 La clase `SystemWorker` está disponible en el almacén de clases `4D`.
 
@@ -61,11 +61,14 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| Parámetros  | Tipo            |    | Descripción                                                          |
-| ----------- | --------------- |:--:| -------------------------------------------------------------------- |
-| commandLine | Text            | -> | Línea de comando a ejecutar                                          |
-| options     | Object          | -> | Parámetros worker                                                    |
-| resultado   | 4D.SystemWorker | <- | Nuevo System worker asíncrono o null si el proceso no se ha iniciado |  
+<div class="no-index">
+
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|commandLine|Text|->|Línea de comando a ejecutar|
+|options|Object|->|Parámetros del Worker|
+|resultado|4D.SystemWorker|<-|New asynchronous System worker or null if process not started|
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -265,11 +268,13 @@ Function _createFile($title : Text; $textBody : Text)
 
 
 <!-- REF #SystemWorkerClass.closeInput().Params -->
-| Parámetros | Tipo |  | Descripción                                             |
-| ---------- | ---- |::| ------------------------------------------------------- |
-|            |      |  | No requiere ningún parámetro|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+||||No requiere ningún parámetro|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -336,7 +341,7 @@ La propiedad `.currentDirectory` <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### Descripción
 
-La propiedad `.dataType` <!-- REF #SystemWorkerClass.dataType.Summary -->contiene el tipo de contenido del cuerpo de la respuesta<!-- END REF -->. Valores posibles: "text" o "blob".
+La propiedad `.dataType` <!-- REF #SystemWorkerClass.dataType.Summary -->contiene el tipo de contenido del cuerpo de la respuesta<!-- END REF -->. .
 
 Esta propiedad es **de sólo lectura**.
 
@@ -428,12 +433,14 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!-- REF #SystemWorkerClass.postMessage().Params -->
-| Parámetros  | Tipo |    | Descripción                                                         |
-| ----------- | ---- |:--:| ------------------------------------------------------------------- |
-| message     | Text | -> | Texto a escribir en el flujo de entrada (stdin) del proceso externo |
-| messageBLOB | Blob | -> | Bytes escritos en el flujo de entrada|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|message|Text|-->|Texto a escribir en el flujo de entrada (stdin) del proceso externo|
+|messageBLOB|Blob|->|Bytes a escribir en el flujo de entrada|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -481,15 +488,17 @@ La propiedad `.responseError` <!-- REF #SystemWorkerClass.responseError.Summary 
 
 
 <!-- REF #SystemWorkerClass.terminate().Params -->
-| Parámetros | Tipo |  | Descripción                                             |
-| ---------- | ---- |::| ------------------------------------------------------- |
-|            |      |  | No requiere ningún parámetro|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+||||No requiere ningún parámetro|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
-La función `.terminate()` <!-- REF #SystemWorkerClass.terminate().Summary -->The `.terminate()` function<!-- END REF -->.
+La función `.terminate()` <!-- REF #SystemWorkerClass.terminate().Summary -->La función `.terminate()`<!-- END REF -->.
 
 Esta función envía la instrucción de terminar y devolver el control al script en ejecución.
 
@@ -541,12 +550,14 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!-- REF #SystemWorkerClass.wait().Params -->
-| Parámetros | Tipo            |    | Descripción                                    |
-| ---------- | --------------- |:--:| ---------------------------------------------- |
-| timeout    | Real            | -> | Tiempo de espera (en segundos)                 |
-| Resultado  | 4D.SystemWorker | <- | Objeto SystemWorker|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|timeout|Real|->|Tiempo de espera (en segundos)|
+|Resultado|4D.SystemWorker|<-|SystemWorker object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -560,6 +571,6 @@ Durante una ejecución de `.wait()` se ejecutan las funciones de retrollamada, e
 
 Esta función devuelve el objeto SystemWorker.
 
-> This function is not necessary if you created the `SystemWorker` form a 4D worker process.
+> Esta función no es necesaria si creó el `SystemWorker` desde un proceso worker 4D.
 
 <!-- END REF -->

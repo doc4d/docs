@@ -5,13 +5,16 @@ title: WebServer
 
 A API classe `WebServer` permite que você inicie e monitore um servidor web para o aplicativo principal (host), bem como cada componente hospedado (veja o resumo [objeto Web Server](WebServer/webServerObject.md)). Essa classe está disponível no "class store" de `4D`.
 
+### Propriedades
+
+- **Streamable**: no
+- **Sharable**: no
+
 ### Objeto Web Server
 
-Os objetos servidor Web são instanciados com o comando [`WEB Server`](../commands/web-server.md).
+Os objetos servidor Web são instanciados com o comando [`WEB Server`](../commands/web-server).
 
 Eles oferecem as propriedades abaixo e funções:
-
-### Resumo
 
 |                                                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,6 +26,7 @@ Eles oferecem as propriedades abaixo e funções:
 | [<!-- INCLUDE #WebServerClass.CORSSettings.Syntax -->](#corssettings)<br/><!-- INCLUDE #WebServerClass.CORSSettings.Summary -->                                           |
 | [<!-- INCLUDE #WebServerClass.debugLog.Syntax -->](#debuglog)<br/><!-- INCLUDE #WebServerClass.debugLog.Summary -->                                                       |
 | [<!-- INCLUDE #WebServerClass.defaultHomepage.Syntax -->](#defaulthomepage)<br/><!-- INCLUDE #WebServerClass.defaultHomepage.Summary -->                                  |
+| [<!-- INCLUDE #WebServerClass.handlers.Syntax -->](#handlers)<br/><!-- INCLUDE #WebServerClass.handlers.Summary -->                                                       |
 | [<!-- INCLUDE #WebServerClass.HSTSEnabled.Syntax -->](#hstsenabled)<br/><!-- INCLUDE #WebServerClass.HSTSEnabled.Summary -->                                              |
 | [<!-- INCLUDE #WebServerClass.HSTSMaxAge.Syntax -->](#hstsmaxage)<br/><!-- INCLUDE #WebServerClass.HSTSMaxAge.Summary -->                                                 |
 | [<!-- INCLUDE #WebServerClass.HTTPCompressionLevel.Syntax -->](#httpcompressionlevel)<br/><!-- INCLUDE #WebServerClass.HTTPCompressionLevel.Summary -->                   |
@@ -46,6 +50,7 @@ Eles oferecem as propriedades abaixo e funções:
 | [<!-- INCLUDE #WebServerClass.openSSLVersion.Syntax -->](#opensslversion)<br/><!-- INCLUDE #WebServerClass.openSSLVersion.Summary -->                                     |
 | [<!-- INCLUDE #WebServerClass.perfectForwardSecrecy.Syntax -->](#perfectforwardsecrecy)<br/><!-- INCLUDE #WebServerClass.perfectForwardSecrecy.Summary -->                |
 | [<!-- INCLUDE #WebServerClass.rootFolder.Syntax -->](#rootfolder)<br/><!-- INCLUDE #WebServerClass.rootFolder.Summary -->                                                 |
+| [<!-- INCLUDE #WebServerClass.rules.Syntax -->](#rules)<br/><!-- INCLUDE #WebServerClass.rules.Summary -->                                                                |
 | [<!-- INCLUDE #WebServerClass.scalableSession.Syntax -->](#scalablesession)<br/><!-- INCLUDE #WebServerClass.scalableSession.Summary -->                                  |
 | [<!-- INCLUDE #WebServerClass.sessionCookieDomain.Syntax -->](#sessioncookiedomain)<br/><!-- INCLUDE #WebServerClass.sessionCookieDomain.Summary -->                      |
 | [<!-- INCLUDE #WebServerClass.IPAddressToListen.Syntax -->](#ipaddresstolisten)<br/><!-- INCLUDE #WebServerClass.IPAddressToListen.Summary -->                            |
@@ -133,7 +138,7 @@ Contém a <!-- REF #WebServerClass.CORSSettings.Summary -->lista dos hosts e mé
   - 192.168.\*
   - 192.168.\*:8081
   - <http://192.168.5.17:8081>
-  - <http://\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*.myDomain.com>
+  - <http://\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*.myDomain.com>
   - <http://myProject.myDomain.com>
   - \*.myDomain.com
   - myProject.myDomain.com
@@ -166,6 +171,26 @@ O status <!-- REF #WebServerClass.debugLog.Summary -->do arquivo de registro de 
 <!-- REF #WebServerClass.defaultHomepage.Syntax -->**.defaultHomepage** : Text<!-- END REF -->
 
 O <!-- REF #WebServerClass.defaultHomepage.Summary --> nome da página inicial padrão <!-- END REF --> ou "" para não enviar a página inicial personalizada.
+
+<!-- END REF -->
+
+<!-- REF WebServerClass.handlers.Desc -->
+
+## .handlers
+
+<details><summary>História</summary>
+
+| Release | Mudanças   |
+| ------- | ---------- |
+| 21      | Adicionado |
+
+</details>
+
+<!-- REF #WebServerClass.handlers.Syntax -->**.handlers** : Collection<!-- END REF -->
+
+*Propriedade apenas leitura*
+
+A <!-- REF #WebServerClass.handlers.Summary -->collection of custom HTTP handler objects<!-- END REF -->. An HTTP handler object contains a listened URL pattern, a handled verb, and the code to be called. HTTP handlers can be defined through a HTTPHandlers.json file or the *settings* parameter of the [`.start()`](#start) function. For more information, please refer to the [HTTP Request handler](../WebServer/http-request-handler.md) page.
 
 <!-- END REF -->
 
@@ -457,6 +482,26 @@ O <!-- REF #WebServerClass.rootFolder.Summary --> caminho da pasta raiz do servi
 
 <!-- END REF -->
 
+<!-- REF WebServerClass.rules.Desc -->
+
+## .rules
+
+<details><summary>História</summary>
+
+| Release | Mudanças   |
+| ------- | ---------- |
+| 21      | Adicionado |
+
+</details>
+
+<!-- REF #WebServerClass.rules.Syntax -->**.rules** : Collection<!-- END REF -->
+
+*Propriedade apenas leitura*
+
+A <!-- REF #WebServerClass.rules.Summary -->collection of rule objects currently handled to customize HTTP headers<!-- END REF -->. A rule object contains a "regexPattern" property, as well as an action name with a value. HTTP rules can be defined through a HTTPRules.json file or the *settings* parameter of the [`.start()`](#start) function. For more information, please refer to the [HTTP Rules](../WebServer/http-rules.md) page.
+
+<!-- END REF -->
+
 <!-- REF WebServerClass.scalableSession.Desc -->
 
 ## .scalableSession
@@ -557,18 +602,21 @@ O <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validação de 
 
 <!-- REF #WebServerClass.start().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo   |                             | Descrição                                           |
 | ---------- | ------ | --------------------------- | --------------------------------------------------- |
 | settings   | Object | ->                          | Configurações do servidor Web a definir no arranque |
 | Resultados | Object | <- | Estado de arranque do servidor web                  |
 
+</div>
 <!-- END REF -->
 
 A função `.start()` <!-- REF #WebServerClass.start().Summary -->inicia o servidor da Web no qual ela é aplicada<!-- END REF -->, usando as propriedades definidas no parâmetro opcional do objeto *settings*.
 
 O servidor web começa com as definições padrão definidas no ficheiro de definições do projecto ou (apenas base de dados anfitriã) usando o comando `WEB SET OPTION`. No entanto, utilizando o parâmetro *settings*, pode definir propriedades personalizadas para a sessão do servidor web.
 
-Todas as configurações dos [objetos servidor web](../commands/web-server.md) podem ser personalizadas, exceto propriedades somente leitura ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy) e [.sessionCookieName](#sessioncookiename)).
+Todas as configurações dos [objetos servidor web](../commands/web-server) podem ser personalizadas, exceto propriedades somente leitura ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy) e [.sessionCookieName](#sessioncookiename)).
 
 As configurações de sessão personalizadas serão redefinidas quando a função [`.stop()`](#stop) for chamada.
 
@@ -578,8 +626,8 @@ A função devolve um objecto que descreve o estado de lançamento do servidor W
 
 | Propriedade |                                                                                             | Tipo       | Descrição                                                                                   |
 | ----------- | ------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------- |
-| success     |                                                                                             | Parâmetros | True se o servidor web foi correctamente iniciado, False caso contrário                     |
-| errors      |                                                                                             | Collection | Pilha de erros 4D (não devolvidos se o servidor web começou com sucesso) |
+| success     |                                                                                             | Parâmetros | Verdadeiro se o servidor web foi correctamente iniciado, Falso caso contrário               |
+| errors      |                                                                                             | Collection | pilha de erros 4D (não devolvidos se o servidor web começou com sucesso) |
 |             | \[].errCode            | Number     | Código de erro 4D                                                                           |
 |             | \[].message            | Text       | Descrição do erro 4D                                                                        |
 |             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                        |
@@ -619,10 +667,13 @@ A função devolve um objecto que descreve o estado de lançamento do servidor W
 
 <!-- REF #WebServerClass.stop().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo |   | Descrição                  |
 | --------- | ---- | - | -------------------------- |
 |           |      |   | Não exige nenhum parâmetro |
 
+</div>
 <!-- END REF -->
 
 A função `.stop()` <!-- REF #WebServerClass.stop().Summary -->interrompe o servidor web no qual ele é aplicado<!-- END REF -->.
@@ -633,7 +684,7 @@ Se o servidor web foi iniciado, todas as ligações e processos web são fechado
 
 #### Exemplo
 
-Para interromper o servidor Web do banco de dados:
+Para parar o servidor Web da base de dados:
 
 ```4d
  var $webServer : 4D.WebServer
@@ -643,3 +694,4 @@ Para interromper o servidor Web do banco de dados:
 ```
 
 <!-- END REF -->
+

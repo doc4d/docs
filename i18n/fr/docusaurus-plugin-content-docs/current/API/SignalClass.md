@@ -5,28 +5,25 @@ title: Signal
 
 Les signaux sont des outils fournis par le langage 4D pour gérer les interactions et éviter les conflits entre les process dans une application multiprocessus. Les signaux vous permettent de vous assurer qu'un ou plusieurs process attendront la fin d'une tâche spécifique avant de poursuivre leur exécution. Tout process peut attendre et/ou libérer un signal.
 
-> Les sémaphores peuvent également être utilisés pour gérer les interactions. Les sémaphores permettent de s'assurer que deux ou plusieurs process ne modifient pas la même ressource (fichier, enregistrement...) en même temps. Seul le process qui a posé le sémaphore peut le retirer.
+:::note
+
+Les [sémaphores](../Develop/processes.md#semaphores) peuvent également être utilisés pour gérer les interactions. Les sémaphores permettent de s'assurer que deux ou plusieurs process ne modifient pas la même ressource (fichier, enregistrement...) en même temps. Seul le process qui a posé le sémaphore peut le retirer.
+
+:::
 
 ### Objet signal
 
 Un signal est un objet partagé qui doit être passé comme paramètre aux commandes qui appellent ou créent des workers ou des process.
 
-Un objet `4D.Signal` contient les méthodes et propriétés intégrées suivantes :
-
-- [`.wait()`](#wait)
-- [`.trigger()`](#trigger)
-- [`.signaled`](#signaled)
-- [`.description`](#description).
-
 Tout worker/process appelant la méthode `.wait()` suspend son exécution jusqu'à ce que la propriété `.signaled` soit mise à true. Lorsque vous êtes en attente d'un signal, le process appelant n'utilise pas de CPU. Cela peut être très intéressant pour les performances des applications multiprocess. La propriété `.signaled` devient est mise à True lorsqu'un worker/processus appelle la méthode `.trigger()`.
 
 A noter que pour éviter les situations de blocage, la méthode `.wait()` peut également revenir après qu'un délai d'attente défini ait été atteint.
 
-Les objets Signal sont créés avec la commande [`New signal`](../commands/new-signal.md).
+Les objets Signal sont créés avec la commande [`New signal`](../commands/new-signal).
 
 ### Travailler avec des signaux
 
-Dans 4D, vous créez un nouvel objet signal en appelant la commande [`New signal`](../commands/new-signal.md). Une fois créé, ce signal doit être passé en paramètre aux commandes `New process` ou `CALL WORKER` afin qu'elles puissent le modifier lorsqu'elles ont terminé la tâche que vous souhaitez attendre.
+Dans 4D, vous créez un nouvel objet signal en appelant la commande [`New signal`](../commands/new-signal). Une fois créé, ce signal doit être passé en paramètre aux commandes `New process` ou `CALL WORKER` afin qu'elles puissent le modifier lorsqu'elles ont terminé la tâche que vous souhaitez attendre.
 
 - `signal.wait()` doit être appelé par le worker/process qui a besoin qu'un autre worker/process termine une tâche pour pouvoir continuer.
 - `signal.trigger()` doit être appelé par le worker/process qui a terminé son exécution afin de libérer tous les autres.
@@ -148,10 +145,13 @@ Cette propriété est en **lecture seule**.
 
 <!-- REF #SignalClass.trigger().Params -->
 
+<div class="no-index">
+
 | Paramètres | Type |     | Description                 |
 | ---------- | ---- | :-: | --------------------------- |
 |            |      |     | Ne requiert aucun paramètre |
 
+</div>
 <!-- END REF -->
 
 #### Description
@@ -178,11 +178,14 @@ Si le signal est déjà dans l'état signaled (i.e., la propriété `signaled` e
 
 <!-- REF #SignalClass.wait().Params -->
 
+<div class="no-index">
+
 | Paramètres | Type    |                             | Description                                         |
 | ---------- | ------- | --------------------------- | --------------------------------------------------- |
 | timeout    | Real    | ->                          | Délai d'attente maximum en secondes pour la réponse |
 | Résultat   | Boolean | <- | Etat de la propriété `.signaled`                    |
 
+</div>
 <!-- END REF -->
 
 #### Description
@@ -207,3 +210,4 @@ La fonction retourne la valeur de la propriété `.signaled`.
 > L'état d'un process qui attend un signal est `En attente d'un marqueur interne`.
 
 <!-- END REF -->
+

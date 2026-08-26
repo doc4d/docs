@@ -15,8 +15,8 @@ Las acciones asignadas a los botones pueden provenir de [acciones estándar](pro
 
 Los botones con acciones estándar se atenúan cuando es apropiado durante la ejecución del formulario. Por ejemplo, si se muestra el primer registro de una tabla, un botón con la acción estándar `firstRecord` aparecería atenuado.
 
-Si desea que un botón realice una acción que no está disponible como acción estándar, deje vacío el campo de acción estándar y escriba un [método de objeto para especificar la acción del botón](../FormObjects/properties_Action.md#method).
-Normalmente, se activaría el evento `On Clicked` y el método se ejecutaría sólo cuando se presiona el botón. Puede asociar un método a cualquier botón.
+Normalmente, se activaría el evento `On Clicked` y el método se ejecutaría sólo cuando se presiona el botón.
+Si desea que un botón realice una acción que no está disponible como acción estándar, deje vacío el campo de acción estándar y escriba un [método de objeto para especificar la acción del botón](../FormObjects/properties_Action.md#method). Puede asociar un método a cualquier botón.
 
 La [variable](properties_Object.md#variable-or-expression) asociada a un botón se define automáticamente a **0** cuando el formulario se ejecuta por primera vez en modo Diseño o Aplicación. Cuando el usuario hace clic en un botón, su variable se define como **1**.
 
@@ -202,7 +202,7 @@ El estilo de botón OS X Textured es casi idéntico al estilo [Bevel](#bevel) pe
 
 Por defecto, el estilo OS X Textured aparece como:
 
-- *Windows* - un botón sistema estándar con un fondo gris claro con una etiqueta en el centro. Tiene la particularidad de ser transparente en Vista.
+- *Windows* - un botón sistema estándar con un fondo gris claro con una etiqueta en el centro.
 
 ![](../assets/en/FormObjects/button_osxtextured.png)
 
@@ -277,11 +277,13 @@ El estilo del botón Ayuda puede utilizarse para mostrar un botón de ayuda est�
 
 ### Círculo
 
-El estilo de botón Círculo aparece como un botón sistema circular. Este estilo de botón está diseñado para macOS.
+El estilo de botón Círculo aparece como un botón sistema circular.
 
 ![](../assets/en/FormObjects/button_circleM.png)
 
-En Windows, es idéntico al estilo "Ninguno" (no se tiene en cuenta el círculo del fondo).
+Este estilo de botón es compatible con macOS y [el tema Fluent UI Windows](../FormEditor/forms.md#enabling-the-fluent-ui-rendering).
+
+En el tema Windows Classic UI, este estilo no es compatible.
 
 #### Ejemplo JSON:
 
@@ -334,3 +336,7 @@ Existen propiedades específicas adicionales, dependiendo del [estilo-de-botón]
 
 - Personalizado: [Ruta de fondo](properties_TextAndPicture.md#background-pathname) - [Margen horizontal](properties_TextAndPicture.md#horizontalmargin) - [Desplazamiento del ícono](properties_TextAndPicture.md#icon-offset) - [Margen vertical](properties_TextAndPicture.md#verticalmargin)
 - Plano, Regular: [Botón por defecto](properties_Appearance.md#default-button)
+
+## Eventos soportados
+
+[On Alternative Click](../Events/onAlternativeClick.md) - [On Begin Drag Over](../Events/onBeginDragOver.md) - [On Clicked](../Events/onClicked.md) - [On Double Clicked](../Events/onDoubleClicked.md) - [On Drag Over](../Events/onDragOver.md) - [On Drop](../Events/onDrop.md) - [On Getting focus](../Events/onGettingFocus.md) - [On Header](../Events/onHeader.md) - [On Load](../Events/onLoad.md) - [On Long Click](../Events/onLongClick.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Mouse Enter](../Events/onMouseEnter.md) - [On Mouse Leave](../Events/onMouseLeave.md) - [On Mouse Move](../Events/onMouseMove.md) - [On Printing Break](../Events/onPrintingBreak.md) - [On Printing Detail](../Events/onPrintingDetail.md) - [On Printing Footer](../Events/onPrintingFooter.md) - [On Unload](../Events/onUnload.md) - [On Validate](../Events/onValidate.md)

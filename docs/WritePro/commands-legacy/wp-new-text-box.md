@@ -5,14 +5,16 @@ slug: /WritePro/commands/wp-new-text-box
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP New text box.Syntax-->**WP New text box** ( *wpDoc* ; *pageNum* ) : Object<!-- END REF-->
+<!--REF #_command_.WP New text box.Syntax-->**WP New text box** ( *wpDoc* : Object ; *pageNum* : Real ) : Object<!-- END REF-->
 <!--REF #_command_.WP New text box.Params-->
+<div class="no-index">
+
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | wpDoc | Object | &#8594;  | 4D Write Pro document |
-| pageNum | Number | &#8594;  | Page number where to anchor the text box |
+| pageNum | Real | &#8594;  | Page number where to anchor the text box |
 | Function result | Object | &#8592; | Text box object |
-
+</div>
 <!-- END REF-->
 
 *This command is not thread-safe, it cannot be used in preemptive code.*
@@ -22,7 +24,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.WP New text box.Summary-->The **WP New text box** command creates and returns a new text box object in the page *pageNum* of *wpDoc*.<!-- END REF-->
 
-**Note:** For more information on text boxes, please refer to the *Handling text boxes* paragraph.
+**Note:** For more information on text boxes, please refer to the [*Text boxes*](../text-boxes) page.
 
 In the *wpDoc* parameter, pass a 4D Write Pro document. 
 
@@ -81,9 +83,9 @@ In a template of a letter, you want to add a text box to display the address of 
  WP SET ATTRIBUTES($textBox;wk vertical align;wk center)
  
   // #3: define the formulas inside the text box
- WP INSERT FORMULA($textBox;Formula(This.data.fullName);wk append)
+ WP Insert formula($textBox;Formula(This.data.fullName);wk append)
  WP INSERT BREAK($textBox;wk paragraph break;wk append)
- WP INSERT FORMULA($textBox;Formula(This.data.fullAddress);wk append)
+ WP Insert formula($textBox;Formula(This.data.fullAddress);wk append)
  
   // #4: Style the content of the text box
  WP SET ATTRIBUTES($textBox;wk font;"Arial";wk font bold;wk true;wk font size;"18pt")

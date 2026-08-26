@@ -64,7 +64,7 @@ Spécifiez le type d'objet, puis entre accolades, déclarez le(s) style(s) à ap
 
 Dans l'exemple suivant, tous les objets du type *bouton* afficheront du texte dans la police Helvetica Neue, d'une taille de 20 pixels :
 
-```
+```css
 button {
     font-family: Helvetica Neue;
     font-size: 20px;
@@ -73,7 +73,7 @@ button {
 
 Pour appliquer le même style à plusieurs types d’objets, spécifiez les types d'objets séparés par une "," puis, entre accolades, déclarez le(s) style(s) à appliquer :
 
-```
+```css
 text, input {
   text-align: left;
   stroke: grey;
@@ -94,7 +94,7 @@ Le nom de l'objet correspond à la propriété JSON [object name](../FormObjects
 
 Dans l'exemple suivant, le texte de l'objet portant le nom "okButton" sera affiché dans la police Helvetica Neue, avec une taille de 20 pixels :
 
-```
+```css
 #okButton {
     font-family: Helvetica Neue;
     font-size: 20px;
@@ -109,7 +109,7 @@ Vous pouvez spécifier les classes à utiliser avec un caractère "." suivi du n
 
 Dans l'exemple suivant, le texte de tous les objets de la classe `okButtons` sera affiché dans la police Helvetica Neue, avec une taille de 20 pixels, alignée au centre :
 
-```
+```css
 .okButtons {
     font-family: Helvetica Neue;
     font-size: 20px;
@@ -119,7 +119,7 @@ Dans l'exemple suivant, le texte de tous les objets de la classe `okButtons` ser
 
 Pour indiquer qu'un style doit être appliqué uniquement à des objets de type différent, spécifiez le type suivi de "." et du nom de la classe, puis déclarez entre accolades le(s) style(s) à appliquer.
 
-```
+```css
 text.center {
   text-align: center;
   stroke: red;
@@ -128,7 +128,7 @@ text.center {
 
 Dans la description du formulaire 4D, vous associez un nom de classe à un objet à l'aide de l'attribut [CSS Class](../FormObjects/properties_Object.md#css-class). Cet attribut contient un ou plusieurs noms de "class", séparés par un espace :
 
-```
+```css
 class: "okButtons important"       
 ```
 
@@ -140,7 +140,7 @@ Indiquez qu'un style doit s'appliquer à tous les objets de formulaire avec le c
 
 Dans l'exemple suivant, tous les objets auront un fond gris :
 
-```
+```css
 * {
   fill: gray;
 }
@@ -165,7 +165,7 @@ Spécifiez l'attribut entre parenthèses, puis entre accolades, déclarez le(s) 
 
 Tous les objets ayant l'attribut `borderStyle` auront des lignes violettes :
 
-```
+```css
 [borderStyle]
 {
      stroke: purple;
@@ -174,7 +174,7 @@ Tous les objets ayant l'attribut `borderStyle` auront des lignes violettes :
 
 Tous les objets de type texte ayant un attribut text dont la valeur est "Hello" auront des lettres bleues :
 
-```
+```css
 text[text=Hello]
 {
      stroke: blue;
@@ -183,7 +183,7 @@ text[text=Hello]
 
 Tous les objets ayant un attribut text dont la valeur est "Hello" auront des traits bleus :
 
-```
+```css
 [text~=Hello]
 {
      stroke: blue;
@@ -193,7 +193,7 @@ Tous les objets ayant un attribut text dont la valeur est "Hello" auront des tra
 
 Tous les objets de type texte ayant un attribut text dont la valeur commence par "Hello" auront des lettres jaunes :
 
-```
+```css
 text[text|=Hello]
 {
      stroke: yellow;
@@ -206,26 +206,28 @@ text[text|=Hello]
 
 ### Media Queries
 
-Les Media queries sont utilisées pour appliquer des schémas de couleurs à une application.
+Les requêtes de média vous permettent d'appliquer des styles en fonction de conditions spécifiques. 4D prend en charge les requêtes média pour les **palettes de couleurs** et les **thèmes de plateforme**.
 
 Une media query est composée d'une fonctionnalité média et d'une valeur (`<fonctionnalité média>:<valeur>`).
 
-Fonctionnalités média disponibles :
+Fonctionnalités et valeurs disponibles pour les médias :
 
-- `prefers-color-scheme`
+| Fonctionnalités des médias | Valeurs                                                                                                  | Description                                                                                                                                                                           |
+| -------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prefers-color-scheme`     | <ul><li>**light**</li><li>**dark**</li></ul>                                                             | Schéma de couleurs à utiliser                                                                                                                                                         |
+| `form-theme`               | <ul><li>**fluent-ui**</li><li>**win-classic**</li><li>**liquid-glass**</li><li>**mac-classic**</li></ul> | Thème de plateforme à utiliser. Pour plus d'informations sur le thème **fluent-ui**, reportez-vous à [cette section](./forms.md#fluent-ui-rendering). |
 
-Expressions de fonctionnalité média disponibles :
+:::note
 
-- **light**<br/>Pour utiliser un schéma de couleur clair
-- **dark**<br/>Pour utiliser un schéma de couleur sombre
+Les schémas de couleurs ne sont pas prises en charge avec le thème de plateforme **win-classic**.
 
-> Les schémas de couleurs sont pris en charge sur macOS uniquement.
+:::
 
-##### Exemple
+##### Exemple 1
 
 Cette CSS définit une combinaison de couleurs pour le texte et l'arrière-plan du texte dans le schéma clair (par défaut) et une autre combinaison lorsque le schéma sombre est sélectionné :
 
-```
+```css
 @media (prefers-color-scheme: light) {
  .textScheme {
    fill: LightGrey;
@@ -239,6 +241,39 @@ Cette CSS définit une combinaison de couleurs pour le texte et l'arrière-plan 
     stroke: LightGrey;
   }
 }
+```
+
+##### Exemple 2
+
+```css
+/* Style par défaut (tous les thèmes et modes) */
+.textLabel {
+    fontFamily: "Segoe UI";
+}
+ 
+/* Thème Fluent UI */
+@media (form-theme: fluent-ui) {
+    .textLabel {
+        stroke: #2A2A2A;
+        fontSize: 14px;
+    }
+ 
+    /* mode sombre */
+    @media (prefers-color-scheme: dark) {
+        .textLabel {
+            stroke: #E0E0E0;
+        }
+    }
+}
+ 
+/* Thème classique de Windows */
+@media (form-theme: win-classic) {
+    .textLabel {
+        stroke: #000000;
+        fontSize: 12px;
+    }
+}
+
 ```
 
 ### Attributs d'objets
@@ -270,13 +305,17 @@ Les attributs répertoriés ci-dessous peuvent accepter le nom 4D ou le nom CSS.
 | `textDecoration` | `text-decoration`  |
 | `verticalAlign`  | `vertical-align`   |
 
-> Les valeurs spécifiques à 4D (*par exemple*, `sunken`) ne sont pas prises en charge lors de l'utilisation de noms d'attribut CSS.
+:::note
+
+Les valeurs spécifiques à 4D (*par exemple*, `sunken`) ne sont pas prises en charge lors de l'utilisation de noms d'attribut CSS.
+
+:::
 
 #### Valeurs d'attributs spécifiques
 
 - Pour les attributs `icon`, `picture`, et `customBackgroundPicture` qui prennent en charge un chemin vers une image, la syntaxe est la suivante :
 
-```
+```css
 icon: url("/RESOURCES/Images/Buttons/edit.png"); /* chemin absolu */
 icon: url("edit.png"); /* chemin relatif vers le fichier du formulaire */
 ```
@@ -323,13 +362,13 @@ A l'exécution, 4D hiérarchise automatiquement les feuilles de style dans l'ord
 
 - un fichier pour les deux plates-formes :
 
-```
+```json
 "css": "<path>" 
 ```
 
 - ou une liste de fichiers pour les deux plates-formes :
 
-```
+```json
 "css": [
      "<path1>",
      "<path2>" 
@@ -338,17 +377,21 @@ A l'exécution, 4D hiérarchise automatiquement les feuilles de style dans l'ord
 
 - ou une liste de fichiers par plate-forme :
 
-```
+```json
  "css": [
         {"path": "<path>", "media": "mac"},
         {"path": "<path>", "media": "windows"},
     ],
 ```
 
-> Les chemins de fichiers peuvent être relatifs ou absolus.
->
-> - Les chemins relatifs sont résolus par rapport au fichier de description de formulaire JSON.
-> - Pour des raisons de sécurité, seuls les chemins filesystem sont acceptés pour les chemins absolus. (*ex :*, "/RESOURCES", "/DATA")
+:::note
+
+Les chemins de fichiers peuvent être relatifs ou absolus.
+
+- Les chemins relatifs sont résolus par rapport au fichier de description de formulaire JSON.
+- Pour des raisons de sécurité, seuls les [chemins du système de fichiers](../Concepts/paths.md#filesystem-pathnames) sont acceptés pour les chemins absolus (*par exemple*, "/RESOURCES", "/DATA").
+
+:::
 
 ## Voir également
 

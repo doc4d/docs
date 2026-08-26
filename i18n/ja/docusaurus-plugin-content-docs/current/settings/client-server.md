@@ -18,17 +18,17 @@ title: クライアント-サーバーページ
 
 :::note
 
-この設定を変更した場合、変更を反映するためサーバデータベースを再起動する必要があります。
+この設定を変更した場合、変更を反映するためサーバーデータベースを再起動する必要があります。
 
 :::
 
 #### 公開名
 
-This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Opening a remote project](../Desktop/clientServer.md#opening-a-remote-project) paragraph). デフォルトで 4D Server はプロジェクトファイル名を使用します。 これを好きな名前に変更できます。
+このオプションでは、4D Server データベースの公開名を変更できます。この名前は接続ダイアログボックスの **利用可能** ページに表示されます ([リモートプロジェクトを開く](../Desktop/clientServer.md#リモートプロジェクトを開く) 参照)。 デフォルトで 4D Server はプロジェクトファイル名を使用します。 これを好きな名前に変更できます。
 
 :::note
 
-このパラメーターはカスタムのクライアント-サーバーアプリケーションでは使用されません。 クライアントアプリケーションは接続ダイアログを経由せずにサーバーに直接接続します。 しかしエラーが発生すると、このダイアログが表示されます。この場合、サーバーアプリケーションの公開名はコンパイルされたプロジェクトの名前です。
+このパラメーターはカスタムのクライアント-サーバーアプリケーションでは使用されません。 クライアントアプリケーションは接続ダイアログを経由せずにサーバーに直接接続します。 しかしエラーが発生すると、このダイアログが表示されます。 この場合、サーバーアプリケーションの公開名はコンパイルされたプロジェクトの名前です。
 
 :::
 
@@ -36,7 +36,7 @@ This option lets you change the publication name of a 4D Server database, *i.e.*
 
 このオプションで、4D Server がデータベースを公開する TCPポート番号を変更できます。 この情報は、プロジェクト及び各クライアントマシンに格納されます。 4D Server とリモートモードの 4D が使用するデフォルトの TCPポート番号は 19813 です。
 
-TCPプロトコルを使用して、1台のマシン上で複数の 4Dアプリケーションを同時に使用したい場合にこの値の変更が必要です。この場合、アプリケーションごとに異なるポート番号を割り当てなければなりません。
+TCPプロトコルを使用して、1台のマシン上で複数の 4Dアプリケーションを同時に使用したい場合にこの値の変更が必要です。 この場合、アプリケーションごとに異なるポート番号を割り当てなければなりません。
 4D Server または 4D からこの値を変更すると、データベースに接続しているすべての 4Dマシンに変更が通知されます。
 
 接続していないクライアントを更新するには、次回の接続時に接続ダイアログボックスの **カスタム** ページにて、サーバーマシンの IPアドレスに続けてコロン、そして新しいポート番号を入力します。 たとえば、新しいポート番号が 19888 あるとき:
@@ -56,31 +56,34 @@ TCPプロトコルを使用して、1台のマシン上で複数の 4Dアプリ�
 
 #### ドメインサーバーによるユーザーの認証
 
-このオプションは Windows上の 4D Server データベースにおいて SSO (*Single Sign On*) 機能の実装を可能にします。 このオプションを有効にすると、4D はバックグラウンドで Windows ドメインサーバーの Active Directory に接続し、提供されている認証トークンを取得します。 This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv20/4D/20/Single-Sign-On-SSO-on-Windows.300-6330537.en.html) section.
+このオプションは Windows上の 4D Server データベースにおいて SSO (*Single Sign On*) 機能の実装を可能にします。 このオプションを有効にすると、4D はバックグラウンドで Windows ドメインサーバーの Active Directory に接続し、提供されている認証トークンを取得します。 This option is described in the [Single Sign On (SSO) on Windows](../server/sso.md) page.
 
 #### サービスプリンシパル名 (SPN)
 
-Single Sign On (SSO) が有効になっている場合 (上述参照)、認証プロトコルにケルベロスを使用するには、このフィールドを設定する必要があります。 This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv20/4D/20/Single-Sign-On-SSO-on-Windows.300-6330537.en.html) section.
+Single Sign On (SSO) が有効になっている場合 (上述参照)、認証プロトコルにケルベロスを使用するには、このフィールドを設定する必要があります。 This option is described in the [Enablig Kerberos](../server/sso.md#enabling-kerberos) section.
 
 #### ネットワークレイヤー
 
-ここでは、ドロップダウンメニューにて 3つのネットワークオプションから選択できます: **Legacy**、**ServerNet** 、**QUIC** (プロジェクトモードのみ)。ネットワークレイヤーは、4D Server とリモートの 4Dマシン (クライアント) 間の通信を管理するのに使用されます。
+このドロップダウンボックスには利用可能なネットワークレイヤーが格納されており、これを使用して4D Server とリモート4D マシン(クライアント)間での通信を管理することができます。
 
-- **旧式**: v15以前に作成されたデータベースとの互換性を確保するため、この旧式ネットワークレイヤーは引き続きサポートされています。 This network layer can also be enabled by programming using the [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md) command.
-- **ServerNet** (デフォルト): サーバーの ServerNet ネットワークレイヤーを有効にします (4D 15 以降で利用可能)。
-- **QUIC** (プロジェクトモードでのみ利用可能): サーバー上で QUICネットワークレイヤーを有効にします。
+- **QUIC** (プロジェクトモードのみ): サーバー上でQUIC ネットワークレイヤーを有効にします。
 
-  **注**:
+  **QUIC に関する注意点**:
 
-  - Selecting this option overrides the Use legacy network layer option in case it has been set using the [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md) command.
-  - You can know if a 4D application is running with a QUIC network layer using the [Application info](../commands-legacy/application-info.md) command.
+  - [`Application info`](../commands/application-info) コマンドを使用することで、4D アプリケーションがQUIC ネットワークレイヤーを実行中かどうかを知ることができます。
   - QUIC は UDPプロトコルを使用するため、ネットワークのセキュリティ設定で UDP が許可されている必要があります。
-  - アプリケーションサーバーと DB4Dサーバーの両方で、QUIC は自動的にポート19813 に接続します。
+  - QUIC は、[アプリケーションサーバーおよびDB4D サーバー](#4d-server-とポート番号) の両方においてポート19813 番へと自動的に接続します。
   - QUICレイヤーオプションを選択すると:
-    - ドロップダウンメニューの隣に、ベータ版である旨のメッセージと警告アイコンが表示されます。
-    - [Client-server Connections Timeout settings](#client-server-connections-timeout) are hidden
-    - The [Encrypt Client-Server communication checkbox](#encrypt-client-server-communications) is hidden (QUIC communications are always in TLS, whatever your secured mode is.).
-  - **互換性**: QUICネットワークレイヤーに切り替えるには、まずクライアント/サーバーアプリケーションを 4D v20以上で運用する必要があります。
+    - [クライアント/サーバー接続タイムアウト](#クライアントサーバー接続タイムアウト) の設定は非表示になります。
+    - [クライアント-サーバー通信の暗号化](#クライアント-サーバー通信の暗号化) チェックボックスは非表示になります (セキュアモードに関わらず、QUIC 通信は常に TLS です)。
+  - **互換性**: QUICネットワークレイヤーに切り替えるには、まずクライアント/サーバーアプリケーションを 4D 20以上で運用する必要があります。
+- **ServerNet** (バイナリーデータベースでのみ利用可能なオプション): サーバー上でServerNet レイヤーを有効化します。
+
+:::info
+
+プロジェクトにおいては、QUIC ネットワークレイヤーの使用が **推奨されています**。
+
+:::
 
 :::note
 
@@ -88,7 +91,21 @@ Single Sign On (SSO) が有効になっている場合 (上述参照)、認証�
 
 :::
 
+:::tip 関連したblog 記事
+
+[QUIC Network Layer is Production Ready!](https://blog.4d.com/quic-network-layer-is-production-ready/)  
+[QUIC network layer: Automatic update and sleep mode](https://blog.4d.com/quic-network-layer-automatic-update-and-sleep-mode/)  
+[Work and Move with QUIC and Network Switching](https://blog.4d.com/work-and-move-with-quic-and-network-switching/)
+
+:::
+
 #### クライアント/サーバー接続タイムアウト
+
+:::note
+
+このオプションは、 [QUIC](#ネットワークレイヤー) ネットワークレイヤーが選択されている場合には利用できません。
+
+:::
 
 このサーモメーターで、4D Server とクライアントマシン間の (一定時間活動がないときに接続を閉じる) タイムアウトを設定できます。 無制限オプションは、タイムアウトを設定しないことを意味します。 このオプションが選択されると、クライアントのアクティビティコントロールはおこなわれません。
 
@@ -98,19 +115,25 @@ Single Sign On (SSO) が有効になっている場合 (上述参照)、認証�
 
 #### Execute On Clientのために起動時にクライアント登録
 
-このオプションが選択されていると、データベースに接続するすべての 4Dリモートマシン上でメソッドをリモート実行できます。 This mechanism is detailed in the section [Stored procedures on client machines](https://doc.4d.com/4Dv20/4D/20/Stored-procedures-on-client-machines.300-6330550.en.html).
+このオプションが選択されていると、データベースに接続するすべての 4Dリモートマシン上でメソッドをリモート実行できます。 This mechanism is detailed in the section [Stored procedures on client machines](../Desktop/clientServer.md#stored-procedures-on-client-machines).
 
 #### クライアント-サーバー通信の暗号化
 
-このオプションを使用して、サーバーマシンと 4Dリモートマシン間通信の保護モードを有効にできます。 This option is detailed in the [Encrypting Client/Server Connections](https://doc.4d.com/4Dv20/4D/20/Encrypting-ClientServer-Connections.300-6330533.en.html) section.
+:::note
+
+このオプションは、 [QUIC](#ネットワークレイヤー) ネットワークレイヤーオプションが選択されている場合には利用できません。 QUIC communications are always in TLS, whatever your secured mode is.
+
+:::
+
+This option activates the [secured mode for communications](../Admin/tls.md#enabling-tls-with-the-other-servers) between the server machine and the 4D remote machines with ServerNet netword layer.
 
 #### セッション中に "Resources" フォルダーを更新
 
 この設定は、データベースの **Resources** フォルダーがセッション中に更新された場合について、接続中のクライアントマシンにおける同フォルダーのローカルインスタンスの更新モードを包括的に指定します (**Resources** フォルダーは、セッションが開かれるたびにリモートマシン上で自動的に同期されます)。 3つの選択肢があります:
 
-- **しない**: ローカルの **Resources** フォルダーはセッション中に更新されません。 サーバーから送信される通知は無視されます。 The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv20/4D/20.2/Using-the-Resources-explorer.300-6750254.en.html)).
+- **しない**: ローカルの **Resources** フォルダーはセッション中に更新されません。 サーバーから送信される通知は無視されます。 **ローカルリソースを更新** アクションメニューコマンド [(リソースエクスプローラーを使用する](https://doc.4d.com/4Dv20/4D/20.2/Using-the-Resources-explorer.300-6750254.ja.html) 参照) を使用すれば、ローカルの **Resources**フォルダーを手動で更新することができます。
 - **常に**: セッション中にサーバーから通知が送信されると、ローカルの **Resources** フォルダーは自動で同期されます。
-- **その都度指定**: サーバーから通知を受け取ると、クライアントマシン上でダイアログボックスが表示されます。 ユーザーはローカルの **Resources** フォルダーの同期を受け入れ、あるいは拒否できます。\ **Resources** フォルダーは、データベースインタフェースで使用されるカスタムファイルを格納しています (翻訳ファイルやピクチャーなど)。 このフォルダーの内容が更新されたときには、自動又は手動メカニズムを使用して各クライアントに通知できます。 For more information, please refer to the [Managing the Resources folder](https://doc.4d.com/4Dv20/4D/20/Managing-the-Resources-folder.300-6330534.en.html) section.
+- **その都度指定**: サーバーから通知を受け取ると、クライアントマシン上でダイアログボックスが表示されます。 ユーザーはローカルの **Resources** フォルダーの同期を受け入れ、あるいは拒否できます。\ **Resources** フォルダーは、データベースインターフェースで使用されるカスタムファイルを格納しています (翻訳ファイルやピクチャーなど)。 このフォルダーの内容が更新されたときには、自動又は手動メカニズムを使用して各クライアントに通知できます。 For more information, please refer to the [Managing the Resources folder](../Desktop/clientServer.md#managing-the-resources-folder) section.
 
 ## IP設定ページ
 
@@ -129,4 +152,22 @@ Single Sign On (SSO) が有効になっている場合 (上述参照)、認証�
   - 拒否 192.168.\* (192.168 で始まるアドレスを拒否)
   - 許可 \* (他のアドレスはすべて許可)
 
-デフォルトでは、4D Server にアクセス制限はありません。最初の行には \* (すべてのアドレス) に対する許可ルールが設定されています。
+デフォルトでは、4D Server にアクセス制限はありません。 最初の行には \* (すべてのアドレス) に対する許可ルールが設定されています。
+
+### Support of IPv6
+
+4D application server supports IPv6 address notation. Support of IPv6 is transparent for users and 4D developers: 4D Server accepts either IPv6 or IPv4 connections without distinction. The following table lists supported combinations:
+
+|                     | 4D remote IPv4 only | 4D remote IPv6 only | 4D remote both |
+| ------------------- | ------------------- | ------------------- | -------------- |
+| 4D Server IPv4 only | IPv4                | *サポートされていません*       | IPv4           |
+| 4D Server IPv6 only | *サポートされていません*       | IPv6                | IPv6           |
+| 4D Server both      | IPv4                | IPv6                | IPv6           |
+
+For detailed information about IPv6, please refer to the [RFC 2460 specification](https://datatracker.ietf.org/doc/html/rfc2460).
+
+:::note 互換性
+
+IPv6 support is only available with the ServerNet and QUIC [network layers](#network-layer).
+
+:::

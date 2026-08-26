@@ -399,14 +399,16 @@ Cette propriété est en **lecture seule**.
 
 
 <!-- REF #directory.copyTo().Params -->
-| Paramètres         | Type      |    | Description                                        |
-| ------------------ | --------- |:--:| -------------------------------------------------- |
-| dossierDestination | 4D.Folder | -> | Dossier de destination                             |
-| nouveauNom         | Text      | -> | Nom de la copie                                    |
-| overwrite          | Integer   | -> | `fk overwrite` pour écraser les éléments existants |
-| Résultat           | 4D.Folder | <- | Dossier copié|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|destinationFolder |4D.Folder |->|Dossier de destination|
+|newName|Text|->|Nom de la copie|
+|overwrite|Integer|->|`fk overwrite` pour remplacer les éléments existants|
+|Résultat|4D.Folder|<-|Copied file or folder|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -454,12 +456,14 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 
 
 <!-- REF #directory.file().Params -->
-| Paramètres | Type    |    | Description                                                       |
-| ---------- | ------- | -- | ----------------------------------------------------------------- |
-| path       | Text    | -> | Chemin POSIX relatif                                              |
-| Résultat   | 4D.File | <- | Objet `File` (null si chemin invalide)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|
+|Path|Text|->|Chemin d'accès POSIX relatif du fichier |
+|Résultat|4D.File|<-|`File` object (null if invalid path)|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -496,19 +500,21 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 
 <!-- REF #directory.files().Params -->
-| Paramètres | Type       |    | Description                                                   |
-| ---------- | ---------- | -- | ------------------------------------------------------------- |
-| options    | Integer    | -> | Options de liste de fichiers                                  |
-| Résultat   | Collection | <- | Collection d'objets dossier enfant|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|
+|options|Integer|->|Options de la liste des fichiers|
+|Résultat|Collection|<-|Collection of children file objects|
+</div>
+<!-- END REF -->
 
 #### Description
 
 La fonction `.files()` retourne <!-- REF #directory.files().Summary -->une collection des objets `File` contenus dans le dossier<!-- END REF -->.
 > Les alias ou les liens symboliques ne sont pas résolus.
 
-Par défaut, si vous omettez le paramètre *options*, seuls les fichiers à la racine du dossier sont retournés dans la collection, ainsi que les fichiers et dossiers invisibles. Vous pouvez modifier cela en passant, dans le paramètre *options* parameter, une ou plusieurs des constantes suivantes :
+Par défaut, si vous omettez le paramètre *options*, seuls les fichiers au premier niveau du dossier sont retournés dans la collection, y compris les fichiers invisibles. Vous pouvez modifier cela en passant, dans le paramètre *options* parameter, une ou plusieurs des constantes suivantes :
 
 | Constante             | Valeur | Commentaire                                                                            |
 | --------------------- | ------ | -------------------------------------------------------------------------------------- |
@@ -559,12 +565,14 @@ Vous souhaitez lire tous les fichiers qui ne sont pas invisibles dans le dossier
 
 
 <!-- REF #directory.folder().Params -->
-| Paramètres | Type      |    | Description                                                        |
-| ---------- | --------- | -- | ------------------------------------------------------------------ |
-| path       | Text      | -> | Chemin POSIX relatif                                               |
-| Résultat   | 4D.Folder | <- | Objet dossier (null si *path* invalide)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|
+|Path|Text|->|Chemin d'accès POSIX relatif du fichier |
+|Résultat|4D.Folder|<-|Created folder object (null if invalid *path*)|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -601,12 +609,14 @@ Un objet `Folder` object ou null si *path* est invalide.
 
 
 <!-- REF #directory.folders().Params -->
-| Paramètres | Type       |    | Description                                                   |
-| ---------- | ---------- | -- | ------------------------------------------------------------- |
-| options    | Integer    | -> | Options de liste des dossiers                                 |
-| Résultat   | Collection | <- | Collection d'objets dossier enfant|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|
+|options|Integer|->|Options de la liste des dossiers|
+|Résultat|Collection|<-|Collection of children folder objects|
+</div>
+<!-- END REF -->
 
 #### Description
 
@@ -650,12 +660,14 @@ Vous souhaitez obtenir la collection de tous les dossiers et sous-dossiers du do
 
 
 <!-- REF #directory.getIcon().Params -->
-| Paramètres | Type    |    | Description                                    |
-| ---------- | ------- | -- | ---------------------------------------------- |
-| size       | Integer | -> | Longueur du côté de l'image retournée (pixels) |
-| Résultat   | Picture | <- | Icône|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---|----|---|
+|size|Integer|->|Longueur du côté de l'image renvoyée (pixels)|
+|Résultat|Picture|<-|Icon|
+</div>
+<!-- END REF -->
 
 #### Description
 

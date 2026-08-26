@@ -105,10 +105,13 @@ Un objet 4D.IncomingMessage est [non partageable](../Concepts/shared.md).
 
 <!-- REF #IncomingMessageClass.getBlob().Params -->
 
+<div class="no-index">
+
 | Paramètres | Type |                             | Description                         |
 | ---------- | ---- | --------------------------- | ----------------------------------- |
 | Résultat   | Blob | <- | Body de la requête en tant que Blob |
 
+</div>
 <!-- END REF -->
 
 #### Description
@@ -127,11 +130,14 @@ Si le body n'a pas été fourni sous forme de contenu binaire, la fonction tente
 
 <!-- REF #IncomingMessageClass.getHeader().Params -->
 
+<div class="no-index">
+
 | Paramètres | Type |                             | Description                                                |
 | ---------- | ---- | --------------------------- | ---------------------------------------------------------- |
 | key        | Text | ->                          | Propriété de header (en-tête) à obtenir |
 | Résultat   | Text | <- | Valeur de la propriété de header                           |
 
+</div>
 <!-- END REF -->
 
 #### Description
@@ -162,10 +168,13 @@ $value := $request.getHeader("content-type")
 
 <!-- REF #IncomingMessageClass.getJSON().Params -->
 
+<div class="no-index">
+
 | Paramètres | Type    |                             | Description                           |
 | ---------- | ------- | --------------------------- | ------------------------------------- |
 | Résultat   | Variant | <- | Résolution JSON du body de la requête |
 
+</div>
 <!-- END REF -->
 
 #### Description
@@ -184,10 +193,13 @@ Si le body n'a pas été fourni sous la forme d'un contenu JSON valide, une erre
 
 <!-- REF #IncomingMessageClass.getPicture().Params -->
 
+<div class="no-index">
+
 | Paramètres | Type    |                             | Description                         |
 | ---------- | ------- | --------------------------- | ----------------------------------- |
 | Résultat   | Picture | <- | Body de la requête en tant qu'image |
 
+</div>
 <!-- END REF -->
 
 #### Description
@@ -214,10 +226,13 @@ Si le body n'est pas reçu comme une image valide, la fonction renvoie null.
 
 <!-- REF #IncomingMessageClass.getText().Params -->
 
+<div class="no-index">
+
 | Paramètres | Type |                             | Description                          |
 | ---------- | ---- | --------------------------- | ------------------------------------ |
 | Résultat   | Text | <- | Body de la requête en tant que texte |
 
+</div>
 <!-- END REF -->
 
 #### Description
@@ -308,7 +323,7 @@ Exemple : `http://127.0.0.1:8044/myCall/?myparams='[{"firstname" : "Marie", "isW
 
 Les paramètres sont passés au format JSON et sont inclus dans une collection.
 
-Dans ce cas, les paramètres sont reçus sous forme de texte JSON dans la propriété `urlQuery` et peuvent être analysés à l'aide de [`JSON Parse`](../commands-legacy/json-parse.md).
+Dans ce cas, les paramètres sont reçus sous forme de texte JSON dans la propriété `urlQuery` et peuvent être analysés à l'aide de [`JSON Parse`](../commands/json-parse).
 
 ```4d
 //urlQuery.myparams: "[{"firstname": "Marie","isWoman": true,"id": 3}]"
@@ -347,4 +362,5 @@ Les verbes de requête HTTP et HTTPS incluent par exemple "get", "post", "put", 
 La propriété `.verb` est en lecture seule.
 
 <!-- END REF -->
+
 

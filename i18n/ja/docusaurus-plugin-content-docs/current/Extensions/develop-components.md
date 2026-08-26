@@ -1,6 +1,6 @@
 ---
 id: develop-components
-title: Developing Extensions
+title: コンポーネントの開発
 ---
 
 ## コンポーネント
@@ -9,7 +9,7 @@ title: Developing Extensions
 
 ニーズに合わせて独自の 4Dコンポーネントを開発し、それを非公開とすることができます。 また、作成した [コンポーネントを4Dコミュニティで共有](https://github.com/topics/4d-component) することもできます。
 
-### 定義
+## 定義
 
 - **マトリクスプロジェクト**: コンポーネント開発に使用する4D プロジェクト。 マトリクスプロジェクトは特別な属性を持たない標準のプロジェクトです。 マトリクスプロジェクトはひとつのコンポーネントを構成します。
 - **ホストプロジェクト**: コンポーネントがインストールされ、それを使用するアプリケーションプロジェクト。
@@ -17,58 +17,58 @@ title: Developing Extensions
 
 :::note
 
-You can [create a component directly from the host](#creating-components) project without needing to go through a separate matrix project
+個別にマトリックスプロジェクトを作成することなく、[ホストプロジェクトから直接コンポーネントを作成する](#コンポーネントの作成) ことができます。
 
 :::
 
-### 基本
+## 基本
 
 4D コンポーネントの作成とインストールは直接 4D を使用しておこないます:
 
-- コンポーネントを使用するには、[アプリケーションにインストール](../Project/components.md) するだけです。 You can also create a new component directly from the host, in which case it is immediately usable.
+- コンポーネントを使用するには、[アプリケーションにインストール](../Project/components.md) するだけです。 ホストから直接コンポーネントを作成することもできます。この場合、このコンポーネントは直ちに使用することが可能です。
 - 言い換えれば、マトリクスプロジェクト自体も1 つ以上のコンポーネントを使用できます。 しかしコンポーネントが "サブコンポーネント" を使用することはできません。
-- コンポーネントは次の 4D の要素を呼び出すことができます: データストア([`ds`](../commands/ds.md))、クラス、関数、プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リストなど。 以下のデータベースメソッドを使用することが可能です: [On Web Connection](../commands-legacy/on-web-connection-database-method.md)、 [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md)、 [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md) 。
+- コンポーネントは次の 4D の要素を呼び出すことができます: データストア([`ds`](../commands/ds))、クラス、関数、プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リストなど。 以下のデータベースメソッドを使用することが可能です: [On Web Connection](../commands/on-web-connection-database-method)、 [On Web Authentication](../commands/on-web-authentication-database-method)、 [On Host Database Event](../commands/on-host-database-event-database-method) 。
 - 外部データベースのメカニズムを使用すればテーブルやフィールドを作成し、そこにデータを格納したり読み出したりすることができます。 外部データベースは、メインの 4D データベースとは独立して存在し、SQLコマンドでアクセスします。
 - インタープリターモードで動作するホストプロジェクトは、インタープリターまたはコンパイル済みどちらのコンポーネントも使用できます。 コンパイルモードで実行されるホストデータベースでは、インタープリターのコンポーネントを使用できません。 この場合、コンパイル済みコンポーネントのみが利用可能です。
 
 :::note
 
-Interpreted component code can be [edited directly from the host project](#editing-components) if the context is supported.
+コンテキストがサポートされていれば、インタープリター版のコンポーネントのコードは[ホストプロジェクトから直接編集可能です](#コンポーネントの編集)。
 
 :::
 
-## Creating and editing components from the host
+## ホストからのコンポーネント作成と編集
 
-In interpreted mode, the 4D IDE allows you to create and edit components directly from the host project. It facilitates component development and tuning in the actual context of a host project without having to leave or restart it.
+インタープリターモードでは、4D IDE を使用することでホストプロジェクトからコンポーネントを直接作成および編集することができます。 これにより、ホストプロジェクトを閉じたり再起動したりすることなく、実際のコンテキストにおけるコンポーネント開発とチューニングを容易にします。
 
-### Creating components
+### コンポーネントの作成
 
-You can create a new component directly from the host project:
+以下の方法でホストプロジェクトから新規コンポーネントを直接作成することができます:
 
-- by using the **File > New > Component...** option from the File menu,
-- or by clicking the **New > Component...** button in the toolbar.
+- ファイルメニューから**ファイル > 新規 > コンポーネント...** オプションを使用する
+- あるいはツールバーから**新規 > コンポーネント...** ボタンをクリックする
 
-This action opens a folder selection dialog where you choose where [the component package](../Project/components.md#package-folder) will be stored.
+この操作でフォルダー選択ダイアログが開き、ここから[コンポーネントパッケージ](../Project/components.md#packageフォルダー) を保存する場所を選択することができます。
 
-- Default location: The first time you create a component, 4D suggests the **Components** folder inside the [project package](../Project/architecture.md#components). After that, your used last folder will be automatically remembered and preselected.
-- If you decide to store the component **next to the project package**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file.
-- If you decide to store the component **elsewhere**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file and its path is added to the [`environment4d.json`](../Project/components.md#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
+- デフォルトの場所: 最初にコンポーネントを作成しようとすると、4D は[プロジェクトパッケージ内の**Components** フォルダー](../Project/architecture.md#components)をサジェストします。 それ以降は最後に使用したフォルダーが自動的に記憶されてあらかじめ選択されます。
+- コンポーネントを**プロジェクトパッケージの隣** に保存することを選択した場合、4D はそれを[`dependencies.json`](../Project/components.md#dependenciesjson) ファイルに追加します。
+- コンポーネントを**それ以外** の場所に保存することを選択した場合、4D はそれを[`dependencies.json`](../Project/components.md#dependenciesjson) ファイルに追加し、そのパスが[相対または絶対パス](../Project/components.md#相対パスvs絶対パス)を使用して[`environment4d.json`](../Project/components.md#environment4djson) ファイルへと追加されます。 相対パスは、`environment4d.json` ファイルから見てコンポーネントが上に2階層以内、あるいはそのサブフォルダー内に保存されている場合に使用されます。 それ以外の場合には絶対パスが使用されます。
 
 :::note
 
-You cannot store a component **in the project package** but **outside the Components folder**.
+コンポーネントは、**プロジェクトパッケージ内** で **Components フォルダーの外** に保存することはできません。
 
 :::
 
-Once created, the component is immediately added to the project, accessible in the [Project dependencies](../Project/components.md#monitoring-project-dependencies) window, and available for editing.
+コンポーネントが作成されると、そのコンポーネントは即座にプロジェクトに追加されて[プロジェクト依存関係](../Project/components.md#プロジェクトの依存関係をモニタリング) ウィンドウ内でアクセス可能になり、また編集も可能になります。
 
-### Editing components
+### コンポーネントの編集
 
-You can edit a component code as long as the following conditions are met:
+以下の条件を満たしている限り、コンポーネントのコードは編集可能です:
 
-- ホストプロジェクトがインタープリタモードで実行中である
-- コンポーネントが、[インタープリタモードでロードされてい](../Project/components.md#interpreted-and-compiled-components) 、ソースコードが編集可能である
-- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency)).
+- ホストプロジェクトがインタープリターモードで実行中である
+- コンポーネントが、[インタープリターモードでロードされており](../Project/components.md#インタープリターとコンパイル済みコンポーネント)、ソースコードが編集可能である
+- コンポーネントのファイルはローカルに保存されている (つまり[GitHub からダウンロードされた](../Project/components.md#adding-a-github-or-gitlab-dependency) ものではない)。
 
 このコンテキストでは、以下の2箇所において、コンポーネントのコードをコードエディターで開き、編集して、保存することができます:
 
@@ -96,9 +96,9 @@ You can edit a component code as long as the following conditions are met:
 
 ![tab-component](../assets/en/Project/tab-component.png)
 
-- フォルダ、メソッド、クラスおよびフォーム(プレビューのみ)を含むホーム
+- フォルダー、メソッド、クラスおよびフォーム(プレビューのみ)を含むホーム
 - プロジェクトメソッド
-- データベースメソッド([On Web Connection](../commands-legacy/on-web-connection-database-method.md)、[On Web Authentication](../commands-legacy/on-web-authentication-database-method.md)、[On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
+- データベースメソッド([On Web Connection](../commands/on-web-connection-database-method)、[On Web Authentication](../commands/on-web-authentication-database-method)、[On Host Database Event](../commands/on-host-database-event-database-method))
 - クラス
 - プロジェクトフォームメソッド
 - コマンドと定数
@@ -110,21 +110,27 @@ You can edit a component code as long as the following conditions are met:
 標準の4D IDE 機能がコンポーネントに対して利用可能です。 以下のアクションを実行することができます:
 
 - [メソッドおよびクラス](../Project/code-overview.md)の追加、複製、削除、編集/保存
-- コードのプレビュー、[ドキュメンテーション](../Project/documentation.md) の表示/編集、[メソッドプロパティ](../Project/code-overview.md#project-method-properties) の表示/編集
+- コードのプレビュー、[ドキュメンテーション](../Project/documentation.md) の表示/編集、[メソッドプロパティ](../Project/project-method-properties.md) の表示/編集
 - メソッドの実行
 - ゴミ箱からの復元、あるいはゴミ箱を空にする。
 
-### ランゲージコマンドのスコープ
+### 検索と置換
+
+ホストプロジェクトの[**検索と置換** 機能](../Project/search-replace.md) を使用して、編集可能なコンポーネントのコードやフォーム内の要素を検索することができます。 **プロジェクト内を検索** メニューを使用することで、ひとつまたは全てのコンポーネントを検索ターゲットとして選択することができます:
+
+![](../assets/en/Project/find-components.png)
+
+## ランゲージコマンドのスコープ
 
 [使用できないコマンド](#使用できないコマンド) を除き、コンポーネントではすべての 4D ランゲージコマンドが使用できます。
 
-コマンドがコンポーネントから呼ばれると、コマンドはコンポーネントのコンテキストで実行されます。 ただし[`EXECUTE FORMULA`](../commands-legacy/execute-formula.md) と [`EXECUTE METHOD`](../commands-legacy/execute-method.md) コマンドは除きます。これらはコマンドで指定されたメソッドのコンテキストを使用します。 また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。
+コマンドがコンポーネントから呼ばれると、コマンドはコンポーネントのコンテキストで実行されます。 ただし[`EXECUTE FORMULA`](../commands/execute-formula) と [`EXECUTE METHOD`](../commands/execute-method) コマンドは除きます。これらはコマンドで指定されたメソッドのコンテキストを使用します。 また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。
 
-[`SET DATABASE PARAMETER`](../commands-legacy/set-database-parameter.md) および [`Get database parameter`](../commands-legacy/get-database-parameter.md) コマンドは例外となります: これらのコマンドのスコープはグローバルです。 これらのコマンドがコンポーネントから呼び出されると、結果はホストプロジェクトに適用されます。
+[`SET DATABASE PARAMETER`](../commands/set-database-parameter) および [`Get database parameter`](../commands/get-database-parameter) コマンドは例外となります: これらのコマンドのスコープはグローバルです。 これらのコマンドがコンポーネントから呼び出されると、結果はホストプロジェクトに適用されます。
 
 さらに、`Structure file` と `Get 4D folder` コマンドは、コンポーネントで使用するための設定ができるようになっています。
 
-[`COMPONENT LIST`](../commands-legacy/component-list.md) コマンドを使用して、ホストプロジェクトにロードされたコンポーネントのリストを取得できます。
+[`COMPONENT LIST`](../commands/component-list) コマンドを使用して、ホストプロジェクトにロードされたコンポーネントのリストを取得できます。
 
 ### 使用できないコマンド
 
@@ -153,7 +159,7 @@ You can edit a component code as long as the following conditions are met:
 - `Current form table` コマンドは、プロジェクトフォームのコンテキストで呼び出されると `Nil` を返します。 ゆえにこのコマンドをコンポーネントで使用することはできません。
 - SQLデータ定義言語のコマンド (`CREATE TABLE`、`DROP TABLE`等)  をコンポーネントのフレームワークで使用することはできません。 ただし、外部データベースの場合は使用することができます (`CREATE DATABASE` SQL コマンド参照)。
 
-### プロジェクトメソッドの共有
+## プロジェクトメソッドの共有
 
 マトリクスプロジェクトのすべてのプロジェクトメソッドは 、コンポーネントに含まれます。 つまり、マトリクスプロジェクトをコンポーネント化した後、これらのプロジェクトメソッドは同コンポーネント内で呼び出して実行することができます。
 
@@ -167,7 +173,7 @@ You can edit a component code as long as the following conditions are met:
 
 ![](../assets/en/Concepts/pict516563.en.png)
 
-ホストプロジェクトのプロジェクトメソッドがコンポーネントから利用可能になっていれば、[`EXECUTE FORMULA`](../commands-legacy/execute-formula.md) または [`EXECUTE METHOD`](../commands-legacy/execute-method.md) コマンドを使用して、コンポーネント側からホストのメソッドを実行することができます。 例:
+ホストプロジェクトのプロジェクトメソッドがコンポーネントから利用可能になっていれば、[`EXECUTE FORMULA`](../commands/execute-formula) または [`EXECUTE METHOD`](../commands/execute-method) コマンドを使用して、コンポーネント側からホストのメソッドを実行することができます。 例:
 
 ```4d
 // ホストメソッド
@@ -183,13 +189,13 @@ EXECUTE METHOD($param)
 > インタープリターコンポーネントがインストールされたインタープリターホストデータベースは、それがインタープリターコンポーネントのメソッドを呼び出さなければ、コンパイル/シンタックスチェックができます。 そうでない場合、コンパイルまたはシンタックスチェックを実行しようとすると警告ダイアログが表示され、操作を実行することはできません。  
 > 一般的に、インタープリターメソッドはコンパイル済みメソッドを呼び出せますが、逆はできません。これをおこなうには `EXECUTE METHOD` や `EXECUTE FORMULA` コマンドを使用します。
 
-### クラスの共有
+## クラスの共有
 
 デフォルトでは、ホストプロジェクトの 4Dコードエディターからコンポーネントのクラスを呼び出すことはできません。 ホストプロジェクトおよび読み込まれているコンポーネントに対してコンポーネントのクラスを公開したい場合は、**コンポーネント名前空間を宣言** する必要があります。 また、コンポーネントのクラスがホストコードエディターでどのように提案されるかをコントロールすることもできます。
 
-#### コンポーネント名前空間の宣言
+### コンポーネント名前空間の宣言
 
-ホストプロジェクトおよび読み込まれているコンポーネントに対してコンポーネントのクラスを公開するには、マトリクスプロジェクトの設定の [一般ページにある **クラスストア内でのコンポーネント名前空間** オプション](../settings/general.md#クラスストア内でのコンポーネント名前空間) に値を入力します。 デフォルトでは、このエリアは空です。つまり、コンポーネントのクラスはコンポーネント外で利用できません。
+ホストプロジェクトおよび読み込まれているコンポーネントに対してコンポーネントのクラスを公開するには、マトリクスプロジェクトの設定の [一般ページにある **クラスストア内でのコンポーネント名前空間** オプション](../settings/general.md#クラスストア内でのコンポーネント名前空間) に値を入力します。 デフォルトでは、このエリアは空です。 つまり、コンポーネントのクラスはコンポーネント外で利用できません。
 
 ![](../assets/en/settings/namespace.png)
 
@@ -199,7 +205,7 @@ EXECUTE METHOD($param)
 
 :::
 
-値を入力すると、ホストプロジェクトおよび読み込まれているコンポーネントのコードにおいて、ユーザークラスストア (cs) 内の cs.<値> 名前空間を介して、コンポーネントのクラスが利用可能になることを宣言することになります。 たとえば、`getArea()` 関数を持つ `Rectangle` クラスが存在する場合に、コンポーネント名前空間として "eGeometry" を入力すると、このプロジェクトがコンポーネントとしてインストールされると、ホストプロジェクトの開発者は次のように記述することができます:
+値を入力すると、ホストプロジェクトおよび読み込まれているコンポーネントのコードにおいて、[ユーザークラスストア (**cs**)](../Concepts/classes.md#cs) 内の cs.<値> 名前空間を介して、コンポーネントのクラスが利用可能になることを宣言することになります。 たとえば、`getArea()` 関数を持つ `Rectangle` クラスが存在する場合に、コンポーネント名前空間として "eGeometry" を入力すると、このプロジェクトがコンポーネントとしてインストールされると、ホストプロジェクトの開発者は次のように記述することができます:
 
 ```4d
 // ホストプロジェクトまたは読み込まれているコンポーネントにて
@@ -220,7 +226,7 @@ $area:=$rect.getArea()
 
 コンポーネントの ORDAクラスは、ホストプロジェクトでは使用できません。 たとえば、コンポーネントに Employees というデータクラスがある場合、ホストプロジェクトで "cs.Mycomponent.Employee" クラスを使用することはできません。
 
-#### 非表示クラス
+### 非表示クラス
 
 アンダースコア ("_") を名前の前に付けることで、コンポーネントのクラスや関数を非表示にすることができます。 [コンポーネント名前空間が定義されている](#コンポーネント名前空間の宣言) 場合、非表示のクラスや関数はコード補完の際に提案されません。
 
@@ -243,41 +249,42 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 
 [コンポーネント名前空間](#コンポーネント名前空間の宣言) を入力しない場合、シンタックスファイル生成のオプションがチェックされていても、クラスや公開メソッド用のリソースは生成されませ ん。
 
-### 変数の渡し方
+## 変数の渡し方
 
-ローカル、プロセス、インタープロセス変数は、コンポーネントとホストプロジェクト間で共有されません。 ホストプロジェクトからコンポーネントの変数を編集、またはその逆をおこなう唯一の方法はポインターを使用することです。
+変数はコンポーネントとホストプロジェクト間では共有されません。 ホストプロジェクトからコンポーネントの変数を編集、またはその逆をおこなう唯一の方法はポインターを使用することです。
 
 配列を使用した例:
 
 ```4d
-// ホストプロジェクト側:
+//ホストプロジェクト内
      ARRAY INTEGER(MyArray;10)
      AMethod(->MyArray)
 
-// コンポーネント側で AMethod プロジェクトメソッドは以下の通りです:
-     APPEND TO ARRAY($1->;2)
+//コンポーネント内、AMethod プロジェクトメソッドには以下の記述があります:
+     #DECLARE($ptr : Pointer)
+     APPEND TO ARRAY($ptr->;2)
 ```
 
 変数を使用した例:
 
 ```4d
-C_TEXT(myvariable)
+var myvariable : Text
 component_method1(->myvariable)
 ```
 
 ```4d
-C_POINTER($p)
+var $p : Pointer
 $p:=component_method2(...)
 ```
 
 ポインターを使用しない場合でも、コンポーネント側からホストデータベースの (変数そのものではなく) 変数の値にアクセスすること自体は可能ですし、その逆も可能です:
 
 ```4d
-// ホストデータベース内
-C_TEXT($input_t)
+//ホストデータベース内
+var $input_t : Text
 $input_t:="DoSomething"
 component_method($input_t)
-// component_method は $1 に "DoSomething" を受け取ります ($input_t 変数を受け取るわけではありません)
+// component_method は($input_t 変数ではなく) "DoSomething" を引数として受け取ります
 ```
 
 ホストプロジェクトとコンポーネント間でポインターを使用して通信をおこなうには、以下の点を考慮する必要があります:
@@ -285,13 +292,13 @@ component_method($input_t)
 - `Get pointer` をコンポーネント内で使用した場合、このコマンドはホストプロジェクトの変数へのポインターを返しません。また逆にこのコマンドをホストプロジェクトで使用した場合も同様です。
 
 - コンパイル済みプロジェクトでは、コンパイルされたコンポーネントしか使用できませんが、インタープリタープロジェクトの場合には、インタープリターおよびコンパイル済みコンポーネントを同時に使用することができます。 この場合、ポインターの利用は以下の原則を守らなければなりません: インタープリターモードでは、コンパイルモードにおいて作成されたポインターを解釈できます。逆にコンパイルモードでは、インタープリターモードにて作成されたポインターを解釈することはできません。
-  以下の例でこの原則を説明します: 同じホストプロジェクトにインストールされた 2つのコンポーネント C ( コンパイル済) と I ( インタープリタ) があります:
+  以下の例でこの原則を説明します: 同じホストプロジェクトにインストールされた 2つのコンポーネント C ( コンパイル済) と I ( インタープリター) があります:
 
 - コンポーネントC が定義する変数 `myCvar` があるとき、コンポーネントI はポインター `->myCvar` を使用して変数の値にアクセスすることができます。
 
 - コンポーネントI が定義する変数 `myIvar` があるとき、コンポーネントC はポインター `->myIvar` を使用しても変数の値にアクセスすることはできません。 このシンタックスは実行エラーを起こします。
 
-- `RESOLVE POINTER` を使用したポインターの比較はお勧めできません。変数の分離の原則により、ホストプロジェクトとコンポーネント (あるいは他のコンポーネント) で同じ名前の変数が存在することができますが、根本的にそれらは異なる内容を持ちます。 両コンテキストで、変数のタイプが違うことさえありえます。 ポインター `myptr1` と `myptr2` がそれぞれ変数を指すとき、以下の比較は正しくない結果となるかもしれません:
+- [`RESOLVE POINTER`](../commands/resolve-pointer) コマンドを使用したポインターの比較はお勧めできません。変数の分離の原則により、ホストプロジェクトとコンポーネント (あるいは他のコンポーネント) で同じ名前の変数が存在することができますが、根本的にそれらは異なる内容を持ちます。 両コンテキストで、変数のタイプが違うことさえありえます。 ポインター `myptr1` と `myptr2` がそれぞれ変数を指すとき、以下の比較は正しくない結果となるかもしれません:
 
 ```4d
      RESOLVE POINTER(myptr1;vVarName1;vtablenum1;vfieldnum1)
@@ -306,11 +313,13 @@ component_method($input_t)
      If(myptr1=myptr2) // このテストはFalse を返します
 ```
 
-### エラー処理
+## エラー処理
 
-`ON ERR CALL` コマンドによって実装された [エラー処理メソッド](Concepts/error-handling.md) は、実行中のプロジェクトに対してのみ適用されます。 コンポーネントによって生成されたエラーの場合、ホストプロジェクトの `ON ERR CALL` エラー処理メソッドは呼び出されず、その逆もまた然りです。
+[`ON ERR CALL`](../commands/on-err-call) コマンドを使用して実装された[エラー処理メソッド](Concepts/error-handling.md) は実行中のアプリケーションに対してのみ適用されます。 コンポーネントによって生成されたエラーの場合、ホストプロジェクトの `ON ERR CALL` エラー処理メソッドは呼び出されず、その逆もまた然りです。
 
-### ホストプロジェクトのテーブルへのアクセス
+しかしながら、[ホストアプリケーションにコンポーネントエラーハンドラーを実装する](../Concepts/error-handling.md#scope-and-components) ことで、コンポーネントでキャッチされなかったエラーを管理することができます。
+
+## ホストプロジェクトのテーブルへのアクセス
 
 コンポーネントでテーブルを使用することはできませんが、ホストプロジェクトとコンポーネントはポインターを使用して通信をおこなうことができます。 たとえば、以下はコンポーネントで実行可能なメソッドです:
 
@@ -322,21 +331,17 @@ methCreateRec(->[PEOPLE];->[PEOPLE]Name;"Julie Andrews")
 コンポーネント内の `methCreateRec` メソッドのコード:
 
 ```4d
-C_POINTER($1) // ホストプロジェクトのテーブルへのポインター
-C_POINTER($2) // ホストプロジェクトのフィールドへのポインター
-C_TEXT($3) // 代入する値
+#DECLARE($tablepointer : Pointer; $fieldpointer : Pointer; $value : Text) //ホストプロジェクト内のテーブルへのポインター
 
-$tablepointer:=$1
-$fieldpointer:=$2
 CREATE RECORD($tablepointer->)
 
-$fieldpointer->:=$3
+$fieldpointer->:=$value
 SAVE RECORD($tablepointer->)
 ```
 
 > コンポーネントのコンテキストにおいて、テーブルフォームへの参照はすべてホスト側のテーブルフォームへの参照だと 4D はみなします (コンポーネントはテーブルを持つことができないからです)。
 
-### テーブルやフィールドの利用
+## テーブルやフィールドの利用
 
 コンポーネントは、マトリクスプロジェクトのストラクチャーで定義されたテーブルやフィールドを使用することはできません。 しかし外部データベースを作成し、そのテーブルやフィールドを必要に応じ利用することはできます。 外部データベースの作成と管理は SQL を用いておこないます。 外部データベースは、メインの4Dプロジェクトから独立している別の 4Dプロジェクトですが、メインプロジェクトから操作が可能です。 外部データベースの利用は、そのデータベースを一時的にカレントデータベースに指定することです。言い換えれば、4Dが実行する SQL クエリのターゲットデータベースとして外部データベースを指定します。 外部データベースの作成は SQL の `CREATE DATABASE` コマンドを使用します。
 
@@ -419,7 +424,7 @@ SAVE RECORD($tablepointer->)
 
 ```
 
-### フォームの使用
+## フォームの使用
 
 - 特定のテーブルに属さない" プロジェクトフォーム" のみが、コンポーネント内で利用できます。 マトリクスプロジェクトのすべてのプロジェクトフォームをコンポーネントで使用することができます。
 - コンポーネントはホストプロジェクトのテーブルフォームを使用できます。 この場合、コンポーネントのコードでフォームを指定するにあたっては、テーブル名ではなく、テーブルへのポインターを使用しなければならないことに注意してください。
@@ -430,25 +435,49 @@ SAVE RECORD($tablepointer->)
 
 > コンポーネントのコンテキストにおいては、参照されるプロジェクトフォームはすべてコンポーネント内に存在している必要があります。 たとえば、コンポーネント内において、`DIALOG` または `Open form window` コマンドを使用してホスト側のプロジェクトフォームを参照しようとした場合にはエラーが生成されます。
 
-### リソースの使用
+## リソースの使用
 
 コンポーネントは、自身の Resourcesフォルダーにあるリソースを使用することができます。
 
 これによって自動メカニズムが有効となり、コンポーネントの Resources フォルダー内で見つかった XLIFF ファイルは、 同コンポーネントによってロードされます。
 
-1つ以上のコンポーネントを含むホストプロジェクトでは、ホストプロジェクトと同様にそれぞれのコンポーネントも固有のリソースチェーンを持っています。 リソースは異なるプロジェクト間で分離されます。コンポーネントA のリソースにコンポーネントB やホストプロジェクトからアクセスすることはできません。
+1つ以上のコンポーネントを含むホストプロジェクトでは、ホストプロジェクトと同様にそれぞれのコンポーネントも固有のリソースチェーンを持っています。 リソースは異なるプロジェクト間で分離されます。 コンポーネントA のリソースにコンポーネントB やホストプロジェクトからアクセスすることはできません。
 
-### 初期化のコードの実行
+## 初期化のコードの実行
 
-コンポーネントは、ホストデータベースを開いたときまたは閉じたときに、自動的に 4Dコードを実行することができます。これによってたとえば、ホストデータベースに関連する設定やユーザーの状態などを読み込み・保存することができます。
+コンポーネントは、ホストデータベースを開いたときまたは閉じたときに、自動的に 4Dコードを実行することができます。 これによってたとえば、ホストデータベースに関連する設定やユーザーの状態などを読み込み・保存することができます。
 
 初期化やデータベースを閉じるコードの実行は、 `On Host Database Event` データベースメソッド を使用しておこなわれます。
 
 > セキュリティ上の理由から、`On Host Database Event` データベースメソッドを使用可能にするためには、その実行をホストデータベースで明示的に許可する必要があります。 このためには、ストラクチャー設定画面のセキュリティページ内の、[**コンポーネントの "On Host Database Event" メソッドを実行**](../settings/security.md#オプション) オプションにチェックを入れます:
 
-### Info.plist
+## カスタムアイコン
 
-コンポーネントは、その[root フォルダ](../Project/architecture.md) にシステム(macOS のみ)と[依存関係マネージャ](../Project/components.md#コンポーネントのロード)が読み取り可能な追加の情報を提供する、 `Info.plist` ファイルを持っています。
+依存関係には**カスタムアイコン**を使用することもでき、これによって [プロジェクト依存関係パネル](../Project/components.md#monitoring-project-dependencies) 内で他のコンポーネントと視覚的に区別をすることができます。
+
+カスタムアイコンがなにも定義されていない場合、コンポーネントは**デフォルトのアイコン**を使用します:
+
+![](../assets/en/Develop/icon-comp-default.png)
+
+コンポーネントに対してカスタムアイコンを宣言したい場合:
+
+1. アイコン用のピクチャーファイルを作成し、 `logo.svg` あるいは `logo.png` という名前をつけます。 ピクチャーは正方形で表示されるという点に注意してください(必要であれば自動的にリサイズされます)。 推奨されるのは **svg** フォーマットです。
+
+2. アイコンファイルをコンポーネントの [**Resources フォルダー**](../Project/architecture.md#resources) にコピーします。
+
+このロゴファイルは、コンポーネントがインタープリター版か[ビルドされている](../Desktop/building.md#コンポーネントをビルド)かに関わらず、プロジェクト依存関係ウィンドウ内においてそのコンポーネントに対して使用されます。
+
+![](../assets/en/Develop/icon-comp.png)
+
+:::note
+
+`logo.svg` および `logo.png` ファイルの両方が見つかった場合、`logo.svg` の方が優先されます。
+
+:::
+
+## Info.plist
+
+コンポーネントは、その [root フォルダー](../Project/architecture.md) にシステム (macOS のみ) と[依存関係マネージャー](../Project/components.md#monitoring-project-dependencies)が読み取り可能な追加の情報を提供する、`Info.plist` ファイルを持っています。
 
 :::note
 
@@ -456,18 +485,18 @@ SAVE RECORD($tablepointer->)
 
 :::
 
-コンポーネントの`Info.plist` ファイル内でサポートされているキーは、大部分は[Apple bundle キー](https://developer.apple.com/documentation/bundleresources/information-property-list) であり、Windows 上では無視されます。 しかしながら、これらは全てのプラットフォームにおいて[依存関係マネージャ](../Project/components.md#コンポーネントの読み込み) によって使用されます。
+コンポーネントの`Info.plist` ファイル内でサポートされているキーは、大部分は[Apple bundle キー](https://developer.apple.com/documentation/bundleresources/information-property-list) であり、Windows 上では無視されます。 しかしながら、これらはすべてのプラットフォームにおいて[依存関係マネージャー](../Project/components.md#monitoring-project-dependencies) によって使用されます。
 
 定義可能なキーは以下の通りです:
 
-| key                                                        | description                                                                                                 |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| CFBundleName                                               | コンポーネント名(内部)                                                                             |
-| CFBundleDisplayName                                        | 表示するコンポーネント名                                                                                                |
-| NSHumanReadableCopyright                                   | 表示する著作権                                                                                                     |
-| CFBundleVersion                                            | コンポーネントのバージョン                                                                                               |
-| CFBundleShortVersionString                                 | 表示するコンポーネントのバージョン                                                                                           |
-| com.4d.minSupportedVersion | サポートされる最低限の4D のバージョン。これは依存関係マネージャの[4D のバージョンに従うコンポーネント](../Project/components.md#4Dバージョンタグの命名規則)において使用されます。 |
+| key                                                        | description                                                                                                   |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| CFBundleName                                               | コンポーネント名(内部)                                                                               |
+| CFBundleDisplayName                                        | 表示するコンポーネント名                                                                                                  |
+| NSHumanReadableCopyright                                   | 表示する著作権                                                                                                       |
+| CFBundleVersion                                            | コンポーネントのバージョン                                                                                                 |
+| CFBundleShortVersionString                                 | 表示するコンポーネントのバージョン                                                                                             |
+| com.4d.minSupportedVersion | サポートされる最低限の 4D のバージョン。これは依存関係マネージャーの[4D のバージョンに従うコンポーネント](../Project/components.md#4Dバージョンタグの命名規則)において使用されます。 |
 
 以下は、`Info.plist` ファイルの一例です:
 
@@ -495,60 +524,21 @@ macOS 上では、Finder からこの情報を見ることができます:
 
 ![](../assets/en/Develop/infoplist-component.png)
 
-### コンポーネントの保護: コンパイル
+## コンポーネントの保護: コンパイル
 
 コンポーネントとしてインストールされたマトリクスプロジェクトのコードは、ホストプロジェクトからデフォルトでアクセス可能です。 特に:
 
 - エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 しかし、それらをコードエディター上で開いたり編集したりすることはできません。
-- マトリクスプロジェクトの他のプロジェクトメソッドはエクスプローラーに現れません。しかし、ホストプロジェクトのデバッガーには内容が表示されます。
+- マトリクスプロジェクトの他のプロジェクトメソッドはエクスプローラーに現れません。 しかし、ホストプロジェクトのデバッガーには内容が表示されます。
 - [名前空間が宣言されていれば](#コンポーネント名前空間の宣言)、非表示でないクラスや関数はデバッガーで確認することができます。
 
 コンポーネントのコードを効果的に保護するには、マトリクスプロジェクトを [コンパイルしビルドして](Desktop/building.md#コンポーネントをビルド)、.4dz ファイルとして提供します。 コンパイルされたマトリクスプロジェクトがコンポーネントとしてインストールされると:
 
-- 共有のプロジェクトメソッド、クラス、および関数は、ホストプロジェクトのメソッドから呼び出し可能です。共有のプロジェクトメソッドは、エクスプローラーのメソッドページにも表示されます。 しかし、その内容はプレビューエリアにもデバッガーにも表示されません。
+- 共有のプロジェクトメソッド、クラス、および関数は、ホストプロジェクトのメソッドから呼び出し可能です。 共有のプロジェクトメソッドは、エクスプローラーのメソッドページにも表示されます。 しかし、その内容はプレビューエリアにもデバッガーにも表示されません。
 - マトリクスプロジェクトの他のプロジェクトメソッドは一切表示されません。
 
-### GitHub上でコンポーネントを共有する
+## GitHub上でコンポーネントを共有する
 
 開発したコンポーネントを [GitHub](https://github.com/topics/4d-component) で公開し、4D開発者のコミュニティをサポートすることをお勧めします。 正しく参照されるためには、**`4d-component`** トピックをご利用ください。
 
-## プラグイン
 
-### プラグインの必要性
-
-オブジェクトやレコードの操作、ユーザーインターフェースの実装のため、4D は数百のビルトインコマンドを提供していますが、さらに特殊な機能 (プラットフォーム依存のものなど) が必要になることがあります。たとえば、Windows上のODBC 、macOS上のアップルサービス、特殊な統計機能、ソーシャルネットワークログイン、決済用のプラットフォーム、ネットワークを介したファイルアクセス、特殊なユーザーインターフェース、独自のピクチャー構造などです。
-
-これらの機能をすべて、macOS と Windows の両方で 4D コマンドによって提供しようとした場合、コマンド数は数千に膨れ上がると同時に、ほとんどのユーザーはそれらの追加機能を必要としないでしょう。 また、そのような万能ツールを作り上げたとしても、その結果として 4D 環境は複雑化することになり、4D の学習が困難になるだけでなく、成果が得られるまで時間を要するようになるでしょう。
-
-4D 環境のモジュール性により、基礎的なアプリケーションの作成はもちろんのこと、非常に複雑なシステムの開発も可能です。 4D プラグインのアーキテクチャーによって、4D 環境はあらゆるアプリケーションとユーザーに対して開かれています。 4D プラグインによってアプリケーションやユーザーの生産性を飛躍させることができます。
-
-### プラグインとは何か
-
-プラグインとは、4D 起動時にロードされるコードのことです。 プラグインは、4D に機能を追加します。
-
-通常、プラグインは:
-
-- 4D ができないことを処理します (プラットフォーム特有の技術など)
-- 4D だけでは難しいことを実現します
-- プラグインのエントリーポイントの形でのみ提供されている機能を提供します
-
-プラグインには通常複数のルーチンが含まれています。 プラグインは外部エリアを操作でき、外部プロセスを実行できます。
-
-- **プラグインルーチン** とは、ネイティブ言語 (通常は C あるいは C++) で書かれたルーチンで、なんらかの処理を実行します。
-- **外部エリア** とはフォームの一部で、あらゆるものを表示することができ、必要に応じてユーザー操作を受け付けることができます。
-- **外部プロセス** とは、通常はループ形式で単独実行されるプロセスのことです。 プロセスのコードはすべてプラグインに属しており、4D はプロセスに対してイベントを送受信するだけです。
-
-### 重要な注記
-
-プラグインは、小さな処理をおこなう一つのルーチンを実行するだけの、とても簡単なものでありえます。また、百以上のルーチンとエリアを扱うような、非常に複雑なものでもありえます。 プラグインの機能に制限はありませんが、プラグインの開発にあたっては、プラグインがあくまで従たるコードであることに留意が必要です。 プラグインは 4D 内で実行されます。 プラグインは独立したアプリケーションではなく、4D の一部です。 プラグインは、他のプラグインや 4D 自身と CPU 時間とメモリを共有します。したがって、プラグインのコードは、必要なリソースだけを使用する控えめなコードであるべきです。 たとえば、非常に長いループ処理においては (その重要性が絶対的な優先権を要求しないかぎり)、プラグインは `PA_Yield()` を呼び出して、4D のスケジューラーにも処理時間を割り当てるべきです。
-
-### プラグインの作り方
-
-4D は GitHub 上に、4D Plugin API と the 4D Plugin Wizard を含んだオープンソースの [**プラグイン SDK**](https://github.com/4d/4D-Plugin-SDK) (英語) を提供しています:
-
-- [**4D Plugin API**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20API) は C で書かれており、プラグインの開発を助けるための機能を400以上追加します。 4D Plug-in API の機能は、4D とプラグイン間の通信を管理します。
-- [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) は、4D プラグインの開発を簡略化するために不可欠なツールです。 プラグインのロードや、プラグインとの通信に 4D が必要とするコードがツールによって提供されることで、デベロッパーはプラグインの根幹をなすコードに集中することができます。
-
-### プラグインの共有
-
-開発したプラグインを [GitHub](https://github.com/topics/4d-plugin) で公開し、4D開発者のコミュニティをサポートすることをお勧めします。 正しく参照されるためには、**`4d-plugin`** トピックをご利用ください。

@@ -42,12 +42,14 @@ Los objetos SMTP Transporter se instancian con el comando [SMTP New transporter]
 
 
 <!-- REF #_command_.SMTP New transporter.Params -->
-| Parámetros | Tipo               |    | Descripción                                                                    |
-| ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| server     | Object             | -> | Información del servidor de correo                                             |
-| Resultado  | 4D.SMTPTransporter | <- | [objeto SMTP transporter](#smtp-transporter-object)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|server|Object|->|Información del servidor de correo|
+|Resultado|4D.SMTPTransporter|<-|[SMTP transporter object](#smtp-transporter-object)|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -118,12 +120,14 @@ La función devuelve un [**SMTP transporter**](#smtp-transporter-object). Todas 
 
 
 <!-- REF #4D.SMTPTransporter.new().Params -->
-| Parámetros | Tipo               |    | Descripción                                                                    |
-| ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| server     | Object             | -> | Información del servidor de correo                                             |
-| Resultado  | 4D.SMTPTransporter | <- | [objeto SMTP transporter](#smtp-transporter-object)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|server|Object|->|Información del servidor de correo|
+|Resultado|4D.SMTPTransporter|<-|[SMTP transporter object](#smtp-transporter-object)|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -137,7 +141,7 @@ La función `4D.SMTPTransporter.new()` <!-- REF #4D.SMTPTransporter.new().Summar
 
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
-Para obtener información sobre los códigos de estado SMTP, consulte [esta página](https://www.usps.org/info/smtp_status.html).
+Para más información sobre los códigos de estado SMTP, consulte [esta página](https://www.iana.org/assignments/smtp-enhanced-status-codes/smtp-enhanced-status-codes.xhtml).
 
 #### Ejemplo
 
@@ -158,6 +162,9 @@ Para obtener información sobre los códigos de estado SMTP, consulte [esta pág
  $status:=$transporter.checkConnection()
  If($status.success=True)
     ALERT("SMTP connection check successful!")
+ Else
+    ALERT("Error # "+String($status.status)+", "+$status.statusText)
+ End if
  Else
     ALERT("Error # "+String($status.status)+", "+$status.statusText)
  End if
@@ -211,12 +218,14 @@ La conexión SMTP se cierra automáticamente:
 
 
 <!-- REF #SMTPTransporterClass.send().Params -->
-| Parámetros | Tipo   |    | Descripción                                        |
-| ---------- | ------ |:--:| -------------------------------------------------- |
-| mail       | Object | -> | [Email](EmailObjectClass.md#email-object) a enviar |
-| Resultado  | Object | <- | Estado SMTP|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|mail|Object|->|[Email](EmailObjectClass.md#email-object) a enviar|
+|Resultado|Object|<-|SMTP status|
+</div>
+<!-- END REF -->
 
 #### Descripción
 

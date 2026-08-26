@@ -37,81 +37,37 @@ $person:=cs.Person.new("John";"Doe")
 $hello:=$person.sayHello() //"Hello John Doe"
 ```
 
-## Gestion des classes
+Les fichiers de classe sont gérés via l'Explorateur 4D (voir [Créer des classes](../Project/code-overview.md#creating-classes)).
 
-### Définition d'une classe
+#### Supprimer une classe
 
-Une classe utilisateur dans 4D est définie par un fichier [méthode](methods.md) (.4dm) spécifique, stocké dans le dossier `/Project/Sources/Classes/`. Le nom du fichier est le nom de la classe.
+Pour supprimer une classe existante, sélectionnez-la dans l'explorateur et cliquez sur ![](../assets/en/Users/MinussNew.png) ou choisissez **Déplacer vers la corbeille** dans le menu contextuel.
 
-Lorsque vous nommez des classes, gardez à l'esprit les règles suivantes :
-
-- Un [nom de classe](identifiers.md#classes) doit être conforme aux [règles de nommage des propriétés](identifiers.md#proprietes-des-objets).
-- Les noms de classe sont sensibles à la casse.
-- Il n'est pas recommandé de donner le même nom à une classe et à une table de base de données, afin d'éviter tout conflit.
-
-Par exemple, si vous souhaitez définir une classe nommée "Polygon", vous devez créer le fichier suivant :
-
-```
-Project folder Project Sources Classes Polygon.4dm
-```
-
-### Supprimer une classe
-
-Pour supprimer une classe existante, vous pouvez :
-
-- sur votre disque, supprimer le fichier de classe .4dm du dossier "Classes",
-- dans l'explorateur 4D, sélectionner la classe et cliquez sur ![](../assets/en/Users/MinussNew.png) ou choisissez **Déplacer dans la corbeille** dans le menu contextuel.
-
-### Utilisation de l'interface 4D
-
-Les fichiers de classe sont automatiquement stockés à l'emplacement approprié lorsqu'ils sont créés via l'interface de 4D, soit via le menu **Fichier**, soit via l'Explorateur.
-
-#### Menu Fichier et barre d'outils
-
-Vous pouvez créer un nouveau fichier de classe pour le projet en sélectionnant **Nouveau> Classe...** dans le menu **Fichier** de 4D ou dans la barre d'outils.
-
-Vous pouvez également utiliser le raccourci **Ctrl+Maj+Alt+k**.
-
-#### Explorateur
-
-Dans la **page Méthodes** de l'Explorateur, les classes sont regroupées dans la catégorie **Classes**.
-
-Pour créer une nouvelle classe, vous pouvez :
-
-- sélectionner la catégorie **Classes** et cliquez sur le bouton ![](../assets/en/Users/PlussNew.png) .
-- sélectionner **Nouvelle classe...** dans le menu d'actions en bas de la fenêtre de l'Explorateur ou dans le menu contextuel du groupe Classes.
-  ![](../assets/en/Concepts/newClass.png)
-- sélectionnez **Nouveau> Classe...** dans le menu contextuel de la page d'accueil de l'Explorateur.
-
-#### Prise en charge du code de classe
-
-Dans les différentes fenêtres 4D (éditeur de code, compilateur, débogueur, explorateur d'exécution), le code de classe est essentiellement géré comme une méthode projet avec quelques spécificités :
-
-- Dans l'éditeur de code :
-  - une classe ne peut pas être exécutée
-  - une fonction de classe est un bloc de code
-  - **Aller à définition...** sur un objet membre permet de rechercher des déclarations de fonction de classe; par exemple, "$o.f()" donnera comme résultat de recherche "Function f".
-  - **Chercher les références...** sur la déclaration de fonction de classe recherche la fonction utilisée comme membre d'objet; par exemple, "Function f" donnera comme résultat "$o.f()".
-- Dans l'explorateur d'exécution et le débogueur, les fonctions de classe sont affichées avec le constructeur `<ClassName>` ou le format `<ClassName>.<FunctionName>`.
+Vous pouvez également supprimer le fichier de classe .4dm du dossier "Classes" de votre disque.
 
 ## Class stores
 
 Les classes disponibles sont accessibles depuis leurs class stores. Il existe deux class stores dans 4D :
 
-- [`cs`](../commands/cs.md) pour le class store utilisateur
-- [`4D`](../commands/4d.md) pour le class store intégré
+- [`cs`](../commands/cs) pour les classes utilisateurs et les class stores des composants
+- [`4D`](../commands/4d) pour les classes intégrées
 
-### `cs`
+#### `cs`
 
 <!-- REF #_command_.cs.Syntax -->**cs** : Object<!-- END REF -->
 
 <!-- REF #_command_.cs.Params -->
 
-| Paramètres | Type   |                             | Description                                                         |                  |
-| ---------- | ------ | --------------------------- | ------------------------------------------------------------------- | ---------------- |
-| classStore | Object | &#8592; | Class store utilisateur utilisateurs pour le projet ou le composant | <!-- END REF --> |
+<div class="no-index">
 
-La commande `cs` <!-- REF #_command_.cs.Summary -->retourne le class store utilisateur pour le projet ou le composant courant<!-- END REF -->. Elle retourne toutes les classes utilisateur [définies](#class-definition) dans le projet ou le composant ouvert. Par défaut, seules les [classes ORDA](ORDA/ordaClasses.md) du projet sont disponibles.
+| Paramètres | Type                                                       |                             | Description                                            |
+| ---------- | ---------------------------------------------------------- | --------------------------- | ------------------------------------------------------ |
+| classStore | [4D.ClassStore](../API/ClassStoreClass.md) | &#8592; | Class store utilisateur pour le projet ou le composant |
+
+</div>
+<!-- END REF -->
+
+La commande `cs` <!-- REF #_command_.cs.Summary -->retourne le class store utilisateur pour le projet ou le composant courant<!-- END REF -->. Par défaut, seules les [classes ORDA](ORDA/ordaClasses.md) du projet sont disponibles. Elle retourne toutes les classes utilisateur [définies](../Project/code-overview.md#creating-classes) dans le projet ou le composant ouvert.
 
 #### Exemple
 
@@ -121,15 +77,20 @@ Vous souhaitez créer une nouvelle instance d'un objet de `myClass` :
 $instance:=cs.myClass.new()
 ```
 
-### `4D`
+#### `4D`
 
 <!-- REF #_command_.4D.Syntax -->**4D** : Object <!-- END REF -->
 
 <!-- REF #_command_.4D.Params -->
 
-| Paramètres | Type   |                             | Description    |                  |
-| ---------- | ------ | --------------------------- | -------------- | ---------------- |
-| classStore | Object | &#8592; | Class store 4D | <!-- END REF --> |
+<div class="no-index">
+
+| Paramètres | Type                                                       |                             | Description    |
+| ---------- | ---------------------------------------------------------- | --------------------------- | -------------- |
+| classStore | [4D.ClassStore](../API/ClassStoreClass.md) | &#8592; | Class store 4D |
+
+</div>
+<!-- END REF -->
 
 La commande `4D` <!-- REF #_command_.4D.Summary -->retourne le class store des classes 4D intégrées disponibles<!-- END REF -->. Elle donne accès à des API spécifiques telles que [CryptoKey](API/CryptoKeyClass.md).
 
@@ -144,21 +105,21 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 Vous voulez lister les classes 4D intégrées :
 
 ```4d
- var $keys : collection
+ var $keys : Collection
  $keys:=OB Keys(4D)
  ALERT("There are "+String($keys.length)+" built-in classes.")
 ```
 
 ## L'objet class
 
-Lorsqu'une classe est [définie](#class-definition) dans le projet, elle est chargée dans l'environnement de langage 4D. Une classe est un objet lui-même de la [classe "Class"](API/ClassClass.md). Un objet classe possède les propriétés et fonctions suivantes :
+Une classe est un objet lui-même de la [classe "Class"](API/ClassClass.md). Lorsqu'une classe est [définie](../Project/code-overview.md#creating-classes) dans le projet, elle est chargée dans l'environnement de langage 4D. Un objet classe possède les propriétés et fonctions suivantes :
 
 - chaîne [`name`](API/ClassClass.md#name)
 - objet [`superclass`](API/ClassClass.md#superclass) (null s'il n'y en a pas)
 - fonction [`new()`](API/ClassClass.md#new), permettant d'instancier les objets de la classe
 - propriété [`isShared`](API/ClassClass.md#isshared), true si la classe est [partagée](#shared-classes)
 - propriété [`isSingleton`](API/ClassClass.md#issingleton), true si la classe définit une [classe singleton](#singleton-classes).
-- propriété [`isSectionSingleton`](API/ClassClass.md#issectionsingleton), true si la classe définit une [session singleton](#singleton-classes).
+- propriété [`isSessionSingleton`](API/ClassClass.md#issessionsingleton) true si la classe définit une [session singleton](#singleton-classes).
 - propriété [`me`](API/ClassClass.md#me), permettant d'instancier et d'accéder aux [singletons](#singleton-classes).
 
 De plus, un objet classe peut référencer un objet [`constructor`](#class-constructor) (facultatif).
@@ -187,7 +148,7 @@ Des mots-clés 4D spécifiques peuvent être utilisés dans les définitions de 
 #### Syntaxe
 
 ```4d
-{shared} Function <name>({$parameterName : type; ...}){->$parameterName : type}
+{local | server} {shared} Function <name>({$parameterName : type; ...}){->$parameterName : type}
 // code
 ```
 
@@ -200,6 +161,8 @@ Il n'y a pas de mot-clé de fin pour le code d'une fonction. Le langage 4D déte
 Les fonctions de classe sont des propriétés spécifiques de la classe. Ce sont des objets de la classe [4D.Function](API/FunctionClass.md). Dans le fichier de définition de classe, les déclarations de fonction utilisent le mot-clé `Function` suivi du nom de la fonction.
 
 Si les fonctions sont déclarées dans une [classe partagée](#shared-classes), vous pouvez utiliser le mot-clé `shared` avec elles afin qu'elles puissent être appelées sans [structure `Use...End use`](shared.md#useend-use). Pour plus d'informations, consultez le paragraphe sur les [fonctions partagées](#shared-functions) ci-dessous.
+
+Dans le contexte d'une application client/serveur, le mot-clé `local` ou `server` permet de spécifier sur quelle machine la fonction doit être exécutée. Ces mots-clés ne peuvent être utilisés qu'avec les fonctions du modèle de données ORDA et les fonctions singleton partagées/session. Pour plus d'informations, reportez-vous au paragraphe [fonctions locales et serveur](#local-and-server) ci-dessous.
 
 Le nom de la fonction doit être conforme aux [règles de nommage des objets](Concepts/identifiers.md#object-properties).
 
@@ -241,9 +204,9 @@ Dans le code de l'application, les fonctions de classes sont appelées comme des
   - [`apply()`](API/FunctionClass.md#apply)
   - [`call()`](API/FunctionClass.md#call)
 
-:::warning Note importante thread-safety
+:::warning Attention thread-safety
 
-Si une fonction de classe n'est pas thread-safe et qu'elle est appelée par une méthode avec l'attribut "Peut être exécutée dans un process preémptif" :
+Si une fonction de classe n'est pas thread-safe et qu'elle est appelée par une méthode ayant l'attribut "Peut être exécutée dans un process préemptif" :
 
 - le compilateur ne génère pas d'erreur (ce qui est différent par rapport aux méthodes standard),
 - une erreur est déclenchée par 4D uniquement au moment de l'exécution.
@@ -266,7 +229,7 @@ Si le type n'est pas fourni, le paramètre sera défini comme `Variant`.
 
 #### Valeur retournée
 
-Vous déclarez le paramètre de retour d'une fonction (optionnel) en ajoutant une flèche (`->`) et la définition du paramètre de retour après la liste des paramètres d'entrée, ou les deux points (`:`) et le tye de paramètre de retour uniquement. Par exemple :
+Vous déclarez le paramètre de retour d'une fonction (optionnel) en ajoutant une flèche (`->`) et la définition du paramètre de retour après la liste des paramètres d'entrée, ou les deux points (`:`) et le type de paramètre de retour uniquement. Par exemple :
 
 ```4d
 Function add($x : Variant; $y : Integer)->$result : Integer
@@ -333,7 +296,7 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 
 :::note
 
-Il n'y a pas de mot-clé de fin pour le code d'une fonction class constructor. Le langage 4D détecte automatiquement la fin du code d'une fonction par le mot clé `Function` suivant ou la fin du fichier de classe.
+Il n'y a pas de mot-clé de fin pour le code d'une fonction de constructeur de classe. Le langage 4D détecte automatiquement la fin du code d'une fonction par le mot clé `Function` suivant ou la fin du fichier de classe.
 
 :::
 
@@ -341,7 +304,7 @@ Une fonction class constructor accepte des [paramètres](#parameters) facultatif
 
 Lorsque vous appelez la fonction [`new()`](API/ClassClass.md#new), le constructeur de classe est appelé avec les paramètres éventuellement passés à la fonction `new()`.
 
-Il ne peut y avoir qu'une seule fonction constructor dans une classe (sinon une erreur est renvoyée). La commande [`Super`](../commands/super.md) permet d'appeler la [`superclass`](../API/ClassClass#superclass), c'est-à-dire la classe mère de la fonction.
+Il ne peut y avoir qu'une seule fonction constructor dans une classe (sinon une erreur est renvoyée). La commande [`Super`](../commands/super) permet d'appeler la [`superclass`](../API/ClassClass#superclass), c'est-à-dire la classe mère de la fonction.
 
 Vous pouvez créer et saisir des propriétés d'instance dans le constructeur (voir exemple). Alternativement, si les valeurs de vos propriétés d'instance ne dépendent pas des paramètres passés au constructeur, vous pouvez les définir en utilisant le mot-clé [`property`](#property).
 
@@ -373,7 +336,7 @@ $o:=cs.MyClass.new("John";42)
 // $o = {"name" : "John" ; "age":42}
 ```
 
-### `propriété`
+### `property`
 
 #### Syntaxe
 
@@ -493,12 +456,12 @@ $o.age:="Smith"  //erreur de syntaxe
 #### Syntaxe
 
 ```4d
-{shared} Function get <name>()->$result : type
+{local | server} {shared} Function get <name>()->$result : type
 // code
 ```
 
 ```4d
-{shared} Function set <name>($parameterName : type)
+{local | server} {shared} Function set <name>($parameterName : type)
 // code
 ```
 
@@ -523,7 +486,9 @@ Dans le fichier de définition de la classe, les déclarations de propriétés c
 
 Lorsque les deux fonctions sont définies, la propriété calculée est en **lecture-écriture**. Si seule une `Function get` est définie, la propriété calculée est en **lecture seule**. Dans ce cas, une erreur est retournée si le code tente de modifier la propriété. Dans ce cas, une erreur est retournée si le code tente de modifier la propriété.
 
-Si une fonction définie à l'intérieur d'une classe partagée modifie les objets de la classe, elle devrait appeler la structure [`Use...End use`](shared.md#useend-use) pour protéger l'accès aux objets partagés. Pour plus d'informations, consultez le paragraphe sur les [fonctions partagées](#shared-functions) ci-dessous.
+Si les fonctions sont déclarées dans une [classe partagée](#constructeur-de-classe-partagee), vous pouvez utiliser le mot-clé `shared` avec elles afin qu'elles puissent être appelées sans la structure [`Use...End use`](shared.md#useend-use). Pour plus d'informations, consultez le paragraphe sur les [fonctions partagées](#shared-functions) ci-dessous.
+
+Dans le contexte d'une application client/serveur, le mot-clé `local` ou `server` permet de spécifier sur quelle machine la fonction doit être exécutée. Ces mots-clés ne peuvent être utilisés qu'avec les fonctions du modèle de données ORDA et les fonctions singleton partagées/session. Pour plus d'informations, reportez-vous au paragraphe [fonctions locales et serveur](#local-and-server) ci-dessous.
 
 Le type de la propriété calculée est défini par la déclaration de type `$return` du *getter*. Il peut s'agir de n'importe quel [type de propriété valide](dt_object.md).
 
@@ -632,13 +597,13 @@ Les commandes suivantes ont des caractéristiques spécifiques lorsqu'elles sont
 
 La commande [`Super`](../commands/super.md) permet d'appeler la [`superclass`](../API/ClassClass#superclass), c'est-à-dire la classe mère de la fonction. Il ne peut y avoir qu'une seule fonction constructor dans une classe (sinon une erreur est renvoyée).
 
-Pour plus de détails, voir la description de la commande [`Super`](../commands/super.md).
+Pour plus de détails, voir la description de la commande [`Super`](../commands/super).
 
 ### `This`
 
-La commande [`This`](../commands/this.md) renvoie une référence à l'objet en cours de traitement. Dans la plupart des cas, la valeur de `This` est déterminée par la manière dont une fonction de classe est appelée. Habituellement, `This` fait référence à l'objet sur lequel la fonction a été appelée, comme si la fonction était sur l'objet.
+La commande [`This`](../commands/this) renvoie une référence à l'objet en cours de traitement. Dans la plupart des cas, la valeur de `This` est déterminée par la manière dont une fonction de classe est appelée. Habituellement, `This` fait référence à l'objet sur lequel la fonction a été appelée, comme si la fonction était sur l'objet.
 
-Voici un exemple :
+Exemple :
 
 ```4d
 //Classe : ob
@@ -656,11 +621,7 @@ $o.b:=3
 $val:=$o.f() //8
 ```
 
-Pour plus de détails, voir la description de la commande [`This`](../commands/this.md).
-
-## Commandes de classes
-
-Plusieurs commandes du langage 4D se rapportent à la manipulation des classes.
+Pour plus de détails, voir la description de la commande [`This`](../commands/this).
 
 ### `OB Class`
 
@@ -710,7 +671,7 @@ cs.Person.isShared //true
 
 ### Fonctions partagées
 
-Si les fonctions sont déclarées dans une [classe partagée](#constructeur-de-classe-partagee), vous pouvez utiliser le mot-clé `shared` avec elles afin qu'elles puissent être appelées sans la structure [`Use...End use`](shared.md#useend-use). Pour plus d'informations, consultez le paragraphe sur les [fonctions partagées](#shared-functions) ci-dessous.
+Si une fonction définie à l'intérieur d'une classe partagée modifie les objets de la classe, elle devrait appeler la structure [`Use...End use`](shared.md#useend-use) pour protéger l'accès aux objets partagés. Pour plus d'informations, consultez le paragraphe sur les [fonctions partagées](#shared-functions) ci-dessous.
 
 Pour créer une fonction partagée, ajoutez le mot-clé `shared` avant le mot-clé [Function](#function) dans une classe partagée. Par exemple :
 
@@ -735,13 +696,13 @@ Une **classe singleton** est une classe utilisateur qui ne produit qu'une seule 
 
 ### Types de singletons
 
+Les singletons sont utiles pour définir des valeurs qui doivent être disponibles partout dans une application, une session ou un process.
+
 4D prend en charge trois types de singletons :
 
 - un **singleton process** a une instance unique pour le process dans lequel il est instancié,
 - un **singleton partagé** a une instance unique pour tous les process sur la machine.
-- une **singleton session** est un singleton partagé, mais avec une instance unique pour tous les process de la [session](../API/SessionClass.md). Les singletons de session sont partagés au sein d'une session entière mais varient d'une session à l'autre. Dans le contexte d'un client-serveur ou d'une application web, les singletons de session permettent de créer et d'utiliser une instance différente pour chaque session, et donc pour chaque utilisateur.
-
-Les singletons sont utiles pour définir des valeurs qui doivent être disponibles partout dans une application, une session ou un process.
+- un **singleton session** est un singleton partagé, mais avec une instance unique pour tous les process de la [session](../API/SessionClass.md). Les singletons de session sont partagés au sein d'une même session mais varient d'une session à l'autre. Dans le contexte d'une application client-serveur ou web, les singletons de session permettent de créer et d'utiliser une instance différente pour chaque session, et donc pour chaque utilisateur. Les singletons de session sont particulièrement appropriés pour les [applications Qodly](https://developer.4d.com/qodly/).
 
 :::info
 
@@ -781,6 +742,10 @@ Si vous avez besoin d'instancier un singleton avec des paramètres, vous pouvez 
 La propriété [`.isSingleton`](../API/ClassClass.md#issingleton) des objets de classe permet de savoir si la classe est un singleton.
 
 La propriété [`.isSessionSingleton`](../API/ClassClass.md#issessionsingleton) des objets de classe permet de savoir si la classe est un singleton de session.
+
+### Fonctions singleton exposées
+
+Les fonctions singleton partagées et de session prennent en charge le mot-clé [`exposed`](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions). Une fonction singleton exposée peut être directement appelée par des requêtes REST. Cette fonctionnalié est utile pour la conception de [pages Qodly appelant des fonctions 4D](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/events/bindingActionToEvents#class-functions).
 
 ### Exemples
 
@@ -872,6 +837,182 @@ $myList := cs.ItemInventory.me.itemList
 
 ```
 
-#### Voir également
+:::tip Articles de blog sur le sujet
 
-[Singletons dans 4D](https://blog.4d.com/singletons-in-4d) (blog post) <br/> [Session Singletons](https://blog.4d.com/introducing-session-singletons) (blog post).
+[Singletons dans 4D](https://blog.4d.com/singletons-in-4d)  
+[Présentation des singletons de session](https://blog.4d.com/introducing-session-singletons)
+
+:::
+
+## `local` et `server`
+
+Dans [l'architecture client/serveur](../Desktop/clientServer.md), les mots-clés `local` et `server` vous permettent de spécifier où vous voulez que la fonction soit exécutée : côté client ou côté serveur. Le contrôle de l'emplacement d'exécution est utile pour des raisons de performance ou pour la mise en de fonctions métier logiques.
+
+La syntaxe formelle est la suivante :
+
+```4d
+// déclarer une fonction à exécuter sur un client dans le cadre du client/serveur
+local Function <functionName>   
+```
+
+```4d
+// déclarer une fonction à exécuter sur le serveur en client/serveur
+server Function <functionName>   
+```
+
+Les mots-clés `local` et `server` ne sont disponibles que pour les fonctions des classes suivantes :
+
+- [Modèle de données ORDA](../ORDA/ordaClasses.md) classes
+- classes [singleton partagées ou de session](#singleton-classes).
+
+:::tip Article(s) de blog sur le sujet
+
+[Une nouvelle façon d'exécuter la logique commerciale sur le serveur](https://blog.4d.com/a-new-way-to-execute-business-logic-on-the-server)
+
+:::
+
+### Vue d’ensemble
+
+Les fonctions prises en charge ont un **emplacement d'exécution par défaut** lorsqu'aucun mot-clé d'emplacement n'est utilisé. Vous pouvez néanmoins insérer un mot-clé `local` ou `server` pour modifier le lieu d'exécution, ou pour rendre le code plus explicite.
+
+| Fonctions prises en charge                            | Exécution par défaut | avec le mot-clé `local`                                                  | avec le mot-clé `server`                                                                                                                                                                  |
+| ----------------------------------------------------- | -------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Modèle de données ORDA](../ORDA/ordaClasses.md)      | sur le serveur       | La fonction est exécutée sur le client si elle est appelée sur le client |                                                                                                                                                                                           |
+| [Singleton partagé ou de session](#singleton-classes) | Local                |                                                                          | La fonction est exécutée sur le serveur sur l'instance serveur du singleton. <br/>S'il n'y a aucune instance du singleton sur le serveur, elle est créée. |
+
+Si les mots-clés `local` et `server` sont utilisés dans un autre contexte, une erreur est retournée.
+
+:::note
+
+Pour une description globale des emplacements où le code est réellement exécuté en client/serveur, veuillez vous référer à [cette section](../Desktop/clientServer.md#code-execution-location).
+
+::::
+
+### `local`
+
+Dans l'[architecture client/serveur] (../Desktop/clientServer.md), le mot-clé `local` spécifie que la fonction doit être exécutée **sur la machine à partir de laquelle elle est appelée**.
+
+:::note Rappel
+
+Le mot-clé `local` est inutile pour les [fonctions singleton partagées ou de session](#singleton-classes), qui sont exécutées localement par défaut.
+
+:::
+
+Par défaut, les [fonctions du modèle de données ORDA](../ORDA/ordaClasses.md) sont exécutées sur le serveur. Cela garantit généralement les meilleures performances puisque seuls la requête de fonction et le résultat sont envoyés sur le réseau. Cependant, [pour des raisons d'optimisation](../ORDA/client-server-optimization.md#using-the-local-keyword), vous pouvez vouloir exécuter une fonction de modèle de données sur le client. Vous pouvez alors utiliser le mot clé `local`.
+
+#### Exemple: Calcul de l'âge
+
+Considérons une entité avec un attribut *birthDate*. Nous souhaitons définir une fonction `age()` qui serait appelée dans une list box. Cette fonction peut être exécutée sur le client, ce qui évite de déclencher une requête au serveur pour chaque ligne de la list box.
+
+Dans la classe *StudentsEntity* :
+
+```4d
+Class extends Entity
+
+local Function age() -> $age: Variant
+
+If (This.birthDate#!00-00-00!)
+    $age:=Year of(Current date)-Year of(This.birthDate)
+Else
+    $age:=Null
+End if
+```
+
+### `server`
+
+Dans l'[architecture client/serveur](../Desktop/clientServer.md), le mot-clé `server` spécifie que la fonction doit être exécutée **sur le serveur**.
+
+:::note Rappel
+
+Le mot clé `server` est inutile avec les [fonctions du modèle de données ORDA](../ORDA/ordaClasses.md), qui sont exécutées sur le serveur par défaut.
+
+:::
+
+Les paramètres et le résultat de la fonction `server` doivent être [**streamable**](./dt_object.md#streaming-support). Par exemple, [4D.Datastore](../API/DataStoreClass.md), [File handle](../API/FileHandleClass.md), ou [WebServer](../API/WebServerClass.md) sont des classes non streamables mais [4D.File](../API/FileClass.md) est streamable.
+
+Cette fonctionnalité est particulièrement utile dans le cadre des [sessions utilisateur à distance](../Desktop/sessions.md#remote-user-sessions), vous permettant d'implémenter la logique métier dans un [singleton de session](../Concepts/classes.md#session-singleton) afin de la partager entre tous les process de la session, étendant ainsi les fonctionnalités de la commande [`Session`](../commands/session). Dans ce cas, vous pourrez vouloir que la logique applicative soit exécutée **sur le serveur** afin que toutes les informations relatives à la session soient rassemblées sur le serveur.
+
+Par défaut, les fonctions singleton partagées ou de session sont exécutées localement. L'ajout du mot-clé `server` dans la définition de la fonction de la classe permet à 4D d'utiliser l'instance singleton sur le serveur. Notez que cela peut entraîner l'instanciation du singleton sur le serveur s'il n'existe pas encore d'instance.
+
+Pour les [sessions singleton](#singleton-classes), la fonction est exécutée sur le serveur dans l'instance de singleton correspondante, c'est-à-dire l'instance de singleton pour la session courante.
+
+:::note
+
+Si vous déclarez une `server Function` dans un singleton partagé puis :
+
+- vous instanciez un singleton *S1* sur le client (nommé *s1*),
+- vous exécutez *s1.function()* sur le client.
+
+Si aucune instance de *S1* n'existe sur le serveur à ce moment-là, *S1* est instancié sur le serveur (le constructeur est exécuté) et *function()* s'exécute sur cette instance de serveur. Par conséquent, deux instances de *S1* peuvent coexister (côté client et côté serveur), avec des valeurs de propriété distinctes. Dans ce cas, *s1.property* est toujours accessible localement. Il n'est pas possible d'y accéder sur le serveur, par exemple à partir de code côté serveur utilisant la notation à point directe (une erreur est renvoyée).
+
+:::
+
+#### Exemple : singleton Administration
+
+Le singleton partagé *Administration* possède une fonction "server" qui exécute la commande [`Process activity`](../commands/process-activity). Ce singleton est instancié sur un 4D distant mais la fonction renvoie l'activité du serveur sur le serveur.
+
+```4d
+  // Administration class
+
+shared singleton Class constructor
+
+  // Cette fonction est exécutée sur le serveur
+server Function processActivity() : Object
+  return Process activity
+
+
+Function localProcessActivity() : Object
+  return Process activity
+```
+
+Code s'exécutant sur le client :
+
+```4d
+var $localActivity; $serverActivity : Object
+var $administration : cs.Administration
+
+// Le singleton Administration est instancié sur le client 4D
+$administration:=cs.Administration.me
+
+// Obtenir les process en cours d'exécution sur le serveur 4D distant
+$localActivity:=$administration.localProcessActivity()
+
+// Obtenir les process et les sessions en cours d'exécution sur le serveur 4D
+$serverActivity:=$administration.processActivity()
+
+```
+
+#### Exemple: singleton de session
+
+Vous stockez vos utilisateurs dans une table Users et vous gérez une authentification personnalisée. Vous utilisez un singleton de session pour l'authentification :
+
+```4d
+// Classe singleton session UserSession
+
+server Function checkUser($credentials : Object) : Boolean
+	
+var $user : cs.UsersEntity
+var $result:=False
+	
+If ($credentials#Null)
+	$user:=ds.Users.query("Email === :1"; $credentials.identifier).first()
+		
+	If (($user#Null) && (Verify password hash($credentials.password; $user.Password)))
+		Use (Session.storage)
+			Session.storage.userInfo:=New shared object("userId"; $user.ID)
+		End use 
+			
+		$result:=True
+	End if 
+End if 
+	
+return $result
+```
+
+Pour fournir l'utilisateur courant aux clients 4D, le singleton expose une propriété calculée de l'utilisateur obtenue du serveur :
+
+```4d
+server Function get user() : cs.UsersEntity
+	return ds.Users.get(Session.storage.userInfo.userId)
+```
+

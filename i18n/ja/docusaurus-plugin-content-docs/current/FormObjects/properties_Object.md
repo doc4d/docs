@@ -29,9 +29,9 @@ title: オブジェクト
 [グループボックス](groupBox.md) -
 [階層リスト](list_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ピクチャーボタン](pictureButton_overview.md) -
 [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
 [プラグインエリア](pluginArea_overview.md) -
@@ -53,7 +53,7 @@ title: オブジェクト
 
 > オブジェクト名のサイズ上限は 255バイトです。
 
-4D ランゲージを使用する場合、オブジェクト名を使用してアクティブなフォームオブジェクトを参照することができます([オブジェクト(フォーム)コマンド](../commands/theme/Objects_Forms.md) を参照して下さい)。
+4D ランゲージを使用する場合、[オブジェクト名を使用してアクティブなフォームオブジェクトを参照する](./formObjects_overview.md#accessing-form-objects-using-their-name-or-their-data-source-in-the-4d-language) ことができます。
 
 フォームオブジェクトの命名規則については [識別子](Concepts/identifiers.md) の章を参照してください。
 
@@ -75,9 +75,9 @@ title: オブジェクト
 [グループボックス](groupBox.md) -
 [階層リスト](list_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ピクチャーボタン](pictureButton_overview.md) -
 [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
 [プラグインエリア](pluginArea_overview.md) -
@@ -94,7 +94,7 @@ title: オブジェクト
 
 #### コマンド
 
-[FORM GET OBJECTS](../commands-legacy/form-get-objects.md) - [OBJECT Get name](../commands-legacy/object-get-name.md)
+[FORM GET OBJECTS](../commands/form-get-objects) - [OBJECT Get name](../commands/object-get-name)
 
 ---
 
@@ -106,7 +106,7 @@ title: オブジェクト
 
 「値」を保存できるオブジェクトは以下のとおりです:
 
-| Object                                 | 保存される値                                                          |
+| オブジェクト                                 | 保存される値                                                          |
 | -------------------------------------- | --------------------------------------------------------------- |
 | [チェックボックス](checkbox_overview.md)       | 関連付けられた変数の値 (0, 1, 2)                        |
 | [ドロップダウンリスト](dropdownList_Overview.md) | 選択されている項目の番号                                                    |
@@ -125,7 +125,7 @@ title: オブジェクト
 
 ---
 
-## Variable or Expression {#variable-or-expression}
+## 変数はあるいは式 {#variable-or-expression}
 
 > セレクションおよびコレクション型のリストボックス列に関しては **[式](properties_DataSource.md#式)** の章も参照ください。
 
@@ -155,7 +155,7 @@ title: オブジェクト
 
 変数名が与えられていない場合、4D はフォームがロードされたときにインタープリターのプロセス変数の空間内でユニークな名前を計算し、その名前でオブジェクト用の変数を新規作成します (このメカニズムはコンパイルモードでも使用することができます)。 この一時的な変数はフォームが閉じられるときに破棄されます。
 
-ダイナミック変数を使用するフォームオブジェクトの値を取得あるいは設定するためには、[`OBJECT Get value`](../commands-legacy/object-get-value.md) および [`OBJECT SET VALUE`](../commands-legacy/object-set-value.md) コマンドを使用するだけです。 例:
+ダイナミック変数を使用するフォームオブジェクトの値を取得あるいは設定するためには、[`OBJECT Get value`](../commands/object-get-value) および [`OBJECT SET VALUE`](../commands/object-set-value) コマンドを使用するだけです。 例:
 
 ```4d
  var $value : Variant
@@ -178,9 +178,9 @@ title: オブジェクト
 [ドロップダウンリスト](dropdownList_Overview.md) -
 [階層リスト](list_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
 [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
 [プラグインエリア](pluginArea_overview.md) -
 [進捗インジケーター](progressIndicator.md) -
@@ -194,28 +194,28 @@ title: オブジェクト
 
 #### コマンド
 
-[`LISTBOX Get column formula`](../commands-legacy/listbox-get-column-formula.md) - [`LISTBOX SET COLUMN FORMULA`](../commands-legacy/listbox-set-column-formula.md) - [`OBJECT Get data source`](../commands-legacy/object-get-data-source.md) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula.md) - [`OBJECT Get value`](../commands-legacy/object-get-value.md) - [`OBJECT Get pointer`](../commands-legacy/object-get-pointer.md) - [`OBJECT SET VALUE`](../commands-legacy/object-set-value.md) - [`OBJECT SET DATA SOURCE`](../commands-legacy/object-set-data-source.md) - [`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula.md)
+[`LISTBOX Get column formula`](../commands/listbox-get-column-formula) - [`LISTBOX SET COLUMN FORMULA`](../commands/listbox-set-column-formula) - [`OBJECT Get data source`](../commands/object-get-data-source) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula) - [`OBJECT Get value`](../commands/object-get-value) - [`OBJECT Get pointer`](../commands/object-get-pointer) - [`OBJECT SET VALUE`](../commands/object-set-value) - [`OBJECT SET DATA SOURCE`](../commands/object-set-data-source) - [`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula)
 
 ---
 
 ## 式の型/式タイプ
 
-> [セレクション型](listbox_overview.md#セレクションリストボックス) および [コレクション型](listbox_overview.md#コレクションまたはエンティティセレクションリストボックス) のリストボックス列や、[オブジェクト](FormObjects/dropdownList_Overview.md#オブジェクトの使用) や [配列](FormObjects/dropdownList_Overview.md#配列の使用) に関連付けられた[ドロップダウンリスト](dropdownList_Overview.md) のプロパティリストでは、このプロパティは、[**データタイプ**](properties_DataSource.md#データタイプ-式の型) と呼ばれています。
+> [セレクション型](FormObjects/listbox-object.md#セレクションリストボックス) および [コレクション型](FormObjects/listbox-object.md#コレクションまたはエンティティセレクションリストボックス) のリストボックスカラムや、[オブジェクト](FormObjects/dropdownList_Overview.md#オブジェクトの使用) や [配列](FormObjects/dropdownList_Overview.md#配列の使用) に関連付けられた[ドロップダウンリスト](dropdownList_Overview.md) のプロパティリストでは、このプロパティは、[**データタイプ**](properties_DataSource.md#データタイプ-式の型) と呼ばれています。
 
 オブジェクトに関連付けられた式または変数のデータ型を指定します。 この設定の主な目的は、プロパティリスト内で提供されるテーマとオプションが、データの型と対応するようにするためです。 つまり、実際に変数の型そのものを決めるわけではありません。 プロジェクトをコンパイルするには、[変数を宣言](Concepts/variables.md#変数の宣言) する必要があります。
 
 ただし、次の特定の場合には、このプロパティは型宣言の機能を持ちえます:
 
 - **[ダイナミック変数](#ダイナミック変数)**: このプロパティを使って、ダイナミック変数の型を宣言することができます。
-- **[リストボックス列](listbox_overview.md#リストボックス列)**: このプロパティは列データに表示フォーマットを関連づけるのに使用されます。  提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。 使用できる標準の 4D フォーマットはテキスト、数値、整数、日付、時間、ピクチャー、そしてブールです。 テキストの場合は専用の表示フォーマットがありません。 標準フォーマットのほかに、定義したカスタムフォーマットも選択することができます。
-- **[ピクチャー変数](input_overview.md)**: このプロパティを使うと、インタープリタモードにおいてフォームロード前に変数を宣言することができます。  フォーム上のピクチャー変数にピクチャーを表示する際には特別なメカニズムが使用されます。 そのため、他の型の変数とは違って、ピクチャー変数の宣言は、フォームロード前 (`On Load` フォームイベントよりも先) におこなう必要があります。 これを行うためには、フォームのロードより前に`var varName : Picture` 宣言を実行するか(通常、`DIALOG` コマンドを呼び出したメソッド内で行います)、変数をフォームレベルで式タイププロパティを使用して型指定する必要があります。
+- **[リストボックスカラム](listbox-column.md)**: このプロパティは列データに表示フォーマットを関連づけるのに使用されます。 提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。 使用できる標準の 4D フォーマットはテキスト、数値、整数、日付、時間、ピクチャー、そしてブールです。 テキストの場合は専用の表示フォーマットがありません。 標準フォーマットのほかに、定義したカスタムフォーマットも選択することができます。
+- **[ピクチャー変数](input_overview.md)**: このプロパティを使うと、インタープリターモードにおいてフォームロード前に変数を宣言することができます。  フォーム上のピクチャー変数にピクチャーを表示する際には特別なメカニズムが使用されます。 そのため、他の型の変数とは違って、ピクチャー変数の宣言は、フォームロード前 (`On Load` フォームイベントよりも先) におこなう必要があります。 これを行うためには、フォームのロードより前に`var varName : Picture` 宣言を実行するか(通常、`DIALOG` コマンドを呼び出したメソッド内で行います)、変数をフォームレベルで式タイププロパティを使用して型指定する必要があります。
   このいずれかをおこなわない場合、ピクチャー変数はピクチャーを正しく表示できません (インタープリターモードのみ)。
 
 #### JSON 文法
 
-| 名称                 | データタイプ | とりうる値                                                                                                                                                                                                                                                                                                        |
-| ------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| dataSourceTypeHint | string | <li>**標準のオブジェクト**: "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**リストボックス列:** "boolean", "number", "picture", "text", date", "time"。   *配列/セレクションリストボックスのみ*: "integer", "object"</li> |
+| 名称                 | データタイプ | とりうる値                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| dataSourceTypeHint | string | <li>**標準のオブジェクト**: "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**リストボックス列:** "boolean", "number", "picture", "text", date", "time"。   *配列/セレクションリストボックスのみ*: "integer", "object"</li>  *配列/セレクションリストボックスのみ*: "integer", "object"</li> |
 
 #### 対象オブジェクト
 
@@ -223,8 +223,8 @@ title: オブジェクト
 [コンボボックス](comboBox_overview.md) -
 [ドロップダウンリスト](dropdownList_Overview.md) -
 [入力](input_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
 [プラグインエリア](pluginArea_overview.md) -
 [進捗インジケーター](progressIndicator.md) -
 [ラジオボタン](radio_overview.md) -
@@ -280,7 +280,7 @@ title: オブジェクト
 - オブジェクトのコレクションを使用した場合、データソース式内で **This** コマンドを呼び出すことで、各プロパティ値にアクセスすることが可能です。例: `This.<propertyPath>`。
 - エンティティセレクションを使用した場合、データソース式内で **This** コマンドを呼び出すことで、各属性値へとアクセスすることが可能です。例: `This.<attributePath>`。
 
-> (オブジェクトでない) スカラー値のコレクションを使用した場合、データソース式内で **This.value** を呼び出すことで、各値にアクセスすることが可能です。 ただしこの場合、値の変更や現在のオブジェクトへのアクセスはできません。 ただしこの場合、値の変更や現在のオブジェクトへのアクセスはできません。
+> (オブジェクトでない) スカラー値のコレクションを使用した場合、データソース式内で **This.value** を呼び出すことで、各値にアクセスすることが可能です。 ただしこの場合、値の変更や現在のオブジェクトへのアクセスはできません。
 
 #### JSON 文法
 
@@ -294,7 +294,7 @@ title: オブジェクト
 
 #### コマンド
 
-[`OBJECT Get data source`](../commands-legacy/object-get-data-source.md) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula.md) - [`OBJECT Get value`](../commands-legacy/object-get-value.md) - [`OBJECT Get pointer`](../commands-legacy/object-get-pointer.md) - [`OBJECT SET VALUE`](../commands-legacy/object-set-value.md) - [`OBJECT SET DATA SOURCE`](../commands-legacy/object-set-data-source.md) - [`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula.md)
+[`OBJECT Get data source`](../commands/object-get-data-source) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula) - [`OBJECT Get value`](../commands/object-get-value) - [`OBJECT Get pointer`](../commands/object-get-pointer) - [`OBJECT SET VALUE`](../commands/object-set-value) - [`OBJECT SET DATA SOURCE`](../commands/object-set-data-source) - [`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula)
 
 ---
 
@@ -375,37 +375,37 @@ title: オブジェクト
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) - [チェックボックス](checkbox_overview.md) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) - [ラジオボタン](radio_overview.md) - [テキストエリア](text.md)
+[ボタン](button_overview.md) - [チェックボックス](checkbox_overview.md) - [リストボックスヘッダー](listbox-header-footer.md#ヘッダー) - [ラジオボタン](radio_overview.md) - [テキストエリア](text.md)
 
 #### コマンド
 
-[`OBJECT Get title`](../commands-legacy/object-get-title.md) - [`OBJECT SET TITLE`](../commands-legacy/object-set-title.md)
+[`OBJECT Get title`](../commands/object-get-title) - [`OBJECT SET TITLE`](../commands/object-set-title)
 
 ---
 
 ## 変数の計算
 
-このプロパティは、[リストボックスフッター](listbox_overview.md#リストボックスフッター) エリアに適用される計算タイプを設定します。
+このプロパティは、[リストボックスフッター](listbox-header-footer.md#フッター) エリアに適用される計算タイプを設定します。
 
-> フッターでの計算は、[`LISTBOX SET FOOTER CALCULATION`](../commands-legacy/listbox-set-footer-calculation.md) 4D コマンドを使用することでも設定することができます。
+> フッターでの計算は、[`LISTBOX SET FOOTER CALCULATION`](../commands/listbox-set-footer-calculation) 4D コマンドを使用することでも設定することができます。
 
 様々な自動計算が利用可能です。 以下の表は、列のデータ型に応じて使用することのできる計算と、(コードで明示的に宣言されていないとき) 4D によってフッター変数に自動で割り当てられる型を示しています:
 
-| 計算タイプ                                    | Num | Text | Date | Time | Bool | ピクチャー | フッター変数の型 |
-| ---------------------------------------- | --- | ---- | ---- | ---- | ---- | ----- | -------- |
-| 最小                                       | X   | X    | X    | X    | X    |       | 列の型と同じ   |
-| 最大                                       | X   | X    | X    | X    | X    |       | 列の型と同じ   |
-| 合計                                       | X   |      |      | X    | X    |       | 列の型と同じ   |
-| カウント                                     | X   | X    | X    | X    | X    | X     | Integer  |
-| 平均                                       | X   |      |      | X    |      |       | Real     |
-| 標準偏差(\*)              | X   |      |      | X    |      |       | Real     |
-| 分散(\*)                | X   |      |      | X    |      |       | Real     |
-| 平方和(\*)               | X   |      |      | X    |      |       | Real     |
-| カスタム (JSON では "none") | X   | X    | X    | X    | X    | X     | 制限なし     |
+| 計算タイプ                                    | Num | Text | Date | Time | Bool | Pict | フッター変数の型 |
+| ---------------------------------------- | --- | ---- | ---- | ---- | ---- | ---- | -------- |
+| 最小                                       | ○   | ○    | ○    | ○    | ○    |      | 列の型と同じ   |
+| 最大                                       | ○   | ○    | ○    | ○    | ○    |      | 列の型と同じ   |
+| 合計                                       | ○   |      |      | ○    | ○    |      | 列の型と同じ   |
+| カウント                                     | ○   | ○    | ○    | ○    | ○    | ○    | Integer  |
+| 平均                                       | ○   |      |      | ○    |      |      | Real     |
+| 標準偏差(\*)              | ○   |      |      | ○    |      |      | Real     |
+| 分散(\*)                | ○   |      |      | ○    |      |      | Real     |
+| 平方和(\*)               | ○   |      |      | ○    |      |      | Real     |
+| カスタム (JSON では "none") | ○   | ○    | ○    | ○    | ○    | ○    | 制限なし     |
 
 (\*) 配列型のリストボックスのみ
 
-> フッター計算には、宣言された、あるいは動的な [変数](Concepts/variables.md) のみを使用できます。 フッター計算には、宣言された、あるいは動的な [変数](Concepts/variables.md) のみを使用できます。 その他の [式](Concepts/quick-tour.md#式) (例: `Form.value`) はサポートされていません。
+> フッター計算には、宣言された、あるいは動的な [変数](Concepts/variables.md) のみを使用できます。 その他の [式](Concepts/quick-tour.md#式) (例: `Form.value`) はサポートされていません。
 
 自動計算の際、リストボックス行の表示/非表示状態は考慮されません。 表示行だけを計算対象にしたい場合、カスタムを選択してプログラムコードで計算しなくてはなりません。
 
@@ -432,8 +432,8 @@ title: オブジェクト
 
 #### 対象オブジェクト
 
-[リストボックスフッター](listbox_overview.md#リストボックスフッター)
+[リストボックスフッター](listbox-header-footer.md#フッター)
 
 #### コマンド
 
-[`LISTBOX Get footer calculation`](../commands-legacy/listbox-get-footer-calculation.md) - [`LISTBOX SET FOOTER CALCULATION`](../commands-legacy/listbox-set-footer-calculation.md)
+[`LISTBOX Get footer calculation`](../commands/listbox-get-footer-calculation) - [`LISTBOX SET FOOTER CALCULATION`](../commands/listbox-set-footer-calculation)

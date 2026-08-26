@@ -250,7 +250,7 @@ Os campos abaixo estão registrados para cada evento:
 | timestamp          | Data e hora em formato ISO 8601 (YYYY-MM-DDThh:mm:ss.mmm)    |
 | loggerID           | Opcional                                                     |
 | componentSignature | Opcional - assinatura interna de componente                  |
-| messageLevel       | Informação, Aviso, Erro                                      |
+| messageLevel       | Trace, Debug, Info, Warning, Error, Fatal                    |
 | message            | Descrição da entrada de histórico                            |
 
 Dependendo do evento, vários outros campos podem ser registrados, como task, socket, etc.
@@ -548,17 +548,7 @@ O arquivo de configuração do registo é um arquivo `.json` que deve estar em c
             }
           },
         "httpDebugLogs": {
-            "description": "Configuration for http debug logs",
-            "type": "object",
-            "properties": {
-                "level": {
-                    "description": "Configure http request logs",
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 7
-                },
-                "state": {
-                    "description":
+            "description":
 ```
 
 ### Exemplo

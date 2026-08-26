@@ -42,12 +42,14 @@ Os objectos do SMTP Transporter são instanciados com o comando [SMTP New Transp
 
 
 <!-- REF #_command_.SMTP New transporter.Params -->
-| Parâmetro  | Tipo               |    | Descrição                                                               |
-| ---------- | ------------------ |:--:| ----------------------------------------------------------------------- |
-| server     | Object             | -> | Informação de servidor de correio                                       |
-| Resultados | 4D.SMTPTransporter | <- | [SMTP transporter](#smtp-transporter-object)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|server|Object|->|Mail server information|
+|Result|4D.SMTPTransporter|<-|[SMTP transporter object](#smtp-transporter-object)|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -117,12 +119,14 @@ A função devolve um [**objecto SMTP transporter**](#smtp-transporter-object). 
 
 
 <!-- REF #4D.SMTPTransporter.new().Params -->
-| Parâmetro  | Tipo               |    | Descrição                                                               |
-| ---------- | ------------------ |:--:| ----------------------------------------------------------------------- |
-| server     | Object             | -> | Informação de servidor de correio                                       |
-| Resultados | 4D.SMTPTransporter | <- | [SMTP transporter](#smtp-transporter-object)|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|server|Object|->|Mail server information|
+|Result|4D.SMTPTransporter|<-|[SMTP transporter object](#smtp-transporter-object)|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -157,6 +161,9 @@ Para informações sobre códigos de estado SMTP, consulte por favor [esta pági
  $status:=$transporter.checkConnection()
  If($status.success=True)
     ALERT("SMTP connection check successful!")
+ Else
+    ALERT("Error # "+String($status.status)+", "+$status.statusText)
+ End if
  Else
     ALERT("Error # "+String($status.status)+", "+$status.statusText)
  End if
@@ -213,12 +220,14 @@ A coleção SMTP é automaticamente fechada:
 
 
 <!-- REF #SMTPTransporterClass.send().Params -->
-| Parâmetro  | Tipo   |    | Descrição                                             |
-| ---------- | ------ |:--:| ----------------------------------------------------- |
-| mail       | Object | -> | [Email](EmailObjectClass.md#email-object) para enviar |
-| Resultados | Object | <- | Status SMTP|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|mail|Object|->|[Email](EmailObjectClass.md#email-object) to send|
+|Result|Object|<-|SMTP status|
+</div>
+<!-- END REF -->
 
 #### Descrição
 

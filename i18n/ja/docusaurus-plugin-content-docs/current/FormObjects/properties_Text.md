@@ -1,13 +1,13 @@
 ---
 id: propertiesText
-title: Text
+title: テキスト
 ---
 
 ---
 
 ## ピッカーの使用を許可
 
-このプロパティが有効化されている場合、[OPEN FONT PICKER](../commands-legacy/open-font-picker.md) および [OPEN COLOR PICKER](../commands-legacy/open-color-picker.md) コマンドを呼び出すことでシステムフォントウィンドウとカラーピッカーウィンドウを表示することができます。 これらのピッカーウィンドウを使用して、ユーザーはフォームオブジェクトのフォントやカラーをクリックによって変更できます。 このプロパティが無効になっていると (デフォルト)、ピッカーを開くコマンドは使用できません。
+このプロパティが有効化されている場合、[OPEN FONT PICKER](../commands/open-font-picker) および [OPEN COLOR PICKER](../commands/open-color-picker) コマンドを呼び出すことでシステムフォントウィンドウとカラーピッカーウィンドウを表示することができます。 これらのピッカーウィンドウを使用して、ユーザーはフォームオブジェクトのフォントやカラーをクリックによって変更できます。 このプロパティが無効になっていると (デフォルト)、ピッカーを開くコマンドは使用できません。
 
 #### JSON 文法
 
@@ -25,7 +25,7 @@ title: Text
 
 選択テキストの線を太くし、濃く見えるようにします。
 
-このプロパティは[**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md) コマンドを使用しても設定することができます。
+このプロパティは[**OBJECT SET FONT STYLE**](../commands/object-set-font-style) コマンドを使用しても設定することができます。
 
 > これは通常のテキストです。<br/>
 > **これは太字のテキストです。**
@@ -46,15 +46,15 @@ title: Text
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックス列](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ラジオボタン](radio_overview.md) -
 [テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands/object-get-font-style) - [OBJECT SET FONT STYLE](../commands/object-set-font-style)
 
 ---
 
@@ -62,7 +62,7 @@ title: Text
 
 選択テキストの線を右斜めに傾けます。
 
-このプロパティは[**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md) コマンドを使用しても設定することができます。
+このプロパティは[**OBJECT SET FONT STYLE**](../commands/object-set-font-style) コマンドを使用しても設定することができます。
 
 > これは通常のテキストです。<br/>
 > *これはイタリックのテキストです。*
@@ -83,15 +83,15 @@ title: Text
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックス列](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ラジオボタン](radio_overview.md) -
 [テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands/object-get-font-style) - [OBJECT SET FONT STYLE](../commands/object-set-font-style)
 
 ---
 
@@ -115,15 +115,15 @@ title: Text
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックス列](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ラジオボタン](radio_overview.md) -
 [テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands/object-get-font-style) - [OBJECT SET FONT STYLE](../commands/object-set-font-style)
 
 ---
 
@@ -168,15 +168,15 @@ title: Text
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックス列](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ラジオボタン](radio_overview.md) -
 [テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get style sheet](../commands-legacy/object-get-style-sheet) - [OBJECT SET STYLE SHEET](../commands-legacy/object-set-style-sheet)
+[OBJECT Get style sheet](../commands/object-get-style-sheet) - [OBJECT SET STYLE SHEET](../commands/object-set-style-sheet)
 
 ### フォントファミリー
 
@@ -185,7 +185,7 @@ title: Text
 - *フォントファミリー:* "times", "courier", "arial" などのフォントファミリーの名称。
 - *総称ファミリー:* "serif", "sans-serif", "cursive", "fantasy", "monospace" などの汎用ファミリーの名称。
 
-これは、[`OBJECT SET FONT`](../commands-legacy/object-set-font.md) コマンドを使用しても設定することができます。
+これは、[`OBJECT SET FONT`](../commands/object-set-font) コマンドを使用しても設定することができます。
 
 #### JSON 文法
 
@@ -205,15 +205,15 @@ title: Text
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックス列](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ラジオボタン](radio_overview.md) -
 [テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get font](../commands-legacy/object-get-font.md) - [OBJECT SET FONT](../commands-legacy/object-set-font.md)
+[OBJECT Get font](../commands/object-get-font) - [OBJECT SET FONT](../commands/object-set-font)
 
 ## フォントサイズ
 
@@ -221,9 +221,9 @@ title: Text
 
 #### JSON 文法
 
-| 名称       | データタイプ  | とりうる値                                                                             |
-| -------- | ------- | --------------------------------------------------------------------------------- |
-| fontSize | integer | フォントサイズ (ポイント単位) 最小値: 0 最小値: 0 |
+| 名称       | データタイプ  | とりうる値                                                                                                    |
+| -------- | ------- | -------------------------------------------------------------------------------------------------------- |
+| fontSize | integer | フォントサイズ (ポイント単位) 最小値: 0 最小値: 0 最小値: 0 |
 
 #### 対象オブジェクト
 
@@ -235,15 +235,15 @@ title: Text
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックス列](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [ラジオボタン](radio_overview.md) -
 [テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get font size](../commands-legacy/object-get-font-size.md) - [OBJECT SET FONT SIZE](../commands-legacy/object-set-font-size.md)
+[OBJECT Get font size](../commands/object-get-font-size) - [OBJECT SET FONT SIZE](../commands/object-set-font-size)
 
 ---
 
@@ -259,7 +259,7 @@ title: Text
 - 16進数値 - 例: "#ff0000"
 - RGB値 - 例: "rgb(255,0,0)"
 
-このプロパティは[**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors.md) コマンドを使用しても設定することができます。
+このプロパティは[**OBJECT SET RGB COLORS**](../commands/object-set-rgb-colors) コマンドを使用しても設定することができます。
 
 #### JSON 文法
 
@@ -277,9 +277,9 @@ title: Text
 [階層リスト](list_overview.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
 [進捗インジケーター](progressIndicator.md) -
 [ルーラー](ruler.md) -
 [ラジオボタン](radio_overview.md) -
@@ -287,7 +287,7 @@ title: Text
 
 #### コマンド
 
-[OBJECT GET RGB COLORS](../commands-legacy/object-get-rgb-colors.md) - [OBJECT SET RGB COLORS](../commands-legacy/object-set-rgb-colors.md)
+[OBJECT GET RGB COLORS](../commands/object-get-rgb-colors) - [OBJECT SET RGB COLORS](../commands/object-set-rgb-colors)
 
 ---
 
@@ -295,11 +295,11 @@ title: Text
 
 `セレクションおよびコレクション/エンティティセレクション型のリストボックス`
 
-リストボックスの各行にカスタマイズしたフォントカラーを適用するために使用します。 RGBカラーを使用しなければなりません。 この点の詳細については、[`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドの詳細を参照してください。
+リストボックスの各行にカスタマイズしたフォントカラーを適用するために使用します。 RGBカラーを使用しなければなりません。 この点の詳細については、[`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) コマンドの詳細を参照してください。
 
-式または変数 (配列を除く) を入力します。 表示される行ごとに式や変数は評価されます。 [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドの章で説明されている定数を使用することができます。
+式または変数 (配列を除く) を入力します。 表示される行ごとに式や変数は評価されます。 [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) コマンドの章で説明されている定数を使用することができます。
 
-このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) と `lk font color expression` 定数を組み合わせて使用しても設定することができます。
+このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property) と `lk font color expression` 定数を組み合わせて使用しても設定することができます。
 
 > このプロパティは [メタ情報式](properties_Text.md#メタ情報式) を使用しても設定することができます。
 
@@ -322,17 +322,17 @@ Foreground color;Dark shadow color)
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
-## Style Expression {#style-expression}
+## スタイル式 {#style-expression}
 
 `セレクションおよびコレクション/エンティティセレクション型のリストボックス`
 
 リストボックスの各行にカスタマイズされた文字スタイルを適用するために使用します。
 
-式または変数 (配列を除く) を入力します。 式や変数は、表示行ごと (リストボックスのプロパティの場合) または表示セルごと (リストボックス列のプロパティの場合) に評価されます。 [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) コマンドのページ内で提示されている定数を使用することができます。
+式または変数 (配列を除く) を入力します。 式や変数は、表示行ごと (リストボックスのプロパティの場合) または表示セルごと (リストボックス列のプロパティの場合) に評価されます。 [`LISTBOX SET ROW FONT STYLE`](../commands/listbox-set-row-font-style) コマンドのページ内で提示されている定数を使用することができます。
 
 例:
 
@@ -340,7 +340,7 @@ Foreground color;Dark shadow color)
 Choose([Companies]ID;Bold;Plain;Italic;Underline)
 ```
 
-このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) と `lk font style expression` 定数を組み合わせて使用しても設定することができます。
+このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property) と `lk font style expression` 定数を組み合わせて使用しても設定することができます。
 
 > このプロパティは [メタ情報式](properties_Text.md#メタ情報式) を使用しても設定することができます。
 
@@ -352,11 +352,11 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md)
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -386,15 +386,15 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 [グループボックス](groupBox.md) -
 [入力](input_overview.md) -
 [リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
+[リストボックスカラム](listbox-column.md) -
+[リストボックスヘッダー](listbox-header-footer.md#ヘッダー) -
+[リストボックスフッター](listbox-header-footer.md#フッター) -
 [ラジオボタン](radio_overview.md) (通常とフラット以外のスタイル) -
 [テキストエリア](text.md)
 
 #### コマンド
 
-[OBJECT Get horizontal alignment](../commands-legacy/object-get-horizontal-alignment.md) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands-legacy/object-set-horizontal-alignment.md)
+[OBJECT Get horizontal alignment](../commands/object-get-horizontal-alignment) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands/object-set-horizontal-alignment)
 
 ---
 
@@ -407,7 +407,7 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 - ピクチャーを除き、すべて `下` です。
 - ピクチャーは `上` です。
 
-このプロパティは、[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) および [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md) コマンドを使用しても管理することができます。
+このプロパティは、[`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment) および [`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment) コマンドを使用しても管理することができます。
 
 #### JSON 文法
 
@@ -417,13 +417,11 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md)* [リストボックス列](listbox_overview.md#リストボックス列)
-* [リストボックスフッター](listbox_overview.md#リストボックスフッター)
-* [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー)
+[リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md) - [リストボックスフッター](listbox-header-footer.md#footers) - [リストボックスヘッダー](listbox-header-footer.md#headers)
 
 #### コマンド
 
-[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md)
+[`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment)
 
 ---
 
@@ -510,7 +508,7 @@ End if
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -528,11 +526,171 @@ End if
 
 #### 対象オブジェクト
 
-[入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[入力](input_overview.md) - [リストボックスカラム](listbox-column.md)
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md) - [OBJECT Is styled text](../commands-legacy/object-is-styled-text.md) -
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property) - [OBJECT Is styled text](../commands/object-is-styled-text) - ["スタイル付きテキスト" テーマ](../commands/theme/Styled_Text.md)
+
+### サポートされているタグ
+
+4D のマルチスタイルテキストエリアでは以下のタグを使用することができます。
+
+#### 4D式
+
+```html
+<span style="-d4-ref:'expression'"> </span>
+```
+
+このタグは、テキストに4D式 (式、メソッド、フィールド、変数、コマンド、等) を 挿入します。 これらの式は以下のタイミングでトークナイズ度されて評価されます:
+
+- 式が挿入されたとき
+- オブジェクトがロードされたとき
+- インターフェースオブジェクト、または[`INVOKE ACTION`](../commands/invoke-action) コマンドによって `computeExpressions` 標準アクションが呼び出されたとき
+- [`ST COMPUTE EXPRESSIONS`](../commands/st-compute-expressions) コマンドが実行されたとき
+- [`ST FREEZE EXPRESSIONS`](../commands/st-freeze-expressions) コマンドに第二引数 `*` が渡された状態で実行されたとき
+
+式の評価された値は `<span>` タグに保存されません。参照のみが保存されます。
+
+注: 4Dのランゲージやバージョンに関係なく、式の正常な評価を確実にするには、異なるバージョン間において名前が変化しそうな要素 (コマンド、テーブル、フィールド、定数) に対してはトークンシンタックスを使用することが推奨されます。 たとえば、`Current time` コマンドを挿入するには、"`Current time:C178`"と入力します。 この点についての詳細は *フォーミュラ内でのトークンの使用* を参照ください。
+
+#### URL
+
+```html
+<span><a href="url">Visible label</a></span>
+```
+
+このタグはテキストにURLを挿入します。 例:
+
+```html
+<span><a href="http://www.4d.com/">4D Web Site</a></span>
+```
+
+#### ユーザーリンク
+
+```html
+<span style="-d4-ref-user:'myUserLink'">Click here</span>
+```
+
+"ユーザーリンク" は見た目が URL と同じですが、クリックしてもソースは自動的に開きません。 どのような文字列でも参照として渡すことができますが、クリックされたときに起こるアクションはデベロッパーによってプログラムされた内容によります。 つまり、タグがクリックされたときに、URL の代わりに、ファイルや 4Dメソッド等を開いたり実行したりすることができます。 [`ST Get content type`](../commands/st-get-content-type) コマンドによって、ユーザーリンクがクリックされたかどうかを検知することもできます。
+
+ユーザーリンクは[`ST SET TEXT`](../commands/st-set-text) コマンドによって定義します。 例:
+
+```4d
+ST SET TEXT(txtVar;"This is a user link: <span style=\"-d4-ref-user:'UserLink'\">User Label</span>";$start;$end)
+```
+
+#### カスタムのタグ
+
+例として、`<img src="http://doc.4d.com/pictures/ja.png">` のようなタグも可能です。 タグは標準テキストのコードに保存されますが、解釈されたり表示されたりすることはありません。 これは例えば、HTML形式のメールに画像を挿入するような場合に便利です。
+
+#### スタイルタグ
+
+ここでは \<SPAN> タグの属性としてサポートされる4Dのリッチテキストエリアのスタイルを説明します。 これらの属性を使用してカスタムスタイルを指定することも可能です。 ここで説明されている属性のみが4D によってサポートされます。
+
+- フォント名: `<SPAN STYLE="font-family: DESDEMONA"> ... </SPAN>`
+- フォントサイズ: `<SPAN STYLE="font-size: 20pt"> ... </SPAN>`
+- フォントスタイル:
+  - ボールド(太字) `<SPAN STYLE="font-weight: bold"> ... </SPAN>`
+  - イタリック `<SPAN STYLE="font-style: italic"> ... </SPAN>`
+  - 普通 `<SPAN STYLE="font-style: normal"> ... </SPAN>`
+  - 下線付き `<SPAN STYLE="text-decoration: underline"> ... </SPAN>`
+  - 取り消し線 `<SPAN STYLE="text-decoration:line-through">...</SPAN>`
+
+*注意 : maOS では"取り消し線"がサポートされていません。指定しても表示されませんが、プログラムで管理することはできます。*
+
+- フォントカラー: `<SPAN STYLE="color:green"> ... </SPAN>` または `<SPAN STYLE="color:#006CCC">...</SPAN>`
+- 背景色: `<SPAN STYLE="background-color:green"> ... </SPAN>` または `<SPAN STYLE="background-color:#006CCC">...</SPAN>`
+
+#### カラーの値
+
+フォントカラーと背景色属性では、カラー値としてRGB の16進およびW3C によって標準CSS のために定義された16 のHTML カラー名を指定できます:
+
+![](../assets/en/FormObjects/colors1.png)
+![](../assets/en/FormObjects/colors2.png)
+
+### テキスト管理コマンドの使い方
+
+#### ユーザーインターフェース
+
+テキストオブジェクトをプログラミングで操作するために使用されるコマンドは、テキストに埋め込まれたスタイルタグを考慮しません。 これらは表示されるテキストに対してのみ動作します。 これは以下のコマンドに対して関係します:
+
+- [ユーザーインターフェース](../commands/theme/User_Interface.md) テーマコマンド
+- [`HIGHLIGHT TEXT`](../commands/highlight-text)
+- [`GET HIGHLIGHT`](../commands/get-highlight)
+
+これらのコマンドを文字列を操作するコマンドと組み合わせて使用した場合、[`ST Get plain text`](../commands/st-get-plain-text) コマンドを使用して書式設定文字列を除去する必要があります:
+
+```4d
+ HIGHLIGHT TEXT([Products]Notes;1;Length(ST Get plain text([Products]Notes))+1)
+```
+
+#### オブジェクト (フォーム)
+
+オブジェクトのスタイルを変更するのに使用されるコマンド([`OBJECT SET FONT`](../commands/object-set-font) など)は選択範囲ではなく、オブジェクト全体に対して適用されます。
+
+コマンドが実行された時にオブジェクトにフォーカスが入っていなければ、その変更はオブジェクト(テキストエリア)とそれに割り当てられた変数の両方に同時に適用されます。 オブジェクトにフォーカスが入っている場合、変更はオブジェクトに対しては適用されますが、割り当てられた変数には適用されません。 その後、オブジェクトがフォーカスを失ったとき、変数に対しても変更が適用されます。 テキストエリアに対するプログラムを行う際は、この原則を忘れないでください。
+
+:::note
+
+[**デフォルトスタイルタグを格納**](#デフォルトスタイルタグを格納) がオブジェクトに対して選択されている場合にこれらのコマンドを使用すると、オブジェクトに保存されているタグが更新されます。
+
+:::
+
+またデフォルトのプロパティもこれらのコマンドの影響を受けるという点に注意してください(またデフォルトタグによって保存されたあらゆるプロパティも同様です)。 カスタムのスタイルタグはそのままの状態を維持します。 例えば、以下の様なマルチスタイルエリアにデフォルトのタグが保存されていた場合を考えます:
+
+![](../assets/en/FormObjects/multistyle-ex1.png)
+
+このエリアのプレーンテキストは以下のようになります:
+
+```html
+<span style="text-align:left;font-family:'Segoe UI';font-size:9pt;color:#009900">This is the word <span style="color:#D81E05">red</span></span>
+```
+
+以下のコードを実行した場合:
+
+```4d
+OBJECT SET COLOR(*;"myArea";-(Blue+(256*Yellow)))
+```
+
+赤の文字カラーはそのまま残ります:
+
+![](../assets/en/FormObjects/multistyle-ex2.png)
+
+コードは以下の様になります:
+
+```html
+<span style="text-align:left;font-family:'Segoe UI';font-size:9pt;color:#0000FF">This is the word <span style="color:#D81E05">red</span></span>
+```
+
+これには以下のコマンドが適用されます:
+
+- [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
+- [`OBJECT SET FONT`](../commands/object-set-font)
+- [`OBJECT SET FONT STYLE`](../commands/object-set-font-style)
+- [`OBJECT SET FONT SIZE`](../commands/object-set-font-size)
+
+マルチスタイルエリアのコンテキストにおいては、これらのコマンドはデフォルトのスタイルを設定するためだけに使用されるべきです。 データベースの実行中にスタイルを管理するためには、["スタイル付きテキスト" テーマ内のコマンド](../commands/theme/Styled_Text.md) を使用することが推奨されます。
+
+#### Get edited text
+
+[`Get edited text`](../commands/get-edited-text) コマンドがリッチテキストエリアで使用されると、コマンドはあらゆるスタイルタグを含む現在のエリアのすべてのテキストを返します。
+
+編集された生テキスト (タグなしのテキスト) を取り出すには、[`ST Get plain text`](../commands/st-get-plain-text) コマンドを使用しなければなりません:
+
+```4d
+ST Get plain text(Get edited text)
+```
+
+#### クエリおよび並び替えコマンド
+
+マルチスタイルオブジェクトに対して行われるクエリや並び替えは、オブジェクトに保存されたスタイルタグを考慮に入れます。 単語中でスタイルの変更が行われた場合、その単語の検索は失敗します。
+
+有効な検索や並び替えを行うには、[`ST Get plain text`](../commands/st-get-plain-text) コマンドを使用する必要があります。 例:
+
+```4d
+QUERY BY FORMULA([MyTable];ST Get plain text([MyTable]MyFieldStyle)="very well")
+```
 
 ---
 
@@ -561,17 +719,17 @@ End if
 
 #### コマンド
 
-[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation.md) - [OBJECT SET TEXT ORIENTATION](../commands-legacy/object-set-text-orientation.md)
+[OBJECT Get text orientation](../commands/object-get-text-orientation) - [OBJECT SET TEXT ORIENTATION](../commands/object-set-text-orientation)
 
 ---
 
-## Row Font Color Array {#row-font-color-array}
+## 行フォントカラー配列 {#row-font-color-array}
 
 `配列型リストボックス`
 
 リストボックスの各行/セルにカスタマイズしたフォントカラーを適用するために使用します。
 
-倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドの章で説明されている定数を使用することができます。 もし上のレベルで定義されている背景色をそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
+倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。 つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) コマンドの章で説明されている定数を使用することができます。 もし上のレベルで定義されている背景色をそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
 
 #### JSON 文法
 
@@ -581,21 +739,21 @@ End if
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md)
 
 #### コマンド
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands/listbox-set-array)
 
 ---
 
-## Row Style Array {#row-style-array)
+## 行スタイル配列 {#row-style-array}
 
 `配列型リストボックス`
 
 リストボックスの各行/セルにカスタマイズされた文字スタイルを適用するために使用します。
 
-倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 メソッドを使用して配列を作成するためには、[`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) コマンドのページ内で提示されている定数を使用することができます。 定数同士を足し合わせてスタイルを組み合わせることもできます。 もし上のレベルで定義されているスタイルをそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
+倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。 つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 メソッドを使用して配列を作成するためには、[`LISTBOX SET ROW FONT STYLE`](../commands/listbox-set-row-font-style) コマンドのページ内で提示されている定数を使用することができます。 定数同士を足し合わせてスタイルを組み合わせることもできます。 もし上のレベルで定義されているスタイルをそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
 
 #### JSON 文法
 
@@ -605,11 +763,11 @@ End if
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md)
 
 #### コマンド
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands/listbox-set-array)
 
 ---
 
@@ -643,3 +801,4 @@ What a <SPAN STYLE="font-size:13.5pt">beautiful</SPAN> day!
 #### 対象オブジェクト
 
 [入力](input_overview.md)
+

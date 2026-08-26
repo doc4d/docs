@@ -35,7 +35,7 @@ Permite modificar el número de puerto TCP/IP utilizado por el servidor web para
 
 #### Autorizar el acceso a la base de datos a través de las URL 4DSYNC
 
-_Compatibility Note_: This option is [deprecated](../WebServer/webServerConfig.md#deprecated-settings). Para el acceso a la base de datos a través de HTTP, ahora se recomienda utilizar las funcionalidades del almacén de datos remoto ORDA y las peticiones REST.
+_Nota de compatibilidad_: esta opción [es obsoleta](../WebServer/webServerConfig.md#deprecated-settings). Para el acceso a la base de datos a través de HTTP, ahora se recomienda utilizar las funcionalidades del almacén de datos remoto ORDA y las peticiones REST.
 
 ### Rutas
 
@@ -125,7 +125,7 @@ Define el sistema de autenticación que desea aplicar a su servidor web. Se prop
 
 Custom (default) Passwords with BASIC protocol Passwords with DIGEST protocol
 
-Se recomienda utilizar la autenticación **personalizada**. See [**Authentication**](../WebServer/authentication.md) chapter in the _Web Development_ documentation.
+Se recomienda utilizar la autenticación **personalizada**. Ver el capítulo [**Autenticación**](../WebServer/authentication.md) en la documentación de _Desarrollo Web_.
 
 ## Options (II)
 
@@ -165,12 +165,12 @@ El menú de formato de registro ofrece las siguientes opciones:
 
 - **Sin archivo de registro**: cuando se selecciona esta opción, 4D no generará un archivo de historial de peticiones.
 
-- **CLF (Common Log Format)**: cuando se selecciona esta opción, el historial de peticiones se genera en formato CLF. With the CLF format, each line of the file represents a request, such as:\
-  host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length\
-  Each field is separated by a space and each line ends by the CR/LF sequence (character 13, character 10).
+- **CLF (Common Log Format)**: cuando se selecciona esta opción, el historial de peticiones se genera en formato CLF. En el formato CLF, cada línea del archivo representa una solicitud, como por ejemplo:\
+  host rfc931 user [DD/MMM/AAAA:HH:MM:SS] "request" state length\
+  Cada campo está separado por un espacio y cada línea termina con la secuencia CR/LF (carácter 13, carácter 10).
   - host: dirección IP del cliente (por ejemplo: "192.100.100.10)
   - rfc931: información no generada por 4D, siempre es - (un signo menos)
-  - usuario: nombre del usuario como está autenticado, o - (un signo menos). If the user name contains spaces, they will be replaced by \_ (an underscore).
+  - usuario: nombre del usuario como está autenticado, o - (un signo menos). Si el nombre de usuario contiene espacios, se remplazan por \_ (un guión bajo).
   - DD: día, MMM: una abreviatura de 3 letras para el nombre del mes (Jan, Feb,...), YYYY: año, HH: hora, MM: minutos, SS: segundos
 
 > La fecha y hora son locales al servidor.
@@ -197,30 +197,30 @@ El menú de formato de registro ofrece las siguientes opciones:
 
 La siguiente tabla enumera los campos disponibles para cada formato (en orden alfabético) y describe su contenido:
 
-| Campo          | ELF | WLF | Valor                                                                       |
-| -------------- | --- | --- | --------------------------------------------------------------------------- |
-| BYTES_RECEIVED |     | X   | Número de bytes recibidos por el servidor                                   |
-| BYTES_SENT     | X   | X   | Número de bytes enviados por el servidor al cliente                         |
-| C_DNS          | X   | X   | Dirección IP del DNS (ELF: campo idéntico al campo C_IP)                    |
-| C_IP           | X   | X   | Dirección IP del cliente (por ejemplo 192.100.100.10)                       |
-| CONNECTION_ID  |     | X   | Número de identificación de la conexión                                     |
-| CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP                |
-| CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                              |
-| CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                         |
-| CS(USER_AGENT) | X   | X   | Información sobre el software y el sistema operativo del cliente            |
-| CS_SIP         | X   | X   | Dirección IP del servidor                                                   |
-| CS_URI         | X   | X   | URI sobre el que se realiza la petición                                     |
-| CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                       |
-| CS_URI_STEM  | X   | X   | Parte de la solicitud sin los parámetros de la consulta                     |
-| DATE           | X   | X   | DD: día, MMM: abreviación de 3 letras para el mes (Jan, Feb,...), YYYY: año |
-| METHOD         | X   | X   | Método HTTP utilizado para la solicitud enviada al servidor                 |
-| PATH_ARGS      |     | X   | Parámetros de la CGI: cadena situada después del caracter "$"               |
-| STATUS         | X   | X   | Respuesta ofrecida por el servidor                                          |
-| TIME           | X   | X   | HH: hora, MM: minutos, SS: segundos                                         |
-| TRANSFER_TIME  | X   | X   | Tiempo solicitado por el servidor para generar la respuesta                 |
-| USER           | X   | X   | Nombre de usuario si está autenticado; en caso contrario, - (signo menos).  |
-|                |     |     | If the user name contains spaces, they are replaced by \_ (underlines)    |
-| URL            |     | X   | URL solicitado por el cliente                                               |
+| Campo          | ELF | WLF | Valor                                                                            |
+| -------------- | --- | --- | -------------------------------------------------------------------------------- |
+| BYTES_RECEIVED |     | X   | Número de bytes recibidos por el servidor                                        |
+| BYTES_SENT     | X   | X   | Número de bytes enviados por el servidor al cliente                              |
+| C_DNS          | X   | X   | Dirección IP del DNS (ELF: campo idéntico al campo C_IP)                         |
+| C_IP           | X   | X   | Dirección IP del cliente (por ejemplo 192.100.100.10)                            |
+| CONNECTION_ID  |     | X   | Número de identificación de la conexión                                          |
+| CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP                     |
+| CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                                   |
+| CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                              |
+| CS(USER_AGENT) | X   | X   | Información sobre el software y el sistema operativo del cliente                 |
+| CS_SIP         | X   | X   | Dirección IP del servidor                                                        |
+| CS_URI         | X   | X   | URI sobre el que se realiza la petición                                          |
+| CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                            |
+| CS_URI_STEM  | X   | X   | Parte de la solicitud sin los parámetros de la consulta                          |
+| DATE           | X   | X   | DD: día, MMM: abreviación de 3 letras para el mes (Jan, Feb,...), YYYY: año      |
+| METHOD         | X   | X   | Método HTTP utilizado para la solicitud enviada al servidor                      |
+| PATH_ARGS      |     | X   | Parámetros de la CGI: cadena situada después del caracter "$"                    |
+| STATUS         | X   | X   | Respuesta ofrecida por el servidor                                               |
+| TIME           | X   | X   | HH: hora, MM: minutos, SS: segundos                                              |
+| TRANSFER_TIME  | X   | X   | Tiempo solicitado por el servidor para generar la respuesta                      |
+| USER           | X   | X   | Nombre de usuario si está autenticado; en caso contrario, - (signo menos).       |
+|                |     |     | Si el nombre de usuario contiene espacios, son reemplazados por \_ (subrayado) |
+| URL            |     | X   | URL solicitado por el cliente                                                    |
 
 > Las fechas y horas se indican en GMT.
 
@@ -234,7 +234,7 @@ Configure los parámetros de copia de seguridad automática para el registro de 
 
 - **Cada X día(s) a las X**: esta opción se utiliza para programar las copias de seguridad con una base diaria. Introduzca 1 si desea realizar una copia de seguridad diaria. Cuando esta opción está marcada, debe indicar la hora a la que debe comenzar la copia de seguridad.
 - **Cada X semana(s), día a las X**: esta opción se utiliza para programar las copias de seguridad con una base semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
-- **Cada X mes(es), el día X a las X**: esta opción se utiliza para programar las copias de seguridad con una base mensual. Introduzca 1 si desea realizar una copia de seguridad mensual. Enter 1 if you want to perform a monthly backup.
+- **Cada X mes(es), el día X a las X**: esta opción se utiliza para programar las copias de seguridad con una base mensual. Introduzca 1 si desea realizar una copia de seguridad mensual. Introduzca 1 si desea realizar una copia de seguridad mensual.
 - **Todos los X MB**: esta opción se utiliza para programar las copias de seguridad en función del tamaño del archivo de registro actual. Una copia de seguridad se activa automáticamente cuando el archivo alcanza el tamaño especificado. Puedes definir un límite de tamaño de 1, 10, 100 o 1000 MB.
 
 > En el caso de las copias de seguridad programadas, si el servidor web no fue lanzado cuando se programó la copia de seguridad, en el siguiente lanzamiento 4D considera que la copia de seguridad ha fallado y aplica los parámetros adecuados, definidos en las Propiedades de la base.
@@ -249,7 +249,7 @@ Para más información sobre el soporte de los servicios web en 4D, consulte el 
 
 Esta área contiene varias opciones relativas con el uso de 4D como un "servidor" de Servicios Web, es decir la publicación de los métodos proyecto en forma de Servicios Web.
 
-- **Autorizar peticiones de servicios web**: esta opción le permite inicializar la publicación de servicios web. Si esta opción no ha sido seleccionada, 4D rechaza las peticiones SOAP y no genera una WSDL - incluso si los métodos tienen el atributo _Publicado en WSDL_. Cuando esta opción está marcada, 4D crea el archivo WSDL.
+- **Autorizar peticiones de servicios web**: esta opción le permite inicializar la publicación de servicios web. Cuando esta opción está marcada, 4D crea el archivo WSDL. Si esta opción no ha sido seleccionada, 4D rechaza las peticiones SOAP y no genera una WSDL - incluso si los métodos tienen el atributo _Publicado en WSDL_.
 - **Nombre del Servicio Web**: esta área le permite cambiar el "nombre genérico" del Servicio Web. Este nombre se utiliza para diferenciar los servicios tanto a nivel de servidor SOAP (cuando el servidor publica varios Servicios Web diferentes), así como en los directorios de Servicios Web. Por defecto, 4D utiliza el nombre A_WebService.
 - **Espacio de nombres de Servicios Web**: esta área se utiliza para cambiar el espacio de nombres (namespace) de los Servicios Web publicados por 4D. Cada Servicio Web publicado en Internet debe ser único. La unicidad de los nombres de los Servicios Web se asegura mediante el uso de espacios de nombres XML. Un namespace es una cadena de caracteres arbitraria usada para identificar de manera única un conjunto de etiquetas XML. Por lo general, el espacio de nombres comienza por la URL de la empresa (http://mycompany.com/mynamespace). En este caso, no es indispensable tener nada en particular en la URL indicada; lo que importa es que la cadena de caracteres utilizada sea única. Por defecto, 4D utiliza el siguiente espacio de nombres: http://www.4d.com/namespace/default.
 

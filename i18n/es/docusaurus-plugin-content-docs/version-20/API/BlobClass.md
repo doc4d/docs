@@ -27,13 +27,14 @@ La clase Blob permite crear y manipular los [blob objects](../Concepts/dt_blob.m
 
 
 <!-- REF #4D.Blob.new().Params -->
+<div class="no-index">
 
-| Parámetros | Tipo           |    | Descripción                                |
-| ---------- | -------------- |:--:| ------------------------------------------ |
-| blob       | Blob o 4D.Blob | -> | Blob a copiar                              |
-| Resultado  | 4D.Blob        | <- | Nuevo 4D.Blob  |<!-- END REF -->
-
-|
+| Parámetro | Tipo | | Descripción |
+| --------- | --------------- | :-: | ------------ |
+| Blob | Blob | -> | Blob a copiar |
+| Resultado | 4D.Blob | <- | Nuevo 4D.Blob  |
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -62,13 +63,15 @@ La propiedad `.size` <!-- REF #Blob.size.Summary -->devuelve el tamaño de un `4
 
 
 <!-- REF #Blob.slice().Params -->
-| Parámetros | Tipo    |    | Descripción                                                     |
-| ---------- | ------- |:--:| --------------------------------------------------------------- |
-| start      | Real    | -> | índice del primer byte a incluir en el nuevo `4D.Blob`.         |
-| end        | Real    | -> | índice del primer byte que no se incluirá en el nuevo `4D.Blob` |
-| Resultado  | 4D.Blob | <- | Nuevo `4D.Blob`|<!-- END REF -->
+<div class="no-index">
 
-|
+| Parámetro | Tipo ||Descripción |
+| --------- | ------- | :-: | --- |
+| start| Real | -> | índice del primer byte a incluir en el nuevo `4D.Blob`.               |
+| end| Real | -> | índice del primer byte que no se incluirá en el nuevo `4D.Blob` |
+| Resultado| 4D.Blob | <- | New `4D.Blob`|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -95,6 +98,12 @@ $myNewBlob:=$myBlob.slice(0; 5)
 
 $myString:=Convert to text($myNewBlob; "UTF-8")
 // $myString contains "Hello"
+
+// Crear un nuevo 4D.Blob a partir de $myBlob
+$myNewBlob:=$myBlob.slice(0; 5)
+
+$myString:=Convert to text($myNewBlob; "UTF-8")
+// $myString contiene "Hello"
 
 // Crear un nuevo 4D.Blob a partir de $myBlob
 $myNewBlob:=$myBlob.slice(0; 5)

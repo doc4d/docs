@@ -9,7 +9,7 @@ title: Imagens
 
 4D integra a gestão nativa dos formatos de imagem. Isso significa que imagens serão mostradas e armazenadas em seu formato original, sem qualquer interpretação em 4D. As funcionalidades específicas dos formatos diferentes (sombreado, áreas transparentes, etc) serão retidas quando forem copiadas e coladas, e serão exibidas sem alteração. Essa compatibilidade nativa é válida para todas as imagens armazenadas nos formulários de 4D: [imagens estáticas](FormObjects/staticPicture.md) coladas no modo Desenho, imagens coladas em [objetos de entrada](FormObjects/input_overview.md) em execução, etc.
 
-Os formatos de imagem mais comuns são compatíveis com ambas as plataformas: .jpeg, .gif, .png, .tiff, .bmp, etc. Em macOS, o formato pdf também está disponível para codificar e decodificar.
+Os formatos de imagem mais comuns são compatíveis com ambas as plataformas: .jpeg, .gif, .png, .tiff, .bmp, etc. Em macOS, o formato pdf também está disponível para codificar e decodificar. Em macOS, o formato pdf também está disponível para codificar e decodificar.
 
 > A lista completa dos formatos suportados varia de acordo com o sistema operativo e os codecs personalizados que são instalados nas máquinas. Para descobrir quais os codecs disponíveis, deve utilizar o comando `PICTURE CODEC LIST` (ver também a descrição do [tipo de dados imagem](Concepts/dt_picture.md)).
 
@@ -46,7 +46,7 @@ As imagens de alta resolução com a convenção @nx podem ser utilizadas nos se
 * [Botões](FormObjects/button_overview.md)/[radio](FormObjects/radio_overview.md)/[caixas de verificação](FormObjects/checkbox_overview.md)
 * [Botões imagem](FormObjects/pictureButton_overview.md)/[Pop-ups imagem](FormObjects/picturePopupMenu_overview.md)
 * [Abas](FormObjects/tabControl.md)
-* [Cabeçalhos de list box](FormObjects/listbox_overview.md#list-box-headers)
+* [Cabeçalhos de list box](FormObjects/listbox-header-footer.md#headers)
 * [Ícones de menu](Menus/properties.md#item-icon)
 
 4D dá automaticamente prioridade às imagens com a resolução mais alta. 4D dá automaticamente prioridade às imagens com a resolução mais alta. Mesmo que um comando ou propriedade especifique *circle.png*, *circle@3x.png* será utilizado (se existir).

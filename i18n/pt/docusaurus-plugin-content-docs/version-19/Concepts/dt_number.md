@@ -5,7 +5,7 @@ title: Número (Real, Longint, Integer)
 
 Número é um termo genérico que significa:
 
-- Campo real, variável ou expressão. O intervalo para o tipo de dados Real é de ±1,7e±308 (13 dígitos significativos).
+- Campo real, variável ou expressão. The range for the Real data type is ±1.7e±308 (following the [IEEE 754 standard for double-precision binary floating-point format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)).
 - Campo Inteiro Longo, variável ou expressão. O intervalo para o tipo de dados Long Integer (4-byte Integer) é -2^31...(2^31)-1.
 - Campo inteiro, array ou expressão. O intervalo para o tipo de dados Integer (Inteiro 2 bytes) é -32.768...32.767(2^15...(2^25)-1).
 
@@ -73,9 +73,9 @@ O operador do módulo % devolve valores significativos com números que se encon
 
 :::
 
-### Divisão inteira
+### Integer division
 
-O operador da divisão de longint retorna valores significativos apenas com números inteiros.
+The integer division operator divides one number by another and returns the whole number part of the result, discarding any remainder. `a\b` is equivalent to `Int(a/b)`. This operator returns significant values with integer numbers only.
 
 ### Comparação real
 
@@ -142,7 +142,7 @@ O quadro seguinte lista os operadores bitwise e os seus efeitos:
 | Bitwise AND            | Cada bit resultante é o E lógico dos bits nos dois operandos. Aqui está a tabela lógica AND:<li>1 & 1 --> 1</li><li>0 & 1 --> 0</li><li>1 & 0 --> 0</li><li>0 & 0 --> 0</li>Em outras palavras, o bit resultante será 1 se os dois bits do operando forem 1; caso contrário, o bit resultante será 0.                                                                                |
 | OU (inclusive)         | Cada bit resultante é o OR lógico dos bits nos dois operands. Aqui está a tabela lógica OR:<li>1 &#124; 1 --> 1</li><li>0 &#124; 1 --> 1</li><li>1 &#124; 0 --> 1</li><li>0 &#124; 0 --> 0</li>Em outras palavras, o bit resultante é 1 se pelo menos um dos dois bits do operando for 1; caso contrário, o bit resultante é 0.                                                                          |
 | Bitwise OR (exclusivo) | Cada bit resultante é o XOR lógico dos bits nos dois operandos. Aqui está a tabela XOR lógica:<li>1 &#094; &#124; 1 --> 0</li><li>0 &#094; &#124; 1 --> 1</li><li>1 &#094; &#124; 0 --> 1</li><li>0 &#094; &#124; 0 --> 0</li>Em outras palavras, o bit resultante é 1 se apenas um dos dois bits do operando for 1; caso contrário, o bit resultante é 0.                                                                         |
-| Left Bit Shift         | O valor resultante é definido como o valor do primeiro operando e, em seguida, os bits resultantes são deslocados para a esquerda pelo número de posições indicado pelo segundo operando. Os bits à esquerda são perdidos e os novos bits à direita são estabelecidos como 0. **Nota:** Considerando apenas valores positivos, deslocar-se para a esquerda por N bits é o mesmo que multiplicar por 2^N. |
+| Left Bit Shift         | Os bits à esquerda são perdidos e os novos bits à direita são estabelecidos como 0. O valor resultante é definido como o valor do primeiro operando e, em seguida, os bits resultantes são deslocados para a esquerda pelo número de posições indicado pelo segundo operando. **Nota:** Considerando apenas valores positivos, deslocar-se para a esquerda por N bits é o mesmo que multiplicar por 2^N. |
 | Right Bit Shift        | O valor resultante é definido como o valor do primeiro operando e, em seguida, os bits resultantes são deslocados para a direita pelo número de posições indicado pelo segundo operando. Os bits à direita são perdidos e os novos bits à esquerda são definidos como 0.**Nota:** Considerando apenas valores positivos, deslocar N bits para a direita é o mesmo que dividir por 2^N.                   |
 | Bit Set                | O valor resultante é definido como o valor do primeiro operando e, em seguida, o bit resultante, cujo número é indicado pelo segundo operando, é definido como 1. Os outros bits permanecem inalterados.                                                                                                                                                                                                 |
 | Bit Clear              | O valor resultante é definido como o valor do primeiro operando e, em seguida, o bit resultante, cujo número é indicado pelo segundo operando, é definido como 0. Os outros bits permanecem inalterados.                                                                                                                                                                                                 |

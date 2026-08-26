@@ -205,7 +205,7 @@ A stand-alone application requires a deployment license. It can be embedded at b
 |---|----|---|
 |*4D OEM Desktop*|Embedded custom license, contact 4D Sales for information|[Licenses page](#licenses) of the Build application dialog|
 |*4D Unlimited Desktop*|**Discontinued** - Embedded custom license |[Licenses page](#licenses) of the Build application dialog|
-|*4D Desktop*|Per-user license, allowing them to use stand-alone 4D applications|[First activation](../Admin/licenses.md#first-activation) dialog box on the user's machine|
+|*4D Desktop*|Per-computer license, allowing to use stand-alone 4D applications|[First activation](../Admin/licenses.md#first-activation) dialog box on the user's machine|
 
 
 
@@ -337,10 +337,10 @@ This feature requires that you click on the **[...]** button and designate the l
 
 |Current server platform|Required file|Details|
 |---|---|---|
-|macOS|Windows 4D Volume Desktop *or* Windows client update archive|By default, you select the `4D Volume Desktop` application for Windows. To select a `.4darchive` file previously built on Windows, press **Shift** while clicking on [...]|
+|macOS|Windows 4D Volume Desktop *or* Windows client update archive|By default, you can select the `4D Volume Desktop` application for Windows. However, **it is recommended** to select a `.4darchive` file previously built on Windows for proper icon management and to preserve a signed .exe after updates. To do so, press **Shift** while clicking on [...]|
 |Windows|macOS client update archive|Select a signed `.4darchive` file previously built on macOS|
 
-You can build specific a `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option.
+You can build a specific `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option.
 
 #### Displaying update notification
 
@@ -412,8 +412,8 @@ Items must be installed:
 
 To enable this feature, add the `DatabaseToEmbedInClientWinFolder` and/or `DatabaseToEmbedInClientMacFolder` keys in the *buildApp* settings file. When one of these keys is present, the client application building process generates a single-user application: the compiled structure, instead of the *EnginedServer.4Dlink* file, is placed in the "Database" folder.
 
-* If a default data folder exists in the single-user application, a licence is embedded.
-* If no default data folder exists in the single-user application, it will be executed without data file and without licence.
+* If a default data folder exists in the single-user application, a license is embedded.
+* If no default data folder exists in the single-user application, it will be executed without data file and without license.
 
 The basic scenario is:
 
@@ -506,7 +506,7 @@ The following optional modules can be deselected:
 
 ## Licenses & Certificate page
 
-The Licences & Certificate page can be used to:
+The Licenses & Certificate page can be used to:
 
 * designate the license number(s) that you want to integrate into your single-user [stand-alone application](#application-page),
 * sign the application by means of a certificate in macOS.
@@ -542,7 +542,7 @@ If a license is not valid, a message will warn you.
 
 You can designate as many valid files as you want. When building an executable application, 4D will use the most appropriate license available.
 
->Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-4DDP").
+>Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-").
 
 After the application is built, a new deployment license file is automatically included in the Licenses folder next to the executable application (Windows) or in the package (macOS).
 

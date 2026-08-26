@@ -46,7 +46,7 @@ Las imágenes de alta resolución con la convención @nx pueden utilizarse en lo
 - [Botones](FormObjects/button_overview.md)/[radio](FormObjects/radio_overview.md)/[casillas de selección](FormObjects/checkbox_overview.md)
 - [Botones imagen](FormObjects/pictureButton_overview.md)/[imagen Pop-up](FormObjects/picturePopupMenu_overview.md)
 - [Controles de pestaña](FormObjects/tabControl.md)
-- [Encabezados de list box](FormObjects/listbox_overview.md#list-box-headers)
+- [Encabezados de list box](FormObjects/listbox-header-footer.md#headers)
 - [Iconos de menú](Menus/properties.md#item-icon)
 
 4D prioriza automáticamente las imágenes con mayor resolución. 4D prioriza automáticamente las imágenes con mayor resolución. Incluso si un comando o propiedad especifica *circle.png*, se utilizará *circle@3x.png* (si existe).
@@ -64,7 +64,7 @@ Aunque 4D prioriza automáticamente la resolución más alta, existen, sin embar
 
 *(\*) Generalmente, macOS = 72 dpi, Windows = 96 dpi*
 
-## Imágenes en modo oscuro (sólo en macOS)
+## Imágenes en modo oscuro
 
 Puede definir imágenes e iconos específicos que se utilizarán en lugar de las imágenes estándar cuando [los formularios utilicen el esquema oscuro](properties_FormProperties.md#color-scheme).
 
@@ -76,6 +76,12 @@ Una imagen en modo oscuro se define de la siguiente manera:
 En tiempo de ejecución, 4D cargará automáticamente la imagen clara u oscura según el [modo de colores de formulario actual](../FormEditor/properties_FormProperties.md#color-scheme).
 
 ![](../assets/en/FormEditor/darkicon.png)
+
+:::note
+
+El modo oscuro no está disponible en Windows con [Tema clásico](../settings/interface.md#use-fluent-ui-on-windows).
+
+:::
 
 ## Coordenadas del ratón en una imagen
 

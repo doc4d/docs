@@ -72,15 +72,17 @@ Los objetos de tipo `File` soportan varios nombres de ruta, incluida las sintaxi
 
 
 <!-- REF #_command_.File.Params -->
-| Parámetros   | Tipo    |    | Descripción                                        |
-| ------------ | ------- |:--:| -------------------------------------------------- |
-| path         | Text    | -> | Ruta del archivo                                   |
-| fileConstant | Integer | -> | Constante del archivo 4D                           |
-| pathType     | Integer | -> | `fk posix path` (por defecto) o `fk platform path` |
-| *            |         | -> | * para devolver el archivo de la base local        |
-| Resultado    | 4D.File | <- | Nuevo objeto de archivo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|path|Text|->|Ruta de archivo|
+|fileConstant|Integer|->|Constante de archivo 4D|
+|pathType|Integer|->|`fk posix path` (por defecto) o `fk platform path`|
+|*||->|* para devolver el archivo de la base de datos host|
+|Resultado|4D.File|<-|New file object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -171,11 +173,13 @@ La función `4D.File.new()` <!-- REF #4D.File.new().Summary -->crea y devuelve u
 
 
 <!--REF #FileClass.create().Params -->
-| Parámetros | Tipo    |    | Descripción                                                                                   |
-| ---------- | ------- | -- | --------------------------------------------------------------------------------------------- |
-| Resultado  | Boolean | <- | True si el archivo se ha creado con éxito, false en caso contrario|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|-|
+|Resultado|Boolean|<-|True if the file was created successfully, false otherwise|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -212,14 +216,16 @@ Creación de un archivo de preferencias en la carpeta principal:
 
 
 <!--REF #FileClass.createAlias().Params -->
-| Parámetros        | Tipo      |    | Descripción                                                            |
-| ----------------- | --------- | -- | ---------------------------------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo                   |
-| aliasName         | Text      | -> | Nombre del alias o del atajo                                           |
-| aliasType         | Integer   | -> | Tipo de enlace del alias                                               |
-| Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|-|---|
+|destinationFolder|4D.Folder|->|Carpeta de destino para el alias o acceso directo|
+|aliasName|Text|->|Nombre del alias o acceso directo|
+|aliasType|Integer|->|Tipo del enlace del alias|
+|Result|4D.File|<-|Alias or shortcut file reference|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -268,20 +274,19 @@ Quiere crear un alias para un archivo en su carpeta principal:
 
 
 <!-- REF #FileClass.delete().Params -->
+<div class="no-index">
 
-| Parámetros | Tipo |  | Descripción                                             |
-| ---------- | ---- |  | ------------------------------------------------------- |
-|            |      |  | No requiere ningún parámetro|<!-- END REF -->
-
-
-
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|-|
+||||No requiere ningún parámetro|
+</div>
+<!-- END REF -->
 
 
 
 #### Descripción
 
-La función `.delete()` <!-- REF #FileClass.delete().Summary -->elimina el archivo<!-- END REF -->.
+La función `.delete()` <!-- REF #FileClass.delete().Summary -->La función `.delete()`<!-- END REF -->.
 
 Si el archivo no existe en el disco, la función no hace nada (no se genera ningún error).
 
@@ -307,6 +312,7 @@ Desea eliminar un archivo específico en la carpeta de la base de datos:
     ALERT("User preference file deleted.")
  End if
  End if
+ End if
 ```
 <!-- END REF -->
 
@@ -330,12 +336,13 @@ Desea eliminar un archivo específico en la carpeta de la base de datos:
 
 
 <!--REF #FileClass.getAppInfo().Params -->
-| Parámetros | Tipo   |    | Descripción                                                                            |
-| ---------- | ------ | -- | -------------------------------------------------------------------------------------- |
-| Resultado  | Object | <- | Contenido del archivo de recurso versión .exe/.dll o .plist|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción| 
+|---|---|---|---|
+|Resultado|Object|<-|Contents of .exe/.dll version resource or .plist file|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -425,14 +432,15 @@ ALERT($info.Copyright)
 
 
 <!--REF #FileClass.moveTo().Params -->
-| Parámetros        | Tipo      |    | Descripción                               |
-| ----------------- | --------- | -- | ----------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Carpeta de destino                        |
-| newName           | Text      | -> | Nombre completo del archivo trasladado    |
-| Resultado         | 4D.File   | <- | Archivo movido|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|destinationFolder|4D.Folder|->|Carpeta de destino|
+|newName|Text|->|Nombre completo de la carpeta movida|
+|Resultado|4D.File|<-|Moved file|
+</div>
+<!-- END REF -->
 
 
 #### Descripción
@@ -472,17 +480,19 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 
 <!--REF #FileClass.open().Params -->
-| Parámetros | Tipo                             |    | Descripción                                         |
-| ---------- | -------------------------------- | -- | --------------------------------------------------- |
-| mode       | Text                             | -> | Modo de apertura: "read", "write", "append"         |
-| options    | Object                           | -> | Opciones de apertura                                |
-| Resultado  | [4D.FileHandle](FileHandleClass) | <- | Nuevo objeto File handle|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|mode|Text|->|Modo de apertura: "read", "write", "append"|
+|options|Object|->|Opciones de apertura|
+|Resultado|[4D.FileHandle](FileHandleClass)|<-|New File handle object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
-La función `.open()` <!-- REF #FileClass.open().Summary -->crea y devuelve un nuevo objeto [4D.FileHandle](FileHandleClass) en el archivo, en el *modo* >especificado o con las *opciones* especificadas<!-- END REF -->. Puede utilizar las funciones y las propiedades de la clase [4D.FileHandle](FileHandleClass) para escribir, leer o añadir contenido al archivo.
+La función `.setContent( )` <!-- REF #FileClass.open().Summary -->reescribe todo el contenido del archivo utilizando los datos almacenados en el BLOB *content*<!-- END REF -->. .
 
 Si utiliza el parámetro *mode* (text), pase el modo de apertura para el file handle:
 
@@ -553,16 +563,18 @@ $fhandle:=$f.open("read")
 
 
 <!--REF #FileClass.rename().Params -->
-| Parámetros | Tipo    |    | Descripción                                   |
-| ---------- | ------- | -- | --------------------------------------------- |
-| newName    | Text    | -> | Nuevo nombre completo del archivo             |
-| Resultado  | 4D.File | <- | Archivo renombrado|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|newName|Text|->|Nuevo nombre completo para el archivo|
+|Resultado|4D.Archivo|<-|Renamed file|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
-La función `.rename()` <!-- REF #FileClass.rename().Summary -->renombra el archivo con el nombre que se le ha pasado en *newName* y devuelve el objeto `File` renombrado<!-- END REF -->.
+La función `.rename()` <!-- REF #FileClass.rename().Summary -->La función `.rename()`<!-- END REF -->.
 
 El parámetro *newName* debe cumplir con las reglas de nomenclatura (por ejemplo, no debe contener caracteres como ":", "/", etc.), de lo contrario se devuelve un error. Si ya existe un archivo con el mismo nombre, se devuelve un error.
 
@@ -597,11 +609,13 @@ Quiere renombrar "ReadMe.txt" como "ReadMe_new.txt":
 
 
 <!--REF #FileClass.setAppInfo().Params -->
-| Parámetros | Tipo   |    | Descripción                                                                                                       |
-| ---------- | ------ | -- | ----------------------------------------------------------------------------------------------------------------- |
-| info       | Object | -> | Propiedades a escribir en el archivo .plist o el recurso versión del archivo .exe/.dll|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|info|Object|->|Propiedades para escribir en el recurso de versión .exe/.dll o archivo .plist|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -689,15 +703,17 @@ $infoPlistFile.setAppInfo($info)
 
 
 <!--REF #FileClass.setContent().Params -->
-| Parámetros | Tipo |    | Descripción                                                  |
-| ---------- | ---- | -- | ------------------------------------------------------------ |
-| content    | BLOB | -> | Nuevos contenidos para el archivo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|contenido|BLOB|->|Nuevo contenido para el archivo|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
-La función `.setContent( )` <!-- REF #FileClass.setContent().Summary -->reescribe todo el contenido del archivo utilizando los datos almacenados en el BLOB *content*<!-- END REF -->. .
+La función `.open()` <!-- REF #FileClass.setContent().Summary -->crea y devuelve un nuevo objeto [4D.FileHandle](FileHandleClass) en el archivo, en el *modo* >especificado o con las *opciones* especificadas<!-- END REF -->. .
 
 #### Ejemplo
 
@@ -724,15 +740,16 @@ La función `.setContent( )` <!-- REF #FileClass.setContent().Summary -->reescri
 
 
 <!--REF #FileClass.setText().Params -->
-| Parámetros  | Tipo    |    | Descripción                                                             |
-| ----------- | ------- | -- | ----------------------------------------------------------------------- |
-| text        | Text    | -> | Texto a almacenar en el archivo                                         |
-| charSetName | Text    | -> | Nombre del juego de caracteres                                          |
-| charSetNum  | Integer | -> | Número del conjunto de caracteres                                       |
-| breakMode   | Integer | -> | Modo de tratamiento de los retornos de línea|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parámetro|Tipo||Descripción|
+|---------|----|---|--------|
+|text|Text|->|Texto a almacenar en el archivo|
+|charSetName|Text|->Nombre del conjunto de caracteres|
+|charSetNum|Integer|->|Número del conjunto de caracteres|
+|breakMode|Integer|->|Modo de procesamiento para saltos de línea|
+</div>
+<!-- END REF -->
 
 
 #### Descripción

@@ -11,6 +11,16 @@ Lisez [**Les nouveautés de 4D 20**](https://blog.4d.com/fr-whats-new-in-4d-v20/
 :::
 
 
+## 4D 20.8 LTS
+
+#### Points forts
+
+- 4D 20.8 LTS est certifié sur Windows 11 25H2.
+- 4D 20.8 LTS est certifié sur macOS Tahoe (macOS 26).
+- [**Fixed bugs list**](https://bugs.4d.com/fixes?version=20.8): list of all bugs that have been fixed in 4D 20.8 LTS.
+
+
+
 ## 4D 20.7 LTS
 
 #### Points forts
@@ -25,7 +35,7 @@ Pour des raisons internes, la version des clients distants se connectant à 4D S
 
 #### Changements de comportement
 
-- As of 4D **20.7 HF2**, the [`Time`](https://doc.4d.com/4dv20/help/command/en/page179.html) command returns a negative time expression when the *timeValue* parameter is negative. For instance, `Time("-01:02:03")` will now return -01:02:03. In previous releases, the negative sign was ignored.
+- A partir de 4D **20.7 HF2**, la commande [`Time`](https://doc.4d.com/4dv20/help/command/en/page179.html) renvoie une expression négative lorsque le paramètre *timeValue* est négatif. Par exemple, `Time("-01:02:03")` renverra désormais -01:02:03. Dans les versions précédentes, le signe moins était ignoré.
 
 
 ## 4D 20.6 LTS
@@ -346,12 +356,6 @@ Pour plus d'informations, veuillez vous référer à [ce billet de blog](https:/
 - Prise en charge de `no-bom` et nouveaux caractères de fin de ligne par défaut dans [`.setText()`](../API/FileClass.md#settext)
 
 
-## 4D 19.x LTS
-
-
-Voir [**Release notes pour 4D 19.x LTS**](../../version-19/Notes/updates.md).
-
-
 
 ## Tableau des bibliothèques (4D 20 LTS)
 
@@ -368,8 +372,8 @@ Voir [**Release notes pour 4D 19.x LTS**](../../version-19/Notes/updates.md).
 | OpenSSL      | 3.1.6            | **20.4 HF2**        |                                                                                                               |
 | libZip       | 1.9.2            | 20                  | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                    |
 | LZMA         | 5.4.1            | 20                  |                                                                                                               |
-| Zlib         | 1.2.13           | 20                  |                                                                                                               |
+| Zlib         | 1.3.1            | **20.8 HF2**        |                                                                                                               |
 | webKit       | WKWebView        | 19                  |                                                                                                               |
 | PHP          | 8.2.4            | 20                  |                                                                                                               |
-| libldap      | 2.6.4            | 20                  |                                                                                                               |
+| libldap      | 2.6.10           | **20.8 HF2**        |                                                                                                               |
 | libsasl      | 2.1.28           | 20                  |                                                                                                               |

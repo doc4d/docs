@@ -29,7 +29,7 @@ N'oubliez pas que les noms de propriétés font la différence entre les majuscu
 :::
 
 
-Vous gérez les variables, les champs ou les expressions de type Objet en utilisant la [notation objet](#properties) standard ou les commandes disponibles dans le thème **Objets (langage)**. A noter que des commandes spécifiques du thème **Recherches**, telles que `QUERY BY ATTRIBUTE`, `QUERY SELECTION BY ATTRIBUTE` ou `ORDER BY ATTRIBUTE` peuvent être utilisées pour traiter des champs objets.
+A noter que des commandes spécifiques du thème **Recherches**, telles que `QUERY BY ATTRIBUTE`, `QUERY SELECTION BY ATTRIBUTE` ou `ORDER BY ATTRIBUTE` peuvent être utilisées pour traiter des champs objets. Vous gérez les variables, les champs ou les expressions de type Objet en utilisant la [notation objet](#properties) standard ou les commandes disponibles dans le thème **Objets (langage)**.
 
 Chaque valeur de propriété accessible par la notation objet est considérée comme une expression. Vous pouvez utiliser ces valeurs partout où des expressions 4D sont attendues :
 
@@ -128,7 +128,7 @@ Vous accédez aux valeurs des propriétés de l'objet à travers une chaîne de 
 
 - à l'aide du symbole "point" : > objet.NomPropriété
 
-Voici un exemple :
+Exemple :
 ```4d
      employee.name:="Smith"
 ```
@@ -161,13 +161,13 @@ La notation objet est utilisable avec tout élément de langage qui contient ou 
  $pop:=$aObjCountries{2}.population //tableau d'objets
  $val:=$myCollection[3].subvalue //élément de collection
 ```
-- avec les **commandes 4D** qui retournent des objets. Voici un exemple :
+- avec les **commandes 4D** qui retournent des objets. Exemple :
 
 ```4d
      $measures:=Lire mesures base.DB.tables
 ```
 
-- **Méthodes projet** ou **fonctions** qui renvoient des objets. Voici un exemple :
+- **Méthodes projet** ou **fonctions** qui renvoient des objets. Exemple :
 
 ```4d
       // MyMethod1
@@ -198,7 +198,7 @@ Pour plus d'informations, voir la page [Null et Undefined](dt_null_undefined.md)
 
 ### Valeur Undefined
 
-L'évaluation d'une propriété d'objet peut parfois produire une valeur indéfinie (undefined). Attribuer une valeur undefined à une propriété d'objet existante réinitialise ou efface sa valeur. L'affectation d'une valeur indéfinie à une propriété d'objet inexistante ne fait rien.
+L'évaluation d'une propriété d'objet peut parfois produire une valeur indéfinie (undefined). L'affectation d'une valeur indéfinie à une propriété d'objet inexistante ne fait rien. Attribuer une valeur undefined à une propriété d'objet existante réinitialise ou efface sa valeur.
 
 Pour plus d'informations, voir la page [Null et Undefined](dt_null_undefined.md)
 
@@ -215,7 +215,7 @@ La notation objet pour les pointeurs est semblable à la notation objet standard
 - Accès par le nom :
 > pointeurObjet->[nomPropriété"]
 
-Voici un exemple :
+Exemple :
 
 ```4d
  var vObj : Object
@@ -256,12 +256,12 @@ L'utilisation de la notation objet simplifie grandement le code 4D de manipulati
  $myObj:={} //crée un objet littéral et l'assigne à la variable
  $myObj.age:=56
  $age:=$myObj.age //56
- 
+
   // Utilisation de la notation commande
  var $myObj2 : Object //déclare un objet variable 4D
  OB SET($myObj2;"age";42) //crée un objet et ajoute la propriété age
  $age:=OB Get($myObj2;"age") //42
- 
+
   // Bien sûr, les deux notations peuvent être mélangées
  var $myObj3 : Object
  OB SET($myObj3; age";10)

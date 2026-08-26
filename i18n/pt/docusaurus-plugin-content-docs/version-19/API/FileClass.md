@@ -65,23 +65,25 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 </details>
 
-<!-- REF #_command_.File.Syntax -->**File** ( *path* : Text { ; *pathType* : Integer }{ ; \* } ) : 4D.File<br/>**File** ( *fileConstant* : Integer { ; \* } ) : 4D.File<!-- END REF -->
+<!-- REF #_command_.File.Syntax -->**File** ( *path* : Text { ; *pathType* : Integer }{ ; \* } ) : 4D. File<br/>**File** ( *fileConstant* : Integer { ; \* } ) : 4D. File<!-- END REF -->
 
 
 <!-- REF #_command_.File.Params -->
-| Parâmetro    | Tipo     |    | Descrição                                           |
-| ------------ | -------- |:--:| --------------------------------------------------- |
-| path         | Text     | -> | Rota do arquivo                                     |
-| fileConstant | Integer  | -> | Constante de arquivo 4D                             |
-| pathType     | Integer  | -> | `fk posix path` (por defeito) ou `fk platform path` |
-| *            |          | -> | * para devolver o arquivo da base de dados anfitriã |
-| Resultados   | 4D. File | <- | Novo objeto arquivo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|path|Text|->|File path|
+|fileConstant|Integer|->|4D file constant|
+|pathType|Integer|->|`fk posix path` (default) or `fk platform path`|
+|*||->|* to return file of host database|
+|Result|4D. File|<-|New file object|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
-O comando `File` <!-- REF #_command_.File.Summary -->cria e devolve um novo objecto do tipo `4D.File`<!-- END REF -->. O comando aceita duas sintaxes:
+O comando `File` <!-- REF #_command_.File.Summary -->cria e devolve um novo objecto do tipo `4D. File`<!-- END REF -->. O comando aceita duas sintaxes:
 
 **File ( path { ; pathType } { ; \* })**
 
@@ -139,11 +141,11 @@ Se o comando for chamado a partir de um componente, passe o parâmetro opcional 
 </details>
 
 <!-- REF #4D.File.new().Syntax -->
-**4D.File.new** ( *path* : Text { ; *pathType* : Integer } ) : 4D.File<br/>**4D.File.new** ( *fileConstant* : Integer ) : 4D.File<!-- END REF -->
+**4D. File.new** ( *path* : Text { ; *pathType* : Integer } ) : 4D. File<br/>**4D. File.new** ( *fileConstant* : Integer ) : 4D. File<!-- END REF -->
 
 #### Descrição
 
-A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->cria e devolve um novo objecto do tipo `4D.File`<!-- END REF -->. É idêntico ao comando [`File`](#file) (atalho).
+A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->cria e devolve um novo objecto do tipo `4D. File`<!-- END REF -->. É idêntico ao comando [`File`](#file) (atalho).
 
 > It is recommended to use the [`File`](#file) shortcut command instead of `4D. File.new()`.
 
@@ -166,11 +168,13 @@ A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->cria e devolve um
 
 
 <!--REF #FileClass.create().Params -->
-| Parâmetro  | Tipo       |    | Descrição                                                                                      |
-| ---------- | ---------- | -- | ---------------------------------------------------------------------------------------------- |
-| Resultados | Parâmetros | <- | Verdadeiro se o arquivo foi criado com sucesso, falso caso contrário<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|Result|Boolean|<-|True if the file was created successfully, false otherwise|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -207,14 +211,16 @@ Criação de um arquivo de preferências na pasta da base de dados:
 
 
 <!--REF #FileClass.createAlias().Params -->
-| Parâmetro         | Tipo       |    | Descrição                                                                |
-| ----------------- | ---------- | -- | ------------------------------------------------------------------------ |
-| destinationFolder | 4D. Folder | -> | Pasta de destino para o pseudónimo ou atalho                             |
-| aliasName         | Text       | -> | Nome do pseudónimo ou atalho                                             |
-| aliasType         | Integer    | -> | Tipo de ligação do pseudónimo                                            |
-| Resultados        | 4D. File   | <- | Referência a pseudónimo ou ficheiro de atalho|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|destinationFolder|4D. Folder|->|Destination folder for the alias or shortcut|
+|aliasName|Text|->|Name of the alias or shortcut|
+|aliasType|Integer|->|Type of the alias link|
+|Result|4D. File|<-|Alias or shortcut file reference|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -263,12 +269,13 @@ Se quiser criar um alias para um arquivo na sua pasta database:
 
 
 <!-- REF #FileClass.delete().Params -->
+<div class="no-index">
 
-| Parâmetro | Tipo |  | Descrição                                             |
-| --------- | ---- |  | ----------------------------------------------------- |
-|           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
-
-|
+|Parameter|Type||Description|
+|---|----|---|---|
+| |  ||Does not require any parameters|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -297,6 +304,7 @@ Se quiser apagar um ficheiro específico na pasta da base de dados:
     $tempo.delete()
     ALERT("User preference file deleted.")
  End if
+ End if
 ```
 <!-- END REF -->
 
@@ -320,11 +328,13 @@ Se quiser apagar um ficheiro específico na pasta da base de dados:
 
 
 <!--REF #FileClass.getAppInfo().Params -->
-| Parâmetro  | Tipo   |    | Descrição                                                                            |
-| ---------- | ------ | -- | ------------------------------------------------------------------------------------ |
-| Resultados | Object | <- | Conteúdo do arquivo de versão recurso .exe/.dll ou .plist|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|Result|Object|<-|Contents of .exe/.dll version resource or .plist file|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -408,14 +418,15 @@ ALERT($info.
 <!--REF #FileClass.moveTo().Syntax -->**.moveTo**( *destinationFolder* : 4D. Folder { ; *newName* : Text } ) : 4D. File<!-- END REF -->
 
 <!--REF #FileClass.moveTo().Params -->
-| Parâmetro         | Tipo       |    | Descrição                                 |
-| ----------------- | ---------- | -- | ----------------------------------------- |
-| destinationFolder | 4D. Folder | -> | Pasta de destino                          |
-| newName           | Text       | -> | Nome completo do ficheiro movido          |
-| Resultados        | 4D. File   | <- | Arquivo movido|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---|----|---|---|
+|destinationFolder|4D. Folder|->|Destination folder|
+|newName|Text|->|Full name for the moved file|
+|Result|4D. File|<-|Moved file|
+</div>
+<!-- END REF -->
 
 
 #### Descrição
@@ -459,16 +470,18 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 | 17 R5   | Adicionado |
 </details>
 
-<!--REF #FileClass.rename().Syntax -->**.rename**( *newName* : Text ) : 4D.File<!-- END REF -->
+<!--REF #FileClass.rename().Syntax -->**.rename**( *newName* : Text ) : 4D. File<!-- END REF -->
 
 
 <!--REF #FileClass.rename().Params -->
-| Parâmetro  | Tipo     |    | Descrição                                     |
-| ---------- | -------- | -- | --------------------------------------------- |
-| newName    | Text     | -> | Novo nome completo para o ficheiro            |
-| Resultados | 4D. File | <- | Ficheiro renomeado|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|newName|Text|->|New full name for the file|
+|Result|4D. File|<-|Renamed file|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -505,11 +518,13 @@ Se quiser renomear "ReadMe.txt" em "ReadMe_new.txt":
 
 
 <!--REF #FileClass.setAppInfo().Params -->
-| Parâmetro | Tipo   |    | Descrição                                                                                                        |
-| --------- | ------ | -- | ---------------------------------------------------------------------------------------------------------------- |
-| info      | Object | -> | Propriedades para escrever no arquivo .plist ou o recurso versão do arquivo .exe/.dll|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|info|Object|->|Properties to write in .exe/.dll version resource or .plist file|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -552,24 +567,24 @@ Se um conjunto de chaves no parâmetro *info* já estiver definido no arquivo .p
 
 ```4d
   // definir copyright e versão de um arquivo .exe (Windows)
-var $exeFile : 4D.File
+var $exeFile : 4D. File
 var $info : Object
 $exeFile:=File(Application file; fk platform path)
 $info:=New object
-$info.LegalCopyright:="Copyright 4D 2021"
-$info.ProductVersion:="1.0.0"
+$info. LegalCopyright:="Copyright 4D 2021"
+$info. ProductVersion:="1.0.0"
 $exeFile.setAppInfo($info)
 ```
 
 ```4d
   // definir algumas chaves num ficheiro info.plist (todas as plataformas)
-var $infoPlistFile : 4D.File
+var $infoPlistFile : 4D. File
 var $info : Object
 $infoPlistFile:=File("/RESOURCES/info.plist")
 $info:=New object
-$info.Copyright:="Copyright 4D 2021" //texto
-$info.ProductVersion:=12 //inteiro
-$info.ShipmentDate:="2021-04-22T06:00:00Z" //timestamp
+$info. Copyright:="Copyright 4D 2021" //texto
+$info. ProductVersion:=12 //inteiro
+$info. ShipmentDate:="2021-04-22T06:00:00Z" //timestamp
 $infoPlistFile.setAppInfo($info)
 ```
 
@@ -591,17 +606,18 @@ $infoPlistFile.setAppInfo($info)
 
 
 <!--REF #FileClass.setContent().Params -->
-| Parâmetro | Tipo |    | Descrição                                                 |
-| --------- | ---- | -- | --------------------------------------------------------- |
-| content   | BLOB | -> | Novos conteúdos para o arquivo|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|content|BLOB|->|New contents for the file|
+</div>
+<!-- END REF -->
 
 
 #### Descrição
 
-A função `.setContent( )` <!-- REF #FileClass.setContent().Summary -->reescreve todo o conteúdo do ficheiro utilizando os dados armazenados no BLOB *content*<!-- END REF -->. Para informações sobre BLOBs, consultar a secção [BLOB](Concepts/dt_blob.md) .
+reescreve todo o conteúdo do ficheiro utilizando os dados armazenados no BLOB *content* <!-- REF #FileClass.setContent().Summary -->A função `.setContent( )`<!-- END REF -->. .
 
 #### Exemplo
 
@@ -625,15 +641,16 @@ A função `.setContent( )` <!-- REF #FileClass.setContent().Summary -->reescrev
 
 
 <!--REF #FileClass.setText().Params -->
-| Parâmetro   | Tipo    |    | Descrição                                                               |
-| ----------- | ------- | -- | ----------------------------------------------------------------------- |
-| text        | Text    | -> | Texto a armazenar no arquivo                                            |
-| charSetName | Text    | -> | Nome do conjunto de caracteres                                          |
-| charSetNum  | Integer | -> | Número de conjuntos de caracteres                                       |
-| breakMode   | Integer | -> | Modo de processamento para retornos de linha|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---------|----|---|--------|
+|text|Text|->|Text to store in the file|
+|charSetName|Text|->|Name of character set|
+|charSetNum|Integer|->|Number of character set|
+|breakMode|Integer|->|Processing mode for line breaks|
+</div>
+<!-- END REF -->
 
 
 #### Descrição

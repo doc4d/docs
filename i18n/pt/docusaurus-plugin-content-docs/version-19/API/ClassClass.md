@@ -46,16 +46,18 @@ Essa propriedade é **apenas leitura**.
 
 </details>
 
-<!-- REF #ClassClass.new().Syntax -->**.new**() : 4D.Object<br/>**.new**( *param* : any { *;...paramN* } ) : 4D.Object<!-- END REF -->
+<!-- REF #ClassClass.new().Syntax -->**.new**() : 4D. Object<br/>**.new**( *param* : any { *;...paramN* } ) : 4D. Object<!-- END REF -->
 
 
 <!-- REF #ClassClass.new().Params -->
-| Parâmetro  | Tipo      |    | Descrição                                        |
-| ---------- | --------- |:--:| ------------------------------------------------ |
-| param      | any       | -> | Parâmetros a passar à função constructor         |
-| Resultados | 4D.Object | <- | Novo objeto da classe|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|param|any|->|Parameter(s) to pass to the constructor function|
+|Result|4D. Object|<-|New object of the class|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
@@ -78,8 +80,7 @@ $person:=cs. Person.new() //create the new instance
 Para criar uma nova instância da classe Person:
 
 ```4d
-//Class: Person.4dm
-Class constructor($firstname : Text; $lastname : Text; $age : Integer)
+//Class: Person.4dm Class constructor($firstname : Text; $lastname : Text; $age : Integer)
  This.firstName:=$firstname
  This.lastName:=$lastname
  This.age:=$age

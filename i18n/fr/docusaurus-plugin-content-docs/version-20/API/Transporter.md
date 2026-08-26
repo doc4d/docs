@@ -352,11 +352,13 @@ La propriété `.user` contient <!-- REF #transporter.user.Summary --> le nom d'
 
 
 <!-- REF #transporter.checkConnection().Params -->
-| Paramètres | Type   |    | Description                                                               |
-| ---------- | ------ |:--:| ------------------------------------------------------------------------- |
-| Résultat   | Object | <- | Statut de la connexion de l'objet transporteur|<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|Résultat|Object|<-|Status of the transporter object connection|
+</div>
+<!-- END REF -->
 
 #### Description
 

@@ -5,7 +5,7 @@ title: Function
 
 ### Function オブジェクトについて
 
-`4D.Function` オブジェクトにはコードが格納されています。このコードは `()` 演算子を使用して、または [`apply()`](#apply) や [`call()`](#call) 関数を使用して呼び出すことができます。 4D では 3種類の `Function` オブジェクトが利用できます:
+`4D.Function` オブジェクトにはコードが格納されています。 このコードは `()` 演算子を使用して、または [`apply()`](#apply) や [`call()`](#call) 関数を使用して呼び出すことができます。 4D では 3種類の `Function` オブジェクトが利用できます:
 
 - **ネイティブ関数** (`collection.sort()` や `file.copyTo()` などの 4Dクラスにビルトインされた関数)。
 - **ユーザー関数** (ユーザー[クラス](Concepts/classes.md) において [Function キーワード](Concepts/classes.md#function)を使って作成されたもの)。
@@ -79,7 +79,9 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
  $f:=Formula(myMethod)
   // ここで Formula(myMethod($1;$2) と書く必要はありません
  $text:=$f.call(Null;"Hello";"World") // "Hello World" を返します
- $text:=$f.call() // "How are you?" を返します
+ $text:=$f.call() // "How are you?"
+
+  を返します
 
   //myMethod
  #DECLARE ($param1 : Text; $param2 : Text)->$return : Text
@@ -87,6 +89,7 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
     $return:=$param1+" "+$param2
  Else
     $return:="How are you?"
+ ")
  End if
 ```
 
@@ -121,13 +124,14 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 
 
 <!-- REF #_command_.Formula.Params -->
-| 引数         | 型           |    | 説明                                                             |
-| ---------- | ----------- |:--:| -------------------------------------------------------------- |
-| formulaExp | 式           | -> | オブジェクトとして返されるフォーミュラ                                            |
-| 戻り値        | 4D.Function | <- | フォーミュラを格納しているネイティブな Function オブジェクト|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|formulaExp|Expression|->|Formula to be returned as object|
+|Result|4D.Function|<-|Native function encapsulating the formula|
+</div>
+<!-- END REF -->
 
 
 #### 説明
@@ -260,13 +264,14 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 
 
 <!-- REF #_command_.Formula from string.Params -->
-| 引数            | 型           |    | 説明                                                   |
-| ------------- | ----------- |:--:| ---------------------------------------------------- |
-| formulaString | Text        | -> | オブジェクトとして返されるフォーミュラ文字列                               |
-| 戻り値           | 4D.Function | <- | フォーミュラを格納しているネイティブなオブジェクト|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|formulaString|Text|->|Text formula to be returned as object|
+|Result|4D.Function|<-|Native object encapsulating the formula|
+</div>
+<!-- END REF -->
 
 
 #### 説明
@@ -319,14 +324,15 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 
 
 <!-- REF #FunctionClass.apply().Params -->
-| 引数            | 型          |    | 説明                                     |
-| ------------- | ---------- |:--:| -------------------------------------- |
-| thisObj       | Object     | -> | フォーミュラ内で This コマンドによって返されるオブジェクト       |
-| formulaParams | Collection | -> | フォーミュラが実行される際に $1...$n として渡される値のコレクション |
-| 戻り値           | any        | <- | フォーミュラの実行結果|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|thisObj|Object|->|Object to be returned by the This command in the formula|
+|formulaParams |Collection|->|Collection of values to be passed as $1...$n when `formula` is executed|
+|Result|any|<-|Value from formula execution|
+</div>
+<!-- END REF -->
 
 
 #### 説明
@@ -380,18 +386,19 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 
 </details>
 
-<!-- REF #FunctionClass.call().Syntax -->**.call**() : any<br/>**.call**( *thisObj* : Object { ; ...*params* : any } ) : any<!-- END REF -->
+<!-- REF #FunctionClass.call().Syntax -->**.call**() : any<br/>**.call**( *thisObj* : Object { ; *...params* : any } ) : any<!-- END REF -->
 
 
 <!-- REF #FunctionClass.call().Params -->
-| 引数      | 型      |    | 説明                                     |
-| ------- | ------ | -- | -------------------------------------- |
-| thisObj | Object | -> | フォーミュラ内で This コマンドによって返されるオブジェクト       |
-| params  | any    | -> | フォーミュラが実行される際に $1...$n として渡される値        |
-| 戻り値     | any    | <- | フォーミュラの実行結果|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|thisObj|Object|->|Object to be returned by the This command in the formula|
+|params |any|->|Value(s) to be passed as $1...$n when formula is executed|
+|Result|any|<-|Value from formula execution|
+</div>
+<!-- END REF -->
 
 
 #### 説明

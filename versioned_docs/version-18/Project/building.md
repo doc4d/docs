@@ -345,7 +345,7 @@ If there is a conflict between two different versions of the same plug-in (one l
 
 ## Licenses & Certificate page
 
-The Licences & Certificate page can be used to:
+The Licenses & Certificate page can be used to:
 
 * designate the license number(s) that you want to integrate into your single-user stand-alone application
 * sign the application by means of a certificate in macOS.
@@ -373,7 +373,7 @@ If a license is not valid, a message will warn you.
 
 You can designate as many valid files as you want. When building an executable application, 4D will use the most appropriate license available.
 
->Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-4DDP").
+>Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-").
 
 After the application is built, a new deployment license file is automatically included in the Licenses folder next to the executable application (Windows) or in the package (macOS).
 

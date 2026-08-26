@@ -71,15 +71,17 @@ Cette propriété est en lecture seule.
 
 
 <!-- REF #WebSocketConnectionClass.send().Params -->
-| Paramètres | Type                 |    | Description                                    |
-| ---------- | -------------------- |:--:| ---------------------------------------------- |
-| message    | Text / Blob / Object | -> | Le message à envoyer<!-- END REF -->
+<div class="no-index">
 
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|message|Text / Blob / Object|->|Le message à envoyer|
+</div>
+<!-- END REF -->
 
 #### Description
 
-La fonction `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->envoie un *message * au client<!-- END REF -->.
+La fonction `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->La fonction `.send()`<!-- END REF -->.
 
 Les contenus suivants sont envoyés en fonction du type de *message * :
 
@@ -115,13 +117,14 @@ Cette propriété est en lecture seule.
 
 
 <!-- REF #WebSocketConnectionClass.terminate().Params -->
-| Paramètres | Type    |    | Description                                                                          |
-| ---------- | ------- |:--:| ------------------------------------------------------------------------------------ |
-| code       | Integer | -> | Code d'erreur envoyé au client (doit être > 3000, sinon le message n'est pas envoyé) |
-| message    | Text    | -> | Message d'erreur envoyé au client<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Paramètre|Type||Description|
+|---------|--- |:---:|------|
+|code|Integer|->|Code d'erreur envoyé au client (doit être supérieur à 3000, sinon le message n'est pas envoyé)|
+|message|Text|->|Message d'erreur envoyé au client|
+</div>
+<!-- END REF -->
 
 
 #### Description

@@ -5,28 +5,25 @@ title: Signal
 
 Sinais são ferramentas fornecidas pela linguagem 4D para gerenciar interações e evitar conflitos entre processos em uma aplicação multiprocesso. Sinais permitem assegurar que um ou mais processos vão esperar por uma tarefa específica a ser completada antes de continuar a execução. Qualquer processo pode esperar ou liberar um sinal.
 
-> Os semáforos podem ser usados para gerenciar interações. Os semáforos permitem garantir que dois ou mais processos não modifiquem o mesmo recurso (arquivo, registro...) ao mesmo tempo. Só o processo que estabelece o semáforo pode removê-lo.
+:::note
+
+[Semaphores](../Develop/processes.md#semaphores) can also be used to manage interactions. Os semáforos permitem garantir que dois ou mais processos não modifiquem o mesmo recurso (arquivo, registro...) ao mesmo tempo. Só o processo que estabelece o semáforo pode removê-lo.
+
+:::
 
 ### Objeto sinal
 
 Um sinal é um objeto partilhado que deve ser passado como parâmetro a comandos que chamam ou criam trabalhadores ou processo.
 
-Um objeto `4D.Signal` contém os seguintes métodos e propriedades integrados:
-
-- [`.wait()`](#wait)
-- [`.trigger()`](#trigger)
-- [`.signaled`](#signaled)
-- [`.description`](#description).
-
 Qualquer worker/processo que chamar o método `.wait()` suspenderá sua execução até que a propriedade `.signaled` seja true. Enquanto espera um sinal, o processo que chamar não usa nenhuma CPU. Isso pode ser muito interessante para o rendimento nas aplicações multiprocesso. A propriedade `.signaled` torna-se true quando qualquer worker/processo chama o método `.trigger()`.
 
 Observe que, para evitar situações de bloqueio, o `.wait()` também pode retornar depois que um tempo limite definido for atingido.
 
-Os objetos Signal são criados com o comando [`New signal`](../commands/new-signal.md).
+Os objetos Signal são criados com o comando [`New signal`](../commands/new-signal).
 
 ### Trabalhar com sinais
 
-Em 4D, você cria um objeto signal chamando o comando [`New signal`](../commands/new-signal.md). Após criado, esse sinal deve ser passado como parâmetro para os comandos `New process` ou `CALL WORKER` para eles poderem modificá-lo quando tiverem concluído a tarefa pela qual você deseja esperar.
+Em 4D, você cria um objeto signal chamando o comando [`New signal`](../commands/new-signal). Após criado, esse sinal deve ser passado como parâmetro para os comandos `New process` ou `CALL WORKER` para eles poderem modificá-lo quando tiverem concluído a tarefa pela qual você deseja esperar.
 
 - O `signal.wait()` deve ser chamado pelo worker/processo que precisa que outro worker/processo termine uma tarefa para poder continuar.
 - O `signal.trigger()` deve ser chamado pelo worker/processo que terminou sua execução para liberar todos os outros.
@@ -148,10 +145,13 @@ Essa propriedade é **somente leitura**.
 
 <!-- REF #SignalClass.trigger().Params -->
 
+<div class="no-index">
+
 | Parâmetro | Tipo |     | Descrição                  |
 | --------- | ---- | :-: | -------------------------- |
 |           |      |     | Não exige nenhum parâmetro |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -178,11 +178,14 @@ Se o sinal já estiver no estado de sinalização (ou seja, a propriedade `signa
 
 <!-- REF #SignalClass.wait().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                          |
 | ---------- | ---------- | --------------------------- | ---------------------------------- |
 | timeout    | Real       | ->                          | Tempo máximo de espera em segundos |
 | Resultados | Parâmetros | <- | Estado da propriedade `.signaled`  |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -207,3 +210,4 @@ Não é recomendável chamar `.wait()` sem um *timeout* no processo principal, p
 > O estado de um processo que espera um signal é `Waiting for internal flag`.
 
 <!-- END REF -->
+

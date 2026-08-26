@@ -16,7 +16,7 @@ Cette option permet de configurer l’affichage proposé par défaut par 4D au d
 *   **Ouvrir le dernier projet utilisé** : 4D ouvre directement le dernier projet utilisé, aucune boîte de dialogue d’ouverture n’apparaît. >Pour forcer l’affichage de la boîte de dialogue d’ouverture lorsque cette option est sélectionnée, maintenez enfoncée la touche **Alt** (Windows) ou **Option** (macOS) pendant le lancement du projet.
 *   **Dialogue d’ouverture du projet distant** : 4D affiche la boîte de dialogue standard de connexion avec 4D Server, permettant de désigner une base de données publiée sur le réseau.
 *   **Dialogue Assistant de bienvenue** (réglage d'usine) : 4D affiche la boîte de dialogue de l'Assistant de bienvenue.
-> > > **4D Server**: The 4D Server application ignores this option. Dans cet environnement, le mode **Ne rien faire** est toujours utilisé.
+> > > > **4D Server**: The 4D Server application ignores this option. Dans cet environnement, le mode **Ne rien faire** est toujours utilisé.
 
 ### Création de formulaire automatique
 
@@ -98,7 +98,7 @@ Lorsque cette option est cochée, les [fichiers sources des méthodes](../Projec
 
 Si vous avez l'intention d'utiliser des VCS ou des éditeurs de code externes avec vos nouveaux projets, il est préférable de décocher cette option pour une meilleure lisibilité du code avec ces outils.
 
-> Vous pouvez toujours obtenir le code avec les tokens en appelant la [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) avec 1 dans le paramètre *option*.
+> Cette option ne peut être appliquée qu'aux projets (les bases de données binaires incluent toujours les tokens).
 
 > Vous pouvez toujours obtenir le code avec les tokens en appelant la [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) avec 1 dans le paramètre *option*.
 

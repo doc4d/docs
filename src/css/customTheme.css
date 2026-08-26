@@ -100,9 +100,6 @@ details[data-value='properties'] > div > div > table > thead {
   display: inline-block;
 }
 
-footer {
-  margin-top: 100px;
-}
 
 
 @media only screen and (max-width: 768px) {
@@ -157,4 +154,38 @@ summary {
 
 .table-of-contents__link{
   font-size: 12.2px;
+}
+
+[data-theme='light'] .DocSearch {
+ --docsearch-key-background: var(--ifm-color-secondary-darkest);
+ --docsearch-text-color: var(--ifm-font-color-base);
+ --docsearch-searchicon-color: var(--ifm-color-secondary-darkest);
+ --docsearch-searchbox-background: var(--ifm-color-primary);
+}
+
+
+
+a.footer__link-item:hover {
+    color: #1e90ff !important;
+}
+
+/* Version dropdown: page not available in target version */
+.dropdown__menu .version-unavailable {
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+}
+.dropdown__menu .version-unavailable:hover {
+  opacity: 0.95;
+}
+.dropdown__menu .version-unavailable::after {
+  content: '∅';
+  margin-left: auto;
+  padding-left: 0.5rem;
+  font-size: 0.75em;
+}
+.dropdown__menu .version-separator {
+  margin: 0.3rem 0.8rem;
+  border: none;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
 }

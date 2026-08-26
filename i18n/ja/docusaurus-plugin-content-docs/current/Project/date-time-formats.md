@@ -7,9 +7,9 @@ title: 日付と時間のフォーマット
 
 4Dには、デフォルトの形式に加えて、カスタマイズされた日付と時間のフォーマットを作成および適用するために使用できる包括的なパターンのリストが含まれています。 カスタマイズされたフォーマットパターンは、以下の機能でサポートされています:
 
-- [`String`](../commands/string.md) コマンド
-- [`OBJECT SET FORMAT`](../commands-legacy/object-set-format.md) および [`OBJECT Get format`](../commands-legacy/object-get-format.md) コマンド
-- プロパティリストまたは [`dateFormat`](../FormObjects/properties_Display.md/#日付フォーマット) および [`timeFormat`](../FormObjects/properties_Display.md/#時間フォーマット) のJSONプロパティから利用可能な、フォームオブジェクトの "日付/時間フォーマット" プロパティ
+- [`String`](../commands/string) コマンド
+- [`OBJECT SET FORMAT`](../commands/object-set-format) および [`OBJECT Get format`](../commands/object-get-format) コマンド
+- プロパティリストまたは [`dateFormat`](../FormObjects/properties_Display.md#日付フォーマット) および [`timeFormat`](../FormObjects/properties_Display.md#時間フォーマット) のJSONプロパティから利用可能な、フォームオブジェクトの "日付/時間フォーマット" プロパティ
 
 ## パターンリスト
 
@@ -49,24 +49,24 @@ title: 日付と時間のフォーマット
 | d   | 日                                                                  | d          | 2                                                                                         |
 |     |                                                                    | dd         | 2                                                                                         |
 | D   | 日 (年始からの日数)                                     | D          | 189                                                                                       |
-| E   | 曜日                                                                 | E, EE, EEE | Tue                                                                                       |
-|     |                                                                    | EEEE       | Tuesday                                                                                   |
-|     |                                                                    | EEEEE      | T                                                                                         |
+| E   | 曜日                                                                 | E, EE, EEE | 火                                                                                         |
+|     |                                                                    | EEEE       | 火曜日                                                                                       |
+|     |                                                                    | EEEEE      | 火                                                                                         |
 |     |                                                                    | EEEEEE     | 火                                                                                         |
 | e   | ローカル曜日                                                             | e          | 2                                                                                         |
-|     |                                                                    | ee         | 02                                                                                        |
-|     |                                                                    | eee        | Tue                                                                                       |
-|     |                                                                    | eeee       | Tuesday                                                                                   |
-|     |                                                                    | eeeee      | T                                                                                         |
+|     |                                                                    | ee         | 03                                                                                        |
+|     |                                                                    | eee        | 火                                                                                         |
+|     |                                                                    | eeee       | 火曜日                                                                                       |
+|     |                                                                    | eeeee      | 火                                                                                         |
 |     |                                                                    | eeeeee     | 火                                                                                         |
 | c   | ローカル曜日 (単独)                                     | c, cc      | 2                                                                                         |
-|     |                                                                    | ccc        | Tue                                                                                       |
-|     |                                                                    | cccc       | Tuesday                                                                                   |
-|     |                                                                    | ccccc      | T                                                                                         |
+|     |                                                                    | ccc        | 火                                                                                         |
+|     |                                                                    | cccc       | 火曜日                                                                                       |
+|     |                                                                    | ccccc      | 火                                                                                         |
 |     |                                                                    | cccccc     | 火                                                                                         |
 | a   | 午前、午後                                                              | a, aa, aaa | 午後                                                                                        |
 |     |                                                                    | aaaa       | 午後                                                                                        |
-|     |                                                                    | aaaaa      | p                                                                                         |
+|     |                                                                    | aaaaa      | 午後                                                                                        |
 | b   | 午前、午後、正午                                                           | b, bb, bbb | 正午                                                                                        |
 |     |                                                                    | bbbb       | 正午                                                                                        |
 |     |                                                                    | bbbbb      | 正午                                                                                        |
@@ -90,15 +90,15 @@ title: 日付と時間のフォーマット
 |     | タイムゾーン: ISO8601 拡張 hm, 0 の場合は Z 表示                 | XXX        | -08:00, Z                                                                 |
 |     | タイムゾーン: ISO8601 基本 hms?, 0 の場合は Z 表示               | XXXX       | -0800, -075258, Z                                                                         |
 |     | タイムゾーン: ISO8601 拡張 hms?, 0 の場合は Z 表示               | XXXXX      | -08:00, -07:52:58, Z                      |
-| ○   | タイムゾーン: ISO8601 基本 hm?, Z 表示なし                     | ○          | -08, +0530, +00                                                                           |
+| ○   | タイムゾーン: ISO8601 基本 hm?, Z 表示なし                     | x          | -08, +0530, +00                                                                           |
 |     | タイムゾーン: ISO8601 基本 hm, Z 表示なし                      | xx         | -0800, +0000                                                                              |
 |     | タイムゾーン: ISO8601 拡張 hm, Z 表示なし                      | xxx        | -08:00, +00:00                                            |
 |     | タイムゾーン: ISO8601 基本 hms?, Z 表示なし                    | xxxx       | -0800, -075258, +0000                                                                     |
 |     | タイムゾーン: ISO8601 拡張 hms?, Z 表示なし                    | xxxxx      | -08:00, -07:52:58, +00:00 |
 | O   | タイムゾーン: 短いローカライズされた GMT                            | O          | GMT+9                                                                                     |
 |     | タイムゾーン: 長いローカライズされた GMT (=ZZZZ) | OOOO       | GMT+09:00                                                                 |
-| z   | タイムゾーン: 共通形式                                       | z, zz, zzz | JST                                                                                       |
-|     |                                                                    | zzzz       | GMT+09:00                                                                 |
+| z   | タイムゾーン: 共通形式                                       | z, zz, zzz | -0800, +0000                                                                              |
+|     |                                                                    | zzzz       | 日本標準時                                                                                     |
 |     |                                                                    | zzzzz      | -08:00, -07:52:58, Z                      |
 |     |                                                                    |            |                                                                                           |
 | '   | テキスト用エスケープ                                                         | '          | '                                                                                         |
@@ -164,3 +164,4 @@ title: 日付と時間のフォーマット
 ## 参照
 
 カスタムの日付と時刻のフォーマットに関する詳細については、[このブログ記事](https://blog.4d.com/ja/tailored-customization-for-dates-and-times) を参照ください。
+

@@ -5,8 +5,8 @@ title: DataStore
 
 [データストア](ORDA/dsMapping.md#datastore) とは、 ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 `Datastore` オブジェクトは以下のコマンドによって返されます:
 
-- [ds](../commands/ds.md): メインデータストアへのショートカット
-- [Open datastore](../commands/open-datastore.md): リモートデータストアを開きます
+- [ds](../commands/ds): メインデータストアへのショートカット
+- [Open datastore](../commands/open-datastore): リモートデータストアを開きます
 
 ### 概要
 
@@ -48,7 +48,7 @@ title: DataStore
 
 #### 説明
 
-データストアの各データクラスは [DataStore オブジェクト](ORDA/dsMapping.md#データストア) のプロパティとして利用可能です。  戻り値のオブジェクトには<!-- REF DataStoreClass.dataclassName.Summary -->データクラスの詳細が格納されています<!-- END REF -->。
+データストアの各データクラスは [DataStore オブジェクト](ORDA/dsMapping.md#データストア) のプロパティとして利用可能です。 戻り値のオブジェクトには<!-- REF DataStoreClass.dataclassName.Summary -->データクラスの詳細が格納されています<!-- END REF -->。
 
 #### 例題
 
@@ -78,10 +78,13 @@ title: DataStore
 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |     | 説明         |
 | -- | - | :-: | ---------- |
 |    |   |     | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -112,10 +115,13 @@ title: DataStore
 
 <!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |     | 説明         |
 | -- | - | :-: | ---------- |
 |    |   |     | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -146,10 +152,13 @@ title: DataStore
 
 <!-- REF #DataStoreClass.encryptionStatus().Params -->
 
+<div class="no-index">
+
 | 引数  | 型      |                             | 説明                           |
 | --- | ------ | :-------------------------: | ---------------------------- |
 | 戻り値 | Object | <- | カレントデータストアと、各テーブルの暗号化についての情報 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -218,21 +227,24 @@ title: DataStore
 
 <!-- REF #DataStoreClass.flushAndLock().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |   | 説明         |
 | -- | - | - | ---------- |
 |    |   |   | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
 
-`.flushAndLock()` 関数は、<!-- REF #DataStoreClass.flushAndLock().Summary -->ローカルデータストアのキャッシュをフラッシュし、データベースに対して他のプロセスが書き込み操作をおこなうのを防ぎます<!-- END REF -->。 これにより、データストアは凍結状態におかれます。 この関数は、たとえばアプリケーションのスナップショットを実行する前に呼び出す必要があります。 これにより、データストアは凍結状態におかれます。 この関数は、たとえばアプリケーションのスナップショットを実行する前に呼び出す必要があります。
+`.flushAndLock()` 関数は、<!-- REF #DataStoreClass.flushAndLock().Summary -->ローカルデータストアのキャッシュをフラッシュし、データベースに対して他のプロセスが書き込み操作をおこなうのを防ぎます<!-- END REF -->。 これにより、データストアは凍結状態におかれます。 この関数は、たとえばアプリケーションのスナップショットを実行する前に呼び出す必要があります。
 
 :::info
 
 この関数は次の場合にのみ使えます:
 
-- ローカルデータストア ([`ds`](../commands/ds.md)) を対象に。
+- ローカルデータストア ([`ds`](../commands/ds)) を対象に。
 - クライアント/サーバー環境では、サーバーマシン上にて。
 
 :::
@@ -295,10 +307,13 @@ ds.unlock() // コピー操作をおこなったので、データストアの�
 
 <!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
 
+<div class="no-index">
+
 | 引数  | 型          |                             | 説明                     |
 | --- | ---------- | --------------------------- | ---------------------- |
 | 戻り値 | Collection | <- | 最適化コンテキストオブジェクトのコレクション |
 
+</div>
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。  ほとんどの場合、使用する必要はないでしょう。
@@ -370,10 +385,13 @@ $info:=$ds.getAllRemoteContexts()
 
 <!-- REF #DataStoreClass.getGlobalStamp().Params -->
 
+<div class="no-index">
+
 | 引数  | 型    |                             | 説明                |
 | --- | ---- | --------------------------- | ----------------- |
 | 戻り値 | Real | <- | グローバル変更スタンプのカレント値 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -384,7 +402,7 @@ $info:=$ds.getAllRemoteContexts()
 
 この関数は次の場合にのみ使えます:
 
-- ローカルデータストア ([`ds`](../commands/ds.md)) を対象に。
+- ローカルデータストア ([`ds`](../commands/ds)) を対象に。
 - クライアント/サーバー環境では、サーバーマシン上にて。
 
 :::
@@ -422,10 +440,13 @@ $hasModifications:=($currentStamp # ds.getGlobalStamp())
 
 <!-- REF #DataStoreClass.getInfo().Params -->
 
+<div class="no-index">
+
 | 引数  | 型      |                             | 説明           |
 | --- | ------ | :-------------------------: | ------------ |
 | 戻り値 | Object | <- | データストアのプロパティ |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -438,7 +459,7 @@ $hasModifications:=($currentStamp # ds.getGlobalStamp())
 | ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D": ds で利用可能なメインデータストア</li><li>"4D Server": Open datastore で開かれたリモートデータストア</li>                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | networked  | boolean | <li>true: ネットワーク接続を介してアクセスされたデータストア</li><li>false: ネットワーク接続を介さずにアクセスしているデータストア (ローカルデータベース)</li>                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| localID    | text    | マシン上のデータストアID。 マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。 メインデータストアの場合は空の文字列 ("") です。                                                                                                                                                                                                                                                                                                                                            |
+| localID    | text    | マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。                                                                                                                                                                                                                                                                                                                                                                                                          |
 | connection | object  | リモートデータストア接続の情報を格納したオブジェクト (メインデータストアの場合は返されません)。 次のプロパティを含みます:<table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>hostname</td><td>text</td><td>リモートデータストアの IP アドレスまたは名称 + ":" + ポート番号</td></tr><tr><td>tls</td><td>boolean</td><td>リモートデータストアとセキュア接続を利用している場合は true</td></tr><tr><td>idleTimeout</td><td>number</td><td>セッション非アクティブタイムアウト (分単位)。</td></tr><tr><td>user</td><td>text</td><td>リモートデータストアにて認証されたユーザー</td></tr></table> |
 
 - `.getInfo()` 関数が、4D Server またはシングルユーザー版 4D 上で実行された場合、`networked` は false となります。
@@ -490,11 +511,14 @@ $info:=$remoteDS.getInfo()
 
 <!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
 
+<div class="no-index">
+
 | 引数          | 型      |                             | 説明           |
 | ----------- | ------ | --------------------------- | ------------ |
 | contextName | Text   | ->                          | コンテキストの名称    |
 | 戻り値         | Object | <- | 最適化コンテキストの詳細 |
 
+</div>
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。  ほとんどの場合、使用する必要はないでしょう。
@@ -542,10 +566,13 @@ $info:=$remoteDS.getInfo()
 
 <!-- REF #DataStoreClass.getRequestLog().Params -->
 
+<div class="no-index">
+
 | 引数  | 型          |                             | 説明                                                    |
 | --- | ---------- | :-------------------------: | ----------------------------------------------------- |
 | 戻り値 | Collection | <- | オブジェクトのコレクション (要素毎に一つのリクエストを記述します) |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -582,10 +609,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
 
+<div class="no-index">
+
 | 引数  | 型       |                             | 説明                                                                            |
 | --- | ------- | :-------------------------: | ----------------------------------------------------------------------------- |
 | 戻り値 | Boolean | <- | データエクスプローラーへのアクセスが無効に設定されているの場合は true、有効の場合は false (デフォルト) |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -614,10 +644,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 <!-- REF #DataStoreClass.locked().Params -->
 
+<div class="no-index">
+
 | 引数  | 型       |                             | 説明               |
 | --- | ------- | --------------------------- | ---------------- |
 | 戻り値 | Boolean | <- | ロックされている場合は true |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -652,10 +685,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |     | 説明         |
 | -- | - | :-: | ---------- |
 |    |   |     | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -687,12 +723,15 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 <!-- REF #DataStoreClass.provideDataKey().Params -->
 
+<div class="no-index">
+
 | 引数            | 型      |                             | 説明            |
 | ------------- | ------ | --------------------------- | ------------- |
 | curPassPhrase | Text   | ->                          | カレントのパスフレーズ   |
 | curDataKey    | Object | ->                          | カレントのデータ暗号化キー |
 | 戻り値           | Object | <- | 暗号化キーのチェックの結果 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -708,7 +747,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 有効な暗号化キーが提供された場合、そのキーはメモリ内の *keyChain* に追加され、暗号化モードが有効になります:
 
-- 暗号化可能テーブルに対するデータ編集はすべて、ディスク上 (.4DD、.journal、 .4Dindx ファイル) で暗号化されます。
+- 暗号化可能テーブルに対するデータ編集はすべて、ディスク上 (.4DD、.journal、 .4Dindx ファイル) で暗号化されます。 .4Dindx ファイル) で暗号化されます。
 - 暗号化可能テーブルから読み出したすべてのデータは、メモリ内で復号化されます。
 
 **戻り値**
@@ -763,10 +802,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
 
+<div class="no-index">
+
 | 引数     | 型       |    | 説明                                                                                               |
 | ------ | ------- | -- | ------------------------------------------------------------------------------------------------ |
 | status | Boolean | -> | `webAdmin`ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト) |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -805,10 +847,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 <!-- REF #DataStoreClass.setGlobalStamp().Params -->
 
+<div class="no-index">
+
 | 引数       | 型    |    | 説明               |
 | -------- | ---- | -- | ---------------- |
 | newStamp | Real | -> | グローバル変更スタンプの新しい値 |
 
+</div>
 <!-- END REF -->
 
 :::info 詳細モード
@@ -819,13 +864,13 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 #### 説明
 
-`.setDataStore()` 関数は、<!-- REF #DataStoreClass.setGlobalStamp().Summary -->データストアのグローバル変更スタンプの新しい値として *newStamp* を設定します<!-- END REF -->。
+`.setGlobalStamp() ` 関数は、<!-- REF #DataStoreClass.setGlobalStamp().Summary -->データストアのグローバル変更スタンプの新しい値として *newStamp* を設定します<!-- END REF -->。
 
 :::info
 
 この関数は次の場合にのみ使えます:
 
-- ローカルデータストア ([`ds`](../commands/ds.md)) を対象に。
+- ローカルデータストア ([`ds`](../commands/ds)) を対象に。
 - クライアント/サーバー環境では、サーバーマシン上にて。
 
 :::
@@ -860,6 +905,8 @@ ds.setGlobalStamp($newValue)
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 
+<div class="no-index">
+
 | 引数              | 型                            |    | 説明                                                                                          |
 | --------------- | ---------------------------- | -- | ------------------------------------------------------------------------------------------- |
 | contextName     | Text                         | -> | コンテキストの名称                                                                                   |
@@ -870,6 +917,7 @@ ds.setGlobalStamp($newValue)
 | contextType     | Text                         | -> | 渡す場合、値は "main" または "currentItem" のいずれか                                                      |
 | pageLength      | Integer                      | -> | コンテキストにリンクされたエンティティセレクションのページ長 (デフォルトは 80)                               |
 
+</div>
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。  ほとんどの場合、使用する必要はないでしょう。
@@ -992,12 +1040,15 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
 
+<div class="no-index">
+
 | 引数      | 型                       |    | 説明                                             |
 | ------- | ----------------------- | -- | ---------------------------------------------- |
 | file    | 4D.File | -> | File オブジェクト                                    |
 | options | Integer                 | -> | ログレスポンスオプション (サーバーのみ)       |
 | reqNum  | Integer                 | -> | メモリ内に保管するリクエストの数 (クライアントのみ) |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -1014,7 +1065,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエス
 
 クライアント側の ORDAリクエストログを作成するには、リモートマシン上でこの関数を呼び出します。 ログは、渡した引数によってファイルまたはメモリに送ることができます:
 
-- `File` コマンドで作成された *file* オブジェクトを渡した場合、ログデータはオブジェクト (JSON フォーマット) のコレクションとしてこのファイルに書き込まれます。 各オブジェクトは一つのリクエストを表します。<br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
+- `File` コマンドで作成された *file* オブジェクトを渡した場合、ログデータはオブジェクト (JSON フォーマット) のコレクションとしてこのファイルに書き込まれます。 各オブジェクトは一つのリクエストを表します。 <br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
   メモリへのログ記録が既に始まっている状態で、 `.startRequestLog()`が file 引数付きで呼び出された場合、メモリに記録されていたログは停止され消去されます。
 
 > JSON 評価を実行するには、ファイルの終わりに手動で \] 文字を追加する必要があります。
@@ -1104,10 +1155,13 @@ SET DATABASE PARAMETER(4D Server Log Recording;0)
 
 <!-- REF #DataStoreClass.startTransaction().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |     | 説明         |
 | -- | - | :-: | ---------- |
 |    |   |     | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -1170,10 +1224,13 @@ SET DATABASE PARAMETER(4D Server Log Recording;0)
 
 <!-- REF #DataStoreClass.stopRequestLog().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |   | 説明         |
 | -- | - | - | ---------- |
 |    |   |   | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -1204,10 +1261,13 @@ ORDAリクエストログがマシン上で開始されていない場合、こ�
 
 <!-- REF #DataStoreClass.unlock().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |   | 説明         |
 | -- | - | - | ---------- |
 |    |   |   | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -1240,10 +1300,13 @@ ORDAリクエストログがマシン上で開始されていない場合、こ�
 
 <!-- REF #DataStoreClass.validateTransaction().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |   | 説明         |
 | -- | - | - | ---------- |
 |    |   |   | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -1259,3 +1322,4 @@ ORDAリクエストログがマシン上で開始されていない場合、こ�
 [`.startTransaction()`](#starttransaction) の例題を参照ください。
 
 <!-- END REF -->
+

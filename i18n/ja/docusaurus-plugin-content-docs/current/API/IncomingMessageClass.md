@@ -5,9 +5,9 @@ title: IncomingMessage
 
 `4D.IncomingMessage` クラスを使用すると、カスタムの [**HTTP リクエストハンドラー**](../WebServer/http-request-handler.md) が受信したオブジェクトを管理できるようになります。 HTTP リクエストおよびそのプロパティは`4D.IncomingMessage` クラスのインスタンスとして自動的に受信されます。 GET 動詞とともにリクエストに直接渡された引数は[`.urlQuery`](#urlquery) プロパティで管理される一方、リクエストの本文に渡された引数は[`.getBlob()`](#getblob) あるいは [`getText()`](#gettext) といった関数を通して利用可能です。
 
-HTTPリクエストハンドラーはあらゆる値を返すことが可能です(あるいは返さないことも可能です)。 通常は、[`4D.OutgoingMessage`](OutgoingMessageClass.md) クラスのインスタンスを返します。
+HTTPリクエストハンドラーはあらゆる値を返すことが可能です(あるいは返さないことも可能です)。 通常は、[`4D.OutgoingMessage`](OutgoingMessageClass.md) クラスのインスタンスを返します。 通常は、[`4D.OutgoingMessage`](OutgoingMessageClass.md) クラスのインスタンスを返します。
 
-このクラスの全てのプロパティは読み出し専用です。 これらはリクエストハンドラーによって自動的に値が入れられます。 これらはリクエストハンドラーによって自動的に値が入れられます。
+このクラスの全てのプロパティは読み出し専用です。 これらはリクエストハンドラーによって自動的に値が入れられます。
 
 <details><summary>履歴</summary>
 
@@ -32,7 +32,7 @@ HTTPリクエストハンドラーはあらゆる値を返すことが可能で�
 ]
 ```
 
-`http://127.0.0.1/start/example?param=demo&name=4D` リクエストが、`GET` 動詞とともにブラウザ内で実行されます。  このリクエストは、以下の*GeneralHandling* シングルトンクラスの*gettingStarted* 関数によって管理されます:
+`http://127.0.0.1/start/example?param=demo&name=4D` リクエストが、`GET` 動詞とともにブラウザー内で実行されます。  このリクエストは、以下の*GeneralHandling* シングルトンクラスの*gettingStarted* 関数によって管理されます:
 
 ```4d
 shared singleton Class constructor()
@@ -105,10 +105,13 @@ There are 2 url parts - Url parts are: start - example
 
 <!-- REF #IncomingMessageClass.getBlob().Params -->
 
+<div class="no-index">
+
 | 引数  | 型    |                             | 説明               |
 | --- | ---- | --------------------------- | ---------------- |
 | 戻り値 | BLOB | <- | Blob 形式のリクエストの本文 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -127,11 +130,14 @@ There are 2 url parts - Url parts are: start - example
 
 <!-- REF #IncomingMessageClass.getHeader().Params -->
 
+<div class="no-index">
+
 | 引数  | 型    |                             | 説明             |
 | --- | ---- | --------------------------- | -------------- |
 | key | Text | ->                          | 取得したいヘッダープロパティ |
 | 戻り値 | Text | <- | ヘッダープロパティの値    |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -162,10 +168,13 @@ $value := $request.getHeader("content-type")
 
 <!-- REF #IncomingMessageClass.getJSON().Params -->
 
+<div class="no-index">
+
 | 引数  | 型       |                             | 説明               |
 | --- | ------- | --------------------------- | ---------------- |
 | 戻り値 | Variant | <- | JSON解決したリクエストの本文 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -184,10 +193,13 @@ $value := $request.getHeader("content-type")
 
 <!-- REF #IncomingMessageClass.getPicture().Params -->
 
+<div class="no-index">
+
 | 引数  | 型       |                             | 説明               |
 | --- | ------- | --------------------------- | ---------------- |
 | 戻り値 | Picture | <- | ピクチャー形式のリクエストの本文 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -214,10 +226,13 @@ $value := $request.getHeader("content-type")
 
 <!-- REF #IncomingMessageClass.getText().Params -->
 
+<div class="no-index">
+
 | 引数  | 型    |                             | 説明              |
 | --- | ---- | --------------------------- | --------------- |
 | 戻り値 | Text | <- | テキスト形式のリクエストの本文 |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -240,7 +255,7 @@ $value := $request.getHeader("content-type")
 
 `.headers` プロパティは、読み出し専用です。
 
-ヘッダー名(キー)は全て小文字となっています。  ヘッダー名は全て大文字・小文字は区別されます。
+ヘッダー名(キー)は全て小文字となっています。  ヘッダー名では大文字と小文字が区別されることに注意してください。
 
 <!-- END REF -->
 
@@ -308,7 +323,7 @@ $value := $request.getHeader("content-type")
 
 引数はJSON フォーマットで渡されかつコレクションとして括られています。
 
-この場合、引数は`urlQuery` プロパティ内にJSON テキストとして受け取られ、[`JSON Parse`](../commands-legacy/json-parse.md) を使用することでパースすることができます。
+この場合、引数は`urlQuery` プロパティ内にJSON テキストとして受け取られ、[`JSON Parse`](../commands/json-parse) を使用することでパースすることができます。
 
 ```4d
 //urlQuery.myparams: "[{"firstname": "Marie","isWoman": true,"id": 3}]"
@@ -347,4 +362,5 @@ HTTP または HTTPS リクエスト動詞には、例えば"get"、"post"、"pu
 `.verb` プロパティは、読み出し専用です。
 
 <!-- END REF -->
+
 

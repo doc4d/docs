@@ -4,18 +4,21 @@ title: WP Add picture
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Add picture.Syntax-->**WP Add picture** ( *wpDoc* {; *picture*} ) : Object<br/>**WP Add picture** ( *wpDoc* {; *picturePath*} ) : Object<br/>**WP Add picture** ( *wpDoc* {; *pictureFileObj*} ) : Object<!-- END REF-->
+<!--REF #_command_.WP Add picture.Syntax-->**WP Add picture** ( *wpDoc* : Object {; *picture* : Picture} ) : Object<br/>**WP Add picture** ( *wpDoc* : Object {; *picturePath* : Text} ) : Object<br/>**WP Add picture** ( *wpDoc* : Object {; *pictureFileObj* : 4D.File} ) : Object<!-- END REF-->
 
 <!--REF #_command_.WP Add picture.Params-->
 
-| Paramètres     | Type                    |                             | Description                                                 |
-| -------------- | ----------------------- | --------------------------- | ----------------------------------------------------------- |
-| wpDoc          | Object                  | &#8594; | Document 4D Write Pro                                       |
-| picture        | Picture                 | &#8594; | Image 4D                                                    |
-| picturePath    | Text                    | &#8594; | Chemin de l'image                                           |
-| pictureFileObj | 4D.File | &#8594; | Objet 4D.File représentant un fichier image |
-| Résultat       | Object                  | &#8592; | Objet référençant l'image                                   |
+<div class="no-index">
 
+| Paramètres              | Type                    |                             | Description                                                 |
+| ----------------------- | ----------------------- | --------------------------- | ----------------------------------------------------------- |
+| wpDoc                   | Object                  | &#8594; | Document 4D Write Pro                                       |
+| picture                 | Picture                 | &#8594; | Image 4D                                                    |
+| picturePath             | Text                    | &#8594; | Chemin de l'image                                           |
+| pictureFileObj          | 4D.File | &#8594; | Objet 4D.File représentant un fichier image |
+| Résultat de la fonction | Object                  | &#8592; | Objet référençant l'image                                   |
+
+</div>
 <!-- END REF-->
 
 ## Description
@@ -26,13 +29,13 @@ Dans *wpDoc*, passez le nom d'un objet document 4D Write Pro.
 
 Pour le deuxième paramètre facultatif, vous pouvez passer soit :
 
-- En *picture* :  Une image 4D
+- Dans *picture* :  une image 4D
 - Dans *picturePath* : une chaîne contenant un chemin vers un fichier image stocké sur le disque (syntaxe système). Vous pouvez passer un chemin complet ou un chemin relatif au fichier de structure de la base de données. Vous pouvez également transmettre un nom de fichier, auquel cas le fichier doit être situé à côté du fichier de structure de la base de données. Si vous passez un nom de fichier, vous devez indiquer l'extension du fichier.
 - Dans *PictureFileObj* : un objet `4D.File` représentant un fichier image.
 
 :::note
 
-N'importe quel format d'image [supporté par 4D](../../FormEditor/pictures.md#native-formats-supported) peut être utilisé. Vous pouvez obtenir la liste des formats d'image disponibles en utilisant la commande [PICTURE CODEC LIST](../../commands-legacy/picture-codec-list.md). Si l'image encapsule plusieurs formats (codecs), 4D Write Pro ne conserve qu'un format pour l'affichage et un format pour l'impression (si différent) dans le document ; les "meilleurs" formats sont automatiquement sélectionnés.
+N'importe quel format d'image [supporté par 4D](../../FormEditor/pictures.md#native-formats-supported) peut être utilisé. Si l'image encapsule plusieurs formats (codecs), 4D Write Pro ne conserve qu'un format pour l'affichage et un format pour l'impression (si différent) dans le document ; les "meilleurs" formats sont automatiquement sélectionnés. Vous pouvez obtenir la liste des formats d'image disponibles en utilisant la commande [PICTURE CODEC LIST](../../commands/picture-codec-list).
 
 :::
 
@@ -44,9 +47,9 @@ Par défaut, l'image ajoutée est :
 - Affichée en haut à gauche de la boîte à papier
 - Affichée sur toutes les pages
 
-L'emplacement, la couche (en ligne, devant/derrière le texte), la visibilité et toutes les propriétés de l'image peuvent être modifiées en utilisant la commande [WP SET ATTRIBUTES](wp-set-attributes.md), ou via des actions standards (voir *Utiliser des actions standard 4D Write Pro*).
+L'emplacement, l'insertion (en ligne, devant/derrière le texte), la visibilité et toutes les propriétés de l'image peuvent être modifiées en utilisant la commande [WP SET ATTRIBUTES](wp-set-attributes.md), ou via des actions standards.
 
-**Note :** La commande [WP Selection range](../commands-legacy/wp-selection-range.md) retourne un objet *picture reference* si une image ancrée est sélectionnée et un *range object* si une image en ligne est sélectionnée. Vous pouvez déterminer si un objet sélectionné est un objet image en vérifiant l'attribut `wk type` :
+**Note :** La commande [WP Selection range](../commands/wp-selection-range) retourne un objet *picture reference* si une image ancrée est sélectionnée et un *range object* si une image en ligne est sélectionnée. Vous pouvez déterminer si un objet sélectionné est un objet image en vérifiant l'attribut `wk type` :
 
 - **Value = 2** : l'objet sélectionné est un objet image.
 - **Value = 0** : l'objet sélectionné est un objet plage.
@@ -100,5 +103,5 @@ Vous voulez utiliser une expression de champ pour ajouter une image ancrée à u
 
 ## Voir également
 
-[WP DELETE PICTURE](../commands-legacy/wp-delete-picture.md)</br>
-[WP Picture range](../commands-legacy/wp-picture-range.md)
+[WP DELETE PICTURE](../commands/wp-delete-picture)</br>
+[WP Picture range](../commands/wp-picture-range)

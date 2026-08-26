@@ -21,7 +21,7 @@ title: アーキテクチャー
   - `userPreferences.username`
   - `WebFolder`
 
-> バイナリデータベースから変換されたプロジェクトの場合には、追加のフォルダーが存在している場合があります  (doc.4d.com にて "<a href="https://doc.4d.com/4Dv18/4D/18/Converting-databases-to-projects.300-4606146.ja.html">データベースをプロジェクトモードに変換する</a>" 参照)。 (doc.4d.com にて "[データベースをプロジェクトモードに変換する](https://doc.4d.com/4Dv18/4D/18/Converting-databases-to-projects.300-4606146.ja.html)" 参照)。
+> バイナリーデータベースから変換されたプロジェクトの場合には、追加のフォルダーが存在している場合があります  (doc.4d.com にて "[データベースをプロジェクトモードに変換する](https://doc.4d.com/4Dv18/4D/18/Converting-databases-to-projects.300-4606146.ja.html)" 参照)。
 
 ## `Project` フォルダー
 
@@ -51,40 +51,36 @@ title: アーキテクチャー
 
 ### `Sources`
 
-| 内容                                                           | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 形式   |
-| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| catalog.4DCatalog                            | テーブルおよびフィールド定義                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | XML  |
-| catalog_editor.json     | ストラクチャーエディターでのテーブル、フィールド、およびリンクのカスタム位置と色。 変換されたプロジェクトでは [互換性設定](../settings/compatibility.md) に依存します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | JSON |
-| folders.json                                 | エクスプローラーフォルダー定義                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | JSON |
-| menus.json                                   | メニュー定義                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | JSON |
-| roles.json                                   | [Privileges, permissions](../ORDA/privileges.md#rolesjson-file) and other security settings for the project                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | JSON |
-| settings.4DSettings                          | *ストラクチャー*データベース設定。 They are not taken into account if *[user settings](#settings-user)* or *[user settings for data](#settings-user-data)* are defined (see also [Priority of settings](../settings/overview.md#user-settings#priority-of-settings). **警告**: コンパイル済みアプリケーションの場合、ストラクチャー設定は読み取り専用の .4dz ファイルに格納されます。 For deployment needs, it is necessary to [enable](../settings/overview.md#user-settings#enabling-user-settings) and use *user settings* or *user settings for data* to define custom settings. | XML  |
-| tips.json                                    | 定義されたヘルプTips                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | JSON |
-| lists.json                                   | 定義されたリスト                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | JSON |
-| filters.json                                 | 定義されたフィルター                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | JSON |
-| dependencies.json                            | プロジェクトに [ロードするコンポーネント](components.md) の名前                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | JSON |
-| HTTPHandlers.json                            | Custom [HTTP request handlers](../WebServer/http-request-handler.md) defined for the web server                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | JSON |
-| styleSheets.css                              | CSS スタイルシート                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | CSS  |
-| styleSheets_mac.css     | Mac用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | CSS  |
-| styleSheets_windows.css | Windows用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | CSS  |
-
-#### `DatabaseMethods`
-
-| 内容                                       | 説明                                                                                              | 形式   |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------- | ---- |
-| *databaseMethodName*.4dm | プロジェクト内で定義されているデータベースメソッド プロジェクト内で定義されているデータベースメソッド (1つのデータベースメソッドにつき1ファイル)。 | text |
-
-#### `Methods`
-
-| 内容                               | 説明                                                                                                      | 形式   |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------- | ---- |
-| *methodName*.4dm | プロジェクト内で定義されているプロジェクトメソッド  (1つのメソッドにつき1ファイル)。  (1つのメソッドにつき1ファイル)。 | text |
+| 内容                                                           | 説明                                                                                                                                                                                                                                                                                                                                                                                                         | 形式   |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| catalog.4DCatalog                            | テーブルおよびフィールド定義                                                                                                                                                                                                                                                                                                                                                                                             | XML  |
+| catalog_editor.json     | ストラクチャーエディターでのテーブル、フィールド、およびリンクのカスタム位置と色。 変換されたプロジェクトでは [互換性設定](../settings/compatibility.md) に依存します。                                                                                                                                                                                                                                                                                                      | JSON |
+| folders.json                                 | エクスプローラーフォルダー定義                                                                                                                                                                                                                                                                                                                                                                                            | JSON |
+| menus.json                                   | メニュー定義                                                                                                                                                                                                                                                                                                                                                                                                     | JSON |
+| roles.json                                   | プロジェクトの [権限、パーミッション](../ORDA/privileges.md#rolesjson-ファイル)およびその他のセキュリティ設定                                                                                                                                                                                                                                                                                                                                  | JSON |
+| settings.4DSettings                          | *ストラクチャー*データベース設定。 *[ユーザー設定](#settings-ユーザー)* または *[データファイル用のユーザー設定](#settings-ユーザーデータ)* が定義されている場合は、そちらの設定が優先されます ([設定の優先順位](../settings/overview.md#設定の優先順位) も参照ください)。 **警告**: コンパイル済みアプリケーションの場合、ストラクチャー設定は読み取り専用の .4dz ファイルに格納されます。 運用時にカスタム設定を定義するには、[ユーザー設定を有効化](../settings/overview.md#ユーザー設定の有効化) し、*ユーザー設定* または *データファイル用のユーザー設定* を使う必要があります。 | XML  |
+| AIProviders.json                             | *ストラクチャー* [AI プロバイダー設定ファイル](../settings/ai.md#aiprovidersjson)。 *[ユーザー設定](#settings-user)* または *[データファイル用のユーザー設定](#settings-user-data)* に追加された AIProviders.json ファイルによって上書き可能です([設定の優先順位](../settings/overview.md#設定の優先順位)も参照してください)。                                                                                                                                   | JSON |
+| tips.json                                    | 定義されたヘルプTips                                                                                                                                                                                                                                                                                                                                                                                               | JSON |
+| lists.json                                   | 定義されたリスト                                                                                                                                                                                                                                                                                                                                                                                                   | JSON |
+| filters.json                                 | 定義されたフィルター                                                                                                                                                                                                                                                                                                                                                                                                 | JSON |
+| dependencies.json                            | プロジェクトに [ロードするコンポーネント](components.md) の名前                                                                                                                                                                                                                                                                                                                                                                  | JSON |
+| HTTPHandlers.json                            | Web サーバー用に定義されたカスタムの [HTTP リクエストハンドラー](../WebServer/http-request-handler.md)。                                                                                                                                                                                                                                                                                                                              | JSON |
+| HTTPRules.json                               | Web サーバー用に定義されたカスタムの [HTTP ルール](../WebServer/http-rules.md)                                                                                                                                                                                                                                                                                                                                                | JSON |
+| styleSheets.css                              | CSS スタイルシート                                                                                                                                                                                                                                                                                                                                                                                                | CSS  |
+| styleSheets_mac.css     | Mac用 CSS スタイルシート (変換されたバイナリーデータベースより)                                                                                                                                                                                                                                                                                                                                                   | CSS  |
+| styleSheets_windows.css | Windows用 CSS スタイルシート (変換されたバイナリーデータベースより)                                                                                                                                                                                                                                                                                                                                               | CSS  |
 
 #### `Classes`
 
 | 内容                              | 説明                                                                     | 形式   |
 | ------------------------------- | ---------------------------------------------------------------------- | ---- |
 | *className*.4dm | 特定のオブジェクトをインスタンス化するための、ユーザークラス用の定義メソッド。 1クラスにつき1ファイル。 ファイル名がクラス名になります。 | text |
+
+#### `DatabaseMethods`
+
+| 内容                                       | 説明                                                                                                     | 形式   |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---- |
+| *databaseMethodName*.4dm | プロジェクト内で定義されているプロジェクトメソッド  (1つのメソッドにつき1ファイル)。 (1つのメソッドにつき1ファイル)。 | text |
 
 #### `Forms`
 
@@ -95,27 +91,48 @@ title: アーキテクチャー
 | *formName*/Images/*pictureName*                           | プロジェクトフォームのスタティックピクチャー                                 | picture |
 | *formName*/ObjectMethods/*objectName*.4dm | オブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル) | text    |
 
+#### `Methods`
+
+| 内容                               | 説明                                                                                                                                     | 形式   |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| *methodName*.4dm | プロジェクト内で定義されているデータベースメソッド プロジェクト内で定義されているデータベースメソッド (1つのデータベースメソッドにつき1ファイル)。  (1つのメソッドにつき1ファイル)。 | text |
+
+#### `Shared`
+
+| 内容                                                      | 説明                                                                                                                                       | 形式   |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| assets/                                                 | Qodly ページで使用されているピクチャーのような、[共有されたファイル](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/events/bindingActionToEvents#shared-folder) | 様々   |
+| CustomComponents/                                       | Qodly ページで使用される[カスタムのコンポーネント](https://developer.4d.com/qodly/Integrations/customComponent/overview)                                      | json |
+| *other_files*.json | Qodly ページで使用されるCSS やデータソースなどの共有された要素                                                                                                     | json |
+
 #### `TableForms`
 
-| 内容                                                                   | 説明                                                                                                            | 形式      |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------- |
-| *n*/Input/*formName*/form.4DForm                     | 入力テーブルフォームの定義 (n: テーブル番号)                                                  | json    |
-| *n*/Input/*formName*/Images/*pictureName*                            | 入力テーブルフォームのスタティックピクチャー                                                                                        | picture |
-| *n*/Input/*formName*/method.4dm                      | 入力テーブルフォームのフォームメソッド                                                                                           | text    |
-| *n*/Input/*formName*/ObjectMethods/*objectName*.4dm  | 入力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル)  (1つのオブジェクトメソッドにつき1ファイル) | text    |
-| *n*/Output/*formName*/form.4DForm                    | 出力テーブルフォーム (n: テーブル番号)                                                     | json    |
-| *n*/Output/*formName*/Images/*pictureName*                           | 出力テーブルフォームのスタティックピクチャー                                                                                        | picture |
-| *n*/Output/*formName*/method.4dm                     | 出力テーブルフォームのフォームメソッド                                                                                           | text    |
-| *n*/Output/*formName*/ObjectMethods/*objectName*.4dm | 出力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル)  (1つのオブジェクトメソッドにつき1ファイル) | text    |
+| 内容                                                                   | 説明                                                                | 形式      |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------- | ------- |
+| *n*/Input/*formName*/form.4DForm                     | 入力テーブルフォームの定義 (n: テーブル番号)      | json    |
+| *n*/Input/*formName*/Images/*pictureName*                            | 入力テーブルフォームのスタティックピクチャー                                            | picture |
+| *n*/Input/*formName*/method.4dm                      | 入力テーブルフォームのフォームメソッド                                               | text    |
+| *n*/Input/*formName*/ObjectMethods/*objectName*.4dm  | 入力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル) | text    |
+| *n*/Output/*formName*/form.4DForm                    | 出力テーブルフォーム (n: テーブル番号)         | json    |
+| *n*/Output/*formName*/Images/*pictureName*                           | 出力テーブルフォームのスタティックピクチャー                                            | picture |
+| *n*/Output/*formName*/method.4dm                     | 出力テーブルフォームのフォームメソッド                                               | text    |
+| *n*/Output/*formName*/ObjectMethods/*objectName*.4dm | 出力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル) | text    |
 
 #### `Triggers`
 
-| 内容                                                 | 説明                                                                                                               | 形式   |
-| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---- |
-| table_*n*.4dm | プロジェクト内で定義されているトリガーメソッド プロジェクト内で定義されているトリガーメソッド  ( 1つのテーブルにつき1ファイル；n: テーブル番号) | text |
+| 内容                                                 | 説明                                                                                       | 形式   |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---- |
+| table_*n*.4dm | プロジェクト内で定義されているトリガーメソッド  ( 1つのテーブルにつき1ファイル；n: テーブル番号) | text |
 
 **注:**
 拡張子 .4dm のファイルは、4Dメソッドのコードをテキスト形式で格納しており、 ソース管理ツールに対応しています。
+
+#### `WebForms`
+
+| 内容                                                           | 説明                                                                                                     | 形式   |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ---- |
+| *QodlyFormName*.WebForm                      | JSON で表された Qodly ページ                                                                                   | JSON |
+| crafted_components.json | Qodly ページ上の [クラフトコンポーネント](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/craftedComponents) の詳細 | JSON |
 
 ### `Trash`
 
@@ -135,18 +152,18 @@ DerivedData フォルダーには、処理を最適化するため 4D が内部�
 
 > このフォルダーは macOS でのみ使用されます。
 
-Libraries フォルダーには、macOS 上で [Apple Silicon用にコンパイル](compiler.md#siliconコンパイラ) された結果のファイルが格納されます。
+Libraries フォルダーには、macOS 上で [Apple Silicon用にコンパイル](compiler.md#siliconコンパイラー) された結果のファイルが格納されます。
 
 ## `Resources`
 
-Resources フォルダーには、追加のカスタムプロジェクトリソースファイルやフォルダーが格納されます。 アプリケーションインターフェースの翻訳やカスタマイズに必要なファイルはすべてここに格納します (ピクチャー、テキスト、XLIFF ファイルなど)。 4D は自動のメカニズムによってフォルダー内のファイル (とくに XLIFF ファイルおよびスタティックピクチャー) を扱います。 リモートモードにおいては、サーバーとすべてのクライアントマシン間でファイルを共有することが Resources フォルダーによって可能です  (<em x-id="3">4D Server リファレンスマニュアル</em> の <a href="https://doc.4d.com/4Dv18/4D/18/Managing-the-Resources-folder.300-4672420.ja.html">リソースフォルダの管理</a> を参照ください)。  (*4D Server リファレンスマニュアル* の [リソースフォルダの管理](https://doc.4d.com/4Dv18/4D/18/Managing-the-Resources-folder.300-4672420.ja.html) を参照ください)。
+Resources フォルダーには、追加のカスタムプロジェクトリソースファイルやフォルダーが格納されます。 アプリケーションインターフェースの翻訳やカスタマイズに必要なファイルはすべてここに格納します (ピクチャー、テキスト、XLIFF ファイルなど)。 4D は自動のメカニズムによってフォルダー内のファイル (とくに XLIFF ファイルおよびスタティックピクチャー) を扱います。 リモートモードにおいては、サーバーとすべてのクライアントマシン間でファイルを共有することが Resources フォルダーによって可能です。  (*4D Server リファレンスマニュアル* の [リソースフォルダーの管理](https://doc.4d.com/4Dv18/4D/18/Managing-the-Resources-folder.300-4672420.ja.html) を参照ください)。
 
 | 内容                    | 説明                                                                                            | 形式      |
 | --------------------- | --------------------------------------------------------------------------------------------- | ------- |
 | *項目*                  | プロジェクトリソースファイルとフォルダー                                                                          | 様々      |
 | Images/Library/*item* | ピクチャーライブラリの個別ピクチャーファイル(\*)。 各アイテムの名称がファイル名となります。 名称が重複する場合には、名称に番号が追加されます。 | picture |
 
-(\*) .4db バイナリデータベースから変換されたプロジェクトの場合のみ
+(\*) .4db バイナリーデータベースから変換されたプロジェクトの場合のみ
 
 ## `Data`
 
@@ -158,19 +175,20 @@ Data フォルダーには、データファイルのほか、データに関わ
 | data.journal                    | データベースがログファイルを使用する場合のみ作成されます。 ログファイルは2つのバックアップ間のデータ保護を確実なものにするために使用されます。 データに対して実行されたすべての処理が、このファイルに順番に記録されます。 つまりデータに対して操作がおこなわれるたびに、データ上の処理 (操作の実行) とログファイル上の処理 (操作の記録) という 2つの処理が同時に発生します。 ログファイルはユーザーの処理を妨げたり遅くしたりすることなく、独立して構築されます。 データベースは 1つのログファイルしか同時に使用できません。 ログファイルにはレコードの追加・更新・削除やトランザクションなどの処理が記録されます。 ログファイルはデータベースが作成される際にデフォルトで生成されます。 | binary |
 | data.match                      | (内部用) テーブル番号に対応する UUID                                                                                                                                                                                                                                                                                                                                                    | XML    |
 
-(\*) .4db バイナリデータベースからプロジェクトに変換した場合、データファイルは変換による影響を受けません。 このデータファイルの名称を変更して移動させることができます。
+(\*) .4db バイナリーデータベースからプロジェクトに変換した場合、データファイルは変換による影響を受けません。 このデータファイルの名称を変更して移動させることができます。
 
 ### `Settings` (ユーザーデータ)
 
-This folder contains [**user settings for data**](../settings/overview.md#user-settings#user-settings-for-data-file) used for application administration.
+このフォルダーには、アプリケーションの管理に使用される [**データのユーザー設定**](../settings/overview.md#データファイル用のユーザー設定) が格納されます。
 
-> この設定は [ユーザー設定](#settings-ユーザー) や [ストラクチャー設定](#sources) より優先されます。 See also [Priority of settings](../settings/overview.md#user-settings#priority-of-settings).
+> この設定は [ユーザー設定](#settings-ユーザー) や [ストラクチャー設定](#sources) より優先されます。 [設定の優先順位](../settings/overview.md#設定の優先順位) も参照ください。
 
 | 内容                                  | 説明                                                                                                                                                                                                                      | 形式   |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
 | directory.json      | このデータファイルを使ってアプリケーションが実行されている場合に使用する 4D グループとユーザー、およびアクセス権の定義                                                                                                                                                           | JSON |
 | Backup.4DSettings   | このデータファイルを使ってデータベースが実行されている場合に使用する [バックアップオプション](Backup/settings.md) を定義したデータベースバックアップ設定です。 バックアップ設定に使われるキーについての説明は [バックアップ設定ファイル](https://doc.4d.com/4Dv18/4D/18/4D-XML-Keys-Backup.100-4673706.ja.html) マニュアルを参照ください。 | XML  |
 | settings.4DSettings | データファイル用のカスタムデータベース設定。                                                                                                                                                                                                  | XML  |
+| AIProviders.json    | このデータファイル用の[AI プロバイダー設定ファイル](../settings/ai.md#aiprovidersjson)                                                                                                                                                         | JSON |
 
 ### `Logs`
 
@@ -182,13 +200,13 @@ Logs フォルダーには、プロジェクトが使用するすべてのログ
 - コマンドデバッグ
 - 4D Serverリクエスト (クライアントマシンおよびサーバー上で生成)
 
-> An additional Logs folder is available in the system user preferences folder (active 4D folder, see [Get 4D folder](../commands-legacy/get-4d-folder.md) command) for maintenance log files and in cases where data folder is read-only.
+> データフォルダーが読み取り専用モードの場合やメンテナンスログファイルの保存には、システムのユーザー設定フォルダー (Active 4D Folder のこと、詳しくは [Get 4D folder](../commands/get-4d-folder) コマンド参照) 内にある追加の Logs フォルダーが利用されます。
 
 ## `Settings` (ユーザー)
 
-This folder contains [**user settings**](../settings/overview.md#user-settings#user-settings) used for application administration.
+このフォルダーには、アプリケーションの管理に使用される [**ユーザー設定**](../settings/overview.md#ユーザー設定) が格納されます。
 
-> この設定は [ストラクチャー設定](#sources) より優先されます。 しかしながら、[データファイル用のユーザー設定](#settings-ユーザーデータ) が存在する場合は、そちらが優先されます。 See also [Priority of settings](../settings/overview.md#user-settings#priority-of-settings).
+> この設定は [ストラクチャー設定](#sources) より優先されます。 しかしながら、[データファイル用のユーザー設定](#settings-ユーザーデータ) が存在する場合は、そちらが優先されます。 [設定の優先順位](../settings/overview.md#設定の優先順位) も参照ください。
 
 | 内容                                  | 説明                                                                                                                                                                                                                                                              | 形式   |
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
@@ -197,6 +215,7 @@ This folder contains [**user settings**](../settings/overview.md#user-settings#u
 | BuildApp.4DSettings | アプリケーションビルダーのダイアログボックス、または `BUILD APPLICATION` コマンドを使ったときに自動的に作成されるビルド設定ファイル                                                                                                                                                                                    | XML  |
 | settings.4DSettings | プロジェクト用のカスタム設定 (すべてのデータファイル)                                                                                                                                                                                                                 | XML  |
 | logConfig.json      | カスタムの [ログ設定ファイル](../Debugging/debugLogFiles.md#ログ設定ファイルを使用する)                                                                                                                                                                                                   | json |
+| AIProviders.json    | このプロジェクト用の[AI プロバイダー設定ファイル](../settings/ai.md#aiprovidersjson)(全データファイル)                                                                                                                                                                     | JSON |
 
 ## `userPreferences.<userName>`
 
@@ -240,3 +259,4 @@ This folder contains [**user settings**](../settings/overview.md#user-settings#u
 ## `.gitignore` ファイル (任意)
 
 git が無視するファイルを指定します。 プロジェクトに gitignore ファイルを含めるには、環境設定 ＞ **一般** ページの **.gitignore ファイルを作成する** オプションを使用します。 このファイルの内容を設定するには、[.gitignore ファイルを作成する](Preferences/general.md#gitignore-ファイルを作成する) を参照ください。
+

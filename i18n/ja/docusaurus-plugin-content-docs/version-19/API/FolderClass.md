@@ -68,19 +68,21 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 
 <!-- REF #_command_.Folder.Params -->
-| 引数             | 型         |    | 説明                                             |
-| -------------- | --------- |:--:| ---------------------------------------------- |
-| path           | Text      | -> | フォルダーパス                                        |
-| folderConstant | Integer   | -> | 4Dフォルダー定数                                      |
-| pathType       | Integer   | -> | `fk posix path` (デフォルト) または `fk platform path` |
-| *              |           | -> | ホストデータベースのフォルダーを返すには * を渡します                   |
-| 戻り値            | 4D.Folder | <- | 新規フォルダーオブジェクト|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|path|Text|->|Folder path|
+|folderConstant|Integer|->|4D folder constant|
+|pathType|Integer|->|`fk posix path` (default) or `fk platform path`|
+|*||->|* to return folder of host database|
+|Result|4D.Folder|<-|New folder object|
+</div>
+<!-- END REF -->
 
 #### 説明
 
-`Folder` コマンドは、 <!-- REF #_command_.Folder.Summary -->`4D.Folder` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。
+`4D.Folder` 型の新しいオブジェクトを作成して返します <!-- REF #_command_.Folder.Summary -->`Folder` コマンドは、<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。
 
 **Folder ( path { ; pathType } { ; \* } )**
 
@@ -99,21 +101,21 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 *folderConstant* には、以下の定数のどれか一つを指定して 4Dビルトインの、またはシステムフォルダーを渡します:
 
-| 定数                         | 値   | 説明                                                                       |
-| -------------------------- | --- | ------------------------------------------------------------------------ |
-| fk applications folder     | 116 |                                                                          |
-| fk data folder             | 9   | 関連づけられたファイルシステム: "/DATA"                                                 |
-| fk database folder         | 4   | 関連づけられたファイルシステム: "/PACKAGE"                                              |
-| fk desktop folder          | 115 |                                                                          |
-| fk documents folder        | 117 | ユーザーのドキュメントフォルダー                                                         |
-| fk licenses folder         | 1   | マシンの 4Dライセンスファイルを格納しているフォルダー                                             |
-| fk logs folder             | 7   | 関連づけられたファイルシステム: "/LOGS"                                                 |
-| fk mobileApps folder       | 10  |                                                                          |
-| fk remote database folder  | 3   | それぞれの 4Dリモートマシン上に作成された 4Dデータベースフォルダー                                     |
-| fk resources folder        | 6   | 関連づけられたファイルシステム: "/RESOURCES"                                            |
-| fk system folder           | 100 |                                                                          |
-| fk user preferences folder | 0   | ユーザー環境設定ファイルを `\<userName>` ディレクトリに保存している 4Dフォルダー                 |
-| fk web root folder         | 8   | データベースのカレントの Webルートフォルダー: ただし "/PACKAGE/path" のパッケージ内にある場合。そうでない場合はフルパス。 |
+| 定数                         | 値   | 説明                                                          |
+| -------------------------- | --- | ----------------------------------------------------------- |
+| fk applications folder     | 116 |                                                             |
+| fk data folder             | 9   | 関連づけられたファイルシステム: "/DATA"                                    |
+| fk database folder         | 4   | 関連づけられたファイルシステム: "/PACKAGE"                                 |
+| fk desktop folder          | 115 |                                                             |
+| fk documents folder        | 117 | ユーザーのドキュメントフォルダー                                            |
+| fk licenses folder         | 1   | マシンの 4Dライセンスファイルを格納しているフォルダー                                |
+| fk logs folder             | 7   | 関連づけられたファイルシステム: "/LOGS"                                    |
+| fk mobileApps folder       | 10  |                                                             |
+| fk remote database folder  | 3   | それぞれの 4Dリモートマシン上に作成された 4Dデータベースフォルダー                        |
+| fk resources folder        | 6   | 関連づけられたファイルシステム: "/RESOURCES"                               |
+| fk system folder           | 100 |                                                             |
+| fk user preferences folder | 0   | ユーザー環境設定ファイルを `\<userName>` ディレクトリに保存している 4Dフォルダー    |
+| fk web root folder         | 8   | データベースのカレントの Webルートフォルダー: ただし "/PACKAGE/path" のパッケージ内にある場合。 |
 
 コマンドがコンポーネントから呼び出されている場合、`*` 引数を渡してホストデータベースのパスを取得するようにします。 `*` 引数を省略すると、常に null オブジェクトが返されます。
 
@@ -134,7 +136,7 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 #### 説明
 
-`4D.Folder.new()` 関数は、 <!-- REF #4D.Folder.new().Summary -->`4D.Folder` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 この関数の機能は、[`Folder`](#folder) コマンドと同一です。
+`4D.Folder.new()` 関数は、 <!-- REF #4D.Folder.new().Summary -->`Folder` コマンドは、<!-- END REF -->。 この関数の機能は、[`Folder`](#folder) コマンドと同一です。
 
 > `4D.Folder.new()` よりも、短い [`Folder`](#folder) コマンドの使用が推奨されます。
 
@@ -154,17 +156,18 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 
 <!--REF #FolderClass.create().Params -->
-| 引数  | 型       |    | 説明                                                                |
-| --- | ------- | -- | ----------------------------------------------------------------- |
-| 戻り値 | Boolean | <- | フォルダーが正常に作成された場合には true、それ以外の場合は false|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|Result|Boolean|<-|True if the folder was created successfully, false otherwise|
+</div>
+<!-- END REF -->
 
 
 #### 説明
 
-`.create()` 関数は、 <!-- REF #FolderClass.create().Summary -->`Folder` オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します<!-- END REF -->。
+`.create()` 関数は、 <!-- REF #FolderClass.create().Summary -->`Folder` オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します 。<!-- END REF -->。
 
 必要であれば、 関数は [platformPath](#platformpath) あるいは [path](#path) プロパティの詳細に基づいてフォルダー階層を作成します。 フォルダーがディスク上にすでに存在する場合、関数は何もせず、false を返します (エラーは返されません)。
 
@@ -189,10 +192,12 @@ $created:=Folder("/PACKAGE/SpecialPrefs").create()
 ```4d
 $newFolder:=Folder("/PACKAGE/Archives2019/January")
 If($newFolder.create())
- ALERT($newFolder.name+" フォルダーが作成されました。")
+ ALERT($newFolder.name+" フォルダーが作成されました。
+")
 Else
- ALERT($newFolder.name+" フォルダーは作成できませんでした。")
-End if
+ ALERT($newFolder.name+" フォルダーは作成できませんでした。
+")
+ End if
 ```
 
 <!-- END REF -->
@@ -211,14 +216,16 @@ End if
 
 
 <!--REF #FolderClass.createAlias().Params -->
-| 引数                | 型         |    | 説明                                                 |
-| ----------------- | --------- | -- | -------------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | エイリアスまたはショートカットの作成先フォルダー                           |
-| aliasName         | Text      | -> | エイリアスまたはショートカットの名称                                 |
-| aliasType         | Integer   | -> | エイリアスリンクのタイプ                                       |
-| 戻り値               | 4D.File   | <- | エイリアスまたはショートカットのフォルダー参照|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|destinationFolder|4D.Folder|->|Destination folder for the alias or shortcut|
+|aliasName|Text|->|Name of the alias or shortcut|
+|aliasType|Integer|->|Type of the alias link|
+|Result|4D.File|<-|Alias or shortcut reference|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -267,11 +274,13 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!-- REF #FolderClass.delete().Params -->
-| 引数     | 型       |    | 説明                                       |
-| ------ | ------- | -- | ---------------------------------------- |
-| option | Integer | -> | フォルダー削除のオプション|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|----|---|---|
+|option |Integer|->|Folder deletion option|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -286,7 +295,7 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 `Delete only if empty` が渡された、または option 引数を渡さなかった場合:
 
-* フォルダーが空の場合にしか削除されません。そうでない場合、コマンドは何もせず、エラー-47 が生成されます。
+* フォルダーが空の場合にしか削除されません。 そうでない場合、コマンドは何もせず、エラー-47 が生成されます。
 * フォルダーが存在しない場合、エラー-120 が生成されます。
 
 `Delete with contents` を渡した場合:
@@ -341,13 +350,15 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!--REF #FolderClass.moveTo().Params -->
-| 引数                | 型         |    | 説明                                   |
-| ----------------- | --------- | -- | ------------------------------------ |
-| destinationFolder | 4D.Folder | -> | 宛先フォルダー                              |
-| newName           | Text      | -> | 移動先でのフォルダーの完全な名称                     |
-| 戻り値               | 4D.Folder | <- | 移動したフォルダー|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|----|---|---|
+|destinationFolder|4D.Folder|->|Destination folder|
+|newName|Text|->|Full name for the moved folder|
+|Result|4D.Folder|<-|Moved folder|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -355,7 +366,7 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 *destinationFolder* 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
-デフォルトで、移動したフォルダーは元の名前を維持します。 移動の際にフォルダー名を変更したい場合、新しい完全な名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
+デフォルトで、移動したフォルダーは元の名前を維持します。 移動の際にフォルダー名を変更したい場合、新しい完全な名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。
 
 **返されるオブジェクト**
 
@@ -397,16 +408,18 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!--REF #FolderClass.rename().Params -->
-| 引数      | 型         |    | 説明                                      |
-| ------- | --------- | -- | --------------------------------------- |
-| newName | Text      | -> | フォルダーの新しい完全な名称                          |
-| 戻り値     | 4D.Folder | <- | 名称変更されたフォルダー|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---|---|---|---|
+|newName|Text|->|New full name for the folder|
+|Result|4D.Folder|<-|Renamed folder|
+</div>
+<!-- END REF -->
 
 #### 説明
 
-`.rename()` 関数は、 <!-- REF #FolderClass.rename().Summary -->フォルダー名を *newName* に指定した名称に変更し、名称変更後の `Folder` オブジェクトを返します<!-- END REF -->。
+`.rename()` 関数は、 <!-- REF #FolderClass.rename().Summary -->フォルダー名を *newName* に指定した名称に変更し、名称変更後の `Folder` オブジェクトを返します 。<!-- END REF -->。
 
 *newName* 引数は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。 同じ名前のファイルがすでに存在する場合には、エラーが返されます。
 

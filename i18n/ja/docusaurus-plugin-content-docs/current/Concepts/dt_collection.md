@@ -46,18 +46,18 @@ collectionRef[expression]
 
 コレクションのインスタンス化は、以下のいずれかの方法でおこなうことができます:
 
-- [`New collection`](../commands/new-collection.md) コマンドを使用する。
+- [`New collection`](../commands/new-collection) コマンドを使用する。
 - `[]` 演算子を使用する。
 
 :::info
 
-いくつかの 4Dコマンドや関数はコレクションを返します。たとえば、 [`Monitored Activity`](../commands-legacy/monitored-activity.md) や [`collection.copy`](../API/CollectionClass.md#copy) などです。 この場合、コレクションを明示的にインスタンス化する必要はなく、4Dランゲージが代わりにおこなってくれます。
+いくつかの 4Dコマンドや関数はコレクションを返します。たとえば、 [`Monitored Activity`](../commands/monitored-activity) や [`collection.copy`](../API/CollectionClass.md#copy) などです。 この場合、コレクションを明示的にインスタンス化する必要はなく、4Dランゲージが代わりにおこなってくれます。
 
 :::
 
 ### `New collection` コマンド
 
-[`New collection`](../commands/new-collection.md) コマンドは、空の、あるいは値の入った新規コレクションを作成し、その参照を返します。
+[`New collection`](../commands/new-collection) コマンドは、空の、あるいは値の入った新規コレクションを作成し、その参照を返します。
 
 例:
 
@@ -105,10 +105,47 @@ $users:=[{name: "Alice"; \
 
 二種類のコレクションを作成することができます:
 
-- [`New collection`](../commands/new-collection.md) コマンド、またはコレクションリテラルのシンタックス `[]` を使用して作成する通常 (非共有) コレクション。 通常のコレクションは特別なアクセスコントロールをせずに編集可能ですが、プロセス間で共有することはできません。
-- [`New shared collection`](../commands/new-shared-collection.md) コマンドを使用して作成する共有コレクション。 共有コレクションはプロセス間 (プリエンティブ・スレッド含む) で共有可能なコレクションです。 共有コレクションへのアクセスは [`Use...End use`](Concepts/shared.md#useend-use) 構造によって管理されています。
+- [`New collection`](../../commands/new-collection) コマンド、またはコレクションリテラルのシンタックス `[]` を使用して作成する通常 (非共有) コレクション。 通常のコレクションは特別なアクセスコントロールをせずに編集可能ですが、プロセス間で共有することはできません。
+- [`New shared collection`](../../commands/new-shared-collection) コマンドを使用して作成する共有コレクション。 共有コレクションはプロセス間 (プリエンティブ・スレッド含む) で共有可能なコレクションです。 共有コレクションへのアクセスは [`Use...End use`](Concepts/shared.md#useend-use) 構造によって管理されています。
 
 詳細な情報については、[共有オブジェクトと共有コレクション](shared.md) を参照ください。
+
+## 代入
+
+コレクションと[オブジェクト](./dt_object.md) データ型は、スカラーデータ型(数値、日付、など)とは異なり、4D ランゲージ内においては**参照** (つまり内部的なポインター) を通して管理されます。 結果として、変数へコレクションを代入する場合(例' `$myVar:=[1;2;3]`)、代入されているのは値自身ではなく、**参照** が代入されています。 そのため *$myVar* 変数にそのあと加えた変更は、元のコレクションが参照されている箇所全てにおいて反映されてしまうことになります。 これは[ポインター](./dt_collection.md) と同じ原理に基づいていますが、*$myVar* 変数は逆参照する必要がないという点において異なります。
+
+例:
+
+```4d
+var $col1; $col2 : Collection
+var $o : Object
+
+$col1:=[1;2;3] // コレクションへの参照が作成される
+$col2:=$col1 // 両方の変数とも同じコレクション参照を共有する
+$o:={ list:$col1 } // オブジェクトは同じコレクションへの参照を保存する
+
+$col1.push(4)
+// $col2 = [1,2,3,4]
+// $o = {"list":[1,2,3,4]}
+
+$col2[0]:=10
+// $col1 = [10,2,3,4]
+// $o = {"list":[10,2,3,4]}
+
+$o.list.push(5)
+// $col1 = [10,2,3,4,5]
+// $col2 = [10,2,3,4,5]
+
+ASSERT($col1=$col2) // True になる
+```
+
+この原理は[引数](./parameters.md) あるいは [formula](../commands/formula) 式も含めて、オブジェクトまたはコレクションが代入される場所全てにおいて適用されます。
+
+:::note
+
+コレクションの**ディープコピー** を作成したい場合には、[`collection.copy()`](../API/CollectionClass.md#copy) 関数を使用してください。
+
+:::
 
 ## コレクション関数
 
@@ -169,3 +206,44 @@ var $c3:=$c1 // 同じインスタンスへの参照
      var $c : Collection // 変数は作成されたが、コレクションは未定義
      $size:=$c.length // $size = 0
 ```
+
+## コレクションと4D配列間での型の変換
+
+値を[配列](./arrays.md) からコレクション(型指定なし)へと移動させるとき、4D は値と配列の型宣言に応じて自動的な変換を適用します。
+
+### コレクションから配列へ変換する
+
+以下のコマンドでの値の扱いには、その下の表の変換が適用されます:
+
+- [`COLLECTION TO ARRAY`](../commands/collection-to-array)
+- [`OB GET ARRAY`](../commands/ob-get-array)
+
+| コレクション要素型                                    | null                                     | boolean                                  | Infinity   | real                                                | string                                                                                                                                    | date                                                                                                                                    | picture                                                               | object                                                                | collection                                 | 4D.BLOB                                               |
+| -------------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------- |
+| [`ARRAY TEXT`](../commands/array-text)       | ""                                       | "false" あるいは "true"                      | "Infinity" | 小数点付き(必要であれば)の数値                 | テキスト                                                                                                                                      | SET DATABASE PARAMETERコマンドの[Dates inside objects](../commands/set-database-parameter#dates-inside-objects-85) 引数に従ったオブジェクトの日付からテキストへの変換 | "[object Object]" | "[object Object]" | "," (カンマ)で区切られたコレクション要素 | "[object Object]" |
+| [`ARRAY LONGINT`](../commands/array-longint) | 0                                        | 0 あるいは 1                                 | 未定義の振る舞い   | 標準の丸め規則にしたがって丸められる                                  | 文字列が[0-9,+,-,e,.,x]から始まらない場合には0、そうでない場合には標準の変換。 16進数記法0xでの接頭辞をサポートします | 0                                                                                                                                       | 0                                                                     | 0                                                                     | 0                                          | 0                                                                     |
+| [`ARRAY REAL`](../commands/array-real)       | 0                                        | 0 あるいは 1                                 | INF        | real                                                | ARRAY LONGINTと同様                                                                                                                          | 0                                                                                                                                       | 0                                                                     | 0                                                                     | 0                                          | 0                                                                     |
+| [`ARRAY INTEGER`](../commands/array-integer) | 0                                        | 0 あるいは 1                                 | 0          | 標準の丸め規則にしたがって丸められる                                  | ARRAY LONGINTと同様                                                                                                                          | 0                                                                                                                                       | 0                                                                     | 0                                                                     | 0                                          | 0                                                                     |
+| [`ARRAY BOOLEAN`](../commands/array-boolean) | false                                    | false あるいは true                          | true       | 0でないならtrue                                          | "" (空の文字列)でなければtrue                                                                                                    | 日付が"00/00/00" でなければtrue                                                                                                                 | true                                                                  | true                                                                  | true                                       | true                                                                  |
+| [`ARRAY OBJECT`](../commands/array-object)   | undefined                                | undefined                                | undefined  | undefined                                           | undefined                                                                                                                                 | undefined                                                                                                                               | オブジェクトピクチャー                                                           | Object                                                                | 未定義                                        | 4D.Blob                                               |
+| [`ARRAY BLOB`](../commands/array-blob)       | 0 バイト                                    | 0 バイト                                    | 0 バイト      | 0 バイト                                               | 0 バイト                                                                                                                                     | 0 バイト                                                                                                                                   | 0 バイト                                                                 | 0 バイト                                                                 | 0 バイト                                      | BLOB                                                                  |
+| [`ARRAY PICTURE`](../commands/array-picture) | 0 バイト                                    | 0 バイト                                    | 0 バイト      | 0 バイト                                               | 0 バイト                                                                                                                                     | 0 バイト                                                                                                                                   | Picture                                                               | 0 バイト                                                                 | 0 バイト                                      | 0 バイト                                                                 |
+| [`ARRAY DATE`](../commands/array-date)       | 00/00/00                                 | 00/00/00                                 | 00/00/00   | 00/00/00                                            | 00/00/00 あるいはISO8601準拠のフォーマットの場合には日付                                                                                                      | date                                                                                                                                    | 00/00/00                                                              | 00/00/00                                                              | 00/00/00                                   | 00/00/00                                                              |
+| [`ARRAY TIME`](../commands/array-time)       | 00:00:00 | 00:00:00 | 未定義の振る舞い   | 00:00:00 フォーマットでの秒数 | 00:00:00 フォーマットでの秒数                                                                                       | 00:00:00                                                                                                | 00:00:00                              | 00:00:00                              | 00:00:00   | 00:00:00                              |
+
+:::note
+
+Blob オブジェクト(4D.Blob) は、必要であれば[自動的にスカラーBlob へと変換](dt_blob.md##blob-の自動変換) され、またその逆も然りです。
+
+:::
+
+### 配列からコレクションへ変換する
+
+以下のコマンドでの値の扱いには、その下の表の変換が適用されます:
+
+- [`ARRAY TO COLLECTION`](../commands/array-to-collection)
+- [`OB SET ARRAY`](../commands/ob-set-array)
+
+|           | [`ARRAY TEXT`](../commands/array-text) | [`ARRAY LONGINT`](../commands/array-longint) | [`ARRAY REAL`](../commands/array-real) | [`ARRAY INTEGER`](../commands/array-integer) | [`ARRAY BOOLEAN`](../commands/array-boolean) | [`ARRAY OBJECT`](../commands/array-object) | [`ARRAY PICTURE`](../commands/array-picture) | [`ARRAY DATE`](../commands/array-date)                                                                                     | [`ARRAY TIME`](../commands/array-time) | [`ARRAY BLOB`](../commands/array-blob) |
+| --------- | -------------------------------------- | -------------------------------------------- | -------------------------------------- | -------------------------------------------- | -------------------------------------------- | ------------------------------------------ | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | -------------------------------------- |
+| コレクション要素型 | text                                   | number                                       | number                                 | number                                       | boolean                                      | オブジェクトあるいはnull                             | picture                                      | text or date according to the [Dates inside objects](../commands/set-database-parameter#dates-inside-objects-85) parameter | 秒数                                     | 4D.Blob                |

@@ -15,12 +15,12 @@ title: Pointer
 
 | 型      | 参照時                     | 使用時                      | 代入時                      |
 | ------ | ----------------------- | ------------------------ | ------------------------ |
-| Table  | vpTable:=->[Table]      | DEFAULT TABLE(vpTable->) | n/a                      |
+| テーブル   | vpTable:=->[Table]      | DEFAULT TABLE(vpTable->) | n/a                      |
 | フィールド  | vpField:=->[Table]Field | ALERT(vpField->)         | vpField->:="John"        |
 | 変数     | vpVar:=->Variable       | ALERT(vpVar->)           | vpVar->:="John"          |
 | 配列     | vpArr:=->Array          | SORT ARRAY(vpArr->;>)    | COPY ARRAY (Arr;vpArr->) |
 | 配列要素   | vpElem:=->Array{1}      | ALERT (vpElem->)         | vpElem->:="John"         |
-| Object | vpObj:=->myObject       | ALERT (vpObj->myProp)    | vpObj->myProp:="John"    |
+| オブジェクト | vpObj:=->myObject       | ALERT (vpObj->myProp)    | vpObj->myProp:="John"    |
 
 
 ## ポインターの使用例
@@ -203,7 +203,9 @@ SORT ARRAY($ArrPtr->;>) // 配列の並べ替え
 ```4d
   //takeTwo プロジェクトメソッド
   //$changeUp – 文字列フィールドまたは変数へのポインター。 これを大文字に変換します。
+  これを大文字に変換します。
   //$changeLow – 文字列フィールドまたは変数へのポインター。 これを小文字に変換します。
+ これを小文字に変換します。
   #DECLARE($changeUp : Pointer ; $changeLow : Pointer) 
  $changeUp->:=Uppercase($changeUp->)
  $changeLow->:=Lowercase($changeLow->)

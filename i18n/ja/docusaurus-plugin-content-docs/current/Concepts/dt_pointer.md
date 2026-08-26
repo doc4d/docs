@@ -15,12 +15,12 @@ title: Pointer
 
 | 型      | 参照時                                                                                         | 使用時                                         | 代入時                                         |
 | ------ | ------------------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| Table  | vpTable:=->[Table]      | DEFAULT TABLE(vpTable->) | n/a                                         |
+| テーブル   | vpTable:=->[Table]      | DEFAULT TABLE(vpTable->) | n/a                                         |
 | フィールド  | vpField:=->[Table]Field | ALERT(vpField->)         | vpField->:="John"           |
 | 変数     | vpVar:=->Variable                                                           | ALERT(vpVar->)           | vpVar->:="John"             |
 | 配列     | vpArr:=->Array                                                              | SORT ARRAY(vpArr->;>)    | COPY ARRAY (Arr;vpArr->) |
 | 配列要素   | vpElem:=->Array{1}                                                          | ALERT (vpElem->)         | vpElem->:="John"            |
-| Object | vpObj:=->myObject                                                           | ALERT (vpObj->myProp)    | vpObj->myProp:="John"       |
+| オブジェクト | vpObj:=->myObject                                                           | ALERT (vpObj->myProp)    | vpObj->myProp:="John"       |
 
 ## ポインターの使用例
 
@@ -47,7 +47,7 @@ $MyPointer->
 
 前述の式は、"Hello" という文字列を返します。 ポインター記号 (->) をポインターの後につけると、参照先の値を取得することができます。 これをデリファレンス (参照外し) と呼びます。
 
-ポインター記号 (->) を後につけたポインターは、その参照先を直接使うのと同義であることを理解することが重要です。 ポインター記号 (->) を後につけたポインターは、その参照先を直接使うのと同義であることを理解することが重要です。 つまり、変数 $MyVar を使用することと、$MyPointer-> を使用することは、まったく同じ意味になります。 たとえば、以下のステートメントはアラートボックスに文字列 "Hello" を表示します: たとえば、以下のステートメントはアラートボックスに文字列 "Hello" を表示します:
+ポインター記号 (->) を後につけたポインターは、その参照先を直接使うのと同義であることを理解することが重要です。 つまり、オリジナルの変数 $MyVar を使用することと、$MyPointer-> を使用することは、まったく同じ意味になります。 たとえば、以下のステートメントはアラートボックスに文字列 "Hello" を表示します:
 
 ```4d
 ALERT($MyPointer->)
@@ -172,7 +172,7 @@ OBJECT SET FONT($FieldPtr->;"Arial")
 ...
 ```
 
-デバッガは $param を以下のように表示します:
+デバッガーは $param を以下のように表示します:
 
 | $param | ->$MyVar (Method1) |
 | ------ | ------------------------------------- |

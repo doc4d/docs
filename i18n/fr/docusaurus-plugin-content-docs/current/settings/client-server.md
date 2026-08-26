@@ -24,7 +24,7 @@ Si vous modifiez ce paramètre, vous devez redémarrer la base du serveur pour q
 
 #### Nom de publication
 
-This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Opening a remote project](../Desktop/clientServer.md#opening-a-remote-project) paragraph). Par défaut, 4D Server utilise le nom du fichier de projet. Vous pouvez saisir le nom personnalisé de votre choix.
+Cette option permet de modifier le nom de publication d'une base de données 4D Server, c'est-à-dire le nom affiché dans l'onglet dynamique **Disponible** de la boîte de dialogue de connexion (voir le paragraphe [Ouverture d'un projet distant](../Desktop/clientServer.md#opening-a-remote-project)). Par défaut, 4D Server utilise le nom du fichier de projet. Vous pouvez saisir le nom personnalisé de votre choix.
 
 :::note
 
@@ -39,7 +39,7 @@ Cette option vous permet de modifier le numéro du port TCP sur lequel 4D Server
 La personnalisation de cette valeur est nécessaire lorsque vous souhaitez utiliser plusieurs applications 4D sur la même machine ; dans ce cas, vous devez spécifier un numéro de port différent pour chaque application.
 Lorsque vous modifiez cette valeur depuis 4D Server ou 4D, elle est automatiquement passée à toutes les machines 4D connectées à la base de données.
 
-Pour mettre à jour les autres machines clientes qui ne sont pas connectées, il suffit de saisir le nouveau numéro de port (précédé de deux points) après l'adresse IP de la machine serveur dans l'onglet **Personnalisé** de la boîte de dialogue de connexion Par exemple, si le nouveau numéro de port est 19888 : Par exemple, si le nouveau numéro de port est 19888 : Par exemple, si le nouveau numéro de port est 19888 :
+Pour mettre à jour les autres machines clientes qui ne sont pas connectées, il suffit de saisir le nouveau numéro de port (précédé de deux points) après l'adresse IP de la machine serveur dans l'onglet **Personnalisé** de la boîte de dialogue de connexion. Par exemple, si le nouveau numéro de port est 19888 :
 
 ![](../assets/en/settings/client-server-network.png)
 
@@ -57,31 +57,34 @@ Pour mettre à jour les autres machines clientes qui ne sont pas connectées, il
 
 #### Authentification de l'utilisateur auprès du serveur de domaine
 
-Cette option vous permet de mettre en œuvre des fonctionnalités SSO (*Single Sign On*) dans votre base de données 4D Server sous Windows. Lorsque vous cochez cette option, 4D se connecte de manière transparente à l'Active directory du serveur de domaine Windows et obtient les tokens d'authentification disponibles. Lorsque vous cochez cette option, 4D se connecte de manière transparente à l'Active directory du serveur de domaine Windows et obtient les tokens d'authentification disponibles.
+Cette option vous permet de mettre en œuvre des fonctionnalités SSO (*Single Sign On*) dans votre base de données 4D Server sous Windows. Lorsque vous cochez cette option, 4D se connecte de manière transparente à l'Active directory du serveur de domaine Windows et obtient les tokens d'authentification disponibles. Cette option est décrite dans la page [Authentification unique (SSO)](../server/sso.md).
 
 #### Nom Principal de Service
 
-Lorsque l'authentification unique (SSO) est activée (voir ci-dessus), vous devez remplir ce champ si vous souhaitez utiliser Kerberos comme protocole d'authentification. Lorsque vous cochez cette option, 4D se connecte de manière transparente à l'Active directory du serveur de domaine Windows et obtient les tokens d'authentification disponibles.
+Lorsque l'authentification unique (SSO) est activée (voir ci-dessus), vous devez remplir ce champ si vous souhaitez utiliser Kerberos comme protocole d'authentification. Cette option est décrite dans la section [Utiliser Kerberos](../server/sso.md#enabling-kerberos).
 
 #### Couche réseau
 
-Cette liste déroulante contient 3 options de couche réseau : **Historique**, **ServerNet** et **QUIC** (uniquement en mode projet), qui sont utilisées pour gérer les communications entre le serveur 4D et les machines 4D distantes (clients).
+Cette liste déroulante contient les couches réseau disponibles, qui sont utilisées pour gérer les communications entre 4D Server et les machines 4D distantes (clients).
 
-- **Historique** : Cette ancienne couche réseau "historique" est toujours prise en charge afin d'assurer la compatibilité avec les bases de données créées avant la version 15. Cette couche réseau peut également être activée par programmation à l'aide de la commande [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md).
-- **ServerNet** (par défaut) : Active la couche réseau ServerNet sur le serveur (disponible depuis 4D v15).
-- **QUIC** (disponible uniquement en mode projet) : Active la couche réseau QUIC sur le serveur.
+- **QUIC** (projets uniquement) : Active la couche réseau QUIC sur le serveur.
 
-  **Notes** :
+  **Notes sur le QUIC** :
 
-  - La sélection de cette option remplace l'option Utiliser l'ancienne couche réseau si elle a été définie à l'aide de la commande [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md).
-  - Vous pouvez savoir si une application 4D fonctionne avec une couche réseau QUIC en utilisant la commande [Application info](../commands-legacy/application-info.md).
+  - Vous pouvez savoir si une application 4D fonctionne avec la couche réseau QUIC en utilisant la commande [`Application info`](../commands/application-info).
   - Étant donné que QUIC utilise le protocole UDP, assurez-vous que l'UDP est autorisé dans les paramètres de sécurité de votre réseau.
-  - QUIC se connecte automatiquement au port 19813 à la fois pour le serveur d'application et le serveur DB4D.
+  - QUIC se connecte automatiquement au port 19813 pour le [serveur d'applications et le serveur DB4D](#4d-server-and-port-numbers).
   - Lorsque l'option de couche QUIC est sélectionnée :
-    - Un message bêta et une icône d'alerte sont affichés près du sélecteur.
     - Les paramètres de [délai avant déconnexion client-serveur](#client-server-connections-timeout) sont masqués
-    - La case à cocher [Encrypt Client-Server communication](#encrypt-client-server-communications) est cachée (les communications QUIC sont toujours en TLS, quel que soit votre mode sécurisé).
-  - **Compatibilité** : Vous devez déployer vos applications client/serveur avec 4D 20 ou une version supérieure avant de passer à la couche réseau QUIC.
+    - La case à cocher [Crypter les communications Client-Serveur](#encrypt-client-server-communications) est masquée (les communications QUIC sont toujours en TLS, quel que soit votre mode sécurisé).
+  - **Compatibilité** : Vous devez déployer vos applications client/serveur avec 4D 20 ou plus avant de passer à la couche réseau QUIC.
+- **ServerNet** (seule option disponible pour les bases de données binaires) : active la couche réseau ServerNet sur le serveur.
+
+:::info
+
+L'utilisation de la couche réseau QUIC est **recommandée** pour les projets.
+
+:::
 
 :::note
 
@@ -89,7 +92,21 @@ En cas de modification, vous devez redémarrer l'application pour que le changem
 
 :::
 
+:::tip Articles de blog sur le sujet
+
+[QUIC Network Layer is Production Ready!](https://blog.4d.com/quic-network-layer-is-production-ready/)  
+[QUIC network layer: Automatic update and sleep mode](https://blog.4d.com/quic-network-layer-automatic-update-and-sleep-mode/)  
+[Work and Move with QUIC and Network Switching](https://blog.4d.com/work-and-move-with-quic-and-network-switching/)
+
+:::
+
 #### Délai avant déconnexion Client-Serveur
+
+:::note
+
+Cette option n'est pas disponible lorsque la couche réseau [QUIC](#network-layer) est sélectionnée.
+
+:::
 
 Ce dispositif permet de définir le timeout (période d'inactivité au-delà de laquelle la connexion est fermée) entre 4D Server et les machines clientes qui s'y connectent. L'option "Illimité" supprime le timeout. Lorsque cette option est sélectionnée, le contrôle de l'activité du client est éliminé.
 
@@ -99,11 +116,17 @@ Lorsqu'un délai d'attente est sélectionné, le serveur ferme la connexion d'un
 
 #### Inscrire les clients au démarrage pour Exécuter sur client
 
-Lorsque cette option est cochée, toutes les machines distantes 4D se connectant à la base de données peuvent exécuter des méthodes à distance. Ce mécanisme est détaillé dans la section [Procédures stockées sur les machines clientes](https://doc.4d.com/4Dv20/4D/20/Stored-procedures-on-client-machines.300-6330550.en.html).
+Lorsque cette option est cochée, toutes les machines distantes 4D se connectant à la base de données peuvent exécuter des méthodes à distance. Ce mécanisme est détaillé dans la section [Procédures stockées sur les machines clientes](../Desktop/clientServer.md#stored-procedures-on-client-machines).
 
 #### Crypter les communications Client-Serveur
 
-Cette option permet d'activer le mode sécurisé pour les communications entre la machine serveur et les machines distantes 4D. Cette option est détaillée dans la section [Crypter les connexions Client-Serveur](https://doc.4d.com/4Dv20/4D/20/Encrypting-ClientServer-Connections.300-6330533.en.html).
+:::note
+
+Cette option n'est pas disponible lorsque l'option de couche réseau [QUIC](#network-layer) est sélectionnée. Les communications QUIC s'effectuent toujours en TLS, quel que soit le mode de sécurisation choisi.
+
+:::
+
+Cette option active le [mode sécurisé pour les communications](../Admin/tls.md#enabling-tls-with-the-other-servers) entre le serveur et les machines distantes 4D lorsque la couche réseau ServerNet est utilisée.
 
 #### Mise à jour du dossier Resources en cours de session
 
@@ -112,7 +135,7 @@ Ce paramètre permet de définir globalement le mode de mise à jour de l'instan
 - **Jamais** : Le dossier **Resources** local n'est pas mis à jour pendant la session. La notification envoyée par le serveur est ignorée. Le dossier **Resources** local peut être mis à jour manuellement à l'aide de la commande **Update Local Resources** du menu d'action (voir [Utilisation de l'explorateur de ressources](https://doc.4d.com/4Dv20/4D/20.2/Using-the-Resources-explorer.300-6750254.en.html)).
 - **Toujours** : La synchronisation du dossier local **Resources** est automatiquement effectuée pendant la session chaque fois qu'une notification est envoyée par le serveur.
 - **Demander** : Lorsque la notification est envoyée par le serveur, une boîte de dialogue est affichée sur les postes clients, indiquant la modification. L'utilisateur peut ensuite accepter ou refuser la synchronisation du dossier **Resources** local.\
-  Le dossier **Resources** centralise les fichiers personnalisés nécessaires à l'interface de la base de données (fichiers de traduction, images, etc.). Des mécanismes automatiques ou manuels permettent de notifier chaque client lorsque le contenu de ce dossier a été modifié. Des mécanismes automatiques ou manuels permettent de notifier chaque client lorsque le contenu de ce dossier a été modifié.
+  Le dossier **Resources** centralise les fichiers personnalisés nécessaires à l'interface de la base de données (fichiers de traduction, images, etc.). Des mécanismes automatiques ou manuels permettent de notifier chaque client lorsque le contenu de ce dossier a été modifié. Pour plus d'informations, veuillez consulter la section [Gestion du dossier Resources](../Desktop/clientServer.md#managing-the-resources-folder).
 
 ## Page Configuration IP
 
@@ -132,3 +155,21 @@ Le fonctionnement de la table de configuration est le suivant :
   - Autoriser \* (et autoriser les autres)
 
 Par défaut, aucune restriction de connexion n’est appliquée par 4D Server : la première ligne de la table contient le libellé Autoriser et le caractère \* (toute adresse).
+
+### Prise en charge d'IPv6
+
+Le serveur d'applications 4D prend en charge la notation des adresses IPv6. La prise en charge d'IPv6 est transparente pour les utilisateurs et les développeurs 4D : 4D Server accepte aussi bien les connexions IPv6 que les connexions IPv4, sans distinction. Le tableau suivant répertorie les combinaisons prises en charge :
+
+|                            | 4D distant IPv4 uniquement | 4D distant IPv6 uniquement | 4D distant toutes notations |
+| -------------------------- | -------------------------- | -------------------------- | --------------------------- |
+| 4D Server IPv4 uniquement  | IPv4                       | *non supporté*             | IPv4                        |
+| 4D Server IPv6 uniquement  | *non supporté*             | IPv6                       | IPv6                        |
+| 4D Server toutes notations | IPv4                       | IPv6                       | IPv6                        |
+
+Pour plus d'informations sur IPv6, veuillez consulter la [spécification RFC 2460](https://datatracker.ietf.org/doc/html/rfc2460).
+
+:::note Compatibilité
+
+La prise en charge d'IPv6 n'est disponible qu'avec les [couches réseau](#network-layer) QUIC et ServerNet.
+
+:::

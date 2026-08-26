@@ -25,18 +25,19 @@ Los objetos Attachment ofrecen las siguientes propiedades y funciones de sólo l
 
 
 <!-- REF #_command_.MAIL New attachment.Params -->
+<div class="no-index">
 
-| Parámetros  | Tipo              |    | Descripción                                                                             |
-| ----------- | ----------------- |:--:| --------------------------------------------------------------------------------------- |
-| path        | Text              | -> | Ruta del archivo adjunto                                                                |
-| blob        | Blob              | -> | BLOB que contiene el adjunto                                                            |
-| name        | Text              | -> | Nombre + extensión utilizados por el cliente de correo para designar el archivo adjunto |
-| cid         | Text              | -> | ID del archivo adjunto (sólo en mensajes HTML), o " " si no se requiere cid             |
-| type        | Text              | -> | Valor del encabezado content-type                                                       |
-| disposition | Text              | -> | Valor del encabezado content-disposition: "inline" o "attachment".                      |
-| Resultado   | 4D.MailAttachment | <- | Objeto adjunto|<!-- END REF -->
-
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|path|Text|->|Ruta del archivo adjunto|
+|blob|Blob|->|BLOB que contiene el adjunto|
+|name|Text|->|Nombre + extensión utilizados por el cliente de correo para designar el adjunto|
+|cid|Text|->|ID del adjunto (sólo mensajes HTML), o " " si no se requiere cid|
+|type|Text|->|Valor del encabezado content-type|
+|disposition|Text|->|Valor del encabezado content-disposition: "inline" o "attachment".|
+|Result|4D.MailAttachment|<-|Attachment object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -160,18 +161,19 @@ $transporter.send($email)
 
 
 <!-- REF #4D.MailAttachment.new().Params -->
+<div class="no-index">
 
-| Parámetros  | Tipo              |    | Descripción                                                                             |
-| ----------- | ----------------- |:--:| --------------------------------------------------------------------------------------- |
-| path        | Text              | -> | Ruta del archivo adjunto                                                                |
-| blob        | Blob              | -> | BLOB que contiene el adjunto                                                            |
-| name        | Text              | -> | Nombre + extensión utilizados por el cliente de correo para designar el archivo adjunto |
-| cid         | Text              | -> | ID del archivo adjunto (sólo en mensajes HTML), o " " si no se requiere cid             |
-| type        | Text              | -> | Valor del encabezado content-type                                                       |
-| disposition | Text              | -> | Valor del encabezado content-disposition: "inline" o "attachment".                      |
-| Resultado   | 4D.MailAttachment | <- | Objeto adjunto|<!-- END REF -->
-
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|path|Text|->|Ruta del archivo adjunto|
+|blob|Blob|->|BLOB que contiene el adjunto|
+|name|Text|->|Nombre + extensión utilizados por el cliente de correo para designar el adjunto|
+|cid|Text|->|ID del adjunto (sólo mensajes HTML), o " " si no se requiere cid|
+|type|Text|->|Valor del encabezado content-type|
+|disposition|Text|->|Valor del encabezado content-disposition: "inline" o "attachment".|
+|Result|4D.MailAttachment|<-|Attachment object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -202,11 +204,13 @@ La propiedad `.disposition` contiene <!-- REF #MailAttachmentClass.disposition.S
 
 
 <!-- REF #MailAttachmentClass.getContent().Params -->
-| Parámetros | Tipo |    | Descripción                                    |
-| ---------- | ---- |:--:| ---------------------------------------------- |
-| Resultado  | Blob | <- | Contenido del anexo|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|--- |:---:|------|
+|Resultado|Blob|<-|Content of the attachment|
+</div>
+<!-- END REF -->
 
 #### Descripción
 

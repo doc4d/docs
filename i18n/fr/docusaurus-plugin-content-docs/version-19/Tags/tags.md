@@ -423,7 +423,7 @@ Cet exemple insère des pages différentes en fonction de l'utilisateur connect�
 
 Cette balise est principalement conçue pour inclure une page HTML (désignée par le paramètre *path* ) dans une autre page HTML. Par défaut, seul le body de la page HTML spécifiée, c'est-à-dire le contenu des balises `<body>` et `</body>`, est inclus (les balises elles-mêmes ne sont pas incluses). Cela permet d'éviter les conflits liés aux métabalises présentes dans les en-têtes.
 
-Toutefois, si la page HTML spécifiée ne contient pas de balises `<body>` et `</body>`, la page entière est incluse. Il vous appartient de vérifier la cohérence des balises méta.
+Toutefois, si la page HTML spécifiée ne contient pas de balises `<body>` et `</body>`, la page entière est incluse. Il vous appartient de vérifier la cohérence des métabalises.
 
 Le commentaire `<!--#4DINCLUDE -->` est très utile pour les tests (`<!--#4DIF-->`) ou les boucles (`<!--#4DLOOP-->`). Il est très pratique d'inclure des bannières en fonction d'un critère ou de manière aléatoire. Lors de l'inclusion, quelle que soit l'extension du nom de fichier, 4D analyse la page appelée et insère son contenu (modifié ou non) dans la page à l'origine de l'appel `4DINCLUDE`.
 
@@ -477,6 +477,8 @@ Le code suivant :
     FIRST RECORD([People])
  While(Not(End selection([People])))
     ...
+    NEXT RECORD([People])
+ End while
     FIRST RECORD([People])
  While(Not(End selection([People])))
     ...
@@ -583,7 +585,7 @@ Dans ce cas, la balise `4DLOOP` fonctionne comme pour un tableau : elle effectue
 
 Cette syntaxe est utile lorsque vous passez un pointeur de tableau en tant que paramètre de la commande `PROCESS 4D TAGS`.
 
-Voici un exemple :
+Exemple :
 
 ```4d
  ARRAY TEXT($array;2)
@@ -704,7 +706,7 @@ En utilisant la syntaxe $, le code suivant est validé par le parseur :
 
 A noter que `$4dtag` et `<--#4dtag -->` ne sont pas strictement équivalents : contrairement à `<--#4dtag -->`, le traitement de `$4dtag` n'interprète pas les balises 4D [de manière récursive](#recursive-processing). Les balises `$` sont toujours évaluées une fois et le résultat est considéré comme du texte brut.
 
-Cette différence consiste à empêcher l'injection de code malveillant. Comme [expliqué ci-dessous](../WebServer/templates.md#prevention-of-malicious-code-insertion), il est fortement recommandé d'utiliser les balises `4DTEXT` au lieu des balises `4DHTML` lorsque vous manipulez du texte utilisateur, afin de se protéger contre une réinterprétation indésirable des balises : avec `4DTEXT`, les caractères spéciaux tels que "<" sont échappés, ainsi toute balise 4D utilisant la syntaxe `<!--#4dtag expression -->` perdra sa signification particulière. Cependant, étant donné que `4DTEXT` n'échappe pas le symbole `$`, nous avons choisi de ne pas prendre en charge la récursion afin d'empêcher toute injection malveillante utilisant la syntaxe `$4dtag (expression)`.
+Cette différence consiste à empêcher l'injection de code malveillant. Cependant, étant donné que `4DTEXT` n'échappe pas le symbole `$`, nous avons choisi de ne pas prendre en charge la récursion afin d'empêcher toute injection malveillante utilisant la syntaxe `$4dtag (expression)`. Comme [expliqué ci-dessous](../WebServer/templates.md#prevention-of-malicious-code-insertion), il est fortement recommandé d'utiliser les balises `4DTEXT` au lieu des balises `4DHTML` lorsque vous manipulez du texte utilisateur, afin de se protéger contre une réinterprétation indésirable des balises : avec `4DTEXT`, les caractères spéciaux tels que "<" sont échappés, ainsi toute balise 4D utilisant la syntaxe `<!--#4dtag expression -->` perdra sa signification particulière.
 
 Les exemples suivants illustrent le résultat du traitement en fonction de la syntaxe et de la balise  utilisées :
 

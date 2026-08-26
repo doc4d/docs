@@ -15,7 +15,7 @@ De plus, le client HTTP 4D (commande `HTTP get` par exemple) prend également en
 
 Le protocole TLS (successeur du SSL) a pour but de sécuriser les informations de données entre deux applications—principalement entre un serveur web et un navigateur. Ce protocole est largement répandu et compatible avec la plupart des navigateurs web.
 
-Au niveau de l'architecture réseau, le protocole de sécurité s'insère entre la couche TCP/IP (bas niveau) et le protocole de haut niveau HTTP, pour lequel il est principalement destiné.
+Au niveau de l'architecture réseau, le protocole de sécurité s'insère entre la couche TCP/IP (bas niveau) et le protocole de haut niveau HTTP, pour lequel il est principalement destiné. pour lequel il est principalement destiné.
 
 Configuration du réseau avec TLS :
 
@@ -65,14 +65,8 @@ Les certificats TLS gérés par 4D doivent être au format **PEM**. Si votre pre
 
 4D prend en charge les certificats dans les formats de cryptage standard suivants :
 
-- [**RSA**](https://en.wikipedia.org/wiki/RSA_\\\\\(cryptosystem\\\\\))
+- [**RSA**](https://en.wikipedia.org/wiki/RSA_\\\\(cryptosystem\\\\))
 - [**ECDSA**](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
-
-:::info Compatibilité
-
-Le format de cryptage ECDSA n'est pas pris en charge par la [couche réseau legacy](../settings/client-server.md#network-layer) de 4D.
-
-:::
 
 :::note
 
@@ -90,7 +84,7 @@ Les fichiers de certificat incluent:
 Les deux fichiers **key.pem** et **cert.pem** doivent être localisés :
 
 - avec 4D Server ou 4D en mode local, à côté du dossier du projet [](Project/architecture.md#project-folder)
-- avec 4D en mode distant, dans le dossier de la base de données client sur la machine distante (pour plus d'informations sur l'emplacement de ce dossier, voir la commande [`Get 4D folder`](../commands-legacy/get-4d-folder.md)). Vous devez copier ces fichiers manuellement sur la machine distante.
+- avec 4D en mode distant, dans le dossier de la base de données client sur la machine distante (pour plus d'informations sur l'emplacement de ce dossier, voir la commande [`Get 4D folder`](../commands/get-4d-folder)). Vous devez copier ces fichiers manuellement sur la machine distante.
 
 ### Activation du TLS
 
@@ -114,7 +108,7 @@ Si vous utilisez une [liste de chiffrement personnalisée](WebServer/webServerCo
 
 Pour utiliser TLS avec le serveur d'application 4D (applications desktop client-serveur) ou le serveur SQL, il suffit d'activer les communications TLS et le serveur configure automatiquement les connexions au démarrage.
 
-- Avec le serveur d'application, sélectionnez l'option **Crypter les communications Client-Serveur** dans la page ["Client-server/Network options" de la boîte de dialogue Paramètres](../settings/client-server#encrypt-client-server-communications).
+- With the application server when [QUIC network layer](../settings/client-server.md#network-layer) is enabled, you don't have anything to do: QUIC communications are always in TLS. When ServerNet network layer is enabled select the **Encrypt Client-Server Communications** option in the ["Client-server/Network options" page of the Settings dialog box](../settings/client-server#encrypt-client-server-communications).
 - Avec le serveur SQL, sélectionnez l'option **Activer TLS** dans la page ["SQL" de la boîte de dialogue Paramètres](../settings/sql#sql-server-publishing).
 
 ## Comment obtenir un certificat RSA ? (tutoriel)
@@ -146,3 +140,4 @@ Pour obtenir un certificat numérique :
 5. Placez le fichier “cert.pem” à [l'emplacement adéquat](#installing-certificate-files).
 
 Le serveur Web peut dès lors fonctionner en mode sécurisé. La durée de validité d’un certificat est généralement comprise entre 3 mois et un an.
+

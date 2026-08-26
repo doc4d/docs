@@ -105,11 +105,13 @@ Las clases disponibles son accesibles desde sus class stores. Hay dos class stor
 <!-- REF #_command_.cs.Syntax -->**cs** : Object <!-- END REF -->
 
 <!-- REF #_command_.cs.Params -->
-| Parámetros | Tipo   |    | Descripción                                                                  |
-| ---------- | ------ | -- | ---------------------------------------------------------------------------- |
-| classStore | Object | <- | Class store usuario para el proyecto o componente|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|classStore|Object|<-|User class store for the project or component|
+</div>
+<!-- END REF -->
 
 El comando `cs` <!-- REF #_command_.cs.Summary -->devuelve el almacén de clases de usuario del proyecto o componente actual<!-- END REF -->. Devuelve todas las clases de usuario [definidas](#class-definition) en el proyecto o componente abierto. Por defecto, sólo las [clases ORDA](ORDA/ordaClasses.md) están disponibles.
 
@@ -127,11 +129,13 @@ $instance:=cs.myClass.new()
 <!-- REF #_command_.4D.Syntax -->**4D** : Object <!-- END REF -->
 
 <!-- REF #_command_.4D.Params -->
-| Parámetros | Tipo   |    | Descripción                               |
-| ---------- | ------ | -- | ----------------------------------------- |
-| classStore | Object | <- | Class store 4D|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---|---|---|---|
+|classStore|Object|<-|4D class store|
+</div>
+<!-- END REF -->
 
 El comando `4D` <!-- REF #_command_.4D.Summary -->devuelve el almacén de clases para las clases integradas disponibles en 4D<!-- END REF -->. Ofrece acceso a las APIs específicas como [CryptoKey](API/CryptoKeyClass.md).
 
@@ -182,7 +186,7 @@ Function <name>({$parameterName : type; ...}){->$parameterName : type}
 
 :::note
 
-No hay palabra clave final para el código de una función. There is no ending keyword for function code.
+No hay palabra clave final para el código de una función. No hay palabra clave final para el código de una función.
 
 :::
 
@@ -300,14 +304,15 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 #### Sintaxis
 
 ```4d
-// Class: MyClass
+MyClass
 Class constructor({$parameterName : type; ...})
+// Class:
 // Class:
 ```
 
 :::note
 
-No hay palabra clave final para el código de función class constructor. There is no ending keyword for function code.
+No hay palabra clave final para el código de función class constructor. No hay palabra clave final para el código de una función.
 
 :::
 
@@ -377,7 +382,7 @@ El tipo de propiedad puede ser uno de los siguientes tipos soportados:
 
 :::info
 
-The `property` keyword can only be used in class methods and outside any `Function` or `Class constructor` block.
+La palabra clave `property` sólo puede utilizarse en métodos clase y fuera de cualquier bloque `Function` o `Class constructor`.
 
 :::
 
@@ -536,12 +541,14 @@ Class constructor ($side : Integer)
 <!-- REF #_command_.Super.Syntax -->**Super**( ...param : any )<br/>**Super** : Object<!-- END REF -->
 
 <!-- REF #_command_.Super.Params -->
-| Parámetros | Tipo   |    | Descripción                                           |
-| ---------- | ------ | -- | ----------------------------------------------------- |
-| param      | any    | -> | Parámetro(s) a pasar al constructor de la clase padre |
-| Resultado  | Object | <- | Padre del objeto|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|  
+|---|---|---|---|
+|param|cualquiera|->|Parámetro(s) que se deben pasar al constructor padre|
+|Resultado|Object|<-|Object's parent|
+</div>
+<!-- END REF -->
 
 La palabra clave `Super` <!-- REF #_command_.Super.Summary -->permite realizar llamadas a la `superclase`, es decir, a la clase padre<!-- END REF -->.
 
@@ -585,18 +592,11 @@ Class constructor ($side : Integer)
  // pueda utilizar 'This'
  This.
 
-//Class: Square
+ame:="Square"
 
-Class extends Rectangle
-
-Class constructor ($side : Integer)
-
- // Llama al class constructor de la clase padre con longitudes
- // proporcionadas para el ancho y alto del rectángulo
- Super($side;$side)
- // En las clases derivadas, Super debe ser llamado antes de que 
- // pueda utilizar 'This'
- This.
+Function getArea()
+ C_LONGINT($0)
+ $0:=This.height*This.width
 ```
 
 ```4d
@@ -611,11 +611,18 @@ Class constructor ($side : Integer)
  Super($side;$side)
  // En las clases derivadas, Super debe ser llamado antes de que 
  // pueda utilizar 'This'
- This. ame:="Square"
+ This. //Class: Square
 
-Function getArea()
- C_LONGINT($0)
- $0:=This.height*This.width
+Class extends Rectangle
+
+Class constructor ($side : Integer)
+
+ // Llama al class constructor de la clase padre con longitudes
+ // proporcionadas para el ancho y alto del rectángulo
+ Super($side;$side)
+ // En las clases derivadas, Super debe ser llamado antes de que 
+ // pueda utilizar 'This'
+ This.
 ```
 
 #### Ejemplo 2
@@ -656,11 +663,13 @@ $message:=$square.description() //tengo 4 lados iguales
 <!-- REF #_command_.This.Syntax -->**This** : Object<!-- END REF -->
 
 <!-- REF #_command_.This.Params -->
-| Parámetros | Tipo   |    | Descripción                              |
-| ---------- | ------ | -- | ---------------------------------------- |
-| Resultado  | Object | <- | Objeto actual|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|  
+|---|---|---|---|
+|Resultado|Object|<-|Current object|
+</div>
+<!-- END REF -->
 
 La palabra clave `This` <!-- REF #_command_.This.Summary -->devuelve una referencia al objeto procesado actualmente<!-- END REF -->.
 

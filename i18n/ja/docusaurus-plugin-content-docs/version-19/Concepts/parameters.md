@@ -6,7 +6,7 @@ title: 引数
 
 メソッドや関数にデータを渡す必要がしばしば発生します。 これは引数によって容易にできます。
 
-## 概要
+## 引数の受け渡し
 
 **引数** (または **パラメーター**) とは、メソッドや関数が処理に必要とするデータのことです。 *引数* と *パラメーター* は厳密には違うものですが、このマニュアルでは同義語として使用されています。 引数は、ビルトインの 4Dコマンドにも渡されます。 以下の例は、“Hello” という文字列を引数としてビルトインの `ALERT` コマンドへ渡します:
 
@@ -32,7 +32,7 @@ DO_SOMETHING($WithThis;$AndThat;$ThisWay)
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)  
-// サブフォーム "Cal2" のコンテキストにおいて SetCalendarDate を実行し  
+// サブフォーム "Cal2" のコンテキストにおいて // サブフォーム "Cal2" のコンテキストにおいて SetCalendarDate を実行し  
 // その際に引数として日付リテラル !05/05/20! を渡します
 ```
 
@@ -117,6 +117,12 @@ Function getArea($width : Integer; $height : Integer)-> $area : Integer
 $entitySelection:=ds.User.query("login=:1"; $user)
 // ハッシュパスワードを確認...
 ```
+
+:::note
+
+**引数の宣言** と [**変数の宣言**](variables.md#declaring-variables) を混同しないでください。 引数に対して `var` キーワードを使用した場合、エラーを生成します。
+
+:::
 
 ### 戻り値
 
@@ -360,6 +366,7 @@ C_TEXT($1;$2;$3;$4;$5;$6)
        $0:=-1
     End if
     ... 
+ ")
  End if
 ```
 

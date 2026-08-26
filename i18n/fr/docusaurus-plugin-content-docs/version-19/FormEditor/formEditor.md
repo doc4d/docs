@@ -56,7 +56,7 @@ La barre d’outils comporte les éléments suivants :
 | Icône                                            | Nom                                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------------------------------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![](../assets/en/FormEditor/execute.png)         | Exécuter le formulaire                                    | Permet de tester l’exécution du formulaire. Lorsque vous cliquez sur ce bouton, 4D ouvre une nouvelle fenêtre et affiche le formulaire dans son contexte (liste d’enregistrements pour un formulaire liste et enregistrement courant en page pour un formulaire détaillé). Le formulaire est exécuté dans le process principal.                                                                             |
-| ![](../assets/en/FormEditor/selection.png)       | [Flèche de sélection](#selecting-objects)                 | Permet de sélectionner, déplacer et redimensionner les objets du formulaire.<p>**Note** : Lorsqu'un objet de type Texte ou Zone de Groupe est sélectionné, appuyez sur la touche **Entrée** pour passer en mode édition.</p>                                                                                                                                                                                                                                                                                                       |
+| ![](../assets/en/FormEditor/selection.png)       | [Flèche de sélection](#selecting-objects)                 | Permet de sélectionner, déplacer et redimensionner les objets du formulaire.<br/>**Note**: Lorsqu'un objet de type Texte ou Zone de groupe est sélectionné, l'appui sur la touche **Entrée** permet de passer en mode édition.                                                                                                                                                                        |
 | ![](../assets/en/FormEditor/zOrder.png)          | [Ordre de saisie](#data-entry-order)                      | Passe en mode “Ordre de saisie”, dans lequel il est possible de visualiser et de modifier l’ordre de saisie courant du formulaire. A noter que vous pouvez également visualiser l’ordre de saisie courant tout en travaillant dans le formulaire.                                                                                                                                                           |
 | ![](../assets/en/FormEditor/moving.png)          | [Déplacement](#moving-objects)                            | Passe en mode “Déplacement”, dans lequel il est possible d’atteindre rapidement n’importe quelle partie du formulaire en le faisant directement glisser dans la fenêtre. Le curseur prend la forme d’une main. Ce mode de navigation est particulièrement utile en cas de zoom dans le formulaire.                                                                                                          |
 | ![](../assets/en/FormEditor/zoom.png)            | [Zoom](#zoom)                                             | Permet de modifier l’échelle d’affichage du formulaire (100% par défaut). Vous pouvez passer en mode “Zoom” en cliquant sur le bouton loupe ou en cliquant directement sur la barre correspondant à l’échelle désirée. Cette fonction est détaillée dans le paragraphe précédent.                                                                                                                           |
@@ -146,11 +146,11 @@ Avant de pouvoir réaliser une opération sur un objet (comme le changement de l
 
 Pour sélectionner un objet à l’aide de la barre d’outils :
 
-1. Cliquez sur l’outil Flèche  dans la barre d’outils.<p>![](../assets/en/FormEditor/selection.png)</p>
+1. Cliquez sur l’outil Flèche  dans la barre d’outils.<br/>![](../assets/en/FormEditor/selection.png)
 
-<p>Lorsque vous le faites glisser au-dessus du formulaire, le pointeur prend la forme du pointeur standard</p>.
+<br/>Lorsque vous le faites glisser au-dessus du formulaire, le pointeur prend la forme du pointeur standard.
 
-2. Cliquez sur l’objet que vous souhaitez sélectionner. Des poignées de sélection identifient l’objet sélectionné.<p>![](../assets/en/FormEditor/selectResize.png)</p>
+2. Cliquez sur l’objet que vous souhaitez sélectionner. Des poignées de sélection identifient l’objet sélectionné.<br/>![](../assets/en/FormEditor/selectResize.png)
 
 Pour sélectionner un objet à l’aide de la Liste des propriétés :
 
@@ -235,13 +235,12 @@ Grouper des objets n’a d’effet que dans l’éditeur de formulaires. Lors de
 Pour grouper les objets :
 
 1. Sélectionnez les objets que vous souhaitez grouper.
-2. Sélectionnez **Grouper** dans le menu Objets. OR Click the Group button  in the toolbar of the Form editor:<p>![](../assets/en/FormEditor/group.png)</p>
-4D matérialise les bordures du groupe avec des poignées. Les objets du groupe ne sont plus marqués séparément par des poignées. Désormais, lorsque vous modifiez le groupe d’objets, vous modifiez tous les objets qui le composent.
+2. Sélectionnez **Grouper** dans le menu Objets. OU Cliquez sur le bouton Grouper dans la barre d'outils de l'éditeur de formulaires :<br/>![](../assets/en/FormEditor/group.png) 4D indique la limite des objets nouvellement groupés avec des poignées. Les objets du groupe ne sont plus marqués séparément par des poignées. Désormais, lorsque vous modifiez le groupe d’objets, vous modifiez tous les objets qui le composent.
 
 Pour dégrouper un groupe d’objets :
 
 1. Sélectionnez le groupe que vous souhaitez dégrouper.
-2. Choisissez **Dégrouper** dans le menu **Objets**.<p>OU</p><p>Sélectionnez la commande **Dégrouper** (menu du bouton **Grouper**) dans la barre d’outils de l’éditeur de formulaires.</p><p>Si la commande **Dégrouper** est désactivée, cela veut dire que l’objet sélectionné est déjà sous sa forme la plus simple.</p>4D rematérialise les bordures des objets qui constituaient le groupe avec des poignées.
+2. Choisissez **Dégrouper** dans le menu **Objet**.<br/>OU<br/>Cliquez sur le bouton **Dégrouper** (variante du bouton **Grouper** ) dans la barre d'outils de l'éditeur de formulaires.<br/>Si le **bouton Dégrouper** est estompé, cela signifie que l'objet sélectionné est déjà séparé dans sa forme la plus simple. 4D rematérialise les bordures des objets qui constituaient le groupe avec des poignées.
 
 ### Aligner des objets
 
@@ -268,9 +267,10 @@ La boîte de dialogue d’alignement vous permet d’appliquer tout type d’ali
 
 Pour afficher cette boîte de dialogue, vous devez sélectionner les objets que vous souhaitez aligner puis choisir la commande **Alignement...** dans le sous-menu **Aligner** du menu **Objets** ou du menu contextuel de l’éditeur.
 
-- Cliquez sur l’icône d’alignement de votre choix dans les zones “Alignement droite/gauche” et/ou “Alignement haut/bas”.<p>La zone d’exemple illustre le principe de l’opération sélectionnée.</p>
+- Dans les zones “Alignement droite/gauche” et/ou “Alignement haut/bas”, cliquez sur l’icône correspondant à l'alignement que vous souhaitez effectuer.<br>La zone d'exemple affiche les résultats de votre sélection.
 
-- Pour effectuer un alignement standard des objets sélectionnés, cliquez sur le bouton **Prévisualisation** ou **Appliquer**. Dans ce cas, 4D utilisera l’objet le plus avancé dans la direction de l’alignement comme “ancre” sur laquelle tous les autres objets vont être alignés. Par exemple, si vous alignez un groupe d’objets à droite, les objets seront alignés sur le côté droit de l’objet situé le plus à droite du groupe. OU BIEN :<p>Pour aligner des objets sur un objet spécifique, sélectionnez l'option **Aligner sur** et sélectionnez l'objet sur lequel vous souhaitez que les autres objets soient alignés dans la liste des objets. Dans ce cas, la position de l’objet de référence ne variera pas.</p>
+- Pour effectuer un alignement standard des objets sélectionnés, cliquez sur le bouton **Prévisualisation** ou **Appliquer**. Dans ce cas, 4D utilisera l’objet le plus avancé dans la direction de l’alignement comme “ancre” sur laquelle tous les autres objets vont être alignés. Par exemple, si vous alignez un groupe d’objets à droite, les objets seront alignés sur le côté droit de l’objet situé le plus à droite du groupe. OU :<br/>Pour aligner des objets sur un objet spécifique, sélectionnez l'option **Aligner sur** et sélectionnez l'objet sur lequel vous souhaitez que les autres objets soient alignés dans la liste des objets. Dans ce cas, la position de l’objet de référence ne variera pas.
+
 
 Vous pouvez prévisualiser le résultat réel de vos paramétrages en cliquant sur le bouton **Prévisualisation**. Les objets sont ensuite alignés dans l'éditeur de formulaires, mais comme la boîte de dialogue ne disparaît pas, vous pouvez toujours annuler ou appliquer l'alignement.
 > Cette boîte de dialogue combine l’alignement d’objets et leur répartition. Pour plus d’informations sur la répartition, reportez-vous au paragraphe [Répartir des objets](#distributing-objects).
@@ -304,7 +304,7 @@ Pour répartir directement une sélection d’objets (verticalement ou horizonta
 
 1. Sélectionnez les objets (au moins trois) que vous souhaitez répartir.
 
-2. Dans la barre d’outils, cliquez sur l’outil de répartition qui correspond la répartition que vous souhaitez appliquer.<p>![](../assets/en/FormEditor/distributionTool.png)</p> OU<p>Sélectionnez une commande de distribution dans le sous-menu **Alignement** du menu **Objet** ou dans le menu contextuel de l'éditeur.</p>4D distribue les objets en conséquence. Les objets sont répartis en fonction de la distance entre leurs centres et la plus grande distance entre deux objets consécutifs est utilisée comme référence.
+2. Dans la barre d'outils, cliquez sur l'outil de distribution correspondant à la distribution que vous souhaitez appliquer.<br/>![](../assets/en/FormEditor/distributionTool.png)<br/>OU<br/>Sélectionnez une commande de distribution dans le sous-menu **Aligner** du menu **Objet** ou dans le menu contextuel de l'éditeur. 4D distribue les objets en conséquence. Les objets sont répartis en fonction de la distance entre leurs centres et la plus grande distance entre deux objets consécutifs est utilisée comme référence.
 
 Pour répartir des objets à l’aide de la boîte de dialogue d'alignement et répartition :
 
@@ -312,9 +312,9 @@ Pour répartir des objets à l’aide de la boîte de dialogue d'alignement et r
 
 2. Choisissez la commande **Alignement...** dans le sous-menu **Aligner** du menu **Objets** ou du menu contextuel de l’éditeur. La boîte de dialogue suivante apparaît :![](../assets/en/FormEditor/alignmentAssistant.png)
 
-3. Cliquez sur l’icône de répartition standard (horizontale ou verticale) de votre choix: ![](../assets/en/FormEditor/horizontalDistribution.png) <p>(icône de répartition horizontale standard)</p>La zone d’exemple illustre le principe de l’opération sélectionnée.
+3. Dans les zones Alignement gauche/droite et/ou Alignement haut/bas, cliquez sur l'icône de distribution standard : ![](../assets/en/FormEditor/horizontalDistribution.png) <br/>(icône de distribution horizontale standard)<br/>La zone d'exemple affiche les résultats de votre sélection.
 
-4. Pour effectuer une répartition standard, cliquez sur le bouton **Prévisualisation** ou *Appliquer*.<p>Dans ce cas, les objets seront répartis de manière à ce que leurs côtés soient équidistants (répartition standard).</p>OU BIEN :<p>Pour exécuter une distribution spécifique, sélectionnez l'option **Répartir** (par exemple si vous souhaitez répartir les objets en fonction de la distance de leur côté droit). Cette option agit comme un interrupteur. Lorsque l'option Répartir est cochée, les icônes situées au-dessous d’elle s’appliquent alors à la répartition :</p>
+4. Pour effectuer une distribution qui utilise le schéma standard, cliquez sur **Prévisualiser** ou *Appliquer*.<br/>Dans ce cas, 4D effectuera une distribution standard, de sorte que les objets soient disposés avec un espace égal entre eux.<br/>OU :<br/>Pour exécuter une distribution spécifique, sélectionnez l'option **Distribuer** (par exemple, si vous souhaitez distribuer les objets en fonction de la distance qui les sépare de leur côté droit). Cette option agit comme un interrupteur. Lorsque l'option Répartir est cochée, les icônes situées au-dessous d’elle s’appliquent alors à la répartition :<br/>
 
 - Horizontalement, les icônes correspondent aux répartitions suivantes : équidistance des côtés gauches, des centres (hor.) et des côtés droits des objets sélectionnés.
 - Verticalement, les icônes correspondent aux répartitions suivantes : équidistance des bords supérieurs, des centres (vert.) et des bords inférieurs des objets sélectionnés.
@@ -335,7 +335,14 @@ Pour modifier le plan d'un objet, sélectionnez-le et choisissez :
 - Une des commandes associées au bouton de gestion des plans de la barre d'outils.
 
 ![](../assets/en/FormEditor/level2.png)
-> Lorsque plusieurs objets sont superposés, le raccourci **Ctrl+clic** / **Commande+clic** permet de sélectionner successivement chaque objet en descendant d’un plan à chaque clic.
+
+Lorsque plusieurs objets sont superposés, le raccourci **Ctrl+clic** / **Commande+clic** permet de sélectionner successivement chaque objet en descendant d’un plan à chaque clic.
+
+:::note
+
+Dans les bases de données binaires, utilisez **Ctrl+Clic / Commande+Clic** pour effectuer la même action.
+
+:::
 
 Pour ordonner les différents plans, 4D va toujours de l’arrière-plan vers l’avant-plan. Par conséquent, le plan précédent fait reculer la sélection d’objets d’un plan vers l’arrière-plan du formulaire. Le plan suivant fait avancer la sélection d’objets d’un plan vers l’avant-plan du formulaire.
 
@@ -367,11 +374,11 @@ Ce paragraphe décrit la visualisation et la modification de l’ordre de saisie
 
 Pour visualiser ou modifier l’ordre de saisie :
 
-1. Sélectionnez **Ordre de saisie** dans le menu **Formulaire** ou cliquez sur le bouton dans la barre d’outils de la fenêtre :<p>![](../assets/en/FormEditor/zOrder.png)</p>
+1. Sélectionnez **Ordre de saisie** dans le menu **Formulaire** ou cliquez sur le bouton dans la barre d’outils de la fenêtre :<br/>![](../assets/en/FormEditor/zOrder.png)<br/>
 
     Le pointeur prend la forme d’un pointeur d’ordre, et 4D dessine une ligne qui permet de visualiser la séquence de l’ordre de saisie courant. Visualiser et modifier l’ordre de saisie sont les seules opérations que vous pouvez réaliser dans ce mode.
 
-2. Pour changer l’ordre de saisie, placez le pointeur sur un objet, cliquez dessus et, tout en maintenant le bouton de la souris enfoncé, déplacez le pointeur vers l’objet qui doit le suivre dans l’ordre de saisie.<p>![](../assets/en/FormEditor/entryOrder3.png)</p>4D ajuste l’ordre de saisie en conséquence.
+2. Pour modifier l'ordre de saisie des données, placez le pointeur sur un objet du formulaire et, tout en maintenant le bouton de la souris enfoncé, faites glisser le pointeur jusqu'à l'objet que vous souhaitez placer à la suite dans l'ordre de saisie des données.<br/>![](../assets/en/FormEditor/entryOrder3.png)<br/>4D ajustera l'ordre de saisie en conséquence.
 
 3. Répétez l’étape 2 autant de fois que nécessaire pour obtenir le nouvel ordre de saisie.
 
@@ -450,7 +457,7 @@ Une valeur d'attribut définie dans une feuille de style peut être remplacée d
 | Icône                                         | Description                                                                                                                                                                           |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![](../assets/en/FormEditor/cssIcon.png)      | Indique que la valeur d'un attribut a été définie dans une feuille de style                                                                                                           |
-| ![](../assets/en/FormEditor/cssImportant.png) | Indique que la valeur d'un attribut a été définie dans une feuille de style avec la déclaration `!important`                                                                        |
+| ![](../assets/en/FormEditor/cssImportant.png) | Indique que la valeur d'un attribut a été définie dans une feuille de style avec la déclaration `!important`                                                                          |
 | ![](../assets/en/FormEditor/cssIconMixed.png) | Affiché lorsque la valeur d'un attribut défini dans une feuille de style pour au moins un élément d'un groupe ou d'une sélection de plusieurs objets est différente des autres objets |
 
 ## Création de list box

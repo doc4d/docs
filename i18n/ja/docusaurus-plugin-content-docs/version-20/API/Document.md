@@ -19,7 +19,7 @@ title: Document クラス
 
 #### 説明
 
-`.creationDate` プロパティは、 <!-- REF #document.creationDate.Summary -->ファイルの作成日を返します<!-- END REF -->。
+`.creationDate` プロパティは、 <!-- REF #document.creationDate.Summary -->`.creationDate` プロパティは、<!-- END REF -->。
 
 このプロパティは **読み取り専用** です。
 
@@ -180,7 +180,7 @@ title: Document クラス
 
 #### 説明
 
-`.isFolder` プロパティは、 <!-- REF #document.isFolder.Summary -->ファイルに対しては常に false を返します。<!-- END REF -->。
+`.isFolder` プロパティは、 <!-- REF #document.isFolder.Summary -->`.copyTo()` 関数は、<!-- END REF -->。
 
 このプロパティは **読み取り専用** です。
 
@@ -230,7 +230,7 @@ title: Document クラス
 
 #### 説明
 
-`.modificationDate` プロパティは、 <!-- REF #document.modificationDate.Summary -->ファイルの最終変更日を返します<!-- END REF -->。
+`.modificationDate` プロパティは、 <!-- REF #document.modificationDate.Summary -->`.modificationDate` プロパティは、<!-- END REF -->。
 
 このプロパティは **読み取り専用** です。
 
@@ -315,7 +315,7 @@ title: Document クラス
 
 #### 説明
 
-`.parent` プロパティは、 <!-- REF #document.parent.Summary -->対象ファイルの親フォルダーオブジェクトを返します<!-- END REF -->。 パスがシステムパスを表す場合 (例: "/DATA/")、システムパスが返されます。
+`.parent` プロパティは、 <!-- REF #document.parent.Summary -->`.parent` プロパティは、<!-- END REF -->。 パスがシステムパスを表す場合 (例: "/DATA/")、システムパスが返されます。
 
 このプロパティは **読み取り専用** です。
 
@@ -335,7 +335,7 @@ title: Document クラス
 
 #### 説明
 
-`.path` プロパティは、 <!-- REF #document.path.Summary -->ファイルの POSIXパスを返します<!-- END REF -->。 パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
+`.path` プロパティは、 <!-- REF #document.path.Summary -->`.path` プロパティは、<!-- END REF -->。 パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
 
 このプロパティは **読み取り専用** です。
 
@@ -355,7 +355,7 @@ title: Document クラス
 
 #### 説明
 
-`.platformPath` プロパティは、 <!-- REF #document.platformPath.Summary -->カレントプラットフォームのシンタックスで表現されたファイルのパスを返します<!-- END REF -->。
+`.platformPath` プロパティは、 <!-- REF #document.platformPath.Summary -->`.platformPath` プロパティは、<!-- END REF -->。
 
 このプロパティは **読み取り専用** です。
 
@@ -395,22 +395,24 @@ title: Document クラス
 
 
 <!-- REF #document.copyTo().Params -->
-| 引数                | 型         |    | 説明                                    |
-| ----------------- | --------- |:--:| ------------------------------------- |
-| destinationFolder | 4D.Folder | -> | 宛先フォルダー                               |
-| newName           | Text      | -> | コピー先フォルダーの名前                          |
-| overwrite         | Integer   | -> | 既存要素を上書きするには `fk overwrite` を渡します     |
-| 戻り値               | 4D.File   | <- | コピーされたファイル|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---------|--- |:---:|------|
+|destinationFolder | 4D.Folder |->|コピー先フォルダー|
+|newName|Text|->|コピーの新しい名前|
+|overwrite|Integer|->|既存の要素を上書きするためには `fk overwrite`|
+|戻り値|4D.File|<-|Copied file|
+</div>
+<!-- END REF -->
 
 #### 説明
 
-`.copyTo()` 関数は、 <!-- REF #document.copyTo().Summary -->`File` オブジェクトを、*destinationFolder* 引数で指定したフォルダーへとコピーします <!-- END REF -->。
+`.copyTo()` 関数は、 <!-- REF #document.copyTo().Summary -->`.isFolder` プロパティは、 <!-- END REF -->。
 
 *destinationFolder* 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
-デフォルトで、ファイルは元の名前を維持したままコピーされます。 コピーの際にフォルダー名を変更したい場合、新しい名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
+デフォルトで、ファイルは元の名前を維持したままコピーされます。 コピーの際にフォルダー名を変更したい場合、新しい名前を *newName* に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。
 
 *destinationFolder* 引数が指定するフォルダー内に同じ名前のファイルが既に存在する場合、4D はデフォルトでエラーを生成します。 *overwrite* に `fk overwrite` 定数を渡すことで、既存のフォルダーを無視して上書きすることができます:
 
@@ -449,11 +451,13 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 
 <!-- REF #document.getContent().Params -->
-| 引数  | 型       |    | 説明                                    |
-| --- | ------- | -- | ------------------------------------- |
-| 戻り値 | 4D.Blob | <- | ファイルのコンテンツ|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|----|---|---|
+|戻り値| 4D.Blob |<-|File content|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -491,12 +495,14 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 
 <!-- REF #document.getIcon().Params -->
-| 引数   | 型       |    | 説明                              |
-| ---- | ------- | -- | ------------------------------- |
-| size | Integer | -> | 取得するピクチャーの一辺の長さ (ピクセル単位)        |
-| 戻り値  | Picture | <- | アイコン|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|----|---|---|
+|size|Integer|->|返されるピクチャーの一辺の長さ(ピクセル単位)|
+|戻り値|Picture|<-|Icon|
+</div>
+<!-- END REF -->
 
 #### 説明
 
@@ -526,14 +532,16 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 
 <!-- REF #document.getText().Params -->
-| 引数          | 型       |    | 説明                                          |
-| ----------- | ------- | -- | ------------------------------------------- |
-| charSetName | Text    | -> | 文字セットの名前                                    |
-| charSetNum  | Integer | -> | 文字セットの番号                                    |
-| breakMode   | Integer | -> | 改行の処理モード                                    |
-| 戻り値         | Text    | <- | ドキュメントから取得したテキスト|<!-- END REF -->
+<div class="no-index">
 
-|
+|引数|型||説明|
+|---|---|---|---|
+|charSetName |Text |-> |文字セット名|
+|charSetNum |Integer |-> |文字セットのID番号|
+|breakMode|Integer |-> |改行文字に対する処理モード|
+|戻り値|Text  |<- |ドキュメントからのテキストhe document|
+</div>
+<!-- END REF -->
 
 #### 説明
 

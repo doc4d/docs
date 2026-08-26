@@ -38,7 +38,7 @@ $city:=ds.City.getCity("Aguada")
 
 
 
-> `/rest/\{dataClass\}/Function` は DataClassクラスまたは EntitySelectionクラスの関数を呼び出すのに使えます (`/rest/\{dataClass\}` はデータクラスの全エンティティをエンティティセレクションに返します)。    
+> `/rest/\{dataClass\}/Function` は DataClassクラスまたは EntitySelectionクラスの関数を呼び出すのに使えます (`/rest/\{dataClass\}` はデータクラスの全エンティティをエンティティセレクションに返します)。     
 > EntitySelection クラスの関数が先に探されます。 見つからない場合に、DataClassクラスを探します。 つまり、同じ名称の関数が DataClassクラスと EntitySelectionクラスの両方に定義されている場合、DataClassクラスの関数が実行されることはありません。
 
 
@@ -114,11 +114,11 @@ ORDAユーザークラスに定義された関数には、引数を渡すこと�
 
 ## リクエストの例題
 
-このデータベースは、localhost (ポート8111) 上でリモートデータストアーとして公開されています。
+このデータベースは、localhost (ポート8111) 上でリモートデータストアとして公開されています。
 
 ![alt-text](../assets/en/REST/ordastructure.png)
 
-### データストアークラス関数を使用する
+### データストアクラス関数を使用する
 
 US_Cities `DataStore`クラスは API を提供しています:
 

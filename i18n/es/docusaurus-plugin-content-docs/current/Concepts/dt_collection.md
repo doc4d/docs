@@ -46,18 +46,18 @@ Las colecciones deben haber sido instanciadas, de lo contrario intentar leer o m
 
 La instanciación de la colección puede realizarse de una de las siguientes maneras:
 
-- usando el comando [`New collection`](../commands/new-collection.md)
+- usando el comando [`New collection`](../commands/new-collection)
 - utilizando el operador `[]`.
 
 :::info
 
-Varios comandos y funciones 4D devuelven colecciones, por ejemplo [`Monitored activity`](../commands-legacy/monitored-activity.md) o [`collection.copy`](../API/CollectionClass.md#copy). En este caso, no es necesario instanciar explícitamente la colección, el lenguaje 4D lo hace por usted.
+Varios comandos y funciones 4D devuelven colecciones, por ejemplo [`Monitored activity`](../commands/monitored-activity) o [`collection.copy`](../API/CollectionClass.md#copy). En este caso, no es necesario instanciar explícitamente la colección, el lenguaje 4D lo hace por usted.
 
 :::
 
 ### Comando `New collection`
 
-El comando [`New collection`](../commands/new-collection.md) crea una nueva colección vacía o prellenada y devuelve su referencia.
+El comando [`New collection`](../commands/new-collection) crea una nueva colección vacía o prellenada y devuelve su referencia.
 
 Ejemplos:
 
@@ -105,10 +105,47 @@ Si crea un literal de colección que contenga un único elemento, asegúrese de 
 
 Puede crear dos tipos de colecciones:
 
-- las colecciones estándar (no compartidas), utilizando el comando [`New collection`](commands/new-collection.md) o la sintaxis literal de la colección (`[]`). Estas colecciones pueden ser editadas sin ningún control de acceso específico, pero no pueden ser compartidas entre procesos.
-- las colecciones compartidas, utilizando el comando [`New shared collection`](commands/new-shared-collection.md). Estas colecciones pueden ser compartidas entre procesos, incluidos los hilos apropiativos. El acceso a estas colecciones se controla mediante estructuras [`Use...End use`](Concepts/shared.md#useend-use).
+- las colecciones estándar (no compartidas), utilizando el comando [`New collection`](../commands/new-collection) o la sintaxis literal de la colección (`[]`). Estas colecciones pueden ser editadas sin ningún control de acceso específico, pero no pueden ser compartidas entre procesos.
+- las colecciones compartidas, utilizando el comando [`New shared collection`](../commands/new-shared-collection). Estas colecciones pueden ser compartidas entre procesos, incluidos los hilos apropiativos. El acceso a estas colecciones se controla mediante estructuras [`Use...End use`](Concepts/shared.md#useend-use).
 
 Para más información, consulte la sección [Objetos y colecciones compartidos](shared.md).
+
+## Asignación
+
+Los datos de tipo colección y [object](./dt_object.md) se gestionan en el lenguaje 4D a través de **referencias** (i.., punteros internos), a diferencia de los tipos de datos escalares (entero, fecha, etc.). Por lo tanto, al asignar una colección a una variable (por ejemplo, `$myVar:=[1;2;3]`), lo que se asigna es la **referencia**, no el valor en sí. Por lo tanto, toda modificación posterior de la variable *$myVar* se reflejará en todos los lugares donde se haga referencia a la colección original. Esto sigue el mismo principio que los [punteros](./dt_collection.md), salvo que no es necesario desreferenciar la variable *$myVar*.
+
+Por ejemplo:
+
+```4d
+var $col1; $col2 : Collection
+var $o : Object
+
+$col1:=[1;2;3] //se crea una referencia a la colección
+$col2:=$col1 //ambas variables comparten la misma referencia a la colección
+$o:={ list:$col1 } //el objeto almacena una referencia a la misma colección
+
+$col1.push(4)
+//$col2 = [1,2,3,4]
+//$o = {"list":[1,2,3,4]}
+
+$col2[0]:=10
+//$col1 = [10,2,3,4]
+//$o = {"list":[10,2,3,4]}
+
+$o.list.push(5)
+//$col1 = [10,2,3,4,5]
+//$col2 = [10,2,3,4,5]
+
+ASSERT($col1=$col2) //True
+```
+
+Este principio se aplica siempre que se asignan objetos o colecciones, incluso en expresiones de [parámetros](./parameters.md) o de [fórmulas](../commands/formula).
+
+:::note
+
+Si quiere crear una **copia profunda** de una colección, utilice la función [`collection.copy()`](../API/CollectionClass.md#copy).
+
+:::
 
 ## Funciones de colección
 
@@ -169,3 +206,44 @@ La lectura de la propiedad **length** de una colección indefinida produce 0:
      var $c : Collection //variable creada pero sin colección definida
      $size:=$c.length //$size = 0
 ```
+
+## Conversiones de tipos entre colecciones y arrays 4D
+
+Cuando se mueven valores entre [arrays](./arrays.md) (con tipo) y colecciones (sin tipo), 4D aplica conversiones automáticas de acuerdo con los valores y las declaraciones de tipo del array.
+
+### Conversión de colecciones en arrays
+
+Las siguientes conversiones se aplican a los valores procesados por los comandos detallados a continuación:
+
+- [`COLLECTION TO ARRAY`](../commands/collection-to-array)
+- [`OB GET ARRAY`](../commands/ob-get-array)
+
+| Tipo de elemento de la colección             | null                                     | boolean                                  | Infinity                   | real                                                                   | string                                                                                                                                                                                                                               | date                                                                                                                           | picture                                                               | object                                                                | collection                                | 4D.BLOB                                               |
+| -------------------------------------------- | ---------------------------------------- | ---------------------------------------- | -------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------------- |
+| [`ARRAY TEXT`](../commands/array-text)       | ""                                       | "false" o "true"                         | "Infinity"                 | número con separador de puntos (si es necesario)    | Text                                                                                                                                                                                                                                 | Conversión de fecha a texto según el parámetro [Fechas en objetos](../commands/set-database-parameter#dates-inside-objects-85) | "[object Object]" | "[object Object]" | Elementos de la colección separados por , | "[object Object]" |
+| [`ARRAY LONGINT`](../commands/array-longint) | 0                                        | 0 o 1                                    | comportamiento no definido | redondeado según las reglas de redondeo estándar                       | 0 si la cadena no empieza por [0-9,+,-,e,.,x]; en caso contrario, se aplica la conversión estándar. Admite el prefijo de notación hexadecimal 0x | 0                                                                                                                              | 0                                                                     | 0                                                                     | 0                                         | 0                                                                     |
+| [`ARRAY REAL`](../commands/array-real)       | 0                                        | 0 o 1                                    | INF                        | real                                                                   | igual que ARRAY LONGINT                                                                                                                                                                                                              | 0                                                                                                                              | 0                                                                     | 0                                                                     | 0                                         | 0                                                                     |
+| [`ARRAY INTEGER`](../commands/array-integer) | 0                                        | 0 o 1                                    | 0                          | redondeado según las normas de redondeo estándar                       | igual que ARRAY LONGINT                                                                                                                                                                                                              | 0                                                                                                                              | 0                                                                     | 0                                                                     | 0                                         | 0                                                                     |
+| [`ARRAY BOOLEAN`](../commands/array-boolean) | False                                    | false o true                             | true                       | true si #0                                                             | true si string#""                                                                                                                                                                                                                    | true si date#"00/00/00"                                                                                                        | True                                                                  | True                                                                  | True                                      | True                                                                  |
+| [`ARRAY OBJECT`](../commands/array-object)   | indefinido                               | indefinido                               | indefinido                 | indefinido                                                             | indefinido                                                                                                                                                                                                                           | indefinido                                                                                                                     | Imagen de objeto                                                      | Object                                                                | Indefinido                                | 4D.Blob                                               |
+| [`ARRAY BLOB`](../commands/array-blob)       | 0 bytes                                  | 0 bytes                                  | 0 bytes                    | 0 bytes                                                                | 0 bytes                                                                                                                                                                                                                              | 0 bytes                                                                                                                        | 0 bytes                                                               | 0 bytes                                                               | 0 bytes                                   | Blob                                                                  |
+| [`ARRAY PICTURE`](../commands/array-picture) | 0 bytes                                  | 0 bytes                                  | 0 bytes                    | 0 bytes                                                                | 0 bytes                                                                                                                                                                                                                              | 0 bytes                                                                                                                        | Picture                                                               | 0 bytes                                                               | 0 bytes                                   | 0 bytes                                                               |
+| [`ARRAY DATE`](../commands/array-date)       | 00/00/00                                 | 00/00/00                                 | 00/00/00                   | 00/00/00                                                               | 00/00/00 o una fecha en formato conforme a la norma ISO 8601                                                                                                                                                                         | date                                                                                                                           | 00/00/00                                                              | 00/00/00                                                              | 00/00/00                                  | 00/00/00                                                              |
+| [`ARRAY TIME`](../commands/array-time)       | 00:00:00 | 00:00:00 | comportamiento no definido | número de segundos en formato 00:00:00 | número de segundos en formato 00:00:00                                                                                                                                                               | 00:00:00                                                                                       | 00:00:00                              | 00:00:00                              | 00:00:00  | 00:00:00                              |
+
+:::note
+
+Los objetos blob (4D.Blob) se [convierten automáticamente en blobs escalares](dt_blob.md#automatic-conversion-of-blob-type) y viceversa cuando es necesario.
+
+:::
+
+### Conversión de arrays en colecciones
+
+Las siguientes conversiones se aplican a los valores procesados por los comandos detallados a continuación:
+
+- [`ARRAY TO COLLECTION`](../commands/array-to-collection)
+- [`OB SET ARRAY`](../commands/ob-set-array)
+
+|                                    | [`ARRAY TEXT`](../commands/array-text) | [`ARRAY LONGINT`](../commands/array-longint) | [`ARRAY REAL`](../commands/array-real) | [`ARRAY INTEGER`](../commands/array-integer) | [`ARRAY BOOLEAN`](../commands/array-boolean) | [`ARRAY OBJECT`](../commands/array-object) | [`ARRAY PICTURE`](../commands/array-picture) | [`ARRAY DATE`](../commands/array-date)                                                                                    | [`ARRAY TIME`](../commands/array-time) | [`ARRAY BLOB`](../commands/array-blob) |
+| ---------------------------------- | -------------------------------------- | -------------------------------------------- | -------------------------------------- | -------------------------------------------- | -------------------------------------------- | ------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Tipos de elementos de la colección | text                                   | number                                       | number                                 | number                                       | boolean                                      | object o null                              | picture                                      | texto o fecha en función del parámetro [Dates inside objects](../commands/set-database-parameter#dates-inside-objects-85) | número de segundos                     | 4D.Blob                |

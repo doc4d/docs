@@ -11,7 +11,7 @@ title: ドキュメンテーション
 
 - メソッド (データベースメソッド、コンポーネントメソッド、プロジェクトメソッド、フォームメソッド、4D Mobile メソッド、トリガー)
 - クラス
-- Forms
+- フォーム
 - テーブルとフィールド
 
 ドキュメンテーションファイルは Markdown記法 (.md ファイル) で記述します。 これには、Markdown をサポートしている任意のエディターを使うことができます。 これらはそれぞれ独立したファイルとしてプロジェクトフォルダー内に格納されます。
@@ -39,7 +39,7 @@ title: ドキュメンテーション
 `Documentation` フォルダーのアーキテクチャーは次のとおりです:
 
 - `Documentation`
-    + `クラス`
+    + `Classes`
         * myClass.md
     + `DatabaseMethods`
         * onStartup.md
@@ -47,7 +47,7 @@ title: ドキュメンテーション
     + `Forms`
         * loginDial.md
         * ...
-    + `メソッド`
+    + `Methods`
         * myMethod.md
         * ...
     + `TableForms`
@@ -108,7 +108,7 @@ title: ドキュメンテーション
 
 - Markdown ファイルの先頭に設置した、HTML コメントタグで囲まれたテキスト (`<!-- コマンドの説明 -->`)
 
-- HTML のコメントタグが使用されていなければ、Markdown ファイルの `# Description` タグ後の最初の文章。  
+- HTML のコメントタグが使用されていなければ、Markdown ファイルの `# Description` タグ後の最初の文章。   
   この場合、最初の文章には 4D コードパーサーによって自動生成されたメソッドの **プロトタイプ** が入ります。
 
 :::note
@@ -166,10 +166,10 @@ _イタリック_
 - テーブルタグ:
 
 ```md
-| Parameter | Type   | Description  |
+| 引数 | 型   | 説明  |
 | --------- | ------ | ------------ |
-| wpArea    | Text |Write pro area|
-| toolbar   | Text |Toolbar name  |
+| wpArea    | テキスト |Write pro エリア|
+| toolbar   | テキスト |ツールバー名  |
 ```
 
 
@@ -230,6 +230,17 @@ C_LONGINT($size)
 
 // 最大ロゴを取得します
 $logo:=GetLogo(5)
+1 = 最小値, 5 = 最大値
+
+## Example
+
+```4d
+C_PICTURE($logo)
+C_LONGINT($size)
+
+// 最大ロゴを取得します
+$logo:=GetLogo(5)
+```
 1 = 最小値, 5 = 最大値
 
 ## Example

@@ -4,9 +4,11 @@ title: WP RESET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP RESET ATTRIBUTES.Syntax-->**WP RESET ATTRIBUTES** ( *targetObj* ; *...attribName* )<br/>**WP RESET ATTRIBUTES** ( *sectionOrSubsection* {; *...attribName* })<br/>**WP RESET ATTRIBUTES** ( *targetObj* ; *attribColl* )<br/> **WP RESET ATTRIBUTES** ( *sectionOrSubsection* {; *attribColl*})<!-- END REF-->
+<!--REF #_command_.WP RESET ATTRIBUTES.Syntax-->**WP RESET ATTRIBUTES** ( *targetObj* : Object ; *...attribName* : Text )<br/>**WP RESET ATTRIBUTES** ( *sectionOrSubsection* : Object {; *...attribName* : Text })<br/>**WP RESET ATTRIBUTES** ( *targetObj* : Object ; *attribColl* : Collection )<br/> **WP RESET ATTRIBUTES** ( *sectionOrSubsection* : Object {; *attribColl* : Collection})<!-- END REF-->
 
 <!--REF #_command_.WP RESET ATTRIBUTES.Params-->
+
+<div class="no-index">
 
 | Paramètres          | Type       |                             | Description                                        |
 | ------------------- | ---------- | --------------------------- | -------------------------------------------------- |
@@ -15,6 +17,7 @@ displayed_sidebar: docs
 | attribName          | Text       | &#8594; | Nom d'attribut(s) à supprimer   |
 | attribColl          | Collection | &#8594; | Collection d'attributs à supprimer                 |
 
+</div>
 <!-- END REF-->
 
 ## Description
@@ -29,7 +32,7 @@ Dans le paramètre *targetObj*, vous pouvez passer soit :
 - un élément (en-tête / pied de page / corps / tableau / paragraphe / image ancrée ou en ligne / section / sous-section / feuille de style), ou
 - un document 4D Write Pro
 
-Lorsqu'une valeur d'attribut est supprimée à l'aide de la commande **WP RESET ATTRIBUTES**, la valeur par défaut est appliquée à *targetObj* ou *sectionOrSubsection*. Default values are listed in the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
+Lorsqu'une valeur d'attribut est supprimée à l'aide de la commande **WP RESET ATTRIBUTES**, la valeur par défaut est appliquée à *targetObj* ou *sectionOrSubsection*. Les valeurs par défaut sont listées dans la section [4D Write Pro Attributes](../4d-write-pro-attributes).
 
 :::note Notes
 

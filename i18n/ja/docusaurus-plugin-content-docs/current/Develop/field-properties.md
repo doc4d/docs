@@ -3,7 +3,7 @@ id: field-properties
 title: フィールドプロパティ
 ---
 
-他のフィールドプロパティについては、[doc.4d.com](https://doc.4d.com/4Dv20R10/4D/20-R10/Field-properties.300-7543749.ja.html#5523008) を参照してください。
+他のフィールドプロパティについては、 [doc.4d.com](https://doc.4d.com/4Dv21/4D/21/Field-properties.300-7676763.ja.html) を参照してください。
 
 ## Class
 
@@ -21,7 +21,7 @@ title: フィールドプロパティ
 
 :::note
 
-[ORDA データモデルクラス](../ORDA/ordaClasses.md)、[ファイルハンドラー](../API/FileHandleClass.md)、[Web サーバー](../API/WebServerClass.md)... などの**ストリーム不可のクラス** はオブジェクトフィールドに代入することはできません。
+[**Non-streamable classes**](../Concepts/dt_object.md#streaming-support) such as [ORDA Data Model classes](../ORDA/ordaClasses.md), [file handles](../API/FileHandleClass.md), [web server](../API/WebServerClass.md)... などの**ストリーム不可のクラス** はオブジェクトフィールドに代入することはできません。
 
 :::
 

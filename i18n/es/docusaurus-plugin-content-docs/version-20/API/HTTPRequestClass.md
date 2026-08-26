@@ -88,13 +88,15 @@ Los objetos HTTPRequest ofrecen las siguientes propiedades y funciones:
 
 
 <!-- REF #4D.HTTPRequest.new().Params -->
-| Parámetros | Tipo           |    | Descripción                                         |
-| ---------- | -------------- |:--:| --------------------------------------------------- |
-| url        | Text           | -> | URL a la que enviar la solicitud                    |
-| options    | Object         | -> | Propiedades de configuración de la petición         |
-| Resultado  | 4D.HTTPRequest | <- | Nuevo objeto HTTPRequest|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|url|Text|->|URL a la que enviar la solicitud|
+|options|Object|->|Propiedades de configuración de la petición|
+|Resultado|4D.HTTPRequest|<-|New HTTPRequest object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -240,7 +242,7 @@ Este es el contenido de la propiedad `.errors`:
 
 #### Descripción
 
-La propiedad `.headers` contiene <!-- REF #HTTPRequestClass.headers.Summary -->los `headers` pasados en el objeto [`options`](#options-parameter) al llamar a [new()](#4dhttprequestnew)<!-- END REF -->. Si se omite, contiene un objeto vacío.
+La propiedad `.errors` contiene <!-- REF #HTTPRequestClass.headers.Summary -->el `method` pasado en el objeto [`options`](#options-parameter) al llamar a [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -251,7 +253,7 @@ La propiedad `.headers` contiene <!-- REF #HTTPRequestClass.headers.Summary -->l
 
 #### Descripción
 
-La propiedad `.errors` contiene <!-- REF #HTTPRequestClass.method.Summary -->el `method` pasado en el objeto [`options`](#options-parameter) al llamar a [new()](#4dhttprequestnew)<!-- END REF -->. .
+La propiedad `.timeout` contiene <!-- REF #HTTPRequestClass.method.Summary -->el `timeout` pasado en el objeto [`options<`](#options-parameter) al llamar a [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -315,11 +317,13 @@ La propiedad `.returnResponseBody` contiene <!-- REF #HTTPRequestClass.returnRes
 
 
 <!-- REF #HTTPRequestClass.terminate().Params -->
-| Parámetros | Tipo |  | Descripción                                             |
-| ---------- | ---- |::| ------------------------------------------------------- |
-|            |      |  | No requiere ningún parámetro|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+||||No requiere ningún parámetro|
+</div>
+<!-- END REF -->
 
 #### Descripción
 
@@ -369,12 +373,14 @@ La propiedad `.url` contiene <!-- REF #HTTPRequestClass.url.Summary -->la URL de
 
 
 <!-- REF #HTTPRequestClass.wait().Params -->
-| Parámetros | Tipo           |    | Descripción                                         |
-| ---------- | -------------- |:--:| --------------------------------------------------- |
-| time       | Real           | -> | Tiempo máximo en segundos para esperar la respuesta |
-| Resultado  | 4D.HTTPRequest | <- | Objeto HTTPRequest|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parámetro|Tipo||Descripción|
+|---------|--- |:---:|------|
+|time|Real|->|Tiempo máximo en segundos para esperar la respuesta|
+|Resultado|4D.HTTPRequest|<-|HTTPRequest object|
+</div>
+<!-- END REF -->
 
 #### Descripción
 

@@ -7,6 +7,10 @@ title: SystemWorker
 
 `SystemWorker` クラスは、`4D` クラスストアにて提供されています。
 
+### 非同期プログラミング
+
+このクラスは、[非同期実行](../Develop/async.md) のページで説明されているように、4D 内での非同期プログラミングをサポートしています。
+
 ### 例題
 
 ```4d
@@ -61,12 +65,15 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 <!-- REF #4D.SystemWorker.new().Params -->
 
+<div class="no-index">
+
 | 引数          | 型                               |                             | 説明                                                        |
 | ----------- | ------------------------------- | :-------------------------: | --------------------------------------------------------- |
 | commandLine | Text                            |              ->             | 実行するコマンドライン                                               |
 | options     | Object                          |              ->             | ワーカーパラメーター                                                |
 | 戻り値         | 4D.SystemWorker | <- | 非同期の新規システムワーカー (プロセスが開始されなかった場合は null) |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -90,22 +97,22 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 | onResponse       | Formula | undefined | システムワーカーメッセージ用のコールバック。 完全なレスポンスを受け取り次第、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                |
 | onData           | Formula | undefined | システムワーカーデータ用のコールバック。 システムワーカーがデータを受け取る度に、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                              |
 | onDataError      | Formula | undefined | 外部プロセスエラー用のコールバック (外部プロセスの *stderr*)。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                |
-| onError          | Formula | undefined | 実行エラー用のコールバック。異常なランタイム条件 (システムエラー) の場合にシステムワーカーによって返されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                            |
+| onError          | Formula | undefined | 外部プロセスが終了されたときのコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                  |
 | onTerminate      | Formula | undefined | 外部プロセスが終了されたときのコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                  |
 | timeout          | Number  | undefined | プロセスが生きている場合、キルされるまでの秒数。                                                                                                                                                                        |
 | dataType         | Text    | "text"    | レスポンス本文のデータ型。 可能な値: "text" (デフォルト), "blob"。                                                                                                                  |
-| encoding         | Text    | "UTF-8"   | `dataType="text"` の場合のみ。 レスポンス本文のエンコーディング。 取りうる値の一覧については、[`CONVERT FROM TEXT`](../commands-legacy/convert-from-text.md) コマンドの詳細を参照して下さい。                                                        |
+| encoding         | Text    | "UTF-8"   | `dataType="text"` の場合のみ。 レスポンス本文のエンコーディング。 取りうる値の一覧については、[`CONVERT FROM TEXT`](../commands/convert-from-text) コマンドの詳細を参照して下さい。                                                                  |
 | variables        | Object  |           | システムワーカー用のカスタム環境変数を設定します。 シンタックス: `variables.key=value` (`key` は変数名、`value` はその値)。 値は、可能な限り文字列に変換されます。 値に '=' を含めることはできません。 定義されていない場合、システムワーカーは 4D環境を継承します。 |
 | currentDirectory | Folder  |           | プロセスが実行される作業ディレクトリ                                                                                                                                                                              |
 | hideWindow       | Boolean | true      | (Windows) アプリケーションウィンドウを隠す (可能な場合)、または Windowsコンソールを隠す                                                                                                    |
 
 すべてのコールバック関数は、2つのオブジェクト引数を受け取ります。 その内容は、コールバックに依存します:
 
-| 引数                           | 型             | *onResponse* | *onData*     | *onDataError* | *onError*    | *onTerminate* |
-| ---------------------------- | ------------- | ------------ | ------------ | ------------- | ------------ | ------------- |
-| $param1                      | Object        | SystemWorker | SystemWorker | SystemWorker  | SystemWorker | SystemWorker  |
-| $param2.type | Text          | "response"   | "data"       | "error"       | "error"      | "termination" |
-| $param2.data | Text または Blob |              | 取得データ        | エラーデータ        |              |               |
+| 引数                           | 型          | *onResponse* | *onData*     | *onDataError* | *onError*    | *onTerminate* |
+| ---------------------------- | ---------- | ------------ | ------------ | ------------- | ------------ | ------------- |
+| $param1                      | Object     | SystemWorker | SystemWorker | SystemWorker  | SystemWorker | SystemWorker  |
+| $param2.type | Text       | "response"   | "data"       | "error"       | "error"      | "termination" |
+| $param2.data | Text, Blob |              | 取得データ        | エラーデータ        |              |               |
 
 以下は、コールバック呼び出しの流れです:
 
@@ -116,13 +123,13 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 :::info
 
-[`wait()`](#wait) を使用しない場合 (非同期呼び出し) にコールバック関数が呼び出されるためには、そのプロセスは [`CALL WORKER`](../commands-legacy/call-worker.md) で作成された [ワーカー](../Develop/processes.md#ワーカープロセス) である必要があります ([`New process`](../commands-legacy/new-process.md) は使えません)。
+[`wait()`](#wait) を使用しない場合 (非同期呼び出し) にコールバック関数が呼び出されるためには、そのプロセスは [`CALL WORKER`](../commands/call-worker) で作成された [ワーカー](../Develop/processes.md#ワーカープロセス) である必要があります ([`New process`](../commands/new-process) は使えません)。
 
 :::
 
 #### 戻り値
 
-この関数はシステムワーカーオブジェクトを返します。このオブジェクトに対して、SystemWorker クラスの関数やプロパティを呼び出すことができます。
+このオブジェクトに対して、SystemWorker クラスの関数やプロパティを呼び出すことができます。
 
 #### Windows の例
 
@@ -161,7 +168,7 @@ var $sw : 4D.SystemWorker
 $sw:=4D.SystemWorker.new($mydoc)
 ```
 
-4. カレントディレクトリでコマンドを実行し、メッセージそ送信します:
+4. カレントディレクトリでコマンドを実行し、メッセージを送信します:
 
 ```4d
 var $param : Object
@@ -272,10 +279,13 @@ Function _createFile($title : Text; $textBody : Text)
 
 <!-- REF #SystemWorkerClass.closeInput().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |     | 説明         |
 | -- | - | :-: | ---------- |
 |    |   |     | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -436,18 +446,21 @@ $output:=$worker.response
 
 <!-- REF #SystemWorkerClass.postMessage().Params -->
 
+<div class="no-index">
+
 | 引数          | 型    |     | 説明                                                  |
 | ----------- | ---- | :-: | --------------------------------------------------- |
 | message     | Text |  -> | 外部プロセスの入力ストリーム (stdin) に書き込むテキスト |
 | messageBLOB | BLOB |  -> | 入力ストリームに書き込むバイト                                     |
 
+</div>
 <!-- END REF -->
 
 #### 説明
 
 `.postMessage()` 関数は、<!-- REF #SystemWorkerClass.postMessage().Summary -->外部プロセスの入力ストリーム (stdin) への書き込みをおこないます<!-- END REF -->。 *message* には *stdin* に書き込むテキストを渡します。 *message* には *stdin* に書き込むテキストを渡します。
 
-`.postMessage()` 関数は、*stdin* に渡す BLOB型の *messageBLOB* 引数も受け取るため、バイナリデータを送信することもできます。
+`.postMessage()` 関数は、*stdin* に渡す BLOB型の *messageBLOB* 引数も受け取るため、バイナリーデータを送信することもできます。
 
 [options オブジェクト](#options-オブジェクト) の `.dataType` プロパティを使って、レスポンス本文が BLOB を返すようにできます。
 
@@ -489,10 +502,13 @@ $output:=$worker.response
 
 <!-- REF #SystemWorkerClass.terminate().Params -->
 
+<div class="no-index">
+
 | 引数 | 型 |     | 説明         |
 | -- | - | :-: | ---------- |
 |    |   |     | 引数を必要としません |
 
+</div>
 <!-- END REF -->
 
 #### 説明
@@ -548,27 +564,31 @@ $output:=$worker.response
 
 <!-- REF #SystemWorkerClass.wait().Params -->
 
+<div class="no-index">
+
 | 引数      | 型                               |                             | 説明                           |
 | ------- | ------------------------------- | :-------------------------: | ---------------------------- |
 | timeout | Real                            |              ->             | 最大待機時間(秒) |
 | 戻り値     | 4D.SystemWorker | <- | SystemWorker オブジェクト          |
 
+</div>
 <!-- END REF -->
 
 #### 説明
 
 `.wait()` 関数は、<!-- REF #SystemWorkerClass.wait().Summary -->`SystemWorker` の実行終了まで、または *timeout* で指定した時間に到達するまで待機します<!-- END REF -->。
 
-`.wait()` 関数は、*timeout* 引数で指定された時間に到達するか(定義されていれば)、エラーが発生した場合を除き、`onTerminate` フォーミュラの処理が終わるまで待ちます。 タイムアウトに達した場合、`SystemWorker` はキルされません。 タイムアウトに達した場合、`SystemWorker` はキルされません。
+`.wait()` 関数は、*timeout* 引数で指定された時間に到達するか(定義されていれば)、エラーが発生した場合を除き、`onTerminate` フォーミュラの処理が終わるまで待ちます。 タイムアウトに達した場合、`SystemWorker` はキルされません。
 
 *timeout* 引数にタイムアウト値を渡していた場合、.wait() は*timeout* 引数で定義されていた時間分だけ外部プロセスを待ちます。
 
 :::note
 
-`.wait()` の実行中、コールバック関数は、`SystemWorker` インスタンスから発生したものであるかどうかに関わらず、実行されます。 コールバックから [`terminate()`](#terminate) を呼び出すことで、`.wait()` を終了することができます。 コールバックから [`terminate()`](#terminate) を呼び出すことで、`.wait()` を終了することができます。
+`.wait()` の実行中、コールバック関数は、`SystemWorker` インスタンスから発生したものであるかどうかに関わらず、実行されます。  コールバックから [`terminate()`](#terminate) を呼び出すことで、`.wait()` を終了することができます。
 
 :::
 
 > `SystemWorker` を 4D のワーカープロセスから作成した場合、この関数は必要ありません。
 
 <!-- END REF -->
+

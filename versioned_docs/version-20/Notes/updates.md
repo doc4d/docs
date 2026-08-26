@@ -11,6 +11,16 @@ Read [**What’s new in 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20/), t
 :::
 
 
+## 4D 20.8 LTS
+
+#### Highlights
+
+- 4D 20.8 LTS is certified on Windows 11 25H2.
+- 4D 20.8 LTS is certified on macOS Tahoe (macOS 26).
+- [**Fixed bugs list**](https://bugs.4d.com/fixes?version=20.8): list of all bugs that have been fixed in 4D 20.8 LTS.
+
+
+
 ## 4D 20.7 LTS
 
 #### Highlights
@@ -345,12 +355,6 @@ For detailed information, please refer to [this blog post](https://blog.4d.com/s
 - `no-bom` support and new default end-of-line characters in [`.setText()`](../API/FileClass.md#settext)
 
 
-## 4D 19.x LTS
-
-
-See [**Release Notes for 4D 19.x LTS**](../../version-19/Notes/updates.md). 
-
-
 
 ## Library table (4D 20 LTS)
 
@@ -367,8 +371,8 @@ See [**Release Notes for 4D 19.x LTS**](../../version-19/Notes/updates.md).
 |OpenSSL|3.1.6|**20.4 HF2**||
 |libZip|1.9.2|20|Used by zip class, 4D Write Pro, svg and serverNet components|
 |LZMA|5.4.1|20||
-|Zlib|1.2.13|20||
+|Zlib|1.3.1|**20.8 HF2**||
 |webKit|WKWebView|19||
 |PHP|8.2.4|20||
-|libldap|2.6.4|20||
+|libldap|2.6.10|**20.8 HF2**||
 |libsasl|2.1.28|20||

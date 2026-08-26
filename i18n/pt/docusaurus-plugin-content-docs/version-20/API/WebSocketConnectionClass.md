@@ -71,15 +71,17 @@ Esta propriedade é só de leitura.
 
 
 <!-- REF #WebSocketConnectionClass.send().Params -->
-| Parâmetro | Tipo                 |    | Descrição                                      |
-| --------- | -------------------- |:--:| ---------------------------------------------- |
-| message   | Text / Blob / Object | -> | A mensagem a enviar|<!-- END REF -->
+<div class="no-index">
 
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|message|Text / Blob / Object|->|The message to send|
+</div>
+<!-- END REF -->
 
 #### Descrição
 
-A função `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->envia uma *mensagem* ao cliente<!-- END REF -->.
+A função `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->A função `.send()`<!-- END REF -->.
 
 Os conteúdos seguintes são enviados em função do tipo de *mensagem*:
 
@@ -115,13 +117,14 @@ Esta propriedade é só de leitura.
 
 
 <!-- REF #WebSocketConnectionClass.terminate().Params -->
-| Parâmetro | Tipo    |    | Descrição                                                                                    |
-| --------- | ------- |:--:| -------------------------------------------------------------------------------------------- |
-| code      | Integer | -> | Código de erro enviado ao cliente (deve ser > 3000, caso contrário a mensagem não é enviada) |
-| message   | Text    | -> | Mensagem de erro enviada ao cliente|<!-- END REF -->
+<div class="no-index">
 
-
-|
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|code|Integer|->|Error code sent to the client (must be > 3000, otherwise the message is not sent)|
+|message|Text|->|Error message sent to the client|
+</div>
+<!-- END REF -->
 
 
 #### Descrição
@@ -135,7 +138,7 @@ Um *code* e uma *message* podem ser enviados ao cliente durante o encerramento p
 <!-- REF WebSocketConnectionClass.wss.Desc -->
 ## .wss
 
-<!-- REF #WebSocketConnectionClass.wss.Syntax -->**.wss** : 4D.WebSocketServer<!-- END REF -->
+<!-- REF #WebSocketConnectionClass.wss.Syntax -->**.wss** : 4D. WebSocketServer<!-- END REF -->
 
 #### Descrição
 

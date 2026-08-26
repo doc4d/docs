@@ -120,7 +120,7 @@ $myEntity.save() // エンティティを保存します
 
 :::note 注記
 
-- Database Object fields can be [associated with classes](../Develop/field-properties.md), in which case only objects of the defined class can be assigned to the entity attribute.
+- データベースのオブジェクト型フィールドは、[クラスを割り当てる](../Develop/field-properties.md) ことができます。この場合、定義されたクラスのオブジェクトのみをエンティティ属性に割り当てることができます。
 - データベースの BLOBフィールド ([スカラーBLOB](Concepts/dt_blob.md)) は、ORDAで扱われるにあたって、BLOBオブジェクト属性 ([`4D.Blob`](Concepts/dt_blob.md)) に自動変換されます。 BLOBオブジェクト属性を保存する際には、(利用可能なメモリによってのみサイズ制限される BLOBオブジェクトとは異なり) BLOBフィールドのサイズが 2GB に制限されることに注意してください。
 
 :::
@@ -149,9 +149,9 @@ $myEntity.save() // エンティティを保存します
 
 ### ピクチャーまたは Blob属性にファイルを代入する
 
-ピクチャー属性には画像を格納することができます。同様に、任意のバイナリデータを Blob属性に格納することができます。
+ピクチャー属性には画像を格納することができます。同様に、任意のバイナリーデータを Blob属性に格納することができます。
 
-ORDA を使って属性に代入できるのは、データそのもの、つまり画像や Blobオブジェクト、またはデータを格納する **ファイルへの参照** のいずれかです。 この場合、エンティティにはファイルパスのみが保存されます。
+ORDA を使って属性に代入できるのは、データそのもの、つまり画像や Blobオブジェクト、またはデータを格納する **ファイルへの参照** のいずれかです。 この場合、エンティティにはファイルパスのみが保存されます。 この場合、エンティティにはファイルパスのみが保存されます。
 
 この機能により、同じ画像を複製せずに複数のエンティティで利用できるほか、好きなようにファイルを整理したり、4D の外でファイルを使用したりできます。 また、データファイルのサイズを管理するのにも役立ちます。
 
@@ -246,7 +246,7 @@ $emp:=ds.Employee.get(2) // プライマリーキーが 2 の Employee エンテ
 
 - [データクラス](API/DataClassClass.md#query) または [既存のエンティティセレクション](API/EntitySelectionClass.md#query) のエンティティに対してクエリを実行する;
 - [`.all()`](API/DataClassClass.md#all) DataClassクラス関数を使用して、データクラス内の全エンティティを選択する;
-- [`Create entity selection`](../commands/create-entity-selection.md) コマンドあるいは [`.newSelection()`](API/DataClassClass.md#newselection) DataClassクラス関数を使用して空のエンティティコレクションオブジェクトを作成する;
+- [`Create entity selection`](../commands/create-entity-selection) コマンドあるいは [`.newSelection()`](API/DataClassClass.md#newselection) DataClassクラス関数を使用して空のエンティティコレクションオブジェクトを作成する;
 - [`.copy()`](API/EntitySelectionClass.md#copy) EntitySelectionクラス関数を使用して、既存のエンティティセレクションを複製する;
 - [EntitySelectionクラス](API/EntitySelectionClass.md) の様々な関数の中から、[`.or()`](API/EntitySelectionClass.md#or) のように新しいエンティティセレクションを返すものを使用する;
 - "リレートエンティティズ" 型のリレーション属性を使用する (以下参照)
@@ -442,7 +442,7 @@ $myInvoices:=$myParts.invoiceItems.invoice
 
 最後の行は、$myParts エンティティセレクション内のパーツにリレートされている請求項目が少なくとも1行含まれているすべての請求書のエンティティセレクションを、*$myInvoices* 内に返します。 エンティティセレクションのプロパティとしてリレーション属性が使用されると、返される結果は、たとえ返されるエンティティが一つだけだとしても、常に新しいエンティティセレクションとなります。 エンティティセレクションのプロパティとしてリレーション属性が使用された結果、エンティティが何も返ってこない場合には、返されるのは空のエンティティセレクションであり、null ではありません。
 
-## 制限付エンティティセレクション
+## エンティティセレクションを制限する {#restricting-entity-selections}
 
 ORDAでは、あらゆるデータクラスにおいて、エンティティへのアクセスを制限するフィルターを作成することができます。 一旦実装されると、データクラスのエンティティが **ORDAクラス関数** ([`all()`](../API/DataClassClass.md#all) や [`query()`](../API/EntitySelectionClass.md#query)など) または [**REST API**](../category/api-dataclass) ([Data Explorer](../Admin/dataExplorer.md) や [remote datastores](remoteDatastores.md)など) によってアクセスされるたびに、フィルターが自動的に適用されます。
 
@@ -469,7 +469,7 @@ Function event restrict() -> $result : cs.*DataClassName*Selection
 
 この関数は、データクラスのエンティティセレクションまたはエンティティが要求されるたびに呼び出されます。 フィルターは、エンティティセレクションが作成されたときに一度だけ実行されます。
 
-フィルターは、データクラスのエンティティセレクションを返さなければなりません。 戻り値のエンティティセレクションには、クエリの結果や、[`Storage`] に格納されているものなどが使えます。
+フィルターは、データクラスのエンティティセレクションを返さなければなりません。 戻り値のエンティティセレクションには、クエリの結果や、[`Storage`](../API/SessionClass.md#storage) に格納されているものなどが使えます。
 
 :::note
 
@@ -519,7 +519,7 @@ Function event restrict() : cs.CustomersSelection
 
 ### フィルターの有効化に関する詳細
 
-フィルターは、4Dプロジェクト (スタンドアロンおよびクライアント/サーバーアーキテクチャ) で実行されるすべての ORDA または RESTリクエストに適用されます。 プロジェクトを開くと、フィルターはすぐに有効になります。つまり、`On Startup` データベースメソッド内でもトリガーできます。
+フィルターは、4Dプロジェクト (スタンドアロンおよびクライアント/サーバーアーキテクチャー) で実行されるすべての ORDA または RESTリクエストに適用されます。 プロジェクトを開くと、フィルターはすぐに有効になります。つまり、`On Startup` データベースメソッド内でもトリガーできます。
 
 :::info
 
@@ -540,7 +540,7 @@ Function event restrict() : cs.CustomersSelection
 | [entitySelection.query()](../API/EntitySelectionClass.md#query)       |                                                                                                                                                                    |
 | [entitySelection.attributeName](../API/EntitySelectionClass.md#attributename)            | *attributeName* が、制限されたデータクラスのリレートエンティティまたはリレートエンティティズの場合、フィルターが適用されます (エイリアスおよび計算属性も含む)                                                        |
 | [entity.attributeName](../API/EntityClass.md#attributename)                              | *attributeName* が、制限されたデータクラスのリレートエンティティズの場合、フィルターが適用されます (エイリアスおよび計算属性も含む)                                                                     |
-| [Create entity selection](../commands/create-entity-selection.md)                                        |                                                                                                                                                                    |
+| [Create entity selection](../commands/create-entity-selection)                                           |                                                                                                                                                                    |
 
 その他の ORDA関数によるデータアクセスはフィルターを直接的にトリガーしないものの、その恩恵を受けることがあります。 たとえば、[`entity.next()`](../API/EntityClass.md#next) 関数は、すでにフィルタリングされたエンティティセレクションにおける次のエンティティを返します。 一方、制限されていないエンティティセレクションの場合、[`entity.next()`](../API/EntityClass.md#next) はフィルタリングされていないエンティティ群に対して動作します。
 
@@ -556,8 +556,8 @@ Function event restrict() : cs.CustomersSelection
 
 ORDA では、以下の二つのロックモードを提供しています:
 
-- 自動的な "オプティミスティック" モード。多くのアプリケーションに適しています。
-- "ペシミスティック" モード。エンティティをアクセスする前にロックすることができます。
+- 自動的な "オプティミスティック" モード。 多くのアプリケーションに適しています。
+- "ペシミスティック" モード。 エンティティをアクセスする前にロックすることができます。
 
 ### 自動オプティミスティック・ロック
 
@@ -598,7 +598,7 @@ $person1:=ds.Person.get(1) // エンティティを参照
 
 ### ペシミスティック・ロック
 
-エンティティは、データアクセス時に任意にロックおよびアンロックすることができます。 エンティティがプロセスからロックされている場合、そのエンティティはプロセスに読み書き可能モードで読み込まれていますが、他のすべてのプロセスに対してロックされています。 ロックされたエンティティは、他のプロセスからは読み込みモードでのみ読み込むことができます。つまり、その値を編集・保存することはできません。
+エンティティは、データアクセス時に任意にロックおよびアンロックすることができます。 エンティティがプロセスからロックされている場合、そのエンティティはプロセスに読み書き可能モードで読み込まれていますが、他のすべてのプロセスに対してロックされています。 ロックされたエンティティは、他のプロセスからは読み込みモードでのみ読み込むことができます。 つまり、その値を編集・保存することはできません。
 
 この機能は `Entity` クラスの 2つの関数に基づいています:
 
@@ -624,3 +624,4 @@ $person1:=ds.Person.get(1) // エンティティを参照
 
 - クラシックコマンドを使用してロックした場合:<br/><br/>![](../assets/en/ORDA/concurrent2.png)
 - ORDA関数を使用してロックした場合:<br/><br/>![](../assets/en/ORDA/concurrent3.png)
+

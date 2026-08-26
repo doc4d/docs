@@ -13,7 +13,7 @@ Las páginas Cliente-Servidor agrupan los parámetros relacionados con el uso de
 
 Esta opción le permite indicar si la base de datos 4D Server aparecerá o no en la lista de bases de datos publicadas.
 
-- Cuando esta opción está marcada (por defecto), la base de datos se hace pública y aparece en la lista de bases de datos publicadas (pestaña**Disponible**).
+- Cuando esta opción está marcada (por defecto), la base de datos se hace pública y aparece en la lista de bases de datos publicadas (pestaña **Disponible**).
 - Cuando la opción no está marcada, la base de datos no se hace pública y no aparece en la lista de bases de datos publicadas. Para conectarse, los usuarios deben introducir manualmente la dirección de la base de datos en la pestaña **Personalizada** de la caja de diálogo de conexión.
 
 :::note
@@ -39,7 +39,7 @@ Esta opción le permite cambiar el número del puerto TCP en el que 4D Server pu
 La personalización de este valor es necesaria cuando desea utilizar varias aplicaciones 4D en la misma máquina; en este caso, debe especificar un número de puerto diferente para cada aplicación.
 Cuando se modifica este valor desde 4D Server o 4D, se transmite automáticamente a todas las máquinas 4D conectadas a la base de datos.
 
-Para actualizar las otras máquinas clientes que no estén conectadas, basta con introducir el nuevo número de puerto (precedido de dos puntos) después de la dirección IP del equipo servidor en la pestaña **Personalizado** de la caja de diálogo de conexión  Por ejemplo, si el nuevo número de puerto es 19888: Por ejemplo, si el nuevo número de puerto es 19888:
+Para actualizar las otras máquinas clientes que no estén conectadas, basta con introducir el nuevo número de puerto (precedido de dos puntos) después de la dirección IP del equipo servidor en la pestaña **Personalizado** de la caja de diálogo de conexión  Por ejemplo, si el nuevo número de puerto es 19888: Por ejemplo, si el nuevo número de puerto es 19888: Por ejemplo, si el nuevo número de puerto es 19888:
 
 ![](../assets/en/settings/client-server-network.png)
 
@@ -57,31 +57,34 @@ Para actualizar las otras máquinas clientes que no estén conectadas, basta con
 
 #### Autenticación del usuario con el servidor de dominio
 
-Esta opción le permite implementar las funcionalidades SSO (*Single Sign On*) en su base de datos 4D Server en Windows. Al marcar esta opción, 4D se conecta de forma transparente al directorio Active del servidor de dominio Windows y obtiene los tokens de autenticación disponibles. Esta opción se describe en la sección [Single Sign On (SSO) en Windows](https://doc.4d.com/4Dv20/4D/20/Single-Sign-On-SSO-on-Windows.300-6330537.en.html).
+Esta opción le permite implementar las funcionalidades SSO (*Single Sign On*) en su base de datos 4D Server en Windows. Al marcar esta opción, 4D se conecta de forma transparente al directorio Active del servidor de dominio Windows y obtiene los tokens de autenticación disponibles. This option is described in the [Single Sign On (SSO) on Windows](../server/sso.md) page.
 
 #### Service Principal Name
 
-Cuando la autenticación única (SSO) está activa (ver arriba), debe llenar este campo si desea utilizar Kerberos como protocolo de autenticación. Esta opción se describe en la sección [Single Sign On (SSO) en Windows](https://doc.4d.com/4Dv20/4D/20/Single-Sign-On-SSO-on-Windows.300-6330537.en.html).
+Cuando la autenticación única (SSO) está activa (ver arriba), debe llenar este campo si desea utilizar Kerberos como protocolo de autenticación. This option is described in the [Enablig Kerberos](../server/sso.md#enabling-kerberos) section.
 
 #### Capa de red
 
-Esta caja desplegable contiene 3 opciones de capa de red a elegir entre: **legacy**, **ServerNet** y **QUIC** (sólo en modo proyecto), que se utilizan para manejar las comunicaciones entre 4D Server y las máquinas 4D remotas (clientes).
+Esta lista desplegable contiene las capas de red disponibles, que se utilizan para gestionar las comunicaciones entre 4D Server y los equipos 4D remotos (clientes).
 
-- **Legal**: esta antigua capa de red "Legal" sigue siendo soportada para garantizar la compatibilidad de las bases de datos creadas antes de la v15. Esta capa de red también puede habilitarse por programación utilizando el comando [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md).
-- **ServerNet** (por defecto): activa la capa de red de ServerNet en el servidor (disponible desde 4D v15).
-- **QUIC** (disponible solo en modo proyecto): activa la capa de red QUIC en el servidor.
+- **QUIC** (sólo proyectos): activa la capa de red QUIC en el servidor.
 
-  **Notas**:
+  **Notas sobre QUIC**:
 
-  - Al seleccionar esta opción, se anula la opción Utilizar capa de red heredada en caso de que se haya definido mediante el comando [SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md).
-  - Puede saber si una aplicación 4D se está ejecutando con una capa de red QUIC utilizando el comando [Application info](../commands-legacy/application-info.md).
+  - Puede saber si una aplicación 4D se está ejecutando con la capa de red QUIC utilizando el comando [`Application info`](../commands/application-info).
   - Dado que QUIC utiliza el protocolo UDP, asegúrese de que UDP está permitido en la configuración de seguridad de su red.
-  - QUIC se conecta automáticamente al puerto 19813 tanto para el servidor de aplicaciones como para el servidor DB4D.
+  - QUIC se conecta automáticamente al puerto 19813 tanto para el [servidor de aplicaciones como para el servidor DB4D](#4d-server-and-port-numbers).
   - Cuando se selecciona la opción de capa QUIC:
-    - Cerca del selector aparece un mensaje beta y un icono de alerta.
     - [los parámetros del tiempo de espera de las conexiones cliente-servidor](#client-server-connections-timeout) están ocultos
     - La casilla de verificación [Encriptar comunicación Cliente-Servidor](#encrypt-client-server-communications) está oculta (las comunicaciones QUIC son siempre en TLS, sea cual sea su modo seguro).
-  - **Compatibilidad**: necesita desplegar sus aplicaciones cliente/servidor con 4D v20 o superior antes de cambiar a la capa de red QUIC.
+  - \*\*Compatibilidad: necesita desplegar sus aplicaciones cliente/servidor con 4D 20 o superior antes de cambiar a la capa de red QUIC.
+- **ServerNet** (sólo disponible para bases binarias): activa la capa de red ServerNet en el servidor.
+
+:::info
+
+El uso de la capa de red QUIC es **recomendado** para los proyectos.
+
+:::
 
 :::note
 
@@ -89,7 +92,21 @@ En caso de modificación, deberá reiniciar la aplicación para que se tenga en 
 
 :::
 
+:::tip Entradas de blog relacionadas
+
+[QUIC Network Layer is Production Ready!](https://blog.4d.com/quic-network-layer-is-production-ready/)  
+[QUIC network layer: Automatic update and sleep mode](https://blog.4d.com/quic-network-layer-automatic-update-and-sleep-mode/)  
+[Work and Move with QUIC and Network Switching](https://blog.4d.com/work-and-move-with-quic-and-network-switching/)
+
+:::
+
 #### Tiempo antes de desconexión Cliente-Servidor
+
+:::note
+
+Esta opción no está disponible cuando se selecciona la capa de red [QUIC](#network-layer).
+
+:::
 
 Este dispositivo se utiliza para definir el tiempo de espera (periodo de inactividad más allá del cual se cierra la conexión) entre 4D Server y las máquinas cliente que se conectan a él. La opción ilimitada elimina el tiempo de espera. Cuando se selecciona esta opción, se elimina el control de la actividad del cliente.
 
@@ -99,11 +116,17 @@ Cuando se selecciona un tiempo de espera, el servidor cerrará la conexión de u
 
 #### Registrar los clientes al Inicio para Execute On Client
 
-Cuando esta opción está marcada, todas las máquinas remotas 4D que se conectan a la base de datos pueden ejecutar métodos remotamente. Este mecanismo se detalla en la sección [Procedimientos almacenados en las máquinas cliente](https://doc.4d.com/4Dv20/4D/20/Stored-procedures-on-client-machines.300-6330550.en.html).
+Cuando esta opción está marcada, todas las máquinas remotas 4D que se conectan a la base de datos pueden ejecutar métodos remotamente. Este mecanismo se detalla en la sección [Procedimientos almacenados en las máquinas cliente](../Desktop/clientServer.md#stored-procedures-on-client-machines).
 
 #### Cifrar las comunicaciones Cliente-Servidor
 
-Esta opción permite activar el modo seguro para las comunicaciones entre la máquina servidor y las máquinas remotas 4D. Esta opción se detalla en la sección [Cifrar las de conexiones cliente/servidor](https://doc.4d.com/4Dv20/4D/20/Encrypting-ClientServer-Connections.300-6330533.en.html).
+:::note
+
+Esta opción no está disponible cuando se selecciona la opción capa de red [QUIC](#network-layer). QUIC communications are always in TLS, whatever your secured mode is.
+
+:::
+
+This option activates the [secured mode for communications](../Admin/tls.md#enabling-tls-with-the-other-servers) between the server machine and the 4D remote machines with ServerNet netword layer.
 
 #### Actualizar la carpeta Resources durante una sesión
 
@@ -112,7 +135,7 @@ Este parámetro puede utilizarse para definir globalmente el modo de actualizaci
 - **Nunca**: la carpeta local **Resources** no se actualiza durante la sesión. La notificación enviada por el servidor es ignorada. La carpeta **Resources** local puede actualizarse manualmente mediante el comando **Update Local Resources** del menú de acción (ver [Uso del explorador de recursos](https://doc.4d.com/4Dv20/4D/20.2/Using-the-Resources-explorer.300-6750254.en.html)).
 - **Siempre**: la sincronización de la carpeta local **Resources** se realiza automáticamente durante la sesión cada vez que el servidor envía una notificación.
 - **Preguntar**: cuando la notificación es enviada por el servidor, se muestra una caja de diálogo en las máquinas cliente, indicando la modificación. A continuación, el usuario puede aceptar o rechazar la sincronización de la carpeta local **Resources**.\
-  La carpeta **Resources** centraliza los archivos personalizados necesarios para la interfaz de la base (archivos de traducción, imágenes, etc.). Se pueden utilizar mecanismos automáticos o manuales para notificar a cada cliente cuándo se ha modificado el contenido de esta carpeta. Para más información, consulte la sección [Gestión de la carpeta Resources](https://doc.4d.com/4Dv20/4D/20/Managing-the-Resources-folder.300-6330534.en.html).
+  La carpeta **Resources** centraliza los archivos personalizados necesarios para la interfaz de la base (archivos de traducción, imágenes, etc.). Se pueden utilizar mecanismos automáticos o manuales para notificar a cada cliente cuándo se ha modificado el contenido de esta carpeta. Para más información, consulte la sección [Gestión de la carpeta Resources](../Desktop/clientServer.md#managing-the-resources-folder).
 
 ## Página Configuración IP
 
@@ -132,3 +155,21 @@ El funcionamiento de la tabla de configuración es el siguiente:
   - Autorizar \* (y permitir todas las demás direcciones)
 
 Por defecto, 4D Server no aplica ninguna restricción de conexión: la primera línea de la tabla contiene la etiqueta Autorizar y el caracter \* (todas las direcciones).
+
+### Soporte de IPv6
+
+4D application server supports IPv6 address notation. Support of IPv6 is transparent for users and 4D developers: 4D Server accepts either IPv6 or IPv4 connections without distinction. The following table lists supported combinations:
+
+|                           | 4D remoto, IPv4 únicamente | 4D remote IPv6 únicamente | 4D remote both |
+| ------------------------- | -------------------------- | ------------------------- | -------------- |
+| 4D Server IPv4 únicamente | IPv4                       | *not supported*           | IPv4           |
+| 4D Server IPv6 únicamente | *not supported*            | IPv6                      | IPv6           |
+| 4D Server both            | IPv4                       | IPv6                      | IPv6           |
+
+For detailed information about IPv6, please refer to the [RFC 2460 specification](https://datatracker.ietf.org/doc/html/rfc2460).
+
+:::note Compatibilidad
+
+IPv6 support is only available with the ServerNet and QUIC [network layers](#network-layer).
+
+:::

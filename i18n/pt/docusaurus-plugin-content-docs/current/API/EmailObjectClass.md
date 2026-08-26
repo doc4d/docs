@@ -14,13 +14,19 @@ Os objetos `Email` são criados ao receber e-mails através de uma função de c
 
 Você envia objetos `Email` usando a função SMTP [`.send()`](SMTPTransporterClass.md#send).
 
-Os comandos [`MAIL Convert from MIME`](../commands/mail-convert-from-mime.md) e [`MAIL Convert to MIME`](../commands/mail-convert-to-mime.md) podem ser usados para converter objetos `Email` de e para conteúdos MIME.
+Os comandos [`MAIL Convert from MIME`](../commands/mail-convert-from-mime) e [`MAIL Convert to MIME`](../commands/mail-convert-to-mime) podem ser usados para converter objetos `Email` de e para conteúdos MIME.
+
+:::info
+
+This class is [**streamable**](../Concepts/dt_object.md#binary-streaming-variable-to-blob) in binary.
+
+:::
 
 ### Objeto Email
 
 Objetos de e-mail fornecem as seguintes propriedades:
 
-> 4D segue a [especificação JMAP](https://jmap.io/spec-mail.html) para formatar o objeto Email.
+> 4D segue a [especificação JMAP](https://jmap.io/spec/rfc8621/) para formatar o objeto Email.
 
 |                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,7 +116,7 @@ As propriedades [`textBody`](#textbody) e [`htmlBody`](#htmlbody) são usadas so
 
 A propriedade `.attachments` contém uma <!-- REF #EmailObjectClass.attachments.Summary -->coleção de objeto(s) `4D.MailAttachment`<!-- END REF -->.
 
-Os objetos de anexo são definidos por meio do comando [`MAIL New attachment`](../commands/mail-new-attachment.md). Os objetos anexo têm [propriedades e funções](MailAttachmentClass.md) específicas.
+Os objetos anexo têm [propriedades e funções](MailAttachmentClass.md) específicas. Os objetos de anexo são definidos por meio do comando [`MAIL New attachment`](../commands/mail-new-attachment).
 
 ## .bcc
 
@@ -198,7 +204,7 @@ Para uma melhor capacidade de entrega, é recomendado usar o mesmo endereço de 
 
 #### Descrição
 
-A propriedade `.headers` contém uma coleção <!-- REF #EmailObjectClass.headers.Summary -->de objetos `EmailHeader`, na ordem em que aparecem na mensagem<!-- END REF -->. Esta propriedade permite que usuários adicionem cabeçalhos estendidos (registrados) ou definidos pelo usuário (não registrados, começando com cabeçalhos "X").
+A propriedade `.headers` contém uma coleção <!-- REF #EmailObjectClass.headers.Summary -->de objetos `EmailHeader`, na ordem em que aparecem na mensagem<!-- END REF -->. .
 
 > Se uma propriedade de objeto `EmailHeader` define um cabeçalho como "from" ou "cc" que já está definida como uma propriedade no nível de correio, a propriedade `EmailHeader` é ignorada.
 
@@ -360,5 +366,6 @@ A propriedade `.textBody` contém a <!-- REF #EmailObjectClass.textBody.Summary 
 #### Descrição
 
 A propriedade `.to` contém <!-- REF #EmailObjectClass.to.Summary --> os [endereços](#email-addresses) dos destinatários primários de e-mail<!-- END REF -->.
+
 
 
