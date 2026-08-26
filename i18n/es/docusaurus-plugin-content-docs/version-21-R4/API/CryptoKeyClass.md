@@ -326,7 +326,7 @@ El valor devuelto es la llave pública.
 
 <!-- REF #CryptoKey.pem.Syntax -->**.pem** : Text<!-- END REF -->
 
-The <!-- REF #CryptoKey.pem.Summary -->PEM definition of an encryption key to load. Si la llave es una llave privada, se deducirá de ella la llave pública RSA o ECDSA. <!-- END REF -->
+La <!-- REF #CryptoKey.pem.Summary -->definición PEM de una clave de cifrado a cargar. Si la llave es una llave privada, se deducirá de ella la llave pública RSA o ECDSA. <!-- END REF -->
 
 <!-- END REF -->
 
