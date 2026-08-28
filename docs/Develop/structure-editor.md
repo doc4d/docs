@@ -72,7 +72,7 @@ Locking can occur in both project and client/server modes when:
 
 In both cases, the structure can be opened in *Read-only*, but cannot be used until the lock is removed.
 
----
+
 
 ## Selecting an object
 
@@ -80,16 +80,13 @@ To work with an image of an object in the Structure editor, you must first selec
 
 To select:
 
-- **A table:**  
-  Click the image of the table, or press `Tab` / `Shift+Tab` to select each table successively.
+- **A table:** Click the image of the table, or press `Tab` / `Shift+Tab` to select each table successively.
 
-- **A field or relation:**  
-  Click the field or relation, or use the arrow keys to navigate.
+- **A field or relation:** Click the field or relation, or use the arrow keys to navigate.
 
-- **Several objects:**  
-  Use `Shift+Click` for adjacent objects, `Ctrl+Click` (Windows) or `Command+Click` (macOS) for non-adjacent ones.  
+- **Several objects:** Use `Shift+Click` for adjacent objects, `Ctrl+Click` (Windows) or `Command+Click` (macOS) for non-adjacent ones.  
 
----
+
 
 ## Working with table images
 
@@ -107,19 +104,14 @@ When you add fields to a table or when you reduce the size of a table, there may
 ### Resizing a table image
 
 You can resize a table image to display more field names or reorganize your screen.  
-There are several possibilities available:
 
+* **Manual resizing**: Simply click and drag the bottom of the table image or its lower right corner.
 
-* **Manual resizing**
-Simply click and drag the bottom of the table image or its lower right corner.
 ![](../assets/en/Develop/structure-table2.png)
 
-* **Optimal Size**
-This option automatically resizes the selected table(s) so that their size corresponds exactly to the number of fields they contain (no empty lines are displayed). To apply the **Optimal Size** command to one or more tables, select **Optimal Size** from the menu associated with the toolbar button of the editor or from the editor’s context menu (click on a table).
+* **Optimal Size**: This option automatically resizes the selected table(s) so that their size corresponds exactly to the number of fields they contain (no empty lines are displayed). To apply the **Optimal Size** command to one or more tables, select **Optimal Size** from the menu associated with the toolbar button of the editor or from the editor’s context menu (click on a table).
 
-* **Collapse**
-The **Collapse** function collapses the selected table image(s) so that only their names are visible.  
-This is useful for large structures.
+* **Collapse**: The **Collapse** function collapses the selected table image(s) so that only their names are visible.  This is useful for large structures.
 
 To apply the **Collapse** command to one or more tables, you can:
 
@@ -142,12 +134,9 @@ You can move table images to regroup them according to function or to reorganize
 
 To move a table image manually, click on the name of a table and drag it using the mouse cursor. Drag the table name bar only. Dragging other parts of the table image may produce different effects, such as creating a new table relation or changing the size of the table image.
 
+To align two or more tables, select the tables to align and choose an alignment option in the tools menu:
 
-**To align two or more tables:**
-
-1. Select the tables to align.
-[picture here]
-2. Choose an alignment option in the tools menu:
+![](../assets/en/Develop/structure-align.png)
 
 These commands are only active when at least two tables are selected.
 
@@ -162,14 +151,13 @@ Specific scrolling functions facilitate navigation among large structures:
 
 ## Zoom
 
-You can modify the display scale of the database structure using the **Zoom** menu in the structure toolbar.  
-100% is the default value when opening a database. Zoom action is focused on the selection if there is one.
+You can modify the display scale of the database structure using the **Zoom** menu in the right bottom of the Structure windows. 100% is the default value when opening a database. Zoom action is focused on the selection if there is one. 
 
 The current zoom setting is specific to each user and is memorized when the window is closed.
 
 :::note
 
-An [option in the Preferences](preferences.md) can be used to configure the graphic rendering of the Structure editor during a zoom.
+You can [configure the graphic rendering of the Structure editor during a zoom](../Preferences/structure.md#graphic-quality-of-the-structure) using a preference.
 
 :::
 
@@ -177,7 +165,7 @@ An [option in the Preferences](preferences.md) can be used to configure the grap
 
 The **Display** button in the toolbar of the Structure editor is associated with a menu and lets you choose the objects to be displayed in the structure according to their type:
 
-[picture here]
+![](../assets/en/Develop/structure-display.png)
 
 By default, all objects are displayed. This feature allows various representations or views — from the simplest to the most complete — and provides an analysis tool for the structure based on the level of information required.  
 
