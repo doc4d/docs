@@ -68,7 +68,10 @@ The `4D.SMTPTransporter.new()` function <!-- REF #4D.SMTPTransporter.new().Summa
 
 #### Description
 
-The `.certificate` property contains <!-- REF #SMTPTransporterClass.certificate.Summary -->the certificate (with private key) used to sign emails using S/MIME (Secure/MIME)<!-- END REF -->. The certificate can be provided as a [`4D.File`](./FileClass.md) object or a Blob.
+The `.certificate` property contains <!-- REF #SMTPTransporterClass.certificate.Summary -->the certificate used to sign emails using S/MIME (Secure/MIME), provided as a [`4D.File`](./FileClass.md) object or a Blob<!-- END REF -->. This certificate contains the private key. 
+
+If your certificate is already registered in your Certificate store (*keychain*), you can use [`.certificateName`](#certificatename) instead of this property. Note that you cannot use both properties simultaneously, otherwise an error is returned.   
+
 
 :::tip Related blog post
 
@@ -86,6 +89,7 @@ $options:=New object
 //Enter the information for the SMTP server
 
 //Enable S/MIME signing
+//Provide certificate file
 $options.certificate:=File("myCertificateFile.p12")
 $options.certificatePassword:="myGreatPW123"
 
@@ -96,6 +100,12 @@ $email:=New object
 
 $result:=$transporter.send($email)
 ```
+
+#### See also
+
+[.certificateName](#certificatename)<br/>
+[.certificatePassword](#certificatepassword)
+
 
 ## .certificateName
 
@@ -110,11 +120,16 @@ $result:=$transporter.send($email)
 
 #### Description
 
-The `.certificateName` property contains <!-- REF #SMTPTransporterClass.certificateName.Summary -->the name of the certificate used to sign emails, as registered in the system certificate list (keychain)<!-- END REF -->. 
+The `.certificateName` property contains <!-- REF #SMTPTransporterClass.certificateName.Summary -->the name of the certificate used to sign emails using S/MIME (Secure/MIME) as it is registered in the system Certificate store (*keychain*)<!-- END REF -->. This certificate contains the private key.
+
+The certificate can also be provided directly as a file using the [`.certificate`](#certificate) property. Note that you cannot use both properties simultaneously, otherwise an error is returned.   
+
 
 #### See also
 
 [.certificate](#certificate)
+[.certificatePassword](#certificatepassword)
+
 
 ## .certificatePassword
 
@@ -134,6 +149,8 @@ The `.certificatePassword` property contains <!-- REF #SMTPTransporterClass.cert
 #### See also
 
 [.certificate](#certificate)
+[.certificateName](#certificatename)
+
 
 <!-- INCLUDE transporter.logFile.Desc -->
 
