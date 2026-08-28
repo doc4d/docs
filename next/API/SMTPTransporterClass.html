@@ -1,4 +1,4 @@
-<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/SMTPTransporterClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>SMTPTransporter | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/next/API/SMTPTransporterClass /><meta data-rh=true property=og:locale content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="SMTPTransporter | 4D Docs"/><meta data-rh=true name=description content="The SMTPTransporter class allows you to configure SMTP connections and send emails through SMTP transporter objects."/><meta data-rh=true property=og:description content="The SMTPTransporter class allows you to configure SMTP connections and send emails through SMTP transporter objects."/><link data-rh=true rel=icon href=/docs/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/next/API/SMTPTransporterClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/SMTPTransporterClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/SMTPTransporterClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/SMTPTransporterClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/next/category/4d-language","name":"4D Language","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/next/category/class-API-reference","name":"Classes","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/next/API/SMTPTransporterClass","name":"SMTPTransporter","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/assets/css/styles.4cf13e15.css /><script src=/docs/assets/js/runtime~main.37b78e72.js defer></script><script src=/docs/assets/js/main.7189a411.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/SMTPTransporterClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>SMTPTransporter | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/next/API/SMTPTransporterClass /><meta data-rh=true property=og:locale content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="SMTPTransporter | 4D Docs"/><meta data-rh=true name=description content="The SMTPTransporter class allows you to configure SMTP connections and send emails through SMTP transporter objects."/><meta data-rh=true property=og:description content="The SMTPTransporter class allows you to configure SMTP connections and send emails through SMTP transporter objects."/><link data-rh=true rel=icon href=/docs/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/next/API/SMTPTransporterClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/SMTPTransporterClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/SMTPTransporterClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/SMTPTransporterClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/next/category/4d-language","name":"4D Language","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/next/category/class-API-reference","name":"Classes","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/next/API/SMTPTransporterClass","name":"SMTPTransporter","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/assets/css/styles.4cf13e15.css /><script src=/docs/assets/js/runtime~main.dd680391.js defer></script><script src=/docs/assets/js/main.7189a411.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/img/logohome.png /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/><div class=navbar__logo><img src=/docs/img/logohome.png alt="4D Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/img/logohome.png alt="4D Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">4D Documentation</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/next/API/SMTPTransporterClass>Next</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/next/API/SMTPTransporterClass>Next</a><li><a class=dropdown__link href=/docs/API/SMTPTransporterClass>21 R4 BETA</a><li><a class=dropdown__link href=/docs/21-R3/API/SMTPTransporterClass>21 R3</a><li><a class=dropdown__link href=/docs/21/API/SMTPTransporterClass>21</a><li><a class=dropdown__link href=/docs/20/API/SMTPTransporterClass>20</a><li><a class=dropdown__link href=/docs/19/API/SMTPTransporterClass>19</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="Page not available in this version
@@ -52,7 +52,16 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 
 
 
-<table><thead><tr><th><tbody><tr><td><a href=#acceptunsecureconnection class=""><strong>.acceptUnsecureConnection</strong> : Boolean</a><br/><strong>True</strong> if 4D is allowed to establish an unencrypted connection<tr><td><a href=#authenticationmode class=""><strong>.authenticationMode</strong> : Text</a><br/>the authentication mode used to open the session on the mail server<tr><td><a href=#bodycharset class=""><strong>.bodyCharset</strong> : Text</a><br/>  the charset and encoding used for the body part of the email<tr><td><a href=#checkconnection class=""><strong>.checkConnection()</strong> : Object</a><br/> checks the connection using information stored in the transporter object<tr><td><a href=#connectiontimeout class=""><strong>.connectionTimeOut</strong> : Integer</a><br/>the maximum wait time (in seconds) allowed to establish a connection to the server<tr><td><a href=#headercharset class=""><strong>.headerCharset</strong> : Text</a><br/> the charset and encoding used for the email header<tr><td><a href=#host class=""><strong>.host</strong> : Text</a><br/>the name or the IP address of the host server<tr><td><a href=#keepalive class=""><strong>.keepAlive</strong> : Boolean</a><br/><strong>True</strong> if the SMTP connection must be kept alive until the <code>transporter</code> object is destroyed<tr><td><a href=#logfile class=""><strong>.logFile</strong> : Text</a><br/>the path of the extended log file defined (if any) for the mail connection<tr><td><a href=#port class=""><strong>.port</strong> : Integer</a><br/> the port number used for mail transactions<tr><td><a href=#send class=""><strong>.send</strong>( <em>mail</em> : Object ) : Object</a><br/>sends the <a class="" href=/docs/next/API/EmailObjectClass#email-object><em>mail</em> object</a> to the SMTP server defined in the <code>transporter</code> object and returns a status object<tr><td><a href=#sendtimeout class=""><strong>.sendTimeOut</strong> : Integer</a><br/> the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs<tr><td><a href=#user class=""><strong>.user</strong> : Text</a><br/> the user name used for authentication on the mail server</table>
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><tbody><tr><td><a href=#acceptunsecureconnection class=""><strong>.acceptUnsecureConnection</strong> : Boolean</a><br/><strong>True</strong> if 4D is allowed to establish an unencrypted connection<tr><td><a href=#authenticationmode class=""><strong>.authenticationMode</strong> : Text</a><br/>the authentication mode used to open the session on the mail server<tr><td><a href=#bodycharset class=""><strong>.bodyCharset</strong> : Text</a><br/>  the charset and encoding used for the body part of the email<tr><td><a href=#certificate class=""><strong>.certificate</strong> : 4D.File<br/><strong>.certificate</strong> : Blob</a><br/>the certificate used to sign emails using S/MIME (Secure/MIME), provided as a <a class="" href=/docs/next/API/FileClass><code>4D.File</code></a> object or a Blob<tr><td><a href=#certificatename class=""><strong>.certificateName</strong> : Text</a><br/>the name of the certificate used to sign emails using S/MIME (Secure/MIME) as it is registered in the system Certificate store (<em>keychain</em>)<tr><td><a href=#certificatepassword class=""><strong>.certificatePassword</strong> : Text</a><br/>the password of the certificate used to sign emails, if required<tr><td><a href=#checkconnection class=""><strong>.checkConnection()</strong> : Object</a><br/> checks the connection using information stored in the transporter object<tr><td><a href=#connectiontimeout class=""><strong>.connectionTimeOut</strong> : Integer</a><br/>the maximum wait time (in seconds) allowed to establish a connection to the server<tr><td><a href=#headercharset class=""><strong>.headerCharset</strong> : Text</a><br/> the charset and encoding used for the email header<tr><td><a href=#host class=""><strong>.host</strong> : Text</a><br/>the name or the IP address of the host server<tr><td><a href=#keepalive class=""><strong>.keepAlive</strong> : Boolean</a><br/><strong>True</strong> if the SMTP connection must be kept alive until the <code>transporter</code> object is destroyed<tr><td><a href=#logfile class=""><strong>.logFile</strong> : Text</a><br/>the path of the extended log file defined (if any) for the mail connection<tr><td><a href=#port class=""><strong>.port</strong> : Integer</a><br/> the port number used for mail transactions<tr><td><a href=#send class=""><strong>.send</strong>( <em>mail</em> : Object ) : Object</a><br/>sends the <a class="" href=/docs/next/API/EmailObjectClass#email-object><em>mail</em> object</a> to the SMTP server defined in the <code>transporter</code> object and returns a status object<tr><td><a href=#sendtimeout class=""><strong>.sendTimeOut</strong> : Integer</a><br/> the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs<tr><td><a href=#user class=""><strong>.user</strong> : Text</a><br/> the user name used for authentication on the mail server</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=4dsmtptransporternew>4D.SMTPTransporter.new()<a href=#4dsmtptransporternew class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <p><strong>4D.SMTPTransporter.new</strong>( <em>server</em> : Object ) : 4D.SMTPTransporter</p>
 <div class=no-index>
@@ -237,6 +246,152 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 
 
 <table><thead><tr><th>Constant<th>Value<th>Comment<tbody><tr><td>mail mode ISO2022JP<td>US-ASCII_ISO-2022-JP_UTF8_QP<td><ul><li class=""><em>headerCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable<li class=""><em>bodyCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</ul><tr><td>mail mode ISO88591<td>ISO-8859-1<td><ul><li class=""><em>headerCharset</em>: ISO-8859-1 & Quoted-printable<li class=""><em>bodyCharset</em>: ISO-8859-1 & 8-bit</ul><tr><td>mail mode UTF8<td>US-ASCII_UTF8_QP<td><em>headerCharset</em> & <em>bodyCharset</em>: US-ASCII if possible, otherwise UTF-8 & Quoted-printable (<strong>default value</strong>)<tr><td>mail mode UTF8 in base64<td>US-ASCII_UTF8_B64<td><em>headerCharset</em> & <em>bodyCharset</em>: US-ASCII if possible, otherwise UTF-8 & base64</table>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=certificate>.certificate<a href=#certificate class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Release<th>Changes<tbody><tr><td>21 R5<td>Added</table>
+</div></div></details>
+<p><strong>.certificate</strong> : 4D.File<br/><strong>.certificate</strong> : Blob</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-4>Description<a href=#description-4 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p>The <code>.certificate</code> property contains the certificate used to sign emails using S/MIME (Secure/MIME), provided as a <a class="" href=/docs/next/API/FileClass><code>4D.File</code></a> object or a Blob. This certificate contains the private key.</p>
+<p>If your certificate is already registered in your Certificate store (<em>keychain</em>), you can use <a href=#certificatename class=""><code>.certificateName</code></a> instead of this property. Note that you cannot use both properties simultaneously, otherwise an error is returned.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 12 16"><path fill-rule=evenodd d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"/></svg></span>Related blog post</div><div class=admonitionContent_BuS1><p><a href=https://blog.4d.com/smtptransporter-signing-emails-with-s-mime target=_blank rel="noopener noreferrer" class="">Signing emails with S/MIME and SMTPTransporter</a></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=example>Example<a href=#example class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $transporter : 4D.SMTPTransporter</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $options ; $result : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$options:=New object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//Enter the information for the SMTP server</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//Enable S/MIME signing</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//Provide certificate file</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$options.certificate:=File("myCertificateFile.p12")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$options.certificatePassword:="myGreatPW123"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$transporter:=4D.SMTPTransporter.new($options)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$email:=New object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//Fill the email content</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$result:=$transporter.send($email)</span><br/></div></code></pre></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=see-also>See also<a href=#see-also class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p><a href=#certificatename class="">.certificateName</a><br/>
+<a href=#certificatepassword class="">.certificatePassword</a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=certificatename>.certificateName<a href=#certificatename class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Release<th>Changes<tbody><tr><td>21 R5<td>Added</table>
+</div></div></details>
+<p><strong>.certificateName</strong> : Text</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-5>Description<a href=#description-5 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p>The <code>.certificateName</code> property contains the name of the certificate used to sign emails using S/MIME (Secure/MIME) as it is registered in the system Certificate store (<em>keychain</em>). This certificate contains the private key.</p>
+<p>The certificate can also be provided directly as a file using the <a href=#certificate class=""><code>.certificate</code></a> property. Note that you cannot use both properties simultaneously, otherwise an error is returned.</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=see-also-1>See also<a href=#see-also-1 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p><a href=#certificate class="">.certificate</a>
+<a href=#certificatepassword class="">.certificatePassword</a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=certificatepassword>.certificatePassword<a href=#certificatepassword class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Release<th>Changes<tbody><tr><td>21 R5<td>Added</table>
+</div></div></details>
+<p><strong>.certificatePassword</strong> : Text</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-6>Description<a href=#description-6 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p>The <code>.certificatePassword</code> property contains the password of the certificate used to sign emails, if required. An empty string is used if no password is required.</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=see-also-2>See also<a href=#see-also-2 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p><a href=#certificate class="">.certificate</a>
+<a href=#certificatename class="">.certificateName</a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=logfile>.logFile<a href=#logfile class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R5<td>Added</table>
+</div></div></details>
+<p><strong>.logFile</strong> : Text</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-7>Description<a href=#description-7 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p>The <code>.logFile</code> property contains the path of the extended log file defined (if any) for the mail connection. It can be relative (to the current Logs folder) or absolute.</p>
+<p>Unlike regular log files (enabled via the <code>SET DATABASE PARAMETER</code> command), extended log files store MIME contents of all sent mails and do not have any size limit. For more information about extended log files, refer to:</p>
+<ul>
+<li class=""><strong>SMTP connections</strong> - <a class="" href=/docs/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DSMTPLog.txt</a></li>
+<li class=""><strong>POP3 connections</strong> - <a class="" href=/docs/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DPOP3Log.txt</a></li>
+<li class=""><strong>IMAP connections</strong> - <a class="" href=/docs/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DIMAPLog.txt</a></li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=port>.port<a href=#port class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R4<td>Added</table>
+</div></div></details>
+<p><strong>.port</strong> : Integer</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-8>Description<a href=#description-8 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p>The <code>.port</code> property contains  the port number used for mail transactions. By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
+<ul>
+<li class=""><strong>SMTP</strong> - 587</li>
+<li class=""><strong>POP3</strong> - 995</li>
+<li class=""><strong>IMAP</strong> - 993</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=send>.send()<a href=#send class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R5<td>Support of mime contents<tr><td>17 R4<td>Added</table>
+</div></div></details>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=checkconnection>.checkConnection()<a href=#checkconnection class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
 
@@ -275,7 +430,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 
 <table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the transporter object connection</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-4>Description<a href=#description-4 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-9>Description<a href=#description-9 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.checkConnection()</code> function  checks the connection using information stored in the transporter object, recreates the connection if necessary, and returns the status. This function allows you to verify that the values provided by the user are valid and consistent.</p>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=returned-object>Returned object<a href=#returned-object class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The function sends a request to the mail server and returns an object describing the mail status. This object can contain the following properties:</p>
@@ -334,7 +489,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 
 <table><thead><tr><th>Property<th><th>Type<th>Description<tbody><tr><td>success<td><td>boolean<td>True if the check is successful, False otherwise<tr><td>status<td><td>number<td>(SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing)<tr><td>statusText<td><td>text<td>Status message returned by the mail server, or last error returned in the 4D error stack<tr><td>errors<td><td>collection<td>4D error stack (not returned if a mail server response is received)<tr><td><td>[ ].errCode<td>number<td>4D error code<tr><td><td>[ ].message<td>text<td>Description of the 4D error<tr><td><td>[ ].componentSignature<td>text<td>Signature of the internal component which returned the error</table>
 <p>For information about SMTP status codes, please refer to <a href=https://www.iana.org/assignments/smtp-enhanced-status-codes/smtp-enhanced-status-codes.xhtml target=_blank rel="noopener noreferrer" class="">this page</a>.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=example>Example<a href=#example class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=example-1>Example<a href=#example-1 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain"> var $pw : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $options : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $transporter : 4D.SMTPTransporter</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $options:=New object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $pw:=Request("Please enter your password:")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $options.host:="smtp.gmail.com"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $options.user:="test@gmail.com"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $options.password:=$pw</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $transporter:=SMTP New transporter($options)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $status:=$transporter.checkConnection()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> If($status.success=True)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    ALERT("SMTP connection check successful!")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> Else</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    ALERT("Error # "+String($status.status)+", "+$status.statusText)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End if</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=connectiontimeout>.connectionTimeOut<a href=#connectiontimeout class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
@@ -354,7 +509,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R5<td>Added</table>
 </div></div></details>
 <p><strong>.connectionTimeOut</strong> : Integer</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-5>Description<a href=#description-5 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-10>Description<a href=#description-10 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.connectionTimeOut</code> property contains the maximum wait time (in seconds) allowed to establish a connection to the server. By default, if the property has not been set in the server object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, or <code>IMAP New transporter</code>), the value is 30.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=headercharset>.headerCharset<a href=#headercharset class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
@@ -374,7 +529,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R5<td>Added</table>
 </div></div></details>
 <p><strong>.headerCharset</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-6>Description<a href=#description-6 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-11>Description<a href=#description-11 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.headerCharset</code> property contains  the charset and encoding used for the email header. The header includes the following parts of the email:</p>
 <ul>
 <li class="">subject,</li>
@@ -431,7 +586,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R5<td>Added</table>
 </div></div></details>
 <p><strong>.host</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-7>Description<a href=#description-7 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-12>Description<a href=#description-12 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.host</code> property contains the name or the IP address of the host server. Used for mail transactions (SMTP, POP3, IMAP).</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=keepalive>.keepAlive<a href=#keepalive class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
@@ -451,14 +606,14 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R4<td>Added</table>
 </div></div></details>
 <p><strong>.keepAlive</strong> : Boolean</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-8>Description<a href=#description-8 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-13>Description<a href=#description-13 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.keepAlive</code> property contains <strong>True</strong> if the SMTP connection must be kept alive until the <code>transporter</code> object is destroyed, and <strong>False</strong> otherwise. By default, if the <code>keepAlive</code> property has not been set in the <code>server</code> object (used to create the <code>transporter</code> object with <code>SMTP New transporter</code>), it is <strong>True</strong>.</p>
 <p>The SMTP connection is automatically closed:</p>
 <ul>
 <li class="">when the <code>transporter</code> object is destroyed if the <code>.keepAlive</code> property is true,</li>
 <li class="">after each <code>.send( )</code> function execution if the <code>.keepAlive</code> property is set to false.</li>
 </ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=logfile>.logFile<a href=#logfile class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=logfile-1>.logFile<a href=#logfile-1 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
 
 
@@ -476,7 +631,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R5<td>Added</table>
 </div></div></details>
 <p><strong>.logFile</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-9>Description<a href=#description-9 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-14>Description<a href=#description-14 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.logFile</code> property contains the path of the extended log file defined (if any) for the mail connection. It can be relative (to the current Logs folder) or absolute.</p>
 <p>Unlike regular log files (enabled via the <code>SET DATABASE PARAMETER</code> command), extended log files store MIME contents of all sent mails and do not have any size limit. For more information about extended log files, refer to:</p>
 <ul>
@@ -484,7 +639,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <li class=""><strong>POP3 connections</strong> - <a class="" href=/docs/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DPOP3Log.txt</a></li>
 <li class=""><strong>IMAP connections</strong> - <a class="" href=/docs/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DIMAPLog.txt</a></li>
 </ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=port>.port<a href=#port class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=port-1>.port<a href=#port-1 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
 
 
@@ -502,14 +657,14 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R4<td>Added</table>
 </div></div></details>
 <p><strong>.port</strong> : Integer</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-10>Description<a href=#description-10 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-15>Description<a href=#description-15 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.port</code> property contains  the port number used for mail transactions. By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
 <ul>
 <li class=""><strong>SMTP</strong> - 587</li>
 <li class=""><strong>POP3</strong> - 995</li>
 <li class=""><strong>IMAP</strong> - 993</li>
 </ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=send>.send()<a href=#send class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=send-1>.send()<a href=#send-1 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
 
 
@@ -557,7 +712,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 
 <table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>mail<td>Object<td style=text-align:center>-><td><a class="" href=/docs/next/API/EmailObjectClass#email-object>Email</a> to send<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>SMTP status</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-11>Description<a href=#description-11 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-16>Description<a href=#description-16 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.send()</code> function sends the <a class="" href=/docs/next/API/EmailObjectClass#email-object><em>mail</em> object</a> to the SMTP server defined in the <code>transporter</code> object and returns a status object.</p>
 <blockquote>
 <p>The <code>transporter</code> object must have already been created using the <code>SMTP New transporter</code> command.</p>
@@ -634,7 +789,7 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R4<td>Added</table>
 </div></div></details>
 <p><strong>.sendTimeOut</strong> : Integer</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-12>Description<a href=#description-12 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-17>Description<a href=#description-17 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
 <p>The <code>.sendTimeOut</code> property contains  the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs. By default, if the <code>.sendTimeOut</code> property has not been set in the <code>server</code> object, the value 100 is used.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=user>.user<a href=#user class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>History</summary><div><div class=collapsibleContent_i85q>
@@ -654,5 +809,5 @@ Opening the default page instead" href=/docs/18/GettingStarted/installation>18</
 <table><thead><tr><th>Release<th>Changes<tbody><tr><td>17 R4<td>Added</table>
 </div></div></details>
 <p><strong>.user</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-13>Description<a href=#description-13 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
-<p>The <code>.user</code> property contains  the user name used for authentication on the mail server.</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FSMTPTransporterClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Comment on this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/next/API/SignalClass><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>Signal</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/next/API/SystemWorkerClass><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>SystemWorker</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#smtp-transporter-object class="table-of-contents__link toc-highlight">SMTP Transporter object</a><li><a href=#4dsmtptransporternew class="table-of-contents__link toc-highlight">4D.SMTPTransporter.new()</a><li><a href=#acceptunsecureconnection class="table-of-contents__link toc-highlight">.acceptUnsecureConnection</a><li><a href=#authenticationmode class="table-of-contents__link toc-highlight">.authenticationMode</a><li><a href=#bodycharset class="table-of-contents__link toc-highlight">.bodyCharset</a><li><a href=#checkconnection class="table-of-contents__link toc-highlight">.checkConnection()</a><li><a href=#connectiontimeout class="table-of-contents__link toc-highlight">.connectionTimeOut</a><li><a href=#headercharset class="table-of-contents__link toc-highlight">.headerCharset</a><li><a href=#host class="table-of-contents__link toc-highlight">.host</a><li><a href=#keepalive class="table-of-contents__link toc-highlight">.keepAlive</a><li><a href=#logfile class="table-of-contents__link toc-highlight">.logFile</a><li><a href=#port class="table-of-contents__link toc-highlight">.port</a><li><a href=#send class="table-of-contents__link toc-highlight">.send()</a><li><a href=#sendtimeout class="table-of-contents__link toc-highlight">.sendTimeOut</a><li><a href=#user class="table-of-contents__link toc-highlight">.user</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Community</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Support</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>Documentation download</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (legacy documentation web site) </a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Knowledgebase</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>Downloads</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>Resources</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>Get Support</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Company</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>About 4D</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>Contact us</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>4D around the world</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - All rights reserved <div style=margin-top:8px><i>Some content is written with the help of AI</i></div></div></div></div></footer></div></body>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=description-18>Description<a href=#description-18 class=hash-link aria-label="Direct link to heading" title="Direct link to heading" translate=no>​</a></h4>
+<p>The <code>.user</code> property contains  the user name used for authentication on the mail server.</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FSMTPTransporterClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Comment on this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/next/API/SignalClass><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>Signal</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/next/API/SystemWorkerClass><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>SystemWorker</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#smtp-transporter-object class="table-of-contents__link toc-highlight">SMTP Transporter object</a><li><a href=#4dsmtptransporternew class="table-of-contents__link toc-highlight">4D.SMTPTransporter.new()</a><li><a href=#acceptunsecureconnection class="table-of-contents__link toc-highlight">.acceptUnsecureConnection</a><li><a href=#authenticationmode class="table-of-contents__link toc-highlight">.authenticationMode</a><li><a href=#bodycharset class="table-of-contents__link toc-highlight">.bodyCharset</a><li><a href=#certificate class="table-of-contents__link toc-highlight">.certificate</a><li><a href=#certificatename class="table-of-contents__link toc-highlight">.certificateName</a><li><a href=#certificatepassword class="table-of-contents__link toc-highlight">.certificatePassword</a><li><a href=#logfile class="table-of-contents__link toc-highlight">.logFile</a><li><a href=#port class="table-of-contents__link toc-highlight">.port</a><li><a href=#send class="table-of-contents__link toc-highlight">.send()</a><li><a href=#checkconnection class="table-of-contents__link toc-highlight">.checkConnection()</a><li><a href=#connectiontimeout class="table-of-contents__link toc-highlight">.connectionTimeOut</a><li><a href=#headercharset class="table-of-contents__link toc-highlight">.headerCharset</a><li><a href=#host class="table-of-contents__link toc-highlight">.host</a><li><a href=#keepalive class="table-of-contents__link toc-highlight">.keepAlive</a><li><a href=#logfile-1 class="table-of-contents__link toc-highlight">.logFile</a><li><a href=#port-1 class="table-of-contents__link toc-highlight">.port</a><li><a href=#send-1 class="table-of-contents__link toc-highlight">.send()</a><li><a href=#sendtimeout class="table-of-contents__link toc-highlight">.sendTimeOut</a><li><a href=#user class="table-of-contents__link toc-highlight">.user</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Community</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Support</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>Documentation download</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (legacy documentation web site) </a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Knowledgebase</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>Downloads</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>Resources</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>Get Support</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Company</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>About 4D</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>Contact us</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>4D around the world</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - All rights reserved <div style=margin-top:8px><i>Some content is written with the help of AI</i></div></div></div></div></footer></div></body>
