@@ -9,7 +9,7 @@ You can access the **Structure editor** by choosing the **Database Structure** c
 
 The Structure editor provides a graphic view of a database’s structure as well as a toolbar and context menus that you can use to carry out database design operations. Each table is represented by a table image. It shows the fields and their types in the form of icons. An information bar displays the characteristics of tables and fields as the mouse moves over them.
 
-A floating **Inspector palette** can be used to view and modify the properties of structure objects and of the structure editor itself. This window is described in the [Inspector palette](inspectorPalette.md) section.
+A floating **Inspector palette** can be used to view and modify the properties of structure objects and of the structure editor itself. This window is described in the [Inspector palette](#inspector-palette) section.
 
 ## Toolbar and information bar
 
@@ -49,7 +49,6 @@ The lower part of the editor window is an information bar displaying data corres
 
 ### Information about a relation
 
-[picture here]
 - Origin table and field (many field)  
 - Destination table and field (one field)  
 - Relation type and ORDA name:  
@@ -73,6 +72,24 @@ Locking can occur in both project and client/server modes when:
 In both cases, the structure can be opened in *Read-only*, but cannot be used until the lock is removed.
 
 
+## Inspector palette 
+
+The properties of the Structure editor objects (tables, fields and relations) can be viewed and modified via the Inspector palette:
+
+![](../assets/en/Develop/structure-inspector.png)
+
+This palette appears when you double-click on an object. When it is displayed, its contents are updated dynamically depending on the objects selected. The Inspector displays the [general properties of the Structure editor window](#customizing-the-editor-window) when you click in an empty area of the window.
+
+The different areas of the palette can be expanded/collapsed. You can click on the adjacent triangles to display or hide the corresponding information. 
+
+The following shortcuts can be used:
+
+- **Shift+click** on the title bar of a collapsed panel expands that panel and collapses all the others.
+- **Alt** (Windows) or **Option** (macOS) + **click** on the title bar of a collapsed panel expands all the panels.
+- **Alt** (Windows) or **Option** (macOS) + **click** on the title bar of an expanded panel collapses all the panels.
+
+The position of the palette and the expanded/collapsed states of its panels are saved.
+
 
 ## Selecting an object
 
@@ -81,9 +98,7 @@ To work with an image of an object in the Structure editor, you must first selec
 To select:
 
 - **A table:** Click the image of the table, or press `Tab` / `Shift+Tab` to select each table successively.
-
 - **A field or relation:** Click the field or relation, or use the arrow keys to navigate.
-
 - **Several objects:** Use `Shift+Click` for adjacent objects, `Ctrl+Click` (Windows) or `Command+Click` (macOS) for non-adjacent ones.  
 
 
@@ -151,7 +166,7 @@ Specific scrolling functions facilitate navigation among large structures:
 
 ## Zoom
 
-You can modify the display scale of the database structure using the **Zoom** menu in the right bottom of the Structure windows. 100% is the default value when opening a database. Zoom action is focused on the selection if there is one. 
+You can modify the display scale of the database structure using the **Zoom** menu in the right side of the information bar. 100% is the default value when opening a database. Zoom action is focused on the selection if there is one. 
 
 The current zoom setting is specific to each user and is memorized when the window is closed.
 
@@ -161,7 +176,7 @@ You can [configure the graphic rendering of the Structure editor during a zoom](
 
 :::
 
-## Object types display
+## Object type display
 
 The **Display** button in the toolbar of the Structure editor is associated with a menu and lets you choose the objects to be displayed in the structure according to their type:
 
@@ -169,36 +184,31 @@ The **Display** button in the toolbar of the Structure editor is associated with
 
 By default, all objects are displayed. This feature allows various representations or views — from the simplest to the most complete — and provides an analysis tool for the structure based on the level of information required.  
 
-The choices are applied to all tables and fields. They are saved per user and memorized when the window is closed.  
-Hiding certain objects does not change the position of the tables.
+The choices are applied to all tables and fields. They are saved per user and memorized when the window is closed. Hiding objects does not change the position of the tables.
 
-- When several types of fields are checked, a logical OR operator is used to determine the objects to be displayed.  
-  For example, if *Invisible Fields* and *Not Indexed Fields* are both checked, all the non-indexed and invisible fields (indexed or not) are displayed.
+- When several types of fields are checked, a logical OR operator is used to determine the objects to be displayed. For example, if *Invisible Fields* and *Not Indexed Fields* are both checked, all the non-indexed and invisible fields (indexed or not) are displayed.
 - Tables have priority over fields: if a table is not displayed, its fields are not displayed.
-- If you add an object whose type is not displayed (table, field, or relation), it becomes visible.  
-  To hide it again, you must uncheck the corresponding option in the **Display** menu.
+- If you add an object whose type is not displayed (table, field, or relation), it becomes visible. To hide it again, you must uncheck the corresponding option in the **Display** menu.
 
----
 
 ## Highlight/dim tables by folder
 
-You can hide groups of tables in the Structure editor based on folders defined in the Explorer window of the **Home Page**.  
-You configure this display using the **Folders** button in the Structure editor toolbar. [picture here]
+You can hide groups of tables in the Structure editor based on folders defined in the **Home Page** of the Explorer window. You configure this display using the **Folders** button in the Structure editor toolbar.
 
-The menu associated with this button displays commands that manage the display as well as the list of folders in the database.  
-A check mark appears next to each folder displayed. You can modify the current display by selecting or deselecting a folder from this menu.
+The menu associated with this button displays commands that manage the display as well as the list of folders in the database. A check mark appears next to each folder displayed. You can modify the current display by selecting or deselecting a folder from this menu.
 
 The **Highlight All Folders** and **Dim All Folders** commands can be used to display or hide all the tables in folders of the database.
 
-Each click on this button ![folder icon]([picture here]) inverts the display of the tables: highlighted tables are dimmed and vice versa.
+Each click on the toolbar's folder button inverts the display of the tables: highlighted tables are dimmed and vice versa.
 
 When the tables are dimmed, only their outlines appear in the Structure window. Tables that are not dimmed remain fully visible.
 
-[picture here]
+![](../assets/en/Develop/structure-dimmed.png)
+
 
 :::note
 
-You can set the appearance of dimmed tables in the Structure editor to either *Dimmed* or *Invisible* using an option in the **WEB SEND FILE** of the Preferences. It is necessary to close and reopen the Structure editor window for this preference to take effect.
+You can set the appearance of dimmed tables in the Structure editor to either *Dimmed* or *Invisible* using an [option in the **Structure** page of the Preferences](../Preferences/structure.md#when-a-folder-is-dimmed-its-contents-are). It is necessary to close and reopen the Structure editor window for this preference to take effect.
 
 :::
 
@@ -211,53 +221,34 @@ To display these properties, you can either:
 - Right-click in an empty area and choose **Structure Properties** from the context menu.
 
 The Inspector palette displays the Structure properties.  
-[picture here]
+
+![](../assets/en/Develop/structure-properties.png)
 
 The following properties can be set:
 
-* **Background Picture:** You can change the background picture used as well as its display format.
-To change the picture, click on the Open... button or right-click in the preview area and choose Open... from the context menu; then select the file containing the picture to be displayed. You can use any picture format. The selected picture is displayed immediately in the preview area and in the editor window.
+- **Background Picture:** You can add or modifiy the background picture used as well as its display format. To add or modify the picture, click on the **Open** button or right-click in the preview area and choose **Open** from the context menu; then select the file containing the picture to be displayed. You can use any picture format. The selected picture is displayed immediately in the preview area and in the editor window. 
 To change the display format of the picture, choose a value from the Picture Format menu. The formats provided are the standard picture display formats of 4D.
-To delete a custom picture, click on the Clear button or right-click in the preview area and choose Clear from the context menu.
-* **Fill Color:** You can change the color used for the background of the editor window. To do this, click in the color selection area and choose a color from the selection menu.
-* **Default Font:** To change the default font used for table and field names, choose a vaue from this menu. You can also use the Size menu to change the default font size.
-Find in Structure  
+To delete a custom picture, click on the **Clear** button or right-click in the preview area and choose **Clear** from the context menu.
+- **Fill Color:** You can change the color used for the background of the editor window. To do this, click in the color selection area and choose a color from the selection menu.
+- **Default Font:** To change the default font used for table and field names, choose a vaue from this menu. You can also use the Size menu to change the default font size.
+
+
 ## Find in Structure
 
-4D lets you carry out searches directly in the Structure editor window.  
-Searches can be among the following elements:
+4D lets you carry out searches directly in the Structure editor window. Searches can be among the following elements:
+
 - Table names and/or field names  
 - Table numbers  
 
-To perform a search, enter a text or table number in the **Find** field of the Structure editor.  
-As you type, a bar appears below where you can specify the **scope** and **type** of search:
+To perform a search, enter a text or table number in the **Search** field of the Structure editor. As you type, a bar appears below where you can specify search options:
 
-[picture here]
+![](../assets/en/Develop/structure-search.png)
 
-- **Find** menu sets the search scope (**Tables & fields** or **Tables only**).  
-- **Options** menu defines the search type:  
-  - **Contains** (default): typing “le” finds “Table”, “Letter”, etc.  
-  - **Starts with**: typing “pa” finds “paper”, “paid”, but not “repair”.  
-  - **Number**: typing “2” finds tables numbered 2, 12, 20, etc.
+- **Scope**: *Tables & fields* or *Tables* (i.e. tables only).  
+- **Types**:  
+  - *Contains* (default): typing "le" finds "Table", "Letter", etc.  
+  - *Starts with*: typing "pa" finds "paper", "paid", but not "repair".  
+  - *Number*: typing "2" finds tables numbered 2, 12, 20, etc.
 
-Searches are performed in real time as you type. Tables and fields that match are highlighted.  
-If nothing is found, the search area turns red. To exit **Find** mode, click the **X** button in the search bar or delete all the characters in the search area.
+Searches are performed in real time as you type. Tables and fields that match are highlighted. If nothing is found, the search area turns red. To exit **Search** mode, click the **X** button in the search bar or delete all the characters in the search area.
 
-## Inspector palette 
-
-The properties of the Structure editor objects (tables, fields and relations) can be viewed and modified via the Inspector palette:
-
-[picture here]
-This palette appears when you double-click on an object. When it is displayed, its contents are updated dynamically depending on the objects selected. 
-
-The Inspector displays the general properties of the Structure editor window when you click in an empty area of the window.
-
-The different areas of the palette can be expanded/collapsed. You can click on the adjacent triangles to display or hide the corresponding information:
-[picture here]
-The following shortcuts can be used:
-
-* **Shift+click** on the title bar of a collapsed panel expands that panel and collapses all the others.
-* **Alt** (Windows) or **Option** (macOS) **+ click** on the title bar of a collapsed panel expands all the panels.
-* **Alt** (Windows) or **Option** (macOS) **+ click** on the title bar of an expanded panel collapses all the panels.
-
-The position of the palette and the expanded/collapsed states of its panels are saved.
