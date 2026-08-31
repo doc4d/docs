@@ -80,6 +80,12 @@ Once the session is opened, the following statements become equivalent and retur
   //$myds and $myds2 are equivalent
 ```
 
+:::note
+
+If you run `$myds:=Open datastore(connectionInfo;"myLocalId")` multiple times, the *$myds* datastore object is not reloaded into memory; instead, the one loaded during the first execution is retained. No connection request is sent.
+
+:::
+
 Objects available in the `4D.DataStoreImplementation` are mapped with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
 
 
@@ -88,20 +94,59 @@ If no matching datastore is found, `Open datastore` returns **Null**.
 
 ## Example
 
+On the remote datastore, in [force login mode](../../REST/authUsers.md#force-login-mode), you write the following `authentify()` function:
 
 ```4d
- var $remoteDS : 4D.DataStoreImplementation
- var $connectTo : {type: "4D Server"; hostname: "192.168.7.47:8044"; idleTimeout : 70; tls : True}
- $remoteDS:=Open datastore($connectTo;"students")
- $remoteDS.authentify({name: "Mary"; password: $pw}) //call the authentify() function of the remote datastore
- ALERT("This remote datastore contains "+String($remoteDS.Students.all().length)+" students")
+  //in the Datastore class
+exposed Function authentify($credentials : Object) : Boolean
+  var $user : cs.UsersEntity
+  var $result:=False
+  
+  If ($credentials#Null)
+    $user:=ds.Users.query("identifier === :1"; $credentials.identifier).first()
+      If (($user#Null) && (Verify password hash($credentials.password; $user.password)))
+        Session.clearPrivileges()  // Start from a clean situation in the session
+        Session.setPrivileges("")  // Add here in the session the real privileges for the corresponding the user
+                  
+        $result:=True
+      End if 
+    End if 
+    return $result
+
+```
+
+In a 4D project, you can write:
+
+
+```4d
+
+var $remoteDS : 4D.DataStoreImplementation
+var $connectTo:={type: "4D Server"; hostname: "192.168.7.47:8044"; idleTimeout : 70; tls : True}
+var $authentified : Boolean
+var $people : 4D.EntitySelection
+
+$remoteDS:=Open datastore($connectTo;"thePeople")
+Try
+  $people:=$remoteDS.Users.all() // Error "You need to be logged in to perform this request"
+Catch
+  ASSERT(Last errors().first().message="You need to be logged in to perform this request.")
+End try
+
+$authentified:=$remoteDS.authentify({identifier: "Mary"; password: "a"})  // Authentication successful
+
+If ($authentified)
+  ALERT("There are "+String($remoteDS.Users.all().length)+" users.")
+Else 
+  ALERT("Wrong credentials")
+End if 
+
 ```
 
 
 
 ## Error management  
 
-In case of error, the command returns **Null**. If the remote datastore cannot be reached (wrong address, web server not started, http and https not enabled...), error 1610 "A remote request to host XXX has failed" is raised. You can intercept this error with a method installed by `ON ERR CALL`.
+In case of error, the command returns **Null**. If the remote datastore cannot be reached (wrong address, web server not started, http and https not enabled...), error 1610 "A remote request to host XXX has failed" is raised. You can intercept this error within a [Try/Catch structure](../../Concepts/error-handling.md#trycatchend-try) or with a method installed by [`ON ERR CALL`](../../commands/on-err-call).
 
 
 ## See also 
