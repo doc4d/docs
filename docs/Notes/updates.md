@@ -14,6 +14,10 @@ Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/),
 
 - [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=21_R5): list of all bugs that have been fixed in 4D 21 R5.  
 
+#### Developer Preview
+
+- Support of list forms in [**fluent UI** rendering](../FormEditor/forms.md#fluent-ui-rendering) on Windows.
+
 
 
 ## 4D 21 R4

@@ -365,6 +365,8 @@ When using 4D forms with Fluent UI rendering, you need to pay attention to the f
 - [Circle buttons](../FormObjects/button_overview.md#circle) are supported (similar as macOS).
 - The [`WA ZOOM IN`](../commands/wa-zoom-in) / [`WA ZOOM OUT`](../commands/wa-zoom-out) commands are not supported in Web areas with system rendering engine. 
 - A focus ring can be added to picture and text [inputs](../FormObjects/input_overview.md). 
+- In output forms, objects located in the header or footer are always displayed on a background layer, while those in the detail area are displayed in the foreground. Unlike in the Classic rendering, it is not possible to make an object (e.g. a vertical line) extend beyond the header boundaries and move it to the foreground so that it is drawn on top of the objects in the detail area.
+
 
 
 
