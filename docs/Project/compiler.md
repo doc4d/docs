@@ -38,7 +38,58 @@ Use the **Previous Error** / **Next Error** commands of the **Method** menu to n
 
 The number of errors found during your first compilations may be daunting, but do not let this put you off. You will soon discover that they often spring from the same source, i.e., non-compliance with certain project conventions. The compiler always provides a [precise diagnosis](#error-file) of the errors in order to help you correct them.
 
-> Compilation requires an appropriate license. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
+:::note
+
+Compilation requires an [appropriate license](../Admin/licenses.md). Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
+
+:::
+
+### Compile components
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R5|Added|
+
+</details>
+
+While developing your application, you can compile the components used by the host project directly from the host project, without having to open them separately. When the host project contains one or more *eligible* components (see [Requirements](#requirements) below), an additional menu is displayed in the Compiler window. This menu lets you select which project(s) you want to compile:
+
+- the host project only (default)
+- the host project and all its eligible components
+- a single eligible component among the list of all eligible components.
+
+![](../assets/en/Project/compile-component.png)
+
+:::note
+
+You can open the Compiler window from the **Methods>Component Methods**"** section of the Explorer: right-click on an eligible component name and select **Compiler...** from the contextuel menu. 
+
+:::
+
+
+#### Requirements
+
+To be eligible for compilation from the host project, a component must comply with the following requirements:
+
+- the component uses the [project architecture](../Project/architecture.md),
+- the component's [interpreted code](../Concepts/interpreted.md) is available and the component is not [running in compiled mode](#run-compiled),
+- the component uses [direct typing](#enabling-direct-typing) declarations.
+
+:::note
+
+The additional menu is not displayed if the project does not contain any eligible component. 
+
+:::
+
+#### Compiler features & Settings
+
+All available features of the Compiler window are applied to the selected component(s): **Compile**, **Check syntax**, **Clear compiled code**. 
+
+The [Settings](../settings/) cannot be edited when a component is selected (the button is dimmed). Each component's [settings](../settings/) are applied for the compilation, except for the [Compiler Options](#compilation-options): the "Generate file" options of the host project override the component's options. 
+
+
 
 ## Run Compiled 
 
