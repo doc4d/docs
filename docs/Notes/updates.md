@@ -16,7 +16,7 @@ Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/),
 
 #### Developer Preview
 
-- Support of list forms in [**fluent UI** rendering](../FormEditor/forms.md#fluent-ui-rendering) on Windows.
+- Support of output forms in [**fluent UI** rendering](../FormEditor/forms.md#fluent-ui-rendering) on Windows.
 
 
 
