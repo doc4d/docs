@@ -26,33 +26,9 @@ You can also set this property using the [`OBJECT SET RGB COLORS`](../commands/o
 
 ---
 
-## Background Color / Fill Color
+## Background Color
 
-Defines the background color of an object.
-
-In the case of a list box, by default *Automatic* is selected: the column uses the background color set at the list box level.
-
-You can also set this property using the [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) command.
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|fill|string|any css value; "transparent"; "automatic"|
-
-#### Objects Supported
-
-[Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
-
-#### Commands
-
-[`LISTBOX Get row color`](../commands/listbox-get-row-color) - [`LISTBOX SET ROW COLOR`](../commands/listbox-set-row-color) - [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
-
-
-
-#### See also
-
-[Transparent](#transparent)
+See [**Fill Color**](#fill-color). "Background color" is used in the Property list for [List Box](listbox_overview.md), [List Box Column](listbox-column.md) and [List Box Footer](listbox-header-footer.md#footers) objects.   
 
 ---
 
@@ -60,7 +36,7 @@ You can also set this property using the [`OBJECT SET RGB COLORS`](../commands/o
 
 `Selection and collection type list boxes`
 
-An expression or a variable (array variables cannot be used) to apply a custom background color to each row of the list box. The expression or variable will be evaluated for each row displayed and must return a RGB color value. For more information, refer to the description of the [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) command in the *4D Language Reference manual*.
+An expression or a variable (array variables cannot be used) to apply a custom background color to each row of the list box. The expression or variable will be evaluated for each row displayed and must return a RGB color value. For more information, refer to the description of the [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) command.
 
 You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/listbox-set-property) command with `lk background color expression` constant.
 
@@ -87,11 +63,19 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/li
 
 Allows setting a standard style for the object border.
 
+:::note
+
+For [buttons](button_overview.md), the **Custom** option enables a set of extra border properties : XXXXXXX
+
+:::
+
 #### JSON Grammar
 
 |Name|Data Type|Possible Values|
 |---|---|---|
-|borderStyle|text |"system", "none", "solid", "dotted", "raised", "sunken", "double"|
+|borderStyle|text |"system", "none", "solid", "dotted", "raised", "sunken", "double", "custom"|
+
+
 
 #### Objects Supported
 
@@ -121,6 +105,63 @@ Describes dotted line type as a sequence of black and white points.
 [Rectangle](shapes_overview.md#rectangle) - [Oval](shapes_overview.md#oval) - [Line](shapes_overview.md#line)
 
 ---
+
+## Fill Color {#fill-color}
+
+Defines the fill / background color of an object. 
+
+
+### Standard objects
+
+This property is named [**Background color**](#background-color) with [List Box](listbox_overview.md), [List Box Column](listbox-column.md) and [List Box Footer](listbox-header-footer.md#footers) objects. 
+
+In the case of a list box, by default *Automatic* is selected: the column uses the background color set at the list box level.
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|fill|string|any css value; "transparent"; "automatic"|
+
+#### Objects Supported
+
+[Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
+
+#### Commands
+
+[`LISTBOX Get row color`](../commands/listbox-get-row-color) - [`LISTBOX SET ROW COLOR`](../commands/listbox-set-row-color) - [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
+
+
+### Custom style button, check box, or radio button
+
+The **Fill color** property is available with buttons, check boxes and radio buttons with the "Custom" style. Otherwise, the property is ignored. 
+
+In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Fill color** property. 
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|borderFillColor|string|any css value; "transparent"; "automatic"|
+
+#### Objects Supported
+
+[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Radio Button (custom style)](radio_overview.md#custom) 
+
+
+#### Commands
+
+[`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
+
+
+#### See also
+
+[Transparent](#transparent)
+
+
+---
+
+
 
 ## Hide extra blank rows
 
