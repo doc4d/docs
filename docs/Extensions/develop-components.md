@@ -119,7 +119,7 @@ Standard 4D IDE features are available for the component. You can execute the fo
 
 ### Compiling components
 
-You can compile a component [directly from the host project](../Project/compiler.md#compile-components), without having to open it separately, provided it is compliant with the [requirements](../Project/compiler.md#requirements).
+You can compile a component [directly from the host project](../Project/compiler.md#compile-components) without having to open it separately, provided it is compliant with the [requirements](../Project/compiler.md#requirements).
 
 
 
@@ -212,7 +212,7 @@ By default, component classes cannot be called from the 4D Code Editor of the ho
 
 ### Declaring the component namespace
 
-To allow classes of your component to be exposed in the host projects and their loaded components, enter a value in the [**Component namespace in the class store** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings. By default, the area is empty: component classes are not available outside of the component context.
+To allow classes of your component to be exposed in the host projects and their loaded components, enter a value in the [**Component namespace in the class store** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings. By default, the area is empty (except when the component is [created from the host](#default-namespace)): component classes are not available outside of the component context.
 
 ![](../assets/en/settings/namespace.png)
 
@@ -243,6 +243,15 @@ Of course, it is recommended to use a distinguished name to avoid any conflict. 
 
 A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
 
+#### Default namespace
+
+When a new component is [created from the host](#creating-components), a default namespace is automatically assigned to the component. 
+
+The default namespace is the component's name, without characters that do not comply with [property naming rules](../Concepts/identifiers.md#object-properties), if any. For example, for a component named "My Component-2", the default namespace will be "MyComponent2". 
+
+
+
+
 ### Hidden classes
 
 Just like in any project, you can create hidden classes and functions in the component by prefixing names with an underscore ("_"). When a [component namespace is defined](#declaring-the-component-namespace), hidden classes and functions of the component will not appear as suggestions when using code completion.
@@ -254,13 +263,6 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 ```
 
 > Non-hidden functions inside a hidden class appear as suggestions when you use code completion with a class that [inherits](../Concepts/classes.md#inheritance) from it. For example, if a component has a `Teacher` class that inherits from a `_Person` class, code completion for `Teacher` suggests non-hidden functions from `_Person`.
-
-
-### Default namespace
-
-When a new component is [created from the host](#creating-components), a default namespace is automatically assigned to the component. 
-
-The default namespace is the same as the component's name, without characters that do not comply with [property naming rules](../Concepts/identifiers.md#object-properties). For example, for a component named "My Component-2", the default namespace will be "MyComponent2". 
 
 
 
