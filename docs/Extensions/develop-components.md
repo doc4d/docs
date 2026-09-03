@@ -18,7 +18,7 @@ You can develop 4D components for your own needs and keep them private. You can 
 
 :::note
 
-You can [create a component directly from the host](#creating-components) project without needing to go through a separate matrix project
+You can [create a component directly from the host](#creating-components) project without needing to go through a separate matrix project.
 
 :::
 
@@ -41,7 +41,7 @@ Interpreted component code can be [edited](#editing-components) and [compiled](.
 
 ## Creating and editing components from the host
 
-In interpreted mode, the 4D IDE allows you to create and edit components directly from the host project. It facilitates component development and tuning in the actual context of a host project without having to leave or restart it.
+In interpreted mode, the 4D IDE allows you to create, edit, and compile components directly from the host project. It facilitates component development and tuning in the actual context of a host project without having to leave or restart it.
 
 ### Creating components
 
@@ -117,7 +117,7 @@ Standard 4D IDE features are available for the component. You can execute the fo
 - run methods,
 - restore from trash or empty trash.
 
-### Compiling component
+### Compiling components
 
 You can compile a component [directly from the host project](../Project/compiler.md#compile-components), without having to open it separately, provided it is compliant with the [requirements](../Project/compiler.md#requirements).
 
