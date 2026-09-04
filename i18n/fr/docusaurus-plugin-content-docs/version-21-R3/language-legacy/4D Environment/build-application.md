@@ -11,7 +11,7 @@ displayed_sidebar: docs
 
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| nomProjet | Text | &#8594;  | Chemin d’accès complet du projet à utiliser |
+| buildAppSettings | Text | &#8594;  | Chemin d’accès complet du fichier de configuration xml |
 </div>
 <!-- END REF-->
 
