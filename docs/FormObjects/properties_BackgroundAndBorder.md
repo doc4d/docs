@@ -65,7 +65,7 @@ Allows setting a standard style for the object border.
 
 :::note
 
-For [buttons](button_overview.md), the **Custom** option enables a set of extra border properties : [Fill color](#fill-color-fill-color), [Frame color](#frame-color), XXXXXX
+For [buttons](button_overview.md), the **Custom** option enables a set of extra border properties : [Fill color](#fill-color-fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius). 
 
 :::
 
@@ -205,10 +205,6 @@ With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [
 
 [Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Radio Button (custom style)](radio_overview.md#custom) 
 
-
-#### Commands
-
-[`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
 
 
 

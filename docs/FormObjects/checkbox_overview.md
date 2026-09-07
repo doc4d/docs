@@ -388,6 +388,9 @@ The Disclosure style is named "roundedDisclosure" in the [button style JSON Gram
 The Custom button style accepts a personalized background picture and allows managing specific properties:
 
 - [Background pathname](properties_TextAndPicture.md#background-pathname)
+- [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius)
+- [Fill color](./properties_BackgroundAndBorder.md#fill-color) 
+- [Frame color](./properties_BackgroundAndBorder.md#frame-color) and [Frame width](./properties_BackgroundAndBorder.md#frame-width)
 - [Icon Offset](properties_TextAndPicture.md#icon-offset)
 - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) and [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
 
@@ -428,7 +431,7 @@ All check boxes share the same set of basic properties:
 
 Additional specific properties are available, depending on the [button style](#check-box-button-styles):
 
-- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
+- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color), [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
 - Flat, Regular: [Three-States](properties_Display.md#three-states)
 
 

@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R5|Support for custom-styled buttons, radio buttons and check boxes |
 |19 R7|Modified|
 |14 R4|Created|
 
@@ -34,9 +35,11 @@ displayed_sidebar: docs
 
 You can use this command with the following form objects:
 
-* rectangles
-* inputs (4D projects only)
-* text areas (4D projects only)
+- [rectangles](../../FormObjects/shapes_overview.md#rectangle)
+- [inputs](../../FormObjects/input_overview.md) (4D projects only)
+- [text areas](../../FormObjects/text.md) (4D projects only)
+- custom-styled [buttons](../../FormObjects/button_overview.md#custom), [radio buttons](../../FormObjects/radio_overview.md#custom) and [check boxes](../../FormObjects/checkbox_overview.md#custom) (4D projects only)
+
 
 Passing the optional *\** parameter indicates that the *object* parameter is an object name (string). If you do not pass this parameter, it indicates that the *object* parameter is a field or variable. In this case, you pass a field or variable reference instead of a string (field or variable object only). 
 
@@ -44,7 +47,7 @@ In the *radius* parameter, you pass a new radius value in pixels to be applied t
 
 **Note**: With input and text area objects, the corner radius property is only available with "none", "solid", or "dotted" border line styles.
 
-You can modify this value at the form level using the *Corner radius property* (see also *Corner radius (rectangles)*).
+You can modify this value at the form level using the [**Corner radius property**](../../FormObjects/properties_CoordinatesAndSizing.md#corner-radius).
 
 ## Example 1 
 

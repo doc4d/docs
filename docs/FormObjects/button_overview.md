@@ -374,10 +374,11 @@ All buttons share the same set of basic properties:
 
 Additional specific properties are available, depending on the [button style](#button-styles):
 
-- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
+- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color), [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
 - Flat, Regular: [Default Button](properties_Appearance.md#default-button)
 
 
 ## Supported Events  
 
 [On Alternative Click](../Events/onAlternativeClick.md) - [On Begin Drag Over](../Events/onBeginDragOver.md) - [On Clicked](../Events/onClicked.md) - [On Double Clicked](../Events/onDoubleClicked.md) - [On Drag Over](../Events/onDragOver.md) - [On Drop](../Events/onDrop.md) - [On Getting focus](../Events/onGettingFocus.md) - [On Header](../Events/onHeader.md) - [On Load](../Events/onLoad.md) - [On Long Click](../Events/onLongClick.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Mouse Enter](../Events/onMouseEnter.md) - [On Mouse Leave](../Events/onMouseLeave.md) - [On Mouse Move](../Events/onMouseMove.md) - [On Printing Break](../Events/onPrintingBreak.md) - [On Printing Detail](../Events/onPrintingDetail.md) - [On Printing Footer](../Events/onPrintingFooter.md) - [On Unload](../Events/onUnload.md) - [On Validate](../Events/onValidate.md)
+
