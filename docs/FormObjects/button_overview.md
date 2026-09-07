@@ -326,7 +326,7 @@ On Windows Classic UI theme, this style is not supported.
 
 ### Custom
 
-The Custom button style accepts a personalized background picture and allows managing additional parameters such as icon and margin offset. 
+The Custom button style accepts a personalized background picture and allows managing additional parameters such as icon, margin offset, or fill color. 
 
 ![](../assets/en/FormObjects/button_custom.png)
 
@@ -335,16 +335,26 @@ The Custom button style accepts a personalized background picture and allows man
 
 ```code
 	"myButton": {
-                "type": "button",	
-                "style":"custom",	
-                "text": "",	
-                "customBackgroundPicture": "/RESOURCES/bkgnd.png",
-                "icon": "/RESOURCES/custom.png",  
-                "textPlacement": "center",
-                "left": 60,	
-                "top": 160,		
-                "width": 100,	
-                "height": 20
+				"type": "button",
+				"text": "Custom",
+				"top": 211,
+				"left": 310,
+				"width": 112,
+				"height": 41,
+				"events": [
+					"onClick"
+				],
+				"style": "custom",
+				"fontWeight": "bold",
+				"icon": "/RESOURCES/custom.png",
+				"borderStyle": "custom",
+				"borderColor": "#696969",
+				"borderFillColor": "#c0c0c0",
+				"borderWidth": 2,
+				"customBackgroundPicture": "",
+				"textPlacement": "center",
+				"borderRadius": 5,
+				"iconFrames": 4
                 }
 ``` 
 
@@ -364,7 +374,7 @@ All buttons share the same set of basic properties:
 
 Additional specific properties are available, depending on the [button style](#button-styles):
 
-- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
+- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
 - Flat, Regular: [Default Button](properties_Appearance.md#default-button)
 
 

@@ -65,7 +65,7 @@ Allows setting a standard style for the object border.
 
 :::note
 
-For [buttons](button_overview.md), the **Custom** option enables a set of extra border properties : XXXXXXX
+For [buttons](button_overview.md), the **Custom** option enables a set of extra border properties : [Fill color](#fill-color-fill-color), [Frame color](#frame-color), XXXXXX
 
 :::
 
@@ -108,12 +108,16 @@ Describes dotted line type as a sequence of black and white points.
 
 ## Fill Color {#fill-color}
 
-Defines the fill / background color of an object. 
+Defines the fill color / background color of an object. It can be defined for some standard objects (`fill` JSON property) or ["custom style" buttons](#custom-style-button-check-box-or-radio-button) (`borderFillColor` JSON property).
 
 
 ### Standard objects
 
+:::note
+
 This property is named [**Background color**](#background-color) with [List Box](listbox_overview.md), [List Box Column](listbox-column.md) and [List Box Footer](listbox-header-footer.md#footers) objects. 
+
+:::
 
 In the case of a list box, by default *Automatic* is selected: the column uses the background color set at the list box level.
 
@@ -134,9 +138,11 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 
 ### Custom style button, check box, or radio button
 
-The **Fill color** property is available with buttons, check boxes and radio buttons with the "Custom" style. Otherwise, the property is ignored. 
+When they have the "Custom" style, buttons, check boxes and radio buttons enable access to a **Fill color** property. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Fill Color** property. Otherwise, the property is ignored.
 
-In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Fill color** property. 
+This property allows you to assign a background color to the custom style button, check box, or radio button area. 
+
+
 
 #### JSON Grammar
 
@@ -159,7 +165,50 @@ In addition, custom style buttons must have the ["custom" Border Line Style](#bo
 [Transparent](#transparent)
 
 
----
+## Frame Color {#frame-color}
+
+Defines the color of the border for custom style buttons, check boxes and radio buttons. 
+
+When they have the "Custom" style, buttons, check boxes and radio buttons enable access to a **Frame color** property. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Frame Color** property. Otherwise, the property is ignored.
+
+Note that the border is only be displayed when its [width](#frame-width) is > 0. 
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|borderColor|string|any css value; "transparent"; "automatic"|
+
+#### Objects Supported
+
+[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Radio Button (custom style)](radio_overview.md#custom) 
+
+
+#### Commands
+
+[`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
+
+
+## Frame Width {#frame-width}
+
+Defines the width of the border for custom style buttons, check boxes and radio buttons. The value is expressed in points. 
+
+When they have the "Custom" style, buttons, check boxes and radio buttons enable access to a **Frame Width** property. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Frame Width** property. Otherwise, the property is ignored.
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|borderWidth|number|Integer value (points). Minimum value = 0|
+
+#### Objects Supported
+
+[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Radio Button (custom style)](radio_overview.md#custom) 
+
+
+#### Commands
+
+[`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
 
 
 
