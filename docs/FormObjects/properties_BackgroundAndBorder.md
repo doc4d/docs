@@ -138,7 +138,7 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 
 ### Custom style button, check box, or radio button
 
-When they have the "Custom" style, buttons, check boxes and radio buttons enable access to a **Fill color** property. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Fill Color** property. Otherwise, the property is ignored.
+With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [radio buttons](radio_overview.md), the fill color property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
 
 This property allows you to assign a background color to the custom style button, check box, or radio button area. 
 
@@ -169,7 +169,7 @@ This property allows you to assign a background color to the custom style button
 
 Defines the color of the border for custom style buttons, check boxes and radio buttons. 
 
-When they have the "Custom" style, buttons, check boxes and radio buttons enable access to a **Frame color** property. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Frame Color** property. Otherwise, the property is ignored.
+With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [radio buttons](radio_overview.md), the frame color property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
 
 Note that the border is only be displayed when its [width](#frame-width) is > 0. 
 
@@ -191,15 +191,15 @@ Note that the border is only be displayed when its [width](#frame-width) is > 0.
 
 ## Frame Width {#frame-width}
 
-Defines the width of the border for custom style buttons, check boxes and radio buttons. The value is expressed in points. 
+Defines the width of the border for custom style buttons, check boxes and radio buttons. The value is expressed in pixels. 
 
-When they have the "Custom" style, buttons, check boxes and radio buttons enable access to a **Frame Width** property. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style) to use the **Frame Width** property. Otherwise, the property is ignored.
+With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [radio buttons](radio_overview.md), the frame width property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
 
 #### JSON Grammar
 
 |Name|Data Type|Possible Values|
 |---|---|---|
-|borderWidth|number|Integer value (points). Minimum value = 0|
+|borderWidth|number|Integer value (pixels). Minimum value = 0|
 
 #### Objects Supported
 

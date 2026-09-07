@@ -141,6 +141,7 @@ Top coordinate of the object in the form.
 
 |Release|Changes|
 |---|---|
+|21 R5|Support for custom-styled buttons, radio buttons and check boxes |
 |19 R7|Support for inputs and text areas|
 
 </details>
@@ -152,8 +153,6 @@ Defines the corner roundness (in pixels) of the object. By default, the radius v
 Minimum value is 0, in this case a standard non-rounded object rectangle is drawn.
 Maximum value depends on the rectangle size (it cannot exceed half the size of the shortest rectangle side) and is calculated dynamically.
 
-:::note
-
 With [text areas](text.md) and [inputs](input_overview.md):
 
 - the corner radius property is only available with "none", "solid", or "dotted" [border line styles](properties_BackgroundAndBorder.md#border-line-style),
@@ -161,9 +160,9 @@ With [text areas](text.md) and [inputs](input_overview.md):
 
 ![](../assets/en/FormObjects/radius-text.png)
 
-:::
 
-You can also set this property using the [OBJECT Get corner radius](../commands/object-get-corner-radius) and [OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius) commands.
+With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [radio buttons](radio_overview.md), the corner radius property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
+
 
 #### JSON Grammar
 
@@ -173,7 +172,7 @@ You can also set this property using the [OBJECT Get corner radius](../commands/
 
 #### Objects Supported
 
-[Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
+[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md) - [Radio Button (custom style)](radio_overview.md#custom)  
 
 #### Commands
 
