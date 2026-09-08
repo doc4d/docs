@@ -161,7 +161,7 @@ With [text areas](text.md) and [inputs](input_overview.md):
 ![](../assets/en/FormObjects/radius-text.png)
 
 
-With [buttons](./button_overview.md), [check boxes](checkbox_overview.md) and [radio buttons](radio_overview.md), the corner radius property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
+With [buttons](./button_overview.md), [check boxes](checkbox_overview.md) and [radio buttons](radio_overview.md), the corner radius property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
 
 #### JSON Grammar

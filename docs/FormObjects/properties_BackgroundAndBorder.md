@@ -65,9 +65,19 @@ Allows setting a standard style for the object border.
 
 :::note
 
-For [buttons](button_overview.md), the **Custom** option enables a set of extra border properties : [Fill color](#fill-color-fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius). 
+For [buttons](button_overview.md), the **Custom** option enables the inner frame design, including a set of extra properties : [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius). 
+
+![](../assets/en/FormObjects/custom-button.png)
 
 :::
+
+
+:::tip Related blog post
+
+[Give Your Text and List Objects the Border Color They Deserve](https://blog.4d.com/give-your-text-and-list-objects-the-border-color-they-deserve)
+
+:::
+
 
 #### JSON Grammar
 
@@ -138,9 +148,9 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 
 ### Custom style button, check box, or radio button
 
-With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [radio buttons](radio_overview.md), the fill color property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
+This property allows you to assign a fill color attribute to custom-styled buttons, check boxes and radio buttons. 
 
-This property allows you to assign a background color to the custom style button, check box, or radio button area. 
+The custom fill color attribute for [buttons](./button_overview.md), [check boxes)](./checkbox_overview.md) and [radio buttons](./radio_overview.md) is available when they have the "Custom" style. In addition, custom-styled buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
 
 
@@ -167,11 +177,11 @@ This property allows you to assign a background color to the custom style button
 
 ## Frame Color {#frame-color}
 
-Defines the color of the border for custom style buttons, check boxes and radio buttons. 
+Defines the color of the inner border for custom-styled style buttons, check boxes and radio buttons. 
 
-With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [radio buttons](radio_overview.md), the frame color property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
+The inner frame attribute for [buttons](./button_overview.md), [check boxes)](./checkbox_overview.md) and [radio buttons](./radio_overview.md) is available when they have the "Custom" style. In addition, custom-styled buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
-Note that the border is only be displayed when its [width](#frame-width) is > 0. 
+Note that the frame is only displayed when its [width](#frame-width) is > 0. 
 
 #### JSON Grammar
 
@@ -191,9 +201,9 @@ Note that the border is only be displayed when its [width](#frame-width) is > 0.
 
 ## Frame Width {#frame-width}
 
-Defines the width of the border for custom style buttons, check boxes and radio buttons. The value is expressed in pixels. 
+Defines the width of the inner border for custom-styled buttons, check boxes and radio buttons. The value is expressed in pixels. 
 
-With [buttons](./button_overview.md), [check boxes)](checkbox_overview.md) and [radio buttons](radio_overview.md), the frame width property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). Otherwise, the property is ignored.
+The inner frame attribute for [buttons](./button_overview.md), [check boxes)](./checkbox_overview.md) and [radio buttons](./radio_overview.md) is available when they have the "Custom" style. In addition, custom-styled buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
 #### JSON Grammar
 
