@@ -47,7 +47,9 @@ Vertical alignment can be applied to the following types of form objects:
 
 * list boxes,
 * list box columns,
-* list box headers and footers.
+* list box headers and footers,
+* static text,
+* input text.
 
 ## See also 
 
