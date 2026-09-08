@@ -65,7 +65,7 @@ Allows setting a standard style for the object border.
 
 :::note
 
-For [buttons](button_overview.md), the **Custom** option enables the inner frame design, including a set of extra properties : [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius). 
+For [buttons](button_overview.md), the **custom** style enables the inner frame design, that includes a set of extra properties: [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius). 
 
 ![](../assets/en/FormObjects/custom-button.png)
 
@@ -118,7 +118,7 @@ Describes dotted line type as a sequence of black and white points.
 
 ## Fill Color {#fill-color}
 
-Defines the fill color / background color of an object. It can be defined for some standard objects (`fill` JSON property) or ["custom style" buttons](#custom-style-button-check-box-or-radio-button) (`borderFillColor` JSON property).
+Defines the fill color / background color of an object. It can be defined for some standard objects (`fill` JSON property) or ["custom style" objects](#custom-style-button-check-box-or-radio-button) (`borderFillColor` JSON property).
 
 
 ### Standard objects
@@ -146,11 +146,9 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 [`LISTBOX Get row color`](../commands/listbox-get-row-color) - [`LISTBOX SET ROW COLOR`](../commands/listbox-set-row-color) - [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
 
 
-### Custom style button, check box, or radio button
+### Custom button, custom check box, or custom radio button
 
-This property allows you to assign a fill color attribute to custom-styled buttons, check boxes and radio buttons. 
-
-The custom fill color attribute for [buttons](./button_overview.md), [check boxes)](./checkbox_overview.md) and [radio buttons](./radio_overview.md) is available when they have the "Custom" style. In addition, custom-styled buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+This property allows you to assign a fill color attribute to [custom buttons](./button_overview.md#custom), [custom check boxes)](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
 
 
@@ -162,7 +160,7 @@ The custom fill color attribute for [buttons](./button_overview.md), [check boxe
 
 #### Objects Supported
 
-[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Radio Button (custom style)](radio_overview.md#custom) 
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
 
 
 #### Commands
@@ -177,9 +175,7 @@ The custom fill color attribute for [buttons](./button_overview.md), [check boxe
 
 ## Frame Color {#frame-color}
 
-Defines the color of the inner border for custom-styled style buttons, check boxes and radio buttons. 
-
-The inner frame attribute for [buttons](./button_overview.md), [check boxes)](./checkbox_overview.md) and [radio buttons](./radio_overview.md) is available when they have the "Custom" style. In addition, custom-styled buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+Defines the color of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes)](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
 Note that the frame is only displayed when its [width](#frame-width) is > 0. 
 
@@ -189,9 +185,10 @@ Note that the frame is only displayed when its [width](#frame-width) is > 0.
 |---|---|---|
 |borderColor|string|any css value; "transparent"; "automatic"|
 
+
 #### Objects Supported
 
-[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Radio Button (custom style)](radio_overview.md#custom) 
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
 
 
 #### Commands
@@ -201,9 +198,9 @@ Note that the frame is only displayed when its [width](#frame-width) is > 0.
 
 ## Frame Width {#frame-width}
 
-Defines the width of the inner border for custom-styled buttons, check boxes and radio buttons. The value is expressed in pixels. 
+Defines the width of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes)](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored. 
 
-The inner frame attribute for [buttons](./button_overview.md), [check boxes)](./checkbox_overview.md) and [radio buttons](./radio_overview.md) is available when they have the "Custom" style. In addition, custom-styled buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+The value is expressed in pixels. 
 
 #### JSON Grammar
 
@@ -211,9 +208,10 @@ The inner frame attribute for [buttons](./button_overview.md), [check boxes)](./
 |---|---|---|
 |borderWidth|number|Integer value (pixels). Minimum value = 0|
 
+
 #### Objects Supported
 
-[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Radio Button (custom style)](radio_overview.md#custom) 
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
 
 
 

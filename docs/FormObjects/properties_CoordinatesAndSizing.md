@@ -161,7 +161,7 @@ With [text areas](text.md) and [inputs](input_overview.md):
 ![](../assets/en/FormObjects/radius-text.png)
 
 
-With [buttons](./button_overview.md), [check boxes](checkbox_overview.md) and [radio buttons](radio_overview.md), the corner radius property is only available when they have the "Custom" style. In addition, custom style buttons must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+With [custom buttons](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)), [custom check boxes](checkbox_overview.md#custom) and [custom radio buttons](radio_overview.md#custom), the corner radius is drawn inside the area of the object. 
 
 
 #### JSON Grammar
@@ -172,7 +172,7 @@ With [buttons](./button_overview.md), [check boxes](checkbox_overview.md) and [r
 
 #### Objects Supported
 
-[Button (custom style)](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Check Box (custom style)](checkbox_overview.md#custom) - [Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md) - [Radio Button (custom style)](radio_overview.md#custom)  
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md) - [Custom Radio Button](radio_overview.md#custom)  
 
 #### Commands
 
