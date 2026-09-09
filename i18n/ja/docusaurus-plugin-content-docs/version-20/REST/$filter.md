@@ -44,7 +44,7 @@ title: '$filter'
 
 :::note
 
-The use of the `eval()` statement is not allowed in REST queries (and thus in [remote datastore](../ORDA/remoteDatastores.md) queries).
+REST クエリ内における`eval()` ステートメントの使用は許可されません(そのため[remote datastore](../ORDA/remoteDatastores.md) クエリにおいても同様です)。
 
 :::
 
