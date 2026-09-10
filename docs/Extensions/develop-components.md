@@ -81,7 +81,7 @@ In this context, you can open, edit, and save your component code in the Code ed
 
 [Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer. 
 
-A specific icon indicates that the component contains shared code):<br/>
+A specific icon indicates that the component contains shared code:<br/>
 ![](../assets/en/Develop/editable-component.png)
 
 Select **Edit...** to open your component code in the Code editor. You can edit and save it. 
