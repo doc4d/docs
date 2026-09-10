@@ -608,9 +608,14 @@ Modifying the version range is useful for example if you use the automatic updat
 
 ### Using 4D Corner
 
-The [**4D Corner platform**](https://corner.4d.com/) proposes a comprehensive list of ready-to-use 4D components, proposed from the 4D company or from the 4D community. You can browse or search the list to find any component corresponding to your needs.
+The [**4D Corner platform**](https://corner.4d.com/) proposes a comprehensive list of ready-to-use 4D components, proposed from the 4D company or from the 4D community. You can browse or search the list to find any component meeting to your needs.
 
 ![4d-corner](../assets/en/Project/4d-corner.png)
+
+You can open the [4D Corner platform](https://corner.4d.com/) from the Dependency manager by selecting **Discover more components on 4D Corner...** from the menu at the bottom of the Dependency manager window:
+
+![4d-corner-access](../assets/en/Project/4d-corner.png)
+
 
 To install a component from the 4D Corner platform:
 
@@ -618,13 +623,20 @@ To install a component from the 4D Corner platform:
 
 ![copy button](../assets/en/Project/4d-corner-copy.png)
 
-2. Open the Dependency manager and click on the **+** button.
+2. Open the Dependency manager and click on the **[+]** button.
 
 The dependency link is automatically added in the address area:
 
 ![add dependency](../assets/en/Project/4d-corner-add.png)
 
 3. [Configure the dependency reference](#adding-a-github-or-gitlab-dependency) and click **Add**. 
+
+
+:::tip Related blog post
+
+[4D Corner: Easily browse 4D components, add them to your project and share your own](https://blog.4d.com/4d-corner-easily-browse-4d-components-add-them-to-your-project-and-share-your-own/)
+
+:::
 
 ### Updating dependencies
 
