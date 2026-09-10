@@ -614,7 +614,7 @@ The [**4D Corner platform**](https://corner.4d.com/) proposes a comprehensive li
 
 To install a component from the 4D Corner platform:
 
-1. Click on the "Copy link" button on the top left corner of the component tile:
+1. Click on the "Copy link" button on the top right corner of the component tile:
 
 ![copy button](../assets/en/Project/4d-corner-copy.png)
 
