@@ -79,58 +79,58 @@ Si selecciona esta opción, el depurador se puede adjuntar a un 4D remoto. El co
 
 ### Conectar el depurador al iniciar
 
-(selected by default) This option automatically attaches the debugger to the server each time the project is launched. Deselect this option if you want to attach permanently the debugger to a remote 4D.
+(seleccionada por defecto) Esta opción conecta automáticamente el depurador al servidor cada vez que se inicia el proyecto. Deseleccione esta opción si desea conectar permanentemente el depurador a un 4D Remote.
 
-*Warning*: If this option is selected for a server which is subsequently launched in headless mode, it will not be possible to use the debugger on this server.
+*Advertencia*: si se selecciona esta opción para un servidor que posteriormente se inicie en modo sin interfaz gráfica, no será posible utilizar el depurador en dicho servidor.
 
-For more information, please refer to [Debugging from Remote Machines](../Debugging/debugging-remote.md).
+Para más información, consulte [Depuración desde máquinas remotas](../Debugging/debugging-remote.md).
 
-## Window
+## Ventana
 
-The first part of the **Window** menu includes standard commands for organizing workspace windows (these commands differ depending on the platform).
+La primera parte del menú **Ventana** incluye comandos estándar para organizar las ventanas del espacio de trabajo (estos comandos varían en función de la plataforma).
 
-It also contains display commands for windows specific to 4D Server:
+También contiene comandos de visualización para ventanas específicas de 4D Server:
 
 ### Administración
 
-This command displays the [4D Server Administration window](../ServerWindow/overview.md) if it has been closed or minimized.
+Este comando muestra la [ventana de administración de 4D Server](../ServerWindow/overview.md) si se ha cerrado o minimizado.
 
-### Project Dependencies
+### Dependencias del proyecto
 
-Displays the [Dependency manager](../Project/components.md).
+Muestra el [Gestor de dependencias](../Project/components.md).
 
 ### Explorador de ejecución
 
-This command displays the 4D Server Runtime Explorer window.
+Este comando muestra la ventana del Explorador de ejecución de 4D Server.
 
 ![](../assets/en/server/runtime-explorer.png)
 
-The Runtime Explorer enables you to view the status of the database various structural elements and to check that the available resources are correctly managed. The Runtime Explorer is particularly useful while developing or analyzing a database.
+El Explorador de ejecución le permite ver el estado de los diversos elementos estructurales de la base de datos y comprobar que los recursos disponibles se gestionen correctamente. El Explorador de ejecución es particularmente útil mientras se desarrolla o analiza una base de datos.
 
-The Runtime Explorer window contains four pages that can be accessed by clicking on the following buttons: **Watch**, **Process**, **Break** and **Catch**. The Runtime Explorer works the same way in 4D Server and 4D.
+La ventana del Explorador de ejecución contiene cuatro páginas a las que se puede acceder haciendo clic en los siguientes botones: **Evaluación**, **Procesos**, **Puntos de interrupción** y **Comandos interceptados**. El funcionamiento del Explorador de ejecución en 4D Server es idéntico al de 4D.
 
-### Data Explorer in Browser
+### Explorador de datos en el navegador
 
-Displays the [Data Explorer](../Admin/dataExplorer.md) in your default browser.
+Muestra el [Explorador de datos](../Admin/dataExplorer.md) en su navegador predeterminado.
 
 ### Qodly Studio
 
-Displays the [Qodly Studio interface](https://developer.4d.com/qodly/4DQodlyPro/qodlyStudioInterface) in your default browser on the server machine.
+Muestra la [interfaz de Qodly Studio](https://developer.4d.com/qodly/4DQodlyPro/qodlyStudioInterface) en su navegador predeterminado en el servidor.
 
 ### Vista previa de la aplicación Qodly
 
-Displays the start page of your Qodly application in your default browser on the server machine. See [this section](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#preview-qodly-application) for more information.
+Muestra la página de inicio de su aplicación Qodly en su navegador predeterminado en la máquina servidor. Ver [esta sección] (https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#preview-qodly-application) para más información.
 
 ## Ayuda
 
-### Maintenance Security Center
+### Centro de seguridad y mantenimiento
 
-This command displays the [Maintenance and Security Center](../MSC/overview.md) (MSC) which groups together all the tools required for verification, analysis, maintenance, back-up, compacting and encryption of data and structure files.
-This command is available even when no project is opened by 4D Server: in this case, it can be used to open a project in "maintenance mode" (it displays the standard open file dialog box so that you can designate the project to be opened). Maintenance mode is used more particularly for operations such as compacting or opening damaged projects.
+Este comando muestra el [Centro de mantenimiento y seguridad](../MSC/overview.md) (CSM), que reúne todas las herramientas necesarias para la verificación, el análisis, el mantenimiento, la copia de seguridad, la compactación y el cifrado de los archivos de datos y de estructura.
+Este comando está disponible incluso cuando no hay ningún proyecto abierto en 4D Server: en este caso, se puede utilizar para abrir un proyecto en "modo de mantenimiento" (muestra el cuadro de diálogo estándar de apertura de archivos para que pueda seleccionar el proyecto que desea abrir). El modo de mantenimiento se utiliza, en particular, para operaciones como la compactación o la apertura de proyectos dañados.
 
-### Online documentation
+### Documentación en línea
 
-Opens the 4D documentation home page.
+Abre la página de inicio de la documentación 4D.
 
 ### License manager...
 
