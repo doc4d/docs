@@ -68,10 +68,11 @@ You can open the Compiler window from the **Methods>Component Methods** section 
 
 :::
 
-A hierarchical list of components being compiled is displayed in the Compiler window. If an error is detected in a component, its compilation is stopped but the process continues for other components. 
-- Components with at least one error can be unfolded to display the list of errors and appear **in bold**
-- Components with at least one warning can be unfolded to display the list of warnings.
+A list of components being compiled is displayed in the Compiler window. If an error is detected in a component, its compilation is stopped but the process continues for other components. 
 
+- Components with at least one error can be unfolded to display the list of errors and appear **in bold**.
+- Components with at least one warning can be unfolded to display the list of warnings.
+- Components wihout errors cannot be unfolded. 
 
 
 
@@ -97,13 +98,6 @@ All available features of the Compiler window are applied to the selected compon
 The [Settings](../settings/) cannot be edited when a component is selected (the button is dimmed). 
 
 Each component's [settings](../settings/) are applied for the compilation, except the [error file and symbol file generation options](#compilation-options): settings of the host project override the component's options. When enabled, [error and warning file](#error-file) as well as [symbol file](#symbol-file) of each component are stored in the [**Logs** folder of the host project](../Project/architecture.md#logs), within a dedicated folder (the name of the folder is the component name).  
-
-
-#### Compilation flow
-
-If errors are detected, the process is stopped and the "Compilation failed" message is displayed. The information area of the window displays the method names and line numbers concerned in a hierarchical list:
-
-
 
 
 
