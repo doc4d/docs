@@ -99,7 +99,9 @@ The [Settings](../settings/) cannot be edited when a component is selected (the 
 
 Each component's [settings](../settings/) are applied for the compilation, except the [error file and symbol file generation options](#compilation-options): settings of the host project override the component's options. When enabled, [error and warning file](#error-file) as well as [symbol file](#symbol-file) of each component are stored in the [**Logs** folder of the host project](../Project/architecture.md#logs), within a dedicated folder (the name of the folder is the component name).  
 
+When you start a compilation or a syntax check, every processed project is listed in the compiler window. If errors or warnings are detected, they are displayed in hierarchical lists beneath the corresponding project. Projects that contain errors are displayed in **bold**:
 
+![](../assets/en/Project/compile-components-errors.png)
 
 ## Run Compiled 
 
