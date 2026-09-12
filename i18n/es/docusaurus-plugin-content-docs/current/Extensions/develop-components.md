@@ -115,7 +115,7 @@ Las funcionalidades estándar del IDE 4D están disponibles para el componente. 
 - ejecutar métodos,
 - restaurar desde la papelera o vaciar la papelera.
 
-### Compiling components
+### Compilación de componentes
 
 You can compile a component [directly from the host project](../Project/compiler.md#compile-components) without having to open it separately, provided it is compliant with the [requirements](../Project/compiler.md#requirements).
 
