@@ -39,11 +39,11 @@ El número de errores encontrados durante las primeras compilaciones puede ser d
 
 :::note
 
-Compilation requires an [appropriate license](../Admin/licenses.md). Sin esta licencia, no es posible llevar a cabo una compilación (los botones están desactivados). Sin embargo, aún es posible comprobar la sintaxis y generar métodos de digitación.
+La compilación requiere una [licencia apropiada](../Admin/licenses.md). Sin esta licencia, no es posible llevar a cabo una compilación (los botones están desactivados). Sin embargo, aún es posible comprobar la sintaxis y generar métodos de digitación.
 
 :::
 
-### Compile components
+### Compilar componentes
 
 <details><summary>Historia</summary>
 
@@ -53,11 +53,11 @@ Compilation requires an [appropriate license](../Admin/licenses.md). Sin esta li
 
 </details>
 
-While developing your application, you can compile the components used by the host project directly from the host project, without having to open them separately. When the host project contains one or more *eligible* components (see [Requirements](#requirements) below), an additional menu is displayed in the Compiler window. This menu lets you select which project(s) you want to compile:
+While developing your application, you can compile the components used by the host project directly from the host project, without having to open them separately. When the host project contains one or more *eligible* components (see [Requirements](#requirements) below), an additional menu is displayed in the Compiler window. Este menú le permite seleccionar el/los proyecto(s) a compilar:
 
-- the host project only (default)
+- solo el proyecto anfitrión (por defecto)
 - the host project and all its eligible components
-- a single eligible component among the list of all eligible components.
+- un único componente elegible de la lista de todos los componentes elegibles.
 
 ![](../assets/en/Project/compile-component.png)
 
@@ -67,9 +67,9 @@ You can open the Compiler window from the **Methods>Component Methods** section 
 
 :::
 
-A list of components being compiled is displayed in the Compiler window. If an error is detected in a component, its compilation is stopped but the process continues for other components.
+En la ventana del compilador se muestra una lista de componentes que se están compilando. If an error is detected in a component, its compilation is stopped but the process continues for other components.
 
-- Components with at least one error can be unfolded to display the list of errors and appear **in bold**.
+- Los componentes que contengan al menos un error se pueden desplegar para mostrar la lista de errores y aparecen **en negrita**.
 - Components with at least one warning can be unfolded to display the list of warnings.
 - Components wihout errors cannot be unfolded.
 
@@ -77,9 +77,9 @@ A list of components being compiled is displayed in the Compiler window. If an e
 
 To be eligible for compilation from the host project, a component must comply with the following requirements:
 
-- the component uses the [project architecture](../Project/architecture.md),
+- el componente utiliza la [arquitectura del proyecto](../Project/architecture.md),
 - the component's [interpreted code](../Concepts/interpreted.md) is available and the component is not [running in compiled mode](#run-compiled),
-- the component uses [direct typing](#enabling-direct-typing) declarations.
+- el componente utiliza declaraciones de [tipado directo](#enabling-direct-typing).
 
 :::note
 
@@ -87,7 +87,7 @@ The additional menu is not displayed if the project does not contain any eligibl
 
 :::
 
-#### Compiler features & Settings
+#### Propiedades y ajustes del compilador
 
 All available features of the Compiler window are applied to the selected component(s): **Compile**, **Check syntax**, **Clear compiled code**.
 
