@@ -562,7 +562,7 @@ En el cuadro de diálogo "Editar la dependencia", edite el menú Regla de depend
 
 Modificar el rango de versiones es útil, por ejemplo, si utiliza la función de actualización automática y desea bloquear una dependencia a un número de versión específico.
 
-### Using 4D Corner
+### Uso de 4D Corner
 
 The [**4D Corner platform**](https://corner.4d.com/) proposes a comprehensive list of ready-to-use 4D components, proposed from the 4D company or from the 4D community. You can browse or search the list to find any component meeting to your needs.
 
@@ -578,11 +578,11 @@ To install a component from the 4D Corner platform:
 
 ![copy button](../assets/en/Project/4d-corner-copy.png)
 
-2. Open the Dependency manager and click on the **[+]** button.
+2. Abra el Gestor de dependencias y haga clic en el botón **[+]**.
 
-The dependency link is automatically added in the address area:
+El enlace de dependencia se añade automáticamente en el área de dirección:
 
-![add dependency](../assets/en/Project/4d-corner-add.png)
+![añadir dependencia](../assets/en/Project/4d-corner-add.png)
 
 3. [Configure the dependency reference](#adding-a-github-or-gitlab-dependency) and click **Add**.
 
