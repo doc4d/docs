@@ -1,4 +1,4 @@
-<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/SMTPTransporterClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>SMTPTransporter | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="SMTPTransporter | 4D Docs"/><meta data-rh=true name=description content="SMTPTransporter クラスを使って、SMTP接続の設定や、SMTP transporter オブジェクトを介したメールの送信をおこなうことができます。"/><meta data-rh=true property=og:description content="SMTPTransporter クラスを使って、SMTP接続の設定や、SMTP transporter オブジェクトを介したメールの送信をおこなうことができます。"/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/SMTPTransporterClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/SMTPTransporterClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/SMTPTransporterClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/4d-language","name":"4Dランゲージ","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/class-API-reference","name":"クラス","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass","name":"SMTPTransporter","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.4cf13e15.css /><script src=/docs/ja/assets/js/runtime~main.024d9ed4.js defer></script><script src=/docs/ja/assets/js/main.fb189dbf.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/SMTPTransporterClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>SMTPTransporter | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="SMTPTransporter | 4D Docs"/><meta data-rh=true name=description content="SMTPTransporter クラスを使って、SMTP接続の設定や、SMTP transporter オブジェクトを介したメールの送信をおこなうことができます。"/><meta data-rh=true property=og:description content="SMTPTransporter クラスを使って、SMTP接続の設定や、SMTP transporter オブジェクトを介したメールの送信をおこなうことができます。"/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/SMTPTransporterClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/SMTPTransporterClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/SMTPTransporterClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/SMTPTransporterClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/4d-language","name":"4Dランゲージ","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/class-API-reference","name":"クラス","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/API/SMTPTransporterClass","name":"SMTPTransporter","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.4cf13e15.css /><script src=/docs/ja/assets/js/runtime~main.5e9a374a.js defer></script><script src=/docs/ja/assets/js/main.a1362949.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/ja/img/logohome.png /><div role=region aria-label=メインコンテンツまでスキップ><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>メインコンテンツまでスキップ</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=ナビゲーションバーの切り替え aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/ja/><div class=navbar__logo><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">4D ドキュメンテーション</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/ja/next/API/SMTPTransporterClass>開発中</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/ja/next/API/SMTPTransporterClass>開発中</a><li><a class=dropdown__link href=/docs/ja/API/SMTPTransporterClass>21 R4 BETA</a><li><a class=dropdown__link href=/docs/ja/21-R3/API/SMTPTransporterClass>21 R3</a><li><a class=dropdown__link href=/docs/ja/21/API/SMTPTransporterClass>21</a><li><a class=dropdown__link href=/docs/ja/20/API/SMTPTransporterClass>20</a><li><a class=dropdown__link href=/docs/ja/19/API/SMTPTransporterClass>19</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="このバージョンでは、このページは利用できません
@@ -321,78 +321,6 @@
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-2>参照<a href=#参照-2 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#certificate class="">.certificate</a><br/>
 <a href=#certificatename class="">.certificateName</a></p>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=logfile>.logFile<a href=#logfile class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R5<td>追加</table>
-</div></div></details>
-<p><strong>.logFile</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-7>説明<a href=#説明-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
-<p><code>.logFile</code> プロパティは、 メール接続に対して定義された拡張ログファイル (あれば) へのフルパスを格納します。 パスは、カレント Logs フォルダーを基準とした相対パス、あるいは絶対パスを指定できます。</p>
-<p><code>SET DATABASE PARAMETER</code> コマンドで有効化される通常のログファイルとは異なり、拡張ログファイルはすべての送信されたメールの MIMEコンテンツを保存し、サイズ制限がありません。 拡張ログファイルの詳細については、以下の章をそれぞれ参照ください:</p>
-<ul>
-<li class=""><strong>SMTP 接続</strong> - <a class="" href=/docs/ja/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DSMTPLog.txt</a></li>
-<li class=""><strong>POP3 接続</strong> - <a class="" href=/docs/ja/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DPOP3Log.txt</a></li>
-<li class=""><strong>IMAP 接続</strong> - <a class="" href=/docs/ja/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DIMAPLog.txt</a></li>
-</ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=port>.port<a href=#port class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R4<td>追加</table>
-</div></div></details>
-<p><strong>.port</strong> : Integer</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-8>説明<a href=#説明-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
-<p><code>.port</code> プロパティは、 メール通信に使用されるポート番号を格納します。 <code>SMTP New transporter</code> や <code>POP3 New transporter</code>、 <code>IMAP New transporter</code> のコマンドで <code>transporter</code> オブジェクトを作成する際に使用される <em>server</em> オブジェクトにおいて、 このプロパティが指定されなかった場合に使用されるポートは次のとおりです:</p>
-<ul>
-<li class=""><strong>SMTP</strong> - 587</li>
-<li class=""><strong>POP3</strong> - 995</li>
-<li class=""><strong>IMAP</strong> - 993</li>
-</ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=send>.send()<a href=#send class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R5<td>MIMEコンテンツをサポート<tr><td>17 R4<td>追加</table>
-</div></div></details>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=checkconnection>.checkConnection()<a href=#checkconnection class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
@@ -431,7 +359,7 @@
 
 <table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>transporter オブジェクト接続のステータス</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-9>説明<a href=#説明-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-7>説明<a href=#説明-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.checkConnection()</code> 関数は、<code>transporter</code> オブジェクトが保存する情報を使用して接続をチェックします。必要なら再接続をし、そのステータスを返します。 この関数を使用して、ユーザーから提供された値が有効かどうかを検証することができます。</p>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=返されるオブジェクト>返されるオブジェクト<a href=#返されるオブジェクト class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p>この関数はメールサーバーにリクエストを送信し、メールステータスを表すオブジェクトを返します。 このオブジェクトには、次のプロパティが格納されることがあります:</p>
@@ -510,7 +438,7 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R5<td>追加</table>
 </div></div></details>
 <p><strong>.connectionTimeOut</strong> : Integer</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-10>説明<a href=#説明-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-8>説明<a href=#説明-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.connectionTimeOut</code> プロパティは、サーバー接続の確立までに待機する最長時間 (秒単位)を格納します。 <code>SMTP New transporter</code> や <code>POP3 New transporter</code>、 <code>IMAP New transporter</code> のコマンドで <code>transporter</code> オブジェクトを作成する際に使用される <code>server</code> オブジェクトにおいて、 このプロパティが指定されなかった場合のデフォルトは 30 です。</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=headercharset>.headerCharset<a href=#headercharset class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -530,7 +458,7 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R5<td>追加</table>
 </div></div></details>
 <p><strong>.headerCharset</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-11>説明<a href=#説明-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-9>説明<a href=#説明-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.headerCharset</code> プロパティは、メールヘッダーで使用される文字セットとエンコーディングを格納します。 ヘッダーにはメールの次の要素を含みます:</p>
 <ul>
 <li class="">内容</li>
@@ -587,7 +515,7 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R5<td>追加</table>
 </div></div></details>
 <p><strong>.host</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-12>説明<a href=#説明-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-10>説明<a href=#説明-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.host</code> プロパティは、ホストサーバーの名前または IPアドレスを格納します。 この情報はメール通信 (SMTP、POP3、IMAP) に使用されます。</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=keepalive>.keepAlive<a href=#keepalive class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -607,14 +535,14 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R4<td>追加</table>
 </div></div></details>
 <p><strong>.keepAlive</strong> : Boolean</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-13>説明<a href=#説明-13 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-11>説明<a href=#説明-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.keepAlive</code> プロパティは、<code>transporter</code> オブジェクトが抹消されるまで、SMTP接続が維持されなければならない場合に <strong>true</strong>、それ以外は <strong>false</strong> を格納します。 <code>SMTP New transporter</code> コマンドで <code>transporter</code> オブジェクトを作成する際に使用する <code>server</code> オブジェクトにおいて、 <code>keepAlive</code> プロパティが指定されなかった場合のデフォルトは <strong>true</strong> です。</p>
 <p>SMTP接続は、以下の場合に自動的に閉じられます:</p>
 <ul>
 <li class=""><code>.keepAlive</code> プロパティが true (デフォルト) の場合には、<code>transporter</code> オブジェクトが消去された時。</li>
 <li class=""><code>.keepAlive</code> プロパティが false の場合には、各 <code>.send( )</code> 関数が実行された後。</li>
 </ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=logfile-1>.logFile<a href=#logfile-1 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=logfile>.logFile<a href=#logfile class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
 
@@ -632,7 +560,7 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R5<td>追加</table>
 </div></div></details>
 <p><strong>.logFile</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-14>説明<a href=#説明-14 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-12>説明<a href=#説明-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.logFile</code> プロパティは、 メール接続に対して定義された拡張ログファイル (あれば) へのフルパスを格納します。 パスは、カレント Logs フォルダーを基準とした相対パス、あるいは絶対パスを指定できます。</p>
 <p><code>SET DATABASE PARAMETER</code> コマンドで有効化される通常のログファイルとは異なり、拡張ログファイルはすべての送信されたメールの MIMEコンテンツを保存し、サイズ制限がありません。 拡張ログファイルの詳細については、以下の章をそれぞれ参照ください:</p>
 <ul>
@@ -640,7 +568,7 @@
 <li class=""><strong>POP3 接続</strong> - <a class="" href=/docs/ja/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DPOP3Log.txt</a></li>
 <li class=""><strong>IMAP 接続</strong> - <a class="" href=/docs/ja/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt>4DIMAPLog.txt</a></li>
 </ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=port-1>.port<a href=#port-1 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=port>.port<a href=#port class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
 
@@ -658,14 +586,14 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R4<td>追加</table>
 </div></div></details>
 <p><strong>.port</strong> : Integer</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-15>説明<a href=#説明-15 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-13>説明<a href=#説明-13 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.port</code> プロパティは、 メール通信に使用されるポート番号を格納します。 <code>SMTP New transporter</code> や <code>POP3 New transporter</code>、 <code>IMAP New transporter</code> のコマンドで <code>transporter</code> オブジェクトを作成する際に使用される <em>server</em> オブジェクトにおいて、 このプロパティが指定されなかった場合に使用されるポートは次のとおりです:</p>
 <ul>
 <li class=""><strong>SMTP</strong> - 587</li>
 <li class=""><strong>POP3</strong> - 995</li>
 <li class=""><strong>IMAP</strong> - 993</li>
 </ul>
-<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=send-1>.send()<a href=#send-1 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=send>.send()<a href=#send class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
 
@@ -713,7 +641,7 @@
 
 <table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>mail<td>Object<td style=text-align:center>-><td>送信する <a class="" href=/docs/ja/next/API/EmailObjectClass#email-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88>メール</a><tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>SMTP ステータス</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-16>説明<a href=#説明-16 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-14>説明<a href=#説明-14 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.send()</code> 関数は、<a class="" href=/docs/ja/next/API/EmailObjectClass#email-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88><em>mail</em> オブジェクト</a> 引数が指定するメールメッセージを、<code>transporter</code> オブジェクトが定義する SMTPサーバーへと送信し、ステータスオブジェクトを返します。</p>
 <blockquote>
 <p><code>transporter</code> オブジェクトは、事前に <code>SMTP New transporter</code> コマンドによって作成されている必要があります。</p>
@@ -790,7 +718,7 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R4<td>追加</table>
 </div></div></details>
 <p><strong>.sendTimeOut</strong> : Integer</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-17>説明<a href=#説明-17 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-15>説明<a href=#説明-15 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.sendTimeOut</code> プロパティは、<code>.send()</code> 呼び出し時のタイムアウト時間 (秒単位) を格納します。 <code>.sendTimeOut</code> プロパティが <code>server</code> オブジェクトによって設定されていない場合は、デフォルトで 100 という値が使用されます。</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=user>.user<a href=#user class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -810,5 +738,5 @@
 <table><thead><tr><th>リリース<th>内容<tbody><tr><td>17 R4<td>追加</table>
 </div></div></details>
 <p><strong>.user</strong> : Text</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-18>説明<a href=#説明-18 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
-<p><code>.user</code> プロパティは、メールサーバーでの認証に使用されたユーザー名を格納します。</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FSMTPTransporterClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>このページへコメントする</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label=ドキュメントのナビゲーション><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/ja/next/API/SignalClass><div class=pagination-nav__sublabel>前へ</div><div class=pagination-nav__label>Signal</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/ja/next/API/SystemWorkerClass><div class=pagination-nav__sublabel>次へ</div><div class=pagination-nav__label>SystemWorker</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#smtp-transporter-オブジェクト class="table-of-contents__link toc-highlight">SMTP Transporter オブジェクト</a><li><a href=#4dsmtptransporternew class="table-of-contents__link toc-highlight">4D.SMTPTransporter.new()</a><li><a href=#acceptunsecureconnection class="table-of-contents__link toc-highlight">.acceptUnsecureConnection</a><li><a href=#authenticationmode class="table-of-contents__link toc-highlight">.authenticationMode</a><li><a href=#bodycharset class="table-of-contents__link toc-highlight">.bodyCharset</a><li><a href=#certificate class="table-of-contents__link toc-highlight">.certificate</a><li><a href=#certificatename class="table-of-contents__link toc-highlight">.certificateName</a><li><a href=#certificatepassword class="table-of-contents__link toc-highlight">.certificatePassword</a><li><a href=#logfile class="table-of-contents__link toc-highlight">.logFile</a><li><a href=#port class="table-of-contents__link toc-highlight">.port</a><li><a href=#send class="table-of-contents__link toc-highlight">.send()</a><li><a href=#checkconnection class="table-of-contents__link toc-highlight">.checkConnection()</a><li><a href=#connectiontimeout class="table-of-contents__link toc-highlight">.connectionTimeOut</a><li><a href=#headercharset class="table-of-contents__link toc-highlight">.headerCharset</a><li><a href=#host class="table-of-contents__link toc-highlight">.host</a><li><a href=#keepalive class="table-of-contents__link toc-highlight">.keepAlive</a><li><a href=#logfile-1 class="table-of-contents__link toc-highlight">.logFile</a><li><a href=#port-1 class="table-of-contents__link toc-highlight">.port</a><li><a href=#send-1 class="table-of-contents__link toc-highlight">.send()</a><li><a href=#sendtimeout class="table-of-contents__link toc-highlight">.sendTimeOut</a><li><a href=#user class="table-of-contents__link toc-highlight">.user</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>コミュニティ</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>サポート</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>ドキュメントのダウンロード</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (旧ドキュメントサイト)</a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>ナレッジベース</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>ダウンロード</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>リソース</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>サポートを受ける</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>会社概要</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>4D社について</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>コンタクト</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>世界中の4D</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - All rights reserved <div style=margin-top:8px><i>Some content is written with the help of AI</i></div></div></div></div></footer></div></body>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-16>説明<a href=#説明-16 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p><code>.user</code> プロパティは、メールサーバーでの認証に使用されたユーザー名を格納します。</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FSMTPTransporterClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>このページへコメントする</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label=ドキュメントのナビゲーション><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/ja/next/API/SignalClass><div class=pagination-nav__sublabel>前へ</div><div class=pagination-nav__label>Signal</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/ja/next/API/SystemWorkerClass><div class=pagination-nav__sublabel>次へ</div><div class=pagination-nav__label>SystemWorker</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#smtp-transporter-オブジェクト class="table-of-contents__link toc-highlight">SMTP Transporter オブジェクト</a><li><a href=#4dsmtptransporternew class="table-of-contents__link toc-highlight">4D.SMTPTransporter.new()</a><li><a href=#acceptunsecureconnection class="table-of-contents__link toc-highlight">.acceptUnsecureConnection</a><li><a href=#authenticationmode class="table-of-contents__link toc-highlight">.authenticationMode</a><li><a href=#bodycharset class="table-of-contents__link toc-highlight">.bodyCharset</a><li><a href=#certificate class="table-of-contents__link toc-highlight">.certificate</a><li><a href=#certificatename class="table-of-contents__link toc-highlight">.certificateName</a><li><a href=#certificatepassword class="table-of-contents__link toc-highlight">.certificatePassword</a><li><a href=#checkconnection class="table-of-contents__link toc-highlight">.checkConnection()</a><li><a href=#connectiontimeout class="table-of-contents__link toc-highlight">.connectionTimeOut</a><li><a href=#headercharset class="table-of-contents__link toc-highlight">.headerCharset</a><li><a href=#host class="table-of-contents__link toc-highlight">.host</a><li><a href=#keepalive class="table-of-contents__link toc-highlight">.keepAlive</a><li><a href=#logfile class="table-of-contents__link toc-highlight">.logFile</a><li><a href=#port class="table-of-contents__link toc-highlight">.port</a><li><a href=#send class="table-of-contents__link toc-highlight">.send()</a><li><a href=#sendtimeout class="table-of-contents__link toc-highlight">.sendTimeOut</a><li><a href=#user class="table-of-contents__link toc-highlight">.user</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>コミュニティ</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>サポート</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>ドキュメントのダウンロード</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (旧ドキュメントサイト)</a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>ナレッジベース</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>ダウンロード</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>リソース</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>サポートを受ける</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>会社概要</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>4D社について</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>コンタクト</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>世界中の4D</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - All rights reserved <div style=margin-top:8px><i>Some content is written with the help of AI</i></div></div></div></div></footer></div></body>
