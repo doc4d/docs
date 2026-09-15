@@ -39,8 +39,12 @@ Some data is also collected at regular intervals.
 |cacheReadCount|Object|Number of reads in the cache |
 |classUsage|Object|Number of instances of certain language classes|
 |connectionSystems|Collection|Client OS without the build number (in parenthesis) and number of clients using it|
+|databases[].backupSettings|Object|Current backup settings values|
 |databases[].cacheSize|Number|Cache size in bytes|
+|databases[].compatibilitySettings|Object|Enabled Compatibility settings|
 |databases[].externalDatastoreOpened|Number|Number of calls to `Open datastore`|
+|databases[].fluentUI|Boolean|True if Use Fluent UI on Windows setting is checked|
+|databases[].flushCacheInterval|Number|Defined time period between each automatic saving of the data cache|
 |databases[].id|Number|Database ID|
 |databases[].internalDatastoreOpened|Number|Number of times the datastore is opened by an external server|
 |databases[].maxConcurrent4DClients|Number|Maximum number of simultaneous 4D Client sessions (using a 4D Client license) over the collection interval |
@@ -52,10 +56,12 @@ Some data is also collected at regular intervals.
 |databases[].numberOfKeepRecordSyncInfo|Number|Number of tables with the "Enable Replication" option checked|
 |databases[].numberOfRecordsMax|Number|Total number of records|
 |databases[].numberOfTables|Number|Number of tables|
+|databases[].numberOfUncaughtExecutionErrors|Number|Number of times an execution error is displayed as an alert|
 |databases[].qodly.webforms|Number|Number of Qodly webforms|
 |databases[].remoteDebugger4DRemoteAttachments|Number|Number of attachments to the remote debugger from a remote 4D|
 |databases[].remoteDebuggerQodlyAttachments|Number|Number of attachments to the remote debugger from Qodly|
 |databases[].remoteDebuggerVSCodeAttachments|Number|Number of attachments to the remote debugger from VS Code|
+|databases[].sdi|Boolean|True if Use SDI mode on Windows setting is checked|
 |databases[].structureHash|Text||
 |databases[].uniqueID|Text (hashed string)|Unique id associated to the database (*Polynomial Rolling hash of the database name*)|
 |databases[].uptime|Number|Time elapsed (in seconds) between two collection events|
@@ -91,6 +97,7 @@ Some data is also collected at regular intervals.
 |isEncrypted|Boolean|True if the data file is encrypted|
 |isEngined|Boolean|True if the application is merged with 4D Volume Desktop|
 |isProjectMode|Boolean|True if the application is a project|
+|isShadowCopyActivated|Boolean|True if the Volume Shadow Copy feature is enabled (Windows only|
 |LDAPLogin|Number|Number of calls to `LDAP LOGIN`|
 |license.sffPrimaryKey|Number|Server master product number|
 |machine.CPU|Text|Name, type, and speed of the processor|
@@ -101,9 +108,11 @@ Some data is also collected at regular intervals.
 |maximumUsedPhysicalMemory|Number|Maximum use of physical memory|
 |maximumUsedVirtualMemory|Number|Maximum use of virtual memory|
 |mobile|Collection|Information on mobile sessions|
+|numberOfCrashes|Number|Number of times 4D has crashed|
 |numberOfWebServices|Number|Number of methods published as Web Services|
 |ODBCLogin|Number|Number of calls to `SQL LOGIN` using ODBC|
 |phpCall|Number|Number of calls to `PHP execute` |
+|plugins|Collection|List of loaded plugins|
 |QueryBySQL|Number|Number of calls to `QUERY BY SQL`|
 | restServer | Object | Object containing REST server information |
 | restServer.bytesIn | Number | Bytes received by the REST server   |
