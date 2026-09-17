@@ -1,9 +1,12 @@
 ---
-id: field-properties
+id: structure-fields
 title: Field properties
 ---
 
 For other field properties, please refer to [doc.4d.com](https://doc.4d.com/4Dv21/4D/21/Field-properties.300-7676763.en.html).
+
+<!-- INCLUDE my.section.id.Desc -->
+<!-- INCLUDE my.section.id2.Desc -->
 
 ## Class
 
