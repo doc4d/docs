@@ -69,6 +69,11 @@ module.exports =
           label: "Database Structure",
           items: [
             "Develop/field-properties",
+            "Develop/structure-editor",
+            "Develop/structure-tables",
+            "Develop/structure-fields",
+            "Develop/structure-indexes",
+            "Develop-legacy/structure-exporting-and-importing",
           ]
         },
         {
