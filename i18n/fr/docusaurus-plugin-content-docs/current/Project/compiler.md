@@ -5,7 +5,7 @@ title: Compilation
 
 Vous pouvez compiler vos projets, c'est-à-dire traduire toutes vos méthodes en langage machine. La compilation d'un projet permet de vérifier la cohérence du code et d'accélérer son exécution, mais aussi de masquer le code dans son intégralité. La compilation est une étape indispensable, entre le développement de projets avec 4D et leur déploiement en tant qu'applications autonomes.
 
-## Compilation incrémentale
+## Compiler
 
 La compilation est gérée depuis votre application 4D et est entièrement automatique.
 
@@ -37,9 +37,69 @@ Utilisez les commandes **Erreur précédente** / **Erreur suivante** du menu **M
 
 Le nombre d'erreurs trouvées lors de vos premières compilations peut être déconcertant, mais ne vous laissez pas décourager. Vous découvrirez rapidement qu'elles proviennent souvent de la même source, à savoir la non-conformité avec certaines conventions du projet. Le compilateur fournit toujours un [diagnostic précis](#error-file) des erreurs afin de vous aider à les corriger.
 
-> La compilation nécessite une licence appropriée. Sans cette licence, il n'est pas possible d'effectuer une compilation (les boutons sont désactivés). Néanmoins, il est toujours possible de vérifier la syntaxe et de générer des méthodes de typage.
+:::note
 
-## Exécuter la compilation
+Compilation requires an [appropriate license](../Admin/licenses.md). Sans cette licence, il n'est pas possible d'effectuer une compilation (les boutons sont désactivés). Néanmoins, il est toujours possible de vérifier la syntaxe et de générer des méthodes de typage.
+
+:::
+
+### Compile components
+
+<details><summary>Historique</summary>
+
+| Release | Modifications |
+| ------- | ------------- |
+| 21 R5   | Ajout         |
+
+</details>
+
+While developing your application, you can compile the components used by the host project directly from the host project, without having to open them separately. When the host project contains one or more *eligible* components (see [Requirements](#requirements) below), an additional menu is displayed in the Compiler window. This menu lets you select which project(s) you want to compile:
+
+- the host project only (default)
+- the host project and all its eligible components
+- a single eligible component among the list of all eligible components.
+
+![](../assets/en/Project/compile-component.png)
+
+:::note
+
+You can open the Compiler window from the **Methods>Component Methods** section of the Explorer: right-click on an eligible component name and select **Compiler...** from the contextuel menu.
+
+:::
+
+A list of components being compiled is displayed in the Compiler window. If an error is detected in a component, its compilation is stopped but the process continues for other components.
+
+- Components with at least one error can be unfolded to display the list of errors and appear **in bold**.
+- Components with at least one warning can be unfolded to display the list of warnings.
+- Components wihout errors cannot be unfolded.
+
+#### Conditions requises
+
+To be eligible for compilation from the host project, a component must comply with the following requirements:
+
+- the component uses the [project architecture](../Project/architecture.md),
+- the component's [interpreted code](../Concepts/interpreted.md) is available and the component is not [running in compiled mode](#run-compiled),
+- the component uses [direct typing](#enabling-direct-typing) declarations.
+
+:::note
+
+The additional menu is not displayed if the project does not contain any eligible component.
+
+:::
+
+#### Compiler features & Settings
+
+All available features of the Compiler window are applied to the selected component(s): **Compile**, **Check syntax**, **Clear compiled code**.
+
+The [Settings](../settings/) cannot be edited when a component is selected (the button is dimmed).
+
+Each component's [settings](../settings/) are applied for the compilation, except the [error file and symbol file generation options](#compilation-options): settings of the host project override the component's options. When enabled, [error and warning file](#error-file) as well as [symbol file](#symbol-file) of each component are stored in the [**Logs** folder of the host project](../Project/architecture.md#logs), within a dedicated folder (the name of the folder is the component name).
+
+When you start a compilation or a syntax check, every processed project is listed in the compiler window. If errors or warnings are detected, they are displayed in hierarchical lists beneath the corresponding project. Projects that contain errors are displayed in **bold**:
+
+![](../assets/en/Project/compile-components-errors.png)
+
+## Exécuter en compilé
 
 Une fois le projet compilé, il est possible de passer du [mode interprété au mode compilé](Concepts/interpreted.md), et vice versa, à tout moment et sans avoir à quitter l'application 4D (sauf si le code interprété a été supprimé). Pour ce faire, utilisez les commandes **Redémarrer en interprété** et **Redémarrer en compilé** du menu **Exécution**. La [boîte de dialogue d'ouverture de projet ](GettingStarted/creating.md#options) de 4D permet également de choisir le mode interprété ou compilé au lancement du projet.
 

@@ -193,7 +193,7 @@ function test()
 
 ```
 
-3. [予測可能なエラーと予測不可能なエラー]{#predictable-vs-unpredictable-errors} の両方を管理したい場合を考えます:
+3. [予測可能なエラーと予測不可能なエラー](#predictable-vs-unpredictable-errors) の両方を管理したい場合を考えます:
 
 ```4d
 var $e:=ds.Employee.new()
@@ -293,7 +293,21 @@ Function createInvoice($customer : cs.customerEntity; $items : Collection; $invo
 - **メッセージ**。エラーがなぜ起きたかを説明します。
 - **コード**。コンポーネントによって返される任意の数値です。
 
-[4D エラーダイアログボックス](../Debugging/basics.md) はユーザーに対してコードとメッセージを表示します。
+エラーと特にその原因の完全な詳細を取得するには、[4D エラーダイアログボックス](../Debugging/basics.md) あるいは[`Last errors`](../commands/last-errors.md) コマンドを使用することができます。
 
-エラーと特にその原因の完全な詳細を取得するには、[`Last errors`](../commands/last-errors) コマンドを呼び出す必要があります。 最終アプリケーションにおいて[エラー処理メソッド](#installing-an-error-handling-method) を使用してエラーへの割り込みと処理をする場合、[`Last errors`](../commands/last-errors) を使用して必ず*error* オブジェクトの全てのプロパティを記録するようにしてください。エラーコードはコンポーネントによって異なるからです。
+### エラーダイアログボックス
+
+[4D エラーダイアログボックス](../Debugging/basics.md) はユーザーに対してコードとメッセージを表示します。 **詳細** エリアを展開し、**保存...** あるいは **コピー** ボランをクリックします:
+
+![copy-button](../assets/en/Concepts/error.png)
+
+するとエラーに関連した詳細な情報は、コンテキストやコンポーネントといった情報も含めて、テキストファイルに保存されるかペーストボードにコピーされます:
+
+![pasted-error](../assets/en/Concepts/error2.png)
+
+### `Last errors`コマンド
+
+コード内で[`Last errors`](../commands/last-errors) コマンドを呼び出すことで、エラーに関する情報を取得することができます。 このコマンドは[`ON ERR CALL`](../commands/on-err-call) コマンドで実装されたエラー処理メソッドから、あるいは[`Try` または `Try/Catch`](#trycatchend-try) コンテキスト内から呼び出す必要があります。
+
+最終アプリケーションにおいてエラーへの割り込みと処理をする場合、[`Last errors`](../commands/last-errors) を使用して必ず*error* オブジェクトの全てのプロパティを記録するようにしてください。エラーコードはコンポーネントによって異なるからです。
 

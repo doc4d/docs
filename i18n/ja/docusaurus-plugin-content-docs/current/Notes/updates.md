@@ -3,6 +3,18 @@ id: updates
 title: リリースノート
 ---
 
+## 4D 21 R5
+
+[**4D 21 R5 の新機能**](https://blog.4d.com/ja/whats-new-in-4d-21-r5/): 4D 21 R5 の新機能と拡張機能をすべてリストアップしたブログ記事です。
+
+#### ハイライト
+
+- [`4D.SMTPTransporter`](../API/SMTPTransporterClass.md) クラスの新しいクラスプロパティを使用したS/MIME Eメール署名のサポート: [`.certificate`](../API/SMTPTransporterClass.md#certificate) または [`.certificateName`](../API/SMTPTransporterClass.md#certificatename) (証明書の提供)、および[`.certificatePassword`](../API/SMTPTransporterClass.md#certificatepassword)。
+- [コンポーネントをホストから直接コンパイルする](../Project/compiler.md#コンポーネントのコンパイル) ことができるようになりました。
+- Windows 上での [**fluent UI** レンダリング](../FormEditor/forms.md#fluent-ui-レンダリング) でのリストフォームのサポート。
+- [依存関係マネージャー](../Project/components.md#4d-cornerを使用) から[4D Corner プラットフォーム](https://corner.4d.com/) へと直接アクセスできるようになりました。
+- [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=21_R5): 4D 21 R5 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/178/release-note-version-20r5/))。
+
 ## 4D 21 R4
 
 [**4D 21 R4 の新機能**](https://blog.4d.com/ja/whats-new-in-4d-21-r4/): 4D 21 R4 の新機能と拡張機能をすべてリストアップしたブログ記事です。
@@ -86,7 +98,6 @@ title: リリースノート
 
 | ライブラリ           | 現在のバージョン                               | 更新された 4D バージョン | 説明                                                                                                                                                   |
 | --------------- | -------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BoringSSL       | 664a985                                | **21 R4**      | QUIC に使用                                                                                                                                             |
 | CEF             | 7258                                   | 21             | Chromium 139                                                                                                                                         |
 | Hunspell        | 1.7.2  | 20             | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                                                                                               |
 | ICU             | 77.1                   | 21             | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。                                                                                                     |
@@ -97,7 +108,7 @@ title: リリースノート
 | libZip          | 1.11.4 | 21             | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                                                |
 | LZMA            | 5.8.1  | 21             |                                                                                                                                                      |
 | ngtcp2          | 1.24.0 | **21 R4**      | QUIC に使用                                                                                                                                             |
-| OpenSSL         | 4.0                    | **21 R4**      |                                                                                                                                                      |
+| OpenSSL         | 4.0.1  | **21 R5**      |                                                                                                                                                      |
 | PDFWriter       | 4.7.0  | 21             | [`WP Export document`](../WritePro/commands/wp-export-document.md) および [`WP Export variable`](../WritePro/commands/wp-export-variable.md) において使用されます |
 | SpreadJS        | 18.2.0 | 21 R2          | 新機能の概要については、 [このブログ記事](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) を参照してください。                                                            |
 | webKit          | WKWebView                              | 19             |                                                                                                                                                      |
