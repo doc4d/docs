@@ -26,7 +26,7 @@ Indexed fields are displayed in **bold** type in the Structure editor.
 - **Standard indexes:** These are single-field indexes used to accelerate standard database operations (searches and sorts). 4D lets you choose the internal architecture of this type of index (except for Object fields): B-Tree or Cluster B-Tree.
 - **Composite indexes:** This index stores the combined values of two or more fields that are often searched for together, for example LastName+FirstName.
 - **Keyword indexes:** These indexes are only available for Alpha, Text and Picture type fields. They are intended to facilitate fast searching inside text or, in the case of pictures, among the keywords associated with the pictures.
-- **Vector indexes**: These indexes are designed to accelerate AI-based queries on Object fields storing [embeddings](./field-properties.md#class).  
+- **Vector indexes**: These indexes are designed to accelerate AI-based queries on Object fields storing [embeddings](./field-properties.md#4dvector-class).  
 
 ### Standard indexes
 
@@ -76,113 +76,90 @@ This works the same way for all the query and order by commands: [`QUERY BY FORM
 
 ### Vector index
 
-A vector index can be associated to an Object type field that was configured as a `4D.Vector` [class](./field-properties.md#class). Configuring 
+A vector index can be associated to an Object type field that was configured as a `4D.Vector` [class](./field-properties.md#4dvector-class). In this case, the following options are available:
 
+![](../assets/en/Develop/vector-index.png)
+
+- **Cosine**: the vector index is optimized for [cosine similarity](../API/VectorClass.md#understanding-the-different-vector-computations) computations. 
+- **Dot**: the vector index is optimized for [dot similarity](../API/VectorClass.md#understanding-the-different-vector-computations) computations.
+- **Euclidean**: the vector index is optimized for [euclidian distance](../API/VectorClass.md#understanding-the-different-vector-computations) computations.
+- **Automatic**: standard object index type ([see above](#standard-indexes)). You can select this index type to handle null vectors, it will be automatically used in this case. 
+
+You can select one or more index types for your vector fields, the appropriate index will be automatically used depending on the actual computation. For optimization reasons, it is recommended to only select necessary index types. 
 
 ## Index List
 
-The [picture here] button of the toolbar in the Structure editor displays the Index List window.  
-This window displays the list of all the indexes of the structure, regardless of their type:
+The ![](../assets/en/Develop/index-list.png) button of the toolbar in the Structure editor displays the Index List window. This window displays the list of all the indexes of the structure, regardless of their type:
 
-[picture here]
+![](../assets/en/Develop/index-window.png)
+
 
 The Index List can be used to view the main properties of the indexes:
 
-- **Type:** Index type. Each type of index (B-tree, Cluster B-tree, keyword) is depicted with a different icon.  
-  It is possible to modify the index type from the Index explorer by clicking on the inverted triangle and selecting a value in the pop-up menu.  
+- **Type:** Index type. Each type of index (B-tree, Cluster B-tree, Keyword, Euclidean, Cosine, Dot) is depicted with a different icon.  
 - **Description:** Table and field(s) of index. For a composite index, this list contains all the fields of the index.  
-- **Name:** Index name. This property is used in particular by the language commands. You can change or add an index name by double-clicking in this area.
+- **Name:** Index name. This property is used in particular by the language commands. You can change or add an index name by double-clicking in this column.
 
-The [picture here] button displays the index property dialog box.  
-The [picture here] button deletes the selected index (a confirmation dialog box appears).  
+The **[+]** button displays the index property dialog box and allows you to edit the selected index or to add a new index when no index was selected.   
+The **[-]** button deletes the selected index (a confirmation dialog box appears).  
 This button can be used more particularly to delete composite indexes.  
 
-Two additional commands are available in the menu associated with the tool button (enabled when an index is selected):
+Two additional commands are available in the menu associated with the tool button (enabled when an index is selected:
 
-[picture here]
-
-- **Edit:** Displays the properties of the selected index in the index property dialog box (see next paragraph).  
-  This command has the same effect as double-clicking on a row of the list (except for in the name area).  
-- **Rebuild:** Can be used to delete and rebuild the selected index.  
-  A confirmation dialog box appears when you select this command.
+- **Edit:** Displays the properties of the selected index in the index property dialog box (see next paragraph). This command has the same effect as double-clicking on a row of the list (except for in the name area).  
+- **Rebuild:** Can be used to delete and rebuild the selected index. A confirmation dialog box appears when you select this command.
 
 ## Creating an index
 
-The way an index is created will depend on its type. In addition, you can choose to create an index directly or to use the index creation dialog box.
-
 To create a **standard index** directly:
 
-1. Select a field then choose a value from the “Index” menu of the **Inspector palette**. 
-   **OR**  
-   Right-click on the field then select a value from the **Index>** submenu of the context menu. 
-	There are four options available (except for Object type fields):
+1. Select a field then choose a value from the "Index" menu of the **Inspector palette**. 
+**OR**  
+Right-click on the field then select a value from the **Index>** submenu of the context menu. 
 
-	- **B-tree:** Creates a standard B-Tree type index. 
-	- **Cluster B-tree:** Creates a B-Tree type index using clusters. 
-	- **Automatic:** Lets 4D select the architecture depending on the type of data concerned. 
-	- **None:** No index or removal of existing index.
-		[picture here]
-
-To create a **keyword index** directly:
-
-1. Select an Alpha, Text or Picture type field then check the “Keyword Index” option in the **Inspector palette**. 
-[picture here]
-
-	**OR**  
-	Right-click on a field then select **Keywords** from the **Index>** submenu of the context menu.
-
-To create a composite index or any other type of index using the index creation dialog box:
+To create a **composite index** or any other type of index using the index creation dialog box:
 
 1. Select the **New Index...** in the context menu of the table or select **Index** in the add objects menu of the Structure editor tool bar.  
-   **OR**  
-   Select several fields while holding down the Ctrl (Windows) or Command (OS X) button then right click on one of the fields and select **New Composite Index...** in the context menu.
+**OR**  
+Select several fields while holding down the **Ctrl** (Windows) or **Command** (macOS) button then right click on one of the fields and select **New Composite Index...** in the context menu.
 
-	The index configuration dialog box then appears. It contains the following elements:
+The index configuration dialog box then appears. 
 
-	[picture here]
+![](../assets/en/Develop/index-add.png)
 
-	- **Table:** List of all the database tables. Choose the table to which the index will belong from this menu.  
-	- **Name:** Index name entry area. This name is used by the 4D language commands.  
-	- **Type:** Selection menu for type of index to be created.  
-  If you keep the “Automatic” option, 4D will automatically choose the index type according to the contents of the field.  
-	- **List of Fields:** This area is used to specify the field(s) associated with the index.  
-  It can contain a field by default depending on the current selection in the editor.
+It contains the following elements:
 
-To add a field to the index, click on the ![picture here] button.  
-The list of fields of the selected table is displayed so that you can indicate the field to be added to the index.
+- **Table:** List of all the database tables. Choose the table to which the index will belong from this menu.  
+- **Name:** Index name entry area. This name is used by the 4D language commands.  
+- **Type:** Selection menu for type of index to be created. If you keep the "Automatic" option, 4D will automatically choose the index type according to the contents of the field.  
+- **List of Fields:** This area is used to specify the field(s) associated with the index. It can contain a field by default depending on the current selection in the editor.
 
-- If you want to create a composite index, add each field to be included in the index successively.  
-  Once the list is completed, you can reorder the fields using the arrow buttons or using drag and drop.  
+To add a field to the index, click on the **[+]** button. The list of fields of the selected table is displayed so that you can indicate the field to be added to the index.
+
+- If you want to create a composite index, add each field to be included in the index successively. Once the list is completed, you can reorder the fields using the arrow buttons or using drag and drop.  
 - If you create a composite index based on primary key fields, make sure you put the fields in the same order in the primary key and in the index.  
-- If you have chosen the “Keyword Index” type, only Alpha or Text fields can be selected.  
-  Also in this case, you cannot include only one field in the index.
+- If you have chosen the “Keyword Index” type, only Alpha or Text fields can be selected. Also in this case, you cannot include only one field in the index.
 
-To delete a field from the index, select it in the list and click on the [picture here] button.
+To delete a field from the index, select it in the list and click on the **[-]** button. 
+
 Once the index has been configured, click on **OK** to generate the index.
 
 ## Deleting an index in the Structure editor
 
-You can delete indexes that are no longer useful at any time.  
-This can be carried out directly in the Structure editor or using the List Index window. For more information about the List Index window, please refer to the “Index List” section above.
+You can delete indexes that are no longer useful at any time. This can be carried out directly in the Structure editor or using the [Index List](#index-list) window. 
 
-To delete a standard index:
+To delete a standard index in the Structure editor:
 
-1. Select the field associated with the index you want to delete, then choose the **None** option in the Index menu of the **Inspector palette**.  
-   **OR**  
-2. Right-click on the field associated with the index, then choose the **None** option from the **Index>** submenu of the context menu.
+1. Select the field associated with the index you want to delete, then choose the **None** or uncheck the **Keyword Index** option (for a keyword index) in the Index menu of the **Inspector palette** 
+**OR**  
+Right-click on the field associated with the index, then choose the **None** or uncheck the **Keywords** option from the **Index>** submenu of the context menu.
 
-To delete a keyword index:
-
-1. Select the field associated with the index you want to delete, then uncheck the “Keyword Index” option in the **Inspector palette**.  
-   **OR**  
-2. Right-click on the field associated with the index, then uncheck the **Keywords** option in the **Index>** submenu of the context menu.
-
-The deletion (and viewing) of a composite index can only be carried out from the List Index window (using the ![picture here] button).
+The deletion (and viewing) of a composite index can only be carried out from the List Index window, see above.
 
 ## Reindexing a field
 
-You can reindex a field at any time; in other words, rebuild the index table(s) associated with it, in accordance with the data present.  
-This can be useful in the case of application maintenance.  
-Reindexing can be carried out using the **Rebuild** command in the Index List window.  
+You can reindex a field at any time; in other words, rebuild the index table(s) associated with it, in accordance with the data present. This can be useful in the case of application maintenance.  
 
-Note that modifying the data language (see [picture here]) or maintenance operations such as compacting (see *Compact page*) will also cause the indexes to be rebuilt.
+Reindexing can be carried out using the **Rebuild** command in the [Index List](#index-list) window.  
+
+Note that modifying the [data language](../settings/database.md#text-comparison) or maintenance operations such as [compacting](../MSC/compact.md) will also cause the indexes to be rebuilt.
