@@ -3,11 +3,11 @@ id: structure-indexes
 title: Creating and modifying indexes
 ---
 
-You can associate indexes fields that you frequently use for searching and sorting. For example, you might index Last Name, Company name, or Product name if you plan to search for specific records or sort the records by these fields. You also use this property for fields that establish relations between tables. For more information about this, refer to *Creating and modifying relations*.
+You can associate indexes with fields that you frequently use for searching and sorting. For example, you might index LastName, CompanyName, or ProductName if you plan to search or sort entities using these attributes. You also use this property for fields that establish relations between tables. 
 
 When an index is associated with a field, 4D creates an internal index table for the field. This table allows 4D to perform rapid searches and sorts on the field. When searching or sorting on an unindexed field, 4D moves through data sequentially, examining each record in order. Indexing allows 4D to search and sort without going through every record. 
 
-You can index fields of the Alpha, Text, Date, Time, Boolean, Integer, Long integer, Integer 64 bits, Real, Float, Picture and Object type. As you add and delete records, 4D automatically updates its index table. If you create an index for a field that already exists, 4D automatically indexes the existing data. You can specify as many indexed fields as you want. Indexes are also rebuilt during specific operations such as conversion of earlier databases or data compacting.
+You can index fields of the Alpha, Text, Date, Time, Boolean, Integer, Long integer, Integer 64 bits, Real, Picture and Object type. As you add and delete records, 4D automatically updates its index table. If you create an index for a field that already exists, 4D automatically indexes the existing data. You can specify as many indexed fields as you want. Indexes are also rebuilt during specific operations such as conversion of earlier databases or [data compacting](../MSC/compact.md).
 
 Each index table can contain up to:
 
@@ -21,11 +21,12 @@ Indexed fields are displayed in **bold** type in the Structure editor.
 
 ## Types of indexes
 
-4D provides different types of indexes. Choosing between the different types is generally based on the result expected and the type of data present in the field. There are three main types of indexes:
+4D provides different types of indexes. Choosing between the different types is generally based on the result expected and the type of data present in the field. There are four main types of indexes:
 
 - **Standard indexes:** These are single-field indexes used to accelerate standard database operations (searches and sorts). 4D lets you choose the internal architecture of this type of index (except for Object fields): B-Tree or Cluster B-Tree.
 - **Composite indexes:** This index stores the combined values of two or more fields that are often searched for together, for example LastName+FirstName.
 - **Keyword indexes:** These indexes are only available for Alpha, Text and Picture type fields. They are intended to facilitate fast searching inside text or, in the case of pictures, among the keywords associated with the pictures.
+- **Vector indexes**: These indexes are designed to accelerate AI-based queries on Object fields storing [embeddings](./field-properties.md#class).  
 
 ### Standard indexes
 
@@ -59,19 +60,24 @@ You can use a specific type of index with Alpha, Text and Picture fields: a keyw
   It is possible to associate both a standard index and a keyword index with Alpha and Text fields (when stored in the records). 4D will use the appropriate index depending on the context.
 
 - When you associate this type of index with a Picture field, searches among keywords associated with pictures (metadata) are greatly accelerated. Warning: Picture keyword indexes are exclusively based on metadata of the IPTC/Keywords type. These types of metadata are supported in particular by the TIFF and JPEG formats (note that BMP, PNG and GIF do not support them). Other types of metadata are not managed by indexing.  
-  Keyword indexes for pictures are updated automatically by 4D each time the Picture field is saved (when a record is created or modified, when data is imported, and so on). Metadata of the IPTC/Keywords type are indexed automatically by 4D when they are found in the picture (you do not have to call the **SET PICTURE METADATA** command to include them in the index of the Picture field).
+  Keyword indexes for pictures are updated automatically by 4D each time the Picture field is saved (when a record is created or modified, when data is imported, and so on). Metadata of the IPTC/Keywords type are indexed automatically by 4D when they are found in the picture (you do not have to call the [`SET PICTURE METADATA`](../commands/set-picture-metadata) command to include them in the index of the Picture field).
 
-You can use the **DISTINCT VALUES** command to get the list of keywords contained in an keywords index.
+You can use the [`DISTINCT VALUES`](../commands/distinct-values) command to get the list of keywords contained in an keywords index.
 
-You use picture or text keyword indexes through the **%** operator: this operator must be placed in the query or sort formulas in order to specifically use an index value. For example:
+You use picture or text keyword indexes through the [`%` operator](../Concepts/dt_string.md#keywords): this operator must be placed in the query or sort formulas in order to specifically use an index value. For example:
 
 ```4d
 QUERY([PICTURES];[PICTURES]Photos %"cats")
 // look for photos associated with the cats keyword
 ```
 
-This works the same way for all the query and order by commands: **QUERY BY FORMULA**, **QUERY SELECTION**, **ORDER BY**, etc.
-For more information about how the % operator works and about keyword searches, refer to *Comparison Operators* in the 4D Language Reference manual.
+This works the same way for all the query and order by commands: [`QUERY BY FORMULA`](../commands/query-by-formula), [`QUERY SELECTION`](../commands/query-selection), [`ORDER BY`](../commands/order-by), etc.
+
+
+### Vector index
+
+A vector index can be associated to an Object type field that was configured as a `4D.Vector` [class](./field-properties.md#class). Configuring 
+
 
 ## Index List
 
