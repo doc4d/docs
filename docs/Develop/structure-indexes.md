@@ -119,9 +119,11 @@ Right-click on the field then select a value from the **Index>** submenu of the 
 
 To create a **composite index** or any other type of index using the index creation dialog box:
 
-1. Select the **New Index...** in the context menu of the table or select **Index** in the add objects menu of the Structure editor tool bar.  
+1. Select several fields while holding down the **Shift** key (for adjacent selection) or **Ctrl** (Windows) or **Command** (macOS) button then right click on one of the fields and select **New Composite Index...** in the context menu.
 **OR**  
-Select several fields while holding down the **Ctrl** (Windows) or **Command** (macOS) button then right click on one of the fields and select **New Composite Index...** in the context menu.
+Select the **New Index...** in the context menu of the table or select **Index** in the add objects menu of the Structure editor tool bar.  
+
+
 
 The index configuration dialog box then appears. 
 

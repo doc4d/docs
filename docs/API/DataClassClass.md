@@ -17,6 +17,7 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 |[<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<br/><!-- INCLUDE #DataClassClass.get().Summary --> |
 |[<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<br/><!-- INCLUDE #DataClassClass.getCount().Summary --> |
 |[<!-- INCLUDE #DataClassClass.getDataStore().Syntax -->](#getdatastore)<br/><!-- INCLUDE #DataClassClass.getDataStore().Summary --> |
+|[<!-- INCLUDE #DataClassClass.getIndexes().Syntax -->](#getindexes)<br/><!-- INCLUDE #DataClassClass.getIndexes().Summary --> |
 |[<!-- INCLUDE #DataClassClass.getInfo().Syntax -->](#getinfo)<br/><!-- INCLUDE #DataClassClass.getInfo().Summary --> |
 |[<!-- INCLUDE #DataClassClass.getRemoteCache().Syntax -->](#getremotecache)<br/><!-- INCLUDE #DataClassClass.getRemoteCache().Summary --> |
 |[<!-- INCLUDE #DataClassClass.new().Syntax -->](#new)<br/><!-- INCLUDE #DataClassClass.new().Summary --> |
@@ -617,6 +618,70 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 ```
 
 <!-- END REF -->
+
+
+
+<!-- REF DataClassClass.getIndexes().Desc -->
+## .getIndexes()
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R5|Added|
+
+</details>
+
+<!-- REF #DataClassClass.getIndexes().Syntax -->**.getIndexes()** : Collection <!-- END REF -->
+
+
+<!-- REF #DataClassClass.getIndexes().Params -->
+<div class="no-index">
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|Result|Collection|<-|Collection of index objects|
+</div>
+<!-- END REF -->
+
+#### Description
+
+The `.getIndexes()` function <!-- REF #DataClassClass.getIndexes().Summary -->returns a collection of all indexes related to the dataclass as objects<!-- END REF -->. 
+
+**Returned collection**
+
+Each object of the returned collection has the following properties:
+
+|Property| Type| Description|
+|---|---|---|
+|type|Integer|Index type. If the index is set to Automatic, the type property represents the type of the indexing algorithm used|
+|automatic| Boolean |True if "automatic" index is selected|
+|name |Text| Index name if defined|
+|kind |Text| "keywords" if *keyword index* checked, otherwise "regular"|
+|attributes |Collection| List of attributes (for composite index), or index attribute  |
+|UUID |Text| Index UUID|
+|uniqueKey |Boolean| True if index has the Unique key property|
+
+
+#### Example
+
+```4d
+ #DECLARE ($entity : Object)  
+ var $status : Object
+
+ computeEmployeeNumber($entity) //do some actions on entity
+
+ $status:=$entity.save()
+ if($status.success)
+    ALERT("Record updated in table "+$entity.getDataClass().getInfo().name)
+ End if
+```
+
+<!-- END REF -->
+
+
+
+
 
 <!-- REF DataClassClass.getInfo().Desc -->
 ## .getInfo()
