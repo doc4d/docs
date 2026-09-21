@@ -160,7 +160,7 @@ This property allows you to assign a fill color attribute to [custom buttons](./
 
 #### Objects Supported
 
-[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
 
 
 #### Commands
