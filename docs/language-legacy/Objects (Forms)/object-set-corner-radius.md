@@ -46,7 +46,7 @@ In the *radius* parameter, you pass a new radius value in pixels to be applied t
 
 **Note**: With input and text area objects, the corner radius property is only available with "none", "solid", or "dotted" border line styles.
 
-You can modify this value at the form level using the [**Corner radius property**](../../FormObjects/properties_CoordinatesAndSizing.md#corner-radius).
+You can modify this value at the form level using the [**Corner radius property**](../../FormObjects/properties_BackgroundAndBorder.md#corner-radius).
 
 ## Example 1 
 

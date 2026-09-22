@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.OBJECT Get corner radius.Summary-->The **OBJECT Get corner radius** command returns the current value of the corner radius for the object designated by the *object* parameter.<!-- END REF--> This value may have been set at the form level using the [**Corner radius property**](../../FormObjects/properties_CoordinatesAndSizing.md#corner-radius) or for the current process using the [OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius) command.
+<!--REF #_command_.OBJECT Get corner radius.Summary-->The **OBJECT Get corner radius** command returns the current value of the corner radius for the object designated by the *object* parameter.<!-- END REF--> This value may have been set at the form level using the [**Corner radius property**](../../FormObjects/properties_BackgroundAndBorder.md#corner-radius) or for the current process using the [OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius) command.
 
 The **OBJECT Get corner radius** command can be used with the following form objects:
 

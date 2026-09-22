@@ -374,7 +374,7 @@ All buttons share the same set of basic properties:
 
 Additional specific properties are available, depending on the [button style](#button-styles):
 
-- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_CoordinatesAndSizing.md#corner-radius) - [Default Button](properties_Appearance.md#default-button) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color) - [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
+- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_BackgroundAndBorder.md#corner-radius) - [Default Button](properties_Appearance.md#default-button) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color) - [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
 - Flat, Regular: [Default Button](properties_Appearance.md#default-button)
 
 

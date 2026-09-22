@@ -135,51 +135,6 @@ Top coordinate of the object in the form.
 
 ---
 
-## Corner Radius
-
-<details><summary>History</summary>
-
-|Release|Changes|
-|---|---|
-|21 R5|Support for custom-styled buttons, radio buttons and check boxes |
-|19 R7|Support for inputs and text areas|
-
-</details>
-
-Defines the corner roundness (in pixels) of the object. By default, the radius value is 0 pixels. You can change this property to draw rounded objects with custom shapes:
-
-![](../assets/en/FormObjects/shape_rectangle.png)
-
-Minimum value is 0, in this case a standard non-rounded object rectangle is drawn.
-Maximum value depends on the rectangle size (it cannot exceed half the size of the shortest rectangle side) and is calculated dynamically.
-
-With [text areas](text.md) and [inputs](input_overview.md):
-
-- the corner radius property is only available with "none", "solid", or "dotted" [border line styles](properties_BackgroundAndBorder.md#border-line-style),
-- the corner roundness is drawn outside the area of the object (the object appears larger in the form but its [width](properties_CoordinatesAndSizing.md#width) and [height](properties_CoordinatesAndSizing.md#height) are not extended).
-
-![](../assets/en/FormObjects/radius-text.png)
-
-
-With [custom buttons](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)), [custom check boxes](checkbox_overview.md#custom) and [custom radio buttons](radio_overview.md#custom), the corner radius is drawn inside the area of the object. 
-
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|borderRadius|integer |minimum: 0|
-
-#### Objects Supported
-
-[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md) - [Custom Radio Button](radio_overview.md#custom)  
-
-#### Commands
-
-[OBJECT GET CORNER RADIUS](../commands/object-get-corner-radius) - [OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius)
-
-
----
 
 ## Height
 
