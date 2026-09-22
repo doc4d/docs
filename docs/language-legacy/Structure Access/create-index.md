@@ -32,10 +32,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-The **CREATE INDEX** command creates:
-
-* A <!--REF #_command_.CREATE INDEX.Summary-->standard index on one or more fields (composite index) or
-* A keyword index on a field.<!-- END REF-->
+The **CREATE INDEX** command <!--REF #_command_.CREATE INDEX.Summary-->creates a standard index on one or more fields (composite index) or a keyword index on a single field.<!-- END REF-->
 
 The index is created for the *aTable* table by using one or more fields designated by the *fieldsArray* pointer array. This array contains a single row when you want to create a simple index and two or more rows when you want to create a composite index (except in the case of a keyword index). In the case of composite indexes, the order of the fields in the array is important when the index is being built.
 
@@ -45,7 +42,7 @@ The *indexType* parameter sets the type of index to be created. You can pass one
 | -------------------- | ------- | ----- | ----- |
 | Cluster BTree index  | Integer | 3     | B-Tree type index using clusters. This type of index is optimized when the index contains few keywords, i.e. when the same values occur frequently in the data. |
 | Default index type   | Integer | 0     | 4D specifies the index type (excluding keywords indexes) that is the most optimized according to the contents of the field.   |
-| Keywords index       | Integer | \-1   | Permits word-by-word indexing of field contents. This type of index can only be used with fields of the Text, Alpha or Picture type. Warning: Keywords indexes cannot be composite. |
+| Keywords index       | Integer | -1   | Permits word-by-word indexing of field contents. This type of index can only be used with fields of the Text, Alpha or Picture type. Warning: Keywords indexes cannot be composite. |
 | Standard BTree index | Integer | 1     | Standard B-Tree type index. This multi-purpose index type is used in previous versions of 4D  |
 | Vector cosine index | Integer | 4    | Index optimized for AI queries using [cosine similarity](../../API/VectorClass.md#cosinesimilarity) |
 | Vector dot index | Integer | 5    | Index optimized for AI queries using [dot similarity](../../API/VectorClass.md#dotsimilarity)  |

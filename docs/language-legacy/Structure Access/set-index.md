@@ -51,7 +51,7 @@ In this case, the command creates an index of the type specified for *aField*. Y
 | -------------------- | ------- | ----- | ----- |
 | Cluster BTree Index  | Integer | 3     | B-Tree type index using clusters. This type of index is optimized when the index contains few keywords, i.e. when the same values occur frequently in the data. |
 | Default Index Type   | Integer | 0     | 4D specifies the index type (excluding keywords indexes) that is the most optimized according to the contents of the field.  |
-| Keywords Index       | Integer | \-1   | Permits word-by-word indexing of field contents. This type of index can only be used with fields of the Text or Alpha type. |
+| Keywords Index       | Integer | -1   | Permits word-by-word indexing of field contents. This type of index can only be used with fields of the Text or Alpha type. |
 | Standard BTree Index | Integer | 1     | Standard B-Tree type index. This multi-purpose index type is used in previous versions of 4D  |
 | Vector cosine index | Integer | 4    | Index optimized for AI queries using [cosine similarity](../../API/VectorClass.md#cosinesimilarity) |
 | Vector dot index | Integer | 5    | Index optimized for AI queries using [dot similarity](../../API/VectorClass.md#dotsimilarity)  |
