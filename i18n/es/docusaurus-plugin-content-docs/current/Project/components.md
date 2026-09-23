@@ -3,15 +3,15 @@ id: components
 title: Dependencias
 ---
 
-[La arquitectura de los proyectos](../Project/architecture.md) 4D es modular. Puede ofrecer funcionalidades adicionales a sus proyectos 4D instalando [**componentes**](Concepts/components.md) y [**plug-ins**](../Concepts/plug-ins.md). Los componentes están hechos de código 4D, mientras que los plug-ins pueden [construirse utilizando cualquier lenguaje](../Extensions/develop-plug-ins.md).
+[La arquitectura de los proyectos](../Project/architecture.md) 4D es modular. Puede ofrecer funcionalidades adicionales a sus proyectos 4D instalando [**componentes**](../Concepts/components.md) y [**plug-ins**](../Concepts/plug-ins.md). Los componentes están hechos de código 4D, mientras que los plug-ins pueden [construirse utilizando cualquier lenguaje](../Extensions/develop-plug-ins.md).
 
-Puede [desarrollar](../Extensions/develop-components.md) y [crear](../Desktop/building.md) sus propios componentes 4D, o descargar componentes públicos compartidos por la comunidad 4D que [se pueden encontrar por ejemplo en GitHub](https://github.com/topics/4d-component).
+Puede [desarrollar](../Extensions/develop-components.md) y [crear](../Desktop/building.md) sus propios componentes 4D, o descargar componentes públicos propuestos por 4D o la comunidad 4D en la [**plataforma 4D Corner**](https://corner.4d.com/).
 
 Una vez instalados en su entorno 4D, las extensiones se manejan como **dependencias** con propiedades específicas.
 
 ## Componentes interpretados y compilados
 
-Los componentes pueden ser interpretados o [compilados](../Desktop/building.md).
+Los componentes pueden ser interpretados o [compilados](./compiler.md#compile-components).
 
 - Un proyecto 4D que se ejecuta en modo interpretado puede utilizar componentes interpretados o compilados.
 - Un proyecto 4D que se ejecuta en modo compilado no puede utilizar componentes interpretados. En este caso, sólo se pueden utilizar componentes compilados.
@@ -561,6 +561,36 @@ La versión actual de la dependencia se muestra a la derecha del elemento de la 
 En el cuadro de diálogo "Editar la dependencia", edite el menú Regla de dependencia y haga clic en **Aplicar**. You can modify the [version setting](#defining-a-dependency-version-range) for a listed dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu.
 
 Modificar el rango de versiones es útil, por ejemplo, si utiliza la función de actualización automática y desea bloquear una dependencia a un número de versión específico.
+
+### Uso de 4D Corner
+
+The [**4D Corner platform**](https://corner.4d.com/) proposes a comprehensive list of ready-to-use 4D components, proposed from the 4D company or from the 4D community. Puede navegar o buscar en la lista para encontrar el componente que mejor se ajuste a sus necesidades.
+
+![4d-corner](../assets/en/Project/4d-corner.png)
+
+Puede abrir la [plataforma 4D Corner](https://corner.4d.com/) desde el administrador de dependencias, ya sea en la parte superior de la [ventana Agregar una dependencia](#adding-a-github-or-gitlab-dependency), o seleccionando **Descubra más componentes en 4D Corner...** en el menú de la parte inferior de la ventana del administrador de dependencias:
+
+![4d-corner-access](../assets/en/Project/4d-corner-access.png)
+
+Para instalar un componente de la plataforma 4D Corner:
+
+1. Haga clic en el botón "Copiar enlace" en la esquina superior derecha del título del componente:
+
+![copy button](../assets/en/Project/4d-corner-copy.png)
+
+2. Abra el Gestor de dependencias y haga clic en el botón **[+]**.
+
+El enlace de dependencia se añade automáticamente en el área de dirección:
+
+![añadir dependencia](../assets/en/Project/4d-corner-add.png)
+
+3. [Configure la referencia de dependencia](#adding-a-github-or-gitlab-dependency) y haga clic en **Añadir**.
+
+:::tip Entrada de blog relacionada
+
+[4D Corner: Easily browse 4D components, add them to your project and share your own](https://blog.4d.com/4d-corner-easily-browse-4d-components-add-them-to-your-project-and-share-your-own/)
+
+:::
 
 ### Actualización de dependencias
 
