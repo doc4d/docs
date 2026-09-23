@@ -194,7 +194,7 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 
 ### Custom button, custom check box, or custom radio button
 
-This property allows you to assign a fill color attribute to [custom buttons](./button_overview.md#custom), [custom check boxes)](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+This property allows you to assign a fill color attribute to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
 
 
