@@ -221,7 +221,7 @@ This property allows you to assign a fill color attribute to [custom buttons](./
 
 ## Frame Color {#frame-color}
 
-Defines the color of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes)](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+Defines the color of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
 
 Note that the frame is only displayed when its [width](#frame-width) is > 0. 
 
