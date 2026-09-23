@@ -244,7 +244,7 @@ Note that the frame is only displayed when its [width](#frame-width) is > 0.
 
 ## Frame Width {#frame-width}
 
-Defines the width of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes)](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored. 
+Defines the width of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored. 
 
 The value is expressed in pixels. 
 
