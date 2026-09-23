@@ -175,7 +175,7 @@ All radio buttons share the same set of basic properties:
 
 Additional specific properties are available for [custom](#custom) style radio buttons:
 
-[Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_BackgroundAndBorder.md#corner-radius) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color), [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
+[Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_BackgroundAndBorder.md#corner-radius) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color) - [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
 
 
 ## Supported Events
