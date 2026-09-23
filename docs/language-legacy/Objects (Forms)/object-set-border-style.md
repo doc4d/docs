@@ -1,4 +1,4 @@
-﻿---
+---
 id: object-set-border-style
 title: OBJECT SET BORDER STYLE
 slug: /commands/object-set-border-style
@@ -40,7 +40,7 @@ In the *borderStyle* parameter, pass the value of the border line style that you
 
 | Constant      | Type    | Value | Comment                                                                                         |
 | ------------- | ------- | ----- | ----------------------------------------------------------------------------------------------- |
-| Border Custom | Integer | 8     | (buttons only) Enables the inner frame design for buttons, supporting extra properties |
+| Border Custom | Integer | 9     | (buttons only) Enables the inner frame design for buttons, supporting extra properties |
 | Border Dotted | Integer | 2     | Objects appear framed with a dotted 1-pt. border line                                           |
 | Border Double | Integer | 5     | Objects appear framed with a double line, i.e., two continuous 1-pt. lines separated by a pixel |
 | Border None   | Integer | 0     | Objects appear with no border                                                                   |

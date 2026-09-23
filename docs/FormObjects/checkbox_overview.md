@@ -428,7 +428,7 @@ All check boxes share the same set of basic properties:
 
 Additional specific properties are available for [custom](#custom) style check boxes:
 
-[Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_BackgroundAndBorder.md#corner-radius) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color) - [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
+[Background pathname](properties_TextAndPicture.md#background-pathname) - [Border color](./properties_BackgroundAndBorder.md#border-color) - [Border width](./properties_BackgroundAndBorder.md#border-width) - [Corner radius](./properties_BackgroundAndBorder.md#corner-radius) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
 
 
 ### Additional properties for flat and regular check boxes
@@ -441,3 +441,4 @@ An additional specific property is available for [flat](#flat) and [regular](#re
 ## Supported Events
 
 [On Begin Drag Over](../Events/onBeginDragOver.md) - [On Clicked](../Events/onClicked.md) - [On Double Clicked](../Events/onDoubleClicked.md) - [On Drag Over](../Events/onDragOver.md) - [On Drop](../Events/onDrop.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Mouse Enter](../Events/onMouseEnter.md) - [On Mouse Leave](../Events/onMouseLeave.md) - [On Mouse Move](../Events/onMouseMove.md) - [On Printing Break](../Events/onPrintingBreak.md) - [On Printing Detail](../Events/onPrintingDetail.md) - [On Printing Footer](../Events/onPrintingFooter.md) - [On Unload](../Events/onUnload.md) - [On Validate](../Events/onValidate.md)
+

@@ -56,8 +56,31 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/li
 
 [`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property) 
 
-
 ---
+
+## Border Color {#border-color}
+
+Defines the color of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+
+Note that the border is only displayed when its [width](#broder-width) is > 0. 
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|borderColor|string|any css value; "transparent"; "automatic"|
+
+
+#### Objects Supported
+
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
+
+
+#### Commands
+
+[`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
+
+
 
 ## Border Line Style {#border-line-style}
 
@@ -65,7 +88,7 @@ Allows setting a standard style for the object border.
 
 :::note
 
-For [custom buttons](./button_overview.md#custom), the **custom** style enables the inner frame design, that includes a set of extra properties: [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_BackgroundAndBorder.md#corner-radius). 
+For [custom buttons](./button_overview.md#custom), the **custom** border line style enables the inner frame design, that includes a set of extra properties: [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_BackgroundAndBorder.md#corner-radius). 
 
 ![](../assets/en/FormObjects/custom-button.png)
 
@@ -74,7 +97,7 @@ For [custom buttons](./button_overview.md#custom), the **custom** style enables 
 
 :::tip Related blog post
 
-[Give Your Text and List Objects the Border Color They Deserve](https://blog.4d.com/give-your-text-and-list-objects-the-border-color-they-deserve)
+[Customize Buttons, Radio Buttons, and Check Boxes with Background and Border Properties](https://blog.4d.com/customize-buttons-radio-buttons-and-check-boxes-with-background-and-border-properties).
 
 :::
 
@@ -97,6 +120,25 @@ For [custom buttons](./button_overview.md#custom), the **custom** style enables 
 [`OBJECT Get border style`](../commands/object-get-border-style) - [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) 
 
 
+---
+
+## Border Width {#border-width}
+
+Defines the width of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored. 
+
+The value is expressed in pixels. 
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|borderWidth|number|Integer value (pixels). Minimum value = 0|
+
+
+#### Objects Supported
+
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
+
 
 ---
 
@@ -118,7 +160,7 @@ Defines the corner roundness (in pixels) of the object. By default, the radius v
 Minimum value is 0, in this case a standard non-rounded object rectangle is drawn.
 Maximum value depends on the rectangle size (it cannot exceed half the size of the shortest rectangle side) and is calculated dynamically.
 
-With [text areas](./text.md) and [inputs](./input_overview.md):
+In [text areas](./text.md) and [inputs](./input_overview.md):
 
 - the corner radius property is only available with "none", "solid", or "dotted" [border line styles](#border-line-style),
 - the corner roundness is drawn **outside** the area of the object (the object appears larger in the form but its [width](./properties_CoordinatesAndSizing.md#width) and [height](./properties_CoordinatesAndSizing.md#height) are not extended).
@@ -126,7 +168,7 @@ With [text areas](./text.md) and [inputs](./input_overview.md):
 ![](../assets/en/FormObjects/radius-text.png)
 
 
-With [custom buttons](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)), [custom check boxes](checkbox_overview.md#custom) and [custom radio buttons](radio_overview.md#custom), the corner radius is drawn **inside** the area of the object. 
+In [custom buttons](./button_overview.md#custom) (with a ["custom" Border Line Style](#border-line-style)), [custom check boxes](checkbox_overview.md#custom) and [custom radio buttons](radio_overview.md#custom), the corner radius is drawn **inside** the area of the object. 
 
 
 #### JSON Grammar
@@ -206,7 +248,7 @@ This property allows you to assign a fill color attribute to [custom buttons](./
 
 #### Objects Supported
 
-[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
 
 
 #### Commands
@@ -217,48 +259,6 @@ This property allows you to assign a fill color attribute to [custom buttons](./
 #### See also
 
 [Transparent](#transparent)
-
-
-## Frame Color {#frame-color}
-
-Defines the color of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
-
-Note that the frame is only displayed when its [width](#frame-width) is > 0. 
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|borderColor|string|any css value; "transparent"; "automatic"|
-
-
-#### Objects Supported
-
-[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
-
-
-#### Commands
-
-[`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
-
-
-## Frame Width {#frame-width}
-
-Defines the width of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored. 
-
-The value is expressed in pixels. 
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|borderWidth|number|Integer value (pixels). Minimum value = 0|
-
-
-#### Objects Supported
-
-[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
-
 
 
 
