@@ -95,6 +95,8 @@ With custom-styled buttons that have a ["custom" Border Line Style](#border-line
 ## See also 
 
 [OBJECT Get corner radius](../commands/object-get-corner-radius)  
+[OBJECT SET BORDER STYLE](../commands/object-set-border-style)  
+
 
 ## Properties
 

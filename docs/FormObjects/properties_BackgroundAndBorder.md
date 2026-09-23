@@ -65,7 +65,7 @@ Allows setting a standard style for the object border.
 
 :::note
 
-For [buttons](button_overview.md), the **custom** style enables the inner frame design, that includes a set of extra properties: [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_BackgroundAndBorder.md#corner-radius). 
+For [custom buttons](./button_overview.md#custom), the **custom** style enables the inner frame design, that includes a set of extra properties: [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_BackgroundAndBorder.md#corner-radius). 
 
 ![](../assets/en/FormObjects/custom-button.png)
 

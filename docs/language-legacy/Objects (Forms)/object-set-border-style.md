@@ -52,6 +52,7 @@ In the *borderStyle* parameter, pass the value of the border line style that you
 ## See also 
 
 [OBJECT Get border style](../commands/object-get-border-style)  
+[OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius)  
 
 ## Properties
 

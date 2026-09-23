@@ -62,7 +62,7 @@ By default, the Regular style has a light gray background with a label in the ce
 ``` 
 
 
-Only the Regular and Flat styles offer the [Default Button](properties_Appearance.md#default-button) property.
+The Regular style offers an [additional property](#additional-properties-for-flat-and-regular-buttons): the [Default Button](properties_Appearance.md#default-button) property.
 
 
 ### Flat
@@ -91,7 +91,7 @@ By default, the Flat style has a white background with a label in the center, ro
 ``` 
 
 
-Only the Regular and Flat styles offer the [Default Button](properties_Appearance.md#default-button) property.
+The Flat style offers an [additional property](#additional-properties-for-flat-and-regular-buttons): the [Default Button](properties_Appearance.md#default-button) property.
 
 ### Toolbar
 
@@ -326,7 +326,8 @@ On Windows Classic UI theme, this style is not supported.
 
 ### Custom
 
-The Custom button style accepts a personalized background picture and allows managing additional parameters such as icon, margin offset, or fill color. 
+The Custom button style accepts a personalized background picture and allows managing [additional properties](#additional-properties-for-custom-buttons) such as [icon offset](properties_TextAndPicture.md#icon-offset) and [margins](properties_TextAndPicture.md#horizontal-margin). 
+
 
 ![](../assets/en/FormObjects/button_custom.png)
 
@@ -371,11 +372,17 @@ All buttons share the same set of basic properties:
 > (1) Not supported by the [Help](#help) style.<br/>
 > (2) Not supported by the [Help](#help), [Flat](#flat) and [Regular](#regular) styles.
 
+### Additional properties for custom buttons
 
-Additional specific properties are available, depending on the [button style](#button-styles):
+Additional specific properties are available for [custom](#custom) style buttons:
 
-- Custom: [Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_BackgroundAndBorder.md#corner-radius) - [Default Button](properties_Appearance.md#default-button) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color) - [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
-- Flat, Regular: [Default Button](properties_Appearance.md#default-button)
+[Background pathname](properties_TextAndPicture.md#background-pathname) - [Corner radius](./properties_BackgroundAndBorder.md#corner-radius) - [Default Button](properties_Appearance.md#default-button) - [Fill color](./properties_BackgroundAndBorder.md#fill-color) - [Frame color](./properties_BackgroundAndBorder.md#frame-color) - [Frame width](./properties_BackgroundAndBorder.md#frame-width) - [Horizontal Margin](properties_TextAndPicture.md#horizontal-margin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#vertical-margin)
+
+### Additional properties for flat and regular buttons
+
+An additional specific property is available for [flat](#flat) and [regular](#regular) style buttons:
+
+[Default Button](properties_Appearance.md#default-button)
 
 
 ## Supported Events  

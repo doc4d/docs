@@ -51,6 +51,7 @@ The command returns a value corresponding to the border line style. You can comp
 
 ## See also 
 
+[OBJECT Get corner radius](../commands/object-get-corner-radius)  
 [OBJECT SET BORDER STYLE](../commands/object-set-border-style)  
 
 ## Properties
