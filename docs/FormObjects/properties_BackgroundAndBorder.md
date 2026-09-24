@@ -84,20 +84,28 @@ Note that the border is only displayed when its [width](#broder-width) is > 0.
 
 ## Border Line Style {#border-line-style}
 
-Allows setting a standard style for the object border.
+Allows setting a style for the object border. The following choices are available (all choices are not possible depending on the object):
 
-:::note
+|Style |Objects (\*)|Description|
+|----|----|----|
+|None|all|Objects appear with no border.|
+|Plain |all|Objects appear framed with a continuous 1-pt. border line. ("solid" json value) |
+|Dotted |all|Objects appear framed with a dotted 1-pt. border line.|
+|Raised|all|Objects appear framed with a 3D effect.|
+|Sunken |all|Objects appear framed with a sunken 3D effect.|
+|Double|all|Objects appear framed with a double line, i.e., two continuous 1-pt. lines separated by a pixel.|
+|System|all *except* [buttons](button_overview.md) and [text areas](text.md)|Objects appear with a native system frame.|
+|System rounded|[inputs](input_overview.md)|On macOS, objects appear with a native "Liquid Glass" system border effect (see [this 4D blog post](https://blog.4d.com/the-new-macos-tahoe-design-comes-to-your-4d-applications/)). On Windows, this style is similar to "System" at runtime.|
+|Custom|[custom buttons](./button_overview.md#custom)|Enables the inner border design, that includes a set of extra properties: [Fill color](#fill-color), [Border color](#border-color), [Border width](#border-width), and [Corner radius](#corner-radius). <br/>![](../assets/en/FormObjects/custom-button.png)|
 
-For [custom buttons](./button_overview.md#custom), the **custom** border line style enables the inner frame design, that includes a set of extra properties: [Fill color](#fill-color), [Frame color](#frame-color), [Frame width](#frame-width), and [Corner radius](./properties_BackgroundAndBorder.md#corner-radius). 
-
-![](../assets/en/FormObjects/custom-button.png)
-
-:::
+(\*) "all" means "all objects supported" listed below.
 
 
-:::tip Related blog post
+:::tip Related blog posts
 
-[Customize Buttons, Radio Buttons, and Check Boxes with Background and Border Properties](https://blog.4d.com/customize-buttons-radio-buttons-and-check-boxes-with-background-and-border-properties).
+- [Customize Buttons, Radio Buttons, and Check Boxes with Background and Border Properties](https://blog.4d.com/customize-buttons-radio-buttons-and-check-boxes-with-background-and-border-properties).  
+- [Give your lists and inputs the borders they deserve](XXX)
+
 
 :::
 
@@ -106,7 +114,7 @@ For [custom buttons](./button_overview.md#custom), the **custom** border line st
 
 |Name|Data Type|Possible Values|
 |---|---|---|
-|borderStyle|text |"system", "none", "solid", "dotted", "raised", "sunken", "double", "custom"|
+|borderStyle|text |"custom", "dotted", "double", "none", "raised", "solid", "sunken", "system", "systemRounded"|
 
 
 
@@ -118,6 +126,12 @@ For [custom buttons](./button_overview.md#custom), the **custom** border line st
 #### Commands
 
 [`OBJECT Get border style`](../commands/object-get-border-style) - [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) 
+
+
+
+#### See also
+
+[Dotted Line Type](#dotted-line-type) (shapes)
 
 
 ---
