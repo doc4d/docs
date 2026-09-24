@@ -60,9 +60,13 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/li
 
 ## Border Color {#border-color}
 
-Defines the color of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+Defines the color of the border of objects.
 
-Note that the border is only displayed when its [width](#broder-width) is > 0. 
+For button objects, this property defines the color of the *inner* border, which is only available when objects have the **custom** style property. It applies to [buttons](./button_overview.md#custom), [check boxes](./checkbox_overview.md#custom), and [radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+
+For other supported objects, this property is only available when the [**border line style**](#border-line-style) property is "plain" or "dotted". If this property is not explicitely used, the **Same as font** option is set in the Property List, which means that the [**font color**](./properties_Text.md#font-color) property is used as the border color (legacy behavior). 
+
+Note that the border is only displayed when its [width](#border-width) is > 0. 
 
 #### JSON Grammar
 
@@ -73,13 +77,16 @@ Note that the border is only displayed when its [width](#broder-width) is > 0.
 
 #### Objects Supported
 
-[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) 
+[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Text Area](text.md)
 
 
 #### Commands
 
 [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) - [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors)
 
+#### See also
+
+[Line Color](#line-color) (for shapes)
 
 
 ## Border Line Style {#border-line-style}
@@ -94,8 +101,8 @@ Allows setting a style for the object border. The following choices are availabl
 |Raised|all|Objects appear framed with a 3D effect.|
 |Sunken |all|Objects appear framed with a sunken 3D effect.|
 |Double|all|Objects appear framed with a double line, i.e., two continuous 1-pt. lines separated by a pixel.|
-|System|all *except* [buttons](button_overview.md) and [text areas](text.md)|Objects appear with a native system frame.|
-|System rounded|[inputs](input_overview.md)|On macOS, objects appear with a native "Liquid Glass" system border effect (see [this 4D blog post](https://blog.4d.com/the-new-macos-tahoe-design-comes-to-your-4d-applications/)). On Windows, this style is similar to "System" at runtime.|
+|System|all *except* [buttons](button_overview.md) and [text areas](text.md)|Objects appear with a border line based on the graphic specifications of the OS.|
+|System rounded|[inputs](input_overview.md)|On macOS, objects appear with a native "Liquid Glass" system border effect (for information about Liquid Glass, see [this 4D blog post](https://blog.4d.com/the-new-macos-tahoe-design-comes-to-your-4d-applications/)). It includes system-defined inner border, corner radius, grey border color, and inner padding. Note that the "Liquid Glass" appearance is *not* used in a multiline input object if the [scroll bars property](./properties_Appearance.md#vertical-scroll-bar) is enabled ("System" is used in this case).<br/> On Windows, this style is similar to "System" at runtime. |
 |Custom|[custom buttons](./button_overview.md#custom)|Enables the inner border design, that includes a set of extra properties: [Fill color](#fill-color), [Border color](#border-color), [Border width](#border-width), and [Corner radius](#corner-radius). <br/>![](../assets/en/FormObjects/custom-button.png)|
 
 (\*) "all" means "all objects supported" listed below.
@@ -104,7 +111,7 @@ Allows setting a style for the object border. The following choices are availabl
 :::tip Related blog posts
 
 - [Customize Buttons, Radio Buttons, and Check Boxes with Background and Border Properties](https://blog.4d.com/customize-buttons-radio-buttons-and-check-boxes-with-background-and-border-properties).  
-- [Give your lists and inputs the borders they deserve](XXX)
+- [Give your Text and list objects the border color they deserve](https://blog.4d.com/give-your-text-and-list-objects-the-border-color-they-deserve)
 
 
 :::
