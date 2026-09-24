@@ -164,6 +164,12 @@ module.exports = {
   url: "https://developer.4d.com/",
   organizationName: "4D",
   projectName: "docs",
+  // Source repo used to build "View as markdown" / "Ask AI" links in the doc footer.
+  // Production docs live in 4d/docs, pre-production in doc4d/docs.
+  customFields: {
+    githubDocsRepo: isProduction ? "4d/docs" : "doc4d/docs",
+    githubDocsBranch: "main",
+  },
   favicon: "img/favicon/4d.gif",
   trailingSlash: false,
   onBrokenLinks: "ignore",
