@@ -186,6 +186,16 @@ If you deselect this option, only the yellow arrow is shown.
 
 ### Code editor
 
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R5|Added|
+
+</details>
+
+
 Lets you configure the default code editor to use when you open or create a method or a class from a 4D IDE window such the 4D Explorer, Debugger, or Form editor. The following options are available:
 
 - **Always 4D** (default): always use the [4D code editor](../code-editor/write-class-method.md).
@@ -200,6 +210,11 @@ When the **4D or VS Code when holding Alt key** option is selected, add the **Sh
 
 :::
 
+:::tip Related blog post
+
+[Seamlessly open 4D code from 4D into VS Code](https://blog.4d.com/seamlessly-open-4d-code-from-4d-into-vs-code)
+
+:::
 
 
 ### Suggestions  
