@@ -186,17 +186,17 @@ If you deselect this option, only the yellow arrow is shown.
 
 ### Code editor
 
-Lets you configure the default code editor to use when you open or create a method from the 4D IDE such the 4D Explorer, Debugger, or Form editor. The following options are proposed:
+Lets you configure the default code editor to use when you open or create a method or a class from a 4D IDE window such the 4D Explorer, Debugger, or Form editor. The following options are available:
 
-- **Always 4D** (default): always use the 4D code editor when creating or opening 4D methods.
-- **4D or VS Code when holding ALT key**: use preferably the 4D code editor when creating or opening 4D methods but switch to VS Code if the **Alt** key is pressed. 
-- **VS Code or 4D when holding Alt key**: use preferably VS Code when creating or opening 4D methods but switch to the 4D code editor if the **Alt** key is pressed. 
+- **Always 4D** (default): always use the [4D code editor](../code-editor/write-class-method.md).
+- **4D or VS Code when holding Alt key**: use preferably the 4D code editor but switch to VS Code if the **Alt** key is pressed. 
+- **VS Code or 4D when holding Alt key**: use preferably VS Code but switch to the 4D code editor if the **Alt** key is pressed. 
 
 Options using **VS Code** require that this editor be installed on the machine (see [4D-Analyzer extension](https://github.com/4d/4D-Analyzer-VSCode)), otherwise an error will be sent when the 4D IDE will attempt to use it.  
 
 :::note
 
-When the **4D or VS Code when holding ALT key** option is selected, use **Shift+Alt** while hovering over and clicking a method or function name in the 4D code editor to open VS Code. 
+When the **4D or VS Code when holding Alt key** option is selected, add the **Shift** key to existing shortcuts that already use **Alt** to access VS Code form the 4D IDE. For example, to open a method in VS Code from the 4D code editor, press **Alt+Shift** and double-click on the method name (**Alt** and double-click opens it in another window of the 4D code editor).
 
 :::
 
