@@ -523,7 +523,7 @@ The <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->PFS availability o
 
 #### Description
 
-The `.quotas` property contains <!-- REF #WebServerClass.quotas.Summary -->a `4D.QuotaManager` object that allows you to configure and monitor quotas for the web server<!-- END REF -->. It is available for the host Web server and for Web servers belonging to hosted components.
+The `.quotas` property contains <!-- REF #WebServerClass.quotas.Summary -->a `4D.QuotaManager` object that allows you to configure and monitor quotas for the web server<!-- END REF -->.
 
 :::note 
 
@@ -531,48 +531,56 @@ Quotas are available only when scalable sessions are enabled. When scalable sess
 
 :::
 
-Accessing this property returns a `4D.QuotaManager` object that can be updated at runtime. Quotas can be configured at two independent policy levels:
+##### Scope levels
 
-- **Server-global**: quotas are applied to the aggregate activity of all sessions on the web server.
-- **Session-default**: quotas are applied by default to each new session when it is created.
+Accessing this property returns a `4D.QuotaManager` object that can be updated at runtime. Quotas can be configured at two independent scope levels:
+- **Server global**: quotas are applied to the aggregate activity of all sessions on the web server.
+- **Session default**: quotas are applied by default to each new session when it is created.
+
 
 For the complete list of quota properties, see the [`4D.QuotaManager` class](./QuotaManagerClass.md). For configuration and enforcement details, see [Web server quotas](../WebServer/quotas.md).
 
 By default, quota properties are *Undefined* and no quotas are applied.
 
-You can modify quota values while the web server is running. Changes to server-global quotas are applied to subsequent web server activity. Changes to session-default quotas are applied to new sessions created after the quota value is updated. The web server does not need to be restarted.
+You can modify quota values while the web server is running. Changes to server global quotas are applied to subsequent web server activity. Changes to session default quotas are applied to new sessions created after the quota value is updated. The web server does not need to be restarted.
+
+:::note 
+
+You can also configure quotas for the current REST session using the [`Session.quotas`](./SessionClass.md#quotas) property.
+
+:::
 
 The following properties of the `4D.QuotaManager` object are available for the web server:
 
 |Property||Type|Writable|Description|
 |---|---|---|---|---|
-|[defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout)||Integer|yes|Default inactivity timeout for REST entity sets in memory (seconds).|
-|[inBytesPerHour](./QuotaManagerClass.md#inbytesperhour)||Integer|yes|Maximum total number of bytes the server can receive in one hour.|
+|[inBytesPerHour](./QuotaManagerClass.md#inbytesperhour)||Integer|yes|Maximum total number of bytes the Web server can receive in one hour.|
+|[inBytesPerMin](./QuotaManagerClass.md#inbytespermin)||Integer|yes|Maximum total number of bytes the Web server can receive in one minute.|
+|[nbGuestSessions](./QuotaManagerClass.md#nbguestsessions)||Integer|yes|Maximum total number of active Guest sessions on the Web server.|
+|[nbRequestsPerHour](./QuotaManagerClass.md#nbrequestsperhour)||Integer|yes|Maximum total number of requests the Web server can receive in one hour.|
+|[nbRequestsPerMin](./QuotaManagerClass.md#nbrequestspermin)||Integer|yes|Maximum total number of requests the Web server can receive in one minute.|
+|[nbSessions](./QuotaManagerClass.md#nbsessions)||Integer|yes|Maximum total number of active sessions on the Web server.|
+|[outBytesPerHour](./QuotaManagerClass.md#outbytesperhour)||Integer|yes|Maximum total number of bytes the Web server can send in one hour.|
+|[outBytesPerMin](./QuotaManagerClass.md#outbytespermin)||Integer|yes|Maximum total number of bytes the Web server can send in one minute.|
 |[inBytesPerHourPerSession](./QuotaManagerClass.md#inbytesperhourpersession)||Integer|yes|Maximum total number of bytes the Web server can receive for a session in one hour.|
-|[inBytesPerMin](./QuotaManagerClass.md#inbytespermin)||Integer|yes|Maximum total number of bytes the server can receive in one minute.|
 |[inBytesPerMinPerSession](./QuotaManagerClass.md#inbytesperminpersession)||Integer|yes|Maximum total number of bytes the Web server can receive for a session in one minute.|
+|[nbEntitySetsPerSession](./QuotaManagerClass.md#nbentitysetspersession)||Integer|yes|Maximum number of entity sets allowed in memory for each REST session.|
+|[nbRequestsPerHourPerSession](./QuotaManagerClass.md#nbrequestsperhourpersession)||Integer|yes|Maximum total number of requests a session can receive in one hour.|
+|[nbRequestsPerMinPerSession](./QuotaManagerClass.md#nbrequestsperminpersession)||Integer|yes|Maximum total number of requests a session can receive in one minute.|
+|[outBytesPerHourPerSession](./QuotaManagerClass.md#outbytesperhourpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one hour.|
+|[outBytesPerMinPerSession](./QuotaManagerClass.md#outbytesperminpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one minute.|
+|[defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout)||Integer|yes|Default inactivity timeout for REST entity sets in memory (seconds).|
 |[maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)||Integer|yes|Maximum inactivity timeout for REST entity sets in memory (seconds).|
 |[nbEntitySets](./QuotaManagerClass.md#nbentitysets)||Integer|yes|Maximum number of REST entity sets allowed in memory.|
-|[nbEntitySetsPerSession](./QuotaManagerClass.md#nbentitysetspersession)||Integer|yes|Maximum number of entity sets allowed in memory for each REST session.|
-|[nbGuestSessions](./QuotaManagerClass.md#nbguestsessions)||Integer|yes|Maximum total number of active Guest sessions on the server.|
-|[nbRequestsPerHour](./QuotaManagerClass.md#nbrequestsperhour)||Integer|yes|Maximum total number of requests the server can receive in one hour.|
-|[nbRequestsPerHourPerSession](./QuotaManagerClass.md#nbrequestsperhourpersession)||Integer|yes|Maximum total number of requests a session can receive in one hour.|
-|[nbRequestsPerMin](./QuotaManagerClass.md#nbrequestspermin)||Integer|yes|Maximum total number of requests the server can receive in one minute.|
-|[nbRequestsPerMinPerSession](./QuotaManagerClass.md#nbrequestsperminpersession)||Integer|yes|Maximum total number of requests a session can receive in one minute.|
 |[nbRowsPerEntitySet](./QuotaManagerClass.md#nbrowsperentityset)||Integer|yes|Maximum number of rows allowed in an entity set.|
-|[nbSessions](./QuotaManagerClass.md#nbsessions)||Integer|yes|Maximum total number of active sessions on the server.|
-|[outBytesPerHour](./QuotaManagerClass.md#outbytesperhour)||Integer|yes|Maximum total number of bytes the server can send in one hour.|
-|[outBytesPerHourPerSession](./QuotaManagerClass.md#outbytesperhourpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one hour.|
-|[outBytesPerMin](./QuotaManagerClass.md#outbytespermin)||Integer|yes|Maximum total number of bytes the server can send in one minute.|
-|[outBytesPerMinPerSession](./QuotaManagerClass.md#outbytesperminpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one minute.|
-|[currentValues](./QuotaManagerClass.md#currentvalues)||Object|no|Current usage values reported by the server.|
+|[currentValues](./QuotaManagerClass.md#currentvalues)||Object|no|Current usage values reported by the Web server.|
 ||nbEntitySets|Integer|no|Number of entity sets currently in memory.|
-||nbGuestSessions|Integer|no|Number of active Guest sessions on the server.|
-||nbSessions|Integer|no|Number of active sessions on the server.|
+||nbGuestSessions|Integer|no|Number of active Guest sessions on the Web server.|
+||nbSessions|Integer|no|Number of active sessions on the Web server.|
 
 #### Example 1
 
-Configure quotas at the server-global and session-default levels:
+Configure quotas at the server global and session default levels:
 
 ```4d
 var $quotas : Object
@@ -585,31 +593,29 @@ $quotas.nbGuestSessions:=10
 $quotas.nbRequestsPerMin:=500
 $quotas.nbRequestsPerHour:=20000
 
-// Server-global quotas
+// Server global quotas
 WEB Server().quotas.inBytesPerMin:=$quotas.inBytesPerMin
 WEB Server().quotas.nbSessions:=$quotas.nbSessions
 WEB Server().quotas.nbGuestSessions:=$quotas.nbGuestSessions
 WEB Server().quotas.nbRequestsPerMin:=$quotas.nbRequestsPerMin
 WEB Server().quotas.nbRequestsPerHour:=$quotas.nbRequestsPerHour
 
-// Session-default quota
+// Session default quota
 WEB Server().quotas.outBytesPerMinPerSession:=$quotas.outBytesPerMinPerSession
 ```
 
-#### Example 2
 
-Update a selected quota at the server-global level:
+:::tip Related Blog post
 
-```4d
-WEB Server().quotas.inBytesPerMin:=20000000
-```
+[A 4D web server that knows when to say No](https://blog.4d.com/a-4d-web-server-that-knows-when-to-say-no/)
 
-<!-- END REF -->
+:::
 
 #### See also
 
 [QuotaManager class](./QuotaManagerClass.md)
 
+<!-- END REF -->
 
 <!-- REF WebServerClass.rootFolder.Desc -->
 ## .rootFolder
@@ -760,19 +766,15 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 The `.start()` function <!-- REF #WebServerClass.start().Summary -->starts the web server on which it is applied<!-- END REF -->, using properties set in the optional *settings* object parameter.
 
-The `settings` object can include a `quotas` property to configure quotas when the web server starts:
-
-|Property|Type|Description|
-|---|---|---|
-|[quotas](#quotas)|[`4D.QuotaManager`](./QuotaManagerClass.md)|Server-global and session-default quotas to apply when the web server starts.|
-
-The `quotas` property can be used only when scalable sessions are enabled. If scalable sessions are disabled, the web server cannot start with quotas and returns an error.
-
-You can also configure quotas for the main Web server in a [`QuotaManager.json`](../WebServer/quotas.md) file.
-
 The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
 
 All settings of [Web Server objects](../commands/web-server) can be customized, except read-only properties ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), and [.sessionCookieName](#sessioncookiename)).
+
+:::note
+
+You can configure quotas via the `quotas` property in *settings* parameter or for the main Web server via a [`QuotaManager.json`](../WebServer/quotas.md) file. When both a valid `settings.quotas` property and a **QuotaManager.json** file are provided, the `settings.quotas` configuration takes priority.
+
+:: 
 
 Customized session settings will be reset when the [`.stop()`](#stop) function is called.
 
@@ -795,31 +797,20 @@ The function returns an object describing the Web server launch status. This obj
 The following example starts the web server with customized settings:
 
 ```4d
- var $settings;$result : Object
- var $webServer : 4D.WebServer
+ var $result : Object
 
- $settings:=New object("HTTPPort";8080;"defaultHomepage";"myAdminHomepage.html")
+ var $quotas:={}
+ $quotas.inBytesPerMin:=20000000
+ $quotas.outBytesPerMinPerSession:=10000000
 
- $webServer:=WEB Server
+ var $settings:={HTTPPort:8080;defaultHomepage:"myAdminHomepage.html"; quotas: $quotas }
+
+
+ var $webServer:=WEB Server
  $result:=$webServer.start($settings)
  If($result.success)
   //...
  End if
-```
-
-#### Example 2
-
-Start the web server with selected quotas:
-
-```4d
-var $webSettings; $quotas : Object
-
-$quotas:={}
-$quotas.inBytesPerMin:=20000000
-$quotas.outBytesPerMinPerSession:=10000000
-$webSettings:={quotas: $quotas}
-
-WEB Server().start($webSettings)
 ```
 
 <!-- END REF -->
