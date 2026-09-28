@@ -62,16 +62,12 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/li
 
 Allows defining the border color. Note that the effect of this property varies slightly depending on the type of object to which it is applied.
 
-:::note
-
-The "Border color" property is only available when the [**border line style**](#border-line-style) property is **plain** (`solid` in JSON property) or **dotted** (except for custom-styled buttons, see below).
-
-:::
 
 
-- **objects with font properties**, i.e. [buttons](./button_overview.md) (all styles except "custom", see  below), [hierarchical lists](list_overview.md), [inputs](input_overview.md), [list boxes](listbox_overview.md), [progress indicators](./progressIndicator.md), [rulers](./ruler.md), and [text areas](text.md).  
-By default, the border color of these objects is automatically set to their [**font color**](./properties_Text.md#font-color) property. This default configuration corresponds to the **Same as font** option in the Property List (`borderColor` property is undefined in JSON). 
-You can separate these two properties by setting a color value for the object's "Border color" property. 
+
+- **objects with font properties**, i.e. [buttons](./button_overview.md) (all styles except "custom", see  below), [hierarchical lists](list_overview.md), [inputs](input_overview.md), [list boxes](listbox_overview.md), [progress indicators](./progressIndicator.md), [rulers](./ruler.md), an
+d [text areas](text.md). By default, the border color of these objects is automatically set to their [**font color**](./properties_Text.md#font-color) property. This default configuration corresponds to the **Same as font** option in the Property List (`borderColor` property is undefined in JSON).   
+You can separate these two properties by setting a color value for the object's "Border color" property (only available when the [**border line style**](#border-line-style) property is **plain** (`solid` in JSON property) or **dotted**)
 
 - **custom-styled buttons**, i.e. [custom buttons](./button_overview.md#custom) with ["custom" Border Line Style](#border-line-style), [custom check boxes](./checkbox_overview.md#custom), and [custom radio buttons](./radio_overview.md#custom). In this case, the border color property defines the color of an *inner* border, which is an attribute of the object itself ans not a decoration property. This inner border can also have a [width](#border-width) (it is displayed only if the width > 0). 
 
