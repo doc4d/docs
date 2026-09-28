@@ -774,7 +774,7 @@ Session.quotas.nbEntitySets:=50
 
 #### See also
 
-[QuotaManager class](./QuotaManagerClass.md)
+[QuotaManager class](./QuotaManagerClass.md)<br/>
 [Web server quotas](../WebServer/quotas.md)
 
 
