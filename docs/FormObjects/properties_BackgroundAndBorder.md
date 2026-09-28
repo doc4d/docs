@@ -60,13 +60,24 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/li
 
 ## Border Color {#border-color}
 
-Defines the color of the border of objects.
+Allows defining the border color. Note that the effect of this property varies slightly depending on the type of object to which it is applied.
 
-For button objects, this property defines the color of the *inner* border, which is only available when objects have the **custom** style property. It applies to [buttons](./button_overview.md#custom), [check boxes](./checkbox_overview.md#custom), and [radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored.
+:::note
 
-For other supported objects, this property is only available when the [**border line style**](#border-line-style) property is "plain" or "dotted". If this property is not explicitely used, the **Same as font** option is set in the Property List, which means that the [**font color**](./properties_Text.md#font-color) property is used as the border color (legacy behavior). 
+The "Border color" property is only available when the [**border line style**](#border-line-style) property is **plain** (`solid` in JSON property) or **dotted** (except for custom-styled buttons, see below).
 
-Note that the border is only displayed when its [width](#border-width) is > 0. 
+:::
+
+
+- **objects with font properties**, i.e. [buttons](./button_overview.md) (all styles except "custom", see  below), [hierarchical lists](list_overview.md), [inputs](input_overview.md), [list boxes](listbox_overview.md), [progress indicators](./progressIndicator.md), [rulers](./ruler.md), and [text areas](text.md).  
+By default, the border color of these objects is automatically set to their [**font color**](./properties_Text.md#font-color) property. This default configuration corresponds to the **Same as font** option in the Property List (`borderColor` property is undefined in JSON). 
+You can separate these two properties by setting a color value for the object's "Border color" property. 
+
+- **custom-styled buttons**, i.e. [custom buttons](./button_overview.md#custom) with ["custom" Border Line Style](#border-line-style), [custom check boxes](./checkbox_overview.md#custom), and [custom radio buttons](./radio_overview.md#custom). In this case, the border color property defines the color of an *inner* border, which is an attribute of the object itself ans not a decoration property. This inner border can also have a [width](#border-width) (it is displayed only if the width > 0). 
+
+- For **other supported objects**, this property sets the color of the borders. The default color value is "Automatic", i.e. the border is displayed with the automatic color set by your OS. 
+
+
 
 #### JSON Grammar
 
@@ -77,7 +88,7 @@ Note that the border is only displayed when its [width](#border-width) is > 0.
 
 #### Objects Supported
 
-[Custom Button](./button_overview.md#custom) (with ["custom" Border Line Style](#border-line-style)) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Text Area](text.md)
+[4D View Pro area](viewProArea_overview.md) - [4D Write Pro area](writeProArea_overview.md) - [Button](./button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box ("custom" style)](checkbox_overview.md#custom) - [Radio Button ("custom" style)](radio_overview.md#custom) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicator](./progressIndicator.md) - [Subform](subform_overview.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Stepper](stepper.md) - [Ruler](./ruler.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 
 #### Commands
