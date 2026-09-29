@@ -5,7 +5,7 @@ slug: /commands/object-set-rgb-colors
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET RGB COLORS.Syntax-->**OBJECT SET RGB COLORS** ( * ; *object* : Text ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer}} )<br/>**OBJECT SET RGB COLORS** ( *object* : Variable, Field ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer}} )<!-- END REF-->
+<!--REF #_command_.OBJECT SET RGB COLORS.Syntax-->**OBJECT SET RGB COLORS** ( * ; *object* : Text ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer {; borderColor : Text, Integer}}} )<br/>**OBJECT SET RGB COLORS** ( *object* : Variable, Field ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer {; borderColor : Text, Integer}}} )<!-- END REF-->
 <!--REF #_command_.OBJECT SET RGB COLORS.Params-->
 <div class="no-index">
 
@@ -16,6 +16,7 @@ displayed_sidebar: docs
 | foregroundColor | Text, Integer | &#8594;  | RGB color value for foreground ("" = unchanged)|
 | backgroundColor | Text, Integer | &#8594;  | RGB color value for background ("" = unchanged)|
 | altBackgrndColor | Text, Integer | &#8594;  | RGB color value for alternating background ("" = unchanged)|
+| borderColor | Text, Integer | &#8594; | RGB color value for border color |
 </div>
 <!-- END REF-->
 
@@ -24,6 +25,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|Support of *borderColor* parameter|
 |17 R6|Modified|
 |14|Modified|
 |12|Renamed|
@@ -35,13 +37,21 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.OBJECT SET RGB COLORS.Summary-->The **OBJECT SET RGB COLORS** command changes the foreground and background colors of the objects specified by the *object* parameter and the optional *\** parameter.<!-- END REF--> When the command is applied to a list box object, an additional parameter lets you modify the alternating color of the rows.
+<!--REF #_command_.OBJECT SET RGB COLORS.Summary-->The **OBJECT SET RGB COLORS** command changes the foreground and background colors of the objects specified by the *object* parameter and the optional *\** parameter.<!-- END REF--> Two other color parameters can be available, depending on which object the command is applied to.
 
 If you specify the optional *\** parameter, you indicate an object name (a string) in *object*. If you omit the optional \* parameter, you indicate a field or a variable in *object*. In this case, you specify a field or variable reference (field or variable objects only) instead of a string. For more information about object names, see the *Object Properties* section.
 
 The optional *altBackgrndColor* parameter lets you set an alternate background color for even-numbered rows. This parameter is only used when the object specified is a list box or a column of the list box. When this parameter is used, the *backgroundColor* parameter is only used for odd-numbered rows. Using alternating colors makes lists easier to read. If *object* specifies a list box object, alternating colors are used for the entire list box. If *object* specifies a column of the list box, only that column will use the colors set.
 
 You can use "" (empty string) in *foregroundColor*, *backgroundColor*, and/or *altBackgrndColor* to let it unchanged.
+
+The optional *borderColor* parameter allows you to change the color of the border at runtime. This parameter can only be applied to objects that support the `borderColor` property, and usually requires that the border style be "plain" or "dotted" (except for custom-styled buttons). For more information, see the ["Border Color" section](../../FormObjects/properties_BackgroundAndBorder.md#border-color). 
+ 
+:::note
+
+The *borderColor* parameter is not available in binary databases. 
+
+:::
 
 **Definition of colors**
 
@@ -114,6 +124,24 @@ Changing to transparent background with a light font color:
 ```
 
 ![](../../assets/en/commands/pict1210702.en.png)
+
+
+## Example 3
+
+Changing a list box border color to a red color:
+
+![](../../assets/en/commands/set-rgb-colors.png)
+
+
+```4d
+    //change the border style to plain (default is system)
+OBJECT SET BORDER STYLE(*; "listOfDays"; Border Plain)
+    //set the border color to red
+OBJECT SET RGB COLORS(*; "listOfDays"; ""; ""; ""; "#ff0000")
+
+```
+
+![](../../assets/en/commands/set-rgb-colors-2.png)
 
 ## See also 
 
