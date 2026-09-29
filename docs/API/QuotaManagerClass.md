@@ -6,7 +6,12 @@ title: QuotaManager
 
 The `4D.QuotaManager` class provides you with an interface to configure and monitor some usage limits you apply to your 4D application. Thresholds are useful, for example, to protect the server from poorly optimized requests or excessive use of server resources. Typically, the quota manager allows you to provide thresholds to ORDA resources a REST server session can access. 
 
-`4D.QuotaManager` objects can be instantiated by the [`quotas` property of a session](./SessionClass.md#quotas) object or the [`quotas` property of a Web server](./WebServerClass.md#quotas) object. For Web server configuration and enforcement details, see [Web server quotas](../WebServer/quotas.md).
+`4D.QuotaManager` objects can be instantiated by:
+- the [`quotas` property of a Session](./SessionClass.md#quotas) object
+- the [`quotas` property of a Web server](./WebServerClass.md#quotas) object
+
+For Web server configuration and enforcement details, see [Web server quotas](../WebServer/quotas.md).
+
 
 <details><summary>History</summary>
 
@@ -45,7 +50,6 @@ The `4D.QuotaManager` object itself cannot be directly assigned, and properties 
 |[<!-- INCLUDE #QuotaManagerClass.nbRequestsPerHourPerSession.Syntax -->](#nbrequestsperhourpersession)<br/><!-- INCLUDE #QuotaManagerClass.nbRequestsPerHourPerSession.Summary -->|
 |[<!-- INCLUDE #QuotaManagerClass.nbRequestsPerMin.Syntax -->](#nbrequestspermin)<br/><!-- INCLUDE #QuotaManagerClass.nbRequestsPerMin.Summary -->|
 |[<!-- INCLUDE #QuotaManagerClass.nbRequestsPerMinPerSession.Syntax -->](#nbrequestsperminpersession)<br/><!-- INCLUDE #QuotaManagerClass.nbRequestsPerMinPerSession.Summary -->|
-|[<!-- INCLUDE #QuotaManagerClass.nbRowsPerEntitySet.Syntax -->](#nbrowsperentityset)<br/><!-- INCLUDE #QuotaManagerClass.nbRowsPerEntitySet.Summary -->|
 |[<!-- INCLUDE #QuotaManagerClass.nbSessions.Syntax -->](#nbsessions)<br/><!-- INCLUDE #QuotaManagerClass.nbSessions.Summary -->|
 |[<!-- INCLUDE #QuotaManagerClass.outBytesPerHour.Syntax -->](#outbytesperhour)<br/><!-- INCLUDE #QuotaManagerClass.outBytesPerHour.Summary -->|
 |[<!-- INCLUDE #QuotaManagerClass.outBytesPerHourPerSession.Syntax -->](#outbytesperhourpersession)<br/><!-- INCLUDE #QuotaManagerClass.outBytesPerHourPerSession.Summary -->|
@@ -292,17 +296,6 @@ Scope: [server global level](./WebServerClass.md#scope-levels)
 The `.nbRequestsPerMinPerSession` property contains <!-- REF #QuotaManagerClass.nbRequestsPerMinPerSession.Summary -->the maximum total number of requests that a session can receive in one minute<!-- END REF -->.
 
 Scope: [session default level](./WebServerClass.md#scope-levels)
-
-<!-- END REF -->
-
-<!-- REF QuotaManagerClass.nbRowsPerEntitySet.Desc -->
-## .nbRowsPerEntitySet
-
-<!-- REF #QuotaManagerClass.nbRowsPerEntitySet.Syntax -->**nbRowsPerEntitySet** : Integer<!-- END REF -->
-
-#### Description
-
-The `.nbRowsPerEntitySet` property contains <!-- REF #QuotaManagerClass.nbRowsPerEntitySet.Summary -->the maximum number of rows allowed in an entity set<!-- END REF -->.
 
 <!-- END REF -->
 

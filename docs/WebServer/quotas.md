@@ -4,7 +4,7 @@ title: Web server quotas
 ---
 
 Web applications can receive requests from many different clients, generating varying levels of traffic and resource consumption. Without appropriate limits, excessive activity from one or more clients can affect Web server performance and availability.
-Web server quotas let you control resource usage by limiting traffic, requests, active sessions, Guest sessions, and REST entity sets. Quotas can be configured at the server global level, for all sessions combined, at the session default level, for each new session or for at the current session level.
+Web server quotas let you control resource usage by limiting traffic, requests, active sessions, Guest sessions, and REST entity sets. Quotas can be configured at the web server global level (for all sessions combined), at the session default level (for each new session) or at the current REST session level.
 
 ## Requirements
 
@@ -41,20 +41,20 @@ For the main Web server, you can create a **QuotaManager.json** file and store i
 ```
 If the **QuotaManager.json** file contains malformed JSON, the Web server does not start and returns error *551 - JSON malformed*.
 
-When both a valid `settings.quotas` property and a **QuotaManager.json** file are provided, the `settings.quotas` configuration takes priority.
+When both a `settings.quotas` property and a **QuotaManager.json** file are provided, the `settings.quotas` configuration takes priority.
 
 ### At runtime
 
-For a running Web server, you can update quotas through the [`.quotas`](../API/WebServerClass.md#quotas) property. Changes are applied to subsequent Web server activity; session default quotas apply to new sessions created after the quota value is updated.
+For a running Web server, you can update quotas through the [`WebServer.quotas`](../API/WebServerClass.md#quotas) property. Changes are applied to subsequent Web server activity; session default quotas apply to new sessions created after the quota value is updated.
 
-### Current session quotas
+### Current REST session quotas
 
 The [`Session.quotas`](../API/SessionClass.md#quotas) property configures quotas for the current REST session. It provides current usage values and lets you configure the session's REST entity-set limits and timeouts. These quotas are distinct from the session default quotas configured through [`WebServer.quotas`](../API/WebServerClass.md#quotas), which are applied when new Web sessions are created.
 
 
 ### Example
 
-The following example configures quotas for an internal application used by approximately 20 people with occasional usage:
+The following example configures web server quotas at startup for an internal application used by approximately 20 people with occasional usage:
 
 ```4d
 
@@ -90,9 +90,9 @@ For each incoming request, the Web server checks quotas during preprocessing, be
 2. If the request is accepted, the server global quota is checked.
 3. If both checks pass, the request is processed.
 
-If either quota is reached, the request is rejected with an **HTTP 429 Too Many Requests** response. No web process is created and [`On Web Connection`](./httpRequests.md#on-web-connection) is not called (if defined).
+If either quota is exceeded, the request is rejected with an **HTTP 429 Too Many Requests** response. No web process is created and [`On Web Connection`](./httpRequests.md#on-web-connection) is not called (if defined).
 
-If an output byte quota is reached while a response is being sent, the current request is interrupted. The preprocessing rules above apply to the next request in the same time window.
+If an output byte quota is exceeded while a response is being sent, the current request is interrupted. The preprocessing rules above apply to the next request in the same time window.
 
 ### Rate limiting responses
 

@@ -533,9 +533,11 @@ Quotas are available only when scalable sessions are enabled. When scalable sess
 
 ##### Scope levels
 
-Accessing this property returns a `4D.QuotaManager` object that can be updated at runtime. Quotas can be configured at two independent scope levels:
-- **Server global**: quotas are applied to the aggregate activity of all sessions on the web server.
-- **Session default**: quotas are applied by default to each new session when it is created.
+Accessing this property returns a `4D.QuotaManager` object that can be updated at runtime. Quotas can be configured at two different scope levels:
+- **Server global**: quotas are applied to the aggregate activity of all sessions on the web server. See [At startup](../WebServer/quotas.md#at-startup) and [At runtime](../WebServer/quotas.md#at-runtime).
+- **Session default**: quotas are applied by default to each new session when it is created. See [At startup](../WebServer/quotas.md#at-startup) and [At runtime](../WebServer/quotas.md#at-runtime).
+
+When both server global and session default quotas are configured, the session quota is checked first. If the request is accepted, the server global quota is then checked.
 
 
 For the complete list of quota properties, see the [`4D.QuotaManager` class](./QuotaManagerClass.md). For configuration and enforcement details, see [Web server quotas](../WebServer/quotas.md).
@@ -554,31 +556,29 @@ The following properties of the `4D.QuotaManager` object are available for the w
 
 |Property||Type|Writable|Description|
 |---|---|---|---|---|
-|[inBytesPerHour](./QuotaManagerClass.md#inbytesperhour)||Integer|yes|Maximum total number of bytes the Web server can receive in one hour.|
-|[inBytesPerMin](./QuotaManagerClass.md#inbytespermin)||Integer|yes|Maximum total number of bytes the Web server can receive in one minute.|
-|[nbGuestSessions](./QuotaManagerClass.md#nbguestsessions)||Integer|yes|Maximum total number of active Guest sessions on the Web server.|
-|[nbRequestsPerHour](./QuotaManagerClass.md#nbrequestsperhour)||Integer|yes|Maximum total number of requests the Web server can receive in one hour.|
-|[nbRequestsPerMin](./QuotaManagerClass.md#nbrequestspermin)||Integer|yes|Maximum total number of requests the Web server can receive in one minute.|
-|[nbSessions](./QuotaManagerClass.md#nbsessions)||Integer|yes|Maximum total number of active sessions on the Web server.|
-|[outBytesPerHour](./QuotaManagerClass.md#outbytesperhour)||Integer|yes|Maximum total number of bytes the Web server can send in one hour.|
-|[outBytesPerMin](./QuotaManagerClass.md#outbytespermin)||Integer|yes|Maximum total number of bytes the Web server can send in one minute.|
-|[inBytesPerHourPerSession](./QuotaManagerClass.md#inbytesperhourpersession)||Integer|yes|Maximum total number of bytes the Web server can receive for a session in one hour.|
-|[inBytesPerMinPerSession](./QuotaManagerClass.md#inbytesperminpersession)||Integer|yes|Maximum total number of bytes the Web server can receive for a session in one minute.|
-|[nbEntitySetsPerSession](./QuotaManagerClass.md#nbentitysetspersession)||Integer|yes|Maximum number of entity sets allowed in memory for each REST session.|
-|[nbRequestsPerHourPerSession](./QuotaManagerClass.md#nbrequestsperhourpersession)||Integer|yes|Maximum total number of requests a session can receive in one hour.|
-|[nbRequestsPerMinPerSession](./QuotaManagerClass.md#nbrequestsperminpersession)||Integer|yes|Maximum total number of requests a session can receive in one minute.|
-|[outBytesPerHourPerSession](./QuotaManagerClass.md#outbytesperhourpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one hour.|
-|[outBytesPerMinPerSession](./QuotaManagerClass.md#outbytesperminpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one minute.|
-|[defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout)||Integer|yes|Default inactivity timeout for REST entity sets in memory (seconds).|
-|[maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)||Integer|yes|Maximum inactivity timeout for REST entity sets in memory (seconds).|
-|[nbEntitySets](./QuotaManagerClass.md#nbentitysets)||Integer|yes|Maximum number of REST entity sets allowed in memory.|
-|[nbRowsPerEntitySet](./QuotaManagerClass.md#nbrowsperentityset)||Integer|yes|Maximum number of rows allowed in an entity set.|
 |[currentValues](./QuotaManagerClass.md#currentvalues)||Object|no|Current usage values reported by the Web server.|
 ||nbEntitySets|Integer|no|Number of entity sets currently in memory.|
 ||nbGuestSessions|Integer|no|Number of active Guest sessions on the Web server.|
 ||nbSessions|Integer|no|Number of active sessions on the Web server.|
+|[defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout)||Integer|yes|Default inactivity timeout for REST entity sets in memory (seconds).|
+|[inBytesPerHour](./QuotaManagerClass.md#inbytesperhour)||Integer|yes|Maximum total number of bytes the Web server can receive in one hour.|
+|[inBytesPerHourPerSession](./QuotaManagerClass.md#inbytesperhourpersession)||Integer|yes|Maximum total number of bytes the Web server can receive for a session in one hour.|
+|[inBytesPerMin](./QuotaManagerClass.md#inbytespermin)||Integer|yes|Maximum total number of bytes the Web server can receive in one minute.|
+|[inBytesPerMinPerSession](./QuotaManagerClass.md#inbytesperminpersession)||Integer|yes|Maximum total number of bytes the Web server can receive for a session in one minute.|
+|[maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)||Integer|yes|Maximum inactivity timeout for REST entity sets in memory (seconds).|
+|[nbEntitySetsPerSession](./QuotaManagerClass.md#nbentitysetspersession)||Integer|yes|Maximum number of entity sets allowed in memory for each REST session.|
+|[nbGuestSessions](./QuotaManagerClass.md#nbguestsessions)||Integer|yes|Maximum total number of active Guest sessions on the Web server.|
+|[nbRequestsPerHour](./QuotaManagerClass.md#nbrequestsperhour)||Integer|yes|Maximum total number of requests the Web server can receive in one hour.|
+|[nbRequestsPerHourPerSession](./QuotaManagerClass.md#nbrequestsperhourpersession)||Integer|yes|Maximum total number of requests a session can receive in one hour.|
+|[nbRequestsPerMin](./QuotaManagerClass.md#nbrequestspermin)||Integer|yes|Maximum total number of requests the Web server can receive in one minute.|
+|[nbRequestsPerMinPerSession](./QuotaManagerClass.md#nbrequestsperminpersession)||Integer|yes|Maximum total number of requests a session can receive in one minute.|
+|[nbSessions](./QuotaManagerClass.md#nbsessions)||Integer|yes|Maximum total number of active sessions on the Web server.|
+|[outBytesPerHour](./QuotaManagerClass.md#outbytesperhour)||Integer|yes|Maximum total number of bytes the Web server can send in one hour.|
+|[outBytesPerHourPerSession](./QuotaManagerClass.md#outbytesperhourpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one hour.|
+|[outBytesPerMin](./QuotaManagerClass.md#outbytespermin)||Integer|yes|Maximum total number of bytes the Web server can send in one minute.|
+|[outBytesPerMinPerSession](./QuotaManagerClass.md#outbytesperminpersession)||Integer|yes|Maximum total number of bytes the Web server can send for a session in one minute.|
 
-#### Example 1
+#### Example
 
 Configure quotas at the server global and session default levels:
 
@@ -594,14 +594,14 @@ $quotas.nbRequestsPerMin:=500
 $quotas.nbRequestsPerHour:=20000
 
 // Server global quotas
-WEB Server().quotas.inBytesPerMin:=$quotas.inBytesPerMin
-WEB Server().quotas.nbSessions:=$quotas.nbSessions
-WEB Server().quotas.nbGuestSessions:=$quotas.nbGuestSessions
-WEB Server().quotas.nbRequestsPerMin:=$quotas.nbRequestsPerMin
-WEB Server().quotas.nbRequestsPerHour:=$quotas.nbRequestsPerHour
+WEB Server.quotas.inBytesPerMin:=$quotas.inBytesPerMin
+WEB Server.quotas.nbSessions:=$quotas.nbSessions
+WEB Server.quotas.nbGuestSessions:=$quotas.nbGuestSessions
+WEB Server.quotas.nbRequestsPerMin:=$quotas.nbRequestsPerMin
+WEB Server.quotas.nbRequestsPerHour:=$quotas.nbRequestsPerHour
 
 // Session default quota
-WEB Server().quotas.outBytesPerMinPerSession:=$quotas.outBytesPerMinPerSession
+WEB Server.quotas.outBytesPerMinPerSession:=$quotas.outBytesPerMinPerSession
 ```
 
 
