@@ -128,7 +128,7 @@ Changing to transparent background with a light font color:
 
 ## Example 3
 
-Changing a list box border color to a red color:
+Changing the list box border color only:
 
 ![](../../assets/en/commands/set-rgb-colors.png)
 

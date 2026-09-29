@@ -4,6 +4,16 @@ title: Release Notes
 ---
 
 
+## 4D 21 R6
+
+Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), the blog post that lists all new features and enhancements in 4D 21 R6.
+
+#### Highlights
+
+- Support of ["System rounded" border line style](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) property for [inputs](../FormObjects/input_overview.md), compliant with macOS *Liquid glass* design. Also supported by [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) and [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style) commands.
+- New ["Border color" property](../FormObjects/properties_BackgroundAndBorder.md#border-color) available for most form objects. [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) and [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) commands support a new *borderColor* parameter.
+
+
 ## 4D 21 R5
 
 Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), the blog post that lists all new features and enhancements in 4D 21 R5.
