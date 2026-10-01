@@ -6,7 +6,7 @@ title: Background and Border
 
 ## Alternate Background Color
 
-Allows setting a different background color for odd-numbered rows/columns in a list box. By default, *Automatic* is selected: the column uses the alternate background color set at the list box level.
+Allows setting a different background color for odd-numbered rows/columns in a list box. By default, *Automatic* is selected for list box columns: the column uses the alternate background color set at the list box level.
 
 You can also set this property using the [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) command.
 
@@ -28,7 +28,7 @@ You can also set this property using the [`OBJECT SET RGB COLORS`](../commands/o
 
 ## Background Color / Fill color
 
-Defines the background color / fill color of an object. It can be defined for some standard objects (`fill` JSON property) or ["custom style" objects](#custom-style-button-check-box-or-radio-button) (`borderFillColor` JSON property). [hh](#)
+Defines the background color / fill color of an object. It can be defined for some standard objects (`fill` JSON property) or ["custom style" objects](#custom-style-button-check-box-or-radio-button) (`borderFillColor` JSON property). 
 
 :::note
 
@@ -39,7 +39,7 @@ The **Fill color** property is named **Background color** with [List Box](listbo
 ### Standard objects
 
 
-In the case of a list box, by default *Automatic* is selected: the column uses the background color set at the list box level.
+In the case of a list box column, by default *Automatic* is selected: the column uses the background color set at the list box level.
 
 #### JSON Grammar
 
@@ -334,7 +334,11 @@ You can also set this property using the [`OBJECT SET RGB COLORS`](../commands/o
 |---|---|---|
 |stroke |string |any css value, "transparent", "automatic"|
 
-> This property is also available for text based objects, in which case it designates both the font color and the object's lines, see [Font color](properties_Text.md#font-color).
+:::note
+
+This property is also available for objects with text properties, in which case it designates both the [Font color](properties_Text.md#font-color) and the object's lines, except if you used the [Border color](#border-color) property.
+
+:::
 
 #### Objects Supported
 
