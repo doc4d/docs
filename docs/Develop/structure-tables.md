@@ -3,33 +3,24 @@ id: structure-tables
 title: Tables
 ---
 
-Tables are the foundation of every 4D database. Each table defines a collection of records that share the same set of fields and properties.  
-In the Structure editor, tables are represented as graphic objects that you can create, rename, or delete, and whose attributes you can configure individually. 
+Tables are the foundation of every 4D database. Each table defines a collection of records that share the same set of fields and properties. In the Structure editor, tables are represented as graphic objects that you can create, rename, or delete, and whose attributes you can configure individually. 
 
 Using the tools provided by 4D, you can: 
+
 - Define tables and manage their primary keys and relations 
 - Set and edit table-level properties such as triggers, visibility, and replication 
 - Control naming rules and organize tables into folders for easier maintenance 
-
--------- 
-Creating and modifying tables
-
-You can create tables at any time. 4D names the first table `Table_1` and then numbers them sequentially.  
-You can rename or delete tables, and you can remove tables from editors by making them **invisible**.  
-Table-level triggers and attributes are set in [Table properties](table-properties.md).
 
 
 ## Creating a table  
 
 You can create a new table either directly in the Structure window, or via a dialog box. Direct creation is faster; but creation using the dialog box lets you specify certain parameters of the table and cancel the operation when necessary. You can also create tables using copy-paste.  
 
-To create a new table directly:  
+- To create a new table directly:  
 
 1. Right-click an empty area of the Structure editor window, then choose **Add Table...** from the context menu.  
 **OR**  
-In the add objects menu of the Structure editor tool bar, choose the Table option:  
-
-[picture here]
+In the add objects menu of the [Structure editor toolbar](./structure-editor.md#toolbar), choose the Table option. 
 
 4D creates the table directly in the Structure editor. You can then change its name, add fields, etc.  
 
@@ -39,34 +30,28 @@ If you want to put the table in a specific folder, you need to use the Home Page
 
 :::
 
-To create a new table using the “New table” dialog box:  
+- To create a new table using the "New table" dialog box:  
 
-1. Choose **New > Table...** in the File menu (or click on the New button of the 4D tool bar).  
+1. Choose **New > Table...** in the **File** menu (or in the **New** button of the 4D tool bar).  
 **OR**  
-On the Tables Page of the Explorer, click on the add button.  
-The “New table” dialog box appears:  
+On the Tables Page of the Explorer, click on the **\[+]** button.  
 
-[picture here]
+The "New table" dialog box appears. 4D names the first table `Table_1` and then numbers them sequentially:
 
-2. (optional) Modify the name of the table you want to create.  
-3. For more information about naming rules, refer to [Rules for naming tables and fields](naming-rules.md).  
-4. (optional) Specify the folder in which you want to place the new table.  
-By default, the table is placed at the highest level of the folder hierarchy (“Top Level”). For more information about object folders, refer to the Home Page.  
-5. Click **OK**.  
-If you want to cancel the operation, click the **Cancel** button.  
+![](../assets/en/Develop/new-table.png)
+
+2. (optional) Modify the [name of the table](../Concepts/identifiers.md#tables-and-fields) you want to create.  
+3. (optional) Specify the folder in which you want to place the new table.  
+By default, the table is placed at the highest level of the folder hierarchy ("Top Level"). Folders are handled in Home Page of the Explorer.  
+4. Click **OK** to validate.  
 4D creates a new table image. It becomes the selected table image in the Structure editor window.  
 
-:::note
+- To create a new table by copy-paste, 
 
-Starting with 4D v14, any new table created in the database contains a primary key field by default. For more information about this, refer to [Default primary key field](primary-key-manager.md).  
+1. Select and copy the table(s) to be duplicated.  
+2. Paste the table(s) in the Structure editor window. 
 
-:::
-
-To create a new table by copy-paste:  
-
-1. Select the table(s) to be duplicated and choose the standard “copy” command (4D Edit menu, context menu or using the Ctrl+C/Command+C shortcut).  
-2. Then choose the Paste command either in the Edit menu, in the context menu or using the Ctrl+V/Command+V shortcut.  
-The table is pasted with all its fields. It is renamed by default “Copy(X)_of_TableName,” where TableName is the original name of the table and X is the number of copies of the table.  
+The table is pasted with all its fields. It is renamed by default "Copy(X)_of_TableName," where TableName is the original name of the table and X is the number of copies of the table.  
 
 ## Renaming a table  
 
