@@ -731,7 +731,7 @@ Todas as configurações dos [objetos servidor web](../commands/web-server) pode
 
 You can configure quotas via the `quotas` property in the *settings* parameter or, for the main Web server, via a [`QuotaManager.json`](../WebServer/quotas.md) file. If `settings.quotas` is provided, **QuotaManager.json** is ignored.
 
-::
+:::
 
 As configurações de sessão personalizadas serão redefinidas quando a função [`.stop()`](#stop) for chamada.
 

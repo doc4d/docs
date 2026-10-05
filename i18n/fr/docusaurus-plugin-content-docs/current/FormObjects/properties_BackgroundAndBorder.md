@@ -25,9 +25,9 @@ Vous pouvez également définir cette propriété à l'aide de la commande [`OBJ
 
 ---
 
-## Background Color / Fill color
+## Couleur de fond
 
-Defines the background color / fill color of an object. It can be defined for some standard objects (`fill` JSON property) or ["custom style" objects](#custom-style-button-check-box-or-radio-button) (`borderFillColor` JSON property). [hh](#)
+Définit la couleur de fond / couleur de remplissage d'un objet. Elle peut être définie pour certains objets standard (propriété JSON `fill`) ou pour des [objets de style "Custom"](#custom-style-button-check-box-or-radio-button) (propriété JSON `borderFillColor`). [hh](#)
 
 :::note
 
