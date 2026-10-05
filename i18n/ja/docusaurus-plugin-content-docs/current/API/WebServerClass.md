@@ -731,7 +731,7 @@ WEB Server.quotas.outBytesPerMinPerSession:=$quotas.outBytesPerMinPerSession
 
 You can configure quotas via the `quotas` property in the *settings* parameter or, for the main Web server, via a [`QuotaManager.json`](../WebServer/quotas.md) file. If `settings.quotas` is provided, **QuotaManager.json** is ignored.
 
-::
+:::
 
 カスタマイズされた設定は [`.stop()`](#stop) が呼び出されたときにリセットされます。
 
