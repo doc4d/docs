@@ -3,29 +3,29 @@ id: QuotaManagerClass
 title: QuotaManager
 ---
 
-`4D.QuotaManager` クラスは、4D アプリケーションに適用する使用制限を設定およびモニターするためのインターフェースを提供します。 Thresholds are useful, for example, to protect the server from poorly optimized requests or excessive use of server resources. For the REST server for example, quotas can limit the ORDA resources accessible to a REST session.
+`4D.QuotaManager` クラスは、4D アプリケーションに適用する使用制限を設定およびモニターするためのインターフェースを提供します。しきい値は、例えば、ほとんど最適化されていないリクエストやサーバーリソースの過度な使用などからサーバーを保護することなどに有用です。例えばREST サーバーの場合、クォータを使用することでREST セッションがアクセス可能なORDA リソースを制限することができます。
 
-`4D.QuotaManager` objects can be instantiated by:
+`4D.QuotaManager` オブジェクトは以下の方法でインスタンス化することが可能です:
 
-- the [`quotas` property of a Session](./SessionClass.md#quotas) object
-- the [`quotas` property of a Web server](./WebServerClass.md#quotas) object
+- [Session オブジェクトの`quotas` プロパティ](./SessionClass.md#quotas)
+- [Web サーバーオブジェクトの`quotas` プロパティ](./WebServerClass.md#quotas)
 
-For Web server configuration and enforcement details, see [Web server quotas](../WebServer/quotas.md).
+Web サーバーの設定と適用に関する詳細については、[Web server クォータ](../WebServer/quotas.md) を参照してください。
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                           |
-| ----- | ---------------------------- |
-| 21 R5 | Support of Web server quotas |
-| 21 R4 | クラスを追加                       |
+| リリース  | 内容                |
+| ----- | ----------------- |
+| 21 R5 | Web サーバークォータのサポート |
+| 21 R4 | クラスを追加            |
 
 </details>
 
 ### QuotaManagerオブジェクト
 
-By default, the properties of a `4D.QuotaManager` object are *Undefined*, meaning that no corresponding quota is applied.
+デフォルトでは、`4D.QuotaManager` オブジェクトのプロパティは*Undefined*(未定義)となっており、これは対応するクォータが何も適用されていないことを意味します。
 
-The `4D.QuotaManager` object itself cannot be directly assigned, and properties cannot be added to or removed from it. Quotas are configured by modifying the corresponding properties of the existing object.
+`4D.QuotaManager` オブジェクト自体は直接代入することはできず、プロパティを追加することや削除することもできません。クォータは、既存のオブジェクトの対応するプロパティを変更することで設定されます。
 
 4D.QuotaManager オブジェクトは以下のプロパティを提供します:
 
@@ -59,7 +59,7 @@ The `4D.QuotaManager` object itself cannot be directly assigned, and properties 
 
 #### 説明
 
-The `.currentValues` property contains <!-- REF #QuotaManagerClass.currentValues.Summary -->current usage values for the quota manager<!-- END REF -->. It is automatically updated by 4D and is read-only.
+`.currentValues` プロパティには<!-- REF #QuotaManagerClass.currentValues.Summary -->クォータマネージャーの現在使用されている値<!-- END REF --> が格納されています。これは4D によって自動的に更新され、また読み出し専用です。
 
 The object has the same properties as the `4D.QuotaManager` object, but only the following properties report current usage:
 
