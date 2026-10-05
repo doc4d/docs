@@ -235,7 +235,7 @@ async function callModel(lang, user, label) {
       });
       const choice = r.choices?.[0];
       if (choice?.finish_reason === 'length') {
-        throw Object.assign(new Error('model output truncated (finish_reason=length)'), { status: 400 });
+        throw Object.assign(new Error('model output truncated (finish_reason=length)'), { status: 400, truncated: true });
       }
       const content = choice?.message?.content;
       if (!content || !content.trim()) throw new Error('empty model output');
@@ -256,10 +256,15 @@ async function translatePiece(lang, piece, label) {
 
 /** Translates a whole file, splitting it by "## " sections when it is large. */
 async function translateFile(lang, { mode, oldSrc, newSrc, existing }, label) {
-  if (Buffer.byteLength(newSrc) <= CHUNK_THRESHOLD) {
-    return translatePiece(lang, { mode, oldSrc, newSrc, existing }, label);
-  }
   const newChunks = splitSections(newSrc);
+  if (Buffer.byteLength(newSrc) <= CHUNK_THRESHOLD) {
+    try {
+      return await translatePiece(lang, { mode, oldSrc, newSrc, existing }, label);
+    } catch (err) {
+      if (!err?.truncated || newChunks.length < 2) throw err;
+      console.warn(`  ! [${label}] output truncated, retrying section by section`);
+    }
+  }
   const exChunks = existing ? splitSections(existing) : [];
   const oldChunks = oldSrc ? splitSections(oldSrc) : [];
   const aligned = !!existing && exChunks.length === newChunks.length;
@@ -316,7 +321,13 @@ export function normalizeChange({ status, from, to }) {
 async function runPool(tasks, n) {
   let next = 0;
   const worker = async () => {
-    while (next < tasks.length) await tasks[next++]();
+    while (next < tasks.length) {
+      try {
+        await tasks[next++]();
+      } catch (err) {
+        console.warn(`::warning::${err?.message}`);
+      }
+    }
   };
   await Promise.all(Array.from({ length: Math.min(n, tasks.length) }, worker));
 }
@@ -402,7 +413,9 @@ async function main() {
 
       tasks.push(async () => {
         const existing = fs.existsSync(target) ? fs.readFileSync(target, 'utf8') : '';
-        const mode = existing || (DRY_RUN && targetExists) ? (oldSrc ? 'update' : 'resync') : 'full';
+        const hasTranslation = !!existing || (DRY_RUN && targetExists);
+        let mode = 'full';
+        if (hasTranslation) mode = oldSrc ? 'update' : 'resync';
         const bucket = mode === 'full' ? summary.translated : summary.updated;
         const label = `${lang}] [${to}`;
         console.log(`→ [${lang}] ${mode === 'full' ? 'translate' : mode} ${to} → ${target}`);
