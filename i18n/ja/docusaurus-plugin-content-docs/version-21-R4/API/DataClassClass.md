@@ -1122,7 +1122,7 @@ ds.Class.query("info.coll[].val != :1";0)
 // returns A only
 // finds "entities where all val properties are different from 0"
 // which is the equivalent to
-ds.Class.query("Not(info.coll[].val = :1";0))
+ds.Class.query("Not(info.coll[].val = :1)";0)
 ```
 
 "少なくとも 1つのプロパティが *値* と異なる" エンティティを検索するクエリを実装したい場合は、 `[]` に文字を入れた特別な表記を使用する必要があります:
