@@ -26,7 +26,7 @@ This tool carries English documentation changes over to the translated docs in `
    - `C` (copied): handled like `A`.
 5. **Incremental translation.** The model receives the OLD English source, the NEW English source and the EXISTING translation. It is told to change only the passages that differ and to keep everything else verbatim, so translations already reviewed by humans are preserved. When no translation exists yet, the whole file is translated.
 6. **Large files.** Files over about 80 KB are split into `## ` sections, ignoring headings inside code blocks and front matter, and translated section by section. During an incremental update, an unchanged section keeps its existing translation without calling the API.
-7. **Pull Request.** The workflow uses `peter-evans/create-pull-request` to commit the `i18n/**` changes on the `i18n/auto-<sha>` branch and open a PR titled `🌐 Automatic translations (<short sha>)`, with the labels `translation` and `automated`. **Review it before merging.**
+7. **Pull Request.** The workflow uses `peter-evans/create-pull-request` to commit the `i18n/**` changes on the `i18n/auto-<sha>` branch (`i18n/auto-<sha>-<run id>` for manual runs) and open a PR titled `🌐 Automatic translations (<short sha>)`, with the labels `translation` and `automated`. **Review it before merging.**
 
 ### Translation rules (system prompt)
 
