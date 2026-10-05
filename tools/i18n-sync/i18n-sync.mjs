@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
  * i18n-sync: propagates English documentation changes (docs/, versioned_docs/)
- * to the translated files under i18n/<lang>/docusaurus-plugin-content-docs/
+ * to the translated files under i18n/pt/docusaurus-plugin-content-docs/
  * and translates them with an LLM (OpenAI API).
+ * The tool is restricted to the Portuguese (pt) locale.
  *
  * Environment variables:
  *   BASE_SHA          Commit to diff from (default: HEAD_SHA~1; an all-zeros or unknown SHA falls back to HEAD_SHA~1)
  *   HEAD_SHA          Commit to diff to (default: HEAD)
- *   LANGS             Comma-separated target locales (default: fr,es,ja,pt)
+ *   LANGS             Target locale (default: pt)
  *   OPENAI_API_KEY    OpenAI API key (required unless DRY_RUN=1)
  *   OPENAI_MODEL      Model name (default: gpt-4.1)
  *   I18N_MAX_FILES    Max number of changed source files to process (default: 200)
@@ -25,7 +26,8 @@ import { fileURLToPath } from 'node:url';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PLUGIN_DIR = 'docusaurus-plugin-content-docs';
-const LANG_NAMES = { fr: 'French', es: 'Spanish', ja: 'Japanese', pt: 'Brazilian Portuguese' };
+const DEFAULT_LANGS = 'pt';
+const LANG_NAMES = { pt: 'Brazilian Portuguese' };
 const CHUNK_THRESHOLD = 80 * 1024; // bytes
 const MAX_ATTEMPTS = 6;
 
@@ -79,7 +81,7 @@ export function toI18nPath(src, lang) {
   return m ? `${base}/${m[1]}/${m[2]}` : null;
 }
 
-/** Root folder of the docs version of a translated path (e.g. i18n/fr/docusaurus-plugin-content-docs/version-20). */
+/** Root folder of the docs version of a translated path (e.g. i18n/pt/docusaurus-plugin-content-docs/version-20). */
 function versionRoot(target) {
   return target.split('/').slice(0, 4).join('/');
 }
@@ -119,7 +121,7 @@ export function systemPrompt(lang) {
 Translate from English into ${name}. STRICT RULES:
 - Preserve the exact Markdown/MDX structure: headings, lists, tables, blank lines, line breaks, indentation.
 - Front matter: keep all keys unchanged; keep "id" and "slug" values unchanged; translate only the values of "title", "sidebar_label" and "description".
-- Never translate: fenced code blocks, inline code, URLs, link targets, anchors (#...), heading ids ({#...}), file and image paths, JSX/HTML tags and their attributes, import/export statements, admonition keywords (:::note, :::tip, :::info, :::caution, :::warning, :::danger, :::).
+- Never translate: fenced code blocks, inline code, URLs, link targets, anchors (#...), heading ids ({#...}), file and image paths, JSX/HTML tags and their attributes, import/export statements, admonition keywords (:::note, :::tip, :::info, :::caution, :::warning, :::danger, etc.).
 - Never translate 4D language elements: commands, keywords, class names, function and member names, property names, constants, parameter names.
 - Keep product names unchanged.${glossaryPrompt(lang)}
 - Return ONLY the resulting file content, without any commentary and without wrapping it in a code fence.`;
@@ -341,7 +343,7 @@ async function main() {
   }
   base = git('rev-parse', '--verify', `${base}^{commit}`).trim();
 
-  const langs = [...new Set((env.LANGS || 'fr,es,ja,pt').split(',').map((l) => l.trim()).filter(Boolean))];
+  const langs = [...new Set((env.LANGS || DEFAULT_LANGS).split(',').map((l) => l.trim()).filter(Boolean))];
   if (!langs.length) fatal('No target locale');
   for (const l of langs) {
     if (!/^[a-z]{2}(-[A-Za-z]+)?$/.test(l) || l === 'en') fatal(`Invalid target locale "${l}"`);
