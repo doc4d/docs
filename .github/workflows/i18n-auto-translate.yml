@@ -1,7 +1,8 @@
 name: i18n auto-translate
 
-# Propagates English doc changes (docs/, versioned_docs/) to i18n/<lang>/,
+# Propagates English doc changes (docs/, versioned_docs/) to i18n/pt/,
 # translates them with an LLM and opens a Pull Request against main.
+# Restricted to the Portuguese (pt) locale; other locales are managed elsewhere (e.g. Crowdin).
 # See tools/i18n-sync/README.md
 
 on:
@@ -16,10 +17,6 @@ on:
         description: 'Base commit SHA to diff from (optional, default: previous commit)'
         required: false
         default: ''
-      langs:
-        description: 'Comma-separated target locales (optional)'
-        required: false
-        default: 'fr,es,ja,pt'
 
 permissions:
   contents: write
@@ -70,26 +67,26 @@ jobs:
           echo "sha=$BASE" >> "$GITHUB_OUTPUT"
           echo "short=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
 
-      - name: Translate changed docs
+      - name: Translate changed docs (pt only)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.I18N_MODEL || 'gpt-4.1' }}
           BASE_SHA: ${{ steps.base.outputs.sha }}
           HEAD_SHA: ${{ github.sha }}
-          LANGS: ${{ inputs.langs || 'fr,es,ja,pt' }}
+          LANGS: pt
         run: node tools/i18n-sync/i18n-sync.mjs
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           # Manual runs get a unique branch so they do not overwrite a previous PR for the same commit
-          branch: i18n/auto-${{ github.sha }}${{ github.event_name == 'workflow_dispatch' && format('-{0}', github.run_id) || '' }}
+          branch: i18n/auto-pt-${{ github.sha }}${{ github.event_name == 'workflow_dispatch' && format('-{0}', github.run_id) || '' }}
           base: main
-          add-paths: i18n/**
-          commit-message: '[i18n-bot] Automatic translations for ${{ github.sha }}'
-          title: '🌐 Automatic translations (${{ steps.base.outputs.short }})'
+          add-paths: i18n/pt/**
+          commit-message: '[i18n-bot] Automatic pt translations for ${{ github.sha }}'
+          title: '🌐 Automatic translations – pt (${{ steps.base.outputs.short }})'
           body: |
-            Automatic translations generated from the English documentation changes:
+            Automatic Portuguese (pt) translations generated from the English documentation changes:
             ${{ github.server_url }}/${{ github.repository }}/compare/${{ steps.base.outputs.sha }}...${{ github.sha }}
 
             ⚠️ These translations were produced by an LLM (`${{ vars.I18N_MODEL || 'gpt-4.1' }}`). **Please review them before merging.**
