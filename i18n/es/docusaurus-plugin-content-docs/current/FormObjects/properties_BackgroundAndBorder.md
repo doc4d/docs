@@ -177,9 +177,9 @@ The value is expressed in pixels.
 
 #### Gramática JSON
 
-| Nombre      | Tipos de datos | Valores posibles                                                             |
-| ----------- | -------------- | ---------------------------------------------------------------------------- |
-| borderWidth | number         | Integer value (pixels). Minimum value = 0 |
+| Nombre      | Tipos de datos | Valores posibles                                                            |
+| ----------- | -------------- | --------------------------------------------------------------------------- |
+| borderWidth | number         | Valor entero (píxeles). Valor mínimo = 0 |
 
 #### Objetos soportados
 
