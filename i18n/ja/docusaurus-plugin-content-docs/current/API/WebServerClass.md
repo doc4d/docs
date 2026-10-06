@@ -489,42 +489,42 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 #### 説明
 
-The `.quotas` property contains <!-- REF #WebServerClass.quotas.Summary -->a `4D.QuotaManager` object that allows you to configure and monitor quotas for the web server<!-- END REF -->.
+`.quotas` プロパティには<!-- REF #WebServerClass.quotas.Summary -->Web サーバーに対してクォータを設定し監視することを可能にする `4D.QuotaManager` オブジェクト<!-- END REF --> を格納しています。
 
 :::note
 
-Quotas are available only when scalable sessions are enabled. When scalable sessions are disabled, this property is *Undefined*.
+クォータは、スケーラブルセッションが有効化されている場合にのみ使用可能です。スケーラブルセッションが無効化されている場合、このプロパティは*Undefined*(未定義) となります。
 
 :::
 
-##### Scope levels
+##### スコープレベル
 
-Accessing this property returns a `4D.QuotaManager` object that can be updated at runtime. Quotas can be configured at two different scope levels:
+このプロパティにアクセスすると、`4D.QuotaManager` オブジェクトが返され、これはランタイムで更新していくことができます。クォータは2つの異なるスコープレベルで設定することが可能です:
 
-- **Server global**: quotas are applied to the aggregate activity of all sessions on the web server. See [At startup](../WebServer/quotas.md#at-startup) and [At runtime](../WebServer/quotas.md#at-runtime).
-- **Session default**: quotas are applied by default to each new session when it is created. See [At startup](../WebServer/quotas.md#at-startup) and [At runtime](../WebServer/quotas.md#at-runtime).
+- **サーバーグローバル**: クォータは、Web サーバー上の全てのセッションの合計アクティビティに対して適用されます。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。
+- **セッションデフォルト**: クォータはセッションの作成時にそれぞれの新しいセッションに対してデフォルトで適用されます。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。
 
-When both server global and session default quotas are configured, the session quota is checked first. If the request is accepted, the server global quota is then checked.
+サーバーグローバルとセッションデフォルトのクォータの両方が設定されている場合、セッションクォータが先にチェックされます。リクエストが受け入れられると、次にサーバーグローバルクォータがチェックされます。
 
-For the complete list of quota properties, see the [`4D.QuotaManager` class](./QuotaManagerClass.md). For configuration and enforcement details, see [Web server quotas](../WebServer/quotas.md).
+クォータのプロパティの完全な一覧については、[`4D.QuotaManager` クラス](./QuotaManagerClass.md) を参照してください。設定と適用に関する詳細については、[Web サーバークォータ](../WebServer/quotas.md) を参照してください。
 
-By default, quota properties are *Undefined* and no quotas are applied.
+デフォルトではクォータプロパティは*Undefined* (未定義)であり、クォータは何も適用されていません。
 
-You can modify quota values while the web server is running. Changes to server global quotas are applied to subsequent web server activity. Changes to session default quotas are applied to new sessions created after the quota value is updated. The web server does not need to be restarted.
+クォータの値は、Web サーバーの実行中にも変更することが可能です。サーバーグローバルクォータに対する変更は、それ以降のWeb サーバーのアクティビティに対して適用されます。セッションデフォルトのクォータに対する変更は、クォータの値が変更されたあとに新規に作成されたセッションに対して適用されます。 Web サーバーを再起動する必要はありません。
 
 :::note
 
-You can also configure quotas for the current REST session using the [`Session.quotas`](./SessionClass.md#quotas) property.
+また[`Session.quotas`](./SessionClass.md#quotas) プロパティを使用することでカレントのREST セッションに対してクォータを設定することもできます。
 
 :::
 
-The following properties of the `4D.QuotaManager` object are available for the Web server:
+Web サーバーに対しては`4D.QuotaManager` オブジェクトの以下のプロパティが利用可能です:
 
 | プロパティ                                                                             |                 | 型       | 書込可能 | 説明                                                                                                    |
 | --------------------------------------------------------------------------------- | --------------- | ------- | ---- | ----------------------------------------------------------------------------------------------------- |
-| [currentValues](./QuotaManagerClass.md#currentvalues)                             |                 | Object  | ×    | Current usage values reported by the Web server.                                      |
+| [currentValues](./QuotaManagerClass.md#currentvalues)                             |                 | Object  | ×    | Web サーバーによって報告されるカレントの使用量の値。                                                                          |
 |                                                                                   | nbEntitySets    | Integer | ×    | メモリ内のエンティティセットのカレントの数。                                                                                |
-|                                                                                   | nbGuestSessions | Integer | ×    | Number of active Guest sessions on the Web server.                                    |
+|                                                                                   | nbGuestSessions | Integer | ×    | Web サーバ上のアクティブなゲストセッションの数。                                                                            |
 |                                                                                   | nbSessions      | Integer | ×    | Number of active sessions on the Web server.                                          |
 | [inBytesPerHour](./QuotaManagerClass.md#inbytesperhour)                           |                 | Integer | ◯    | Maximum total number of bytes the Web server can receive in one hour.                 |
 | [inBytesPerHourPerSession](./QuotaManagerClass.md#inbytesperhourpersession)       |                 | Integer | ◯    | Maximum total number of bytes the Web server can receive for a session in one hour.   |
