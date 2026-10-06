@@ -11,7 +11,7 @@ This tool carries English documentation changes over to the Portuguese docs in `
 ## How it works
 
 1. **Trigger.** The workflow runs on every push to `main` that modifies `docs/**` or `versioned_docs/**`. You can also start it manually (see [Manual run](#manual-run)).
-2. **Detection.** The script runs `git diff --name-status -M <base> <head> -- docs versioned_docs` and keeps only `.md`/`.mdx` files.
+2. **Detection.** The script runs `git diff --name-status -M <base> <head> -- docs versioned_docs` and keeps only `.md`/`.mdx` files. Only these two commits are needed, so the workflow uses a shallow checkout (`fetch-depth: 2`) and fetches the base commit on demand when it is not `HEAD~1`, instead of cloning the full history.
 3. **Path mapping.** The docs plugin uses the default id and `path: 'docs'`, so the paths map as follows:
 
    | English source | Translated file |

@@ -206,7 +206,7 @@ let client = null;
 async function getClient() {
   if (client) return client;
   const { default: OpenAI } = await import('openai');
-  client = new OpenAI({ maxRetries: 0, timeout: 10 * 60 * 1000 });
+  client = new OpenAI({ maxRetries: 0, timeout: 3 * 60 * 1000 });
   return client;
 }
 
