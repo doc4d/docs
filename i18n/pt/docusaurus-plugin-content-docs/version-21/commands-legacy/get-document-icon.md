@@ -29,7 +29,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.GET DOCUMENT ICON.Summary-->O comando GET DOCUMENT ICON retorna no campo ou a variável imagem 4D ícone, o ícone do documento cujo nome ou rota de acesso se passa em *rotaDoc.<!-- END REF--> rotaDoc* pode especificar um arquivo de todo tipo (executável, documento, atalho ou alias, etc.) ou uma pasta.  
+<!--REF #_command_.GET DOCUMENT ICON.Summary-->O comando GET DOCUMENT ICON retorna no campo ou a variável imagem 4D ícone, o ícone do documento cujo nome ou rota de acesso se passa em *rotaDoc*.<!-- END REF--> *rotaDoc* pode especificar um arquivo de todo tipo (executável, documento, atalho ou alias, etc.) ou uma pasta.  
 
 Passe em *rotaDoc* a rota de acesso absoluta do documento. Igualmente, pode passar unicamente o nome do documento ou rota de acesso relativa, neste caso o documento deve ser encontrado no diretório atual da banco (geralmente, a pasta que contém o arquivo de estrutura da banco).
 
