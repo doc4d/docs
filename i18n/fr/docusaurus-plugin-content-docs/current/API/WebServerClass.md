@@ -548,6 +548,7 @@ Configure quotas at the server global and session default levels:
 
 ```4d
 var $quotas : Object
+var $webServer : Object:=WEB Server
 
 $quotas:={}
 $quotas.inBytesPerMin:=20000000
@@ -558,14 +559,14 @@ $quotas.nbRequestsPerMin:=500
 $quotas.nbRequestsPerHour:=20000
 
 // Server global quotas
-WEB Server.quotas.inBytesPerMin:=$quotas.inBytesPerMin
-WEB Server.quotas.nbSessions:=$quotas.nbSessions
-WEB Server.quotas.nbGuestSessions:=$quotas.nbGuestSessions
-WEB Server.quotas.nbRequestsPerMin:=$quotas.nbRequestsPerMin
-WEB Server.quotas.nbRequestsPerHour:=$quotas.nbRequestsPerHour
+$webServer.quotas.inBytesPerMin:=$quotas.inBytesPerMin
+$webServer.quotas.nbSessions:=$quotas.nbSessions
+$webServer.quotas.nbGuestSessions:=$quotas.nbGuestSessions
+$webServer.quotas.nbRequestsPerMin:=$quotas.nbRequestsPerMin
+$webServer.quotas.nbRequestsPerHour:=$quotas.nbRequestsPerHour
 
 // Session default quota
-WEB Server.quotas.outBytesPerMinPerSession:=$quotas.outBytesPerMinPerSession
+$webServer.quotas.outBytesPerMinPerSession:=$quotas.outBytesPerMinPerSession
 ```
 
 :::tip Article de blog lié
@@ -729,7 +730,7 @@ Tous les paramètres des [objets serveur Web] (../commands/web-server) peuvent �
 
 :::note
 
-You can configure quotas via the `quotas` property in the *settings* parameter or, for the main Web server, via a [`QuotaManager.json`](../WebServer/quotas.md) file. If `settings.quotas` is provided, **QuotaManager.json** is ignored.
+You can configure quotas via the `quotas` property in the *settings* parameter or, for the main Web server, via an [`HTTPQuotas.json`](../WebServer/quotas.md) file. If `settings.quotas` is provided, **HTTPQuotas.json** is ignored.
 
 :::
 
