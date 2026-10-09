@@ -175,9 +175,7 @@ The **Automatic** option can be used to apply the standard original color to the
 
 #### Expose as REST resource
 
-This option controls whether the table is exposed in the context of requests sent to the 4D database via [REST](../REST/gettingStarted.md). By default, all tables are exposed in REST.  
-
-For security reasons, you may want to only expose certain tables of your database. For instance, if you created a `[Users]` table storing user names and passwords, it would be better not to expose it. If you do not want to expose a table (nor any of the fields it contains), uncheck the **Expose as REST resource** option for the table.
+This option controls whether the [table is exposed to REST requests](../REST/configuration.md#exposing-tables).  
 
 :::note Notes
 
