@@ -174,7 +174,8 @@ You can also put these requests to create or update entities in a transaction by
 If a problem arises while adding or modifying an entity, an error will be returned to you with that information.
 
 :::note
-*	**Dates** must be expressed in JS format: YYYY-MM-DDTHH:MM:SSZ (e.g., "2010-10-05T23:00:00Z"). If you have selected the Date only property for your Date attribute, the time zone and time (hour, minutes, and seconds) will be removed. In this case, you can also send the date in the format that it is returned to you dd!mm!yyyy (e.g., 05!10!2013).
+*	**Dates** must be expressed in JS format: YYYY-MM-DDTHH:MM:SSZ (e.g., "2010-10-05T23:00:00Z"). If you have selected the Date only property for your Date attribute, the time zone and time (hour, minutes, and seconds) will be removed. In this case, you can also send the date in the ISO format YYYY-MM-DD (e.g., "2013-10-05") or in the legacy format dd!mm!yyyy (e.g., 05!10!2013), whatever the [date format of the responses](REST_requests.md#dates-in-responses).
+*	When the REST server returns dates in ISO format, a date value that cannot be converted to a date (e.g., "2026-13-45") returns an error (1847) and the entity is not saved. With the legacy format, such a value is stored as an empty date.
 *	**Booleans** are either true or false.
 *	Uploaded files using `$upload` can be applied to an attribute of type Image or BLOB by passing the object returned in the following format `{ "ID": "D507BC03E613487E9B4C2F6A0512FE50"}`
 :::
@@ -230,6 +231,22 @@ You can also create and update multiple entities at the same time using the same
     "lastName": "Jones"
 }]
 ```
+
+To update a date attribute, you can send the date in ISO format:
+
+ `POST  /rest/Employee/?$method=update`
+
+**POST data:**
+
+```json
+{
+    "__KEY": "12",
+    "__STAMP": 4,
+    "lastReview": "2026-10-11"
+}
+```
+
+When the REST server returns [dates in ISO format](REST_requests.md#dates-in-responses), the response contains `"lastReview": "2026-10-11"`. With the legacy format, it contains `"lastReview": "11!10!2026"`.
 
 **Response:**
 

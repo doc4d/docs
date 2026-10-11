@@ -47,5 +47,54 @@ The response (in JSON format) varies depending on the request.
 
 If an error arises, it will be sent along with the response from the server or it will be the response from the server.
 
- 
+
+## Dates
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R6|ISO date format in responses|
+
+</details>
+
+### Dates in responses
+
+The format of Date values in REST responses depends on the **REST server: return dates in ISO format** [compatibility option](../settings/compatibility.md):
+
+|Value|ISO format (option checked)|Legacy format (option unchecked)|
+|---|---|---|
+|Date attribute|`"1971-07-18"`|`"18!7!1971"`|
+|Other Date values (in object attributes, returned by functions, computed attributes...)|`"1971-07-18"`|`"!!1971-07-18!!"`|
+|Empty date|`null`|`"0!0!0"` (attribute) or `"!!0000-00-00!!"`|
+
+In ISO format, dates are returned as `"YYYY-MM-DD"` strings, without time or time zone, so that a client in any time zone reads the same calendar day. This format can be used directly by standard JSON tools, for example JavaScript `Date` objects or date pickers.
+
+The option is checked by default in projects created with 4D 21 R6 and higher, and unchecked in converted projects. It is always enabled in Qodly applications. It is read when the REST server starts: if you change it, restart the web server.
+
+:::note
+
+The ISO format applies to REST requests sent over HTTP. Requests sent by 4D applications through [`Open datastore`](../commands/open-datastore) and 4D client/server requests always use the legacy format, so date attributes of [remote datastores](../ORDA/remoteDatastores.md) are always received as Date values.
+
+:::
+
+Dates that are stored as strings in object attributes (depending on the [*Dates inside objects*](../commands/set-database-parameter#dates-inside-objects-85) setting) are strings, not Date values: they are returned unchanged.
+
+### Dates in requests
+
+When you send dates to the REST server, for example in [`$method=update`]($method.md#methodupdate) bodies or in [function parameters](ClassFunctions.md#scalar-value-parameter), you can use the ISO format (`"1971-07-18"`, or a full date-time such as `"1971-07-18T00:00:00Z"`, of which only the date part is kept for a date-only attribute) or the legacy format (`"18!7!1971"`), whatever the compatibility option.
+
+### Example
+
+You read a date attribute returned by the REST server of a project created with 4D 21 R6:
+
+```4d
+var $request : 4D.HTTPRequest
+$request:=4D.HTTPRequest.new("http://localhost/rest/Employee(12)"; {method: "GET"})
+$request.wait()
+
+var $birth : Text
+$birth:=$request.response.body.birthDate  // "1971-07-18" (it was "18!7!1971" in legacy format)
+```
+
 

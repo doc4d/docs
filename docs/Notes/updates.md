@@ -4,6 +4,17 @@ title: Release Notes
 ---
 
 
+## 4D 21 R6
+
+#### Highlights
+
+- The REST server can now return [dates in ISO format](../REST/REST_requests.md#dates-in-responses) (`"YYYY-MM-DD"`) and [omit the `__THIS` property](../REST/ClassFunctions.md#function-response) in function responses, through two new [compatibility options](../settings/compatibility.md).
+
+#### Behavior changes
+
+- In projects created with 4D 21 R6 and higher and in Qodly applications, REST responses contain [dates in ISO format](../REST/REST_requests.md#dates-in-responses) (`"YYYY-MM-DD"`, `null` for an empty date) and function call responses no longer contain the [`__THIS` property](../REST/ClassFunctions.md#function-response): an entity function must [return `This`](../ORDA/ordaClasses.md#returning-a-modified-entity) for the client to receive its updates. Converted projects keep the previous behavior until you check the [compatibility options](../settings/compatibility.md).
+
+
 ## 4D 21 R5
 
 Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), the blog post that lists all new features and enhancements in 4D 21 R5.

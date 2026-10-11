@@ -1062,6 +1062,25 @@ $status:=$remoteDS.Schools.registerNewStudent($student) // OK
 $id:=$remoteDS.Schools.computeIDNumber() // Error "Unknown member method"
 ```
 
+### Returning a modified entity
+
+In projects created with 4D 21 R6 and higher (and in Qodly applications), the response of an exposed function called through a REST request contains only what the function returns: the `__THIS` property that described the target entity is no longer returned (see [Function response](../REST/ClassFunctions.md#function-response)). As a consequence, if an entity function modifies `This` and the REST client needs the updated values, the function must return `This`.
+
+#### Example
+
+The `promote()` function returns the modified entity:
+
+```4d
+// StudentsEntity class
+Class extends Entity
+
+exposed Function promote() : cs.StudentsEntity
+	var $status : Object
+	This.level:=This.level+1
+	$status:=This.save()
+	return This  // the REST client receives the updated entity
+```
+
 ## onHTTPGet keyword
 
 Use the `onHTTPGet` keyword to declare functions that can be called through HTTP requests using the `GET` verb. Such functions can return any web contents, for example using the [`4D.OutgoingMessage`](../API/OutgoingMessageClass.md) class. 

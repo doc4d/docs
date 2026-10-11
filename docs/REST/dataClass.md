@@ -46,6 +46,8 @@ Each entity contains the following properties:
 |__TIMESTAMP|Date|Timestamp of the last modification of the entity|
 |__STAMP|Number|Internal stamp that is needed when you modify any of the values in the entity when using `$method=update`.|
 
+Date attributes are returned as `"YYYY-MM-DD"` strings (`null` for an empty date) or in the legacy `"d!m!yyyy"` format, depending on the [date format of the REST server](REST_requests.md#dates-in-responses).
+
 If you want to specify which attributes you want to return, define them using the following syntax [{attribute1, attribute2, ...}](manData.md#selecting-attributes-to-get). For example:
 
  `GET  /rest/Company/name,address`

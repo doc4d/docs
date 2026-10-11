@@ -66,6 +66,63 @@ $city:=ds.City.getCity("Aguada")
 ```
 
 
+## Function response
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R6|`__THIS` no longer returned by default|
+
+</details>
+
+The response of a function call contains the value returned by the function, in the `result` property (or the entity or entity selection itself when the function returns an entity or an entity selection). Dates are returned in the [format defined for the REST server](REST_requests.md#dates-in-responses).
+
+In previous releases, the response of an entity class function also contained a `__THIS` property describing the entity on which the function was called. This property is no longer returned when the **REST server: omit __THIS in function responses** [compatibility option](../settings/compatibility.md) is checked. This option is checked by default in projects created with 4D 21 R6 and higher, and unchecked in converted projects. It is always enabled in Qodly applications. It is read when the REST server starts.
+
+:::note
+
+When `__THIS` is not returned, the changes that an entity function makes to its entity (`This`) are sent to the client only if the function **returns the entity**. Otherwise, the client does not receive the updated values.
+
+:::
+
+#### Example
+
+The `apply()` function of the `EmployeeEntity` class modifies the entity and returns it, so that the client receives the updated values:
+
+```4d
+// EmployeeEntity class
+Class extends Entity
+
+exposed Function apply($percent : Real) : cs.EmployeeEntity
+	var $status : Object
+	This.salary:=This.salary*(1+($percent/100))
+	This.lastReview:=Current date
+	$status:=This.save()
+	return This  // without this line, the client does not receive the new salary and lastReview values
+```
+
+**POST** `127.0.0.1:8044/rest/Employee(12)/apply`
+
+Body of the request: [5]
+
+The response contains the updated entity, with no `__THIS` property:
+
+```
+{
+    "__entityModel": "Employee",
+    "__DATACLASS": "Employee",
+    "__KEY": "12",
+    "__STAMP": 4,
+    "ID": 12,
+    "lastName": "Martin",
+    "salary": 52500,
+    "lastReview": "2026-10-11"
+}
+```
+
+Requests sent by 4D applications through [`Open datastore`](../commands/open-datastore) and 4D client/server requests are not affected by this compatibility option.
+
 
 ## Function configuration
 
@@ -120,7 +177,7 @@ See [this example](#using-an-entity-to-be-created-on-the-server) and [this examp
 
 ### Scalar value parameter
 
-Scalar value parameter(s) must simply be enclosed in a collection. All JSON data types are supported in parameters, including JSON pointers. Dates can be passed as strings in ISO 8601 date format (e.g. "2020-08-22T22:00:000Z").
+Scalar value parameter(s) must simply be enclosed in a collection. All JSON data types are supported in parameters, including JSON pointers. Dates can be passed as strings in ISO 8601 date format (e.g. "2020-08-22" or "2020-08-22T22:00:000Z").
 
 For example, with a  dataclass function `getCities()` receiving text parameters:
 
