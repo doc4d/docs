@@ -1,11 +1,11 @@
-﻿---
+---
 id: object-get-rgb-colors
 title: OBJECT GET RGB COLORS
 slug: /commands/object-get-rgb-colors
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET RGB COLORS.Syntax-->**OBJECT GET RGB COLORS** ( * ; *objeto* : Text ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer}} )<br/>**OBJECT GET RGB COLORS** ( *objeto* : Variable, Field ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer}} )<!-- END REF-->
+<!--REF #_command_.OBJECT GET RGB COLORS.Syntax-->**OBJECT GET RGB COLORS** ( * ; *objeto* : Text ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer {; corBorda : Text, Integer}}} )<br/>**OBJECT GET RGB COLORS** ( *objeto* : Variable, Field ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer {; corBorda : Text, Integer}}} )<!-- END REF-->
 <!--REF #_command_.OBJECT GET RGB COLORS.Params-->
 <div class="no-index">
 
@@ -16,6 +16,7 @@ displayed_sidebar: docs
 | corPrimeiroPlano | Text, Integer | &#8592; | Valor da cor RGB do primeiro plano |
 | corFundo | Text, Integer | &#8592; | Valor da cor do RGB para segundo plano (fundo) |
 | corFundoAlternativo | Text, Integer | &#8592; | Valor da cor RGB do fundo alternativo |
+| corBorda | Text, Integer | &#8592; | Valor da cor RGB da borda |
 </div>
 <!-- END REF-->
 
@@ -24,6 +25,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Suporte ao parâmetro *corBorda*|
 |17 R6|Modificado|
 |12|Criado por|
 

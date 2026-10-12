@@ -1,11 +1,11 @@
-﻿---
+---
 id: object-set-rgb-colors
 title: OBJECT SET RGB COLORS
 slug: /commands/object-set-rgb-colors
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET RGB COLORS.Syntax-->**OBJECT SET RGB COLORS** ( * ; *objeto* : Text ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer}} )<br/>**OBJECT SET RGB COLORS** ( *objeto* : Variable, Field ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer}} )<!-- END REF-->
+<!--REF #_command_.OBJECT SET RGB COLORS.Syntax-->**OBJECT SET RGB COLORS** ( * ; *objeto* : Text ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer {; borderColor : Text, Integer}}} )<br/>**OBJECT SET RGB COLORS** ( *objeto* : Variable, Field ; *corPrimeiroPlano* : Text, Integer {; *corFundo* : Text, Integer {; *corFundoAlternativo* : Text, Integer {; borderColor : Text, Integer}}} )<!-- END REF-->
 <!--REF #_command_.OBJECT SET RGB COLORS.Params-->
 <div class="no-index">
 
@@ -16,6 +16,7 @@ displayed_sidebar: docs
 | corPrimeiroPlano | Text, Integer | &#8594; | Valor de cor RGB para a cor de Primeiro Plano |
 | corFundo | Text, Integer | &#8594; | Valor RGB da cor de Fundo |
 | corFundoAlternativo | Text, Integer | &#8594; | Valor RGB da cor de fundo alternativa |
+| borderColor | Text, Integer | &#8594; | Valor RGB da cor da borda |
 </div>
 <!-- END REF-->
 
@@ -24,6 +25,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Suporte ao parâmetro *borderColor*|
 |17 R6|Modificado|
 |14|Modificado|
 |12|Renomear|
