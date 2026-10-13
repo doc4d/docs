@@ -1,6 +1,6 @@
 ---
 id: structure-indexes
-title: Creating and modifying indexes
+title: Indexes
 ---
 
 You can associate indexes with fields that you frequently use for searching and sorting. For example, you might index LastName, CompanyName, or ProductName if you plan to search or sort entities using these attributes. You also use this property for fields that establish relations between tables. 

@@ -1,6 +1,6 @@
 ---
 id: structure-fields
-title: Field properties
+title: Fields
 ---
 
 <!-- INCLUDE my.section.id.Desc -->

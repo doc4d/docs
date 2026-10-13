@@ -1,6 +1,6 @@
 ---
 id: field-properties-legacy
-title: Field properties
+title: Fields
 ---
 <!-- REF my.section.id.Desc -->
 ## Definition
@@ -120,11 +120,19 @@ Although they are unique in the table when they are generated, autoincremented n
 
 ### Stored in record, data file or outside data file  
 
-This menu of options is only available for Text, BLOB, Picture and Object [type](../Concepts/data-types.md) fields. You can set a storage location for the field data. The following options are available:
+This menu of options is only available for Text, BLOB, Picture and Object [type](../Concepts/data-types.md) fields. You can set a storage location for the field data. 
 
-- **In record**: Data is stored with each record. Generally, you should not choose this option for fields containing voluminous data. However, it is selected by default for Text fields because this type of storage is required if you want to use "standard" B-Tree indexes. The index selection menu is hidden when Text data are stored outside of records.
-- **In data file**: Data is stored in the data file, but outside of each record. This option is selected by default for BLOB and Picture fields. You can optimize database functioning when working with voluminous data by storing texts, pictures, Blobs and objects outside of records. 
-- **Outside data file**: Data is stored in separate files, outside the [data file](../Project/architecture.md#data). This option is described in **External data storage**.
+#### In record
+
+Data is stored with each record. Generally, you should not choose this option for fields containing voluminous data. However, it is selected by default for Text fields because this type of storage is required if you want to use "standard" B-Tree indexes. The index selection menu is hidden when Text data are stored outside of records.
+
+#### In data file
+
+Data is stored in the data file, but outside of each record. This option is selected by default for BLOB and Picture fields. You can optimize database functioning when working with voluminous data by storing texts, pictures, Blobs and objects outside of records. 
+
+#### Outside data file
+
+Data is stored in separate files, outside the [data file](../Project/architecture.md#data). This option is described in **External data storage**.
 
 :::note Notes
 - This option is only taken into account for new records created subsequently in the table. When you set this option for a table where records have already been entered, they are not modified and the table will work in a mixed internal/external storage mode. If you want to extend this mode to the existing records as well, you need to [compact the data](../MSC/compact.md) using the [**Force updating of the records**](../MSC/compact.md#force-updating-of-the-records) option. 
@@ -133,7 +141,7 @@ This menu of options is only available for Text, BLOB, Picture and Object [type]
 
 :::
 
-### Internal storage max size  
+#### Internal storage max size  
 
 As described in the previous section, for optimization purposes, by default the data of BLOB, Picture, Text and Object type fields are stored outside of records or outside of the data file. In this configuration, it may be worthwhile, for performance reasons, to "force" data to be stored in the records when their size is limited. This functioning is particularly optimized when your application handles BLOB, Picture, text or object data of inconsistent sizes. The value entered in this area represents the size in bytes below which the data of the field will be stored in the record. For example, if you enter 30 000 for a picture field, a 20 KB picture will be stored in the record and a 40 KB picture will be stored at the location defined in the settings (in the data file or outside it). By default, the value is 0: all the data of the field is stored outside of the records. 
 
@@ -151,7 +159,9 @@ Fields with the UUID format property can be displayed in forms and remain entera
 - You can create a relation between two fields that both have the UUID format but you cannot link a standard Alpha field to a field that has the UUID format.
 - An UUID field that is initialized (generated) and that has the NULL value returns an empty string. An UUID field that is not generated is not NULL and returns "000..." (the number of 0s is equal to the number of characters). The property is not taken into account by non-generated UUID fields (display of "000...").
 
-### Auto UUID  
+:::
+
+#### Auto UUID  
 
 This option is only active when you select the [**UUID format**](#uuid-format) property. You can use the **Auto UUID** property to generate a UUID number automatically in the field.
 
