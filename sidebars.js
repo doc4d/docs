@@ -68,7 +68,6 @@ module.exports =
           type: "category",
           label: "Database Structure",
           items: [
-            "Develop/field-properties",
             "Develop/structure-editor",
             "Develop/structure-tables",
             "Develop/structure-fields",

@@ -11,7 +11,7 @@ The Structure editor provides a graphic view of a database’s structure as well
 
 A floating **Inspector palette** can be used to view and modify the properties of structure objects and of the structure editor itself. This window is described in the [Inspector palette](#inspector-palette) section.
 
-## Toolbar and information bar
+## Toolbar
 
 The structure editor has a toolbar containing functions like the addition of objects, as well as navigation and display options:
 
@@ -28,9 +28,22 @@ From left to right, the icons perform the following actions:
 - Index list window
 - Primary key manager
 
+### Locking information
+
+A closed lock icon ![](../assets/en/Develop/structure-lock.png) is displayed if the structure file is locked.  
+Locking can occur in both project and client/server modes when:
+
+- The `catalog.4DCatalog` file is *Read-only* (Projects only). Clicking on the lock icon will display an alert to unlock it, if possible.  
+- Two or more users attempt to modify the same structure at the same time. The structure cannot be used until the first user frees it by closing the window. *(Client/server only)*  
+
+In both cases, the structure can be opened in *Read-only*, but cannot be used until the lock is removed.
+
+
+## Information bar
+
 The lower part of the editor window is an information bar displaying data corresponding to the area the mouse is over: table, field or relation.
 
-### Information about a table
+#### Information about a table
 
 - Table name and number  
 - Table triggers:  
@@ -38,7 +51,7 @@ The lower part of the editor window is an information bar displaying data corres
   - **SAVE:** On saving existing record  
   - **DEL:** On deleting a record  
 
-### Information about a field
+#### Information about a field
 
 - Table name and number  
 - Field name and number  
@@ -47,7 +60,7 @@ The lower part of the editor window is an information bar displaying data corres
   - **NUL:** Map null values to blank values  
   - **UNI:** Unique  
 
-### Information about a relation
+#### Information about a relation
 
 - Origin table and field (many field)  
 - Destination table and field (one field)  
@@ -61,15 +74,6 @@ For more information on ORDA names, refer to the [Data Model Objects](../ORDA/ds
 
 :::
 
-### Locking information
-
-A closed lock icon ![](../assets/en/Develop/structure-lock.png) is displayed if the structure file is locked.  
-Locking can occur in both project and client/server modes when:
-
-- The `catalog.4DCatalog` file is *Read-only* (Projects only). Clicking on the lock icon will display an alert to unlock it, if possible.  
-- Two or more users attempt to modify the same structure at the same time. The structure cannot be used until the first user frees it by closing the window. *(Client/server only)*  
-
-In both cases, the structure can be opened in *Read-only*, but cannot be used until the lock is removed.
 
 
 ## Inspector palette 

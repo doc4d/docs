@@ -3,12 +3,9 @@ id: structure-fields
 title: Field properties
 ---
 
-For other field properties, please refer to [doc.4d.com](https://doc.4d.com/4Dv21/4D/21/Field-properties.300-7676763.en.html).
-
 <!-- INCLUDE my.section.id.Desc -->
-<!-- INCLUDE my.section.id2.Desc -->
 
-## Class
+### Class
 
 ![](../assets/en/Develop/inspector-class.png)
 
@@ -37,7 +34,6 @@ To retrieve the associated class name at runtime, use the [`classID`](../API/Dat
 [Stricter class-based typing for objects](https://blog.4d.com/stricter-class-based-typing-for-objects/)
 
 :::
-
 
 ### `4D.Vector` class
 
