@@ -58,7 +58,7 @@ L'éditeur des utilisateurs se trouve dans la boîte à outils de 4D.
 
 ![](../assets/en/Users/editor.png)
 
-> L'éditeur des utilisateurs et des groupes peut être affiché au moment de l'exécution à l'aide de la commande [EDIT ACCESS](../commands-legacy/edit-access.md).
+> L'éditeur des utilisateurs et des groupes peut être affiché au moment de l'exécution à l'aide de la commande [EDIT ACCESS](../commands/edit-access).
 > Toute la configuration des utilisateurs et des groupes peut également être modifiée pendant l'exécution de l'application à l'aide des commandes du langage 4D du thème `Utilisateurs et groupes`.
 
 ### Ajouter et modifier des utilisateurs
@@ -150,19 +150,17 @@ Placer des groupes dans d’autres groupes permet de créer une hiérarchie d’
 
 Pour supprimer un utilisateur ou un groupe d’un autre groupe, il suffit de désélectionner l’option correspondante dans la liste des membres.
 
-### Assigning a license to a group
+### Attribution d'une licence à un groupe
 
-You can assign a group privileges to any [extensions](../Extensions/overview.md) installed in the project. This includes all the 4D and third-party plug-ins and components.
+Vous pouvez attribuer des privilèges de groupe à n'importe quelle [extension](../Extensions/overview.md) installée dans le projet. Cela inclut l'ensemble des plug-ins et composants 4D ainsi que ceux développés par des tiers.
 
-Distributing access to the extensions lets you control the use of the licenses you possess for these extensions. Any users that do not belong to the access group of an extension cannot load this extension.
+La répartition des droits d'accès aux extensions vous permet de contrôler l'utilisation des licences dont vous disposez pour ces extensions en environnement client/serveur. Les utilisateurs qui n'appartiennent pas au groupe d'accès d'une extension ne peuvent pas charger cette extension.
 
 > Les licences utilisées demeurent associées aux comptes utilisateurs 4D dans le groupe, durant toute la session 4D.
 
-The “Plug-in” area on the Groups page of the tool box lists all the extensions requiring a license loaded by the 4D application. To give a group access to an extension, you simply need to check the corresponding option.
+La zone "Plug-ins" de la page **Groupes** de la Boîte à outils répertorie toutes les extensions [nécessitant une licence](../Admin/licenses.md) chargées par l'application 4D. Pour donner à un groupe l'accès à une extension, il suffit de cocher l'option correspondante.
 
 ![](../assets/en/Users/plugins.png)
-
-The **4D Client Web Server** (*deprecated as of 4D 21*) and **4D Client SOAP Server** items let you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. En effet, ces licences sont considérées par 4D Server comme des licences de plug-ins. Ainsi, comme pour un plug-in, vous pouvez restreindre le droit d’utiliser ces licences à un groupe d’utilisateurs spécifique.
 
 ### Un schéma d’accès hiérarchique
 
@@ -175,12 +173,12 @@ Les groupes sont hiérarchisés afin que les privilèges soient correctement aff
 - Le groupe Direction générale ne contient que les utilisateurs de “haut niveau”.
   ![](../assets/en/Users/schema1.png)
 
-- finance contient les utilisateurs du groupe Direction générale.
+- Le groupe Finances comprend à la fois des utilisateurs chargés de la gestion des données et des utilisateurs de la Direction générale ; par conséquent, les utilisateurs de la Direction générale disposent également des privilèges du groupe Finances.
   ![](../assets/en/Users/schema2.png)
 
 - Le groupe Comptabilité contient des opérateurs de saisie mais aussi les utilisateurs des groupes Dir. finance et donc Direction générale. Super_Utilisateur et Administrateur
   Super_Utilisateur et Administrateur
-  Super_Utilisateur et Administrateur
+  ![](../assets/en/Users/schema3.png)
 
 Vous pouvez ensuite décider des privilèges affectés à chaque groupe suivant le niveau de responsabilité des utilisateurs qu’il contient.
 
@@ -211,4 +209,5 @@ Ce fichier peut être stocké aux emplacements suivants, en fonction de vos beso
 - Si vous souhaitez utiliser un fichier de répertoire spécifique pour chaque fichier de données, enregistrez le fichier **directory.json** dans le dossier des paramètres de données, c'est-à-dire dans le [dossier "Settings" du dossier "Data"](../Project/architecture.md#settings-user-data). Si un fichier **directory.json** se trouve à cet emplacement, il est prioritaire par rapport au fichier du dossier Settings utilisateur. Cette configuration personnalisée/locale des utilisateurs et des groupes ne sera pas modifiée par une mise à niveau de l'application.
 
 > Pour permettre des changements sûrs de mots de passe et d'appartenance à des groupes dans un environnement déployé, vous pouvez inclure votre fichier **directory.json** dans l'application serveur pendant le build, en utilisant l'[option correspondante du build application](../Desktop/building.md#incorporer-les-utilisateurs-et-les-groupes-du-projet-dans-l'application-serveur-construite).
+
 

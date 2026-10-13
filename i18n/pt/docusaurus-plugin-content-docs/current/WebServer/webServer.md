@@ -8,7 +8,7 @@ title: Servidor Web
 
 :::warning Deprecated feature
 
-Using the web server on a remote 4D is **deprecated** as of 4D 21. It is no longer recommended to use this feature.
+ Usar o servidor web em um 4D remoto (4D client) é **obsoleto** a partir do 4D 21. Não é mais recomendado utilizar este recurso.
 
 :::
 
@@ -37,7 +37,7 @@ A segurança dos dados está presente em todos os estágios das implementações
 
 - **Sandboxing** mediante la definición de una [carpeta HTML raíz](webServerConfig.md#root-folder) por defecto,
 
-- **Control del uso de los recursos del servidor** (por ejemplo, vía la opción [máximo de procesos web concurrentes](webServerConfig.md#maximum-concurrent-web-processes)).
+- **Control of server resource usage** through [web server quotas](quotas.md) and options such as [maximum concurrent web processes](webServerConfig.md#maximum-concurrent-web-processes).
 
 > Para obter uma visão geral das funcionalidades de segurança do 4D, consulte o [guia de segurança do 4D](https://blog.4d.com/4d-security-guide/).
 

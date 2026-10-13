@@ -139,7 +139,7 @@ El estilo Disclosure se denomina "roundedDisclosure" en la [gramática JSON del 
 
 ### Personalizado
 
-El estilo de botón radio Personalizado acepta una imagen de fondo personalizada y permite gestionar parámetros adicionales como [desplazamiento del icono](properties_TextAndPicture.md#icon-offset) y las [márgenes](properties_TextAndPicture.md#horizontal-margin).
+The Custom radio button style accepts a personalized background picture and allows managing [additional properties](#additional-properties-for-custom-radio-buttons) such as [icon offset](properties_TextAndPicture.md#icon-offset) and [margins](properties_TextAndPicture.md#horizontal-margin).
 
 ## Propiedades soportadas
 
@@ -150,9 +150,11 @@ Todos los botones radio comparten el mismo conjunto de propiedades básicas:
 > (1) No soportado por los estilos [Regular](#regular) y [Flat](#flat).<br/>
 > (2) No soportado por los estilos [Regular](#regular), [Flat](#flat), [Disclosure](#disclosure) y [Collapse/Expand](#collapseexpanded).
 
-Propiedades específicas adicionales están disponibles en función del [estilo de botón](#button-styles):
+### Propiedades adicionales para los botones de opción personalizados
 
-- Personalizado: [Ruta de fondo](properties_TextAndPicture.md#background-pathname) - [Margen horizontal](properties_TextAndPicture.md#horizontalmargin) - [Desplazamiento del ícono](properties_TextAndPicture.md#icon-offset) - [Margen vertical](properties_TextAndPicture.md#verticalmargin)
+Las propiedades específicas adicionales están disponibles para los botones radio de estilo [personalizado](#custom):
+
+[Ruta de fondo](properties_TextAndPicture.md#background-pathname) - [Color del borde](./properties_BackgroundAndBorder.md#border-color) - [Ancho del borde](./properties_BackgroundAndBorder.md#border-width) - [Radio de las esquinas](./properties_BackgroundAndBorder.md#corner-radius) - [Color de relleno](./properties_BackgroundAndBorder.md#background-color--fill-color) - [Margen horizontal](properties_TextAndPicture.md#horizontal-margin) - [Desplazamiento del icono](properties_TextAndPicture.md#icon-offset) - [Margen vertical](properties_TextAndPicture.md#vertical-margin)
 
 ## Eventos soportados
 
