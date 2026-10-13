@@ -345,10 +345,10 @@ module.exports =
         // not ready yet, needs imports from Design ref for records and selection concepts,
         {
             type: "category",
-            label: "Records & Selections (legacy data access)",
+            label: "Records & Selections",
             link: {
               type: "generated-index",
-            title: "Records & Selections (legacy data access)",
+            title: "Records & Selections",
             description: "Legacy data access based upon records, selections, and sets.",
             slug: "/category/records-selections",
             keywords: [
@@ -405,6 +405,7 @@ module.exports =
             "WebServer/errorPages",
             "WebServer/authentication",
             "WebServer/sessions",
+            "WebServer/quotas",
             "WebServer/preemptiveWeb"
           ]
         },
