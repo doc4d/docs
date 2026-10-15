@@ -103,6 +103,8 @@ El estilo Clásico de botón casilla de selección corresponde a un sistema de c
 		}
 ```
 
+El estilo Clásico ofrece una [propiedad adicional](#additional-properties-for-flat-and-regular-check-boxes): la propiedad [Three-States](properties_Display.md#three-states).
+
 ### Plano
 
 El estilo plano del botón casilla de selección tiene una apariencia minimalista. La naturaleza gráfica del estilo Flat es especialmente útil para los formularios que se van a imprimir.
@@ -123,6 +125,8 @@ El estilo plano del botón casilla de selección tiene una apariencia minimalist
 			"height": 20			
 			}
 ```
+
+El estilo Plano ofrece una [propiedad adicional](#additional-properties-for-flat-and-regular-check-boxes): la propiedad [Tres estados](properties_Display.md#three-states).
 
 ### Botón barra de herramientas
 
@@ -355,11 +359,7 @@ El estilo Disclosure se denomina "roundedDisclosure" en la [gramática JSON del 
 
 ### Personalizado
 
-El estilo del botón Personalizado acepta una imagen de fondo personalizada y permite gestionar propiedades específicas:
-
-- [Ruta de acceso al fondo de pantalla](properties_TextAndPicture.md#background-pathname)
-- [Desplazamiento del icono](properties_TextAndPicture.md#icon-offset)
-- [Margen horizontal](properties_TextAndPicture.md#horizontal-margin) y [Margen vertical](properties_TextAndPicture.md#vertical-margin)
+The Custom check box style accepts a personalized background picture and allows managing [additional properties](#additional-properties-for-custom-check-boxes) such as [icon offset](properties_TextAndPicture.md#icon-offset) and [margins](properties_TextAndPicture.md#horizontal-margin).
 
 Generalmente está asociado con una [imagen de 4 estados](properties_TextAndPicture.md#number-of-states), que puede ser usada en conjunto con una [imagen de fondo](properties_TextAndPicture.md#background-pathname) [4 estados](properties_TextAndPicture.md#number-of-states).
 
@@ -389,14 +389,22 @@ Todas las casillas de selección comparten un mismo conjunto de propiedades bás
 
 [Negrita](properties_Text.md#bold) - [Abajo](properties_CoordinatesAndSizing.md#bottom) - [Estilo de botón](properties_TextAndPicture.md#button-style) - [Clase](properties_Object.md#css-class) - [Editable](properties_Entry.md#enterable) - [Tipo de expresión](properties_Object.md#expression-type) - [Enfocable](properties_Entry.md#focusable) - [Fuente](properties_Text.md#font) - [Color de fuente](properties_Text.md#font-color) - [Tamaño de fuente](properties_Text.md#font-size) - [Alto](properties_CoordinatesAndSizing.md#height) - [Mensaje de ayuda](properties_Help.md#help-tip) - [Alineación horizontal](properties_Text.md#horizontal-alignment)(1) - [Tamaño horizontal](properties_ResizingOptions.md#horizontal-sizing) - [Título de la imagen](properties_TextAndPicture.md#image-hugs-title)(2) - [Itálica](properties_Text.md#italic) - [Izquierda](properties_CoordinatesAndSizing.md#left) - [Número de estados](properties_TextAndPicture.md#number-of-states)(2) - [Nombre del objeto](properties_Object.md#nombre_objeto) - [Ruta de la imagen](properties_TextAndPicture.md#nombre_de_imagen)(2) - [Derecha](properties_CoordinatesAndSizing.md#right) - [Guardar valor](properties_Object.md#save-value) - [Acceso directo](properties_Entry.md#shortcut) - [Acción estándar](properties_Action.md#standard-action) - [Título](properties_Object.md#title) - [Posición del título/imagen](properties_TextAndPicture.md#titlepicture-position)(2) - [Arriba](properties_CoordinatesAndSizing.md#top) - [Tipo](properties_Object.md#type) - [Subrayado](properties_Text.md#underline) - [Variable o expresión](properties_Object.md#variable-o-expresión) - [Tamaño vertical](properties_ResizingOptions.md#vertical-sizing) - [Visibilidad](properties_Display.md#visibilidad) - [Ancho](properties_CoordinatesAndSizing.md#ancho)
 
-> (1) No soportado por los estilos [Regular](#regular) y [Flat](#flat).<br/>
-> (2) No soportado por los estilos [Regular](#regular), [Flat](#flat), [Disclosure](#disclosure) y [Collapse/Expand](#collapseexpanded).
+> (1) No compatible con los estilos [Regular](#regular) y [Plano](#flat).<br/>
+> (2) No soportado por los estilos [Regular](#regular), [Flat](#flat), [Disclosure](#disclosure) y [Collapse/Expand](#collapseexpand).
 
-Propiedades específicas adicionales están disponibles en función del [estilo de botón](#check-box-button-styles):
+### Propiedades adicionales para las casillas de selección personalizadas
 
-- Personalizado: [Ruta de fondo](properties_TextAndPicture.md#background-pathname) - [Margen horizontal](properties_TextAndPicture.md#horizontalmargin) - [Desplazamiento del ícono](properties_TextAndPicture.md#icon-offset) - [Margen vertical](properties_TextAndPicture.md#verticalmargin)
-- Plana, Regular: [Tres Estados](properties_Display.md#three-states)
+Las propiedades específicas adicionales están disponibles para las casillas de selección [personalizadas](#custom):
+
+[Ruta de fondo](properties_TextAndPicture.md#background-pathname) - [Color del borde](./properties_BackgroundAndBorder.md#border-color) - [Ancho del borde](./properties_BackgroundAndBorder.md#border-width) - [Radio de las esquinas](./properties_BackgroundAndBorder.md#corner-radius) - [Color de relleno](./properties_BackgroundAndBorder.md#background-color--fill-color) - [Margen horizontal](properties_TextAndPicture.md#horizontal-margin) - [Desplazamiento del icono](properties_TextAndPicture.md#icon-offset) - [Margen vertical](properties_TextAndPicture.md#vertical-margin)
+
+### Propiedades adicionales para las casillas de selección planas y clásicas
+
+Una propiedad específica adicional está disponible para las casillas de selección de estilo [plano](#flat) y [clásico](#regular):
+
+[Three-States](properties_Display.md#three-states)
 
 ## Eventos soportados
 
 [On Begin Drag Over](../Events/onBeginDragOver.md) - [On Clicked](../Events/onClicked.md) - [On Double Clicked](../Events/onDoubleClicked.md) - [On Drag Over](../Events/onDragOver.md) - [On Drop](../Events/onDrop.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Mouse Enter](../Events/onMouseEnter.md) - [On Mouse Leave](../Events/onMouseLeave.md) - [On Mouse Move](../Events/onMouseMove.md) - [On Printing Break](../Events/onPrintingBreak.md) - [On Printing Detail](../Events/onPrintingDetail.md) - [On Printing Footer](../Events/onPrintingFooter.md) - [On Unload](../Events/onUnload.md) - [On Validate](../Events/onValidate.md)
+

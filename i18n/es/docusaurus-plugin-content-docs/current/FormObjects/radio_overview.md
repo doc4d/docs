@@ -139,7 +139,7 @@ El estilo Disclosure se denomina "roundedDisclosure" en la [gramática JSON del 
 
 ### Personalizado
 
-El estilo de botón radio Personalizado acepta una imagen de fondo personalizada y permite gestionar parámetros adicionales como [desplazamiento del icono](properties_TextAndPicture.md#icon-offset) y las [márgenes](properties_TextAndPicture.md#horizontal-margin).
+The Custom radio button style accepts a personalized background picture and allows managing [additional properties](#additional-properties-for-custom-radio-buttons) such as [icon offset](properties_TextAndPicture.md#icon-offset) and [margins](properties_TextAndPicture.md#horizontal-margin).
 
 ## Propiedades soportadas
 
@@ -147,12 +147,14 @@ Todos los botones radio comparten el mismo conjunto de propiedades básicas:
 
 [Negrita](properties_Text.md#bold) - [Inferior](properties_CoordinatesAndSizing.md#bottom) - [Estilo de botón](properties_TextAndPicture.md#button-style) - [Clase](properties_Object.md#css-class) - [Tipo de expresión](properties_Object.md#expression-type) - [Enfocable](properties_Entry.md#focusable) - [Fuente](properties_Text.md#font) - [Color de fuente](properties_Text.md#font-color) - [Alto](properties_CoordinatesAndSizing.md#height) - [Mensaje de ayuda](properties_Help.md#help-tip) - [Alineación horizontal](properties_Text.md#horizontal-alignment)(1) - [Tamaño horizontal](properties_ResizingOptions.md#horizontal-sizing) - [Título de la imagen](properties_TextAndPicture.md#image-hugs-title)(2) - [Itálica](properties_Text.md#italic) - [Izquierda](properties_CoordinatesAndSizing.md#left) - [Número de estados](properties_TextAndPicture.md#number-of-states)(2) - [Método](properties_Action.md#method) - [Nombre del objeto](properties_Object.md#object-name) - [Grupo radio](properties_Object.md#radio-group) - [Ruta de la imagen](properties_TextAndPicture.md#picture-pathname)(2) - [Derecha](properties_CoordinatesAndSizing.md#right) - [Guardar valor](properties_Object.md#save-value) - [Acceso directo](properties_Entry.md#shortcut) - [Título](properties_Object.md#title) - [Posición del título/imagen](properties_TextAndPicture.md#titlepicture-position)(2) - [Arriba](properties_CoordinatesAndSizing.md#top) - [Tipo](properties_Object.md#type) - [Subrayado](properties_Text.md#underline) - [Variable o expresión](properties_Object.md#variable-o-expresión) - [Tamaño vertical](properties_ResizingOptions.md#vertical-sizing) - [Visibilidad](properties_Display.md#visibilidad) - [Ancho](properties_CoordinatesAndSizing.md#ancho)
 
-> (1) No soportado por los estilos [Regular](#regular) y [Flat](#flat).<br/>
-> (2) No soportado por los estilos [Regular](#regular), [Flat](#flat), [Disclosure](#disclosure) y [Collapse/Expand](#collapseexpanded).
+> (1) No compatible con los estilos [Regular](#regular) y [Plano](#flat).<br/>
+> (2) No soportado por los estilos [Regular](#regular), [Flat](#flat), [Disclosure](#disclosure) y [Collapse/Expand](#collapseexpand).
 
-Propiedades específicas adicionales están disponibles en función del [estilo de botón](#button-styles):
+### Propiedades adicionales para los botones de opción personalizados
 
-- Personalizado: [Ruta de fondo](properties_TextAndPicture.md#background-pathname) - [Margen horizontal](properties_TextAndPicture.md#horizontalmargin) - [Desplazamiento del ícono](properties_TextAndPicture.md#icon-offset) - [Margen vertical](properties_TextAndPicture.md#verticalmargin)
+Las propiedades específicas adicionales están disponibles para los botones radio de estilo [personalizado](#custom):
+
+[Ruta de fondo](properties_TextAndPicture.md#background-pathname) - [Color del borde](./properties_BackgroundAndBorder.md#border-color) - [Ancho del borde](./properties_BackgroundAndBorder.md#border-width) - [Radio de las esquinas](./properties_BackgroundAndBorder.md#corner-radius) - [Color de relleno](./properties_BackgroundAndBorder.md#background-color--fill-color) - [Margen horizontal](properties_TextAndPicture.md#horizontal-margin) - [Desplazamiento del icono](properties_TextAndPicture.md#icon-offset) - [Margen vertical](properties_TextAndPicture.md#vertical-margin)
 
 ## Eventos soportados
 

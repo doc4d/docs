@@ -27,8 +27,8 @@ Le texte sélectionné est plus foncé et plus épais.
 
 Vous pouvez définir cette propriété en utilisant la commande [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> Ceci est du texte normal.<br/>
-> **Ceci est du texte en gras.**
+> Ceci est un texte normal.<br/>
+> **Ceci est un texte en gras.**
 
 #### Grammaire JSON
 
@@ -52,8 +52,8 @@ Fait pencher le texte sélectionné légèrement vers la droite.
 
 Vous pouvez également définir cette propriété via la commande [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> Ceci est du texte normal.<br/>
-> *Ceci est du texte en italique.*
+> Ceci est un texte normal.<br/>
+> *Ceci est un texte en italique.*
 
 #### Grammaire JSON
 
@@ -305,7 +305,7 @@ Emplacement horizontal du texte dans la zone où il apparait.
 
 Emplacement vertical du texte dans la zone où il apparait.
 
-L'option **Default** (valeur JSON `automatique`) définit l'alignement en fonction du type de données identifiées dans chaque colonne :
+L'option **Par défaut** (valeur JSON `automatic`) définit l'alignement en fonction du type de données identifiées dans chaque colonne :
 
 - `bas` pour toutes les données (sauf les images) et
 - `haut` pour les données de type image.
@@ -320,7 +320,7 @@ Cette propriété peut également être gérée par les commandes [`OBJECT Get v
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers)
+[Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Text Area](text.md)
 
 #### Commandes
 
@@ -336,8 +336,8 @@ Indique une expression ou une variable qui sera évaluée pour chaque ligne affi
 
 | Nom de propriété | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| stroke           | string  | Couleur de fond. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| fill             | string  | Couleur de la police. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| stroke           | string  | Couleur de la police. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| fill             | string  | Couleur de fond. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | fontStyle        | string  | "normal","italic"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | fontWeight       | string  | "normal","bold"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | textDecoration   | string  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |

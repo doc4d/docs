@@ -30,7 +30,7 @@ Si desea utilizar Kerberos como protocolo de autenticación, también debe compl
 
 ![](../assets/en/server/sso-2.png)
 
-Esta opción declara el SPN tal y como se configuró en Active Directory. Un nombre principal de servicio es un identificador único de una instancia de servicio. Los SPNs son utilizados por la autenticación Kerberos para asociar una instancia de servicio con una cuenta de inicio de sesión de servicio. Esto permite que una aplicación cliente solicite al servicio que autentifique una cuenta, incluso si el cliente no dispone del nombre de la cuenta. For more information, please refer to the [SPN page on the MSDN web site](https://msdn.microsoft.com/en-us/library/windows/desktop/ms677949%28v=vs.85%29.aspx).
+Esta opción declara el SPN tal y como se configuró en Active Directory. Un nombre principal de servicio es un identificador único de una instancia de servicio. Los SPNs son utilizados por la autenticación Kerberos para asociar una instancia de servicio con una cuenta de inicio de sesión de servicio. Esto permite que una aplicación cliente solicite al servicio que autentifique una cuenta, incluso si el cliente no dispone del nombre de la cuenta. Para más información, consulte la [página SPN en el sitio web MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/ms677949%28v=vs.85%29.aspx).
 
 El identificador SPN debe respetar este formato:
 
@@ -40,7 +40,7 @@ El identificador SPN debe respetar este formato:
 Donde:
 
 - *ServiceName* es el nombre del servicio en el que el cliente desea autenticarse.
-- The *Fully Qualified Domain Name* (FQDN) is a domain name that specifies its exact location in the tree hierarchy of the Active Directory for both computers and users.
+- El *Fully Qualified Domain Name* (FQDN) es un nombre de dominio que especifica su ubicación exacta en la jerarquía de árbol del Active Directory, tanto para las máquinas como para los usuarios.
 
 En las aplicaciones 4D, se puede configurar el SPN:
 
@@ -51,7 +51,7 @@ En las aplicaciones 4D, se puede configurar el SPN:
 
 Cuando la funcionalidad SSO está activa, puede confiar en la autenticación basada en las credenciales de la sesión de Windows para abrir una sesión de usuario en 4D Server.
 
-Keep in mind that the SSO feature only provides you with an authenticated login; it is up to you to pass this login to your standard 4D login method. Cuando una aplicación remota 4D intenta conectarse al servidor, hay que ejecutar el comando [`Current client authentication`](../commands/current-client-authentication), que devolverá el nombre de usuario, tal y como está definido en Active Directory. You can then pass this login to your own identification system (using the built-in user and groups, the LDAP commands, or any custom mechanism) to open the appropriate session for the remote user in your 4D application.
+Tenga en cuenta que la funcionalidad SSO solo ofrece un inicio de sesión autenticado; depende de usted transferir este inicio de sesión a su método de inicio de sesión estándar de 4D. Cuando una aplicación remota 4D intenta conectarse al servidor, hay que ejecutar el comando [`Current client authentication`](../commands/current-client-authentication), que devolverá el nombre de usuario, tal y como está definido en Active Directory. You can then pass this login to your own identification system (using the built-in user and groups, the LDAP commands, or any custom mechanism) to open the appropriate session for the remote user in your 4D application.
 
 Este principio se ilustra en el siguiente gráfico:
 
@@ -102,7 +102,7 @@ Donde:
 
 ### Configuración requerida para el SSO
 
-4D Server admite diversas configuraciones de SSO, en función de la arquitectura y los ajustes actuales. El protocolo utilizado para la autenticación (NTLM o Kerberos), así como la información que devuelve el comando [`Current client authentication`](../commands/current-client-authentication), depende de la configuración real, siempre que se cumplan todos los requisitos (ver más abajo). The protocol actually used for authentication is returned in the protocol parameter of the [`Current client authentication`](../commands/current-client-authentication) command.
+4D Server admite diversas configuraciones de SSO, en función de la arquitectura y los ajustes actuales. El protocolo utilizado para la autenticación (NTLM o Kerberos), así como la información que devuelve el comando [`Current client authentication`](../commands/current-client-authentication), depende de la configuración real, siempre que se cumplan todos los requisitos (ver más abajo). El protocolo utilizado para la autenticación se devuelve en el parámetro protocolo del comando [`Current client authentication`](../commands/current-client-authentication).
 
 La siguiente tabla muestra los requisitos para utilizar la autenticación NTLM o Kerberos:
 
@@ -114,7 +114,7 @@ La siguiente tabla muestra los requisitos para utilizar la autenticación NTLM o
 | El SPN se indica en 4D Server                                                       | no                                                                              | yes(\*\*)                                                        |
 | Información devuelta por Current client authentication si se cumplen los requisitos | *login*=inicio de sesión esperado, *domain*=dominio esperado, *protocol*="NTLM" | *login*=inicio de sesión esperado, *domain*=dominio esperado, *protocol*="Kerberos" |
 
-(\*) The following specific configuration is supported: the 4D remote user is a local account on a machine that belongs to the same AD as 4D Server. En este caso, el parámetro dominio contiene el nombre de la máquina de 4D Server. Tenga en cuenta que esta función depende de los parámetros de usuario: si no está disponible, se devuelven cadenas vacías.
+(\*) Se admite la siguiente configuración específica: el usuario remoto 4D es una cuenta local en una máquina que pertenece al mismo AD que 4D Server. En este caso, el parámetro dominio contiene el nombre de la máquina de 4D Server. Tenga en cuenta que esta función depende de los parámetros de usuario: si no está disponible, se devuelven cadenas vacías.
 
 (\*\*) Si se cumplen todos los requisitos de Kerberos pero el comando [`Current client authentication`](../commands/current-client-authentication) devuelve "NTLM" como protocolo, esto significa que se enfrenta a una de las siguientes situaciones:
 

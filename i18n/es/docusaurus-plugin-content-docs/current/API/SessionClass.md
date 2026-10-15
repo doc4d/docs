@@ -20,7 +20,7 @@ Los siguientes tipos de sesiones están soportados por esta clase:
 
 - [**Sesiones usuario web**](WebServer/sessions.md): las sesiones usuario web están disponibles cuando [las sesiones escalables están activas en su proyecto](WebServer/sessions.md#enabling-web-sessions). Se utilizan para las conexiones Web (incluidos los accesos REST) y se controlan mediante los [privilegios](../ORDA/privileges.md) asignados.
 - [**Sesiones usuario remoto**](../Desktop/sessions.md#remote-user-sessions): en las aplicaciones cliente/servidor, los usuarios remotos tienen sus propias sesiones gestionadas desde el cliente y el servidor.
-- [**Sesiones procedimientos almacenados**](../Desktop/sessions.md#stored-procedure-sessions): sesión usuario virtual para todos los procedimientos almacenados ejecutados en el servidor.
+- [Sesiones procedimientos almacenados\*\*](../Desktop/sessions.md#stored-procedure-sessions): sesión usuario virtual para todos los procedimientos almacenados ejecutados en el servidor.
 - [**Sesiones autónomas**](../Desktop/sessions.md#standalone-sessions): sesión local devuelta en una aplicación mono usuario (útil en las fases de desarrollo y de prueba de las aplicaciones cliente/servidor).
 
 :::warning Acerca de los privilegios de sesión
@@ -522,8 +522,8 @@ El objeto `.info` contiene las siguientes propiedades:
 | ---------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type             | Text          | Tipo de sesión: "remote", "storedProcedure", "standalone", "rest", "web"                                                                                                                                                                      |
 | userName         | Text          | Nombre de usuario 4D (mismo valor que [`.userName`](#username))                                                                                                                                                                            |
-| machineName      | Text          | <ul><li>Sesiones remotas: nombre de la máquina remota.</li><li>Sesiones cliente: nombre de la máquina local.</li><li>Sesión de procedimientos almacenados: nombre de la máquina servidor.</li><li> Sesión autónoma: nombre de la máquina</li></ul>            |
-| systemUserName   | Text          | <ul><li>Sesiones remotas: nombre de la sesión del sistema abierta en la máquina remota.</li><li>Sesiones cliente: nombre de la sesión del sistema local.</li><ul>                                                                                             |
+| machineName      | Text          | <ul><li>Sesiones remotas: nombre de la máquina remota.</li><li>Sesiones cliente: nombre de la máquina local.</li><li>Sesión de procedimientos almacenados: nombre del equipo servidor.</li><li> Sesión autónoma: nombre de la máquina</li></ul>               |
+| systemUserName   | Text          | <ul><li>Sesiones remotas: nombre de la sesión del sistema abierta en la máquina remota.</li><li>Sesiones cliente: nombre de la sesión sistema local</li><ul>                                                                                                  |
 | IPAddress        | Text          | <ul><li>Sesiones remotas: dirección IP de la máquina remota.</li><li>Sesiones cliente: dirección IP de la máquina local.</li><li>Sesión autónoma: "localhost"</li></ul>                                                                                       |
 | hostType         | Text          | Tipo de host: "windows", "mac" o "browser"                                                                                                                                                                                                    |
 | creationDateTime | Date ISO 8601 | Fecha y hora de creación de la sesión (sesión autónoma: fecha y hora de inicio de la aplicación)                                                                                                                           |
@@ -705,7 +705,7 @@ Las siguientes propiedades del objeto `4D.QuotaManager` están disponibles para 
 | [nbEntitySets](./QuotaManagerClass.md#nbentitysets)                       |              | Integer | sí          | Número máximo permitido de conjuntos de entidades en la memoria del servidor. *Undefined* = no se aplican cuotas      |
 | [defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout) |              | Integer | sí          | Tiempo de espera predeterminado por inactividad para los conjuntos de entidades en memoria (segundos)              |
 | [maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)         |              | Integer | sí          | Tiempo máximo de espera por inactividad para los conjuntos de entidades en memoria (segundos)                      |
-| currentValues                                                             |              | Object  | no          |                                                                                                                                       |
+| [currentValues](./QuotaManagerClass.md#currentvalues)                     |              | Object  | no          | Valores de uso actuales reportados para la sesión.                                                                    |
 |                                                                           | nbEntitySets | Integer | no          | Número de conjuntos de entidades actualmente en memoria. *Undefined* = no hay ningún conjunto de entidades en memoria |
 
 Cuando modifique un valor, es tomado inmediatamente en cuenta por el servidor (no es necesario reiniciar) y se aplicará a otras solicitudes REST.
@@ -728,7 +728,8 @@ Session.quotas.nbEntitySets:=50
 
 #### Ver también
 
-[Clase QuotaManager](./QuotaManagerClass.md)
+[Clase QuotaManager](./QuotaManagerClass.md)<br/>
+[Cuotas del servidor web](../WebServer/quotas.md)
 
 <!-- REF SessionClass.restore().Desc -->
 

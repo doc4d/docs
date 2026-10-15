@@ -27,7 +27,7 @@ Ajusta el texto seleccionado para que aparezca más oscuro y pesado.
 
 Puede definir esta propiedad utilizando el comando [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> Esto es texto normal.<br/>
+> Este es un texto normal.<br/>
 > **Esto es texto en negrita.**
 
 #### Gramática JSON
@@ -52,8 +52,8 @@ Hace que el texto seleccionado se incline ligeramente hacia la derecha.
 
 También puede definir esta propiedad por medio del comando [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> Esto es texto normal.<br/>
-> *Este es texto en cursiva.*
+> Este es un texto normal.<br/>
+> Este es un texto normal.<br/>
 
 #### Gramática JSON
 
@@ -320,7 +320,7 @@ Esta propiedad también puede ser manejada por los comandos [`OBJECT Get vertica
 
 #### Objetos soportados
 
-[List Box](listbox_overview.md) - [Columna List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Encabezado List Box](listbox-header-footer.md#headers)
+[Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Text Area](text.md)
 
 #### Comandos
 

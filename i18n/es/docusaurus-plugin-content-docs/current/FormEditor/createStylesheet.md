@@ -290,6 +290,17 @@ Los atributos del objeto formulario pueden declararse con su [nombre JSON](FormO
 
 #### Mapa de atributos
 
+<div class="no-index">
+<details><summary>Historia</summary>
+
+| Lanzamiento | Modificaciones               |
+| ----------- | ---------------------------- |
+| 21 R5       | Soporte de atributos padding |
+
+</details>
+</div>
+<br />
+
 Los atributos listados a continuación pueden aceptar el nombre 4D o el nombre CSS.
 
 | 4D               | CSS                |
@@ -300,6 +311,10 @@ Los atributos listados a continuación pueden aceptar el nombre 4D o el nombre C
 | `fontSize`       | `font-size`        |
 | `fontStyle`      | `font-style`       |
 | `fontWeight`     | `font-weight`      |
+| `paddingBottom`  | `padding-bottom`   |
+| `paddingLeft`    | `padding-left`     |
+| `paddingRight`   | `padding-right`    |
+| `paddingTop`     | `padding-top`      |
 | `stroke`         | `color`            |
 | `textAlign`      | `text-align`       |
 | `textDecoration` | `text-decoration`  |
@@ -362,27 +377,27 @@ Durante la ejecución, 4D prioriza automáticamente las hojas de estilo en el si
 
 - un archivo para ambas plataformas:
 
-```json
-"css": "<path>" 
-```
+ ```json
+ "css": "<path>" 
+ ```
 
 - o una lista de archivos para ambas plataformas:
 
-```json
-"css": [
-     "<path1>",
-     "<path2>" 
-      ],
-```
+ ```json
+ "css": [
+      "<path1>",
+      "<path2>" 
+       ],
+ ```
 
 - o una lista de archivos por plataforma:
 
-```json
- "css": [
-        {"path": "<path>", "media": "mac"},
-        {"path": "<path>", "media": "windows"},
-    ],
-```
+ ```json
+  "css": [
+         {"path": "<path>", "media": "mac"},
+         {"path": "<path>", "media": "windows"},
+     ],
+ ```
 
 :::note
 

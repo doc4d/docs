@@ -3,12 +3,11 @@ id: gettingStarted
 title: Web 開発
 ---
 
-この章は、データベースのデータを扱う 4D Webサイトをゼロから作成する方法を知りたい、初心者ユーザーを対象としています。 さあ、始めましょう！
-
+この章は、データベースのデータを扱う 4D Webサイトをゼロから作成する方法を知りたい、初心者ユーザーを対象としています。さあ、始めましょう！
 
 ## Hello World 例題
 
-まずは、Webサーバーからブラウザーに向けて "Hello World" を送信するところから始めましょう。 もっとも簡単な方法は、プロジェクトを作成して Webサーバーを開始し、`On Web Connection` データベースメソッドにテキストを返す短いコードを書くことです。
+まずは、Webサーバーからブラウザーに向けて "Hello World" を送信するところから始めましょう。もっとも簡単な方法は、プロジェクトを作成して Webサーバーを開始し、`On Web Connection` データベースメソッドにテキストを返す短いコードを書くことです。
 
 ### Webサーバーの開始
 
@@ -17,7 +16,7 @@ title: Web 開発
 1. 4Dアプリケーションを起動し、新規プロジェクトを作成します。
 2. 上部の **実行** メニューから、**Webサーバー開始** を選択します。
 
-これだけです。 Webサーバーが開始します (メニュー項目が **Webサーバー停止** に変わったのが確認できます)。 これでリクエストを処理できるようになりました。 確認のため、デフォルトホームページを表示してみましょう。
+これだけです。 Webサーバーが開始します (メニュー項目が **Webサーバー停止** に変わったのが確認できます)。これでリクエストを処理できるようになりました。確認のため、デフォルトホームページを表示してみましょう。
 
 ### デフォルトホームページの表示
 
@@ -37,14 +36,14 @@ title: Web 開発
 
 ```4d
 Case of 
-    : ($1="/hello")
-        WEB SEND TEXT("Hello World!")
-    Else 
-        // 404エラーなど
+	: ($1="/hello")
+		WEB SEND TEXT("Hello World!")
+	Else 
+		// 404エラーなど
 End case 
 ```
 
-[`On Web Connection`](httpRequests.md#on-web-connection) データベースメソッドは、受信リクエストに対して呼び出され、ターゲットURLを引数として `$1` に受け取ります。 この非常にシンプルなコードは、ただテキストをブラウザーに送信します。
+[`On Web Connection`](httpRequests.md#on-web-connection) データベースメソッドは、受信リクエストに対して呼び出され、ターゲットURLを引数として `$1` に受け取ります。この非常にシンプルなコードは、ただテキストをブラウザーに送信します。
 
 3. ブラウザーで次の URL を入力します:
 
@@ -56,14 +55,14 @@ Webサーバーがリクエストを処理して次を返します:
 
 ![](../assets/en/WebServer/hello.png)
 
-
 ## データベースのデータを取得する
 
-次に、データベースからデータを取得するのが、いかに簡単か見てみましょう。 まず、テーブルを作成し、そこにデータを入力していきます。
+次に、データベースからデータを取得するのが、いかに簡単か見てみましょう。まず、テーブルを作成し、そこにデータを入力していきます。
 
 たとえば、数件のレコードを含む 1つのテーブルを持つ基本的なデータベースを作成します:
 
-![](../assets/en/WebServer/hello2.png) ![](../assets/en/WebServer/hello3.png)
+![](../assets/en/WebServer/hello2.png)
+![](../assets/en/WebServer/hello3.png)
 
 ### ページへのデータ表示
 
@@ -89,14 +88,13 @@ Webサーバーがリクエストを処理して次を返します:
 http://localhost/friends.shtml
 ```
 
-`.shtml` のページは、Webサーバーによって自動的に処理されます。 データを表示するページが返されます:
+`.shtml` のページは、Webサーバーによって自動的に処理されます。データを表示するページが返されます:
 
 ![](../assets/en/WebServer/hello3bis.png)
 
 ### RESTリクエスト
 
 データを *表示* するだけでなく、*使用* するには、ORDA と RESTサーバーを使うことができます。 [ORDAコンセプト](ORDA/overview.md) により、`Friends` テーブルは自動的にデータクラスにマッピングされ、[REST](REST/gettingStarted.md) を通じて利用可能です。
-
 
 1. RESTサーバーを使ってデータにアクセスしましょう: **ストラクチャー設定** ダイアログボックスで **Web** ＞ **Web機能** ページを選択し、**RESTサーバーとして公開** オプションをチェックします。
 
@@ -112,14 +110,14 @@ Webサーバーは結果を JSON で返します:
 
 ```json
 {
-    "__UNIQID": "3F1B6ACFFE12B64493629AD76011922D",
-    "dataClasses": [
-        {
-            "name": "Friends",
-            "uri": "/rest/$catalog/Friends",
-            "dataURI": "/rest/Friends"
-        }
-    ]
+	"__UNIQID": "3F1B6ACFFE12B64493629AD76011922D",
+	"dataClasses": [
+		{
+			"name": "Friends",
+			"uri": "/rest/$catalog/Friends",
+			"dataURI": "/rest/Friends"
+		}
+	]
 }
 ```
 
@@ -137,57 +135,54 @@ http://localhost/rest/Friends
 
 ```json
 {
-    "__DATACLASS": "Friends",
-    "__entityModel": "Friends",
-    "__GlobalStamp": 0,
-    "__COUNT": 4,
-    "__FIRST": 0,
-    "__ENTITIES": [
-        {
-            "__KEY": "1",
-            "__TIMESTAMP": "2020-10-27T14:29:01.914Z",
-            "__STAMP": 1,
-            "ID": 1,
-            "lastName": "Smith",
-            "firstName": "John"
-        },
-        {
-            "__KEY": "2",
-            "__TIMESTAMP": "2020-10-27T14:29:16.035Z",
-            "__STAMP": 1,
-            "ID": 2,
-            "lastName": "Brown",
-            "firstName": "Danny"
-        },
-        {
-            "__KEY": "3",
-            "__TIMESTAMP": "2020-10-27T14:29:43.945Z",
-            "__STAMP": 1,
-            "ID": 3,
-            "lastName": "Purple",
-            "firstName": "Mark"
-        },
-        {
-            "__KEY": "4",
-            "__TIMESTAMP": "2020-10-27T14:34:58.457Z",
-            "__STAMP": 1,
-            "ID": 4,
-            "lastName": "Dupont",
-            "firstName": "Jenny"
-        }
-    ],
-    "__SENT": 4
+	"__DATACLASS": "Friends",
+	"__entityModel": "Friends",
+	"__GlobalStamp": 0,
+	"__COUNT": 4,
+	"__FIRST": 0,
+	"__ENTITIES": [
+		{
+			"__KEY": "1",
+			"__TIMESTAMP": "2020-10-27T14:29:01.914Z",
+			"__STAMP": 1,
+			"ID": 1,
+			"lastName": "Smith",
+			"firstName": "John"
+		},
+		{
+			"__KEY": "2",
+			"__TIMESTAMP": "2020-10-27T14:29:16.035Z",
+			"__STAMP": 1,
+			"ID": 2,
+			"lastName": "Brown",
+			"firstName": "Danny"
+		},
+		{
+			"__KEY": "3",
+			"__TIMESTAMP": "2020-10-27T14:29:43.945Z",
+			"__STAMP": 1,
+			"ID": 3,
+			"lastName": "Purple",
+			"firstName": "Mark"
+		},
+		{
+			"__KEY": "4",
+			"__TIMESTAMP": "2020-10-27T14:34:58.457Z",
+			"__STAMP": 1,
+			"ID": 4,
+			"lastName": "Dupont",
+			"firstName": "Jenny"
+		}
+	],
+	"__SENT": 4
 }
 ```
 
-この非常にシンプルな例では、Webサーバーが [RESTサーバー](REST/gettingStarted.md) と透過的に通信し、要求されたデータが公開されていればそれを返す様子を示しています。 返されたデータは、Webインターフェース内で javascript や html のコードと簡単に結びつけることができます。 データクラスにバインドされている、洗練された Webインターフェースの例として、ビルトインの [Webデータエクスプローラー](Admin/dataExplorer.md) を参照ください。
-
-
-
+この非常にシンプルな例では、Webサーバーが [RESTサーバー](REST/gettingStarted.md) と透過的に通信し、要求されたデータが公開されていればそれを返す様子を示しています。返されたデータは、Webインターフェース内で javascript や html のコードと簡単に結びつけることができます。データクラスにバインドされている、洗練された Webインターフェースの例として、ビルトインの [Webデータエクスプローラー](Admin/dataExplorer.md) を参照ください。
 
 ## ログインとセッション
 
-上の例で Webリクエストは、アプリケーションへの自由なアクセスを得ています。 しかし、Webアプリケーションの世界では、データアクセスのセキュリティが最優先されます。 4D Webサーバーに接続する際には、ユーザーを認証し、そのナビゲーションを制御する必要があります。
+上の例で Webリクエストは、アプリケーションへの自由なアクセスを得ています。しかし、Webアプリケーションの世界では、データアクセスのセキュリティが最優先されます。 4D Webサーバーに接続する際には、ユーザーを認証し、そのナビゲーションを制御する必要があります。
 
 ### ユーザーテーブルの作成
 
@@ -214,15 +209,13 @@ $webUser.userId:="john@4d.com"
 $webUser.save()
 ```
 
-
-
 ### ユーザー認証
 
 > 通信が安全であるためには、接続は [https](webServerConfig.md#httpsを有効にする) で確立されている必要があります。
 
 1. エクスプローラーを開き、"login" というプロジェクトメソッドを作成します。
 
-3. 以下のコードを書きます:
+2. 以下のコードを書きます:
 
 ```4d
 var $indexUserId; $indexPassword : Integer
@@ -257,14 +250,12 @@ If ($user#Null) // ユーザーが見つかった場合
     End if 
 Else 
     WEB SEND TEXT("Wrong user name or password.")
-")
- End if 
+End if 
 ```
 
 3. コードエディターの **[i]** ボタンでメソッドプロパティを表示し、`4DタグとURL(4DACTION...)` オプションにチェックを入れて **OK** をクリックします。
 
 ![](../assets/en/WebServer/hello0.png)
-
 
 4. ブラウザーで次の URL を入力します:
 
@@ -272,7 +263,7 @@ Else
 http://localhost/4DACTION/login/?userID=john@4d.com&password=123
 ```
 
-> このような URL の使用は推奨されませんが、ここでは例を簡単にするために使っています。 より現実的なログインリクエストは、Webフォームと POSTリクエストで処理する必要があります。 フォームの POST の例は、[このページ](sessions.md#例題) を参照ください。
+> このような URL の使用は推奨されませんが、ここでは例を簡単にするために使っています。より現実的なログインリクエストは、Webフォームと POSTリクエストで処理する必要があります。フォームの POST の例は、[このページ](sessions.md#例題) を参照ください。
 
 すると、そのセッションでログインされます:
 
@@ -282,5 +273,5 @@ http://localhost/4DACTION/login/?userID=john@4d.com&password=123
 
 ![](../assets/en/WebServer/login2.png)
 
-ユーザーがログインすると、`WEB Get Current Session ID` メソッドを使って、関連するセッションを処理することができます。 [ユーザーセッション](sessions.md) のページを参照ください。 
+ユーザーがログインすると、`WEB Get Current Session ID` メソッドを使って、関連するセッションを処理することができます。[ユーザーセッション](sessions.md) のページを参照ください。
 

@@ -10,10 +10,16 @@ Se pueden crear nuevos proyectos de aplicaciones 4D desde **4D** o **4D Server**
 Para crear un nuevo proyecto:
 
 1. Lance 4D o 4D Server.
-
 2. Haga una de las siguientes cosas:
    - Selecciona **Nuevo > Proyecto...** en el menú **Archivo**: ![](../assets/en/getStart/projectCreate-1.png)
-   - (solo 4D) Seleccione **Proyecto...** desde el **Nuevo** botón de la barra de herramientas:<p>![](../assets/en/getStart/projectCreate-2.png)</p>Aparece un diálogo **Guardar** estándar para que pueda elegir el nombre y la ubicación de la carpeta principal del proyecto 4D.
+   - (4D only) Select **Project...** from the **New** toolbar button:<p>![](../assets/en/getStart/projectCreate-2.png)   <br/>
+     A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
+
+:::note
+
+The **Database...** and **Database From Structure Definition...** items are only available if you have selected the [**Enable binary database creation** option](../Preferences/general.md#enable-binary-database-creation) in your Preferences (disabled by default).
+
+:::
 
 3. Introduzca el nombre de su carpeta de proyecto y haga clic en **Guardar**. Este nombre se utilizará:
 
@@ -59,39 +65,46 @@ Además de las opciones sistema estándar, la caja de diálogo *Abrir* de 4D ofr
   - **Interpretado** o **Compilado**: estas opciones están disponibles cuando el proyecto seleccionado contiene [código interpretado y compilado](Concepts/interpreted.md).
   - **[Centro de seguridad y de mantenimiento](MSC/overview.md)**: apertura en modo seguro que permite el acceso a los proyectos dañados para realizar las reparaciones necesarias.
 
-- **Archivo de datos** - especifica el archivo de datos a utilizar con el proyecto. Por defecto, está seleccionada la opción **Archivo de datos actual**.
+- **Archivo de datos** - especifica el archivo de datos a utilizar con el proyecto. Por defecto, está seleccionada la opción **Archivo de datos actual**. Este menú incluye dos opciones adicionales, ya que 4D permite utilizar el mismo proyecto con distintos archivos de datos.
+  - **Elegir otro archivo de datos**: abre el proyecto con un archivo de datos existente distinto del actual. Al seleccionar esta opción y hacer clic en **Abrir**, aparecerá el cuadro de diálogo estándar Abrir archivo de datos, en el que podrá seleccionar un archivo de datos.
+  - **Crear un nuevo archivo de datos**: crea un archivo de datos en blanco para el proyecto. Al seleccionar esta opción y hacer clic en **Abrir**, aparecerá el cuadro de diálogo estándar para guardar archivos de datos.
+
+:::note
+
+Para garantizar la integridad de los datos, 4D no permite abrir un archivo de datos si no ha sido creado por el archivo de proyecto actual. El programa asigna automáticamente números de enlace internos (UUID) a los archivos de datos y de proyecto cuando se crean o cuando se convierte el proyecto. Estos números se verifican cuando se abre el archivo de datos.
+
+:::
+
+Una vez cambiado el archivo de datos actual, 4D lo abre de forma predeterminada. Si mueve o renombra el archivo de datos, deberá localizarlo de nuevo. Es posible cambiar el archivo de datos mediante un atajo de teclado al iniciar el programa (ver abajo). Puede ver el archivo de datos actual en cualquier momento en la [Página de información del MSC](../MSC/information.md#data).
+
+### Diálogo de mantenimiento al inicio
+
+If you need to interrupt the startup sequence, for example if the project is not launching properly or if you want to switch to a different data file, hold down the **Alt** (Windows) or **Option** (macOS) key during database startup to display the startup maintenance dialog box:
+
+![](../assets/en/getStart/startup.png)
+
+Se ofrecen las siguientes opciones de mantenimiento:
+
+- **Abrir la aplicación con el archivo de datos predeterminado**: continúa con el proceso de apertura habitual.
+- **Seleccionar otro archivo de datos** / **Crear un nuevo archivo de datos**: le permite cambiar de archivo de datos (ver arriba).
+- **Restore a backup file**: opens standard Open file dialog box, so that you can select a backup file (.4bk) or a log backup file (.4bl) to [restore](../Backup/restore.md#manually-restoring-a-backup-standard-dialog).
+- **Abrir el Centro de mantenimiento y seguridad**: abre el proyecto en [modo mantenimiento](../MSC/overview.md#display-in-maintenance-mode).
 
 ## Atajos de apertura de los proyectos
 
 4D ofrece varias formas de abrir proyectos directamente y evitar el diálogo de apertura:
 
-- mediante las opciones de menú:
-  - *Barra de menús* - **Archivo** > **Abrir proyectos recientes / {project name}**
-  - *Barra de herramientas 4D* - Seleccione el proyecto en el menú asociado al botón **Abrir**
+- a través del submenú **Abrir proyectos recientes / {nombre del proyecto}** del menú **Archivo** o del botón **Abrir** de la barra de herramientas.  
+  ![open-recent-projects](../assets/en/Project/4Dlinkfiles.png)
+- haga doble clic o arrastre y suelte un archivo `.4DLink` en la aplicación 4D (ver abajo).
+- configurando la preferencia general **Al iniciar** en [**Abrir el último proyecto utilizado**](../Preferences/general.md#at-startup).
 
-- vía las preferencias:
-  - Fije la preferencia general **Al inicio** en **Abrir el último proyecto utilizado**.
+:::note Notas
 
-- utilizando un archivo `.4DLink`.
-
-:::note
-
-En Windows, un proyecto de 4D Server se puede iniciar automáticamente al iniciar la sesión si está [registrado como servicio](../server/service.md).
+- En Windows, un proyecto de 4D Server se puede iniciar automáticamente al iniciar la sesión si está [registrado como servicio](../server/service.md).
+- Una [aplicación 4D generada] (../Desktop/building.md) puede lanzarse con un doble clic en el icono de la aplicación.
 
 :::
-
-### Abrir un proyecto con un archivo 4DLink
-
-Puede utilizar un archivo [`.4DLink`](#about-4dlink-files) para lanzar la aplicación 4D y abrir el proyecto 4D objetivo. Hay dos maneras de hacer esto:
-
-- haga doble clic o arrastre y suelte el archivo `.4DLink` en la aplicación 4D
-- vaya a **Archivo** > **Abrir los proyectos recientes** y seleccione un proyecto
-
-![open-recent-projects](../assets/en/Project/4Dlinkfiles.png)
-
-Un archivo .4DLink de tipo "proyecto remoto" puede copiarse y utilizarse en varias máquinas.
-
-> También es posible seleccionar un archivo 4DLink en la caja de diálogo de apertura de 4D y 4D Server (abriendo sólo el proyecto local).
 
 ## Sobre 4DLink Files
 

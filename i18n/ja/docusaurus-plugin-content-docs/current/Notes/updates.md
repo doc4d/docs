@@ -12,8 +12,28 @@ title: リリースノート
 - [`4D.SMTPTransporter`](../API/SMTPTransporterClass.md) クラスの新しいクラスプロパティを使用したS/MIME Eメール署名のサポート: [`.certificate`](../API/SMTPTransporterClass.md#certificate) または [`.certificateName`](../API/SMTPTransporterClass.md#certificatename) (証明書の提供)、および[`.certificatePassword`](../API/SMTPTransporterClass.md#certificatepassword)。
 - [コンポーネントをホストから直接コンパイルする](../Project/compiler.md#コンポーネントのコンパイル) ことができるようになりました。
 - Windows 上での [**fluent UI** レンダリング](../FormEditor/forms.md#fluent-ui-レンダリング) でのリストフォームのサポート。
+- 4D.Vector fields: [new specific icon](../Develop/field-properties.md#4dvector-class) and new [dedicated index types](../Develop/structure-indexes.md#vector-index).
+- Support of vector indexes in [`CREATE INDEX`](../commands/create-index) and [`SET INDEX`](../commands/set-index) 4D language commands.
+- New [dataClass.getIndexes()](../API/DataClassClass.md#getindexes) API function.
+- New [`.precision` property](../API/VectorClass.md#precision) in `4D.Vector` class objects.
 - [依存関係マネージャー](../Project/components.md#4d-cornerを使用) から[4D Corner プラットフォーム](https://corner.4d.com/) へと直接アクセスできるようになりました。
+- 新しい[`WebServer.quotas`](../API/WebServerClass.md#クォータ) プロパティと改善された[`4D.QuotaManager`](../API/QuotaManagerClass.md) クラスを使用して[Web サーバークォータ](../WebServer/quotas.md) を設定することができます。
+- テキストエリアと入力オブジェクト: 新しい[上パディング](../FormObjects/properties_CoordinatesAndSizing.md#上パディング)、 [下パディング](../FormObjects/properties_CoordinatesAndSizing.md#下パディング)、[左パディング](../FormObjects/properties_CoordinatesAndSizing.md#左パディング)、[右パディング](../FormObjects/properties_CoordinatesAndSizing.md#右パディング) と関連した[CSS サポート](../FormEditor/createStylesheet.md#属性マッピング)。[縦揃え](../FormObjects/properties_Text.md#縦揃え) のサポート。
+- パディングをプログラミングで管理するための[`OBJECT SET PADDING`](../commands/object-set-padding) および [`OBJECT Get padding`](../commands/object-get-padding) コマンド。
+- [カスタムボタン](../FormObjects/button_overview.md#カスタム)、 [カスタムチェックボックス](../FormObjects/checkbox_overview.md#カスタム) および [カスタムラジオボタン](../FormObjects/radio_overview.md#カスタム) に対しての新しい内側の境界線デザイン: [塗りカラー](../FormObjects/properties_BackgroundAndBorder.md#背景色塗りカラー) および [角の半径](../FormObjects/properties_BackgroundAndBorder.md#角の半径) プロパティのサポート; 新しい[境界線カラーborder color](../FormObjects/properties_BackgroundAndBorder.md#境界線カラー) および[境界線の幅](../FormObjects/properties_BackgroundAndBorder.md#境界線の幅) プロパティ。
+- [依存関係マネージャー](../Project/components.md#4d-cornerを使用) から[4D Corner プラットフォーム](https://corner.4d.com/) へと直接アクセスできるようになりました。
+- 4Dメソッドまたはクラスを作成または開くときに4D コードエディターを開くかVS Code を開くかを自動的に決定する[新しい**コードエディター** 設定](../Preferences/methods.md#コードエディター)。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=21_R5): 4D 21 R5 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/178/release-note-version-20r5/))。
+
+#### 動作の変更
+
+- 一貫性のために、**角の半径** プロパティはプロパティリストの["座標とサイズ"](../FormObjects/properties_CoordinatesAndSizing.md) セクションから["背景と境界線"](../FormObjects/properties_BackgroundAndBorder.md#角の半径) セクションへと移動されました。
+
+:::warning Default vector precision
+
+In 4D 21 R5 and higher, vectors are created with a [32-bit precision by default](../API/VectorClass.md#4dvectornew). In previous releases, only 64-bit precision was available. If you reopen a project containing vectors created in 4D 21 R5 or later using default precision (or explicitly set to 32-bit) with an ealier version, those vectors will be empty and their values will be lost.
+
+:::
 
 ## 4D 21 R4
 
@@ -33,7 +53,7 @@ title: リリースノート
 
 #### 動作の変更
 
-- **`GET /Employee/$entityset/<entitySetID>?$method=release`** のREST シンタックスは**廃止予定** となり、今後使用されるべきではありません。 エンティティセットを削除するには、今後は [`/$entityset/$release` とPOST 動詞(メソッド)](../REST/$entityset.md) を組み合わせて使用してください。
+- **`GET /Employee/$entityset/<entitySetID>?$method=release`** のREST シンタックスは**廃止予定** となり、今後使用されるべきではありません。エンティティセットを削除するには、今後は [`/$entityset/$release` とPOST 動詞(メソッド)](../REST/$entityset.md) を組み合わせて使用してください。
 
 ## 4D 21 R3
 
@@ -50,13 +70,13 @@ title: リリースノート
 - 新しい[データベース設定の新しい **AI** ページ](../settings/ai.md) を使うことで、4D AIKit コンポーネントを使用したコード内から呼び出し可能な、 [プロバイダーモデルエイリアス](../aikit/provider-model-aliases.md) を設定することができるようになりました。
 - 4D AIKit コンポーネント: 新しい[Providers](../aikit/Classes/OpenAIProviders.md) クラスを使用して [プロバイダーとモデルエイリアス](../aikit/provider-model-aliases.md) をインスタンス化して管理することができます。
 - ORDA データモデル関数および共有/セッションシングルトン関数における [`server` キーワード](../Concepts/classes.md#server) のサポート。
-- Liquid glass および Fluent UI インターフェースのフォーム用の新しい[印刷レンダラー](../FormEditor/forms.md#印刷レンダリングエンジン)。 [クラシックインターフェースのレンダラーを有効化する](../FormEditor/forms.md#旧式印刷レンダラー) ための新しい互換性オプション。
+- Liquid glass および Fluent UI インターフェースのフォーム用の新しい[印刷レンダラー](../FormEditor/forms.md#印刷レンダリングエンジン)。[クラシックインターフェースのレンダラーを有効化する](../FormEditor/forms.md#旧式印刷レンダラー) ための新しい互換性オプション。
 - 依存関係: [GitLab リポジトリ上に保存されたコンポーネント](../Project/components.md#configuring-a-gitlab-repository) のサポート。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=21_R3): 4D 21 R3 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2026/101/release-note-version-21r3/))。
 
 #### macOS におけるLiquid glass のサポート
 
-- macOS 26 Tahoe 上での4D における、[**Liquid glass** インターフェース](https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/) の自動サポート。 詳細な情報については、[こちらの blog 記事](https://blog.4d.com/the-new-macos-tahoe-design-comes-to-your-4d-applications) を参照してください。
+- macOS 26 Tahoe 上での4D における、[**Liquid glass** インターフェース](https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/) の自動サポート。詳細な情報については、[こちらの blog 記事](https://blog.4d.com/the-new-macos-tahoe-design-comes-to-your-4d-applications) を参照してください。
 - [`FORM Theme`](../commands/form-theme) コマンド　および [CSS メディアクエリ](../FormEditor/createStylesheet.md#media-queries)から返される新しい値。
 - 開発者がインターフェースを徐々に適合していけるようにするために、アプリケーションの*Info.plist* ファイル内の"UIDesignRequiresCompatibility" キーを使用して**4D 組み込みのアプリケーションにおいてLiquid glass を無効化する機能** ([このキーに関するApple のドキュメンテーション](https://developer.apple.com/documentation/BundleResources/Information-Property-List/UIDesignRequiresCompatibility) を参照のこと)。
 
@@ -64,9 +84,9 @@ title: リリースノート
 
 - [`JSON Validate`](../commands/json-validate) コマンドは *$schema* キーを考慮するようになり、スキーマ内でサポートされていないバージョンが宣言されたときにはエラーを生成するようになりました。
 - 分かりやすさのために、フォーミュラオブジェクトは、汎用的な [`4D.Function`](../API/FunctionClass.md) クラスを継承する [`4D.Formula`](../API/FormulaClass.md) クラスの新しいインスタンスになりました。
-- 4D 21 R3 では、[コードライブチェッカー](../code-editor/write-class-method.md#警告とエラー) にもたらされた新しい改良が、ランゲージコマンドに対しても適用されます([こちらのblog 記事](https://blog.4d.com/enhancement-of-command-syntax-checking-in-the-editor)を参照してください)。 以前は検知されなかったシンタックスエラーがコード内でフラグ付けされるようになりました。
+- 4D 21 R3 では、[コードライブチェッカー](../code-editor/write-class-method.md#警告とエラー) にもたらされた新しい改良が、ランゲージコマンドに対しても適用されます([こちらのblog 記事](https://blog.4d.com/enhancement-of-command-syntax-checking-in-the-editor)を参照してください)。以前は検知されなかったシンタックスエラーがコード内でフラグ付けされるようになりました。
 - [設定ダイアログボックス](../settings/overview.md) から、"PHP" ページが削除されました。 PHP インタープリターを設定するためには、[`SET DATABASE PARAMETER` のPHP セレクター](../commands/set-database-parameter#php-interpreter-ip-address-55) を使用してください。
-- **旧式** ネットワークレイヤーはサポートされなくなりました。 旧式ネットワークレイヤーを使用していたプロジェクトまたはバイナリーデータベースは、4D 21 R3 以降にアップグレードした際に自動的に[**ServerNet**](../settings/client-server.md#ネットワークレイヤー) へと設定されます。
+- **旧式** ネットワークレイヤーはサポートされなくなりました。旧式ネットワークレイヤーを使用していたプロジェクトまたはバイナリーデータベースは、4D 21 R3 以降にアップグレードした際に自動的に[**ServerNet**](../settings/client-server.md#ネットワークレイヤー) へと設定されます。
 
 ## 4D 21 R2
 
@@ -104,15 +124,15 @@ title: リリースノート
 | libldap         | 2.6.10 | 21             |                                                                                                                                                      |
 | libsasl         | 2.1.28 | 20             |                                                                                                                                                      |
 | Liblsquic       | 4.2.0  | 20 R10         | QUIC に使用                                                                                                                                             |
-| Libuv           | 1.52.1 | **21 R4**      | QUIC に使用                                                                                                                                             |
+| Libuv           | 1.53.0 | **21 R6**      | QUIC に使用                                                                                                                                             |
 | libZip          | 1.11.4 | 21             | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                                                |
 | LZMA            | 5.8.1  | 21             |                                                                                                                                                      |
-| ngtcp2          | 1.24.0 | **21 R4**      | QUIC に使用                                                                                                                                             |
-| OpenSSL         | 4.0.1  | **21 R5**      |                                                                                                                                                      |
+| ngtcp2          | 1.24.0 | 21 R4          | QUIC に使用                                                                                                                                             |
+| OpenSSL         | 4.0.3  | **21 R6**      |                                                                                                                                                      |
 | PDFWriter       | 4.7.0  | 21             | [`WP Export document`](../WritePro/commands/wp-export-document.md) および [`WP Export variable`](../WritePro/commands/wp-export-variable.md) において使用されます |
 | SpreadJS        | 18.2.0 | 21 R2          | 新機能の概要については、 [このブログ記事](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) を参照してください。                                                            |
 | webKit          | WKWebView                              | 19             |                                                                                                                                                      |
-| Windows App SDK | 2                                      | **21 R4**      | [Fluent UI rendering](../FormEditor/forms.md#fluent-ui-rendering) に使用されます                                                                            |
+| Windows App SDK | 2                                      | 21 R4          | [Fluent UI rendering](../FormEditor/forms.md#fluent-ui-rendering) に使用されます                                                                            |
 | Xerces          | 3.3.0  | 21             | XML コマンドにおいて使用されます                                                                                                                                   |
 | Zlib            | 1.3.1  | 21             |                                                                                                                                                      |
 

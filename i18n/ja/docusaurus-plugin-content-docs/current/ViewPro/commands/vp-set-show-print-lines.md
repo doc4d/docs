@@ -22,11 +22,11 @@ title: VP SET SHOW PRINT LINES
 
 ## 説明
 
-`VP SET SHOW PRINT LINES` コマンドは、<!-- REF #_method_.VP SET SHOW PRINT LINES.Summary --> スプレッドシート内で印刷プレビュー線を表示するかどうかを設定します<!-- END REF -->。
+`VP SET SHOW PRINT LINES` コマンドは、<!-- REF #_method_.VP SET SHOW PRINT LINES.Summary -->スプレッドシート内で印刷プレビュー線を表示するかどうかを設定します。<!-- END REF -->。。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-*visible* には、印刷線を表示するには `True`、非表示にするには `False` を渡します。 デフォルトでは `True` が渡されます。
+*visible* には、印刷線を表示するには `True`、非表示にするには `False` を渡します。デフォルトでは `True` が渡されます。
 
 *sheet* には、ターゲットシートのインデックスを渡します。 index が省略された場合、コマンドはカレントシートに対して適用されます。
 

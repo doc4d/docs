@@ -46,6 +46,7 @@ Once a text is rotated, you can still change its size or position, as well as al
 
 |Release|Changes|
 |---|---|
+|21 R5|Support of vertical alignment and padding properties|
 |19 R7|Support of Corner radius property |
 
 </details>

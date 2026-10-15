@@ -155,7 +155,7 @@ title: Commands by name
 [`CREATE EMPTY SET`](../commands/create-empty-set)<br/>
 [`Create entity selection`](../commands/create-entity-selection)<br/>
 [`CREATE FOLDER`](../commands/create-folder)<br/>
-[`CREATE INDEX`](../commands/create-index)<br/>
+[`CREATE INDEX`](../commands/create-index) **modified 4D 21 R5**<br/>
 [`Create menu`](../commands/create-menu)<br/>
 [`CREATE RECORD`](../commands/create-record)<br/>
 [`CREATE RELATED ONE`](../commands/create-related-one)<br/>
@@ -629,7 +629,7 @@ title: Commands by name
 [`LONGINT TO BLOB`](../commands/longint-to-blob)<br/>
 [`Lowercase`](../commands/lowercase)<br/>
 
-<a id="M"><b>L</b></a>
+<a id="M"><b>M</b></a>
 
 [`Macintosh command down`](../commands/macintosh-command-down)<br/>
 [`Macintosh control down`](../commands/macintosh-control-down)<br/>
@@ -749,6 +749,7 @@ title: Commands by name
 [`OBJECT GET MINIMUM VALUE`](../commands/object-get-minimum-value)<br/>
 [`OBJECT Get multiline`](../commands/object-get-multiline)<br/>
 [`OBJECT Get name`](../commands/object-get-name)<br/>
+[`OBJECT Get padding`](../commands/object-get-padding) **new 4D 21 R5**<br/>
 [`OBJECT Get placeholder`](../commands/object-get-placeholder)<br/>
 [`OBJECT Get pointer`](../commands/object-get-pointer)<br/>
 [`OBJECT GET PRINT VARIABLE FRAME`](../commands/object-get-print-variable-frame)<br/>
@@ -766,7 +767,7 @@ title: Commands by name
 [`OBJECT Get title`](../commands/object-get-title)<br/>
 [`OBJECT Get type`](../commands/object-get-type)<br/>
 [`OBJECT Get value`](../commands/object-get-value)<br/>
-[`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment)<br/>
+[`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment) **modified 4D 21 R5**<br/>
 [`OBJECT Get visible`](../commands/object-get-visible)<br/>
 [`OBJECT Is styled text`](../commands/object-is-styled-text)<br/>
 [`OBJECT MOVE`](../commands/object-move)<br/>
@@ -797,6 +798,7 @@ title: Commands by name
 [`OBJECT SET MAXIMUM VALUE`](../commands/object-set-maximum-value)<br/>
 [`OBJECT SET MINIMUM VALUE`](../commands/object-set-minimum-value)<br/>
 [`OBJECT SET MULTILINE`](../commands/object-set-multiline)<br/>
+[`OBJECT SET PADDING`](../commands/object-set-padding) **new 4D 21 R5**<br/>
 [`OBJECT SET PLACEHOLDER`](../commands/object-set-placeholder)<br/>
 [`OBJECT SET PRINT VARIABLE FRAME`](../commands/object-set-print-variable-frame)<br/>
 [`OBJECT SET RESIZING OPTIONS`](../commands/object-set-resizing-options)<br/>
@@ -811,7 +813,7 @@ title: Commands by name
 [`OBJECT SET THREE STATES CHECKBOX`](../commands/object-set-three-states-checkbox)<br/>
 [`OBJECT SET TITLE`](../commands/object-set-title)<br/>
 [`OBJECT SET VALUE`](../commands/object-set-value)<br/>
-[`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment)<br/>
+[`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment) **modified 4D 21 R5**<br/>
 [`OBJECT SET VISIBLE`](../commands/object-set-visible)<br/>
 [`Object to path`](../commands/object-to-path)<br/>
 [`Old`](../commands/old)<br/>
@@ -1070,7 +1072,7 @@ title: Commands by name
 [`SET GROUP ACCESS`](../commands/set-group-access)<br/>
 [`Set group properties`](../commands/set-group-properties)<br/>
 [`SET HELP MENU`](../commands/set-help-menu)<br/>
-[`SET INDEX`](../commands/set-index)<br/>
+[`SET INDEX`](../commands/set-index) **modified 4D 21 R5**<br/>
 [`SET INDEX CACHE PRIORITY`](../commands/set-index-cache-priority)<br/>
 [`SET LIST ITEM`](../commands/set-list-item)<br/>
 [`SET LIST ITEM FONT`](../commands/set-list-item-font)<br/>

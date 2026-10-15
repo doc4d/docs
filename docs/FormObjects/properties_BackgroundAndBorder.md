@@ -210,7 +210,14 @@ Allows setting a style for the object border. The following choices are availabl
 
 ## Border Width {#border-width}
 
-Defines the width of the inner border for to [custom buttons](./button_overview.md#custom), [custom check boxes](./checkbox_overview.md#custom), or [custom radio buttons](./radio_overview.md#custom). In addition, [custom buttons](./button_overview.md#custom) must have the ["custom" Border Line Style](#border-line-style). In other contexts, the property is ignored. 
+Allows defining the width of the inner border for:
+- [custom buttons](./button_overview.md#custom) with the ["custom" Border Line Style](#border-line-style), 
+- [custom check boxes](./checkbox_overview.md#custom), 
+- [custom radio buttons](./radio_overview.md#custom). 
+
+In other contexts, the property is ignored.
+
+
 
 The value is expressed in pixels. 
 
@@ -238,6 +245,7 @@ The value is expressed in pixels.
 |19 R7|Support for inputs and text areas|
 
 </details>
+
 
 Defines the corner roundness (in pixels) of the object. By default, the radius value is 0 pixels. You can change this property to draw rounded objects with custom shapes:
 

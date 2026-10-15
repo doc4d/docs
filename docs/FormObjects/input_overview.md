@@ -41,6 +41,7 @@ For security reasons, in [multi-style](./properties_Text.md#multi-style) input a
 
 |Release|Changes|
 |---|---|
+|21 R5|Support of vertical alignment and padding properties|
 |20 R4|Support of Writing Tools property |
 |19 R7|Support of Corner radius property |
 
