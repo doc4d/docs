@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R5|New Border Custom` constant |
+|21 R5|New `Border Custom` and `Border System Rounded` constant |
 |14|Created|
 
 </details>

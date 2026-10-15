@@ -5,7 +5,7 @@ slug: /commands/object-get-rgb-colors
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET RGB COLORS.Syntax-->**OBJECT GET RGB COLORS** ( * ; *object* : Text ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer {; borderColor : Text, Integer}}} )<br/>**OBJECT GET RGB COLORS** ( *object* : Variable, Field ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer {; borderColor : Text, Integer}}} )<!-- END REF-->
+<!--REF #_command_.OBJECT GET RGB COLORS.Syntax-->**OBJECT GET RGB COLORS** ( * ; *object* : Text ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer {; *borderColor* : Text, Integer}}} )<br/>**OBJECT GET RGB COLORS** ( *object* : Variable, Field ; *foregroundColor* : Text, Integer {; *backgroundColor* : Text, Integer {; *altBackgrndColor* : Text, Integer {; *borderColor* : Text, Integer}}} )<!-- END REF-->
 <!--REF #_command_.OBJECT GET RGB COLORS.Params-->
 <div class="no-index">
 
@@ -25,7 +25,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R6|Support of *borderColor* parameter|
+|21 R5|Support of *borderColor* parameter|
 |17 R6|Modified|
 |12|Created|
 
@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.OBJECT GET RGB COLORS.Summary-->The OBJECT GET RGB COLORS command returns the foreground, background, and optionally alternate background and border colors of the object or group of objects designated by *object*.<!-- END REF-->
+<!--REF #_command_.OBJECT GET RGB COLORS.Summary-->The **OBJECT GET RGB COLORS** command returns the foreground, background, and optionally alternate background and border colors of the object or group of objects designated by *object*.<!-- END REF-->
 
 If you pass the optional *\** parameter, you indicate that the *object* parameter is an object name (string). If you do not pass this parameter, you indicate that the *object* parameter is a field or a variable. In this case, you pass a field or variable reference (object field or variable only) instead of a string. 
 

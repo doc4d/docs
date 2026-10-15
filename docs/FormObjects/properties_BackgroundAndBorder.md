@@ -175,7 +175,8 @@ Allows setting a style for the object border. The following choices are availabl
 :::tip Related blog posts
 
 - [Customize Buttons, Radio Buttons, and Check Boxes with Background and Border Properties](https://blog.4d.com/customize-buttons-radio-buttons-and-check-boxes-with-background-and-border-properties).  
-- [Give your Text and list objects the border color they deserve](https://blog.4d.com/give-your-text-and-list-objects-the-border-color-they-deserve)
+- [Give Your Form Objects the Border Color They Deserve](https://blog.4d.com/give-your-form-objects-the-border-color-they-deserve)
+- [Choose the Right Native Input Style for Your Interface on macOS](https://blog.4d.com/choose-the-right-native-input-style-for-your-interface-on-macos)
 
 
 :::
