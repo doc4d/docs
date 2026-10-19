@@ -4,17 +4,17 @@ title: Roles and Privileges
 ---
 
 
-Protecting data while allowing fast and easy access to authorized users is a major challenge for web applications. The ORDA security architecture is implemented at the heart of your datastore and allows you to define specific privileges to all web or REST user sessions for the various resources in your project (datastore, dataclasses, functions, etc.).
+The ORDA security architecture controls access to project resources for web and REST sessions. It lets you grant specific permissions on resources such as the datastore, dataclasses, attributes, and functions.
 
 
 
 ## Overview
 
-The ORDA security architecture is based upon the concepts of privileges, permission actions (read, create, etc.), and resources. 
+The security model combines **privileges**, **actions** (such as `read` and `create`), and **resources**.
 
-When web users or REST users get logged, their **session** is automatically loaded with associated privilege(s). Privileges are assigned to the session using the [`session.setPrivileges()`](../API/SessionClass.md#setprivileges) function.
+Assign privileges to a **session** using [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges).
 
-Every user request sent within the session is evaluated against privileges defined in the project's `roles.json` file. If a user attempts to execute an action and does not have the appropriate permissions, a privilege error is generated or, in the case of missing Read permission on attributes, they are not sent.
+Each request is checked against the permissions defined in the project's `roles.json` file. An unauthorized action raises a privilege error. Attributes without read permission are omitted from the response.
 
 
 
@@ -36,11 +36,7 @@ Permissions control access to datastore objects or functions. If you want to fil
 
 ## Scope
 
-Permissions apply to **web and REST sessions**, i.e. [**REST requests**](../REST/gettingStarted.md) (including [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview)) and **4D code executed in a web process** ([exposed](./ordaClasses.md) functions, [HTTP request handlers](../WebServer/http-request-handler.md), [On Web Connection database method](../commands/on-web-connection-database-method), as well as **code they call**). For example, a function that reads a restricted dataclass fails for a session without the read permission, even though the function call itself was allowed.
-
-Permissions never apply to [desktop session code](../Desktop/sessions.md) (standalone, client/server, stored procedures) or [tool4d](../Admin/cli.md#tool4d). 
-
-Project methods are not resources: no permission can be set on them.
+Permissions apply to **web and REST sessions**: [REST requests](../REST/gettingStarted.md), including [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview), and **4D code executed in a web process**. This includes [exposed functions](./ordaClasses.md), [HTTP request handlers](../WebServer/http-request-handler.md), the [On Web Connection database method](../commands/on-web-connection-database-method), and any code they call. For example, an allowed function call still fails if the function reads a dataclass for which the session has no read permission.
 
 :::info Exception
 
@@ -48,29 +44,32 @@ The **execute** permission of a [shared singleton](../Concepts/classes.md#shared
 
 :::
 
+Permissions never apply to [desktop session code](../Desktop/sessions.md) (standalone, client/server, stored procedures) or [tool4d](../Admin/cli.md#tool4d). 
+
+Project methods are not resources: no permission can be set on them.
+
+
 ## Resources
 
-Each time a resource is accessed within a session (whatever the way it is accessed), 4D checks that the session has the appropriate permissions, and rejects the access if it is not authorized. 
-
-You can assign specific permission actions to the following resources in your project:
+4D checks the session's permissions whenever a resource is accessed. The following resources can have specific permissions:
 
 | Resource | `applyTo` | `type` |
 |---|---|---|
 | [Datastore](./dsMapping.md#datastore) | `ds` | `datastore` |
 | [Datastore class function](./ordaClasses.md#datastore-class) | `ds.<function>` | `method` |
 | [Dataclass](./dsMapping.md#dataclass) | `<Dataclass>` | `dataclass` |
-| [Attribute](./dsMapping.md#attribute) (including [computed](./ordaClasses.md#computed-attributes-1) and [alias](./ordaClasses.md#alias-attributes-1))| `<Dataclass>.<attribute>` | `attribute` |
+| [Attribute](./dsMapping.md#attribute) (including [computed](./ordaClasses.md#computed-attributes-1) and [alias](./ordaClasses.md#alias-attributes-1)) | `<Dataclass>.<attribute>` | `attribute` |
 | [Dataclass, entity or entity selection function](./ordaClasses.md) | `<Dataclass>.<function>` | `method` |
 | [Shared singleton](../Concepts/classes.md#shared-singleton) (all its exposed functions) | `<Singleton>` | `singleton` |
 | [Singleton function](../Concepts/classes.md#singleton-classes) | `<Singleton>.<function>` | `singletonMethod` |
 
-`applyTo` and `type` are the property names that you need to use in the [`roles.json`](#rolesjson-file) file.
+Use the `applyTo` and `type` values shown in the table when defining permissions in [`roles.json`](#rolesjson-file).
 
 
 
 :::note Assigning permissions to ORDA class functions
 
-When configuring permissions, ORDA class functions are declared in the `applyTo` element using the following syntax:
+In `roles.json`, identify an ORDA class function in `applyTo` with this syntax:
 
 ```json
 <DataclassName>.<functionName>
@@ -83,13 +82,13 @@ Class extends Entity
   Function getPopulation() : Integer
    ...
 ```
-... you have to write:
+Use this value:
 
 ```json
 "applyTo":"City.getPopulation"
 ```
 
-It means that you cannot use the same function names in the various ORDA classes (entity, entity selection, dataclass) if you want them to be assigned privileges. In this case, you need to use distinct function names. For example, if you have created a "drop" function in both `cs.CityEntity` and `cs.CitySelection` classes, you need to give them different names such as `dropEntity()` and `dropSelection()`. You can then write in the "roles.json" file:
+Because permissions identify functions by dataclass and function name, functions with the same name in different ORDA classes (entity, entity selection, dataclass) cannot be assigned different privileges. Give them distinct names instead. For example, name the functions `dropEntity()` and `dropSelection()` in `cs.CityEntity` and `cs.CitySelection`, respectively:
 
 ```json
 	"permissions": {
@@ -108,7 +107,9 @@ It means that you cannot use the same function names in the various ORDA classes
 					"name"
 				]
 			}
-    ]
+		]
+	}
+}
 ```
 
 :::
@@ -117,31 +118,31 @@ It means that you cannot use the same function names in the various ORDA classes
 ## Permissions
 
 
-A permission is the ability to do an action on a resource. For example, *execute the ds.myTable.myFunction()* represents a **permission**. Permissions are defined for the project in the [`roles.json`](#rolesjson-file) file. Each permission can be given to one or more [privileges](#privileges-and-roles). 
+A **permission** allows an action on a resource; for example, executing `ds.myTable.myFunction()`. Permissions are defined in [`roles.json`](#rolesjson-file) and granted to one or more [privileges](#privileges-and-roles).
 
-When **no specific permission** has been defined for a resource, access to the resource may be automatically **unrestricted** or **restricted** depending on the [default mode defined for the project](#restriction-modes). 
+If no permission is defined for a resource, access depends on the project's [restriction mode](#restriction-modes).
 
 
 ### Permission actions
 
-Available actions are related to target resource.
+Available actions depend on the resource:
 
-|Actions|datastore|dataclass|attribute|function|
-|---|---|---|---|---|			
-|**create**|Create entity in any dataclass|Create entity in this dataclass|Create an entity with a value different from default value allowed for this attribute (ignored for alias attributes).|n/a|
-|**read**|Read attributes in any dataclass|Read attributes in this dataclass|Read this attribute content|n/a|
-|**update**|Update attributes in any dataclass. |Update attributes in this dataclass.|Update this attribute content (ignored for alias attributes).|n/a|
-|**drop** ("Delete" column in Qodly studio)|Delete data in any dataclass. |Delete data in this dataclass. |Delete a not null value for this attribute (except for alias and computed attribute).|n/a|
-|**execute**|Execute any function on the project (datastore, dataclass, entity selection, entity, singleton)|Execute any function on the dataclass. Dataclass functions, entity functions, and entity selection functions are handled as dataclass functions|n/a|Execute this function|
-|**promote**|n/a|n/a|n/a|Associates a given privilege during the execution of the function. The privilege is temporary added and removed at the end of the function execution. By security, only the process executing the function is added the privilege, not the whole session. You can set/remove this action dynamically to a web process using the [`promote()`](../API/SessionClass.md#promote) and [`demote()`](../API/SessionClass.md#demote) functions. |
+| Action | Datastore | Dataclass | Attribute | Function |
+|---|---|---|---|---|
+| **create** | Create entities in any dataclass | Create entities in this dataclass | Create an entity with a non-default value for this attribute (ignored for alias attributes) | n/a |
+| **read** | Read attributes in any dataclass | Read attributes in this dataclass | Read this attribute's content | n/a |
+| **update** | Update attributes in any dataclass | Update attributes in this dataclass | Update this attribute's content (ignored for alias attributes) | n/a |
+| **drop** ("Delete" in Qodly Studio) | Delete data in any dataclass | Delete data in this dataclass | Delete a non-null value for this attribute (except for alias and computed attributes) | n/a |
+| **execute** | Execute any function on the project (datastore, dataclass, entity selection, entity, or singleton) | Execute any function on the dataclass; dataclass, entity, and entity selection functions are treated as dataclass functions | n/a | Execute this function |
+| **promote** | n/a | n/a | n/a | Temporarily add a privilege for the duration of the function call. Only the process executing the function receives it, not the whole session. Use [`promote()`](../API/SessionClass.md#promote) and [`demote()`](../API/SessionClass.md#demote) to set or remove this action dynamically in a web process. |
 
 ### Permission rules
 
-- **update** and **drop** are refused when the session does not also have **read** on the resource; **create** does not need **read**.
-- A function can be **promoted** from multiple privileges. In such cases, there's no hierarchy determining priority. Instead, the session experiencing temporary privilege elevation during function execution will have access to all resource permissions set in each of the promoting privileges.
-- An [alias](./ordaClasses.md#alias-attributes-1) can be read as soon as the session privileges allow the access to the alias itself, even if the session privileges do no allow the access to the attributes resolving the alias.
-- A [computed attribute](./ordaClasses.md#computed-attributes-1) can be accessed even if there are no permissions on the attributes upon which it is built.
-- In REST [force login mode](../REST/authUsers.md#force-login-mode), the [`authentify()` function](../REST/authUsers.md#function-authentify) is always executable by guest users, whatever the permissions configuration.
+- **update** and **drop** require **read** on the resource; **create** does not.
+- A function can be **promoted** by multiple privileges. During execution, it receives the combined permissions of all those privileges; there is no priority order.
+- An [alias attribute](./ordaClasses.md#alias-attributes-1) can be read if the session has permission to read the alias, even if it cannot read the attributes the alias resolves to.
+- A [computed attribute](./ordaClasses.md#computed-attributes-1) can be accessed even if its underlying attributes have no permissions.
+- In REST [force login mode](../REST/authUsers.md#force-login-mode), guest users can always execute [`authentify()`](../REST/authUsers.md#function-authentify), regardless of the permissions configuration.
 
 
 
@@ -149,50 +150,45 @@ Available actions are related to target resource.
 
 Permission actions are inherited according to the following rules:
 
-1. Permissions descend **datastore → dataclass → attribute / function**, and **datastore → singleton → singleton** function.
+1. Permissions descend **datastore → dataclass → attribute / function**, and **datastore → singleton → singleton function**.
 2. Resolution is **per action**. Defining `read` on a dataclass does not change how `create`, `update`, `drop` or `execute` are resolved for it.
 3. **Dataclass replaces datastore**. A permission defined on a dataclass for an action replaces the datastore permission for that action. Privileges granted the action only on the datastore lose it on that dataclass.
 4. **Function replaces dataclass**. An `execute` permission defined on a function replaces the dataclass (and datastore) `execute` permission for that function. Entity and entity selection functions follow the same rule as dataclass functions.
 5. **Singleton replaces datastore**, **singleton function replaces singleton**.
 6. **Datastore function replaces datastore**.
 7. **Attribute adds to its parent**. To act on an attribute that has its own permission, a session needs a privilege granted by the attribute permission **and** a privilege granted the action on the dataclass (directly or through the datastore).
-8. A permission granted to **no privilege** (`"read": []`, or the action absent) is "not set": the level above applies; it does not mean "nobody". To give an action to nobody, use [restricted mode](#restriction-modes) with no permission on it, or grant it to a privilege that no session ever receives (see [Restriction modes](#restriction-modes) below).
+8. An action granted to **no privilege** (for example, `"read": []`) is "not set", so the permission at the level above applies. It does not mean "nobody". To deny the action, use [restricted mode](#restriction-modes) without defining that permission, or grant it to a privilege that no session receives.
 
-#### Understanding the rules
-
-Permissions only *allow*; there is no *deny*. Replacement at dataclass and function level is what lets you restrict one table or function below a broad datastore permission. At attribute level, access requires both a privilege granted by the attribute permission and a privilege granted the action on the dataclass. The attribute permission does not grant access to the dataclass or its other attributes.
+Permissions only grant access; there is no explicit deny. A dataclass or function permission can therefore narrow a broader datastore permission by replacing it. An attribute permission is additive: it grants access to that attribute only when the session also has the action on its dataclass.
 
 :::tip Recommended practice
 
-- Lock everything, then open gradually: [restricted mode or a lock privilege](#restriction-modes), the choice is yours.
-- Give access to sessions through **roles** (use `Session.setPrivileges({roles: […]})`), each role describing a business profile, rather than through privileges directly, even though 4D allows it. A privilege is a building block; this is also why [Qodly Studio](https://developer.4d.com/qodly/4DQodlyPro/roles/overview) shows the effective permissions on roles only.
-- An administration role that needs all access holds **every privilege** (except the lock privilege, if you use one: it is never given to any role). When you create a privilege, do not forget to add it to that role: otherwise the role loses the actions that the new privilege's dataclass-level permissions replace.
-- Grant public resources (public data, and the login function unless [force login](../REST/authUsers.md#force-login-mode) is used) to `guest`, keeping in mind that `guest` permissions reach every session.
-- When you change a privilege, check the impact on each role. In [Qodly Studio](https://developer.4d.com/qodly/4DQodlyPro/roles/overview), the **Detailed Permission Review** of a role shows the resulting access. To see what a session without role (guest only) can do, look at the review of a role that has no privilege.
+- Assign access to sessions through **roles** with `Session.setPrivileges({roles: [...]})`. Define roles around business profiles; privileges are the reusable building blocks. [Qodly Studio](https://developer.4d.com/qodly/4DQodlyPro/roles/overview) displays effective permissions by role.
+- If an administration role needs full access, include every privilege in it except a lock privilege, if used. Add each new privilege to that role: a dataclass-level permission can replace a broader datastore permission.
+- Review the effect of privilege changes on every role. In Qodly Studio, **Detailed Permission Review** shows a role's effective access; a role with no privileges can help you review guest-only access.
 
 :::
 
 
 ## Privileges and Roles
 
-A **privilege** is the technical ability to run **actions** on **resources**, while a **role** is a privilege pusblished to be used by an administrator. 
+A **privilege** grants actions on resources. A **role** groups privileges into a business profile that an administrator can assign to a session.
 
-Basically, a role gathers several privileges to define a business user profile. For example, "manageInvoices" could be a privilege while "secretary" could be a role (which includes "manageInvoices" and other privileges). Roles are only used with [`Session.setPrivileges({roles: […]})`](../API/SessionClass.md#setprivileges); they grant their privileges.
+For example, `manageInvoices` could be a privilege and `secretary` a role that includes it and other privileges. Assign roles to sessions with [`Session.setPrivileges({roles: [...]})`](../API/SessionClass.md#setprivileges); the role grants all its privileges.
 
-A privilege can be associated to several "action + resource" combinations. Several privileges can be associated to an action. 
+Privileges can be granted permission on multiple action-resource combinations, and an action can be granted to multiple privileges.
 
-- You **create** privileges and/or roles in the `roles.json` file (see below). You **configure** their scope by assigning them to permission action(s) applied to resource(s).
-- You **allow** privileges and/or roles to every user session using the [`.setPrivileges()`](../API/SessionClass.md#setprivileges) function of the `Session` class.
+Define privileges and roles in [`roles.json`](#rolesjson-file), then grant roles to sessions with `Session.setPrivileges()`.
 
 ### Including privileges
 
-A privilege can include other privileges using the `includes` property of the roles.json file. Inclusion is transitive (A → B → C gives A the permissions of C) and one-way. 
+A privilege can include other privileges using the `includes` property in `roles.json`. Inclusion is transitive and one-way: if A includes B, and B includes C, A receives the permissions of B and C.
 
-[`Session.getPrivileges()`](../API/SessionClass.md#getprivileges) returns the expanded collection (e.g. A, B and C), in no guaranteed order. An included privilege must be declared before the privilege that includes it; otherwise the inclusion is dropped and an error is logged.
+[`Session.getPrivileges()`](../API/SessionClass.md#getprivileges) returns the expanded collection (for example, A, B, and C) in no guaranteed order. Declare an included privilege before the privilege that includes it; otherwise, 4D drops the inclusion and logs an error.
 
 ### Example
 
-To allow a role in a session:
+This authentication function assigns the user's role to the session:
 
 ```4d
 
@@ -202,7 +198,7 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
     Session.clearPrivileges()
 
-    $result:="Your are authenticated as Guest"
+    $result:="You are authenticated as Guest"
 
     $user:=ds.Users.query("identifier = :1"; $identifier).first()
 
@@ -218,57 +214,51 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
 ## `guest` privilege
 
-- `guest` is built in. Declaring a privilege named Guest is an error ("privilege already defined").
-- Sessions without privileges (`Session.isGuest() = True`) get the permissions given to `guest`.
-- Permissions given to `guest` are granted to every session, whatever its privileges (a `member` session can read what guest can read). As a consequence, you should never give `guest` something you want to keep from other privileges, and remember it when restricting with dataclass permissions.
+`guest` is built in; declaring a privilege named `Guest` is an error ("privilege already defined"). Sessions without privileges (`Session.isGuest() = True`) receive the permissions granted to `guest`.
 
+Permissions granted to `guest` are available to every session, regardless of its other privileges. Do not grant `guest` access that should be withheld from other sessions, and account for its permissions when restricting access at the dataclass level.
 
 ## `roles.json` file
 
 
-The `roles.json` file describes the whole web security settings for the project. The `roles.json` file syntax is the following:
+The project's web security settings are defined in `roles.json`:
 
-|Property name|||Type|Mandatory|Description|
-|---|---|---|---|---|---|
-|privileges|||Collection of `privilege` objects|X|List of defined privileges|
-||\[].privilege||Text||Privilege name|
-||\[].includes||Collection of strings||List of included privilege names|
-|roles|||Collection of `role` objects||List of defined roles|
-||\[].role||Text||Role name|
-||\[].privileges||Collection of strings||List of included privilege names|
-|permissions|||Object|X|List of allowed actions|
-||allowed||Collection of `permission` objects||List of allowed permissions|
-|||\[].applyTo|Text|X|Targeted [resource](#resources) name|
-|||\[].type|Text|X|[Resource](#resources) type: "datastore", "dataclass", "attribute", "method", "singletonMethod", "singleton"|
-|||\[].read|Collection of strings||List of privileges|
-|||\[].create|Collection of strings||List of privileges|
-|||\[].update|Collection of strings||List of privileges|
-|||\[].drop|Collection of strings||List of privileges|
-|||\[].execute|Collection of strings||List of privileges|
-|||\[].promote|Collection of strings||List of privileges|
-|restrictedByDefault|||Boolean||If true, access to resources without explicit permissions is denied |
-|forceLogin|||Boolean||If true, enables ["forceLogin" mode](../REST/authUsers.md#force-login-mode) |
+| Property | Type | Required | Description |
+|---|---|---|---|
+| `privileges` | Collection of privilege objects | Yes | Defined privileges. Each object has a `privilege` name and can have an `includes` collection of privilege names. |
+| `roles` | Collection of role objects | No | Defined roles. Each object has a `role` name and a `privileges` collection of privilege names. |
+| `permissions.allowed` | Collection of permission objects | Yes | Permissions assigned to resources. |
+| `permissions.allowed[].applyTo` | Text | Yes | Target [resource](#resources) name. |
+| `permissions.allowed[].type` | Text | Yes | [Resource](#resources) type: `datastore`, `dataclass`, `attribute`, `method`, `singletonMethod`, or `singleton`. |
+| `permissions.allowed[].read` | Collection of strings | No | Privileges granted read access. |
+| `permissions.allowed[].create` | Collection of strings | No | Privileges granted create access. |
+| `permissions.allowed[].update` | Collection of strings | No | Privileges granted update access. |
+| `permissions.allowed[].drop` | Collection of strings | No | Privileges granted delete access. |
+| `permissions.allowed[].execute` | Collection of strings | No | Privileges granted execute access. |
+| `permissions.allowed[].promote` | Collection of strings | No | Privileges temporarily granted during function execution. |
+| `restrictedByDefault` | Boolean | No | If `true`, access to resources without explicit permissions is denied. |
+| `forceLogin` | Boolean | No | If `true`, enables [force login mode](../REST/authUsers.md#force-login-mode). |
 
 
 :::note Notes
 
-- The "WebAdmin" privilege name is reserved to the application. It is not recommended to use this name for custom privileges.
-- `privileges` and `roles` names are case-insensitive. Unknown names passed to [`.setPrivileges()`](../API/SessionClass.md#setprivileges) are ignored.
-- The optional `id` property can be added by Qodly Studio on privileges and roles. It used to keep references on rename.
-- If you declare several entries for the same `applyTo`, they are not merged: the last one wins, without error. It is recommended to declare a single entry per resource.
-- A resource entry granting no action has no effect.
+- The `WebAdmin` privilege name is reserved for the application; do not use it for custom privileges.
+- Privilege and role names are case-insensitive. Unknown names passed to [`.setPrivileges()`](../API/SessionClass.md#setprivileges) are ignored.
+- Qodly Studio can add an optional `id` property to privileges and roles to preserve references when they are renamed.
+- Multiple entries with the same `applyTo` are not merged: the last entry wins without an error. Define only one entry per resource.
+- A resource entry that grants no actions has no effect.
 
 :::
 
-### Default File Location and Content
+### Default location and content
 
-When a new project is created, a default `roles.json` file is generated at:
+New projects generate `roles.json` at:
 
 ```
 <project folder>/Project/Sources/ 
 ```
 
-See [Architecture](../Project/architecture.md#sources) section.
+See the [Architecture](../Project/architecture.md#sources) section for details.
 
 Default content:
 
@@ -303,7 +293,7 @@ Default content:
 
 :::note Compatibility
 
-In previous releases, the `roles.json` file was not created by default. As of 4D 20 R6, when opening an existing project that does not contain a `roles.json` file or the `"forceLogin": true` settings, the **Activate REST authentication through ds.authentify() function** button is available in the [**Web Features** page of the Settings dialog box](../settings/web.md#access). This button automatically upgrades your security settings (you may have to modify your code, [see this blog post](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)).
+In releases before 4D 20 R6, `roles.json` was not created by default. In 4D 20 R6 and later, opening an existing project without a `roles.json` file or `"forceLogin": true` setting makes the **Activate REST authentication through ds.authentify() function** button available on the [Web Features page of the Settings dialog box](../settings/web.md#access). This button upgrades the security settings; you may need to modify your code. See [this blog post](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/).
 
 :::
 
@@ -316,16 +306,16 @@ In Qodly Studio for 4D, the login mode can be set using the [**Force login** opt
 
 ## Restriction Modes
 
-The `restrictedByDefault` property configures how every [resource](#resources) are accessed when [no specific permission is defined for it](#permissions):
+`restrictedByDefault` determines access to a [resource](#resources) when no [specific permission](#permissions) is defined:
 
-- **Unrestricted mode** (`restrictedByDefault`: **false**): Resources without defined permissions are accessible to all requests. This mode is suitable for development environments where access can be gradually restricted.
-- **Restricted mode** (`restrictedByDefault`: **true**): Resources without defined permissions are blocked by default. This mode is recommended for production environments where access must be explicitly granted. In this mode the [inheritance rules](#inherited-permissions) still apply.
+- **Unrestricted mode** (`restrictedByDefault: false`): Resources without defined permissions are accessible to all requests.
+- **Restricted mode** (`restrictedByDefault: true`): Resources without defined permissions are blocked. Access is granted explicitly, and the [permission inheritance rules](#inherited-permissions) still apply.
 
 
 :::note Compatibility
 
-- When **creating a new project**, the `restrictedByDefault` property is set to **false** in the *roles.json* file (see below). Keep in mind that this configuration is tailored for quick start and smooth development. In production environment, [it is recommended to set the `restrictedByDefault` and `forceLogin` properties to **true**](#recommended-configuration).
-- In **projects converted from previous releases**; when enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration), the `restrictedByDefault` property is added with value **true** in the *roles.json* file. 
+- New projects set `restrictedByDefault` to `false` by default; see [recommended configurations](#recommended-configuration).
+- For projects converted from earlier releases, enabling access to Qodly Studio through the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration) adds `restrictedByDefault: true` to `roles.json`.
 
 :::
 
@@ -333,23 +323,23 @@ The `restrictedByDefault` property configures how every [resource](#resources) a
 
 #### Lock everything and open gradually
 
-Here the two ways from which you may choose:
+Choose either restricted mode or a lock privilege to close access by default:
 
 | | Restricted mode | Lock privilege |
 |---|---|---|
-| Setting | `"restrictedByDefault": true` (Qodly Studio: **Restrict Access By Default**) | `"restrictedByDefault": false` - Unrestricted mode; every action on `ds` granted to a privilege that no session ever receives (e.g. `none`) |
-| What is closed | Every resource without a permission  | Every resource that inherits the datastore permissions |
-| How to open | Grant permissions on the datastore, dataclasses, attributes, functions | Same: permissions on dataclasses and functions replace the lock |
-| Invalid entry dropped by 4D | The resource stays closed| The resource falls back to the lock, stays closed |
-| To keep in mind | Public resources must be granted explicitly (usually to `guest`), including the login function unless [force login](../REST/authUsers.md#force-login-mode) is used, and [HTTP request handlers](../WebServer/http-request-handler.md) called before login. In Qodly Studio, the role review is currently wrong in this mode. | Never give the lock privilege to any role, the admin role included |
+| Setting | `"restrictedByDefault": true` (Qodly Studio: **Restrict Access By Default**) | `"restrictedByDefault": false`, with every action on `ds` granted to a privilege that no session receives (for example, `none`) |
+| What is closed | Every resource without a permission | Every resource that inherits datastore permissions |
+| How to open | Grant permissions on the datastore, dataclasses, attributes, and functions | Grant permissions on dataclasses and functions to replace the lock |
+| If 4D drops an invalid entry | The resource stays closed | The resource falls back to the lock and stays closed |
+| Important | Explicitly grant access to public resources, usually to `guest`, including the login function unless [force login](../REST/authUsers.md#force-login-mode) is used, and [HTTP request handlers](../WebServer/http-request-handler.md) called before login. In this mode, Qodly Studio's role review is currently incorrect. | Never assign the lock privilege to a role, including the administration role. |
 
-Both give the same result; the **lock privilege** makes the lock visible in the editor as a privilege, **restricted mode** needs no extra privilege. Inheritance and replacement rules apply in both cases.
+Both approaches close access by default and follow the same inheritance and replacement rules. A lock privilege makes the lock visible in the editor; restricted mode requires no extra privilege.
 
 #### Open everything, restrict gradually
 
-Set unrestricted mode (`"restrictedByDefault": false`), give `ds` read to `guest`, then restrict sensitive dataclasses with dataclass-level permissions. 
+Set unrestricted mode (`"restrictedByDefault": false`), grant `guest` read access to `ds`, then restrict sensitive dataclasses with dataclass-level permissions.
 
-Pay attention to the fact that [guest](#guest-privilege)  permissions reach every session and that, in unrestricted mode without a lock privilege, an invalid entry dropped by 4D leaves the resource open.
+Remember that [guest](#guest-privilege) permissions apply to every session. Without a lock privilege, an invalid entry dropped by 4D leaves the resource open in unrestricted mode.
 
 
 
@@ -358,73 +348,89 @@ Pay attention to the fact that [guest](#guest-privilege)  permissions reach ever
 
 #### Recommended Configuration {#recommended-configuration}
 
-Depending on your environment, the recommended settings are:
+Use these settings as a starting point:
 
-- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. This ensures maximum security by requiring user authentication and explicitly defined permissions for resource access. 
-- **Development**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **false**. This allows easier access during development and debugging, with the possibility to gradually apply restrictions.
-
-
+- **Development**: Set both properties to `false` for easier access while developing and debugging. Apply restrictions gradually as needed.
+- **Production**: Set `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to `true` so that users must authenticate and resource access must be explicitly granted.
 
 
 
+
+
+
+## Permission errors
 
 ### `Roles_Errors.json` file
 
-The `roles.json` file is parsed by 4D at startup. You need to restart the application if you want modifications in this file to be taken into account.
+4D parses `roles.json` at startup. Restart the application for changes to take effect.
 
-In case of error(s) when parsing the `roles.json` file, an error file named `Roles_Errors.json` is generated in the [`Logs` folder of the project](../Project/architecture.md#logs) and describes the error line(s). This file is automatically deleted when the `roles.json` file no longer contains error(s).
+If parsing fails, 4D writes the errors to `Roles_Errors.json` in the project's [`Logs` folder](../Project/architecture.md#logs). It deletes this file after `roles.json` is corrected.
 
-It is highly recommended, especially in production, to check at startup if a `Roles_Errors.json` file exists in the [Logs folder](../Project/architecture.md#logs), which means that there was a parsing error and that accesses will not limited. You can write for example:
+Check at startup, especially in production, whether `Roles_Errors.json` exists. Its presence indicates a parsing error, and permissions may not be enforced as intended. You can write for example:
 
 ```4d title="/Sources/DatabaseMethods/onStartup.4dm"
 If (Not(File("/LOGS/"+"Roles_Errors.json").exists))
-…
+...
 Else // you can prevent the project to open
  ALERT("The roles.json file is malformed or contains inconsistencies, the application will quit.")
  QUIT 4D
 End if
 ```
 
-The returned errors are:
+Permission errors are returned as follows:
 
 | Path | read / create / update / drop refused | execute refused |
 |---|---|---|
 | REST | HTTP 401 with message | **HTTP 500** with message (singleton: "Bad permission...") |
-| Code (web session) | read: error 1557 (dataclass), 1607 (attribute). Create refused: error 1608 when assigning an attribute of the new entity (when create is restricted by a permission, or `save()` returning `success: false`, `statusText: "Permission Error"` (restricted mode with no permission). Update/drop refused: error 1557 when loading the entity (they need read) | error 1561 |
+| Code (web session) | Read: error 1557 (dataclass) or 1607 (attribute). Create: error 1608 when assigning an attribute to a new entity if create is restricted by a permission; in restricted mode without permission, `save()` returns `success: false` and `statusText: "Permission Error"`. Update/drop: error 1557 when loading the entity (both require read). | Error 1561 |
 
 
 
 
 ## Example
 
-This example shows a broad privilege plus one sensitive dataclass, which is a common case: a *manager* privilege gets every action on the datastore, and only the *payroll* privilege may read the *Salaries* dataclass.
+This example grants a broad set of permissions through a `manager` privilege, while the `payroll` privilege grants read access to the sensitive `Salaries` dataclass.
 
 ```json title="roles.json"
-
-"forceLogin": true,
-"restrictedByDefault": true,
-"privileges": [
+{
+  "forceLogin": true,
+  "restrictedByDefault": true,
+  "privileges": [
     {"privilege": "payroll", "includes": []},
     {"privilege": "manager", "includes": []}
-],
-"permissions": {"allowed": [
-    {"applyTo": "ds", "type": "datastore", "read": ["manager"], "create": ["manager"],
-     "update": ["manager"], "drop": ["manager"], "execute": ["manager"]},
-    {"applyTo": "Salaries", "type": "dataclass", "read": ["payroll"]}
-	"roles": []
-]}
+  ],
+  "roles": [
+    {"role": "administrator", "privileges": ["manager", "payroll"]}
+  ],
+  "permissions": {
+    "allowed": [
+      {
+        "applyTo": "ds",
+        "type": "datastore",
+        "read": ["manager"],
+        "create": ["manager"],
+        "update": ["manager"],
+        "drop": ["manager"],
+        "execute": ["manager"]
+      },
+      {
+        "applyTo": "Salaries",
+        "type": "dataclass",
+        "read": ["payroll"]
+      }
+    ]
+  }
+}
 
 ```
 
 Here are the resulting rules:
 
-| Session | read Salaries | create Salaries | update / drop Salaries | read other dataclasses |
+| Session | Read Salaries | Create Salaries | Update/drop Salaries | Read other dataclasses |
 |---|---|---|---|---|
-| manager | refused (the read permission on `Salaries` replaces the one on ds) | allowed (inherited from ds) | refused (needs read) | allowed |
-| payroll | allowed | refused (inherited from ds: granted to `manager` only) | refused | refused |
-| role with `manager` + `payroll` | allowed | allowed | allowed | allowed |
+| `manager` | Refused (the `Salaries` read permission replaces the datastore permission) | Allowed (inherited from the datastore) | Refused (read is required) | Allowed |
+| `payroll` | Allowed | Refused (the datastore permission is granted only to `manager`) | Refused | Refused |
+| `administrator` role | Allowed | Allowed | Allowed | Allowed |
 
 
-Granting read on "Salaries" to `payroll` takes it away from `manager`, because the read permission defined on `Salaries` replaces the one defined on the datastore. To give someone access to everything, use a **role** that holds the privileges (here `manager` + `payroll`): a session with the role gets the combined access of its privileges.
-
-
+The `Salaries` read permission replaces the datastore read permission, so `manager` alone cannot read that dataclass. The `administrator` role receives the combined permissions of `manager` and `payroll`.
