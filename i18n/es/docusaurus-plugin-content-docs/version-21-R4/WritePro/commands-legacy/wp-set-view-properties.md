@@ -48,7 +48,7 @@ En *wpViewProps*, pase un objeto en el que cada propiedad sea una propiedad vist
 
 Todas las propiedades se pueden modificar en cualquier momento, pero algunas solo se tienen en cuenta si se utiliza un modo de visualización compatible con 4D Write Pro. Por lo tanto, incluso si se modifica una propiedad de vista, es posible que no haya un efecto visible en el modo de visualización actual.
 
-**Nota:** para más información sobre las propiedades vista, consulte la página *Definir un área 4D Write Pro*. 
+**Nota:** para más información sobre las propiedades de vista, consulte la sección [Propiedades de vista](../configuring-4d-write-pro-areas#view-properties).
 
 Una vez que se han establecido las propiedades de vista para *wpArea* utilizando este comando, se aplican mientras que el área de formulario se usa siempre que no sea modificada por otra llamada. Las modificaciones de propiedad no se guardan con el documento o el formulario.
 

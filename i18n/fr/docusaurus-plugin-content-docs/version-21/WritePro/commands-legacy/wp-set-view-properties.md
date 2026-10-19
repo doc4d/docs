@@ -48,7 +48,7 @@ Dans le paramètre *propsVueWP*, passez un objet dans lequel chaque attribut est
 
 Des modifications peuvent être apportées à toutes les propriétés à tout moment, mais certaines ne sont prises en compte que si un mode d'affichage compatible avec 4D Write Pro est utilisé. Ainsi, même si une propriété de vue est modifié, la modification n'est pas nécessairement visible dans le mode d'affichage courant. 
 
-**Note :** Pour plus d'informations sur les propriétés de vue, veuillez consulter la page *Définir une zone 4D Write Pro*. 
+**Note :** Pour plus d'informations sur les propriétés de vue, veuillez consulter la section [Propriétés de vue](../configuring-4d-write-pro-areas#view-properties).
 
 Une fois fixés pour *zoneWP* à l'aide de cette commande, les propriétés de vue sont appliquées et la zone de formulaire est utilisée tant qu'ils ne sont pas modifiés par un autre appel. Les modifications apportées aux propriétés ne sont pas sauvegardées avec le document ou le formulaire. 
 

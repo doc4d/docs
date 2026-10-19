@@ -48,7 +48,7 @@ In *wpViewProps*, pass an object wherein each property is a view property that y
 
 All properties can be modified at any moment, but some are only taken into account if a compatible 4D Write Pro display mode is used. Therefore, even if a view property is modified, there may be no visible effect in the current display mode. 
 
-**Note:** For more information about view properties, please refer to the *Defining a 4D Write Pro area* page. 
+**Note:** For more information about view properties, please refer to the [View Properties](../configuring-4d-write-pro-areas#view-properties) section. 
 
 Once view properties have been set for *wpArea* using this command, they are applied while the form area is used as long as they are not modified by another call. The property modifications are not saved with the document or the form. 
 
