@@ -84,7 +84,7 @@ OBJECT SET COLOR(*;"myArea";-(Blue+(256*Yellow)))
 - [`OBJECT SET FONT STYLE`](../../commands/object-set-font-style)
 - [`OBJECT SET FONT SIZE`](../../commands/object-set-font-size)
 
-マルチスタイルエリアのコンテキストにおいては、これらのコマンドはデフォルトのスタイルを設定するためだけに使用されるべきです。マルチスタイルエリアのコンテキストにおいては、これらのコマンドはデフォルトのスタイルを設定するためだけに使用されるべきです。データベースの実行中にスタイルを管理するためには、"スタイル付きテキスト" テーマ内のコマンドを使用することが推奨されます。
+マルチスタイルエリアのコンテキストにおいては、これらのコマンドはデフォルトのスタイルを設定するためだけに使用されるべきです。データベースの実行中にスタイルを管理するためには、"スタイル付きテキスト" テーマ内のコマンドを使用することが推奨されます。
 
 ### Get edited text
 
@@ -100,7 +100,7 @@ ST Get plain text(Get edited text)
 
 マルチスタイルオブジェクトに対して行われるクエリや並び替えは、オブジェクトに保存されたスタイルタグを考慮に入れます。単語中でスタイルの変更が行われた場合、その単語の検索は失敗します。単語中でスタイルの変更が行われた場合、その単語の検索は失敗します。
 
-有効な検索や並び替えを行うには、[`ST Get plain text`](../../commands/st-get-plain-text) コマンドを使用します。例: 例:
+有効な検索や並び替えを行うには、[`ST Get plain text`](../../commands/st-get-plain-text) コマンドを使用します。例:
 
 ```4d
 QUERY BY FORMULA([MyTable];ST Get plain text([MyTable]MyFieldStyle)="very well")
