@@ -175,7 +175,7 @@ Vous souhaitez créer une nouvelle collection puis ajouter un élément :
 
 La commande `New shared collection` <!-- REF #_command_.New shared collection.Summary --> crée une nouvelle collection partagée vide ou préremplie<!-- END REF --> et retourne sa référence.
 
-Par exemple : Par exemple : La lecture d'un élément sans structure *Use...End use* est cependant possible.
+Par exemple : La lecture d'un élément sans structure *Use...End use* est cependant possible.
 
 :::info
 
@@ -201,8 +201,8 @@ Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge 
 - date
 - heure (stockée en nombre de milliseconds - réel)
 - Null
-- Si vous souhaitez que l'évaluation soit sensible à la casse ou pour différencier des caractères accentués, passez la constante `ck diacritical` dans le paramètre option.
-- Sommaire
+- objet partagé
+- collection partagée
 
 :::note
 
