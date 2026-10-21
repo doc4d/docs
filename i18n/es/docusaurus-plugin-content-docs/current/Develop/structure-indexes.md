@@ -18,7 +18,7 @@ Do not index every field. An index increases the size of the database, using mor
 
 Indexed fields are displayed in **bold** type in the Structure editor.
 
-## Types of indexes
+## Tipos de índices
 
 4D provides different types of indexes. Choosing between the different types is generally based on the result expected and the type of data present in the field. There are four main types of indexes:
 
@@ -27,7 +27,7 @@ Indexed fields are displayed in **bold** type in the Structure editor.
 - **Keyword indexes:** These indexes are only available for Alpha, Text and Picture type fields. They are intended to facilitate fast searching inside text or, in the case of pictures, among the keywords associated with the pictures.
 - **Vector indexes**: These indexes are designed to accelerate AI-based queries on Object fields storing [embeddings](./field-properties.md#4dvector-class).
 
-### Standard indexes
+### Índices estándar
 
 A standard index is intended to accelerate database operations (a standard index refers to a generic index as opposed to a keyword or composite index). 4D offers two types of architectures for standard indexes: B-Tree and Cluster B-Tree.
 
@@ -67,7 +67,7 @@ You use picture or text keyword indexes through the [`%` operator](../Concepts/d
 
 ```4d
 QUERY([PICTURES];[PICTURES]Photos %"cats")
-// look for photos associated with the cats keyword
+// busca fotos relacionadas con la palabra clave gatos
 ```
 
 This works the same way for all the query and order by commands: [`QUERY BY FORMULA`](../commands/query-by-formula), [`QUERY SELECTION`](../commands/query-selection), [`ORDER BY`](../commands/order-by), etc.
