@@ -3,109 +3,109 @@ id: structure-editor
 title: ストラクチャーエディター
 ---
 
-You use the Structure editor to manage the database structure — the tables and their relations. It gives you control over tables, table properties, fields, field properties including indexes, and table relations.
+ストラクチャーエディターを使用してデータベースストラクチャー (テーブルとリレーション) を管理できます。このエディターを使用してテーブル、テーブルプロパティ、フィールド、フィールドプロパティ、インデックスやテーブルリレーションを管理できます。
 
-You can access the **Structure editor** by choosing the **Database Structure** command in the **Design** menu or by clicking on the Structure button ![](../assets/en/Develop/structure-button.png) in the 4D toolbar.
+**ストラクチャーエディター**には**デザイン**メニューの**データベースストラクチャー**コマンドを選択するか、4Dツールバーのストラクチャーボタン ![](../assets/en/Develop/structure-button.png) をクリックすることでアクセスできます。
 
-The Structure editor provides a graphic view of a database’s structure as well as a toolbar and context menus that you can use to carry out database design operations. Each table is represented by a table image. It shows the fields and their types in the form of icons. An information bar displays the characteristics of tables and fields as the mouse moves over them.
+ストラクチャーエディターはデータベースストラクチャーをグラフィカルに表示し、データベースデザイン操作に使用するツールバーやコンテキストメニューを提供します。エディター内では、それぞれのテーブルはテーブルイメージとして表現されます。テーブルにはフィールドとその型がアイコンで表示されます。マウスを重ねると、情報バーにテーブルやフィールドの情報が表示されます。
 
-A floating **Inspector palette** can be used to view and modify the properties of structure objects and of the structure editor itself. This window is described in the [Inspector palette](#inspector-palette) section.
+フローティングパレット上に表示される**インスペクターパレット**を使用して、ストラクチャーオブジェクトやストラクチャーエディター自身のプロパティを表示したり変更したりできます。このウィンドウについては[インスペクターパレット](#インスペクターパレット) の章で説明します。
 
 ## ツールバー
 
-The structure editor has a toolbar containing functions like the addition of objects, as well as navigation and display options:
+ストラクチャーエディターにはオブジェクト追加などの機能、およびナビゲーションや表示オプションを格納するツールバーがあります:
 
 ![](../assets/en/Develop/structure-toolbar.png)
 
-From left to right, the icons perform the following actions:
+左から右へ順に、アイコンは以下のアクションを実行します:
 
-- add objects (tables, fields, index, relations)
-- search in editor
-- hide/display tables according to folders defined in the Home page of the Explorer
-- display filters
-- Tools (size, alignment, sort)
+- オブジェクト(テーブル、フィールド、インデックス、リレーション)の追加
+- エディター内を検索
+- エクスプローラーのホームページ内で定義されたフォルダに基づいてテーブルの表示/非表示を切り替える
+- フィルターを表示
+- ツール (サイズ、配置、並べ替え)
 - カラー
-- Index list window
-- Primary key manager
+- インデックス一覧ウィンドウ
+- プライマリーキー(主キー)マネージャー
 
 ### ロック情報
 
-A closed lock icon ![](../assets/en/Develop/structure-lock.png) is displayed if the structure file is locked.  
-Locking can occur in both project and client/server modes when:
+ストラクチャーファイルがロックされている時には、閉じた南京錠のアイコン ![](../assets/en/Develop/structure-lock.png) が表示されます。  
+ロックは、プロジェクトモードおよびクライアント/サーバーモードの両方において、以下ような場合に起こり得ます:
 
-- The `catalog.4DCatalog` file is *Read-only* (Projects only). Clicking on the lock icon will display an alert to unlock it, if possible.
-- Two or more users attempt to modify the same structure at the same time. The structure cannot be used until the first user frees it by closing the window. *(クライアント/サーバーモードのみ)*
+- `catalog.4DCatalog` ファイルが*読み出し専用* であるとき(プロジェクトモードのみ)。南京錠のアイコンをクリックすると、可能である場合にはそれを解錠するアラートが表示されます。
+- 2人以上のユーザーが同じストラクチャーを同時に編集しようとしたとき。ストラクチャーは、最初のユーザーがウィンドウを閉じて解放するまで使用することができません。*(クライアント/サーバーモードのみ)*
 
-In both cases, the structure can be opened in *Read-only*, but cannot be used until the lock is removed.
+どちらのケースにおいても、設定は *読み取り専用* として開くことはできますが、ロックが解除されるまでは使用することができません。
 
-## Information bar
+## 情報バー
 
-The lower part of the editor window is an information bar displaying data corresponding to the area the mouse is over: table, field or relation.
+エディターウィンドウの下部にはマウスが重なっているオブジェクトのエリアに対応する情報を表示する情報バーがあります:テーブル、フィールド、リレーション。
 
-#### Information about a table
+#### テーブルに関する情報
 
-- Table name and number
-- Table triggers:
-  - **NEW:** On saving new record
-  - **SAVE:** On saving existing record
-  - **DEL:** On deleting a record
+- テーブル名とテーブル番号
+- テーブルトリガ:
+  - **NEW:** 新規レコード保存時
+  - **SAVE:** 既存レコード保存時
+  - **DEL:** レコード削除時
 
-#### Information about a field
+#### フィールドに関する情報
 
-- Table name and number
-- Field name and number
+- テーブル名とテーブル番号
+- フィールド名とフィールド番号
 - フィールドの型
-- Field attributes:
-  - **NUL:** Map null values to blank values
-  - **UNI:** Unique
+- フィールド属性:
+  - **NUL:** 空値にヌル値をマップ
+  - **UNI:** 重複不可
 
-#### Information about a relation
+#### リレーションに関する情報
 
-- Origin table and field (many field)
-- Destination table and field (one field)
-- Relation type and ORDA name:
-  - **N→1** (many to one) and `relatedEntities` relation attribute name
-  - **1→N** (one to many) and `relatedEntity` relation attribute name
+- リレーション元のテーブルとフィールド(Nフィールド)
+- リレーション先のテーブルとフィールド(1フィールド)
+- リレーションの種類とORDA 名:
+  - **N→1** (N対1) および `relatedEntities` リレーション属性名
+  - **1→N** (1対N) および `relatedEntity` リレーション属性名
 
 :::note
 
-For more information on ORDA names, refer to the [Data Model Objects](../ORDA/dsMapping.md#structure-mapping) page.
+ORDA 名についての詳細な情報に関しては、[データモデルオブジェクト](../ORDA/dsMapping.md#structure-mapping) のページを参照して下さい。
 
 :::
 
-## Inspector palette
+## インスペクターパレット
 
-The properties of the Structure editor objects (tables, fields and relations) can be viewed and modified via the Inspector palette:
+ストラクチャーエディターオブジェクト (テーブル、フィールド、リレーション) のプロパティはインスペクターパレットに表示し編集することができます:
 
 ![](../assets/en/Develop/structure-inspector.png)
 
-This palette appears when you double-click on an object. When it is displayed, its contents are updated dynamically depending on the objects selected. The Inspector displays the [general properties of the Structure editor window](#customizing-the-editor-window) when you click in an empty area of the window.
+このパレットはオブジェクト上でダブルクリックすると表示されます。表示されているとき、表示内容は選択されたオブジェクトに基づきダイナミックに更新されます。ウィンドウの空のエリアをクリックすると、[インスペクターにはストラクチャーエディターの一般的なプロパティ](#エディターウィンドウのカスタマイズ) が表示されます。
 
-The different areas of the palette can be expanded/collapsed. You can click on the adjacent triangles to display or hide the corresponding information.
+パレットの異なるエリアは、パネルごとに展開・折りたたみができます。すぐとなりの三角形をクリックすることで対応する情報を表示、または非表示にすることができます。
 
-The following shortcuts can be used:
+以下のショートカットが使用することができます:
 
-- **Shift+click** on the title bar of a collapsed panel expands that panel and collapses all the others.
-- **Alt** (Windows) or **Option** (macOS) + **click** on the title bar of a collapsed panel expands all the panels.
-- **Alt** (Windows) or **Option** (macOS) + **click** on the title bar of an expanded panel collapses all the panels.
+- 折りたたまれたパネルのタイトルバーを**Shift+クリック**すると、そのパネルを展開し、他を折りたたみます。
+- 折りたたまれたパネルのタイトルバーを**Alt** (Windows) または**Option** (macOS) + **クリック**すると、すべてのパネルを展開します。
+- 展開されたパネルのタイトルバーを**Alt** (Windows) または**Option** (macOS) + **クリック**すると、すべてのパネルを折りたたみます。
 
-The position of the palette and the expanded/collapsed states of its panels are saved.
+パレットの位置とパネルの展開/折りたたみ状態は保存されます。
 
-## Selecting an object
+## オブジェクトを選択する
 
-To work with an image of an object in the Structure editor, you must first select it. You can then specify its properties, move it, resize it, delete it, etc. You can select several objects of the same type simultaneously to modify their common properties in the Inspector palette.
+ストラクチャーエディター中のオブジェクトのイメージを操作するには、まずそれを選択します。そしてそのプロパティを定義したり、移動したり、サイズ変更したり、削除したりできます。同時に同じタイプのオブジェクトを複数選択して、例えばインスペクターパレットで共通のプロパティを表示し、変更することができます。
 
-To select:
+選択の仕方は以下の通りです:
 
-- **A table:** Click the image of the table, or press `Tab` / `Shift+Tab` to select each table successively.
-- **A field or relation:** Click the field or relation, or use the arrow keys to navigate.
-- **Several objects:** Use `Shift+Click` for adjacent objects, `Ctrl+Click` (Windows) or `Command+Click` (macOS) for non-adjacent ones.
+- **テーブル:** テーブルイメージをクリックする、または `Tab` / `Shift+Tab` を押して、ストラクチャーエディター中のテーブルを移動しながら選択します。
+- **フィールドまたはリレーション:** フィールドまたはリレーション上をクリックする、または矢印キーを押して移動する。
+- **複数のオブジェクト:** 連続した(隣り合った)オブジェクトを選択するには`Shift+Click` を、連続していないオブジェクトを選択するには`Ctrl+Click` (Windows) または `Command+Click` (macOS) を使用します。
 
-## Working with table images
+## テーブルイメージを操作する
 
-You can resize or move the table images in the Structure editor according to your requirements.
+必要に応じて、ストラクチャーエディター中でテーブルイメージのサイズを変更したり移動したりできます。
 
-**4D Server**: In [development mode](../Desktop/clientServer.md#development-mode), any modification in table images (resize, location...) is propagated to all developers in the Design environment.
+**4D Server**: [開発モード](../Desktop/clientServer.md#開発モード) でテーブルイメージをサイズ変更(リサイズや位置の変更など)すると、すべてのユーザーのデザインモードでテーブルイメージサイズが変更されます。
 
 ### Scrolling the field list
 
