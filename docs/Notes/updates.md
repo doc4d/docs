@@ -4,6 +4,16 @@ title: Release Notes
 ---
 
 
+## 4D 21 R6
+
+Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), the blog post that lists all new features and enhancements in 4D 21 R6.
+
+#### Highlights
+
+- New [`Project dependencies`](../commands/project-dependencies) command that returns project's dependencies in the order required to compile.
+
+
+
 ## 4D 21 R5
 
 Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), the blog post that lists all new features and enhancements in 4D 21 R5.
