@@ -884,7 +884,7 @@ title: Commands by name
 [`Process info`](../commands/process-info) - **new 4D 20 R7**<br/>
 [`Process number`](../commands/process-number) - **modified 4D 20 R7**<br/>
 [`Process state`](../commands/process-state)<br/>
-[`Project dependencies`](../commands/project-dependencies) **added 4D 21 R6**<br/>
+[`Project dependencies`](../commands/project-dependencies) **new 4D 21 R6**<br/>
 [`PUSH RECORD`](../commands/push-record)<br/>
 
 <a id="Q"><b>Q</b></a>
