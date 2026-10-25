@@ -148,6 +148,8 @@ Dentro destas pastas, os nomes dos elementos eliminados estão entre parênteses
 
 A pasta DerivedData contém dados em cache usados internamente por 4D para otimizar o processamento. É criado ou recriado automaticamente quando necessário. Você pode ignorar essa pasta.
 
+Quando o projeto é compilado, o 4D também gera nesta pasta o arquivo `syntaxMCP.json`, que contém os [metadados da ferramenta MCP](../Concepts/classes.md#mcp-tool-metadata) das funções de classe `exposed MCP Function`. Este arquivo não é utilizado se existir um arquivo `syntaxMCP.json` na pasta [`Resources`](#resources).
+
 ## `Libraries`
 
 > Esta pasta é utilizada apenas no macOS.
@@ -162,6 +164,7 @@ A pasta Resources contém todos os arquivos e pastas de recursos personalizados 
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | *elemento*            | Arquivos e pastas dos recursos do banco de dados                                                                                                                                                                                               | vários  |
 | Images/Library/*item* | Imagens da biblioteca de imagens como arquivo separados(\*). Os nomes destes itens tornam-se nomes de arquivo. Se existir uma duplicação, é acrescentado um número ao nome. | picture |
+| syntaxMCP.json | [Metadados personalizados da ferramenta MCP](../Concepts/classes.md#mcp-tool-metadata). Se este arquivo existir, ele será usado em vez do arquivo `Project/DerivedData/syntaxMCP.json` gerado na compilação. O compilador nunca o modifica. | JSON |
 
 (\*) apenas se o projeto tiver sido exportado de um banco de dados binário .4db.
 

@@ -3,6 +3,19 @@ id: updates
 title: Notas de lançamento
 ---
 
+## 4D 21 R6
+
+Leia [**O que há de novo no 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D 21 R6.
+
+#### Destaques
+
+- Funções de classe e construtores de classe podem ser documentados com um [bloco de comentário acima de sua declaração](../Concepts/classes.md#function-comments): a descrição e os comentários dos parâmetros são exibidos na conclusão de código e na ajuda do [editor de código 4D](../code-editor/write-class-method.md#help-tips) e do VS Code, e no [arquivo de sintaxe de componentes compilados](../Extensions/develop-components.md#code-completion-for-compiled-components).
+- Linhas de comentário `MCP:` e tags de comportamento fornecem os [metadados da ferramenta MCP](../Concepts/classes.md#mcp-tool-metadata) das declarações `exposed MCP Function`, gerados na compilação em [`Project/DerivedData/syntaxMCP.json`](../Project/architecture.md#deriveddata) ou fornecidos por um arquivo personalizado [`Resources/syntaxMCP.json`](../Project/architecture.md#resources).
+
+#### Mudanças de comportamento
+
+- O compilador agora reporta [avisos em comentários de função](../Project/compiler.md#warnings-on-function-comments): uma função de classe ou construtor de classe que possui um bloco de comentário acima de sua declaração recebe um aviso para cada parâmetro sem um comentário `$name:`, e para tags de comportamento MCP contraditórias.
+
 ## 4D 21 R5
 
 Leia [**O que há de novo no 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D 21 R5.

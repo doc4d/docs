@@ -9,23 +9,25 @@ Você pode compilar seus projetos, ou seja, traduzir todos os seus métodos para
 
 A compilação é tratada da sua aplicação 4D e é inteiramente automática.
 
-> En macOS, la compilación requiere que instale `Xcode`. Consulte [esta sección](#silicon-compiler) para obtener más información sobre este requisito.
+> En macOS, la compilación requiere que instale `Xcode`. Consulte [esta seção](#silicon-compiler) para obter mais informações sobre este requisito.
 
-1. Abra la ventana de compilación seleccionando el comando **Compilador...** en el menú **Diseño** o el botón **Compilador** de la barra de herramientas.
+1. Abra la ventana de compilação selecionando o comando **Compilador...** no menu **Design** ou o botão **Compilador** da barra de ferramentas.
 
    ![](../assets/en/Project/compilerWin1.png)
 
    ![](../assets/en/Project/comp1.png)
 
-> También puede lanzar directamente la compilación seleccionando el elemento de menú **Iniciar compilación** en el menú **Diseño**.
+> Também pode lançar diretamente a compilação selecionando o item de menu **Iniciar compilação** no menu **Design**.
 
-2. Haga clic en el botón **Compilar** para lanzar la compilación utilizando los [parámetros ded compilación](#compiler-settings) actuales.
+2. Clique no botão **Compilar** para iniciar a compilação usando os [parâmetros de compilação](#compiler-settings) atuais.
 
 Se nenhum erro for detectado, a compilação atual começa e a mensagem "Compilação com sucesso" é exibida na parte inferior da janela quando a compilação é concluída:
 
 ![](../assets/en/Project/success.png)
 
-Puede inmediatamente [ejecutar su aplicación en modo compilado](#run-compiled) y ver lo rápido que es.
+Você pode imediatamente [executar sua aplicação em modo compilado](#run-compiled) e ver como ela está mais rápida.
+
+Quando a compilação é bem-sucedida, o compilador também gera o arquivo `Project/DerivedData/syntaxMCP.json`, que contém os [metadados da ferramenta MCP](../Concepts/classes.md#mcp-tool-metadata) do projeto, independentemente da [configuração do arquivo de sintaxe](../Extensions/develop-components.md#code-completion-for-compiled-components).
 
 Se erros forem detectados, o processo é interrompido e a mensagem "Compilação falhou" é exibida. A área de informação da janela exibe os nomes de métodos e números de linha envolvidos em uma lista hierárquica:
 
@@ -277,6 +279,23 @@ The special warnings comments have priority over the warnings display settings s
 
 :::
 
+### Avisos em comentários de funções
+
+Quando uma função de classe ou um construtor de classe possui um [bloco de comentário acima de sua declaração](../Concepts/classes.md#function-comments), o compilador o verifica e relata um aviso:
+
+- para cada parâmetro da assinatura que não está documentado por uma linha `$name:` ou `{$name}:` (parâmetros variádicos não são verificados),
+- quando as tags de comportamento `MCP:` se contradizem (`@readOnly`, `@destructive` e `@additive` usadas juntas). Neste caso, as dicas correspondentes são omitidas dos [metadados da ferramenta MCP](../Concepts/classes.md#mcp-tool-metadata).
+
+Funções sem bloco de comentário não são verificadas. Por exemplo, a função a seguir gera um aviso para o parâmetro *$factor* e um aviso para as tags `@readOnly` e `@destructive`:
+
+```4d
+// Scales a value by a factor
+// MCP: @readOnly @destructive
+// $value: value to scale
+Function scale($value : Real; $factor : Real) : Real
+	return $value*$factor
+```
+
 ## Ferramentas de compilação
 
 ### Ficheiro Symbol
@@ -388,7 +407,7 @@ O compilador clássico pode ser usado em qualquer plataforma, enquanto o compila
 | Intel Mac   | &#10003; | &#10003; | &#10003; |
 | Silicon Mac | &#10003; | &#10003; | &#10003; |
 
-Ambos os compiladores estão integrados em 4D. El compilador adecuado se selecciona automáticamente en función de la opción [objetivo de compilación](#compilation-target).
+Ambos os compiladores estão integrados em 4D. El compilador adecuado se selecciona automáticamente en función de la opción [objetivo de compilação](#compilation-target).
 
 ### Compilador clássico
 
