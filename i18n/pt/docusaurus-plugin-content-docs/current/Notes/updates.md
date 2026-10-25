@@ -3,6 +3,24 @@ id: updates
 title: Notas de lançamento
 ---
 
+## 4D 21 R6
+
+Leia [**O que há de novo no 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D 21 R6.
+
+#### Destaques
+
+- Funções de classe e construtores de classe podem ser documentados com um [bloco de comentário acima de sua declaração](../Concepts/classes.md#function-comments): a descrição e os comentários dos parâmetros são exibidos no autocompletar e na ajuda do [editor de código 4D](../code-editor/write-class-method.md#help-tips) e do VS Code, e no [arquivo de sintaxe de componentes compilados](../Extensions/develop-components.md#code-completion-for-compiled-components).
+- Linhas de comentário `MCP:` e tags de comportamento fornecem os [metadados da ferramenta MCP](../Concepts/classes.md#mcp-tool-metadata) das declarações `exposed MCP Function`, gerados na compilação em [`Project/DerivedData/syntaxMCP.json`](../Project/architecture.md#deriveddata) ou fornecidos por um arquivo [`Resources/syntaxMCP.json`](../Project/architecture.md#resources) personalizado.
+- Novo [servidor MCP nativo](../WebServer/mcp-server.md) no 4D Web Server: clientes de IA podem chamar suas funções [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function) e as [ferramentas CRUD integradas](../WebServer/mcp-server.md#built-in-crud-tools), com os mesmos [papéis e privilégios](../ORDA/privileges.md#mcp-tools) que as requisições REST. O servidor MCP é configurado com a nova propriedade [`WebServer.mcp`](../API/WebServerClass.md#mcp).
+- Clientes MCP autenticam-se com Fine-Grained Tokens gerenciados com as novas funções [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken), [`ds.listFineGrainedTokens()`](../API/DataStoreClass.md#listfinegrainedtokens) e [`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken). A função reservada [`mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated) da classe DataStore prepara cada sessão MCP, cujo [`Session.info.type`](../API/SessionClass.md#info) é "mcp".
+- Modo opcional [OAuth 2.1](../WebServer/mcp-server.md#oauth-21-mode) do servidor MCP, ativado pela função reservada [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) da classe DataStore. As concessões são gerenciadas com as novas funções [`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants) e [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant).
+- Novo comando [`MCP`](../commands/mcp) e classe [`4D.MCPContext`](../API/MCPContextClass.md) para [pedir confirmação ao usuário](../WebServer/mcp-server.md#asking-the-user-for-confirmation) em ferramentas MCP.
+- Um [MCP Bundle de referência](../WebServer/mcp-server.md#claude-desktop-bundle) permite que o Claude Desktop conecte-se a um servidor MCP 4D na rede local.
+
+#### Mudanças de comportamento
+
+- O compilador agora reporta [avisos em comentários de função](../Project/compiler.md#warnings-on-function-comments): uma função de classe ou construtor de classe que possui um bloco de comentário acima de sua declaração recebe um aviso para cada parâmetro sem um comentário `$name:`, e para tags de comportamento MCP contraditórias.
+
 ## 4D 21 R5
 
 Leia [**O que há de novo no 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D 21 R5.

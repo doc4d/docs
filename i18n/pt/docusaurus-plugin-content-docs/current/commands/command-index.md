@@ -1,6 +1,6 @@
 ---
 id: command-index
-title: Commands by name
+title: Comandos por nome
 ---
 
 [4D](#4D) - [A](#A) - [B](#B) - [C](#C) - [D](#D) - [E](#E) - [F](#F) - [G](#G) - [H](#H) - [I](#I) - [J](#J) - [K](#K) - [L](#L) - [M](#M) - [N](#N) - [O](#O) - [P](#P) - [Q](#Q) - [R](#R) - [S](#S) - [T](#T) - [U](#U) - [V](#V) - [W](#W) - [X](#X) - [Y](#Y) - [Z](#Z)
@@ -640,6 +640,7 @@ title: Commands by name
 [`Match regex`](../commands/match-regex)<br/>
 [`Max`](../commands/max)<br/>
 [`MAXIMIZE WINDOW`](../commands/maximize-window)<br/>
+[`MCP`](../commands/mcp) **new 4D 21 R6**<br/>
 [`MEMORY STATISTICS`](../commands/memory-statistics)<br/>
 [`Menu bar height`](../commands/menu-bar-height)<br/>
 [`Menu bar screen`](../commands/menu-bar-screen)<br/>

@@ -60,6 +60,7 @@ Além disso, as instâncias de objetos das classes de usuárioes do modelo de da
 
 | Release | Mudanças                                                                                                                                                 |
 | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 21 R6   | Suporte para a palavra-chave `MCP`. Novas funções reservadas `mcpAuthenticated()` e `mcpGrant()` na classe DataStore.                                   |
 | 21 R3   | Support for the `server` keyword.                                                                                                        |
 | 19 R4   | Atributos alias na Entity Class                                                                                                                          |
 | 19 R3   | Atributos calculados en la Entity Class                                                                                                                  |
@@ -75,6 +76,8 @@ Uma base de dados 4D expõe a sua própria classe DataStore na loja de classes `
 - **Nombre de clase**: cs.DataStore
 
 Você pode criar funções na classe DataStore que estarão disponíveis através do objeto `ds`.
+
+Os nomes de função `mcpAuthenticated()` e `mcpGrant()` são reservados para o [servidor MCP](../WebServer/mcp-server.md) (veja [`Function mcpAuthenticated`](#function-mcpauthenticated) e [`Function mcpGrant`](#function-mcpgrant)).
 
 #### Exemplo
 
@@ -1083,5 +1086,156 @@ It can be called by the following HTTP GET request:
 
 ```
 IP:port/rest/Products/getThumbnail?$params='["Yellow Pack",200,200]'
+```
+
+## Funções MCP
+
+O [servidor MCP](../WebServer/mcp-server.md) do 4D Web Server publica funções de classe do modelo de dados como ferramentas para clientes de IA, e chama funções específicas da classe DataStore para autenticar os clientes.
+
+### `exposed MCP Function`
+
+#### Sintaxe
+
+```4d
+exposed MCP Function <functionName>({$parameterName : type; ...}){->$parameterName : type}
+// code
+```
+
+A palavra-chave `MCP` publica uma função exposta como uma [ferramenta personalizada](../WebServer/mcp-server.md#custom-tools) do servidor MCP. É uma segunda opção além da palavra-chave `exposed`:
+
+- uma função declarada como `exposed` sem `MCP` pode ser chamada por requisições REST, mas não é uma ferramenta MCP,
+- uma função declarada com `MCP` mas sem `exposed` não é publicada.
+
+A palavra-chave `MCP` é suportada nas seguintes classes:
+
+- a classe DataStore: o nome da ferramenta é o nome da função,
+- classes DataClass e Entity: o nome da ferramenta é `ClassName-functionName`,
+- [singleton classes](../Concepts/classes.md#singleton-classes) compartilhadas: o nome da ferramenta é `ClassName-functionName`.
+
+Funções de classes EntitySelection não são publicadas.
+
+O [bloco de comentário](../Concepts/classes.md#function-comments) escrito acima da declaração descreve a ferramenta e seus parâmetros para o cliente de IA. O cliente pode chamar a ferramenta se sua sessão tiver a permissão **execute** na função no arquivo [`roles.json`](privileges.md#rolesjson-file), assim como para uma requisição REST.
+
+**Funções de classe Entity**
+
+Uma ferramenta publicada a partir de uma função de classe Entity recebe um argumento obrigatório `key` (string ou inteiro): a chave primária da entidade na qual a função é chamada. O 4D carrega essa entidade como `This`, com a permissão **read** do dataclass e seu [filtro de restrição](entities.md#restricting-entity-selections). Se a entidade não puder ser encontrada ou lida, a chamada retorna o erro "Entity not found" e a função não é executada.
+
+Uma função de classe Entity que declara um parâmetro `$key` não é publicada, e o 4D registra uma mensagem.
+
+#### Exemplo
+
+Você publica uma função de classe Entity. O cliente chama a ferramenta com a chave primária da fatura no argumento `key`:
+
+```4d
+// cs.InvoiceEntity class
+Class extends Entity
+
+// Returns the amount still due on the invoice
+// MCP: @readOnly
+exposed MCP Function getAmountDue() : Real
+	return This.amount-This.payments.sum("amount")
+```
+
+### `Function mcpAuthenticated`
+
+#### Sintaxe
+
+```4d
+// DataStore class
+Function mcpAuthenticated($info : Object)
+// code
+```
+
+A função `mcpAuthenticated()` da classe DataStore é chamada pelo 4D quando uma [sessão MCP](../WebServer/mcp-server.md#mcp-sessions) é criada, após as permissões do token serem aplicadas e antes de qualquer outro código da aplicação ser executado para essa sessão. Ela é chamada uma vez por sessão.
+
+Use-a para preparar a sessão a partir das informações armazenadas com o token, por exemplo para preencher [`Session.storage`](../API/SessionClass.md#storage) com os valores atuais do usuário, que seus [filtros de restrição](entities.md#restricting-entity-selections) podem usar.
+
+O parâmetro *$info* contém:
+
+| Propriedade | Tipo | Descrição |
+|---|---|---|
+|type|Text|"fineGrainedToken" para um [Fine-Grained Token](../WebServer/mcp-server.md#fine-grained-tokens), "oauth" para um token de acesso [OAuth](../WebServer/mcp-server.md#oauth-21-mode)|
+|id|Text|Identificador do token ou do grant OAuth|
+|name|Text|Fine-Grained Token: nome do token|
+|userName|Text|OAuth: nome de usuário do grant|
+|clientId|Text|OAuth: identificador do cliente MCP|
+|clientName|Text|OAuth: nome do cliente MCP|
+|privileges|Text, Collection ou Object|Privilégios e papéis do token ou do grant|
+|expiry|Text|Fine-Grained Token: data de expiração do token|
+|expiresAt|Text|OAuth: data e hora de expiração do grant|
+|info|Object|Fine-Grained Token: objeto *info* passado para [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken) (*Null* se nenhum)|
+|createdAt|Text|Data e hora da geração do token ou do login|
+|IPAddress|Text|Endereço IP do cliente MCP|
+
+As seguintes regras se aplicam:
+
+- Apenas o 4D chama essa função. Uma requisição REST ou uma chamada de datastore remoto para `mcpAuthenticated()` recebe um erro HTTP 403, mesmo se a função for declarada como `exposed` (nesse caso, o 4D também registra um aviso).
+- A função não pode alterar os privilégios da sessão: chamar [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) ou [`Session.clearPrivileges()`](../API/SessionClass.md#clearprivileges) nela gera um erro.
+- A função não pode recusar a sessão. Para impedir o acesso de um usuário, revogue seus tokens com [`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken) ou [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant).
+- Se a função falhar, o 4D registra um erro e a sessão ainda é criada.
+
+#### Exemplo
+
+Você armazena o usuário do token no storage da sessão:
+
+```4d
+// cs.DataStore class
+Class extends DataStoreImplementation
+
+Function mcpAuthenticated($info : Object)
+	var $login : Text:=($info.type="oauth") ? $info.userName : $info.info.userName
+	var $user : cs.UsersEntity:=ds.Users.query("login = :1"; $login).first()
+	If ($user#Null)
+		Use (Session.storage)
+			Session.storage.user:=New shared object("ID"; $user.ID; "name"; $user.name)
+		End use
+	End if
+```
+
+### `Function mcpGrant`
+
+#### Sintaxe
+
+```4d
+// DataStore class
+Function mcpGrant($user : Text; $password : Text; $clientId : Text) : Variant
+// code
+```
+
+Quando a classe DataStore define a função `mcpGrant()`, o [modo OAuth 2.1](../WebServer/mcp-server.md#oauth-21-mode) do servidor MCP é ativado. O 4D chama essa função quando um usuário envia a página de login do servidor MCP, para verificar as credenciais e obter os privilégios a serem concedidos ao usuário nesse cliente MCP.
+
+A função recebe:
+
+- *$user* e *$password*: o nome de usuário e a senha inseridos na página de login,
+- *$clientId*: o identificador do cliente MCP (a URL de seu documento de metadados, ou o id emitido em seu [registro](../WebServer/mcp-server.md#client-registration)).
+
+Ela retorna os privilégios a serem concedidos, em qualquer forma aceita por [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges):
+
+- um nome de privilégio, ou vários nomes de privilégio separados por vírgula (Text),
+- uma coleção de nomes de privilégio,
+- um objeto com propriedades `privileges` e/ou `roles`. O objeto também pode conter uma propriedade `userName`: ela se torna o nome de usuário do grant e das sessões MCP (caso contrário, *$user* é usado).
+
+Um valor vazio ou *Null* recusa o login. Um privilégio ou papel que não esteja declarado no arquivo [`roles.json`](privileges.md#rolesjson-file) também recusa o login, e o 4D registra uma mensagem.
+
+As seguintes regras se aplicam:
+
+- Apenas o 4D chama essa função. Uma requisição REST ou uma chamada de datastore remoto para `mcpGrant()` recebe um erro HTTP 403, mesmo se a função for declarada como `exposed` (nesse caso, o 4D também registra um aviso).
+- A função é executada em uma sessão sem privilégios. Ela não pode alterar os privilégios da sessão: chamar [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) ou [`Session.clearPrivileges()`](../API/SessionClass.md#clearprivileges) nela gera um erro.
+- Nunca armazene ou compare senhas em texto claro: use [`Generate password hash`](../commands/generate-password-hash) e [`Verify password hash`](../commands/verify-password-hash).
+
+#### Exemplo
+
+Os usuários são armazenados no dataclass Users, com uma senha hash e um papel:
+
+```4d
+// cs.DataStore class
+Class extends DataStoreImplementation
+
+Function mcpGrant($user : Text; $password : Text; $clientId : Text) : Variant
+	var $account : cs.UsersEntity:=ds.Users.query("login = :1"; $user).first()
+	If ($account=Null) || (Not(Verify password hash($password; $account.password)))
+		return Null // login refused
+	End if
+	return {roles: $account.role; userName: $account.login}
 ```
 

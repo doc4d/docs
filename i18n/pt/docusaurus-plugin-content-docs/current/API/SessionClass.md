@@ -18,7 +18,7 @@ Os objetos de sessão são retornados pelo comando [`Session`](../commands/sessi
 
 Os seguintes tipos de sessões são suportados por essa classe:
 
-- [**Sessões de usuário web**](WebServer/sessions.md): sessões de usuário web estão disponíveis quando [sessões escaláveis estão habilitadas em seu projeto](WebServer/sessions.md#enabling-web-sessions). They are used for Web connections (including REST access), and are controlled by assigned [privileges](../ORDA/privileges.md).
+- [**Sessões de usuário web**](../WebServer/sessions.md): sessões de usuário web estão disponíveis quando [sessões escaláveis estão habilitadas em seu projeto](../WebServer/sessions.md#enabling-web-sessions). Elas são usadas para conexões Web (incluindo acesso REST e acesso ao [servidor MCP](../WebServer/mcp-server.md)), e são controladas pelos [privileges](../ORDA/privileges.md) atribuídos.
 - [**Remote user sessions**](../Desktop/sessions.md#remote-user-sessions): In client/server applications, remote users have their own sessions, managed from the client and from the server.
 - [**Stored procedures sessions**](../Desktop/sessions.md#stored-procedure-sessions): Virtual user session for all stored procedures executed on the server.
 - [**Standalone sessions**](../Desktop/sessions.md#standalone-sessions): Local session object returned in single-user application (useful in development and test phases of client/server applications).
@@ -501,6 +501,7 @@ End if
 
 | Release | Mudanças                        |
 | ------- | ------------------------------- |
+| 21 R6   | New "mcp" session type          |
 | 21 R4   | New *unreachableSince* property |
 | 20 R5   | Adicionado                      |
 
@@ -520,7 +521,7 @@ O objeto `.info` contém as seguintes propriedades:
 
 | Propriedade      | Tipo          | Descrição                                                                                                                                                                                                                               |
 | ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | Text          | Session type: "remote", "storedProcedure", "standalone", "rest", "web"                                                                                                                                                  |
+| type             | Text          | Tipo de sessão: "remote", "storedProcedure", "standalone", "rest", "web", "mcp" (sessão do [servidor MCP](../WebServer/mcp-server.md#mcp-sessions)) |
 | userName         | Text          | Nome de usuário 4D (o mesmo valor que [`.userName`](#username))                                                                                                                                                      |
 | machineName      | Text          | <ul><li>Remote sessions: name of the remote machine.</li><li>Client sessions: name of the local machine.</li><li>Stored procedures session: name of the server machine.</li><li> Standalone session: name of the machine</li></ul>      |
 | systemUserName   | Text          | <ul><li>Remote sessions: name of the system session opened on the remote machine.</li><li>Client sessions: name of the local system session</li><ul>                                                                                    |
@@ -539,6 +540,16 @@ Desde `. nfo` é uma propriedade computada, é recomendável chamá-lo uma vez e
 :::
 
 Essa propriedade é **somente leitura**.
+
+#### Exemplo
+
+Você executa um código específico para as requisições de clientes MCP:
+
+```4d
+If (Session.info.type="mcp")
+	// the request comes from an MCP client through the MCP server
+End if
+```
 
 <!-- END REF -->
 
@@ -838,7 +849,7 @@ A função `.setPrivileges()` <!-- REF #SessionClass.setPrivileges().Summary -->
 | ----------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | privileges  | Text ou Collection | <li>String contendo um nome de privilégio, ou</li><li>Coleção de cadeias de caracteres contendo nomes de privilégios</li>                                                                     |
 | roles       | Text ou Collection | <li>String que contém uma função, ou</li><li>Coleção de cadeias de caracteres contendo funções</li>                                                                                           |
-| userName    | Text               | User name to associate to the session (optional, web sessions only). Not available in remote client sessions (ignored). |
+| userName    | Text               | Nome de usuário a ser associado à sessão (opcional, apenas sessões web). Não disponível em sessões remotas do cliente (ignorado). |
 
 :::note
 

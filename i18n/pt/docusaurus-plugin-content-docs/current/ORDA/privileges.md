@@ -67,6 +67,34 @@ As ações disponíveis estão relacionadas com o recurso alvo.
 
 Setting permissions requires to be consistent, in particular **update** and **drop** permissions also need **read** permission (but **create** does not need it).
 
+### Ferramentas MCP
+
+As mesmas permissões se aplicam às sessões do [servidor MCP](../WebServer/mcp-server.md), sem nada específico para configurar:
+
+- Uma [ferramenta personalizada](../WebServer/mcp-server.md#custom-tools) (`exposed MCP Function`) requer a permissão **execute** em sua função, e se beneficia da permissão **promote**.
+- As [ferramentas CRUD integradas](../WebServer/mcp-server.md#built-in-crud-tools) requerem a permissão **read**, **create**, **update** ou **drop** na dataclass, e as permissões de atributo se aplicam. Cada atributo de um caminho usado em um filtro, uma ordenação ou uma projeção requer a permissão **read**.
+- As ferramentas CRUD são listadas apenas se a sessão tiver pelo menos uma permissão de dados em uma dataclass, e a ferramenta `describeModel` só descreve as dataclasses nas quais a sessão tem uma permissão de dados, com seus atributos legíveis ou graváveis.
+- Uma ferramenta, uma dataclass ou um atributo ao qual a sessão não pode acessar é relatado como se não existisse.
+
+#### Exemplo
+
+Clientes MCP autenticados com o privilégio "salesReader" podem ler as dataclasses Customer e Order com as ferramentas CRUD, e chamar as ferramentas publicadas pelo singleton `OrderManager` (por exemplo, `OrderManager-getYearTotal`):
+
+```json
+{
+	"privileges": [{"privilege": "salesReader", "includes": []}],
+	"roles": [],
+	"permissions": {
+		"allowed": [
+			{"applyTo": "Customer", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "Order", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "OrderManager", "type": "singleton", "execute": ["salesReader"]}
+		]
+	},
+	"restrictedByDefault": true
+}
+```
+
 ### Inherited permissions
 
 Uma ação de permissão definida em um determinado nível é herdada por padrão em níveis inferiores, mas várias permissões podem ser configuradas:
@@ -202,7 +230,7 @@ When a new project is created, a default `roles.json` file is generated at:
 <project folder>/Project/Sources/ 
 ```
 
-Ver la sección [Arquitectura](../Project/architecture.md#sources).
+Ver la seção [Arquitetura](../Project/architecture.md#sources).
 
 Default content:
 
