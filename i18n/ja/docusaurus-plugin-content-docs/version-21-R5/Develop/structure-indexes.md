@@ -50,37 +50,37 @@ title: インデックス
 
 ストラクチャーエディターでは、複合インデックスはインデックス作成ダイアログでのみ作成することができます。このダイアログボックスについては後述の“インデックスの作成”を参照してください。
 
-### Keywords index
+### キーワードインデックス
 
-You can use a specific type of index with Alpha, Text and Picture fields: a keyword index.
+キーワードインデックスは文字、テキスト、およびピクチャーフィールドに使用することができます。
 
-- When you associate this type of index with an Alpha or Text field, the text stored in the field will be indexed word by word. All the words will be indexed even if they have only 1 or 2 characters. This type of index will accelerate subsequent keyword searches among text fields in a dramatic manner.  
-  It is possible to associate both a standard index and a keyword index with Alpha and Text fields (when stored in the records). 4D will use the appropriate index depending on the context.
+- 文字およびテキストフィールドにこのタイプのインデックスを割り当てると、フィールドに格納されたテキストは単語ごとにインデックス化されます。 1文字や2文字の単語も含め、すべての単語がインデックス化されます。このタイプのインデックスはテキストフィールドのキーワードによる検索速度を劇的に向上させます。  
+  文字やテキストフィールドには標準のインデックスとキーワードインデックス両方を割り当てることができます (データがレコード内に保存されている場合)。 4D はコンテキストに応じて適切なインデックスを使用します。
 
-- When you associate this type of index with a Picture field, searches among keywords associated with pictures (metadata) are greatly accelerated. Warning: Picture keyword indexes are exclusively based on metadata of the IPTC/Keywords type. These types of metadata are supported in particular by the TIFF and JPEG formats (note that BMP, PNG and GIF do not support them). Other types of metadata are not managed by indexing.  
-  Keyword indexes for pictures are updated automatically by 4D each time the Picture field is saved (when a record is created or modified, when data is imported, and so on). Metadata of the IPTC/Keywords type are indexed automatically by 4D when they are found in the picture (you do not have to call the [`SET PICTURE METADATA`](../commands/set-picture-metadata) command to include them in the index of the Picture field).
+- ピクチャーフィールドにキーワードインデックスを使用すると、ピクチャーに割り当てられたキーワード (メタデータ) に対する検索が劇的に速くなります。警告: ピクチャーキーワードインデックスはIPTC/Keywordsタイプのメタデータを使用します。これらのタイプのメタデータは特にTIFFとJPEGでサポートされています (BMP、PNG、GIFではサポートされていません)。他のタイプのメタデータはインデックスでサポートされません。  
+  ピクチャーのキーワードインデックスは、ピクチャーフィールドが保存 (レコードが作成・更新される、ピクチャーが読み込まれるなど) されるたびにIPTC/Keywordsタイプのキーワードがあれば、4Dが自動で更新します。 IPTC/Keywords タイプのメタデータは、ピクチャー内にあるのが見つかったときに4D によって自動的にインデックス化されます(ピクチャーフィールドのインデックスに含めるために[`SET PICTURE METADATA`](../commands/set-picture-metadata) コマンドを呼び出す必要はありません)。
 
-You can use the [`DISTINCT VALUES`](../commands/distinct-values) command to get the list of keywords contained in an keywords index.
+キーワードインデックスに含まれるキーワードのリストを取得するために[`DISTINCT VALUES`](../commands/distinct-values) コマンドを使用できます。
 
-You use picture or text keyword indexes through the [`%` operator](../Concepts/dt_string.md#keywords): this operator must be placed in the query or sort formulas in order to specifically use an index value. 例:
+テキストやピクチャーフィールドのキーワードインデックスは [`%` 演算子](../Concepts/dt_string.md#キーワード)で使用します。インデックスの値を明示的に使用するには、この演算子をクエリまたは並び替えフォーミュラで使用しなければなりません。例:
 
 ```4d
 QUERY([PICTURES];[PICTURES]Photos %"cats")
-// look for photos associated with the cats keyword
+// cats キーワードを持つ写真を探す
 ```
 
-This works the same way for all the query and order by commands: [`QUERY BY FORMULA`](../commands/query-by-formula), [`QUERY SELECTION`](../commands/query-selection), [`ORDER BY`](../commands/order-by), etc.
+この書式はすべてのクエリおよび並び替えコマンドで同様に動作します: [`QUERY BY FORMULA`](../commands/query-by-formula)、[`QUERY SELECTION`](../commands/query-selection)、[`ORDER BY`](../commands/order-by) 等。
 
-### Vector index
+### ベクトルインデックス
 
-A vector index can be associated to an Object type field that was configured as a `4D.Vector` [class](./field-properties.md#4dvector-class). In this case, the following options are available:
+ベクトルインデックスは、`4D.Vector` [クラス](./field-properties.md#4dvector-クラス)として設定されたオブジェクト型フィールドに対して割り当て可能です。この場合、以下のオプションが利用可能です:
 
 ![](../assets/en/Develop/vector-index.png)
 
-- **Cosine**: the vector index is optimized for [cosine similarity](../API/VectorClass.md#understanding-the-different-vector-computations) computations.
-- **Dot**: the vector index is optimized for [dot similarity](../API/VectorClass.md#understanding-the-different-vector-computations) computations.
-- **Euclidean**: the vector index is optimized for [euclidean distance](../API/VectorClass.md#understanding-the-different-vector-computations) computations.
-- **Automatic**: standard object index type ([see above](#standard-indexes)). You can select this index type to handle null vectors, it will be automatically used in this case.
+- **コサイン**: このベクトルインデックスは[コサイン類似度](../API/VectorClass.md#異なるベクトル計算を理解する) 計算に対して最適化されています。
+- **ドット**: このベクトルインデックスは[ドット類似度](../API/VectorClass.md#異なるベクトル計算を理解する) 計算に対して最適化されています。
+- **ユークリッド**: このベクトルインデックスは [ユークリッド距離](../API/VectorClass.md#異なるベクトル計算を理解する) 計算に対して最適化されています。
+- **自動**: 標準のオブジェクトインデックスタイプ([上記参照](#標準インデックス))。 Null ベクトルを管理したい場合にはこのインデックスタイプを選択できます。その場合、自動的に使用されます。
 
 You can select one or more index types for your vector fields, the appropriate index will be automatically used depending on the actual computation. For optimization reasons, it is recommended to only select necessary index types.
 
