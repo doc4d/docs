@@ -5,7 +5,7 @@ title: リストボックスオブジェクト
 
 ## 配列リストボックス
 
-配列リストボックスでは、それぞれの列に 4D の 1次元配列を割り当てなければなりません。 ポインター配列を除きすべてのタイプの配列を使用できま す。行数は配列の要素数により決定されます。
+配列リストボックスでは、それぞれの列に 4D の 1次元配列を割り当てなければなりません。 ポインター配列を除きすべてのタイプの配列を使用できます。行数は配列の要素数により決定されます。
 
 デフォルトで 4D は各列に “ColumnX” という名前を割り当てます。デフォルトで 4D は各列に “ColumnX” という名前を割り当てます。 You can change it, as well as other column properties, in the [column properties](listbox-column.md#column-specific-properties). 列ごとの表示フォーマットを指定するには、`OBJECT SET FORMAT` コマンドも使用できます。
 
