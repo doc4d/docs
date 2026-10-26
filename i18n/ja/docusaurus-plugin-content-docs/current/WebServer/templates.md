@@ -63,7 +63,7 @@ title: テンプレートページ
 
 最適化のため、".HTML" または ".HTM" を末尾に持つ単純な URL で HTMLページを呼び出した場合、4D Webサーバーは HTMLソースコードの解析をおこないません。
 
-4D Web サーバーが送信するテンプレートページの解析は、`WEB SEND FILE` (.htm, .html, .sthtm, .shtml)、`WEB SEND BLOB` (text/html type BLOB)、または `WEB SEND TEXT` コマンドが呼び出されたとき、および URL を使用して呼び出されたページを送信するときにおこなわれます。 URL で呼び出す場合、".htm" と ".html" で終わるページは最適化のため解析されません。この場合に HTMLページの解析を強制するには、末尾を ".shtm" または ".shtml" とする必要があります (例: `http://www.server.com/dir/page.shtm`)。このタイプのページの使用例は、`WEB GET STATISTICS` コマンドの説明に記載されています。 XMLページ (.xml、.xsl) もサポートされており、常に 4D によって解析されます。
+4D Web サーバーが送信するテンプレートページの解析は、`WEB SEND FILE` (.htm, .html, .shtml, .shtml)、`WEB SEND BLOB` (text/html type BLOB)、または `WEB SEND TEXT` コマンドが呼び出されたとき、および URL を使用して呼び出されたページを送信するときにおこなわれます。 URL で呼び出す場合、".htm" と ".html" で終わるページは最適化のため解析されません。この場合に HTMLページの解析を強制するには、末尾を ".shtm" または ".shtml" とする必要があります (例: `http://www.server.com/dir/page.shtm`)。このタイプのページの使用例は、`WEB GET STATISTICS` コマンドの説明に記載されています。 XMLページ (.xml、.xsl) もサポートされており、常に 4D によって解析されます。
 
 `PROCESS 4D TAGS` コマンドを使用すると、Webコンテキスト外でも解析をおこなうことができます。
 
