@@ -67,6 +67,40 @@ As ações disponíveis estão relacionadas com o recurso alvo.
 
 Setting permissions requires to be consistent, in particular **update** and **drop** permissions also need **read** permission (but **create** does not need it).
 
+:::warning
+
+Quando uma entrada de permissão faz referência a um [privilégio](#privileges-and-roles) não declarado, o 4D registra um erro e ignora a entrada. Neste caso, a permissão é ignorada. Se o [modo restrito por padrão](#restriction-modes) não estiver habilitado, o recurso fica acessível para sessões `guest`.
+
+:::
+
+### MCP tools
+
+The same permissions apply to the sessions of the [MCP server](../WebServer/mcp-server.md), with nothing specific to configure:
+
+- A [custom tool](../WebServer/mcp-server.md#custom-tools) (`exposed MCP Function`) requires the **execute** permission on its function, and benefits from its **promote** permission.
+- The [built-in CRUD tools](../WebServer/mcp-server.md#built-in-crud-tools) require the **read**, **create**, **update**, or **drop** permission on the dataclass, and the attribute permissions apply. Each attribute of a path used in a filter, a sort, or a projection requires the **read** permission.
+- The CRUD tools are listed only if the session has at least one data permission on a dataclass, and the `describeModel` tool only describes the dataclasses on which the session has a data permission, with their readable or writable attributes.
+- A tool, a dataclass, or an attribute that the session cannot access is reported as if it did not exist.
+
+#### Example
+
+MCP clients authenticated with the "salesReader" privilege can read the Customer and Order dataclasses with the CRUD tools, and call the tools published by the `OrderManager` singleton (for example `OrderManager-getYearTotal`):
+
+```json
+{
+	"privileges": [{"privilege": "salesReader", "includes": []}],
+	"roles": [],
+	"permissions": {
+		"allowed": [
+			{"applyTo": "Customer", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "Order", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "OrderManager", "type": "singleton", "execute": ["salesReader"]}
+		]
+	},
+	"restrictedByDefault": true
+}
+```
+
 ### Inherited permissions
 
 Uma ação de permissão definida em um determinado nível é herdada por padrão em níveis inferiores, mas várias permissões podem ser configuradas:
@@ -202,7 +236,7 @@ When a new project is created, a default `roles.json` file is generated at:
 <project folder>/Project/Sources/ 
 ```
 
-Ver la sección [Arquitectura](../Project/architecture.md#sources).
+Ver la seção [Arquitetura](../Project/architecture.md#sources).
 
 Default content:
 
