@@ -1,4 +1,4 @@
-<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/DataStoreClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>DataStore | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/next/API/DataStoreClass /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="DataStore | 4D Docs"/><meta data-rh=true name=description content="データストア とは、 ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 Datastore オブジェクトは以下のコマンドによって返されます:"/><meta data-rh=true property=og:description content="データストア とは、 ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 Datastore オブジェクトは以下のコマンドによって返されます:"/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/next/API/DataStoreClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/DataStoreClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/DataStoreClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/DataStoreClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/DataStoreClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/4d-language","name":"4Dランゲージ","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/class-API-reference","name":"クラス","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/API/DataStoreClass","name":"DataStore","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.4cf13e15.css /><script src=/docs/ja/assets/js/runtime~main.5c51d654.js defer></script><script src=/docs/ja/assets/js/main.cefb36ec.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/DataStoreClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>DataStore | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/next/API/DataStoreClass /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="DataStore | 4D Docs"/><meta data-rh=true name=description content="データストア とは、 ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 Datastore オブジェクトは以下のコマンドによって返されます:"/><meta data-rh=true property=og:description content="データストア とは、 ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 Datastore オブジェクトは以下のコマンドによって返されます:"/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/next/API/DataStoreClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/DataStoreClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/DataStoreClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/DataStoreClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/DataStoreClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/4d-language","name":"4Dランゲージ","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/category/class-API-reference","name":"クラス","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/next/API/DataStoreClass","name":"DataStore","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.4cf13e15.css /><script src=/docs/ja/assets/js/runtime~main.fffeac5b.js defer></script><script src=/docs/ja/assets/js/main.45ef9cee.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/ja/img/logohome.png /><div role=region aria-label=メインコンテンツまでスキップ><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>メインコンテンツまでスキップ</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=ナビゲーションバーの切り替え aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/ja/><div class=navbar__logo><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">4D ドキュメンテーション</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/ja/next/API/DataStoreClass>次へ</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/ja/next/API/DataStoreClass>次へ</a><li><a class=dropdown__link href=/docs/ja/API/DataStoreClass>21 R5 BETA</a><li><a class=dropdown__link href=/docs/ja/21-R4/API/DataStoreClass>21 R4</a><li><a class=dropdown__link href=/docs/ja/21/API/DataStoreClass>21</a><li><a class=dropdown__link href=/docs/ja/20/API/DataStoreClass>20</a><li><a class=dropdown__link href=/docs/ja/19/API/DataStoreClass>19</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="このバージョンでは、このページは利用できません
@@ -79,7 +79,22 @@
 
 
 
-<table><thead><tr><th><tbody><tr><td><a href=#canceltransaction class=""><strong>.cancelTransaction()</strong></a><br/>トランザクションをキャンセルします<tr><td><a href=#clearallremotecontexts class=""><strong>.clearAllRemoteContexts()</strong></a><br/>データストアのすべてのアクティブコンテキストの全属性をクリアします<tr><td><a href=#dataclassname class=""><em><strong>.dataclassName</strong></em> : 4D.DataClass</a><br/>データクラスの詳細が格納されています<tr><td><a href=#encryptionstatus class=""><strong>.encryptionStatus()</strong>: Object</a><br/>カレントデータファイルの暗号化状態を示すオブジェクトを返します<tr><td><a href=#flushandlock class=""><strong>.flushAndLock()</strong></a><br/>ローカルデータストアのキャッシュをフラッシュし、データベースに対して他のプロセスが書き込み操作をおこなうのを防ぎます<tr><td><a href=#getallremotecontexts class=""><strong>.getAllRemoteContexts()</strong> : Collection</a><br/>データストア内のすべてのアクティブな最適化コンテキストに関する情報を格納するオブジェクトのコレクションを返します<tr><td><a href=#getglobalstamp class=""><strong>.getGlobalStamp</strong>() : Real</a><br/>データストアのグローバル変更スタンプのカレント値を返します<tr><td><a href=#getinfo class=""><strong>.getInfo()</strong>: Object</a><br/>データストアの情報を提供するオブジェクトを返します<tr><td><a href=#getremotecontextinfo class=""><strong>.getRemoteContextInfo</strong>(<em>contextName</em> : Text) : Object </a><br/><em>contextName</em> で指定したデータストアの最適化コンテキストに関する情報を格納するオブジェクトを返します<tr><td><a href=#getrequestlog class=""><strong>.getRequestLog()</strong> : Collection</a><br/>クライアント側のメモリに記録されているORDAリクエストを返します<tr><td><a href=#locked class=""><strong>.locked()</strong> : Boolean</a><br/>ローカルデータストアが現在ロックされている場合、<strong>true</strong> を返します<tr><td><a href=#makeselectionsalterable class=""><strong>.makeSelectionsAlterable()</strong></a><br/>カレントアプリケーションのデータストアにおいて、すべての新規エンティティセレクションをデフォルトで追加可能に設定します<tr><td><a href=#providedatakey class=""><strong>.provideDataKey</strong>( <em>curPassPhrase</em> : Text ) : Object <br/><strong>.provideDataKey</strong>( <em>curDataKey</em> : Object ) : Object </a><br/>データストアのカレントデータファイルのデータ暗号化キーを受け取り、暗号化されたデータと合致するかどうかチェックします。<tr><td><a href=#setadminprotection class=""><strong>.setAdminProtection</strong>( <em>status</em> : Boolean )</a><br/>WebAdminセッションにおける <a class="" href=/docs/ja/next/Admin/dataExplorer>データエクスプローラー</a> 含め、<a class="" href=/docs/ja/next/Admin/webAdmin#http%E3%83%9D%E3%83%BC%E3%83%88>Web管理ポート</a>上でのデータアクセスを無効に設定することができます<tr><td><a href=#setglobalstamp class=""><strong>.setGlobalStamp</strong>( <em>newStamp</em> : Real)</a><br/>データストアのグローバル変更スタンプの新しい値として <em>newStamp</em> を設定します<tr><td><a href=#setremotecontextinfo class=""><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer}})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )</a><br/>指定したデータクラス属性を <em>contextName</em> の最適化コンテキストにリンクします<tr><td><a href=#startrequestlog class=""><strong>.startRequestLog</strong>()<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File )<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File ; <em>options</em> : Integer )<br/><strong>.startRequestLog</strong>( <em>reqNum</em> : Integer )</a><br/>クライアント側でまたはサーバーサイドで ORDAリクエストのログを開始します<tr><td><a href=#starttransaction class=""><strong>.startTransaction()</strong></a><br/>対象データストアに対応するデータベース上で、カレントプロセス内のトランザクションを開始します<tr><td><a href=#stoprequestlog class=""><strong>.stopRequestLog()</strong>  </a><br/>呼び出されたマシン (クライアントまたはサーバー) 上の ORDAリクエストのログをすべて停止します<tr><td><a href=#unlock class=""><strong>.unlock()</strong></a><br/>データストアにおける、書き込み操作に対する現在のロックが同じプロセスで設定されていた場合、そのロックを解除します<tr><td><a href=#validatetransaction class=""><strong>.validateTransaction()</strong>  </a><br/>トランザクションを受け入れます</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><tbody><tr><td><a href=#canceltransaction class=""><strong>.cancelTransaction()</strong></a><br/>トランザクションをキャンセルします<tr><td><a href=#clearallremotecontexts class=""><strong>.clearAllRemoteContexts()</strong></a><br/>データストアのすべてのアクティブコンテキストの全属性をクリアします<tr><td><a href=#dataclassname class=""><em><strong>.dataclassName</strong></em> : 4D.DataClass</a><br/>データクラスの詳細が格納されています<tr><td><a href=#encryptionstatus class=""><strong>.encryptionStatus()</strong>: Object</a><br/>カレントデータファイルの暗号化状態を示すオブジェクトを返します<tr><td><a href=#flushandlock class=""><strong>.flushAndLock()</strong></a><br/>ローカルデータストアのキャッシュをフラッシュし、データベースに対して他のプロセスが書き込み操作をおこなうのを防ぎます<tr><td><a href=#generatefinegrainedtoken class=""><strong>.generateFineGrainedToken</strong>( <em>privilege</em> : Text ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>privileges</em> : Collection ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>settings</em> : Object ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object</a><br/>generates a Fine-Grained Token that gives access to the MCP server with the privileges you pass<tr><td><a href=#getallremotecontexts class=""><strong>.getAllRemoteContexts()</strong> : Collection</a><br/>データストア内のすべてのアクティブな最適化コンテキストに関する情報を格納するオブジェクトのコレクションを返します<tr><td><a href=#getglobalstamp class=""><strong>.getGlobalStamp</strong>() : Real</a><br/>データストアのグローバル変更スタンプのカレント値を返します<tr><td><a href=#getinfo class=""><strong>.getInfo()</strong>: Object</a><br/>データストアの情報を提供するオブジェクトを返します<tr><td><a href=#getremotecontextinfo class=""><strong>.getRemoteContextInfo</strong>(<em>contextName</em> : Text) : Object </a><br/><em>contextName</em> で指定したデータストアの最適化コンテキストに関する情報を格納するオブジェクトを返します<tr><td><a href=#getrequestlog class=""><strong>.getRequestLog()</strong> : Collection</a><br/>クライアント側のメモリに記録されているORDAリクエストを返します<tr><td><a href=#listfinegrainedtokens class=""><strong>.listFineGrainedTokens</strong>() : Collection</a><br/>returns the description of the Fine-Grained Tokens generated for the MCP server<tr><td><a href=#listoauthgrants class=""><strong>.listOAuthGrants</strong>() : Collection</a><br/>returns the description of the grants given to users through the OAuth mode of the MCP server<tr><td><a href=#locked class=""><strong>.locked()</strong> : Boolean</a><br/>ローカルデータストアが現在ロックされている場合、<strong>true</strong> を返します<tr><td><a href=#makeselectionsalterable class=""><strong>.makeSelectionsAlterable()</strong></a><br/>カレントアプリケーションのデータストアにおいて、すべての新規エンティティセレクションをデフォルトで追加可能に設定します<tr><td><a href=#providedatakey class=""><strong>.provideDataKey</strong>( <em>curPassPhrase</em> : Text ) : Object <br/><strong>.provideDataKey</strong>( <em>curDataKey</em> : Object ) : Object </a><br/>データストアのカレントデータファイルのデータ暗号化キーを受け取り、暗号化されたデータと合致するかどうかチェックします。<tr><td><a href=#revokefinegrainedtoken class=""><strong>.revokeFineGrainedToken</strong>( <em>id</em> : Text )<br/><strong>.revokeFineGrainedToken</strong>( <em>tokenObj</em> : Object )</a><br/>revokes a Fine-Grained Token of the MCP server<tr><td><a href=#revokeoauthgrant class=""><strong>.revokeOAuthGrant</strong>( <em>id</em> : Text )</a><br/>revokes a grant given to a user through the OAuth mode of the MCP server<tr><td><a href=#setadminprotection class=""><strong>.setAdminProtection</strong>( <em>status</em> : Boolean )</a><br/>WebAdminセッションにおける <a class="" href=/docs/ja/next/Admin/dataExplorer>データエクスプローラー</a> 含め、<a class="" href=/docs/ja/next/Admin/webAdmin#http%E3%83%9D%E3%83%BC%E3%83%88>Web管理ポート</a>上でのデータアクセスを無効に設定することができます<tr><td><a href=#setglobalstamp class=""><strong>.setGlobalStamp</strong>( <em>newStamp</em> : Real)</a><br/>データストアのグローバル変更スタンプの新しい値として <em>newStamp</em> を設定します<tr><td><a href=#setremotecontextinfo class=""><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer}})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )</a><br/>指定したデータクラス属性を <em>contextName</em> の最適化コンテキストにリンクします<tr><td><a href=#startrequestlog class=""><strong>.startRequestLog</strong>()<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File )<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File ; <em>options</em> : Integer )<br/><strong>.startRequestLog</strong>( <em>reqNum</em> : Integer )</a><br/>クライアント側でまたはサーバーサイドで ORDAリクエストのログを開始します<tr><td><a href=#starttransaction class=""><strong>.startTransaction()</strong></a><br/>対象データストアに対応するデータベース上で、カレントプロセス内のトランザクションを開始します<tr><td><a href=#stoprequestlog class=""><strong>.stopRequestLog()</strong>  </a><br/>呼び出されたマシン (クライアントまたはサーバー) 上の ORDAリクエストのログをすべて停止します<tr><td><a href=#unlock class=""><strong>.unlock()</strong></a><br/>データストアにおける、書き込み操作に対する現在のロックが同じプロセスで設定されていた場合、そのロックを解除します<tr><td><a href=#validatetransaction class=""><strong>.validateTransaction()</strong>  </a><br/>トランザクションを受け入れます</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=dataclassname><em>.dataclassName</em><a href=#dataclassname class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
@@ -373,6 +388,121 @@
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">$destination:=Folder(fk documents folder).folder("Archive")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$destination.create()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">ds.flushAndLock() // 他のプロセスからの書き込み操作をブロックします</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$dataFolder:=Folder(fk data folder)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$dataFolder.copyTo($destination) // データフォルダーをコピーします</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$oldJournalPath:=New log file // ジャーナルを閉じて、新しいものを作成します</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$oldJournal:=File($oldJournalPath; fk platform path)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$oldJournal.moveTo($destination) // 閉じたジャーナルを保存します</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">ds.unlock() // コピー操作をおこなったので、データストアのロックを解除します</span><br/></div></code></pre></div></div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-1>参照<a href=#参照-1 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#locked class="">.locked()</a><br/><a href=#unlock class="">.unlock()</a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=generatefinegrainedtoken>.generateFineGrainedToken()<a href=#generatefinegrainedtoken class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>リリース<th>内容<tbody><tr><td>21 R6<td>追加</table>
+</div></div></details>
+<p><strong>.generateFineGrainedToken</strong>( <em>privilege</em> : Text ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>privileges</em> : Collection ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>settings</em> : Object ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>privilege<td>Text<td>→<td>Privilege name, or comma-separated privilege names<tr><td>privileges<td>Collection<td>→<td>アクセス権の名称のコレクション<tr><td>settings<td>Object<td>→<td>Object with a "privileges" and/or "roles" property<tr><td>name<td>Text<td>→<td>Name of the token<tr><td>expiry<td>Date<td>→<td>Expiration date of the token<tr><td>info<td>Object<td>→<td>Information stored with the token and passed to <code>ds.mcpAuthenticated()</code><tr><td>戻り値<td>Object<td>←<td><code>{id; token}</code></table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-5>説明<a href=#説明-5 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>The <code>.generateFineGrainedToken()</code> function generates a Fine-Grained Token that gives access to the MCP server with the privileges you pass. For more information, see <a class="" href=/docs/ja/next/WebServer/mcp-server#fine-grained-tokens>Fine-Grained Tokens</a>.</p>
+<p>You pass the privileges and/or roles of the token in the same forms as for <a class="" href=/docs/ja/next/API/SessionClass#setprivileges><code>Session.setPrivileges()</code></a>:</p>
+<ul>
+<li class=""><em>privilege</em> には、アクセス権の名称を文字列として渡します (複数の場合はカンマ区切り)。</li>
+<li class=""><em>privileges</em> には、アクセス権の名称を文字列のコレクションとして渡します。</li>
+<li class="">In the <em>settings</em> parameter, pass an object with a <code>privileges</code> and/or a <code>roles</code> property (string or collection of strings).</li>
+</ul>
+<p>Unlike <code>Session.setPrivileges()</code>, a name that is not declared in the <a class="" href=/docs/ja/next/ORDA/privileges#rolesjson-file><code>roles.json</code></a> file raises an error.</p>
+<p>In <em>name</em>, pass a name that identifies the token, for example the user and the client that will use it. It is the user name of the MCP sessions opened with the token.</p>
+<p>In <em>expiry</em>, pass the expiration date of the token. It is required, and it must be later than the current date and at most 366 days ahead.</p>
+<p>In <em>info</em>, you can pass an object that 4D stores with the token as is, and passes to the <a class="" href=/docs/ja/next/ORDA/ordaClasses#function-mcpauthenticated><code>ds.mcpAuthenticated()</code></a> function when an MCP session is opened with the token. Since it cannot be modified later, store stable identifiers (such as a user ID) and read the current values in <code>ds.mcpAuthenticated()</code>. Build <em>info</em> from the authenticated session, never from values sent by the client.</p>
+<p>The function can only be called in a web context, i.e. from code executed for a web or REST request (for example an exposed function called after the user was authenticated). Every privilege of the token must be held by the current session (<a class="" href=/docs/ja/next/API/SessionClass#getprivileges><code>Session.getPrivileges()</code></a>, roles included, promoted privileges excluded). Otherwise, an error is raised.</p>
+<p>If an error is raised, no token is created.</p>
+<p><strong>返されるオブジェクト</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ<th>型<th>説明<tbody><tr><td>id<td>Text<td>Identifier of the token. It is not secret: use it to <a href=#revokefinegrainedtoken class="">revoke</a> the token<tr><td>token<td>Text<td>The token, starting with "4dfgt_". It is returned only once: 4D only stores its hash, in the <code>fgt.json</code> file of the data folder</table>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-4>例題<a href=#例題-4 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>In an exposed function of the DataStore class, called by an authenticated user, you generate a token valid for 3 months:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">exposed Function getMCPToken() : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	var $expiry:=Add to date(Current date; 0; 3; 0)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	var $result:=ds.generateFineGrainedToken({roles: "salesperson"}; "Claude Desktop - "+Session.userName; $expiry; {userName: Session.userName})</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	return $result.token // "4dfgt_..."</span><br/></div></code></pre></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-2>参照<a href=#参照-2 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p><a href=#listfinegrainedtokens class="">.listFineGrainedTokens()</a><br/><a href=#revokefinegrainedtoken class="">.revokeFineGrainedToken()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getallremotecontexts>.getAllRemoteContexts()<a href=#getallremotecontexts class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
@@ -414,19 +544,19 @@
 <blockquote>
 <p><strong>上級者向け:</strong> この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。ほとんどの場合、使用する必要はないでしょう。</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-5>説明<a href=#説明-5 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-6>説明<a href=#説明-6 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getAllRemoteContexts()</code> 関数は、データストア内のすべてのアクティブな最適化コンテキストに関する情報を格納するオブジェクトのコレクションを返します。</p>
 <blockquote>
 <p>コンテキストの作成に関する詳細については、<a class="" href=/docs/ja/next/ORDA/client-server-optimization#%E6%9C%80%E9%81%A9%E5%8C%96%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88>クライアント/サーバーの最適化</a> を参照ください。</p>
 </blockquote>
 <p>返されたコレクション内の各オブジェクトは、<a href=#getremotecontextinfo class=""><code>.getRemoteContextInfo()</code></a> セクションに記載されているプロパティを持ちます。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-4>例題<a href=#例題-4 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-5>例題<a href=#例題-5 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p>次のコードは 2つのコンテキストを設定し、<code>.getAllRemoteContexts()</code> を使用してそれらを取得します:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $ds : 4D.DataStoreImplementation</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $persons : cs.PersonsSelection</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $addresses : cs.AddressSelection</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $p : cs.PersonsEntity</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $a : cs.AddressEntity</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $contextA; $contextB : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $info : Collection</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $text : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// リモートデータストアを開きます</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// コンテキストA を設定します</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$contextA:=New object("context"; "contextA")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$persons:=$ds.Persons.all($contextA)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$text:=""</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($p; $persons)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $text:=$p.firstname+" lives in "+$p.address.city+" / "</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each </span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// コンテキストB を設定します</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$contextB:=New object("context"; "contextB")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$addresses:=$ds.Address.all($contextB)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$text:=""</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($a; $addresses)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $text:=$a.zipCode</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each </span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// すべてのリモートコンテキストを取得します (contextA と contextB)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$info:=$ds.getAllRemoteContexts()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//$info = [{name:"contextB"; dataclass:"Address"; main:"zipCode"},</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">{name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]</span><br/></div></code></pre></div></div>
 <blockquote>
 <p>この例はデモンストレーションであり、実際の実装を想定したものではありません。</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-2>参照<a href=#参照-2 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-3>参照<a href=#参照-3 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#getremotecontextinfo class="">.getRemoteContextInfo()</a><br/><a href=#setremotecontextinfo class="">.setRemoteContextInfo()</a><br/><a href=#clearallremotecontexts class="">.clearAllRemoteContexts()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getglobalstamp>.getGlobalStamp()<a href=#getglobalstamp class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -466,16 +596,16 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>戻り値<td>Real<td>&lt;-<td>グローバル変更スタンプのカレント値</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-6>説明<a href=#説明-6 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-7>説明<a href=#説明-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getGlobalStamp()</code> 関数は、データストアのグローバル変更スタンプのカレント値を返します。</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>info</div><div class=admonitionContent_BuS1><p>この関数は次の場合にのみ使えます:<ul>
 <li class="">ローカルデータストア (<a class="" href=/docs/ja/next/commands/ds><code>ds</code></a>) を対象に。</li>
 <li class="">クライアント/サーバー環境では、サーバーマシン上にて。</li>
 </ul></div></div>
 <p>グローバルスタンプとデータ変更追跡の詳細については、<a class="" href=/docs/ja/next/ORDA/global-stamp><strong>グローバルスタンプの使い方</strong></a> を参照ください。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-5>例題<a href=#例題-5 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-6>例題<a href=#例題-6 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $currentStamp : Real</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $hasModifications : Boolean</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$currentStamp:=ds.getGlobalStamp()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">methodWhichCouldModifyEmployees // なんらかのコード</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$hasModifications:=($currentStamp # ds.getGlobalStamp())</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-3>参照<a href=#参照-3 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-4>参照<a href=#参照-4 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#setglobalstamp class="">.setGlobalStamp()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getinfo>.getInfo()<a href=#getinfo class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -515,7 +645,7 @@
 
 <table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>データストアのプロパティ</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-7>説明<a href=#説明-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-8>説明<a href=#説明-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getInfo()</code> 関数は、 データストアの情報を提供するオブジェクトを返します。このメソッドは汎用的なコードを書くのに有用です。</p>
 <p><strong>返されるオブジェクト</strong></p>
 
@@ -605,7 +735,7 @@
 <blockquote>
 <p><strong>上級者向け:</strong> この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。ほとんどの場合、使用する必要はないでしょう。</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-8>説明<a href=#説明-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-9>説明<a href=#説明-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getRemoteContextInfo()</code> 関数は、<em>contextName</em> で指定したデータストアの最適化コンテキストに関する情報を格納するオブジェクトを返します。</p>
 <p>最適化コンテキストの作成に関する詳細については、<a class="" href=/docs/ja/next/ORDA/client-server-optimization#%E6%9C%80%E9%81%A9%E5%8C%96%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88>クライアント/サーバーの最適化</a> を参照ください。</p>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=返されるオブジェクト>返されるオブジェクト<a href=#返されるオブジェクト class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
@@ -642,9 +772,9 @@
 
 <table><thead><tr><th>プロパティ<th>型<th>説明<tbody><tr><td>name<td>Text<td>コンテキストの名称<tr><td>main<td>Text<td>コンテキストに関連する属性 (複数の場合はカンマ区切り)<tr><td>dataclass<td>Text<td>データクラスの名称<tr><td>currentItem (任意)<td>Text<td>コンテキストがリストボックスとリンクしている場合の <a class="" href=/docs/ja/next/ORDA/client-server-optimization#%E3%82%A8%E3%83%B3%E3%83%86%E3%82%A3%E3%83%86%E3%82%A3%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E5%9E%8B%E3%83%AA%E3%82%B9%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9>ページモード</a> の属性。コンテキスト名がリストボックスに使用されていない場合、または currentItem に対応するコンテキストが存在しない場合は、<code>Null</code> または空のテキスト要素として返されます。</table>
 <p>コンテキストは属性に対するフィルターとして動作するため、<em>main</em> が空で返された場合、それはフィルターが適用されておらず、サーバーがすべてのデータクラス属性を返すことを意味します。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-6>例題<a href=#例題-6 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-7>例題<a href=#例題-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#example-1-3 class="">.setRemoteContextInfo()</a> の例題を参照ください。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-4>参照<a href=#参照-4 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-5>参照<a href=#参照-5 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#setremotecontextinfo class="">.setRemoteContextInfo()</a><br/><a href=#getallremotecontexts class="">.getAllRemoteContexts()</a><br/><a href=#clearallremotecontexts class="">.clearAllRemoteContexts()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getrequestlog>.getRequestLog()<a href=#getrequestlog class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -684,13 +814,13 @@
 
 <table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>戻り値<td>Collection<td style=text-align:center>&lt;-<td>オブジェクトのコレクション (要素毎に一つのリクエストを記述します)</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-9>説明<a href=#説明-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-10>説明<a href=#説明-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getRequestLog()</code> 関数は、クライアント側のメモリに記録されているORDAリクエストを返します。 ORDAリクエストのログが、<a href=#startrequestlog class=""><code>.startRequestLog()</code></a> 関数によって事前に有効化されている必要があります。</p>
 <p>このメソッドはリモートの 4D で呼び出す必要があり、そうでない場合には空のコレクションを返します。これはクライアント/サーバー環境でのデバッグを想定して設計されています。</p>
 <p><strong>戻り値</strong></p>
 <p>スタックされたリクエストオブジェクトのコレクションが返されます。直近のリクエストにはインデックス 0 が振られています。</p>
 <p>ORDAリクエストログのフォーマットの詳細は、<a class="" href=/docs/ja/next/Debugging/debugLogFiles#orda%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88><strong>ORDAリクエスト</strong></a> の章を参照ください。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-7>例題<a href=#例題-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-8>例題<a href=#例題-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#startrequestlog class=""><code>.startRequestLog()</code></a> の例題2を参照ください。</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=isadminprotected>.isAdminProtected()<a href=#isadminprotected class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -730,11 +860,193 @@
 
 <table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>戻り値<td>Boolean<td style=text-align:center>&lt;-<td>データエクスプローラーへのアクセスが無効に設定されているの場合は true、有効の場合は false (デフォルト)</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-10>説明<a href=#説明-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-11>説明<a href=#説明-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.isAdminProtected()</code> 関数は、現在のセッションにおいて <a class="" href=/docs/ja/next/Admin/dataExplorer>データエクスプローラー</a> へのアクセスが無効に設定されているの場合は <strong>true</strong> を返します。</p>
 <p><code>webAdmin</code>セッションにおいて、データエクスプローラーへのアクセスはデフォルトで有効となっていますが、管理者によるデータアクセスを禁止するため無効にすることもできます (<a href=#setadminprotection class=""><code>.setAdminProtection()</code></a> 関数参照)。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-5>参照<a href=#参照-5 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-6>参照<a href=#参照-6 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#setadminprotection class=""><code>.setAdminProtection()</code></a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=listfinegrainedtokens>.listFineGrainedTokens()<a href=#listfinegrainedtokens class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>リリース<th>内容<tbody><tr><td>21 R6<td>追加</table>
+</div></div></details>
+<p><strong>.listFineGrainedTokens</strong>() : Collection</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>戻り値<td>Collection<td>←<td>Collection of token description objects</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-12>説明<a href=#説明-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>The <code>.listFineGrainedTokens()</code> function returns the description of the Fine-Grained Tokens generated for the MCP server (see <a href=#generatefinegrainedtoken class=""><code>.generateFineGrainedToken()</code></a>).</p>
+<p>When the function is called in a web context (code executed for a web or REST request), the collection only contains the tokens whose privileges are all held by the current session. Elsewhere (for example in a method or a stored procedure), it contains all the tokens.</p>
+<p>返されるコレクションの各オブジェクトには、以下のプロパティが格納されています. The token itself and its hash are never returned.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ<th>型<th>説明<tbody><tr><td>id<td>Text<td>Identifier of the token<tr><td>name<td>Text<td>Name of the token<tr><td>privileges<td>Text, Collection or Object<td>Privileges and roles of the token, as passed at generation<tr><td>expiry<td>Text<td>Expiration date of the token<tr><td>info<td>Object<td>Information stored with the token<tr><td>createdAt<td>Text<td>Date and time of the token generation</table>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-9>例題<a href=#例題-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>You revoke all the tokens generated for a user:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $tokens:=ds.listFineGrainedTokens().query("info.userName = :1"; "jsmith")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $token : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($token; $tokens)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	ds.revokeFineGrainedToken($token.id)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each</span><br/></div></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=listoauthgrants>.listOAuthGrants()<a href=#listoauthgrants class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>リリース<th>内容<tbody><tr><td>21 R6<td>追加</table>
+</div></div></details>
+<p><strong>.listOAuthGrants</strong>() : Collection</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>戻り値<td>Collection<td>←<td>Collection of grant description objects</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-13>説明<a href=#説明-13 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>The <code>.listOAuthGrants()</code> function returns the description of the grants given to users through the OAuth mode of the MCP server. A grant is created each time a user logs in from an MCP client (see <a class="" href=/docs/ja/next/WebServer/mcp-server#oauth-21-mode>OAuth 2.1 mode</a>).</p>
+<p>When the function is called in a web context (code executed for a web or REST request), the collection only contains the grants whose privileges are all held by the current session. Elsewhere, it contains all the grants.</p>
+<p>返されるコレクションの各オブジェクトには、以下のプロパティが格納されています:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ<th>型<th>説明<tbody><tr><td>id<td>Text<td>Identifier of the grant<tr><td>userName<td>Text<td>User name of the grant (<code>userName</code> returned by <a class="" href=/docs/ja/next/ORDA/ordaClasses#function-mcpgrant><code>ds.mcpGrant()</code></a>, or the login name)<tr><td>clientId<td>Text<td>Identifier of the MCP client<tr><td>clientName<td>Text<td>Name of the MCP client<tr><td>privileges<td>Text, Collection or Object<td>Privileges and roles returned by <code>ds.mcpGrant()</code><tr><td>createdAt<td>Text<td>Date and time of the login<tr><td>lastUsedAt<td>Text<td>Date and time of the last use of the grant<tr><td>expiresAt<td>Text<td>Expiration date and time of the grant</table>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-10>例題<a href=#例題-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>You list the MCP clients in which a user is logged in:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $clients:=ds.listOAuthGrants().query("userName = :1"; "jsmith").extract("clientName")</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=locked>.locked()<a href=#locked class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
@@ -773,11 +1085,11 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>戻り値<td>Boolean<td>&lt;-<td>ロックされている場合は true</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-11>説明<a href=#説明-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-14>説明<a href=#説明-14 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.locked()</code> 関数は、ローカルデータストアが現在ロックされている場合、<strong>true</strong> を返します。</p>
 <p>データファイルのスナップショットを実行する前などに、<a href=#flushandlock class="">.flushAndLock()</a> 関数を使用してデータストアをロックすることができます。</p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 16 16"><path fill-rule=evenodd d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg></span>caution</div><div class=admonitionContent_BuS1><p>この関数は、データストアがバックアップや VSS などの他の管理機能によってロックされた場合にも、 <code>true</code> を返します (<a href=#flushandlock class="">.flushAndLock()</a> 参照)。</div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-6>参照<a href=#参照-6 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-7>参照<a href=#参照-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#flushandlock class="">.flushAndLock()</a><br/><a href=#unlock class="">.unlock()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=makeselectionsalterable>.makeSelectionsAlterable()<a href=#makeselectionsalterable class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -817,7 +1129,7 @@
 
 <table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td><td><td style=text-align:center><td>引数を必要としません</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-12>説明<a href=#説明-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-15>説明<a href=#説明-15 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.makeSelectionsAlterable()</code> 関数は、 カレントアプリケーションのデータストアにおいて、すべての新規エンティティセレクションをデフォルトで追加可能に設定します (<a class="" href=/docs/ja/next/ORDA/datastores>リモートデータストア</a> を含む)。これはたとえば <code>On Startup</code> データベースメソッドなどで、一度だけ使用することが想定されています。</p>
 <p>このメソッドが呼ばれてない場合、新規エンティティセレクションはそれぞれの "親" の性質や作成方法に応じて、共有可能に設定される場合もあります (<a class="" href=/docs/ja/next/ORDA/entities#%E5%85%B1%E6%9C%89%E5%8F%AF%E8%83%BD%E8%BF%BD%E5%8A%A0%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%A8%E3%83%B3%E3%83%86%E3%82%A3%E3%83%86%E3%82%A3%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3>共有可能/追加可能なエンティティセレクション</a> 参照)。</p>
 <blockquote>
@@ -876,7 +1188,7 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>curPassPhrase<td>Text<td>-><td>カレントのパスフレーズ<tr><td>curDataKey<td>Object<td>-><td>カレントのデータ暗号化キー<tr><td>戻り値<td>Object<td>&lt;-<td>暗号化キーのチェックの結果</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-13>説明<a href=#説明-13 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-16>説明<a href=#説明-16 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.provideDataKey()</code> 関数は、データストアのカレントデータファイルのデータ暗号化キーを受け取り、暗号化されたデータと合致するかどうかチェックします。この関数は、暗号化されたデータベースを開くときや、データファイルの再暗号化など暗号化キーが必要となる暗号化オペレーションを実行する際に使用します。</p>
 <blockquote>
 <ul>
@@ -954,8 +1266,113 @@
 
 <table><thead><tr><th>プロパティ<th><th>型<th>説明<tbody><tr><td>success<td><td>Boolean<td>提供された暗号化キーが暗号化データと合致すれば true、それ以外は false<tr><td><td><td><td>以下のプロパティは、success が <em>FALSE</em> であった場合にのみ返されます。<tr><td>status<td><td>Number<td>エラーコード (提供された暗号化キーが間違っていた場合には 4)<tr><td>statusText<td><td>Text<td>エラーメッセージ<tr><td>errors<td><td>Collection<td>エラーのスタック。最初のエラーに最も高いインデックスが割り当てられます。<tr><td><td>[ ].componentSignature<td>Text<td>内部コンポーネント名<tr><td><td>[ ].errCode<td>Number<td>エラー番号<tr><td><td>[ ].message<td>Text<td>エラーメッセージ</table>
 <p><em>curPassphrase</em> および <em>curDataKey</em> のどちらの引数も渡されなかった場合、<code>.provideDataKey()</code> は <strong>null</strong> を返します (この場合エラーは生成されません)。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-8>例題<a href=#例題-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-11>例題<a href=#例題-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain"> var $keyStatus : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $passphrase : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $passphrase:=Request("パスフレーズを入力してください。")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> If(OK=1)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $keyStatus:=ds.provideDataKey($passphrase)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    If($keyStatus.success)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       ALERT("提供された暗号化キーは有効です。")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    Else</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       ALERT("提供された暗号化キーは無効です。暗号化データの編集はできません。")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    End if</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End if</span><br/></div></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=revokefinegrainedtoken>.revokeFineGrainedToken()<a href=#revokefinegrainedtoken class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>リリース<th>内容<tbody><tr><td>21 R6<td>追加</table>
+</div></div></details>
+<p><strong>.revokeFineGrainedToken</strong>( <em>id</em> : Text )<br/><strong>.revokeFineGrainedToken</strong>( <em>tokenObj</em> : Object )</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>id<td>Text<td>→<td>Identifier of the token to revoke<tr><td>tokenObj<td>Object<td>→<td>Object with a <code>token</code> property containing the token to revoke</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-17>説明<a href=#説明-17 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>The <code>.revokeFineGrainedToken()</code> function revokes a Fine-Grained Token of the MCP server.</p>
+<p>You designate the token:</p>
+<ul>
+<li class="">in the <em>id</em> parameter, with its identifier (returned by <a href=#generatefinegrainedtoken class=""><code>.generateFineGrainedToken()</code></a> and <a href=#listfinegrainedtokens class=""><code>.listFineGrainedTokens()</code></a>),</li>
+<li class="">or in the <em>tokenObj</em> parameter, with an object whose <code>token</code> property contains the token itself (<code>"4dfgt_..."</code>), for example to let the holder of a token revoke it.</li>
+</ul>
+<p>The token stops working at the next request, and the MCP sessions opened with it are closed. <a class="" href=/docs/ja/next/WebServer/mcp-server#binary-attributes>Binary URLs</a> already returned to the client remain valid until they expire (10 minutes at most).</p>
+<p>When the function is called in a web context (code executed for a web or REST request), it can only revoke a token whose privileges are all held by the current session.</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-12>例題<a href=#例題-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>You revoke a token by its id:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $tokens:=ds.listFineGrainedTokens().query("name = :1"; "Claude Desktop - jsmith")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">If ($tokens.length>0)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	ds.revokeFineGrainedToken($tokens[0].id)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End if</span><br/></div></code></pre></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-8>参照<a href=#参照-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p><a href=#generatefinegrainedtoken class="">.generateFineGrainedToken()</a><br/><a href=#listfinegrainedtokens class="">.listFineGrainedTokens()</a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=revokeoauthgrant>.revokeOAuthGrant()<a href=#revokeoauthgrant class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>リリース<th>内容<tbody><tr><td>21 R6<td>追加</table>
+</div></div></details>
+<p><strong>.revokeOAuthGrant</strong>( <em>id</em> : Text )</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>id<td>Text<td>→<td>Identifier of the grant to revoke</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-18>説明<a href=#説明-18 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>The <code>.revokeOAuthGrant()</code> function revokes a grant given to a user through the OAuth mode of the MCP server (see <a href=#listoauthgrants class=""><code>.listOAuthGrants()</code></a>).</p>
+<p>The access tokens of the grant get an HTTP 401 status from the next request, its refresh token is refused, and its MCP sessions are closed. The user must log in again from the MCP client.</p>
+<p>When the function is called in a web context (code executed for a web or REST request), it can only revoke a grant whose privileges are all held by the current session.</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-13>例題<a href=#例題-13 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p>When you deactivate a user of your application, you revoke their OAuth grants:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $grant : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($grant; ds.listOAuthGrants().query("userName = :1"; "jsmith"))</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	ds.revokeOAuthGrant($grant.id)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each</span><br/></div></code></pre></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-9>参照<a href=#参照-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p><a href=#listoauthgrants class="">.listOAuthGrants()</a><br/><a href=#revokefinegrainedtoken class="">.revokeFineGrainedToken()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=setadminprotection>.setAdminProtection()<a href=#setadminprotection class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
 
@@ -994,14 +1411,14 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>status<td>Boolean<td>-><td><code>webAdmin</code>ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト)</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-14>説明<a href=#説明-14 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-19>説明<a href=#説明-19 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.setAdminProtection()</code> 関数は、WebAdminセッションにおける <a class="" href=/docs/ja/next/Admin/dataExplorer>データエクスプローラー</a> 含め、<a class="" href=/docs/ja/next/Admin/webAdmin#http%E3%83%9D%E3%83%BC%E3%83%88>Web管理ポート</a>上でのデータアクセスを無効に設定することができます。</p>
 <p>この関数が呼び出されなかった場合のデフォルトでは、データエクスプローラーを使用した <code>WebAdmin</code> 権限を持つセッションについて、Web管理ポート上のデータアクセスは常に許可されます。環境によっては (たとえば、アプリケーションサーバーが第三者のマシン上でホストされている場合)、 管理者に対して <a class="" href=/docs/ja/next/Admin/webAdmin#access-key>access key</a> 設定を含むサーバー設定の編集は許可しても、データ閲覧はできないようにしたいかもしれません。</p>
 <p>このような場合にこの関数を呼び出すことで、ユーザーセッションが <code>WebAdmin</code> 権限を持っていても、マシンの Web管理ポート上でのデータエクスプローラーによるデータアクセスを無効にすることができます。この関数を実行するとデータファイルは即座に保護され、そのステータスがディスク上に保存されます: アプリケーションを再起動しても、データファイルは保護されたままです。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-9>例題<a href=#例題-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-14>例題<a href=#例題-14 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p>運用前に呼び出す <em>protectDataFile</em> プロジェクトメソッドを作成します:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain"> ds.setAdminProtection(True) // データエクスプローラーによるデータアクセスを無効化します</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-7>参照<a href=#参照-7 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-10>参照<a href=#参照-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#isadminprotected class=""><code>.isAdminProtected()</code></a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=setglobalstamp>.setGlobalStamp()<a href=#setglobalstamp class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -1042,17 +1459,17 @@
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>newStamp<td>Real<td>-><td>グローバル変更スタンプの新しい値</table>
 </div>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>詳細モード</div><div class=admonitionContent_BuS1><p>これは、グローバルスタンプのカレント値を変更する必要があるデベロッパー用の関数です。十分な注意を払って使用してください。</div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-15>説明<a href=#説明-15 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-20>説明<a href=#説明-20 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.setGlobalStamp() </code> 関数は、データストアのグローバル変更スタンプの新しい値として <em>newStamp</em> を設定します。</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>info</div><div class=admonitionContent_BuS1><p>この関数は次の場合にのみ使えます:<ul>
 <li class="">ローカルデータストア (<a class="" href=/docs/ja/next/commands/ds><code>ds</code></a>) を対象に。</li>
 <li class="">クライアント/サーバー環境では、サーバーマシン上にて。</li>
 </ul></div></div>
 <p>グローバルスタンプとデータ変更追跡の詳細については、<a class="" href=/docs/ja/next/ORDA/global-stamp><strong>グローバルスタンプの使い方</strong></a> を参照ください。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-10>例題<a href=#例題-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-15>例題<a href=#例題-15 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p>次のコードは、グローバル変更スタンプを設定します:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $newValue: Real</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$newValue:=ReadValueFrom // 代入するための新しい値を取得します</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">ds.setGlobalStamp($newValue)</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-8>参照<a href=#参照-8 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-11>参照<a href=#参照-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#getglobalstamp class="">.getGlobalStamp()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=setremotecontextinfo>.setRemoteContextInfo()<a href=#setremotecontextinfo class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -1131,7 +1548,7 @@
 <blockquote>
 <p><strong>上級者向け:</strong> この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。ほとんどの場合、使用する必要はないでしょう。</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-16>説明<a href=#説明-16 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-21>説明<a href=#説明-21 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.setRemoteContextInfo()</code> 関数は、指定したデータクラス属性を <em>contextName</em> の最適化コンテキストにリンクします。指定した属性に対して最適化コンテキストが既に存在する場合、このコマンドはそれを置き換えます。</p>
 <p>ORDAクラスの関数にコンテキストを渡すと、RESTリクエストの最適化が即座に発動します:</p>
 <ul>
@@ -1163,7 +1580,7 @@
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $ds : 4D.DataStoreImplementation</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20,\</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">persons.lastname, persons.firstname"; "main"; 30)</span><br/></div></code></pre></div></div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-3---リストボックス>例題 3 - リストボックス<a href=#例題-3---リストボックス class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">// フォームのロード時に</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">Case of </span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    : (Form event code=On Load)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       // ページコンテキストの属性を設定します</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        children"; "currentItem")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.settings:=New object("context"; "LB")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.persons:=Form.ds.Persons.all(Form.settings)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        // Form.persons がリストボックスに表示されます</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End case </span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// カレント項目のコンテキストの属性を取得します</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Form.currentItemLearntAttributes = "age, gender, children"</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-9>参照<a href=#参照-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-12>参照<a href=#参照-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#getremotecontextinfo class="">.getRemoteContextInfo()</a><br/><a href=#getallremotecontexts class="">.getAllRemoteContexts()</a><br/><a href=#clearallremotecontexts class="">.clearAllRemoteContexts()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=startrequestlog>.startRequestLog()<a href=#startrequestlog class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -1219,7 +1636,7 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td>file<td>4D.File<td>-><td>File オブジェクト<tr><td>options<td>Integer<td>-><td>ログレスポンスオプション (サーバーのみ)<tr><td>reqNum<td>Integer<td>-><td>メモリ内に保管するリクエストの数 (クライアントのみ)</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-17>説明<a href=#説明-17 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-22>説明<a href=#説明-22 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.startRequestLog()</code> 関数は、クライアント側でまたはサーバーサイドで ORDAリクエストのログを開始します。これはクライアント/サーバー環境でのデバッグを想定して設計されています。</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>info</div><div class=admonitionContent_BuS1><p>ORDAリクエストログのフォーマットの詳細は、<a class="" href=/docs/ja/next/Debugging/debugLogFiles#orda%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88><strong>ORDAリクエスト</strong></a> の章を参照ください。</div></div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=クライアント側>クライアント側<a href=#クライアント側 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
@@ -1313,13 +1730,13 @@
 
 <table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td><td><td style=text-align:center><td>引数を必要としません</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-18>説明<a href=#説明-18 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-23>説明<a href=#説明-23 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.startTransaction()</code> 関数は、対象データストアに対応するデータベース上で、カレントプロセス内のトランザクションを開始します。トランザクションプロセス中にデータストアのエンティティに加えられた変更は、トランザクションが確定されるかキャンセルされるまで一時的に保管されたままになります。</p>
 <blockquote>
 <p>このメソッドがメインのデータストア (<code>ds</code> コマンドで返されるデータストア) で呼ばれた場合、トランザクションはメインのデータストアとそのデータベースで実行されるすべてのオペレーションに適用されます。これには、そこで実行される ORDA とクラシック言語も含まれます。</p>
 </blockquote>
 <p>複数のトランザクションをネストすること (サブトランザクション) が可能です。個々のトランザクションまたはサブトランザクションは、それぞれキャンセルするか確定される必要があります。メイントランザクションがキャンセルされると、サブトランザクションも (たとえ個々に<code>.validateTransaction()</code> 関数で承認されていても) すべてキャンセルされます。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-11>例題<a href=#例題-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-16>例題<a href=#例題-16 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain"> var $connect; $status : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $person : cs.PersonsEntity</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $ds : 4D.DataStoreImplementation</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $choice : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $error : Boolean</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> Case of</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    :($choice="local")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       $ds:=ds</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    :($choice="remote")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       $connect:=New object("hostname";"111.222.3.4:8044")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       $ds:=Open datastore($connect;"myRemoteDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End case</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $ds.startTransaction()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $person:=$ds.Persons.query("lastname=:1";"Peters").first()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> If($person#Null)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $person.lastname:="Smith"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $status:=$person.save()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End if</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> ...</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> ...</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> If($error)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $ds.cancelTransaction()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> Else</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $ds.validateTransaction()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End if</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=stoprequestlog>.stopRequestLog()<a href=#stoprequestlog class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -1363,11 +1780,11 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td><td><td><td>引数を必要としません</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-19>説明<a href=#説明-19 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-24>説明<a href=#説明-24 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.stopRequestLog()</code> 関数は、呼び出されたマシン (クライアントまたはサーバー) 上の ORDAリクエストのログをすべて停止します(ファイル・メモリとも)。</p>
 <p>実際には、ディスク上で開かれているドキュメントを閉じます。クライアント側で、メモリ上でログの記録が開始されていた場合、そのログを停止します。</p>
 <p>ORDAリクエストログがマシン上で開始されていない場合、この関数は何もしません。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-12>例題<a href=#例題-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-17>例題<a href=#例題-17 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#startrequestlog class=""><code>.startRequestLog()</code></a> の例題を参照ください。</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=unlock>.unlock()<a href=#unlock class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -1407,12 +1824,12 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td><td><td><td>引数を必要としません</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-20>説明<a href=#説明-20 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-25>説明<a href=#説明-25 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.unlock()</code> 関数は、データストアにおける、書き込み操作に対する現在のロックが同じプロセスで設定されていた場合、そのロックを解除します。ローカルデータストアの書き込み操作は、<a href=#flushandlock class=""><code>.flushAndLock()</code></a> 関数を使用してロックすることができます。</p>
 <p>現在のロックがデータストアの唯一のロックであった場合、書き込み操作は直ちに可能になります。 <code>.flushAndLock()</code> 関数がプロセス内で複数回呼ばれている場合、データストアのロックを解除するには、同じ回数だけ <code>.unlock()</code> を呼び出す必要があります。</p>
 <p><code>.unlock()</code> 関数は、対応する <code>.flushAndLock()</code> を呼び出したプロセス内で呼び出す必要があります。そうでない場合には、この関数は何もおこなわず、ロックも解除されません。</p>
 <p>ロックが解除されているデータストアで <code>.unlock()</code> 関数を呼び出した場合、何もおこりません。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-10>参照<a href=#参照-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=参照-13>参照<a href=#参照-13 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><a href=#flushandlock class="">.flushAndLock()</a><br/><a href=#locked class="">.locked()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=validatetransaction>.validateTransaction()<a href=#validatetransaction class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>履歴</summary><div><div class=collapsibleContent_i85q>
@@ -1452,9 +1869,9 @@
 
 <table><thead><tr><th>引数<th>型<th><th>説明<tbody><tr><td><td><td><td>引数を必要としません</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-21>説明<a href=#説明-21 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-26>説明<a href=#説明-26 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.validateTransaction()</code> 関数は、対象データストアの対応するレベルで <a href=#starttransaction class=""><code>.startTransaction()</code></a> で開始されたトランザクションを受け入れます。</p>
 <p>この関数は、トランザクション中におこなわれたデータストア上のデータの変更を保存します。</p>
 <p>複数のトランザクションをネストすること (サブトランザクション) が可能です。メイントランザクションがキャンセルされると、サブトランザクションも (たとえ個々にこの関数で承認されていても) すべてキャンセルされます。</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-13>例題<a href=#例題-13 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
-<p><a href=#starttransaction class=""><code>.startTransaction()</code></a> の例題を参照ください。</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FDataStoreClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>このページへコメントする</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label=ドキュメントのナビゲーション><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/ja/next/API/DataClassClass><div class=pagination-nav__sublabel>前へ</div><div class=pagination-nav__label>DataClass</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/ja/next/API/EmailObjectClass><div class=pagination-nav__sublabel>次へ</div><div class=pagination-nav__label>Email</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#概要 class="table-of-contents__link toc-highlight">概要</a><li><a href=#dataclassname class="table-of-contents__link toc-highlight"><em>.dataclassName</em></a><li><a href=#canceltransaction class="table-of-contents__link toc-highlight">.cancelTransaction()</a><li><a href=#clearallremotecontexts class="table-of-contents__link toc-highlight">.clearAllRemoteContexts()</a><li><a href=#encryptionstatus class="table-of-contents__link toc-highlight">.encryptionStatus()</a><li><a href=#flushandlock class="table-of-contents__link toc-highlight">.flushAndLock()</a><li><a href=#getallremotecontexts class="table-of-contents__link toc-highlight">.getAllRemoteContexts()</a><li><a href=#getglobalstamp class="table-of-contents__link toc-highlight">.getGlobalStamp()</a><li><a href=#getinfo class="table-of-contents__link toc-highlight">.getInfo()</a><li><a href=#getremotecontextinfo class="table-of-contents__link toc-highlight">.getRemoteContextInfo()</a><li><a href=#getrequestlog class="table-of-contents__link toc-highlight">.getRequestLog()</a><li><a href=#isadminprotected class="table-of-contents__link toc-highlight">.isAdminProtected()</a><li><a href=#locked class="table-of-contents__link toc-highlight">.locked()</a><li><a href=#makeselectionsalterable class="table-of-contents__link toc-highlight">.makeSelectionsAlterable()</a><li><a href=#providedatakey class="table-of-contents__link toc-highlight">.provideDataKey()</a><li><a href=#setadminprotection class="table-of-contents__link toc-highlight">.setAdminProtection()</a><li><a href=#setglobalstamp class="table-of-contents__link toc-highlight">.setGlobalStamp()</a><li><a href=#setremotecontextinfo class="table-of-contents__link toc-highlight">.setRemoteContextInfo()</a><li><a href=#startrequestlog class="table-of-contents__link toc-highlight">.startRequestLog()</a><li><a href=#starttransaction class="table-of-contents__link toc-highlight">.startTransaction()</a><li><a href=#stoprequestlog class="table-of-contents__link toc-highlight">.stopRequestLog()</a><li><a href=#unlock class="table-of-contents__link toc-highlight">.unlock()</a><li><a href=#validatetransaction class="table-of-contents__link toc-highlight">.validateTransaction()</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>コミュニティ</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>サポート</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>ドキュメントのダウンロード</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (旧ドキュメントサイト)</a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>ナレッジベース</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>ダウンロード</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>リソース</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>サポートを受ける</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>会社概要</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>4D社について</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>コンタクト</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>世界中の4D</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - All rights reserved <div style=margin-top:8px><i>Some content is written with the help of AI</i></div></div></div></div></footer></div></body>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=例題-18>例題<a href=#例題-18 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
+<p><a href=#starttransaction class=""><code>.startTransaction()</code></a> の例題を参照ください。</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FDataStoreClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>このページへコメントする</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label=ドキュメントのナビゲーション><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/ja/next/API/DataClassClass><div class=pagination-nav__sublabel>前へ</div><div class=pagination-nav__label>DataClass</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/ja/next/API/EmailObjectClass><div class=pagination-nav__sublabel>次へ</div><div class=pagination-nav__label>Email</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#概要 class="table-of-contents__link toc-highlight">概要</a><li><a href=#dataclassname class="table-of-contents__link toc-highlight"><em>.dataclassName</em></a><li><a href=#canceltransaction class="table-of-contents__link toc-highlight">.cancelTransaction()</a><li><a href=#clearallremotecontexts class="table-of-contents__link toc-highlight">.clearAllRemoteContexts()</a><li><a href=#encryptionstatus class="table-of-contents__link toc-highlight">.encryptionStatus()</a><li><a href=#flushandlock class="table-of-contents__link toc-highlight">.flushAndLock()</a><li><a href=#generatefinegrainedtoken class="table-of-contents__link toc-highlight">.generateFineGrainedToken()</a><li><a href=#getallremotecontexts class="table-of-contents__link toc-highlight">.getAllRemoteContexts()</a><li><a href=#getglobalstamp class="table-of-contents__link toc-highlight">.getGlobalStamp()</a><li><a href=#getinfo class="table-of-contents__link toc-highlight">.getInfo()</a><li><a href=#getremotecontextinfo class="table-of-contents__link toc-highlight">.getRemoteContextInfo()</a><li><a href=#getrequestlog class="table-of-contents__link toc-highlight">.getRequestLog()</a><li><a href=#isadminprotected class="table-of-contents__link toc-highlight">.isAdminProtected()</a><li><a href=#listfinegrainedtokens class="table-of-contents__link toc-highlight">.listFineGrainedTokens()</a><li><a href=#listoauthgrants class="table-of-contents__link toc-highlight">.listOAuthGrants()</a><li><a href=#locked class="table-of-contents__link toc-highlight">.locked()</a><li><a href=#makeselectionsalterable class="table-of-contents__link toc-highlight">.makeSelectionsAlterable()</a><li><a href=#providedatakey class="table-of-contents__link toc-highlight">.provideDataKey()</a><li><a href=#revokefinegrainedtoken class="table-of-contents__link toc-highlight">.revokeFineGrainedToken()</a><li><a href=#revokeoauthgrant class="table-of-contents__link toc-highlight">.revokeOAuthGrant()</a><li><a href=#setadminprotection class="table-of-contents__link toc-highlight">.setAdminProtection()</a><li><a href=#setglobalstamp class="table-of-contents__link toc-highlight">.setGlobalStamp()</a><li><a href=#setremotecontextinfo class="table-of-contents__link toc-highlight">.setRemoteContextInfo()</a><li><a href=#startrequestlog class="table-of-contents__link toc-highlight">.startRequestLog()</a><li><a href=#starttransaction class="table-of-contents__link toc-highlight">.startTransaction()</a><li><a href=#stoprequestlog class="table-of-contents__link toc-highlight">.stopRequestLog()</a><li><a href=#unlock class="table-of-contents__link toc-highlight">.unlock()</a><li><a href=#validatetransaction class="table-of-contents__link toc-highlight">.validateTransaction()</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>コミュニティ</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>サポート</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>ドキュメントのダウンロード</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (旧ドキュメントサイト)</a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>ナレッジベース</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>ダウンロード</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>リソース</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>サポートを受ける</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>会社概要</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>4D社について</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>コンタクト</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>世界中の4D</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - All rights reserved <div style=margin-top:8px><i>Some content is written with the help of AI</i></div></div></div></div></footer></div></body>

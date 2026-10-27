@@ -1,4 +1,4 @@
-<!doctype html><html lang=es dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/DataStoreClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>DataStore | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/es/next/API/DataStoreClass /><meta data-rh=true property=og:locale content=es /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=es /><meta data-rh=true name=docsearch:language content=es /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="DataStore | 4D Docs"/><meta data-rh=true name=description content="Un Datastore es el objeto de interfaz suministrado por ORDA para referenciar y acceder a una base de datos. Los objetos Datastore son devueltos por los siguientes comandos:"/><meta data-rh=true property=og:description content="Un Datastore es el objeto de interfaz suministrado por ORDA para referenciar y acceder a una base de datos. Los objetos Datastore son devueltos por los siguientes comandos:"/><link data-rh=true rel=icon href=/docs/es/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/es/next/API/DataStoreClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/DataStoreClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/DataStoreClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/DataStoreClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/DataStoreClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/es/next/category/4d-language","name":"Lenguaje 4D","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/es/next/category/class-API-reference","name":"Clases","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/es/next/API/DataStoreClass","name":"DataStore","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/es/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/es/assets/css/styles.4cf13e15.css /><script src=/docs/es/assets/js/runtime~main.64b402dc.js defer></script><script src=/docs/es/assets/js/main.fa0a80b6.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=es dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-API/DataStoreClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>DataStore | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/es/next/API/DataStoreClass /><meta data-rh=true property=og:locale content=es /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=es /><meta data-rh=true name=docsearch:language content=es /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="DataStore | 4D Docs"/><meta data-rh=true name=description content="Un Datastore es el objeto de interfaz suministrado por ORDA para referenciar y acceder a una base de datos. Los objetos Datastore son devueltos por los siguientes comandos:"/><meta data-rh=true property=og:description content="Un Datastore es el objeto de interfaz suministrado por ORDA para referenciar y acceder a una base de datos. Los objetos Datastore son devueltos por los siguientes comandos:"/><link data-rh=true rel=icon href=/docs/es/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/es/next/API/DataStoreClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/API/DataStoreClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/API/DataStoreClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/API/DataStoreClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/API/DataStoreClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/API/DataStoreClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/es/next/category/4d-language","name":"Lenguaje 4D","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/es/next/category/class-API-reference","name":"Clases","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/es/next/API/DataStoreClass","name":"DataStore","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/es/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/es/assets/css/styles.4cf13e15.css /><script src=/docs/es/assets/js/runtime~main.03b6da41.js defer></script><script src=/docs/es/assets/js/main.b99859bb.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/es/img/logohome.png /><div role=region aria-label="Saltar al contenido principal"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Saltar al contenido principal</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar la barra de navegación" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/es/><div class=navbar__logo><img src=/docs/es/img/logohome.png alt="Logo 4D" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/es/img/logohome.png alt="Logo 4D" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">Documentación 4D</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/es/next/API/DataStoreClass>Siguiente</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/es/next/API/DataStoreClass>Siguiente</a><li><a class=dropdown__link href=/docs/es/API/DataStoreClass>21 R5 BETA</a><li><a class=dropdown__link href=/docs/es/21-R4/API/DataStoreClass>21 R4</a><li><a class=dropdown__link href=/docs/es/21/API/DataStoreClass>21</a><li><a class=dropdown__link href=/docs/es/20/API/DataStoreClass>20</a><li><a class=dropdown__link href=/docs/es/19/API/DataStoreClass>19</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="La página no está disponible en esta versión
@@ -79,7 +79,22 @@ En su lugar, se abrirá la página predeterminada." href=/docs/es/18/GettingStar
 
 
 
-<table><thead><tr><th><tbody><tr><td><a href=#canceltransaction class=""><strong>.cancelTransaction()</strong></a><br/>cancela la transacción<tr><td><a href=#clearallremotecontexts class=""><strong>.clearAllRemoteContexts()</strong></a><br/>borra todos los atributos de todos los contextos activos en el datastore<tr><td><a href=#dataclassname class=""><em><strong>.dataclassName</strong></em> : 4D.DataClass</a><br/>contiene una descripción de la clase de datos<tr><td><a href=#encryptionstatus class=""><strong>.encryptionStatus()</strong>: Object</a><br/>devuelve un objeto que suministra el estado de cifrado del archivo de datos actual<tr><td><a href=#flushandlock class=""><strong>.flushAndLock()</strong></a><br/>vacía la caché del datastore local e impide que otros procesos realicen operaciones de escritura en la base de datos<tr><td><a href=#getallremotecontexts class=""><strong>.getAllRemoteContexts()</strong> : Collection</a><br/>devuelve una colección de objetos que contienen información sobre todos los contextos de optimización activos en el datastore<tr><td><a href=#getglobalstamp class=""><strong>.getGlobalStamp</strong>() : Real</a><br/>devuelve el valor actual del marcador de modificación global del datastore<tr><td><a href=#getinfo class=""><strong>.getInfo()</strong>: Object</a><br/>devuelve un objeto que proporciona información sobre el datastore<tr><td><a href=#getremotecontextinfo class=""><strong>.getRemoteContextInfo</strong>(<em>contextName</em> : Text) : Object </a><br/> devuelve un objeto que contiene información sobre el contexto de optimización <em>contextName</em> en el datastore<tr><td><a href=#getrequestlog class=""><strong>.getRequestLog()</strong> : Collection</a><br/>devuelve las peticiones ORDA registradas en memoria del lado del cliente<tr><td><a href=#locked class=""><strong>.locked()</strong> : Boolean</a><br/>devuelve True si el datastore local está bloqueado actualmente<tr><td><a href=#makeselectionsalterable class=""><strong>.makeSelectionsAlterable()</strong></a><br/>define todas las selecciones de entidades como alterables por defecto en los datastores de la aplicación actual<tr><td><a href=#providedatakey class=""><strong>.provideDataKey</strong>( <em>curPassPhrase</em> : Text ) : Object <br/><strong>.provideDataKey</strong>( <em>curDataKey</em> : Object ) : Object </a><br/>permite suministrar una llave de cifrado de datos para el archivo de datos actual del datastore y detecta si la llave coincide con los datos cifrados<tr><td><a href=#setadminprotection class=""><strong>.setAdminProtection</strong>( <em>status</em> : Boolean )</a><br/>permite deshabilitar cualquier acceso a datos en el <a class="" href=/docs/es/next/Admin/webAdmin#http-port>puerto web admin</a>, incluso para el <a class="" href=/docs/es/next/Admin/dataExplorer>Explorador de datos</a> en sesiones <code>WebAdmin</code><tr><td><a href=#setglobalstamp class=""><strong>.setGlobalStamp</strong>( <em>newStamp</em> : Real)</a><br/>define <em>newStamp</em> como nuevo valor para del marcador de modificación global actual del datastore<tr><td><a href=#setremotecontextinfo class=""><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer}})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )</a><br/>vincula los atributos de la dataclass especificada al contexto de optimización <em>contextName</em><tr><td><a href=#startrequestlog class=""><strong>.startRequestLog</strong>()<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File )<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File ; <em>options</em> : Integer )<br/><strong>.startRequestLog</strong>( <em>reqNum</em> : Integer )</a><br/>inicia el registro de peticiones ORDA del lado del cliente o del lado del servidor<tr><td><a href=#starttransaction class=""><strong>.startTransaction()</strong></a><br/>inicia una transacción en el proceso actual en la base de datos que coincide con el datastore al que se aplica<tr><td><a href=#stoprequestlog class=""><strong>.stopRequestLog()</strong>  </a><br/>detiene cualquier registro de las peticiones ORDA en la máquina en la que se llama (cliente o servidor)<tr><td><a href=#unlock class=""><strong>.unlock()</strong></a><br/>elimina el bloqueo actual de las operaciones de escritura en el datastore, si se ha definido en el mismo proceso<tr><td><a href=#validatetransaction class=""><strong>.validateTransaction()</strong>  </a><br/>acepta la transacción</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><tbody><tr><td><a href=#canceltransaction class=""><strong>.cancelTransaction()</strong></a><br/>cancela la transacción<tr><td><a href=#clearallremotecontexts class=""><strong>.clearAllRemoteContexts()</strong></a><br/>borra todos los atributos de todos los contextos activos en el datastore<tr><td><a href=#dataclassname class=""><em><strong>.dataclassName</strong></em> : 4D.DataClass</a><br/>contiene una descripción de la clase de datos<tr><td><a href=#encryptionstatus class=""><strong>.encryptionStatus()</strong>: Object</a><br/>devuelve un objeto que suministra el estado de cifrado del archivo de datos actual<tr><td><a href=#flushandlock class=""><strong>.flushAndLock()</strong></a><br/>vacía la caché del datastore local e impide que otros procesos realicen operaciones de escritura en la base de datos<tr><td><a href=#generatefinegrainedtoken class=""><strong>.generateFineGrainedToken</strong>( <em>privilege</em> : Text ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>privileges</em> : Collection ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>settings</em> : Object ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object</a><br/>generates a Fine-Grained Token that gives access to the MCP server with the privileges you pass<tr><td><a href=#getallremotecontexts class=""><strong>.getAllRemoteContexts()</strong> : Collection</a><br/>devuelve una colección de objetos que contienen información sobre todos los contextos de optimización activos en el datastore<tr><td><a href=#getglobalstamp class=""><strong>.getGlobalStamp</strong>() : Real</a><br/>devuelve el valor actual del marcador de modificación global del datastore<tr><td><a href=#getinfo class=""><strong>.getInfo()</strong>: Object</a><br/>devuelve un objeto que proporciona información sobre el datastore<tr><td><a href=#getremotecontextinfo class=""><strong>.getRemoteContextInfo</strong>(<em>contextName</em> : Text) : Object </a><br/> devuelve un objeto que contiene información sobre el contexto de optimización <em>contextName</em> en el datastore<tr><td><a href=#getrequestlog class=""><strong>.getRequestLog()</strong> : Collection</a><br/>devuelve las peticiones ORDA registradas en memoria del lado del cliente<tr><td><a href=#listfinegrainedtokens class=""><strong>.listFineGrainedTokens</strong>() : Collection</a><br/>returns the description of the Fine-Grained Tokens generated for the MCP server<tr><td><a href=#listoauthgrants class=""><strong>.listOAuthGrants</strong>() : Collection</a><br/>returns the description of the grants given to users through the OAuth mode of the MCP server<tr><td><a href=#locked class=""><strong>.locked()</strong> : Boolean</a><br/>devuelve True si el datastore local está bloqueado actualmente<tr><td><a href=#makeselectionsalterable class=""><strong>.makeSelectionsAlterable()</strong></a><br/>define todas las selecciones de entidades como alterables por defecto en los datastores de la aplicación actual<tr><td><a href=#providedatakey class=""><strong>.provideDataKey</strong>( <em>curPassPhrase</em> : Text ) : Object <br/><strong>.provideDataKey</strong>( <em>curDataKey</em> : Object ) : Object </a><br/>permite suministrar una llave de cifrado de datos para el archivo de datos actual del datastore y detecta si la llave coincide con los datos cifrados<tr><td><a href=#revokefinegrainedtoken class=""><strong>.revokeFineGrainedToken</strong>( <em>id</em> : Text )<br/><strong>.revokeFineGrainedToken</strong>( <em>tokenObj</em> : Object )</a><br/>revokes a Fine-Grained Token of the MCP server<tr><td><a href=#revokeoauthgrant class=""><strong>.revokeOAuthGrant</strong>( <em>id</em> : Text )</a><br/>revokes a grant given to a user through the OAuth mode of the MCP server<tr><td><a href=#setadminprotection class=""><strong>.setAdminProtection</strong>( <em>status</em> : Boolean )</a><br/>permite deshabilitar cualquier acceso a datos en el <a class="" href=/docs/es/next/Admin/webAdmin#http-port>puerto web admin</a>, incluso para el <a class="" href=/docs/es/next/Admin/dataExplorer>Explorador de datos</a> en sesiones <code>WebAdmin</code><tr><td><a href=#setglobalstamp class=""><strong>.setGlobalStamp</strong>( <em>newStamp</em> : Real)</a><br/>define <em>newStamp</em> como nuevo valor para del marcador de modificación global actual del datastore<tr><td><a href=#setremotecontextinfo class=""><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer}})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassName</em> : Text; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributes</em> : Text {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }})<br/><strong>.setRemoteContextInfo</strong>( <em>contextName</em> : Text ; <em>dataClassObject</em> : 4D.DataClass ; <em>attributesColl</em> : Collection {; <em>contextType</em> : Text { ; <em>pageLength</em> : Integer }} )</a><br/>vincula los atributos de la dataclass especificada al contexto de optimización <em>contextName</em><tr><td><a href=#startrequestlog class=""><strong>.startRequestLog</strong>()<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File )<br/><strong>.startRequestLog</strong>( <em>file</em> : 4D.File ; <em>options</em> : Integer )<br/><strong>.startRequestLog</strong>( <em>reqNum</em> : Integer )</a><br/>inicia el registro de peticiones ORDA del lado del cliente o del lado del servidor<tr><td><a href=#starttransaction class=""><strong>.startTransaction()</strong></a><br/>inicia una transacción en el proceso actual en la base de datos que coincide con el datastore al que se aplica<tr><td><a href=#stoprequestlog class=""><strong>.stopRequestLog()</strong>  </a><br/>detiene cualquier registro de las peticiones ORDA en la máquina en la que se llama (cliente o servidor)<tr><td><a href=#unlock class=""><strong>.unlock()</strong></a><br/>elimina el bloqueo actual de las operaciones de escritura en el datastore, si se ha definido en el mismo proceso<tr><td><a href=#validatetransaction class=""><strong>.validateTransaction()</strong>  </a><br/>acepta la transacción</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=dataclassname><em>.dataclassName</em><a href=#dataclassname class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
 
@@ -372,6 +387,121 @@ En su lugar, se abrirá la página predeterminada." href=/docs/es/18/GettingStar
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">$destination:=Folder(fk documents folder).folder("Archive") </span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$destination.create()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">ds.flushAndLock() //Bloquear operaciones de escritura de otros procesos</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$dataFolder:=Folder(fk data folder) </span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$dataFolder.copyTo($destination) //Copiar la carpeta de datos</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$oldJournalPath:=New log file //Cerrar el historial y crear uno nuevo</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$oldJournal:=File($oldJournalPath; fk platform path) </span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$oldJournal.moveTo($destination) //Guardar el antiguo historial con datos</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">ds.unlock() //Nuestra copia ha terminado, ahora podemos desbloquear el datastore</span><br/></div></code></pre></div></div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-1>Ver también<a href=#ver-también-1 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#locked class="">.locked()</a><br/><a href=#unlock class="">.unlock()</a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=generatefinegrainedtoken>.generateFineGrainedToken()<a href=#generatefinegrainedtoken class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lanzamiento<th>Modificaciones<tbody><tr><td>21 R6<td>Añadidos</table>
+</div></div></details>
+<p><strong>.generateFineGrainedToken</strong>( <em>privilege</em> : Text ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>privileges</em> : Collection ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object<br/><strong>.generateFineGrainedToken</strong>( <em>settings</em> : Object ; <em>name</em> : Text ; <em>expiry</em> : Date {; <em>info</em> : Object} ) : Object</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>privilege<td>Text<td>→<td>Privilege name, or comma-separated privilege names<tr><td>privileges<td>Collection<td>→<td>Colección de nombres de privilegios<tr><td>settings<td>Object<td>→<td>Object with a "privileges" and/or "roles" property<tr><td>name<td>Text<td>→<td>Name of the token<tr><td>expiry<td>Fecha<td>→<td>Expiration date of the token<tr><td>info<td>Object<td>→<td>Information stored with the token and passed to <code>ds.mcpAuthenticated()</code><tr><td>Resultado<td>Object<td>←<td><code>{id; token}</code></table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-5>Descripción<a href=#descripción-5 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>The <code>.generateFineGrainedToken()</code> function generates a Fine-Grained Token that gives access to the MCP server with the privileges you pass. For more information, see <a class="" href=/docs/es/next/WebServer/mcp-server#fine-grained-tokens>Fine-Grained Tokens</a>.</p>
+<p>You pass the privileges and/or roles of the token in the same forms as for <a class="" href=/docs/es/next/API/SessionClass#setprivileges><code>Session.setPrivileges()</code></a>:</p>
+<ul>
+<li class="">En el parámetro <em>privilege</em>, pase una cadena que contenga un nombre de privilegio (o varios nombres de privilegio separados por comas).</li>
+<li class="">En el parámetro <em>privileges</em>, pase una colección de cadenas que contengan nombres de privilegios.</li>
+<li class="">In the <em>settings</em> parameter, pass an object with a <code>privileges</code> and/or a <code>roles</code> property (string or collection of strings).</li>
+</ul>
+<p>Unlike <code>Session.setPrivileges()</code>, a name that is not declared in the <a class="" href=/docs/es/next/ORDA/privileges#rolesjson-file><code>roles.json</code></a> file raises an error.</p>
+<p>In <em>name</em>, pass a name that identifies the token, for example the user and the client that will use it. It is the user name of the MCP sessions opened with the token.</p>
+<p>In <em>expiry</em>, pass the expiration date of the token. It is required, and it must be later than the current date and at most 366 days ahead.</p>
+<p>In <em>info</em>, you can pass an object that 4D stores with the token as is, and passes to the <a class="" href=/docs/es/next/ORDA/ordaClasses#function-mcpauthenticated><code>ds.mcpAuthenticated()</code></a> function when an MCP session is opened with the token. Since it cannot be modified later, store stable identifiers (such as a user ID) and read the current values in <code>ds.mcpAuthenticated()</code>. Build <em>info</em> from the authenticated session, never from values sent by the client.</p>
+<p>The function can only be called in a web context, i.e. from code executed for a web or REST request (for example an exposed function called after the user was authenticated). Every privilege of the token must be held by the current session (<a class="" href=/docs/es/next/API/SessionClass#getprivileges><code>Session.getPrivileges()</code></a>, roles included, promoted privileges excluded). Otherwise, an error is raised.</p>
+<p>If an error is raised, no token is created.</p>
+<p><strong>Objeto devuelto</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Propiedad<th>Tipo<th>Descripción<tbody><tr><td>id<td>Text<td>Identifier of the token. It is not secret: use it to <a href=#revokefinegrainedtoken class="">revoke</a> the token<tr><td>token<td>Text<td>The token, starting with "4dfgt_". It is returned only once: 4D only stores its hash, in the <code>fgt.json</code> file of the data folder</table>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-4>Ejemplo<a href=#ejemplo-4 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>In an exposed function of the DataStore class, called by an authenticated user, you generate a token valid for 3 months:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">exposed Function getMCPToken() : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	var $expiry:=Add to date(Current date; 0; 3; 0)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	var $result:=ds.generateFineGrainedToken({roles: "salesperson"}; "Claude Desktop - "+Session.userName; $expiry; {userName: Session.userName})</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	return $result.token // "4dfgt_..."</span><br/></div></code></pre></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-2>Ver también<a href=#ver-también-2 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p><a href=#listfinegrainedtokens class="">.listFineGrainedTokens()</a><br/><a href=#revokefinegrainedtoken class="">.revokeFineGrainedToken()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getallremotecontexts>.getAllRemoteContexts()<a href=#getallremotecontexts class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
 
@@ -413,19 +543,19 @@ En su lugar, se abrirá la página predeterminada." href=/docs/es/18/GettingStar
 <blockquote>
 <p><strong>Modo avanzado</strong>: esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-5>Descripción<a href=#descripción-5 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-6>Descripción<a href=#descripción-6 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.getAllRemoteContexts()</code> devuelve una colección de objetos que contienen información sobre todos los contextos de optimización activos en el datastore.</p>
 <blockquote>
 <p>Para obtener más información sobre cómo se pueden crear contextos, consulte <a class="" href=/docs/es/next/ORDA/client-server-optimization#optimization-context>Optimización cliente/servidor</a>.</p>
 </blockquote>
 <p>Cada objeto de la colección devuelta tiene las propiedades enumeradas en la sección <a href=#getremotecontextinfo class=""><code>.getRemoteContextInfo()</code></a>.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-4>Ejemplo<a href=#ejemplo-4 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-5>Ejemplo<a href=#ejemplo-5 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>El siguiente código define dos contextos y los recupera utilizando <code>.getAllRemoteContexts()</code>:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $ds : 4D.DataStoreImplementation</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $persons : cs.PersonsSelection</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $addresses : cs.AddressSelection</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $p : cs.PersonsEntity</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $a : cs.AddressEntity</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $contextA; $contextB : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $info : Collection</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $text : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Open remote datastore</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Set context A</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$contextA:=New object("context"; "contextA")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$persons:=$ds.Persons.all($contextA)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$text:=""</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($p; $persons)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $text:=$p.firstname+" lives in "+$p.address.city+" / "</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Set context B</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$contextB:=New object("context"; "contextB")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$addresses:=$ds.Address.all($contextB)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$text:=""</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($a; $addresses)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $text:=$a.zipCode</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Get all remote contexts (in this case, contextA and contextB)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$info:=$ds.getAllRemoteContexts()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//$info = [{name:"contextB"; dataclass: "Address"; main:"zipCode"},</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">{name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]</span><br/></div></code></pre></div></div>
 <blockquote>
 <p>Este ejemplo sirve como demostración, no está pensado para una implementación real.</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-2>Ver también<a href=#ver-también-2 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-3>Ver también<a href=#ver-también-3 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#getremotecontextinfo class="">.getRemoteContextInfo()</a><br/><a href=#setremotecontextinfo class="">.setRemoteContextInfo()</a><br/><a href=#clearallremotecontexts class="">.clearAllRemoteContexts()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getglobalstamp>.getGlobalStamp()<a href=#getglobalstamp class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -465,16 +595,16 @@ En su lugar, se abrirá la página predeterminada." href=/docs/es/18/GettingStar
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>Resultado<td>Real<td>&lt;-<td>Valor actual del marcador de modificación global</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-6>Descripción<a href=#descripción-6 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-7>Descripción<a href=#descripción-7 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.getGlobalStamp()</code> devuelve el valor actual del marcador de modificación global del datastore.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>info</div><div class=admonitionContent_BuS1><p>Esta función sólo puede llamarse:<ul>
 <li class="">en el datastore local (<a class="" href=/docs/es/next/commands/ds><code>ds</code></a>).</li>
 <li class="">en entorno cliente/servidor, en la máquina servidor.</li>
 </ul></div></div>
 <p>Para más información sobre el marcador global y el seguimiento de las modificaciones de datos, por favor consulte la página <a class="" href=/docs/es/next/ORDA/global-stamp><strong>Uso del marcador global</strong></a>.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-5>Ejemplo<a href=#ejemplo-5 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-6>Ejemplo<a href=#ejemplo-6 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $currentStamp : Real</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $hasModifications : Boolean</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$currentStamp:=ds.getGlobalStamp()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">methodWhichCouldModifyEmployees //ejecutar código </span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$hasModifications:=($currentStamp # ds.getGlobalStamp())</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-3>Ver también<a href=#ver-también-3 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-4>Ver también<a href=#ver-también-4 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#setglobalstamp class="">.setGlobalStamp()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getinfo>.getInfo()<a href=#getinfo class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -514,7 +644,7 @@ En su lugar, se abrirá la página predeterminada." href=/docs/es/18/GettingStar
 
 <table><thead><tr><th>Parámetros<th>Tipo<th style=text-align:center><th>Descripción<tbody><tr><td>Resultado<td>Object<td style=text-align:center>&lt;-<td>Propiedades del almacén de datos</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-7>Descripción<a href=#descripción-7 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-8>Descripción<a href=#descripción-8 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.getInfo()</code> devuelve un objeto que proporciona información sobre el datastore. Esta función es útil para configurar el código genérico.</p>
 <p><strong>Objeto devuelto</strong></p>
 
@@ -605,7 +735,7 @@ disponibles:<table><tr><th>Propiedad<th>Tipo<th>Descripción<tr><td>nombre de ho
 <blockquote>
 <p><strong>Modo avanzado</strong>: esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-8>Descripción<a href=#descripción-8 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-9>Descripción<a href=#descripción-9 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.getRemoteContextInfo()</code>  devuelve un objeto que contiene información sobre el contexto de optimización <em>contextName</em> en el datastore..</p>
 <p>Para obtener más información sobre cómo se pueden crear contextos de optimización, consulte <a class="" href=/docs/es/next/ORDA/client-server-optimization#optimization-context>optimización cliente/servidor</a>.</p>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=objeto-devuelto>Objeto devuelto<a href=#objeto-devuelto class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
@@ -642,9 +772,9 @@ disponibles:<table><tr><th>Propiedad<th>Tipo<th>Descripción<tr><td>nombre de ho
 
 <table><thead><tr><th>Propiedad<th>Tipo<th>Descripción<tbody><tr><td>name<td>Text<td>Nombre del contexto<tr><td>main<td>Text<td>Atributo(s) asociado(s) al contexto (los nombres de atributos están separados por comas)<tr><td>dataclass<td>Text<td>Nombre de la clase de datos<tr><td>currentItem (opcional)<td>Text<td>Los atributos del <a class="" href=/docs/es/next/ORDA/client-server-optimization#entity-selection-based-list-box>modo página</a> si el contexto está vinculado a un list box. Se devuelve como <code>Null</code> o elemento de texto vacío si el nombre del contexto no se utiliza para un list box, o si no hay contexto para el elemento actual (currentItem)</table>
 <p>Como los contextos se comportan como filtros de atributos, si <em>main</em> se devuelve vacío, significa que no se aplica ningún filtro, y que el servidor devuelve todos los atributos de la dataclass.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-6>Ejemplo<a href=#ejemplo-6 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-7>Ejemplo<a href=#ejemplo-7 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>Ver el ejemplo de la sección <a href=#example-1-3 class=""><code>.setRemoteContextInfo()</code></a>.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-4>Ver también<a href=#ver-también-4 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-5>Ver también<a href=#ver-también-5 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#setremotecontextinfo class="">.setRemoteContextInfo()</a><br/><a href=#getallremotecontexts class="">.getAllRemoteContexts()</a><br/><a href=#clearallremotecontexts class="">.clearAllRemoteContexts()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=getrequestlog>.getRequestLog()<a href=#getrequestlog class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -684,13 +814,13 @@ disponibles:<table><tr><th>Propiedad<th>Tipo<th>Descripción<tr><td>nombre de ho
 
 <table><thead><tr><th>Parámetros<th>Tipo<th style=text-align:center><th>Descripción<tbody><tr><td>Resultado<td>Collection<td style=text-align:center>&lt;-<td>Colección de objetos, donde cada objeto describe una solicitud</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-9>Descripción<a href=#descripción-9 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-10>Descripción<a href=#descripción-10 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.getRequestLog()</code> devuelve las peticiones ORDA registradas en memoria del lado del cliente. El registro de peticiones ORDA debe haber sido activado previamente utilizando la función <a href=#startrequestlog class=""><code>.startRequestLog()</code></a>.</p>
 <p>Esta función debe ser llamada en un 4D remoto, de lo contrario devuelve una colección vacía. Está diseñado para fines de depuración en configuraciones cliente/servidor.</p>
 <p><strong>Valor devuelto</strong></p>
 <p>Colección de objetos de petición apilados. La solicitud más reciente tiene el índice 0.</p>
 <p>Para una descripción del formato del registro de peticiones ORDA, por favor consulte la sección <a class="" href=/docs/es/next/Debugging/debugLogFiles#orda-requests><strong>Peticiones ORDA</strong></a>.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-7>Ejemplo<a href=#ejemplo-7 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-8>Ejemplo<a href=#ejemplo-8 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>Vea el ejemplo 2 de <a href=#startrequestlog class=""><code>.startRequestLog()</code></a>.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=isadminprotected>.isAdminProtected()<a href=#isadminprotected class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -730,11 +860,193 @@ disponibles:<table><tr><th>Propiedad<th>Tipo<th>Descripción<tr><td>nombre de ho
 
 <table><thead><tr><th>Parámetros<th>Tipo<th style=text-align:center><th>Descripción<tbody><tr><td>Resultado<td>Boolean<td style=text-align:center>&lt;-<td>True si el acceso al Explorador de Datos está desactivado, False si está activado (por defecto)</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-10>Descripción<a href=#descripción-10 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-11>Descripción<a href=#descripción-11 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.isAdminProtected()</code> devuelve <code>True</code> si se ha desactivado el acceso al <a class="" href=/docs/es/next/Admin/dataExplorer>Data Explorer</a> para la sesión de trabajo.</p>
 <p>Por defecto, se concede acceso al Data Explorer para las sesiones <code>webAdmin</code>, pero se puede desactivar para evitar cualquier acceso a los datos por parte de los administradores (ver la función <a href=#setadminprotection class=""><code>.setAdminProtection()</code></a>).</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-5>Ver también<a href=#ver-también-5 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-6>Ver también<a href=#ver-también-6 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#setadminprotection class=""><code>.setAdminProtection()</code></a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=listfinegrainedtokens>.listFineGrainedTokens()<a href=#listfinegrainedtokens class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lanzamiento<th>Modificaciones<tbody><tr><td>21 R6<td>Añadidos</table>
+</div></div></details>
+<p><strong>.listFineGrainedTokens</strong>() : Collection</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>Resultado<td>Collection<td>←<td>Collection of token description objects</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-12>Descripción<a href=#descripción-12 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>The <code>.listFineGrainedTokens()</code> function returns the description of the Fine-Grained Tokens generated for the MCP server (see <a href=#generatefinegrainedtoken class=""><code>.generateFineGrainedToken()</code></a>).</p>
+<p>When the function is called in a web context (code executed for a web or REST request), the collection only contains the tokens whose privileges are all held by the current session. Elsewhere (for example in a method or a stored procedure), it contains all the tokens.</p>
+<p>Cada objeto de la colección devuelta contiene las siguientes propiedades. The token itself and its hash are never returned.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Propiedad<th>Tipo<th>Descripción<tbody><tr><td>id<td>Text<td>Identifier of the token<tr><td>name<td>Text<td>Name of the token<tr><td>privileges<td>Text, Collection or Object<td>Privileges and roles of the token, as passed at generation<tr><td>expiry<td>Text<td>Expiration date of the token<tr><td>info<td>Object<td>Information stored with the token<tr><td>createdAt<td>Text<td>Date and time of the token generation</table>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-9>Ejemplo<a href=#ejemplo-9 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>You revoke all the tokens generated for a user:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $tokens:=ds.listFineGrainedTokens().query("info.userName = :1"; "jsmith")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $token : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($token; $tokens)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	ds.revokeFineGrainedToken($token.id)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each</span><br/></div></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=listoauthgrants>.listOAuthGrants()<a href=#listoauthgrants class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lanzamiento<th>Modificaciones<tbody><tr><td>21 R6<td>Añadidos</table>
+</div></div></details>
+<p><strong>.listOAuthGrants</strong>() : Collection</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>Resultado<td>Collection<td>←<td>Collection of grant description objects</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-13>Descripción<a href=#descripción-13 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>The <code>.listOAuthGrants()</code> function returns the description of the grants given to users through the OAuth mode of the MCP server. A grant is created each time a user logs in from an MCP client (see <a class="" href=/docs/es/next/WebServer/mcp-server#oauth-21-mode>OAuth 2.1 mode</a>).</p>
+<p>When the function is called in a web context (code executed for a web or REST request), the collection only contains the grants whose privileges are all held by the current session. Elsewhere, it contains all the grants.</p>
+<p>Cada objeto de la colección devuelta contiene las siguientes propiedades:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Propiedad<th>Tipo<th>Descripción<tbody><tr><td>id<td>Text<td>Identifier of the grant<tr><td>userName<td>Text<td>User name of the grant (<code>userName</code> returned by <a class="" href=/docs/es/next/ORDA/ordaClasses#function-mcpgrant><code>ds.mcpGrant()</code></a>, or the login name)<tr><td>clientId<td>Text<td>Identifier of the MCP client<tr><td>clientName<td>Text<td>Name of the MCP client<tr><td>privileges<td>Text, Collection or Object<td>Privileges and roles returned by <code>ds.mcpGrant()</code><tr><td>createdAt<td>Text<td>Date and time of the login<tr><td>lastUsedAt<td>Text<td>Date and time of the last use of the grant<tr><td>expiresAt<td>Text<td>Expiration date and time of the grant</table>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-10>Ejemplo<a href=#ejemplo-10 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>You list the MCP clients in which a user is logged in:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $clients:=ds.listOAuthGrants().query("userName = :1"; "jsmith").extract("clientName")</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=locked>.locked()<a href=#locked class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
 
@@ -773,11 +1085,11 @@ disponibles:<table><tr><th>Propiedad<th>Tipo<th>Descripción<tr><td>nombre de ho
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>Resultado<td>Boolean<td>&lt;-<td>True si bloqueado</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-11>Descripción<a href=#descripción-11 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-14>Descripción<a href=#descripción-14 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.locked()</code> devuelve True si el datastore local está bloqueado actualmente.</p>
 <p>Puede bloquear el datastore utilizando la función <a href=#flushandlock class="">.flushAndLock()</a> antes de ejecutar una instantánea del archivo de datos, por ejemplo.</p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 16 16"><path fill-rule=evenodd d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg></span>caution</div><div class=admonitionContent_BuS1><p>La función también devolverá <code>True</code> si el datastore fue bloqueado por otra función de administración como el backup o el vss (ver <a href=#flushandlock class="">.flushAndLock()</a>).</div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-6>Ver también<a href=#ver-también-6 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-7>Ver también<a href=#ver-también-7 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#flushandlock class="">.flushAndLock()</a><br/><a href=#unlock class="">.unlock()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=makeselectionsalterable>.makeSelectionsAlterable()<a href=#makeselectionsalterable class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -817,7 +1129,7 @@ disponibles:<table><tr><th>Propiedad<th>Tipo<th>Descripción<tr><td>nombre de ho
 
 <table><thead><tr><th>Parámetros<th>Tipo<th style=text-align:center><th>Descripción<tbody><tr><td><td><td style=text-align:center><td>No requiere ningún parámetro</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-12>Descripción<a href=#descripción-12 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-15>Descripción<a href=#descripción-15 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.makeSelectionsAlterable()</code> define todas las selecciones de entidades como alterables por defecto en los datastores de la aplicación actual (incluyendo <a class="" href=/docs/es/next/ORDA/datastores>datastores remotos</a>). Está pensado para ser utilizado una vez, por ejemplo en el método base <code>On Startup</code>.</p>
 <p>Cuando no se llama a esta función, las nuevas selecciones de entidades pueden ser compartibles, dependiendo de la naturaleza de su "padre", o de <a class="" href=/docs/es/next/ORDA/entities#shareable-or-alterable-entity-selections>cómo se crean</a>.</p>
 <blockquote>
@@ -877,7 +1189,7 @@ Por otro lado, utilizar este método en proyectos nuevos creados en 4D v18 R5 y 
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>curPassPhrase<td>Text<td>-><td>Frase de cifrado actual<tr><td>curDataKey<td>Object<td>-><td>Llave de encriptación de datos actual<tr><td>Resultado<td>Object<td>&lt;-<td>Resultado de la coincidencia de la llave de encriptación</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-13>Descripción<a href=#descripción-13 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-16>Descripción<a href=#descripción-16 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.provideDataKey()</code> permite suministrar una llave de cifrado de datos para el archivo de datos actual del datastore y detecta si la llave coincide con los datos cifrados. Esta función se puede utilizar al abrir una base encriptada, o al ejecutar cualquier operación de encriptación que requiera la llave de encriptación, como por ejemplo volver a encriptar el archivo de datos.</p>
 <blockquote>
 <ul>
@@ -955,8 +1267,113 @@ Por otro lado, utilizar este método en proyectos nuevos creados en 4D v18 R5 y 
 
 <table><thead><tr><th>Propiedad<th><th>Tipo<th>Descripción<tbody><tr><td>success<td><td>Boolean<td>True si la llave de encriptación proporcionada coincide con los datos encriptados, False en caso contrario<tr><td><td><td><td>Las siguientes propiedades se devuelven sólo si success es <em>FALSE</em><tr><td>status<td><td>Number<td>Código de error (4 si la llave de encriptación suministrada es errónea)<tr><td>statusText<td><td>Text<td>Mensaje de error<tr><td>errors<td><td>Collection<td>Pila de errores. El primer error tiene el índice más alto<tr><td><td>[ ].componentSignature<td>Text<td>Nombre del componente interno<tr><td><td>[ ].errCode<td>Number<td>Número de error<tr><td><td>[ ].message<td>Text<td>Mensaje de error</table>
 <p>Si no se proporciona <em>curPassphrase</em> o <em>curDataKey</em>, <code>.provideDataKey()</code> devuelve <strong>null</strong> (no se genera ningún error).</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-8>Ejemplo<a href=#ejemplo-8 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-11>Ejemplo<a href=#ejemplo-11 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain"> var $keyStatus : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $passphrase : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $passphrase:=Request("Enter the passphrase")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> If(OK=1)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $keyStatus:=ds.provideDataKey($passphrase)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    If($keyStatus.success)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       ALERT("You have provided a valid encryption key")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    Else</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       ALERT("You have provided an invalid encryption key, you will not be able to work with encrypted data")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    End if</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End if</span><br/></div></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=revokefinegrainedtoken>.revokeFineGrainedToken()<a href=#revokefinegrainedtoken class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lanzamiento<th>Modificaciones<tbody><tr><td>21 R6<td>Añadidos</table>
+</div></div></details>
+<p><strong>.revokeFineGrainedToken</strong>( <em>id</em> : Text )<br/><strong>.revokeFineGrainedToken</strong>( <em>tokenObj</em> : Object )</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>id<td>Text<td>→<td>Identifier of the token to revoke<tr><td>tokenObj<td>Object<td>→<td>Object with a <code>token</code> property containing the token to revoke</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-17>Descripción<a href=#descripción-17 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>The <code>.revokeFineGrainedToken()</code> function revokes a Fine-Grained Token of the MCP server.</p>
+<p>You designate the token:</p>
+<ul>
+<li class="">in the <em>id</em> parameter, with its identifier (returned by <a href=#generatefinegrainedtoken class=""><code>.generateFineGrainedToken()</code></a> and <a href=#listfinegrainedtokens class=""><code>.listFineGrainedTokens()</code></a>),</li>
+<li class="">or in the <em>tokenObj</em> parameter, with an object whose <code>token</code> property contains the token itself (<code>"4dfgt_..."</code>), for example to let the holder of a token revoke it.</li>
+</ul>
+<p>The token stops working at the next request, and the MCP sessions opened with it are closed. <a class="" href=/docs/es/next/WebServer/mcp-server#binary-attributes>Binary URLs</a> already returned to the client remain valid until they expire (10 minutes at most).</p>
+<p>When the function is called in a web context (code executed for a web or REST request), it can only revoke a token whose privileges are all held by the current session.</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-12>Ejemplo<a href=#ejemplo-12 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>You revoke a token by its id:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $tokens:=ds.listFineGrainedTokens().query("name = :1"; "Claude Desktop - jsmith")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">If ($tokens.length>0)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	ds.revokeFineGrainedToken($tokens[0].id)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End if</span><br/></div></code></pre></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-8>Ver también<a href=#ver-también-8 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p><a href=#generatefinegrainedtoken class="">.generateFineGrainedToken()</a><br/><a href=#listfinegrainedtokens class="">.listFineGrainedTokens()</a></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=revokeoauthgrant>.revokeOAuthGrant()<a href=#revokeoauthgrant class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lanzamiento<th>Modificaciones<tbody><tr><td>21 R6<td>Añadidos</table>
+</div></div></details>
+<p><strong>.revokeOAuthGrant</strong>( <em>id</em> : Text )</p>
+<div class=no-index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>id<td>Text<td>→<td>Identifier of the grant to revoke</table>
+</div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-18>Descripción<a href=#descripción-18 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>The <code>.revokeOAuthGrant()</code> function revokes a grant given to a user through the OAuth mode of the MCP server (see <a href=#listoauthgrants class=""><code>.listOAuthGrants()</code></a>).</p>
+<p>The access tokens of the grant get an HTTP 401 status from the next request, its refresh token is refused, and its MCP sessions are closed. The user must log in again from the MCP client.</p>
+<p>When the function is called in a web context (code executed for a web or REST request), it can only revoke a grant whose privileges are all held by the current session.</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-13>Ejemplo<a href=#ejemplo-13 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>When you deactivate a user of your application, you revoke their OAuth grants:</p>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $grant : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">For each ($grant; ds.listOAuthGrants().query("userName = :1"; "jsmith"))</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	ds.revokeOAuthGrant($grant.id)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End for each</span><br/></div></code></pre></div></div>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-9>Ver también<a href=#ver-también-9 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p><a href=#listoauthgrants class="">.listOAuthGrants()</a><br/><a href=#revokefinegrainedtoken class="">.revokeFineGrainedToken()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=setadminprotection>.setAdminProtection()<a href=#setadminprotection class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
 
@@ -995,14 +1412,14 @@ Por otro lado, utilizar este método en proyectos nuevos creados en 4D v18 R5 y 
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>status<td>Boolean<td>-><td>True para desactivar el acceso Data Explorer a los datos del puerto <code>webAdmin</code>, False (por defecto) para otorgar el acceso</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-14>Descripción<a href=#descripción-14 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-19>Descripción<a href=#descripción-19 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.setAdminProtection()</code> permite deshabilitar cualquier acceso a datos en el <a class="" href=/docs/es/next/Admin/webAdmin#http-port>puerto web admin</a>, incluso para el <a class="" href=/docs/es/next/Admin/dataExplorer>Explorador de datos</a> en sesiones <code>WebAdmin</code>.</p>
 <p>Por defecto, cuando no se llama a la función, el acceso a los datos se concede siempre en el puerto de administración web para una sesión con privilegio <code>WebAdmin</code> utilizando el Explorador de Datos. En algunas configuraciones, por ejemplo, cuando el servidor de aplicaciones está alojado en una máquina de terceros, es posible que no desee que el administrador pueda ver sus datos, aunque puede editar la configuración del servidor, incluyendo los parámetros <a class="" href=/docs/es/next/Admin/webAdmin#access-key>access key</a>.</p>
 <p>En este caso, puede llamar a esta función para deshabilitar el acceso a los datos del Explorador de Datos en el puerto de administración web de la máquina, incluso si la sesión de usuario tiene el privilegio <code>WebAdmin</code>. Cuando se ejecuta esta función, el archivo de datos se protege inmediatamente y el estado se almacena en el disco: el archivo de datos estará protegido incluso si se reinicia la aplicación.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-9>Ejemplo<a href=#ejemplo-9 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-14>Ejemplo<a href=#ejemplo-14 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>Se crea un método proyecto <em>protectDataFile</em> para llamar antes de los despliegues, por ejemplo:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain"> ds.setAdminProtection(True) //Desactiva el acceso a los datos del Explorador de datos</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-7>Ver también<a href=#ver-también-7 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-10>Ver también<a href=#ver-también-10 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#isadminprotected class=""><code>.isAdminProtected()</code></a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=setglobalstamp>.setGlobalStamp()<a href=#setglobalstamp class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -1043,17 +1460,17 @@ Por otro lado, utilizar este método en proyectos nuevos creados en 4D v18 R5 y 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>newStamp<td>Real<td>-><td>Nuevo valor del marcador de modificación global</table>
 </div>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>Modo avanzado</div><div class=admonitionContent_BuS1><p>Esta función está destinada a los desarrolladores que necesiten modificar el valor actual del marcador global. Debe utilizarse con cuidado.</div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-15>Descripción<a href=#descripción-15 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-20>Descripción<a href=#descripción-20 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.setGlobalStamp()</code> define <em>newStamp</em> como nuevo valor para del marcador de modificación global actual del datastore.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>info</div><div class=admonitionContent_BuS1><p>Esta función sólo puede llamarse:<ul>
 <li class="">en el datastore local (<a class="" href=/docs/es/next/commands/ds><code>ds</code></a>).</li>
 <li class="">en entorno cliente/servidor, en la máquina servidor.</li>
 </ul></div></div>
 <p>Para más información sobre el marcador global y el seguimiento de las modificaciones de datos, por favor consulte la página <a class="" href=/docs/es/next/ORDA/global-stamp><strong>Uso del marcador global</strong></a>.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-10>Ejemplo<a href=#ejemplo-10 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-15>Ejemplo<a href=#ejemplo-15 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>El siguiente código define el marcador de modificación global:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $newValue: Real</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$newValue:=ReadValueFrom //obtener un nuevo valor para asignar</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">ds.setGlobalStamp($newValue)</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-8>Ver también<a href=#ver-también-8 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-11>Ver también<a href=#ver-también-11 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#getglobalstamp class="">.getGlobalStamp()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=setremotecontextinfo>.setRemoteContextInfo()<a href=#setremotecontextinfo class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -1132,7 +1549,7 @@ Por otro lado, utilizar este método en proyectos nuevos creados en 4D v18 R5 y 
 <blockquote>
 <p><strong>Modo avanzado</strong>: esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.</p>
 </blockquote>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-16>Descripción<a href=#descripción-16 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-21>Descripción<a href=#descripción-21 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.setRemoteContextInfo()</code> vincula los atributos de la dataclass especificada al contexto de optimización <em>contextName</em>. Si ya existe un contexto de optimización para los atributos especificados, este comando lo reemplaza.</p>
 <p>Cuando se pasa un contexto a las funciones de clase ORDA, la optimización de las peticiones REST se activa inmediatamente:</p>
 <ul>
@@ -1164,7 +1581,7 @@ Por otro lado, utilizar este método en proyectos nuevos creados en 4D v18 R5 y 
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $ds : 4D.DataStoreImplementation</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20,\</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">persons.lastname, persons.firstname"; "main"; 30)</span><br/></div></code></pre></div></div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-3---listbox>Ejemplo 3 - Listbox<a href=#ejemplo-3---listbox class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">// When the form loads</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">Case of</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    : (Form event code=On Load)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       // Set the attributes of the page context</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        children"; "currentItem")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.settings:=New object("context"; "LB")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        Form.persons:=Form.ds.Persons.all(Form.settings)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        // Form.persons is displayed in a list box</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End case</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// When you get the attributes in the context of the current item: Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Form.currentItemLearntAttributes = "age, gender, children"</span><br/></div></code></pre></div></div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-9>Ver también<a href=#ver-también-9 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-12>Ver también<a href=#ver-también-12 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#getremotecontextinfo class="">.getRemoteContextInfo()</a><br/><a href=#getallremotecontexts class="">.getAllRemoteContexts()</a><br/><a href=#clearallremotecontexts class="">.clearAllRemoteContexts()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=startrequestlog>.startRequestLog()<a href=#startrequestlog class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -1220,7 +1637,7 @@ Por otro lado, utilizar este método en proyectos nuevos creados en 4D v18 R5 y 
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td>file<td>4D.File<td>-><td>Objeto File<tr><td>options<td>Integer<td>-><td>Opción de registro de respuesta (servidor únicamente)<tr><td>reqNum<td>Integer<td>-><td>Número de peticiones a mantener en memoria (cliente únicamente)</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-17>Descripción<a href=#descripción-17 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-22>Descripción<a href=#descripción-22 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.startRequestLog()</code> inicia el registro de peticiones ORDA del lado del cliente o del lado del servidor. Está diseñado para fines de depuración en configuraciones cliente/servidor.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class=admonitionHeading_Gvgb><span class=admonitionIcon_Rf37><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>info</div><div class=admonitionContent_BuS1><p>Para una descripción del formato del registro de peticiones ORDA, por favor consulte la sección <a class="" href=/docs/es/next/Debugging/debugLogFiles#orda-requests><strong>Peticiones ORDA</strong></a>.</div></div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=del-lado-del-cliente>Del lado del cliente<a href=#del-lado-del-cliente class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
@@ -1316,13 +1733,13 @@ Si se llama a <code>.startRequestLog()</code> con un archivo mientras se inició
 
 <table><thead><tr><th>Parámetros<th>Tipo<th style=text-align:center><th>Descripción<tbody><tr><td><td><td style=text-align:center><td>No requiere ningún parámetro</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-18>Descripción<a href=#descripción-18 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-23>Descripción<a href=#descripción-23 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.startTransaction()</code> inicia una transacción en el proceso actual en la base de datos que coincide con el datastore al que se aplica. Todos los cambios realizados en las entidades del almacén de datos en el proceso de la transacción se almacenan temporalmente hasta que la transacción se valida o se cancela.</p>
 <blockquote>
 <p>Si se llama a este método en el almacén de datos principal (es decir, el almacén de datos devuelto por el comando <code>ds</code>), la transacción se aplica a todas las operaciones realizadas en el almacén de datos principal y en la base de datos subyacente, incluyendo por tanto ORDA y los lenguajes clásicos.</p>
 </blockquote>
 <p>Puede anidar varias transacciones (subtransacciones). Cada transacción o sub-transacción debe ser eventualmente cancelada o validada. Note que si se cancela la transacción principal, también se cancelan todas sus subtransacciones, aunque se hayan validado individualmente mediante la función <code>.validateTransaction()</code>.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-11>Ejemplo<a href=#ejemplo-11 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-16>Ejemplo<a href=#ejemplo-16 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain"> var $connect; $status : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $person : cs.PersonsEntity</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $ds : 4D.DataStoreImplementation</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $choice : Text</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> var $error : Boolean</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> Case of</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    :($choice="local")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       $ds:=ds</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    :($choice="remote")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       $connect:=New object("hostname";"111.222.3.4:8044")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">       $ds:=Open datastore($connect;"myRemoteDS")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End case</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $ds.startTransaction()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> $person:=$ds.Persons.query("lastname=:1";"Peters").first()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> If($person#Null)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $person.lastname:="Smith"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $status:=$person.save()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End if</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> ...</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> ...</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> If($error)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $ds.cancelTransaction()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> Else</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    $ds.validateTransaction()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"> End if</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=stoprequestlog>.stopRequestLog()<a href=#stoprequestlog class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -1366,11 +1783,11 @@ Si se llama a <code>.startRequestLog()</code> con un archivo mientras se inició
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td><td><td><td>No requiere ningún parámetro</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-19>Descripción<a href=#descripción-19 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-24>Descripción<a href=#descripción-24 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.stopRequestLog()</code> detiene cualquier registro de las peticiones ORDA en la máquina en la que se llama (cliente o servidor).</p>
 <p>En realidad, cierra el documento abierto en el disco. Del lado del cliente, si el registro se inició en memoria, se detiene.</p>
 <p>Esta función no hace nada si el registro de peticiones ORDA no se inició en la máquina.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-12>Ejemplo<a href=#ejemplo-12 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-17>Ejemplo<a href=#ejemplo-17 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>Ver ejemplos para <a href=#startrequestlog class=""><code>.startRequestLog()</code></a>.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=unlock>.unlock()<a href=#unlock class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -1410,12 +1827,12 @@ Si se llama a <code>.startRequestLog()</code> con un archivo mientras se inició
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td><td><td><td>No requiere ningún parámetro</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-20>Descripción<a href=#descripción-20 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-25>Descripción<a href=#descripción-25 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.unlock()</code> elimina el bloqueo actual de las operaciones de escritura en el datastore, si se ha definido en el mismo proceso. Las operaciones de escritura pueden bloquearse en el almacén de datos local mediante la función <a href=#flushandlock class=""><code>.flushAndLock()</code></a>.</p>
 <p>Si el bloqueo actual era el único bloqueo en el datastore, las operaciones de escritura se activan inmediatamente. Si la función <code>.flushAndLock()</code> fue llamada varias veces en el proceso, el mismo número de <code>.unlock()</code> debe ser llamado para realmente desbloquear el datastore.</p>
 <p>La función <code>.unlock()</code> debe ser llamada desde el proceso que llamó a la correspondiente <code>.flushAndLock()</code>, de lo contrario la función no hace nada y el bloqueo no se elimina.</p>
 <p>Si se llama a la función <code>.unlock()</code> en un datastore desbloqueado, no hace nada.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-10>Ver también<a href=#ver-también-10 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ver-también-13>Ver también<a href=#ver-también-13 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p><a href=#flushandlock class="">.flushAndLock()</a><br/><a href=#locked class="">.locked()</a></p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=validatetransaction>.validateTransaction()<a href=#validatetransaction class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed=true><summary>Historia</summary><div><div class=collapsibleContent_i85q>
@@ -1455,9 +1872,9 @@ Si se llama a <code>.startRequestLog()</code> con un archivo mientras se inició
 
 <table><thead><tr><th>Parámetros<th>Tipo<th><th>Descripción<tbody><tr><td><td><td><td>No requiere ningún parámetro</table>
 </div>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-21>Descripción<a href=#descripción-21 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=descripción-26>Descripción<a href=#descripción-26 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
 <p>La función <code>.validateTransaction()</code> acepta la transacción que se inició con <a href=#starttransaction class=""><code>.startTransaction()</code></a> en el nivel correspondiente en el datastore especificado.</p>
 <p>La función guarda los cambios en los datos del almacén de datos que se produjeron durante la transacción.</p>
 <p>Puede anidar varias transacciones (subtransacciones). Si se cancela la transacción principal, también se cancelan todas sus subtransacciones, aunque se hayan validado individualmente utilizando esta función.</p>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-13>Ejemplo<a href=#ejemplo-13 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
-<p>Ver el ejemplo de la función <a href=#starttransaction class=""><code>.startTransaction()</code></a>.</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FDataStoreClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Comente esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de páginas de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/es/next/API/DataClassClass><div class=pagination-nav__sublabel>Anterior</div><div class=pagination-nav__label>DataClass</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/es/next/API/EmailObjectClass><div class=pagination-nav__sublabel>Siguiente</div><div class=pagination-nav__label>Email</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#resumen class="table-of-contents__link toc-highlight">Resumen</a><li><a href=#dataclassname class="table-of-contents__link toc-highlight"><em>.dataclassName</em></a><li><a href=#canceltransaction class="table-of-contents__link toc-highlight">.cancelTransaction()</a><li><a href=#clearallremotecontexts class="table-of-contents__link toc-highlight">.clearAllRemoteContexts()</a><li><a href=#encryptionstatus class="table-of-contents__link toc-highlight">.encryptionStatus()</a><li><a href=#flushandlock class="table-of-contents__link toc-highlight">.flushAndLock()</a><li><a href=#getallremotecontexts class="table-of-contents__link toc-highlight">.getAllRemoteContexts()</a><li><a href=#getglobalstamp class="table-of-contents__link toc-highlight">.getGlobalStamp()</a><li><a href=#getinfo class="table-of-contents__link toc-highlight">.getInfo()</a><li><a href=#getremotecontextinfo class="table-of-contents__link toc-highlight">.getRemoteContextInfo()</a><li><a href=#getrequestlog class="table-of-contents__link toc-highlight">.getRequestLog()</a><li><a href=#isadminprotected class="table-of-contents__link toc-highlight">.isAdminProtected()</a><li><a href=#locked class="table-of-contents__link toc-highlight">.locked()</a><li><a href=#makeselectionsalterable class="table-of-contents__link toc-highlight">.makeSelectionsAlterable()</a><li><a href=#providedatakey class="table-of-contents__link toc-highlight">.provideDataKey()</a><li><a href=#setadminprotection class="table-of-contents__link toc-highlight">.setAdminProtection()</a><li><a href=#setglobalstamp class="table-of-contents__link toc-highlight">.setGlobalStamp()</a><li><a href=#setremotecontextinfo class="table-of-contents__link toc-highlight">.setRemoteContextInfo()</a><li><a href=#startrequestlog class="table-of-contents__link toc-highlight">.startRequestLog()</a><li><a href=#starttransaction class="table-of-contents__link toc-highlight">.startTransaction()</a><li><a href=#stoprequestlog class="table-of-contents__link toc-highlight">.stopRequestLog()</a><li><a href=#unlock class="table-of-contents__link toc-highlight">.unlock()</a><li><a href=#validatetransaction class="table-of-contents__link toc-highlight">.validateTransaction()</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Comunidad</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Soporte</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>Descarga de documentación</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (página web de documentación antigua) </a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Base de conocimientos</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>Descargas</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>Resources</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>Obtener soporte</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Empresa</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>Acerca de 4D</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>Contáctenos</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>4D en el mundo</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - Todos los derechos reservados <div style=margin-top:8px><i>Parte del contenido se ha redactado con la ayuda de la IA</i></div></div></div></div></footer></div></body>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=ejemplo-18>Ejemplo<a href=#ejemplo-18 class=hash-link aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" translate=no>​</a></h4>
+<p>Ver el ejemplo de la función <a href=#starttransaction class=""><code>.startTransaction()</code></a>.</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FDataStoreClass.md%20(current)&body=Please%20enter%20your%20comment%3A" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Comente esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Navegación de páginas de documentos"><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/es/next/API/DataClassClass><div class=pagination-nav__sublabel>Anterior</div><div class=pagination-nav__label>DataClass</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/es/next/API/EmailObjectClass><div class=pagination-nav__sublabel>Siguiente</div><div class=pagination-nav__label>Email</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#resumen class="table-of-contents__link toc-highlight">Resumen</a><li><a href=#dataclassname class="table-of-contents__link toc-highlight"><em>.dataclassName</em></a><li><a href=#canceltransaction class="table-of-contents__link toc-highlight">.cancelTransaction()</a><li><a href=#clearallremotecontexts class="table-of-contents__link toc-highlight">.clearAllRemoteContexts()</a><li><a href=#encryptionstatus class="table-of-contents__link toc-highlight">.encryptionStatus()</a><li><a href=#flushandlock class="table-of-contents__link toc-highlight">.flushAndLock()</a><li><a href=#generatefinegrainedtoken class="table-of-contents__link toc-highlight">.generateFineGrainedToken()</a><li><a href=#getallremotecontexts class="table-of-contents__link toc-highlight">.getAllRemoteContexts()</a><li><a href=#getglobalstamp class="table-of-contents__link toc-highlight">.getGlobalStamp()</a><li><a href=#getinfo class="table-of-contents__link toc-highlight">.getInfo()</a><li><a href=#getremotecontextinfo class="table-of-contents__link toc-highlight">.getRemoteContextInfo()</a><li><a href=#getrequestlog class="table-of-contents__link toc-highlight">.getRequestLog()</a><li><a href=#isadminprotected class="table-of-contents__link toc-highlight">.isAdminProtected()</a><li><a href=#listfinegrainedtokens class="table-of-contents__link toc-highlight">.listFineGrainedTokens()</a><li><a href=#listoauthgrants class="table-of-contents__link toc-highlight">.listOAuthGrants()</a><li><a href=#locked class="table-of-contents__link toc-highlight">.locked()</a><li><a href=#makeselectionsalterable class="table-of-contents__link toc-highlight">.makeSelectionsAlterable()</a><li><a href=#providedatakey class="table-of-contents__link toc-highlight">.provideDataKey()</a><li><a href=#revokefinegrainedtoken class="table-of-contents__link toc-highlight">.revokeFineGrainedToken()</a><li><a href=#revokeoauthgrant class="table-of-contents__link toc-highlight">.revokeOAuthGrant()</a><li><a href=#setadminprotection class="table-of-contents__link toc-highlight">.setAdminProtection()</a><li><a href=#setglobalstamp class="table-of-contents__link toc-highlight">.setGlobalStamp()</a><li><a href=#setremotecontextinfo class="table-of-contents__link toc-highlight">.setRemoteContextInfo()</a><li><a href=#startrequestlog class="table-of-contents__link toc-highlight">.startRequestLog()</a><li><a href=#starttransaction class="table-of-contents__link toc-highlight">.startTransaction()</a><li><a href=#stoprequestlog class="table-of-contents__link toc-highlight">.stopRequestLog()</a><li><a href=#unlock class="table-of-contents__link toc-highlight">.unlock()</a><li><a href=#validatetransaction class="table-of-contents__link toc-highlight">.validateTransaction()</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Comunidad</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://blog.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Blog</a><li class=footer__item><a href=https://discuss.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Forum</a><li class=footer__item><a href=https://facebook.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Facebook</a><li class=footer__item><a href=https://x.com/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>X</a><li class=footer__item><a href=https://youtube.com/user/4Dsoftware target=_blank rel="noopener noreferrer" class=footer__link-item>Youtube</a><li class=footer__item><a href=https://github.com/4D target=_blank rel="noopener noreferrer" class=footer__link-item>Github</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Soporte</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/4d/docs/releases/tag/latest target=_blank rel="noopener noreferrer" class=footer__link-item>Descarga de documentación</a><li class=footer__item><a href=https://learn.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Learn 4D</a><li class=footer__item><a href=https://doc.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>4D Doc Center (página web de documentación antigua) </a><li class=footer__item><a href=https://kb.4d.com target=_blank rel="noopener noreferrer" class=footer__link-item>Base de conocimientos</a><li class=footer__item><a href=https://us.4d.com/product-download target=_blank rel="noopener noreferrer" class=footer__link-item>Descargas</a><li class=footer__item><a href=https://us.4d.com/resources target=_blank rel="noopener noreferrer" class=footer__link-item>Resources</a><li class=footer__item><a href=https://us.4d.com/4d-technical-support target=_blank rel="noopener noreferrer" class=footer__link-item>Obtener soporte</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Empresa</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://us.4d.com/about-us target=_blank rel="noopener noreferrer" class=footer__link-item>Acerca de 4D</a><li class=footer__item><a href=https://us.4d.com/contact-us target=_blank rel="noopener noreferrer" class=footer__link-item>Contáctenos</a><li class=footer__item><a href=https://us.4d.com/4d-around-the-world target=_blank rel="noopener noreferrer" class=footer__link-item>4D en el mundo</a><li class=footer__item><a href=https://us.4d.com/Careers target=_blank rel="noopener noreferrer" class=footer__link-item>Careers</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>© 2026 4D SAS - Todos los derechos reservados <div style=margin-top:8px><i>Parte del contenido se ha redactado con la ayuda de la IA</i></div></div></div></div></footer></div></body>
