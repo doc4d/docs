@@ -193,6 +193,7 @@ module.exports =
             "Concepts/parameters",
             "Concepts/shared",
             "Concepts/classes",
+            "Concepts/comments",
             "Concepts/control-flow",
             "Concepts/error-handling",
             "Concepts/interpreted-compiled",

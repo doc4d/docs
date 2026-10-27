@@ -986,12 +986,13 @@ $arch.save() //courseName and name are "Archaeology II"
 
 ## Exposed vs non-exposed functions
 
-For security reasons, all of your data model class functions, including [computed attributes](#computed-attributes-1) and [alias attributes](#alias-attributes-1), as well as [shared singleton functions](../Concepts/classes.md#shared-singleton) are **not exposed** (i.e., private) by default to **remote requests**.
+For security reasons, all of your data model class functions, including [computed attributes](#computed-attributes-1) and [alias attributes](#alias-attributes-1), as well as [shared singleton functions](../Concepts/classes.md#shared-singleton) and [MCP functions](#mcp-functions) are **not exposed** (i.e., private) by default to **remote requests**.
 
 Remote requests are:
 
 - Requests sent by remote 4D applications connected through `Open datastore`
 - REST requests, including requests from [Qodly pages](https://developer.4d.com/qodly/)
+- Requests sent to the [MCP server](../WebServer/mcp-server.md)
 
 > Regular 4D client/server requests are not impacted. Data model class functions are always available in this architecture.
 
@@ -1002,6 +1003,11 @@ To allow a function or an attribute to be called by a remote request, you must e
 ```4d  
 // declare an exposed function
 exposed Function <functionName>   
+```
+
+```4d
+// declare an exposed MCP function
+exposed MCP Function <functionName>
 ```
 
 ```4d  
@@ -1166,13 +1172,13 @@ The `MCP` keyword publishes an exposed function as a [custom tool](../WebServer/
 
 The `MCP` keyword is supported in the following classes:
 
-- the DataStore class: the tool name is the function name,
-- DataClass classes and Entity classes: the tool name is `ClassName-functionName`,
+- the [DataStore class](#datastore-class): the tool name is the function name,
+- [DataClass classes](#dataclass-class) and [Entity classes](#entity-class): the tool name is `ClassName-functionName`,
 - shared [singleton classes](../Concepts/classes.md#singleton-classes): the tool name is `ClassName-functionName`.
 
 Functions of EntitySelection classes are not published.
 
-The [comment block](../Concepts/classes.md#function-comments) written above the declaration describes the tool and its parameters for the AI client. The client can call the tool if its session has the **execute** permission on the function in the [`roles.json`](privileges.md#rolesjson-file) file, as for a REST request.
+The [comment block](../Concepts/comments.md#syntax-description) written above the declaration describes the tool and its parameters for the AI client. The client can call the tool if its session has the **execute** permission on the function in the [`roles.json`](privileges.md#rolesjson-file) file, as for a REST request.
 
 **Entity class functions**
 

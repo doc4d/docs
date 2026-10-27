@@ -11,6 +11,7 @@ title: MCP server
 
 </details>
 
+
 The 4D Web Server includes a native [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server. AI assistants and agents (Claude Desktop, Claude Code, MCP Inspector, etc.) can connect to it to discover and call the business logic and the data of your application.
 
 The MCP server publishes two kinds of **tools**:
@@ -292,6 +293,25 @@ The MCP server uses the [`roles.json`](../ORDA/privileges.md) file of the projec
 
 The tool catalog only lists the tools that the session can call, but every call is checked again. A tool that the session cannot call gets the same "Unknown tool" error as a tool that does not exist (the reason is logged on the server).
 
+For example, this configuration lets an MCP client with the `salesReader` privilege read the `Customer` and `Order` dataclasses with CRUD tools, and call tools published by the `OrderManager` singleton, such as `OrderManager-getYearTotal`:
+
+```json
+{
+	"privileges": [{"privilege": "salesReader", "includes": []}],
+	"roles": [],
+	"permissions": {
+		"allowed": [
+			{"applyTo": "Customer", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "Order", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "OrderManager", "type": "singleton", "execute": ["salesReader"]}
+		]
+	},
+	"restrictedByDefault": true
+}
+```
+
+
+
 Data accessed through the tools goes through ORDA, so [restricted entity selections](../ORDA/entities.md#restricting-entity-selections) (`Function event restrict`) apply. You can filter differently for MCP sessions by testing `Session.info.type`.
 
 #### Example
@@ -308,6 +328,7 @@ Function event restrict() : cs.OrderSelection
 	End if
 	return Null // no filter for other sessions
 ```
+
 
 ## Custom tools
 
@@ -326,7 +347,7 @@ Functions of the following classes can be published:
 
 Functions declared without `exposed` or without `MCP`, and functions of EntitySelection classes, are not published. See [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function).
 
-The [comment block](../Concepts/classes.md#function-comments) written above the declaration provides the description of the tool, of its parameters, and its behavior tags. A function without description is published, with a warning in the diagnostic log.
+The [comment block](../Concepts/comments.md#syntax-description) written above the declaration provides the description of the tool, of its parameters, and its behavior tags. A function without description is published, with a warning in the diagnostic log.
 
 #### Example
 
@@ -356,7 +377,7 @@ Each tool is described as follows:
 
 - **name**: `ClassName-functionName`, or the function name for a DataStore class function. The name must match `^[A-Za-z0-9_-]{1,64}$` and must not be the name of another tool, including a built-in CRUD tool. Otherwise, the function is not published and 4D logs a message.
 - **description**: the `MCP:` description lines of the comment block, or its description lines.
-- **inputSchema**: an object with one property per parameter, named without the `$`, with the types converted to JSON Schema as described in [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata), and `"additionalProperties": false`:
+- **inputSchema**: an object with one property per parameter, named without the `$`, with the types converted to JSON Schema as described in [MCP tool metadata](#mcp-tool-metadata), and `"additionalProperties": false`:
   - every parameter is required, except those documented with `{$name}`,
   - typed variadic parameters (`... : Type`) are an optional `args` array (a function that declares both `$args` and variadic parameters is not published),
   - a function of an Entity class gets a required `key` property (string or integer): the primary key of the entity on which the function is called. A function of an Entity class that declares a `$key` parameter is not published.
@@ -370,7 +391,177 @@ Each tool is described as follows:
 |Collection|`{result: array}`|
 |Object, Variant, scalar types, no return|No output schema|
 
-- **annotations**: the hints of the [behavior tags](../Concepts/classes.md#mcp-tool-metadata). `openWorldHint` is `false` unless the function uses `@openWorld`. Contradictory hints are omitted. Annotations are hints for the client: they do not protect anything (see [Asking the user for confirmation](#asking-the-user-for-confirmation)).
+- **annotations**: the hints of the [behavior tags](#mcp-tool-metadata). `openWorldHint` is `false` unless the function uses `@openWorld`. Contradictory hints are omitted. Annotations are hints for the client: they do not protect anything (see [Asking the user for confirmation](#asking-the-user-for-confirmation)).
+
+### MCP tool metadata
+
+The comment blocks of `exposed MCP Function` declarations also describe these functions as MCP tools. When the project is compiled, 4D generates the `Project/DerivedData/syntaxMCP.json` file, which contains the metadata of these tools in a `toolList` array.
+
+Only functions of the following classes are listed:
+
+- the DataStore class,
+- DataClass and Entity classes,
+- singleton classes.
+
+Functions of EntitySelection classes and of other classes, as well as functions that are not declared `exposed MCP Function`, are not listed, even if their comment block contains `MCP:` lines.
+
+:::note
+
+If a `Resources/syntaxMCP.json` file exists in the project, it is used instead of the generated file. The compiler never overwrites it. See [`Resources` folder](../Project/architecture.md#resources).
+
+:::
+
+The 4D MCP server builds its tool catalog from the same comment blocks and the same type conversions, using the running code: in interpreted mode, a function you add or modify is published at the next `tools/list` request, without restarting. The catalog also adds the elements needed to call the tools, such as a `key` argument for Entity class functions and `"additionalProperties": false` in `inputSchema` (see [Tool catalog](#tool-catalog)). The following functions are not published, and 4D logs a message:
+
+- a function whose tool name is longer than 64 characters, contains characters other than letters, digits, `_` and `-`, or is the name of another tool (including a built-in CRUD tool),
+- an Entity class function that declares a `$key` parameter,
+- a function that declares both a `$args` parameter and variadic parameters.
+
+A function without description is published, and 4D logs a warning.
+
+Each tool of the `toolList` array is an object with the following properties:
+
+|Property|Description|
+|---|---|
+|`name`|Name of the tool: the function name for a DataStore class function, `ClassName-functionName` for other classes|
+|`description`|Text of the `MCP:` description lines, or the description lines if there is no `MCP:` description. Omitted if there is no description|
+|`inputSchema`|`{"type": "object", "properties": {...}, "required": [...]}`: one property per parameter of the signature, named without the `$`, with the parameter comment as `description`|
+|`outputSchema`|Schema of the return type. Omitted if the function returns nothing or a Variant|
+|`annotations`|Behavior hints derived from the `MCP:` behavior tags|
+
+In `inputSchema`:
+
+- every parameter is listed in `required`, except those documented with a `{$name}:` line. `required` is omitted if it is empty.
+- typed variadic parameters (`... : Type`) are represented by an optional `args` property of type `array`, whose `items` have the schema of *Type*. The `...:` line is its description.
+
+Parameter and return types are converted to JSON Schema as follows:
+
+|4D type|JSON Schema|
+|---|---|
+|Text|`{"type": "string"}`|
+|Integer|`{"type": "integer"}`|
+|Real|`{"type": "number"}`|
+|Boolean|`{"type": "boolean"}`|
+|Date|`{"type": "string", "format": "date"}`|
+|Time|`{"type": "integer", "description": "duration in seconds"}`|
+|Object, class instance|`{"type": "object"}`|
+|Collection|`{"type": "array"}`|
+|Blob, 4D.Blob, Picture|`{"type": "string", "contentEncoding": "base64"}`|
+|Variant, or no type|`{}`|
+
+The supported behavior tags are converted to annotations as follows:
+
+|Tag|Annotation|
+|---|---|
+|`@readOnly`|`"readOnlyHint": true`|
+|`@destructive`|`"destructiveHint": true`|
+|`@additive`|`"destructiveHint": false`|
+|`@idempotent`|`"idempotentHint": true`|
+|`@openWorld`|`"openWorldHint": true`|
+
+`openWorldHint` is always present: it is `false` if `@openWorld` is not used. Other hints are omitted when their tag is not used. `@readOnly`, `@destructive`, and `@additive` contradict each other: if a function uses two or more of them, the compiler reports a warning and the corresponding hints are omitted. Unknown tags are ignored.
+
+#### Example
+
+You document the MCP tools of a `DateTime` singleton class:
+
+```4d
+// Class: DateTime
+
+singleton Class constructor()
+	This.date:=Current date
+
+// Adds a number of days to the date
+// MCP: Add days to the date-time
+// $days: number of days to add (negative to subtract)
+exposed MCP Function addDays($days : Integer) : Date
+	This.date:=Add to date(This.date; 0; 0; $days)
+	return This.date
+
+// Adds zero or more day offsets to the date and returns the updated date
+// MCP: Add day offsets to the date-time
+// MCP: @idempotent
+// ...: day offsets to add (negative to subtract)
+exposed MCP Function addDayOffsets(... : Integer) : Date
+	var $offsetIndex; $totalDays : Integer
+	For ($offsetIndex; 1; Count parameters)
+		$totalDays+=${$offsetIndex}
+	End for
+	This.date:=Add to date(This.date; 0; 0; $totalDays)
+	return This.date
+```
+
+After compilation, `Project/DerivedData/syntaxMCP.json` contains:
+
+```json
+{
+  "toolList": [
+    {
+      "name": "DateTime-addDays",
+      "description": "Add days to the date-time",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "days": { "type": "integer", "description": "number of days to add (negative to subtract)" }
+        },
+        "required": ["days"]
+      },
+      "outputSchema": { "type": "string", "format": "date" },
+      "annotations": { "openWorldHint": false }
+    },
+    {
+      "name": "DateTime-addDayOffsets",
+      "description": "Add day offsets to the date-time",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "args": {
+            "type": "array",
+            "items": { "type": "integer" },
+            "description": "day offsets to add (negative to subtract)"
+          }
+        }
+      },
+      "outputSchema": { "type": "string", "format": "date" },
+      "annotations": { "idempotentHint": true, "openWorldHint": false }
+    }
+  ]
+}
+```
+
+#### Example
+
+You want to read the names of the MCP tools generated by the last compilation:
+
+```4d
+var $file : 4D.File:=File("/PACKAGE/Project/DerivedData/syntaxMCP.json")
+var $metadata : Object:=JSON Parse($file.getText())
+var $names : Collection:=$metadata.toolList.extract("name")
+// $names is ["DateTime-addDays";"DateTime-addDayOffsets"]
+```
+
+#### Example
+
+You document a tool with `param:` lines and a behavior tag line without the `MCP:` prefix:
+
+```4d
+// Class: Stock
+
+shared singleton Class constructor()
+
+// Returns the quantity in stock of a product
+// param: $reference reference of the product
+// param: {$warehouse} code of the warehouse (all warehouses if omitted)
+// @readOnly
+exposed MCP Function getQuantity($reference : Text; $warehouse : Text) : Integer
+	If ($warehouse="")
+		return ds.Stock.query("reference = :1"; $reference).sum("quantity")
+	End if
+	return ds.Stock.query("reference = :1 and warehouse = :2"; $reference; $warehouse).sum("quantity")
+```
+
+The `Stock-getQuantity` tool has a required `reference` property, an optional `warehouse` property, and the `"readOnlyHint": true` annotation.
+
 
 ### Calling a custom tool
 
