@@ -253,7 +253,7 @@ You can create an object of type [entity selection](dsMapping.md#entity-selectio
 *	Using the [`Create entity selection`](../commands/create-entity-selection) command or the [`.newSelection()`](API/DataClassClass.md#newselection) dataclass function to create a blank entity selection;
 *	Using the [`.copy()`](API/EntitySelectionClass.md#copy) function to duplicate an existing entity selection;
 *	Using one of the various functions from the [Entity selection class](API/EntitySelectionClass.md) that returns a new entity selection, such as [`.or()`](API/EntitySelectionClass.md#or);
-*	Using the [`.groupBy()`](API/EntitySelectionClass.md#groupby) function to group the entities of an entity selection on one or more levels of attribute values: each last-level group holds the entity selection of its entities;
+*	Using the [`.groupBy()`](../API/EntitySelectionClass.md#groupby) function to group the entities of an entity selection on one or more levels of attribute values: each last-level group holds the entity selection of its entities;
 *	Using a relation attribute of type "related entities" (see below).
 
 :::note
@@ -301,7 +301,7 @@ A new entity selection is **shareable** in the following cases:
 - the new entity selection results from an ORDA class function applied to a dataClass: [dataClass.all()](API/DataClassClass.md#all), [dataClass.fromCollection()](API/DataClassClass.md#fromcollection), [dataClass.query()](API/DataClassClass.md#query),
 - the new entity selection is based upon a relation [entity.*attributeName*](API/EntityClass.md#attributename) (e.g. "company.employees") when *attributeName* is a one-to-many related attribute but the entity does not belong to an entity selection.
 - the new entity selection is explicitely copied as shareable with [entitySelection.copy()](API/EntitySelectionClass.md#copy) or `OB Copy` (i.e. with the `ck shared` option).
-- the new entity selection is the `entities` property of a group returned by [entitySelection.groupBy()](API/EntitySelectionClass.md#groupby), whatever the nature of the original entity selection.
+- the new entity selection is the `entities` property of a group returned by [entitySelection.groupBy()](../API/EntitySelectionClass.md#groupby), whatever the nature of the original entity selection.
 
 Example:
 
