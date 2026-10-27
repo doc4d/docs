@@ -32,6 +32,7 @@ Entity selections can be created from existing selections using various function
 |[<!-- INCLUDE #EntitySelectionClass.first().Syntax -->](#first)<br/><!-- INCLUDE #EntitySelectionClass.first().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.getDataClass().Syntax -->](#getdataclass)<br/><!-- INCLUDE #EntitySelectionClass.getDataClass().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.getRemoteContextAttributes().Syntax -->](#getremotecontextattributes)<br/><!-- INCLUDE #EntityClass.getRemoteContextAttributes().Summary -->|
+|[<!-- INCLUDE #EntitySelectionClass.groupBy().Syntax -->](#groupby)<br/><!-- INCLUDE #EntitySelectionClass.groupBy().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.isAlterable().Syntax -->](#isalterable)<br/><!-- INCLUDE #EntitySelectionClass.isAlterable().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.isOrdered().Syntax -->](#isordered)<br/><!-- INCLUDE #EntitySelectionClass.isOrdered().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.last().Syntax -->](#last)<br/><!-- INCLUDE #EntitySelectionClass.last().Summary -->|
@@ -1197,6 +1198,183 @@ $info:=$persons.getRemoteContextAttributes()
 #### See also
 
 [Entity.getRemoteContextAttributes()](./EntityClass.md#getremotecontextattributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+
+
+<!-- REF EntitySelectionClass.groupBy().Desc -->
+## .groupBy()
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R6|Added|
+
+</details>
+
+<!-- REF #EntitySelectionClass.groupBy().Syntax -->**.groupBy**( *levels* : Text { ; *options* : Integer { ; *aggregates* : Object } } ) : Collection<br/>**.groupBy**( *levels* : Collection { ; *options* : Integer { ; *aggregates* : Object } } ) : Collection<!-- END REF -->
+
+
+<!-- REF #EntitySelectionClass.groupBy().Params -->
+<div class="no-index">
+
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|levels|Text, Collection|&#8594;|Attribute path(s) to group on, one per level, each with an optional `asc` or `desc` sort order|
+|options|Integer|&#8594;|`dk diacritical`|
+|aggregates|Object|&#8594;|Aggregates to compute for each group: `sum`, `average`, `min`, `max`, `count`|
+|Result|Collection|&#8592;|Groups of the first level|
+</div>
+<!-- END REF -->
+
+#### Description
+
+The `.groupBy()` function <!-- REF #EntitySelectionClass.groupBy().Summary -->returns a collection of groups made from the entities of the entity selection, on one or more levels of attribute values<!-- END REF -->.
+
+>*	This function does not modify the original entity selection.
+>*	`.groupBy()` gives in one call the result that would require one [`.distinct()`](#distinct) and one [`.query()`](#query) per group and per level.
+
+##### Levels
+
+In *levels*, pass the attribute path(s) to group on, one per level. The first path defines the groups of level 1, the second path the groups of level 2 inside each group of level 1, and so on. You can pass:
+
+*	a text with attribute paths separated by commas, as in the *pathString* parameter of [`.orderBy()`](#orderby):
+
+```4d
+"attributePath1 {desc or asc}, attributePath2 {desc or asc},..."
+```
+
+*	a collection of texts, one per level. Each text contains an attribute path, optionally followed by a space and "asc" or "desc", for example `["country desc"; "city"]`.
+
+By default, the groups of a level are sorted by value in ascending order. Pass "desc" after an attribute path to sort the groups of this level in descending order. The order of each level is independent of the other levels.
+
+Each level can be:
+
+*	a storage attribute of type text, number, date, or boolean,
+*	an attribute of a related entity reached through many-to-one relations (for example "customer.country"),
+*	a path in an object attribute (for example "extra.address.country"),
+*	a [computed attribute](../ORDA/ordaClasses.md#computed-attributes-1) that returns a scalar value (the value returned by its `get` function is used),
+*	an [alias attribute](../ORDA/ordaClasses.md#alias-attributes-1) (the result is the same as with its target path).
+
+##### Returned collection
+
+The function returns a collection of group objects for level 1. Each group object contains the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|value|Text, Number, Date, Boolean, or Null|Value of the level's attribute path for all the entities of the group|
+|groups|Collection|Levels 1 to N-1 only: groups of the next level for the entities of the group|
+|entities|4D.EntitySelection|Last level only: entities of the group|
+|*operation*_*attributePath*|any|One property for each aggregate declared in *aggregates* (see below)|
+
+With a single level, each group object contains `value` and `entities`. Each entity of the entity selection is in exactly one last-level group.
+
+Group values follow these rules:
+
+*	Entities whose value is **null** or undefined, or that have no related entity in a related attribute path, are in a single group whose `value` is **null**.
+*	By default, text values are compared without regard to case or accents: "Paris" and "paris" are in the same group. The `value` of such a group is the value of its first entity in the entity selection. If you pass the `dk diacritical` constant (8) in *options*, text values are compared with regard to case and accents.
+*	In ascending order, the **null** group comes first. When the attribute path leads to an object property that contains values of different types, they are sorted by type, in the same order as with [`.distinct()`](#distinct) (booleans, strings, numbers, dates), then by value. "desc" reverses the whole order, so the **null** group comes last.
+
+The `entities` entity selections are always [shareable](../ORDA/entities.md#shareable-or-alterable-entity-selections): call [`.copy()`](#copy) to get an alterable entity selection. If the original entity selection is [ordered](../ORDA/dsMapping.md#ordered-or-unordered-entity-selection), each `entities` entity selection is ordered and keeps the entities in the same relative order. Otherwise, it is unordered. On a 4D remote client, the `entities` entity selections are always ordered.
+
+##### Aggregates
+
+In the optional *aggregates* parameter, you can declare values to compute for each group. To pass *aggregates* without option, pass 0 in *options*. The *aggregates* object can contain the following properties, each one with an attribute path (text) or a collection of attribute paths as value:
+
+|Property|Value of the group property|
+|---|---|
+|sum|Same as [`.sum()`](#sum) on the entities of the group|
+|average|Same as [`.average()`](#average) on the entities of the group|
+|min|Same as [`.min()`](#min) on the entities of the group|
+|max|Same as [`.max()`](#max) on the entities of the group|
+|count|Same as [`.count()`](#count) on the entities of the group|
+
+For example, `{sum: "population"; average: ["population"; "area"]}` declares three aggregates.
+
+Every group, at every level, gets one property for each declared aggregate. The property is named with the operation and the attribute path, separated by "_": for example, `sum_population` or `average_area`. For a group of level 1 to N-1, aggregates are computed on all the entities of the group (not from the aggregates of its sub-groups). When `.average()`, `.min()`, or `.max()` would return undefined (for example when all values are null), the property is not added to the group.
+
+The attribute of an aggregate must belong to the dataclass of the entity selection. `sum` and `average` require a numeric attribute.
+
+##### Errors
+
+An error is raised, that you can catch with a [`Try...Catch`](../Concepts/error-handling.md#trycatchend-try) block, if:
+
+*	an attribute path of *levels* or *aggregates* is not found in the dataclass,
+*	a level goes through a one-to-many relation, or designates a related entity, a related entity selection, a picture, a blob, or a whole object attribute,
+*	a level contains the `[]` notation (a path through a collection),
+*	the value found at a level's object path is an object or a collection,
+*	*levels* is empty, is not a text or a collection of texts, contains the same level twice (also through an alias), or contains a keyword other than "asc" or "desc",
+*	*aggregates* contains an unknown operation, a value that is not a text or a collection of texts, or an attribute that does not support the operation (for example, `sum` on a text attribute),
+*	you do not have the permission to read the dataclass or an attribute.
+
+With a remote datastore opened by [`Open datastore`](../commands/open-datastore), attributes that are not exposed in REST are considered not found.
+
+#### Example 1
+
+You want to group locations by country:
+
+```4d
+var $groups : Collection
+$groups:=ds.Location.all().groupBy("country")
+//$groups[0]={value: null; entities: [locations without country]}
+//$groups[1]={value: "France"; entities: [locations in France]}
+//$groups[2]={value: "Italy"; entities: [locations in Italy]}
+//...
+```
+
+#### Example 2
+
+You want to group locations by country in descending order, then by city, and get the total population of each city:
+
+```4d
+var $country; $city : Object
+var $total : Real
+
+For each ($country; ds.Location.all().groupBy("country desc, city"))
+	For each ($city; $country.groups)
+		// $city.value is the city, $city.entities its locations
+		$total:=$city.entities.sum("population")
+	End for each
+End for each
+```
+
+#### Example 3
+
+You pass the levels in a collection and compare text values with regard to case and accents:
+
+```4d
+var $groups : Collection
+$groups:=ds.Location.all().groupBy(["country"; "city desc"]; dk diacritical)
+// "Orleans" and "Orléans" are in two different groups
+```
+
+#### Example 4
+
+You want the total and the average population of each country, and of each city in the country:
+
+```4d
+var $groups : Collection
+var $france : Object
+$groups:=ds.Location.all().groupBy("country, city"; 0; {sum: "population"; average: "population"})
+$france:=$groups.query("value = :1"; "France").first()
+// $france.sum_population is the total population of France
+// $france.average_population is the average population of all locations in France
+// $france.groups[0].sum_population is the total population of its first city
+```
+
+#### Example 5
+
+You want to group sales by the country of their customer. Sales without a customer are in the **null** group:
+
+```4d
+var $groups : Collection
+var $count : Integer
+$groups:=ds.Sale.all().groupBy("customer.country")
+If ($groups[0].value=Null) // the null group comes first
+	$count:=$groups[0].entities.length // sales without a customer or whose customer has no country
+End if
+```
+
+<!-- END REF -->
 
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()   
