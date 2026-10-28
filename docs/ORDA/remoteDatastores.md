@@ -53,3 +53,21 @@ If an entity from a remote datastore is hold by a transaction in a process, othe
 	*	when the session is killed from the server administration window.
  
 
+## Unavailable functions
+
+The [`entitySelection.groupBy()`](../API/EntitySelectionClass.md#groupby) function is not available on remote datastores: calling it on an entity selection of a remote datastore raises an error. Call it in the 4D application that owns the datastore (it is available on 4D remote clients).
+
+#### Example
+
+```4d
+var $remoteDS : 4D.DataStoreImplementation
+var $groups : Collection
+
+$remoteDS:=Open datastore({hostname: "127.0.0.1:8111"}; "LocationManager")
+Try
+	$groups:=$remoteDS.Location.all().groupBy("country")
+Catch
+	// an error is raised: groupBy() is not available on a remote datastore
+End try
+```
+
