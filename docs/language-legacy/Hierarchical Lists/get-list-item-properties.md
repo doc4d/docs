@@ -60,6 +60,30 @@ After the call:
 
 For details about these properties, see the description of the command [SET LIST ITEM PROPERTIES](../commands/set-list-item-properties).
 
+## Drop-down lists with a List data source
+
+When `GET LIST ITEM PROPERTIES` targets a **drop-down list object** whose data source type is **List**, the command returns list item metadata used by modern drop-down rendering.
+
+This extension applies only to drop-down list objects bound to a List data source.  
+It does not apply to drop-down lists bound to object or array data sources.
+
+### Extended syntax (drop-down List data source)
+
+**GET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text {; *color* : Longint {; *selectable* : Boolean}}}} )  
+**GET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text {; *color* : Longint {; *selectable* : Boolean}}}} )
+
+### Additional/clarified behavior
+
+- `enterable` returns the actual stored item value (set previously by `SET LIST ITEM PROPERTIES` or existing state).
+- In this drop-down context, `enterable` is not derived from `selectable`.
+- `styles`, `icon`, and `color` return the currently stored values for the targeted item.
+- `selectable` returns whether the item is selectable in the drop-down.
+- If `itemRef` is invalid, output parameters remain unchanged.
+
+### Notes
+
+- Non-selectable items and separator items remain in the data source and keep their original index.
+- This command reports metadata; it does not alter rendering behavior.
 ## See also 
 
 [GET LIST ITEM](../commands/get-list-item)  
