@@ -17,6 +17,7 @@ Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/),
 - Optional [OAuth 2.1 mode](../WebServer/mcp-server.md#oauth-21-mode) of the MCP server, enabled by the reserved [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) DataStore class function. Grants are managed with the new [`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants) and [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant) functions.
 - New [`MCP`](../commands/mcp) command and [`4D.MCPContext`](../API/MCPContextClass.md) class to [ask the user for a confirmation](../WebServer/mcp-server.md#asking-the-user-for-confirmation) in MCP tools.
 - A reference [MCP Bundle](../WebServer/mcp-server.md#claude-desktop-bundle) lets Claude Desktop connect to a 4D MCP server on the local network.
+- Component methods edited from the host project can be [renamed](../Project/search-replace.md#renaming-component-methods) with an update of their callers in the component, the host project and the other components, and support [**Search Callers** and **Search Dependencies**](../Project/search-replace.md#searching-callers-and-dependencies-of-component-methods). See [Editing components](../Extensions/develop-components.md#renaming-and-searching-component-methods).
 
 #### Behavior changes
 

@@ -12,7 +12,7 @@ title: Search and Replace
 
 :::note
 
-There are also functions for searching among the methods of your project in the context menu of the Methods Page in the Explorer: **Search Callers** (aussi available in the [Code editor](../code-editor/write-class-method.md#search-callers) and **Search Dependencies**. Both functions display the items found in a [Results window](#results-window). 
+There are also functions for searching among the methods of your project in the context menu of the Methods Page in the Explorer: **Search Callers** (also available in the [Code editor](../code-editor/write-class-method.md#search-callers)) and **Search Dependencies**. Both functions display the items found in a [Results window](#results-window). They are also available for [component methods](#searching-callers-and-dependencies-of-component-methods).
 
 :::
 
@@ -159,6 +159,18 @@ You can select options that can help speed up your searches:
 - **Case Sensitive**: When this option is selected, the search uses the case of the characters as they have been entered in the Find area.
 
 
+## Searching callers and dependencies of component methods
+
+The **Search Callers** and **Search Dependencies** commands are available for the project methods of your components, from the **Component Methods** page of the Explorer and from the [component tab](../Extensions/develop-components.md#editing-all-component-code). **Search Callers** is also available in the [Code editor](../code-editor/write-class-method.md#search-callers) of a component method. These commands do not use the [**in the project** menu](#search-in-components); their scope depends on the method:
+
+- **Search Callers** on a [shared method](../Extensions/develop-components.md#sharing-of-project-methods) searches the component itself, the host project, and every other component whose source code is available (component loaded in interpreted mode), even if it cannot be edited. A project that has its own method with the same name is not searched, since its calls do not reach the component method.
+- **Search Callers** on a non-shared method searches only its component.
+- **Search Dependencies** lists all the methods and forms called by the method in its component, directly and indirectly. Methods of other components (for example, shared methods) are listed with their component name, but the methods they call are not listed.
+
+Components available only in compiled form are not searched.
+
+In the [Results window](#results-window), each item found in a component is followed by the component name.
+
 
 ## Results window
 
@@ -167,7 +179,7 @@ The Results window lists all elements found that match the search criteria set u
 - [standard search](#starting-a-search)
 - [search for unused elements](#find-unused-methods-and-global-variables)
 - [search for callers](../code-editor/write-class-method.md#search-callers)
-- search for dependencies
+- search for dependencies (see also [component methods](#searching-callers-and-dependencies-of-component-methods))
 - [renaming of project methods and variables](#renaming-project-methods-and-variables)
 
 It shows the results as a hierarchical list organized by type of elements found. You can expand or collapse all the hierarchical items in the list using the options menu (found at the bottom left of the window) or in the context menu.
@@ -255,6 +267,32 @@ Depending on the type of object you are renaming (project method or variable), t
 - Project method: The **Update callers in whole database** option renames the method in all the project code that references it. You can also uncheck this option in order, for example, to rename the method only in the Explorer itself.
 - Process variable: The **Rename variable in whole database** option renames the variable in all the project code that references it. If you uncheck this option, the variable is only renamed in the current method.
 - Local variable: No distribution option for this object; the variable is only renamed in the current method or class.
+
+### Renaming component methods
+
+You can rename the project methods of a component that can be [edited from the host project](../Extensions/develop-components.md#editing-components). The **Rename...** command is available:
+
+- in the context menu of the **Component Methods** page of the Explorer and of the [component tab](../Extensions/develop-components.md#editing-all-component-code),
+- in the Code editor of a component method,
+- in the Code editor of the host project, on a call to a [shared method](../Extensions/develop-components.md#sharing-of-project-methods) of a component.
+
+The distribution option of the dialog box depends on the method:
+
+- Shared method: the **Update callers in host and components** option renames the method in the code of the component, of the host project, and of the other loaded components that call it. The dialog box warns you that other projects using this component (that are not loaded) are not updated.
+- Non-shared method: the **Update callers in component** option renames the method in the code of its component only.
+
+If you uncheck the option, only the method itself is renamed.
+
+The new name is refused before anything is changed when it is already used by another method of the component or, for a shared method, by a project method of the host project or by a shared method of another loaded component. The warning message gives the name of the project that uses it.
+
+When the option is checked, renaming works as follows:
+
+1. The [Results window](#results-window) opens and lists all the callers of the method (see [Searching callers and dependencies of component methods](#searching-callers-and-dependencies-of-component-methods)).
+2. When the search is finished, a confirmation dialog box gives the number of occurrences that will be updated, and the components that will not be updated. Click **OK** to rename, or **Cancel**: nothing is changed. If you cancel the search with the **x** button, the method is not renamed.
+3. Before anything is written, 4D checks that every project to update can be written and that none of the methods to update is locked (for example, by another user). If a project cannot be updated, nothing is renamed and a message lists the projects that block the operation.
+4. The method is renamed and the callers are updated. A message gives the number of occurrences renamed.
+
+Components that cannot be edited from the host, for example components [downloaded from GitHub or GitLab](components.md#components-stored-on-git-hosting-platforms), are not updated: their callers stay in the Results window and are listed in the confirmation and result messages.
 
 
 

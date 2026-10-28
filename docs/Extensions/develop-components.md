@@ -117,6 +117,14 @@ Standard 4D IDE features are available for the component. You can execute the fo
 - run methods,
 - restore from trash or empty trash.
 
+#### Renaming and searching component methods
+
+From the **Component Methods** page of the Explorer, from the component tab, and from the Code editor, you can also:
+
+- [rename](../Project/search-replace.md#renaming-component-methods) a project method of the component, and update its callers in the component or, for a [shared method](#sharing-of-project-methods), in the host project and the other loaded components,
+- [search the callers](../Project/search-replace.md#searching-callers-and-dependencies-of-component-methods) of a project method of the component, in the component and, for a shared method, in the host project and the other components whose source code is available,
+- [search the dependencies](../Project/search-replace.md#searching-callers-and-dependencies-of-component-methods) of a project method of the component (Explorer only).
+
 ### Compiling components
 
 You can compile a component [directly from the host project](../Project/compiler.md#compile-components) without having to open it separately, provided it is compliant with the [requirements](../Project/compiler.md#requirements).

@@ -696,6 +696,8 @@ The **Search Callers** command in the **Method** menu is only enabled for projec
 
 This command displays its results in a new window.
 
+The command is also available in the Code editor of a component method. In this case, the callers are searched in the component and, for a shared method, in the host project and the other components (see [Searching callers and dependencies of component methods](../Project/search-replace.md#searching-callers-and-dependencies-of-component-methods)).
+
 
 ## Goto Definition  
 
@@ -742,6 +744,8 @@ This command displays its results in a new window.
 ## Rename
 
 A global renaming feature can be used with **variables** and **project methods**, allowing you to rename them safely throughout the whole project. To do this, highlight the variable or project method name in the editor and select **Rename...** from the **Method** menu or the context menu. A dialog box is then displayed, allowing you to write the new name. For more information, refer to [Renaming project methods and variables](../Project/search-replace.md#renaming-project-methods-and-variables) section. 
+
+You can also rename the project methods of an editable component, from the Code editor of a component method or from the host project on a call to a shared component method. See [Renaming component methods](../Project/search-replace.md#renaming-component-methods).
 
 ## Macros
 
