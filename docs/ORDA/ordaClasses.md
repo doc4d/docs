@@ -299,7 +299,7 @@ When creating or editing data model classes, you must pay attention to the follo
 
 - You cannot instantiate a data model class object with the `new()` keyword (an error is returned). You must use a regular function as listed in the [`Instantiated by` column of the ORDA class table](#architecture).
 
-- You cannot override a native ORDA class function from the **`4D`** [class store](Concepts/classes.md#class-stores) with a data model user class function. Exception: if an EntitySelection class defines a `groupBy()` function, this function is ignored and the native [`.groupBy()`](../API/EntitySelectionClass.md#groupby) function is called instead, in interpreted and compiled mode. The compiler returns a warning. Rename your function to call it.
+- You cannot override a native ORDA class function from the **`4D`** [class store](../Concepts/classes.md#class-stores) with a data model user class function. Exception: if an EntitySelection class defines a `groupBy()` function, this function is ignored and the native [`.groupBy()`](../API/EntitySelectionClass.md#groupby) function is called instead, in interpreted and compiled mode. The compiler returns a warning. Rename your function to call it.
 
 #### Example
 
