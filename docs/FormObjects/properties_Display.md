@@ -147,7 +147,44 @@ Boolean columns can also be displayed as pop-up menus. In this case, the [Text w
 [OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
 
----
+
+
+## Flyout mode
+
+This property allows you to specify how a [Drop down list](./dropdownList_Overview.md) will be displayed at runtime. 
+
+:::note
+
+On Windows, this property is only supported with [**FluentUI** rendered forms](../FormEditor/forms.md#fluent-ui-rendering).
+
+:::
+
+Three flyout mode options are available. For example, with this drop-down menu:  
+
+![](../assets/en/FormObjects/dropdown-1.png)
+
+
+- **Pop-up** - The drop-down list overlaps the area and moves up or down depending on the selected value.  
+![](../assets/en/FormObjects/dropdown-2.png)
+ 
+- **Pull-down** - The drop-down list always opens below the area, whatever the selected value. The current value stays visible.
+![](../assets/en/FormObjects/dropdown-3.png)
+
+- **Automatic (legacy)** mode (default) - When this options is selected, the flyout mode depends on the OS and the [type](./dropdownList_Overview.md#drop-down-list-types) of the drop-down menu:  
+    - on Windows, hierarchical lists always use pull-down mode and non-hierarchical lists always use pop-up mode; 
+    - on macOS, choice lists (hierarchical or not) always use pull-down mode, while all other types use pop-up mode.
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|flyoutMode| text|"automatic", "popup", "pulldown"|
+
+#### Objects Supported
+
+[Drop-down List](dropdownList_Overview.md)
+
+
 
 ## Not rendered
 
