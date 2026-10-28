@@ -21,6 +21,7 @@ Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/),
 
 #### Behavior changes
 
+- If an EntitySelection class of your data model (`cs.XxxSelection`) already defines a `groupBy()` function, it is no longer called: the native [`entitySelection.groupBy()`](../API/EntitySelectionClass.md#groupby) function is executed instead, since [native ORDA class functions cannot be overridden](../ORDA/ordaClasses.md#specific-rules). Rename your function and update the code that calls it.
 - The compiler now reports [warnings on function comments](../Project/compiler.md#warnings-on-function-comments): a class function or class constructor that has a comment block above its declaration gets a warning for each parameter without a `$name:` comment, and for contradictory MCP behavior tags.
 
 
