@@ -192,7 +192,7 @@ Function getValue -> $v : Integer
 
 ## 引数の間接参照 (${N})
 
-4Dプロジェクトメソッドは、可変個の引数を受け取ることができます。 `For...End for` ループや [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) コマンド、**引数の間接参照シンタックス** を使って、これらの引数を扱うことができます。メソッド内で、間接参照は `${N}` のように表示します。ここの `N` は数値式です。 `${N}` is called a **generic parameter**.
+4Dプロジェクトメソッドは、可変個の引数を受け取ることができます。 `For...End for` ループや [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) コマンド、**引数の間接参照シンタックス** を使って、これらの引数を扱うことができます。メソッド内で、間接参照は `${N}` のように表示します。ここの `N` は数値式です。 `${N}` を **ジェネリックパラメーター** (generic parameter) と呼びます。
 
 ### ジェネリックパラメーターの使い方
 
@@ -216,7 +216,7 @@ Function getValue -> $v : Integer
  Result:=MySum("000";1;2;200) // "203"
 ```
 
-メソッド内で 0、1、またはそれ以上のパラメーターを宣言した場合でも、任意の数の引数を渡すことができます。 Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) コマンドを使用して、パラメーターが存在することをあらかじめ確認しておく必要があります。例:
+メソッド内で 0、1、またはそれ以上のパラメーターを宣言した場合でも、任意の数の引数を渡すことができます。呼び出されたメソッド内では、`${N}` シンタックスを使って引数を利用でき、可変長引数の型はデフォルトで バリアント です ([コンパイラー指示子](#ジェネリックパラメーターの宣言) を使ってこれらを宣言できます)。 [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) コマンドを使用して、パラメーターが存在することをあらかじめ確認しておく必要があります。例:
 
 ```4d
 // foo メソッド
@@ -236,7 +236,7 @@ foo("hello";"world";!01/01/2021!;42;?12:00:00?) // 追加の引数が受け渡�
 
 ### ジェネリックパラメーターの宣言
 
-他のローカル変数と同様、ジェネリックパラメーターはコンパイラーに指示する必要はありません。ただし、曖昧さを回避するためには推奨されます。 Non-declared generic parameters automatically get the [Variant](dt_variant.md) type.
+他のローカル変数と同様、ジェネリックパラメーターはコンパイラーに指示する必要はありません。ただし、曖昧さを回避するためには推奨されます。宣言なしのジェネリックパラメーターは自動的に [バリアント](dt_variant.md)型となります。
 
 ジェネリックパラメーターの宣言には、コンパイラー指示子に ${N} を渡す、以下のシンタックスを使用します (N は 1つ目のジェネリックパラメーターの番号です):
 
@@ -248,22 +248,22 @@ foo("hello";"world";!01/01/2021!;42;?12:00:00?) // 追加の引数が受け渡�
 
 > 宣言に使用する数値は変数ではなく、定数でなくてはなりません。
 
-## `Compiler` method
+## `Compiler` メソッド
 
-Even if it is not mandatory in [interpreted mode](interpreted.md), you must declare each parameter in the called methods as soon as you intend to compile your project.
+[インタープリターモード](interpreted.md) では必須ではないものの、プロジェクトをコンパイルする予定があれば、メソッドの各パラメーターを宣言しておくべきでしょう。
 
-When using the `#DECLARE` keyword, parameters are automatically declared. 例:
+`#DECLARE` キーワードを使用すると、パラメーターは自動的に宣言されます。例:
 
 ```4d
 #DECLARE($myParam : Text; $myOtherParam : Integer) : Boolean
-	// all parameters are declared with their type
+	// すべての引数はデータ型とともに宣言されます
 ```
 
 しかしながら、4Dコンパイラーのために、特殊なシンタックスを使って専用メソッド内でパラメーターをすべて宣言する必要があります:
 
 - プロジェクトメソッドのパラメーター宣言は、コンパイル用に 1つ以上のプロジェクトメソッドにまとめることができます。
-- the method name(s) must start with "**Compiler**", for example "Compiler_MyParameters".
-- within such a method, you can predeclare the parameters for each method using the following syntax: `C_XXX(methodName;parameter)`.
+- これらの専用メソッドの名前は "**Compiler**" で始まります。 例: "Compiler_MyParameters"。
+- 各プロジェクトメソッドのパラメーターを専用メソッド内であらかじめ宣言するには、次のように書きます: `C_XXX(methodName;parameter)`。
 
 例:
 
@@ -278,13 +278,13 @@ When using the `#DECLARE` keyword, parameters are automatically declared. 例:
 
 :::
 
-You can create and fill automatically a `Compiler` method containing all your parameters using the [**Compiler Methods for...**](../Project/compiler.md#compiler-methods-for) **Methods** button in the Compiler Settings dialog box.
+コンパイラー設定の [**コンパイラーメソッド...**](../Project/compiler.md#コンパイラーメソッド) セクションで定義した `Compiler` メソッドは、コンパイラーウィンドウの **型宣言を生成** ボタンを使用すると自動的に作成されます。このメソッドには、メソッド引数がすべて含まれます。
 
 :::info
 
 コンテキストによっては、"Compiler" メソッドでの宣言をサポートしていないため、別途処理されます:
 
-- Database methods - For example, the `On Web Connection Database Method` receives six parameters of the data type Text. たとえすべての引数を使用しない場合でも、データベースメソッドの先頭で次のように宣言しなくてはなりません:
+- データベースメソッド - たとえば、`On Web Connection` データベースメソッド は 6つのテキスト型の引数を受け取ります。たとえすべての引数を使用しない場合でも、データベースメソッドの先頭で次のように宣言しなくてはなりません:
 
 ```4d
 // On Web Connection
@@ -296,7 +296,7 @@ C_TEXT($1;$2;$3;$4;$5;$6)
 
 ```4d
 Function add($x : Variant; $y : Integer)-> $result : Integer
-    // all parameters are declared with their type
+    // すべての引数はデータ型とともに宣言されます
 ```
 
 - トリガー - トリガーの結果である $0 パラメーター (倍長整数) は、明確に定義されていなければコンパイラーによって型指定されます。定義する場合は、トリガーの中でおこなう必要があります。
@@ -335,7 +335,7 @@ method1(42) // 型間違い。 期待されるのはテキスト
 
 - [コンパイル済みプロジェクト](interpreted.md) では、可能な限りコンパイル時にエラーが生成されます。それ以外の場合は、メソッドの呼び出し時にエラーが生成されます。
 - インタープリタープロジェクトでは:
-  - if the parameter was declared using the [standard named syntax](#declaring-parameters) (`#DECLARE` or `Function`), an error is generated when the method is called.
+  - [標準の名前付きシンタックス](#パラメーターの宣言) (`#DECLARE` または `Function`) を使用して引数が宣言されている場合は、メソッドの呼び出し時にエラーが発生します。
   - `C_XXX` を使用して宣言されている場合、エラーは発生せず、呼び出されたメソッドは期待される型の空の値を受け取ります。
 
 ## オブジェクトプロパティを名前付き引数として使用する

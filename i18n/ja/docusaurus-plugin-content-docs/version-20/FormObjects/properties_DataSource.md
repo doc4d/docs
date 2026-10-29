@@ -317,9 +317,9 @@ and [collection](FormObjects/listbox-object.md#collection-or-entity-selection-li
 
 #### JSON 文法
 
-| 名称             | データタイプ | とりうる値       |
-| -------------- | ------ | ----------- |
-| namedSelection | string | 命名セレクションの名前 |
+| 名称            | データタイプ | とりうる値       |
+| ------------- | ------ | ----------- |
+| selectionName | string | 命名セレクションの名前 |
 
 #### 対象オブジェクト
 

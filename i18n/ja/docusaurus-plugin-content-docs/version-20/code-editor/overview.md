@@ -3,7 +3,7 @@ id: overview
 title: コードの扱い方
 ---
 
-The 4D code used across your application is written in [methods](../Concepts/methods.md) and [classes](../Concepts/classes.md).
+アプリケーションで使用される 4Dコードは、[メソッド](../Concepts/methods.md) および [クラス](../Concepts/classes.md) に記述されます。
 
 4D IDE には、コードを作成・編集・エクスポート・削除するためのさまざまな機能があります。通常は、4D の [コードエディター](write-class-method.md) を使用して、コードを管理します。
 
@@ -14,7 +14,7 @@ The 4D code used across your application is written in [methods](../Concepts/met
 [いくつかの種類のメソッド](../Concepts/methods.md) を作成することができます:
 
 - すべてのメソッドは、**エクスプローラー** ウィンドウから作成または開くことができます ([フォームエディター](../FormEditor/formEditor.md) から管理されるオブジェクトメソッドを除く)。
-- Project methods can also be created or opened from the **File** menu or toolbar (**New/Method...** or **Open/Method...**) or using shortcuts in the [Code editor window](write-class-method.md#shortcuts).
+- プロジェクトメソッドは、**ファイル** メニューやツールバー (**新規/メソッド...** または **開く/メソッド...**)、[コードエディターウィンドウ](write-class-method.md#ショートカット) のショートカットを使っても作成したり開いたりできます。
 - トリガーは、ストラクチャーエディターからも作成したり開いたりできます。
 - フォームメソッドは、[フォームエディター](../FormEditor/formEditor.md) からも作成したり開いたりできます。
 
@@ -37,7 +37,7 @@ The 4D code used across your application is written in [methods](../Concepts/met
 
 ## メソッドの書き出しと読み込み
 
-メソッドやクラスのコードは、ファイルの形で書き出しおよび読み込みが可能です。 These commands are found in the **Method** menu of the Code editor.
+メソッドやクラスのコードは、ファイルの形で書き出しおよび読み込みが可能です。メソッドやクラスのコードは、ファイルの形で書き出しおよび読み込みが可能です。これらのコマンドはコードエディターの **メソッド** メニューからアクセスできます。
 
 - **メソッド書き出し...** コマンドを選択すると、標準のファイル保存ダイアログが表示され、書き出しファイルの名前と場所、およびフォーマットを選択することができます (後述参照)。印刷と同様に、コードブロックが折りたたまれているかどうかに関わらず、コード全体が書き出されます。
 - **メソッド読み込み...** コマンドを選択すると、標準のファイルを開くダイアログが表示され、読み込むファイルを選択することができます。読み込みをおこなうと、メソッド中で現在選択されているテキストが置き換えられます。読み込んだメソッドで既存メソッドの全体を書き換えるには、読み込み前に既存メソッド内を全選択します。
@@ -110,15 +110,15 @@ macOS で書き出したメソッドを Windows で読み込むことができ�
 
 プリエンプティブモード機能を利用したい場合、プリエンプティブモードで実行したいメソッドをすべて明示的に宣言する必要があります。その後、コンパイラーがこれらのメソッドが実際にスレッドセーフであるかどうかをチェックします。
 
-**Note:** Execution in preemptive mode is only available in compiled mode. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R6/4D/19-R6/Preemptive-4D-processes.300-5911166.en.html) section.
+**注:** プリエンプティブモードでの実行は、コンパイルモードでのみ利用可能です。詳細については、[プリエンプティブ4Dプロセス](https://doc.4d.com/4Dv19R6/4D/19-R6/Preemptive-4D-processes.300-5911166.en.html) の章を参照ください。
 
 以下のオプションが提供されています:
 
-- **Can be run in preemptive processes**: By checking this option, you declare that the method is capable of being run in a preemptive process and therefore should be run in preemptive mode whenever possible. メソッドの "preemptive" プロパティは "capable" に設定されます。
+- **プリエンプティブプロセスで実行可能**: このオプションをチェックすると、メソッドがプリエンプティブプロセスでの実行が可能であると宣言し、可能な場合にはプリエンプティブモードで実行するべきと宣言します。メソッドの "preemptive" プロパティは "capable" に設定されます。メソッドの "preemptive" プロパティは "capable" に設定されます。
 
 このオプションがチェックされている場合、4Dコンパイラーはメソッドが実際にプリエンプティブモードで実行可能かどうかを検証し、そうでない場合 (たとえば、プリエンプティブモードで実行不可能なコマンドやメソッドを直接的あるいは間接的に呼び出している場合など) にはエラーを返します。 なお、コールチェーンはすべて解析されますが、最初のサブレベルに対してのみエラーが報告されます。エラーの場合には、メソッドを編集してスレッドセーフにするか、あるいは別のオプションを選択します。
 
-メソッドのプリエンプティブ性が証明されると、内部で "thread safe" というタグ付けがされ、すべての要件が満たされればプリエンプティブモードで実行されます。 This property defines its eligibility for preemptive mode but does not guarantee that the method will actually be run in preemptive mode, since this execution mode requires a specific context (see [When is a process started preemptively?](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html#2822148)).
+メソッドのプリエンプティブ性が証明されると、内部で "thread safe" というタグ付けがされ、すべての要件が満たされればプリエンプティブモードで実行されます。このプロパティはプリエンプティブモードの資格を定義しますが、メソッドが実際にプリエンプティブモードで実行されることを保証するものではありません。 プリエンプティブ実行モードは特定のコンテキストを必要とするからです ([プロセスがプリエンプティブに実行される条件とは？](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.ja.html#2822148))。
 
 - **プリエンプティブプロセスでは実行不可**: このオプションをチェックすると、当該メソッドはプリエンプティブモードでの実行は不可能であると宣言し、以前の 4D のバージョンと同様に常にコオペラティブモードで実行されます。メソッドの "preemptive" プロパティは "incapable" に設定されます。
 
@@ -128,9 +128,9 @@ macOS で書き出したメソッドを Windows で読み込むことができ�
 
 このオプションがチェックされているとき、4Dコンパイラーはメソッドのプリエンプティブ性を評価し、内部的に "thread safe" あるいは "thread unsafe" のタグ付けをします。プリエンプティブ実行に関するエラーは報告されません。メソッドがスレッドセーフと評価されていれば、ランタイムでプリエンプティブコンテキストから呼び出された場合にはプリエンプティブスレッド実行を妨げません。逆に、メソッドがスレッドアンセーフであると評価された場合には、ランタイムで呼び出された場合に、プリエンプティブなスレッド実行を不可能にします。
 
-Note that with this option, whatever the internal thread safety evaluation, the method will always be executed in cooperative mode when called directly by 4D as the first parent method (for example through the [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.en.html) command). 内部で "thread-safe" とタグ付けされている場合、そのタグはコールチェーン内で他のメソッドから呼び出された場合に限り考慮されます。
+このオプションを使用した場合、内部でのスレッドセーフ評価に関わらず、最初の親メソッドとしてメソッドが 4D から直接呼び出された場合 (たとえば [`New process`](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.ja.html) コマンドから呼び出された場合など)、メソッドは常にコオペラティブモードで実行されます。内部で "thread-safe" とタグ付けされている場合、そのタグはコールチェーン内で他のメソッドから呼び出された場合に限り考慮されます。
 
-***Particular case*:** If the method has also the [**Shared by components and host database**](shared-by-components-and-host-database) property, setting the **Indifferent** option will automatically tag the method as thread-unsafe. 共有コンポーネントメソッドをスレッドセーフにしたい場合には、**プリエンプティブプロセスで実行可能** オプションを明示的に選択する必要があります。
+***特殊なケース*:** メソッドの[**コンポーネントとホストプロジェクト間で共有**](#コンポーネントとホストプロジェクト間で共有) プロパティがチェックされている場合、特に設定しない オプションを選択するとメソッドは自動的にスレッドアンセーフであるとタグ付けされます。共有コンポーネントメソッドをスレッドセーフにしたい場合には、**プリエンプティブプロセスで実行可能** オプションを明示的に選択する必要があります。
 
 ### 公開オプション
 

@@ -390,6 +390,8 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 > 使いやすさの観点から、**定数**、**変数 (ローカルあるいはインタープロセス) およびオブジェクト属性**、**テーブル**、**プロトタイプ** に関するリストの自動表示を無効にできます。これらのオプションは **環境設定** の **メソッド** ＞ **オプション** にあります。
 
+When a suggested class function or class constructor is documented with a [comment block above its declaration](../Concepts/classes.md#function-comments), its description and parameter comments are displayed with its signature in the suggestion details.
+
 #### オブジェクトのプロパティ名
 
 4D は以下のタイミングで、4Dコード内にある有効なオブジェクトプロパティ名の、文字の大小の区別された提案を自動的に表示します:
@@ -538,7 +540,26 @@ Windows では、日本語や中国語を入力するために IME (Input Method
     別のメソッドからこのメソッドを呼び出したときのヘルプTip:
     ![](../assets/en/code-editor/help-tip.png)
 
-- また、 **専用のドキュメントファイル** を `<MethodName>.md` という名前で `<package>/documentation` フォルダーに作成することも可能です。 [コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。[コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。
+- また、 **専用のドキュメントファイル** を `<MethodName>.md` という名前で `<package>/documentation` フォルダーに作成することも可能です。[コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。
+
+- **Class function and class constructor comments**: When you call a class function or a class constructor (`cs.MyClass.new()`), the help tip and the signature help display its signature along with the [comment block written right above its declaration](../Concepts/classes.md#function-comments): the description lines, then the `$name:` parameter lines. `MCP:` lines are not displayed. This applies to project classes, shared and singleton classes, and component classes, and works the same in VS Code.
+
+  - The text is displayed as plain text: Markdown markers are shown as written.
+  - Only the saved code is used: an edited comment is displayed once the class is saved.
+  - If there is no comment block right above the declaration (for example, if a blank line separates them), only the signature is displayed.
+
+  For example, with the following class function:
+
+  ```4d
+  // Class: Invoice
+
+  // Returns the price with taxes
+  // $rate: tax rate to apply (20 for 20%)
+  Function priceWithTaxes($rate : Real) : Real
+  	return This.price*(1+($rate/100))
+  ```
+
+  typing `$invoice.priceWithTaxes(` displays "Returns the price with taxes" and "$rate: tax rate to apply (20 for 20%)" below the signature.
 
 ## コメント/アンコメント
 

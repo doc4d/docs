@@ -3194,7 +3194,7 @@ La retrollamada recibe los siguientes parámetros:
 
 Si utilizó un método, debe definir el siguiente parámetro:
 
-- *$1.result* (boolean): **True** if *$1.value < $1.value2*, **False** otherwise.
+- *$1.result* (boolean): **True** si *$1.value < $1.value2*, **False** en caso contrario.
 
 #### Ejemplo 1
 

@@ -258,7 +258,21 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 ![](../assets/en/settings/syntax-code-completion-2.png)
 ![](../assets/en/settings/syntax-code-completion-1.png)
 
-[コンポーネント名前空間](#コンポーネント名前空間の宣言) を入力しない場合、シンタックスファイル生成のオプションがチェックされていても、クラスや公開メソッド用のリソースは生成されませ ん。
+[コンポーネント名前空間](#コンポーネント名前空間の宣言) を入力しない場合、シンタックスファイル生成のオプションがチェックされていても、クラスや公開メソッド用のリソースは生成されません。
+
+When your class functions and class constructors are documented with a [comment block above their declaration](../Concepts/classes.md#function-comments), the syntax file also contains their description and parameter comments (`MCP:` lines are never included). Host projects then display them as plain text in the code completion and help of the compiled component. For example, with the following function in a component class:
+
+```4d
+// Class: Tools
+
+// Scales a value by a factor
+// $value: value to scale
+// $factor: multiplier to apply
+Function scale($value : Real; $factor : Real) : Real
+	return $value*$factor
+```
+
+a host project that types `cs.MyComponent.Tools.new().scale(` sees "Scales a value by a factor" and the `$value:` and `$factor:` lines below the signature.
 
 ## 変数の渡し方
 

@@ -13,13 +13,13 @@ title: 変数
  [MyTable]MyField:=MyText
 ```
 
-画面上に表示されることのない、裏方に徹した変数を作成・利用することができます。もちろん、フォーム上に変数の値を表示することもできます (ポインターやBLOBを除く)。 また、変数に値を入力したり、変数の値をレポートに印刷したりすることも可能です。このとき、入力可や入力不可の変数オブジェクトはフィールドオブジェクトと同様に振舞い、提供されるコントロールも類似しています。フォーム上のボタン、リストボックス、スクロールエリア、ピクチャーボタンなどのオブジェクトも変数を使って制御することができるほか、保存不要な計算結果を表示させることもできます。
+変数はランゲージの要素です。画面上に表示されることのない、裏方に徹した変数を作成・利用することができます。もちろん、フォーム上に変数の値を表示することもできます (ポインターやBLOBを除く)。 また、変数に値を入力したり、変数の値をレポートに印刷したりすることも可能です。このとき、入力可や入力不可の変数オブジェクトはフィールドオブジェクトと同様に振舞い、提供されるコントロールも類似しています。フォーム上のボタン、リストボックス、スクロールエリア、ピクチャーボタンなどのオブジェクトも変数を使って制御することができるほか、保存不要な計算結果を表示させることもできます。
 
 ## 変数の宣言
 
 変数の作成は通常、宣言によっておこないます。 4D ランゲージでは、変数の宣言方法は2つあります:
 
-- using the `var` keyword (recommended, specially if your code uses objects and classes),
+- `var` キーワードを使った宣言 (推奨、とくにオブジェクトやクラスをコードで使用する場合)
 - "コンパイラー" や "配列" テーマの 4D ランゲージコマンドを使った宣言 (旧シンタックス)。
 
 変数は宣言されると、[**その型に対応するデフォルト値**](data-types.md#デフォルト値) に初期化されます。別の値が [代入](#変数への代入) されない限り、セッション中はこの値が保持されます。
@@ -38,11 +38,11 @@ title: 変数
 
 :::
 
-### Using the `var` keyword
+### `var` キーワードによる宣言
 
-Declaring variables using the `var` keyword is recommended since this syntax allows you to bind object variables with classes. このシンタックスはコードエディターの自動補完機能を強化します。
+オブジェクト変数をクラスに紐づけることができるため、`var` キーワードを使った変数宣言が推奨されます。このシンタックスはコードエディターの自動補完機能を強化します。
 
-To declare a variable of any type with the `var` keyword, use the following syntax:
+`var` キーワードを使って変数を宣言するには、次のシンタックスを用います:
 
 `var <varName>{; <varName2>;...}{ : <varType>}`
 
@@ -115,7 +115,7 @@ var $entity : cs.EmployeeEntity
 
 ### C_ 指示子による宣言
 
-> **Compatibility Note:** This feature is not recommended to declare variables inside methods. It is recommended to use the [var](#using-the-var-keyword) keyword.
+> **互換性に関する注記:** メソッド内で変数を宣言するにあたって、この方法は推奨されません。 [`var`](#var-キーワードによる宣言) キーワードの使用が推奨されます。
 
 "コンパイラー" テーマコマンドの指示子を使って、基本のデータ型の変数を宣言することができます。
 
@@ -134,7 +134,7 @@ var $entity : cs.EmployeeEntity
  C_COLLECTION($vCol) // ローカル変数 $vCol をコレクション型として宣言します
 ```
 
-**Note:** Arrays are a particular type of variables (an array is an ordered series of variables of the same type). Arrays are declared with specific commands, such as `ARRAY LONGINT(alAnArray;10)`. For more information, please refer to [Arrays](Concepts/arrays.md).
+**注:** 配列とは変数の一種で、同じタイプの変数を番号付きで並べたものです。配列は、配列宣言コマンド (例: `ARRAY LONGINT(alAnArray;10)`) を使用して作成します。詳細については [配列](Concepts/arrays.md) を参照ください。
 
 ## 変数への代入
 
@@ -146,11 +146,11 @@ var $entity : cs.EmployeeEntity
 MyNumber:=3
 ```
 
-は変数 *MyNumber* を作成し、数値 3を代入します。 MyNumber が既に存在していれば、そこに数値 3が代入されます。 MyNumber が既に存在していれば、そこに数値 3が代入されます。
+は変数 *MyNumber* を作成し、数値 3を代入します。 MyNumber が既に存在していれば、そこに数値 3が代入されます。
 
 > [データ型の宣言](#変数の宣言) をせずに変数を作成することは通常推奨されません。
 
-もちろん、変数からデータを取り出すことができなければ、便利とはいえません。再度代入演算子を使用します。もちろん、変数からデータを取り出すことができなければ、便利とはいえません。 再度代入演算子を使用します。 [Products]Size というフィールドに *MyNumber* 変数の値を代入するには、代入演算子の右側に MyNumber を書きます:
+もちろん、変数からデータを取り出すことができなければ、便利とはいえません。再度代入演算子を使用します。 [Products]Size というフィールドに *MyNumber* 変数の値を代入するには、代入演算子の右側に MyNumber を書きます:
 
 ```4d
 [Products]Size:=MyNumber
@@ -236,7 +236,7 @@ atNames{1}:="Richard"
 | `OK`                                                   | Integer       | 通常、コマンドがダイアログボックスを表示して、ユーザーが **OK** ボタンをクリックすると 1 に、**キャンセル** ボタンをクリックした場合は 0 に設定されます。一部のコマンドは、処理が成功すると `OK` システム変数の値を変更します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `Document`                                             | Text          | [Open document](https://doc.4d.com/4dv20/help/command/ja/page264.html) や [SELECT LOG FILE](https://doc.4d.com/4dv20/help/command/ja/page345.html) などのコマンドを使用して最後に開いたファイルまたは作成したファイルのパス名 (フルパス + 名前) が含まれます。                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `FldDelimit`, `RecDelimit`                             | Integer       | テキストを読み込んだり書き出したりする際に、フィールドの区切りとして (デフォルトは **タブ** (9))、あるいはレコードの区切り文字として (デフォルトは **キャリッジリターン** (13)) 使用する文字コードが格納されています。区切り文字を変更する場合は、システム変数の値を変更します。                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `Error`, `Error method`, `Error line`, `Error formula` | Text, Longint | [`ON ERR CALL`](https://doc.4d.com/4dv20/help/command/ja/page155.html) コマンドでインストールされたエラー処理メソッド内で使用されます。 [メソッド内でのエラー処理](../Concepts/error-handling.md#メソッド内でのエラー処理)参照。 [メソッド内でのエラー処理](../Concepts/error-handling.md#メソッド内でのエラー処理)参照。[メソッド内でのエラー処理](../Concepts/error-handling.md#メソッド内でのエラー処理)参照。                                                                                                                                                                                                                                                                                                                                                                 |
+| `Error`, `Error method`, `Error line`, `Error formula` | Text, Longint | [`ON ERR CALL`](https://doc.4d.com/4dv20/help/command/ja/page155.html) コマンドでインストールされたエラー処理メソッド内で使用されます。[メソッド内でのエラー処理](../Concepts/error-handling.md#メソッド内でのエラー処理)参照。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `MouseDown`                                            | Integer       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。マウスボタンが押されたときに 1 が、それ以外の場合は 0 に設定されます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `MouseX`, `MouseY`                                     | Integer       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 <li>`MouseDown=1` イベントの時、`MouseX` と `MouseY` にはクリックされた場所の水平 / 垂直座標がそれぞれ代入されます。両方の値ともピクセル単位で表わされ、ウィンドウのローカルな座標システムを使用します。</li><li>ピクチャーフィールドや変数の場合は、[`On Clicked`](../Events/onClicked.md) や [`On Double Clicked`](../Events/onDoubleClicked.md)、および [`On Mouse Up`](../Events/onMouseUp.md) フォームイベント内で、クリックのローカル座標が `MouseX` と `MouseY` に返されます。また、[`On Mouse Enter`](../Events/onMouseEnter.md) および [`On Mouse Move`](../Events/onMouseMove.md) フォームイベントでもマウスカーソルのローカル座標が返されます。詳細については、[ピクチャー上のマウス座標](../FormEditor/pictures.md#ピクチャー上のマウス座標) を参照ください。</li> |
 | `KeyCode`                                              | Integer       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。押されたキーの文字コードが代入されます。押されたキーがファンクションキーの場合、`KeyCode` には特殊コードがセットされます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |

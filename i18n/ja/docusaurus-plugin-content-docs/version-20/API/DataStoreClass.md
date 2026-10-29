@@ -133,19 +133,20 @@ title: DataStore
 
 #### 説明
 
-The `Open datastore` command <!-- REF #_command_.Open datastore.Summary -->connects the application to the 4D database identified by the *connectionInfo* parameter<!-- END REF --> and returns a matching `4D.DataStoreImplementation` object associated with the *localID* local alias.
+`Open datastore` コマンドは、<!-- REF #_command_.Open datastore.Summary -->
+*connectionInfo* 引数が指定する 4Dデータベースにアプリケーションを接続します<!-- END REF -->。戻り値は、*localID* ローカルエイリアスに紐づけられた `4D.DataStoreImplementation` オブジェクトです。
 
 *connectionInfo* で指定する 4Dデータベースはリモートデーターストアとして利用可能でなければなりません。つまり、以下の条件を満たしている必要があります:
 
 - データベースの Webサーバーは、http または https が有効化された状態で開始されていなければなりません。
-- its [**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option must be checked,
+- データベースの [**REST サーバーとして公開**](REST/configuration.md#restサーバーを開始) オプションがチェックされている必要があります。
 - データベースにおいて、少なくとも 1つのクライアントライセンスが利用可能でなければなりません。
 
 合致するデータベースが見つからない場合、`Open datastore` は **Null** を返します。
 
-*localID* 引数は、リモートデータストア上で開かれるセッションのローカルエイリアス です。 *localID* 引数の ID がすでにアプリケーションに存在している場合、その ID が使用されています。 そうでない場合、データストアオブジェクトが使用されたときに *localID* のセッションが新規に作成されます。 *localID* 引数の ID がすでにアプリケーションに存在している場合、その ID が使用されています。そうでない場合、データストアオブジェクトが使用されたときに *localID* のセッションが新規に作成されます。
+*localID* 引数は、リモートデータストア上で開かれるセッションのローカルエイリアス です。 *localID* 引数の ID がすでにアプリケーションに存在している場合、その ID が使用されています。そうでない場合、データストアオブジェクトが使用されたときに *localID* のセッションが新規に作成されます。
 
-Objects available in the `4D.DataStoreImplementation` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
+`4D.DataStoreImplementation` が提供するオブジェクトは、[ORDAマッピングルール](ORDA/dsMapping.md#変換のルール) に基づいて、ターゲットデータベースからマッピングされます。
 
 一旦セッションが開かれると、以下の 2行の宣言は同等のものとなり、同じデータストアオブジェクトへの参照を返します:
 
@@ -155,7 +156,7 @@ Objects available in the `4D.DataStoreImplementation` are mapped from the target
   //$myds と $myds2 は同一のものです
 ```
 
-*connectionInfo* には、接続したいリモートデータストア の詳細を格納したオブジェクトを渡します。 オブジェクトは以下のプロパティを格納することができます (*hostname* を除き、すべてのプロパティは任意です): オブジェクトは以下のプロパティを格納することができます (*hostname* を除き、すべてのプロパティは任意です):
+*connectionInfo* には、接続したいリモートデータストア の詳細を格納したオブジェクトを渡します。オブジェクトは以下のプロパティを格納することができます (*hostname* を除き、すべてのプロパティは任意です):
 
 | プロパティ             | 型       | 説明                                                                                                                                                                                                                                                                                                                                        |
 | ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -350,7 +351,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 #### 説明
 
-`.encryptionStatus()` 関数は、<!-- REF #DataStoreClass.encryptionStatus().Summary -->カレントデータファイルの暗号化状態を示すオブジェクトを返します<!-- END REF -->。カレントデータファイルとはつまり、`ds` データストアのデータファイルです。 各テーブルの状態も提供されます。各テーブルの状態も提供されます。
+`.encryptionStatus()` 関数は、<!-- REF #DataStoreClass.encryptionStatus().Summary -->カレントデータファイルの暗号化状態を示すオブジェクトを返します<!-- END REF -->。カレントデータファイルとはつまり、`ds` データストアのデータファイルです。各テーブルの状態も提供されます。
 
 > その他のデータファイルの暗号化状態を調べるには、`Data file encryption status` コマンドを使います。
 
@@ -425,7 +426,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 #### 説明
 
-`.flushAndLock()` 関数は、<!-- REF #DataStoreClass.flushAndLock().Summary -->ローカルデータストアのキャッシュをフラッシュし、データベースに対して他のプロセスが書き込み操作をおこなうのを防ぎます<!-- END REF -->。 これにより、データストアは凍結状態におかれます。 この関数は、たとえばアプリケーションのスナップショットを実行する前に呼び出す必要があります。これにより、データストアは凍結状態におかれます。この関数は、たとえばアプリケーションのスナップショットを実行する前に呼び出す必要があります。
+`.flushAndLock()` 関数は、<!-- REF #DataStoreClass.flushAndLock().Summary -->ローカルデータストアのキャッシュをフラッシュし、データベースに対して他のプロセスが書き込み操作をおこなうのを防ぎます<!-- END REF -->。これにより、データストアは凍結状態におかれます。この関数は、たとえばアプリケーションのスナップショットを実行する前に呼び出す必要があります。
 
 :::info
 
@@ -451,7 +452,8 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 :::caution
 
-Other 4D features and services including [backup](../Backup/backup.md), [vss](https://doc.4d.com/4Dv19R7/4D/19-R7/Using-Volume-Shadow-Copy-Service-on-Windows.300-6078959.en.html), and [MSC](../MSC/overview.md) can also lock the datastore. 予期せぬ相互作用を避けるため、`.flushAndLock()` を呼び出す前に、データストアをロックするような他の操作がおこなわれていないことを確認してください。
+[バックアップ](../Backup/backup.md) や [VSS](https://doc.4d.com/4Dv20/4D/20/Using-Volume-Shadow-Copy-Service-on-Windows.300-6330532.ja.html)
+、[MSC](../MSC/overview.md) を含む他の 4D機能およびサービスもデータストアをロックすることがあります。予期せぬ相互作用を避けるため、`.flushAndLock()` を呼び出す前に、データストアをロックするような他の操作がおこなわれていないことを確認してください。
 
 :::
 
@@ -508,7 +510,7 @@ ds.unlock() // コピー操作をおこなったので、データストアの�
 
 `.getAllRemoteContexts()` 関数は、<!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->データストア内のすべてのアクティブな最適化コンテキストに関する情報を格納するオブジェクトのコレクションを返します<!-- END REF -->。
 
-> For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+> コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/remoteDatastores.md#クライアントサーバーの最適化]) を参照ください。
 
 返されたコレクション内の各オブジェクトは、[`.getRemoteContextInfo()`](#getremotecontextinfo) セクションに記載されているプロパティを持ちます。
 
@@ -591,8 +593,8 @@ $info:=$ds.getAllRemoteContexts()
 | プロパティ      | 型       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D": ds で利用可能なメインデータストア</li><li>"4D Server": Open datastore で開かれたリモートデータストア</li>                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| networked  | boolean | <li>True: ネットワーク接続を介してアクセスされたデータストア。</li><li>True: ネットワーク接続を介してアクセスされたデータストア。</li><li>False: ネットワーク接続を介さずにアクセスしているデータストア (ローカルデータベース)</li>                                                                                                                                                                                                                                                                                                                                                                          |
-| localID    | text    | マシン上のデータストアID。マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。メインデータストアの場合は空の文字列 ("") です。                                                                                                                                                                                                                                                                                                                                             |
+| networked  | boolean | <li>True: ネットワーク接続を介してアクセスされたデータストア。</li><li>False: ネットワーク接続を介さずにアクセスしているデータストア (ローカルデータベース)</li>                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| localID    | text    | マシン上のデータストアID。これは、`Open datastore` コマンドで返される localId 文字列です。メインデータストアの場合は空の文字列 ("") です。                                                                                                                                                                                                                                                                                                                                                                                                           |
 | connection | object  | リモートデータストア接続の情報を格納したオブジェクト (メインデータストアの場合は返されません)。次のプロパティを含みます:<table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>hostname</td><td>text</td><td>リモートデータストアの IP アドレスまたは名称 + ":" + ポート番号</td></tr><tr><td>tls</td><td>boolean</td><td>リモートデータストアとセキュア接続を利用している場合は true</td></tr><tr><td>idleTimeout</td><td>number</td><td>セッション非アクティブタイムアウト (分単位)。</td></tr><tr><td>user</td><td>text</td><td>リモートデータストアにて認証されたユーザー</td></tr></table> |
 
 - `.getInfo()` 関数が、4D Server またはシングルユーザー版 4D 上で実行された場合、`networked` は false となります。
@@ -658,9 +660,9 @@ $info:=$remoteDS.getInfo()
 
 #### 説明
 
-`.getRemoteContextInfo()` 関数は、<!-- REF #DataStoreClass.getRemoteContextInfo().Summary -->*contextName* で指定したデータストアの最適化コンテキストに関する情報を格納するオブジェクトを返します<!-- END REF -->。。
+`.getRemoteContextInfo()` 関数は、<!-- REF #DataStoreClass.getRemoteContextInfo().Summary -->*contextName* で指定したデータストアの最適化コンテキストに関する情報を格納するオブジェクトを返します<!-- END REF -->。
 
-For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+最適化コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/remoteDatastores.md#クライアントサーバーの最適化]) を参照ください。
 
 #### 返されるオブジェクト
 
@@ -1007,7 +1009,7 @@ ORDAクラスの関数にコンテキストを渡すと、RESTリクエストの
 - 自動モードのときとは異なり、先頭エンティティは完全にロードされません。
 - 80件のエンティティ (または `pageLength` に対応するエンティティ数) のページが直ちにサーバーに要求される際、コンテキストの属性のみが要求されます。
 
-> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
+> 最適化コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/remoteDatastores.md#クライアントサーバーの最適化]) を参照ください。
 
 *contextName* には、データクラス属性にリンクする最適化コンテキストの名前を渡します。
 

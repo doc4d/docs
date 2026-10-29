@@ -31,6 +31,24 @@ Windows上では "推奨選択肢" の概念はサポートされていないた
 
 ---
 
+## Display formula source as symbol
+
+Displays source text of formulas as symbols when expressions are shown as references.
+
+#### JSON 文法
+
+| 名称                     | データタイプ  | とりうる値                                  |
+| ---------------------- | ------- | -------------------------------------- |
+| displayFormulaAsSymbol | boolean | true (デフォルト), false |
+
+#### 対象オブジェクト
+
+[4D Write Pro エリア](writeProArea_overview.md)
+
+#### コマンド
+
+[WP Get view properties](../WritePro/commands-legacy/wp-get-view-properties.md) - [WP SET VIEW PROPERTIES](../WritePro/commands-legacy/wp-set-view-properties.md)
+
 ## フォーカスの四角を隠す
 
 ランタイムにおいて、タブキーやシングルクリックによってフォーカスを得たフィールドや入力可能なエリアは、選択状態を示す四角で縁取りされます。このプロパティを使用して、フォーカスの四角を非表示にできます。特定のインターフェースにおいては、フォーカスの四角を非表示にすることが便利かもしれません。
@@ -115,7 +133,7 @@ Windows上では "推奨選択肢" の概念はサポートされていないた
 
 ---
 
-## 背景を表示
+## Show background and anchored elements
 
 ページの背景画像および背景色を表示/非表示にします。
 
@@ -130,6 +148,24 @@ Windows上では "推奨選択肢" の概念はサポートされていないた
 [4D Write Pro エリア](writeProArea_overview.md)
 
 ---
+
+## Show empty or unsupported images
+
+Displays/hides a black rectangle for images that cannot be loaded or computed (empty images or images in an unsupported format).
+
+#### JSON 文法
+
+| 名称              | データタイプ  | とりうる値                                  |
+| --------------- | ------- | -------------------------------------- |
+| showEmptyImages | boolean | true (デフォルト), false |
+
+#### 対象オブジェクト
+
+[4D Write Pro エリア](writeProArea_overview.md)
+
+#### コマンド
+
+[WP Get view properties](../WritePro/commands-legacy/wp-get-view-properties.md) - [WP SET VIEW PROPERTIES](../WritePro/commands-legacy/wp-set-view-properties.md)
 
 ## フッター表示
 
@@ -295,9 +331,9 @@ HTML WYSIWYG ビューを有効/無効にします。 このビューでは、�
 
 #### JSON 文法
 
-| 名称              | データタイプ  | とりうる値           |
-| --------------- | ------- | --------------- |
-| labelsPlacement | boolean | "top", "bottom" |
+| 名称              | データタイプ | とりうる値           |
+| --------------- | ------ | --------------- |
+| labelsPlacement | text   | "top", "bottom" |
 
 #### 対象オブジェクト
 

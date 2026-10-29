@@ -104,7 +104,7 @@ Permettre aux classes et aux fonctions de votre composant d'être exposées dans
 
 > Un *namespace* garantit qu'aucun conflit n'émerge lorsqu'un projet hôte utilise différents composants dont les classes ou les fonctions ont des noms identiques. Un namespace doit être conforme aux [règles de dénomination des propriétés](../Concepts/identifiers.md#object-properties).
 
-When you enter a value, you declare that component classes and functions will be available in the [user class store (**cs**)](../Concepts/classes.md#cs) of the host project's code, through the `cs.<value>`. Par exemple, si vous entrez "eGeometry" comme namespace, en supposant que vous avez créé une classe `Rectangle` contenant une fonction `getArea()`, une fois votre projet installé comme composant, le développeur du projet hôte peut écrire :
+Lorsque vous entrez une valeur, vous déclarez que les classes et les fonctions du composant seront disponibles dans le [class store (**cs**)](../Concepts/classes.md#cs) du code du projet hôte, à travers l'espace de noms `cs.<valeur>`. Par exemple, si vous entrez "eGeometry" comme namespace, en supposant que vous avez créé une classe `Rectangle` contenant une fonction `getArea()`, une fois votre projet installé comme composant, le développeur du projet hôte peut écrire :
 
 ```4d
 //dans le projet hôte

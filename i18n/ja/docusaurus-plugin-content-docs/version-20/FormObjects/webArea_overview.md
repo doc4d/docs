@@ -57,7 +57,7 @@ $4d.4DMethodName(param1,paramN,function(result){})
 
 - `param1...paramN`: 4Dメソッドに対して必要なだけ引数を渡すことができます。これらの引数は、JavaScript にサポートされている型であればどんなものでも渡せます (文字列、数値、配列、オブジェクト)。
 
-- `function(result)`: 最後の引数として渡される関数です。  この "コールバック" 関数は、4Dメソッドが実行を終えると同時に呼び出されます。 この関数は `result` 引数を受け取ります。この "コールバック" 関数は、4Dメソッドが実行を終えると同時に呼び出されます。この関数は `result` 引数を受け取ります。
+- `function(result)`: 最後の引数として渡される関数です。この "コールバック" 関数は、4Dメソッドが実行を終えると同時に呼び出されます。この関数は `result` 引数を受け取ります。
 
 - `result`: Execution result of the 4D method, returned in the "$0" expression. 戻り値は JavaScript でサポートされている型 (文字列、数値、配列、オブジェクト) のいずれかになります。 You can use the `C_OBJECT` command to return the objects.
 
@@ -206,7 +206,7 @@ For more information, refer to the description of the `WA SET PREFERENCE` comman
 
 ## プロパティ一覧
 
-[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [CSSクラス](properties_Object.md#cssクラス) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) - [境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル) - [メソッド](properties_Action.md#メソッド)
+[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [CSSクラス](properties_Object.md#cssクラス) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) - [境界線スタイル](properties_BackgroundAndBorder.md#border-line-style) - [メソッド](properties_Action.md#メソッド)
 
 
 

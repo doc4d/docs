@@ -221,7 +221,7 @@ title: クラス
 
 **.borderVertical** : [cs.ViewPro.LineBorder](#lineborder)<!-- END REF -->
 
-`.borderVerical` プロパティは、 <!-- REF #TableStyle.borderVertical.Summary -->表の縦の外枠線を定義します <!-- END REF -->。
+`.borderVertical` プロパティは、 <!-- REF #TableStyle.borderVertical.Summary -->表の縦の外枠線を定義します <!-- END REF -->。
 
 ## TableTheme
 

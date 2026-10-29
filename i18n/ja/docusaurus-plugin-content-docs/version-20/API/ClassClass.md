@@ -3,7 +3,7 @@ id: ClassClass
 title: Class
 ---
 
-プロジェクトにおいてユーザークラスが [定義](Concepts/classes.md#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。 クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。
+プロジェクトにおいてユーザークラスが [定義](Concepts/classes.md#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。
 
 ### 概要
 
@@ -65,7 +65,7 @@ title: Class
 
 `.new()` 関数は、<!-- REF #ClassClass.new().Summary -->対象クラスの新規インスタンスである `cs.className` オブジェクトを作成して返します<!-- END REF -->。この関数は、[`cs` クラスストア](Concepts/classes.md#cs) に属する全クラスで自動的に利用可能です。
 
-You can pass one or more optional *param* parameters, which will be passed to the [class constructor](Concepts/classes.md#class-constructor) function (if any) in the className class definition. コンストラクター関数においては、[`This`](Concepts/classes.md#this) は新規に作成されるオブジェクトを指します。
+任意の *param* パラメーターに渡した引数は、当該 *className*クラス定義内の [Class Constructor](Concepts/classes.md#class-constructor) 関数 (あれば) が受け取ります。コンストラクター関数においては、[`This`](Concepts/classes.md#this) は新規に作成されるオブジェクトを指します。
 
 存在しないクラスを対象に `.new()` を呼び出した場合、エラーが返されます。
 

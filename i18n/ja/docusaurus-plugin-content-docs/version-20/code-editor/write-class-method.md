@@ -23,7 +23,7 @@ title: コードエディター
 | -------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **メソッド実行**           | ![execute-method](../assets/en/code-editor/execute-method.png)                    | コードエディターウィンドウには、そのエディターで開かれているメソッドを実行するためのボタンがあります。このボタンに割り当てられているメニューを使用して、実行タイプを選択できます:<ul><li> **新規プロセスで実行**: プロセスを作成し、そのプロセス内でメソッドを実行します。</li><li>**新規プロセスで実行＆デバッグ**: プロセスを作成し、デバッガーを開いてメソッドを表示します。</li><li>**アプリケーションプロセスで実行**: アプリケーションプロセス内でメソッドを実行します。 </li><li>**アプリケーションプロセスで実行＆デバッグ**: アプリケーションプロセス内でデバッガーを開き、メソッドを表示します。</li></ul>メソッド実行に関するより詳細な情報については、[プロジェクトメソッドの呼び出し](../Concepts/methods.md#プロジェクトメソッドの呼び出し)を参照して下さい。 |
 | **メソッド中を検索**         | ![search-icon](../assets/en/code-editor/search.png)                               | [*検索* エリア](#検索と置換) を表示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **マクロ**              | ![macros-button](../assets/en/code-editor/macros.png)                             | 選択対象にマクロを挿入します。ドロップダウンの矢印をクリックすると、利用可能なマクロがすべて表示されます。 For more information on how to create and instantiate macros, see [Macros](creating-using-macros.md).                                                                                                                                                                                                                                                                                                                                             |
+| **マクロ**              | ![macros-button](../assets/en/code-editor/macros.png)                             | 選択対象にマクロを挿入します。ドロップダウンの矢印をクリックすると、利用可能なマクロがすべて表示されます。マクロの作成とインスタンス化についての詳細は、[マクロ](creating-using-macros.md) を参照ください。                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **すべて折りたたむ / すべて展開** | ![expand-collapse-button](../assets/en/code-editor/expand-collapse-all.png)       | これらのボタンを使用してコードの制御フロー構造を折りたたんだり展開したりできます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | **メソッド情報**           | ![method-information-icon](../assets/en/code-editor/method-information.png)       | [メソッドプロパティ](./overview.md#project-method-properties) ダイアログボックスを表示します(プロジェクトモードのみ)。                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **最新のクリップボードの値**     | ![last-clipboard-values-icon](../assets/en/code-editor/last-clipboard-values.png) | 直近でクリップボードに保存された値を表示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -86,7 +86,7 @@ title: コードエディター
 - **メソッド**: データベースに定義されたプロジェクトメソッド名。
 - **すべてのフォルダー**: データベースに定義されたオブジェクトフォルダーおよびサブフォルダー名 (階層リスト形式)。フォルダーは、カスタマイズされた方法でオブジェクトをグループ化するために使用します。フォルダーは、エクスプローラーのホームページで管理します。
 - **フォルダー** (サブメニュー): サブメニューを使用して選択されたフォルダーの中身。
-- **Macros**: Macro names defined for the database (see [Creating and using macros](./creating-using-macros.md)).
+- **マクロ**: データベースに定義されたマクロ名 ([マクロの作成と利用](./creating-using-macros.md) 参照)。
 - **コマンド**: 4Dランゲージコマンド (文字順)。
 - **コマンドリスト (テーマ順)**: テーマごとにグループ化された 4Dランゲージコマンド (階層リスト形式)。
 - **メニューバー**: [4Dメニューバーエディターで作成した](../Menus/creating.md) メニューバーの名前と番号。
@@ -284,7 +284,7 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 :::caution
 
-バックスラッシュ文字 (`\`) は、[Windows のパス名](../Concepts/paths.md#windows) において区切り文字として使用されます。 In general, 4D will correctly interpret Windows pathnames entered in the Code Editor by replacing the single backslash `\` with a double backslash `\\`. たとえば、`C:\MyDocuments` と入力すると `C:\\MyDocuments` に変換されます。しかし、`"C:\MyDocuments\New"` と入力した場合、4D は `"C:\\MyDocuments\New"`と表示します。この場合、二番目のバックスラッシュは`\N` ([行送り](../Concepts/quick-tour.md#エスケープシーケンス)) と解釈されてしまいます。 You must therefore enter a double backslash `\\` when you want to have a backslash in front of a character used in one of the escape sequences recognized by 4D.
+バックスラッシュ文字 (`\`) は、[Windows のパス名](../Concepts/paths.md#windows) において区切り文字として使用されます。通常、4D はコードエディターに入力された Windows のパス名のバックスラッシュ `\` を自動で `\\` に置き換えることで、これを正しく解釈します。たとえば、`C:\MyDocuments` と入力すると `C:\\MyDocuments` に変換されます。しかし、`"C:\MyDocuments\New"` と入力した場合、4D は `"C:\\MyDocuments\New"`と表示します。この場合、二番目のバックスラッシュは`\N` ([行送り](../Concepts/quick-tour.md#エスケープシーケンス)) と解釈されてしまいます。このようなケースでは、開発者がバックスラッシュを 2つ入力するようにしなければなりません。
 
 :::
 
@@ -382,7 +382,7 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 - SQLキーワード
 - マクロ (&lt; &gt; の間に表示）
 
-> For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. これらのオプションは **環境設定** の **メソッド** ＞ **オプション** にあります。
+> 使いやすさの観点から、**定数**、**変数 (ローカルあるいはインタープロセス) およびオブジェクト属性**、**テーブル** に関するリストの自動表示を無効にできます。これらのオプションは **環境設定** の **メソッド** ＞ **オプション** にあります。
 
 #### オブジェクトのプロパティ名
 
@@ -462,11 +462,11 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 ## シンタックスエラー
 
-4D は自動でメソッドシンタックスをチェックします。 If you enter text or select a component that is not syntactically correct, 4D displays a symbol to indicate the incorrect expression ![](../assets/en/code-editor/incorrect-expression-icon.png). マウスを記号に重ねるとエラーの内容が表示されます:
+4D は自動でメソッドシンタックスをチェックします。シンタックスが正しくない場合、4Dはそのことを示す記号を表示します ![](../assets/en/code-editor/incorrect-expression-icon.png)。マウスを記号に重ねるとエラーの内容が表示されます:
 
 ![](../assets/en/code-editor/incorrect-expression-message.png)
 
-When entering code, you can immediately check the syntax of the current line (without advancing to the next line) by pressing the **Enter** key on the numeric keypad. 4D は行を評価し、フォーマットし、エラーがあればそれを表示し、挿入カーソルを行の最後に移動します。メソッドやクラス、関数の行にエラーがあると表示された場合には、それを修正してください。正しく修正されると、4D はエラー記号を削除します。保存したりウィンドウを閉じたりしたときはメソッド全体が評価されます。 You can also force validation by pressing the **Enter** key.
+コード入力の際、テンキー側の **Enter** を押すと、改行されることなく現在の行のシンタックスチェックをおこなえます。 4D は行を評価し、フォーマットし、エラーがあればそれを表示し、挿入カーソルを行の最後に移動します。メソッドやクラス、関数の行にエラーがあると表示された場合には、それを修正してください。正しく修正されると、4D はエラー記号を削除します。保存したりウィンドウを閉じたりしたときはメソッド全体が評価されます。 **Enter** キーを押すと、強制的に評価をおこなえます。
 
 メソッド、クラス、関数を評価する際、4Dは以下をチェックします:
 
@@ -476,11 +476,11 @@ When entering code, you can immediately check the syntax of the current line (wi
 
 ![](../assets/en/code-editor/matching-enclosing-characters.png)
 
-> コード中のこれらの閉じる文字をクリックすると、4D はデフォルトで対応するペアの文字を灰色の四角で囲みます。 You can modify the way 4D indicates matching enclosing characters or disable this feature in **Preferences** > **Methods** > **Options** > **Matching parentheses**.
+> コード中のこれらの閉じる文字をクリックすると、4D はデフォルトで対応するペアの文字を灰色の四角で囲みます。この振る舞いは **環境設定** の **メソッド** ＞ **オプション** の **括弧のマッチング** で変更できます。
 
 コードエディターではスペルミスなどの大きなシンタックスエラーしかチェックできません。実行時エラーはチェックできません。実行時エラーは、コードが実行されているときに 4D が検出します。
 
-4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. また、コンパイラーもエラー検出には欠かせません。 For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
+このようなエラーを処理するために、4D はデバッガー ([デバッガー](../Debugging/debugger.md) 参照) を提供します。また、コンパイラーもエラー検出には欠かせません。コンパイラーについての詳細は、[コンパイル](../Project/compiler.md) を参照ください。
 
 ## ヘルプTips
 
@@ -510,7 +510,7 @@ When entering code, you can immediately check the syntax of the current line (wi
     別のメソッドからこのメソッドを呼び出したときのヘルプTip:
     ![](../assets/en/code-editor/help-tip.png)
 
-- また、 **専用のドキュメントファイル** を `<MethodName>.md` という名前で `<package>/documentation` フォルダーに作成することも可能です。 [コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。[コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。
+- また、 **専用のドキュメントファイル** を `<MethodName>.md` という名前で `<package>/documentation` フォルダーに作成することも可能です。[コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。
 
 ## コメント/アンコメント
 

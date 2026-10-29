@@ -3,11 +3,11 @@ id: shared
 title: 共有オブジェクトと共有コレクション
 ---
 
-**共有オブジェクト** および **共有コレクション** はプロセス間でコンテンツを共有することができる、特殊な [オブジェクト](Concepts/dt_object.md) と [コレクション](Concepts/dt_collection.md) です。 In contrast to [interprocess variables](Concepts/variables.md#interprocess-variables), shared objects and shared collections have the advantage of being compatible with **preemptive 4D processes**: they can be passed by reference as parameters to commands such as `New process` or `CALL WORKER`.
+**共有オブジェクト** および **共有コレクション** はプロセス間でコンテンツを共有することができる、特殊な [オブジェクト](Concepts/dt_object.md) と [コレクション](Concepts/dt_collection.md) です。[インタープロセス変数](Concepts/variables.md#インタープロセス変数) に比べると、共有オブジェクトと共有コレクションは **プリエンプティブ4Dプロセス** と互換性があるという点で利点があります。つまり、`New process` や `CALL WORKER` といったコマンドの引数として、参照の形で渡すことができるということです。
 
-Shared objects and shared collections can be stored in standard `Object` and `Collection` type variables, but must be instantiated using specific commands:
+共有オブジェクトと共有コレクションは、標準の `Object` および `Collection` 型の変数に保存することができますが、専用のコマンドを使用してインスタンス化されている必要があります:
 
-- to create a shared object, use the [`New shared object`](https://doc.4d.com/4dv19R/help/command/en/page1471.html) command,
+- 共有オブジェクトを作成するには、[`New shared object`](https://doc.4d.com/4dv20/help/command/ja/page1471.html) コマンドを使用します。
 - 共有コレクションを作成するには、[`New shared collection`](../API/CollectionClass.md#new-shared-collection) コマンドを使用します。
 
 :::note
@@ -18,7 +18,7 @@ Shared objects and shared collections can be stored in standard `Object` and `Co
 
 共有オブジェクト/コレクションを編集するには、**Use...End use** 構文を使う必要があります。共有オブジェクト/コレクションの値を読むにあたっては、**Use...End use** は必要ありません。
 
-A unique, global catalog returned by the `Storage` command is always available throughout the application and its components, and can be used to store all shared objects and collections.
+`Storage` コマンドが返す、データベースにおいて固有かつグローバルなカタログは、そのアプリケーション内あるいはコンポーネントからいつでも利用することができ、すべての共有オブジェクトおよびコレクションを保存するのに使用することができます。
 
 ## 共有オブジェクト/共有コレクションの使用
 
@@ -29,7 +29,7 @@ A unique, global catalog returned by the `Storage` command is always available t
 共有オブジェクトと共有コレクションは、編集することが可能です:
 
 - オブジェクトプロパティの追加・削除
-- 値の追加・編集 (共有オブジェクトがサポートしている範囲内で)。 これには、他の共有オブジェクトやコレクションの追加・編集も含まれます (この場合、共有グループを作成します。 後述参照)
+- 値の追加・編集 (共有オブジェクトがサポートしている範囲内で)。これには、他の共有オブジェクトやコレクションの追加・編集も含まれます (この場合、共有グループを作成します。後述参照)
 
 共有オブジェクトあるいは共有コレクションを編集するコードは、必ず [`Use...End use`](#useend-use) 構文で保護されている必要があり、そうでない場合にはエラーが返されます。
 
@@ -40,7 +40,7 @@ A unique, global catalog returned by the `Storage` command is always available t
  End Use
 ```
 
-共有オブジェクトや共有コレクションを変更するすべての [コレクション関数](../API/CollectionClass.md) は利便性のため、内部的に `Use...End use` 構文を使用します。そのため、これを別途コーディングする必要はありません。 例: 例:
+共有オブジェクトや共有コレクションを変更するすべての [コレクション関数](../API/CollectionClass.md) は利便性のため、内部的に `Use...End use` 構文を使用します。そのため、これを別途コーディングする必要はありません。例:
 
 ```4d
 $col:=New shared collection()
@@ -84,7 +84,7 @@ End Use
 
 `ストレージ` オブジェクトは標準の共有オブジェクトとは異なり、共有オブジェクト/コレクションがプロパティとして追加されたときでも共有グループを作成しないという点に注意してください。この例外的な振る舞いにより、**ストレージ** オブジェクトを使用するたびに、リンクされている共有オブジェクト/コレクションをすべてロックせずに済みます。
 
-For more information, refer to the `Storage` command description.
+詳細な情報については、`Storage` コマンドの詳細を参照してください。
 
 ## Use...End use
 
@@ -109,7 +109,7 @@ For more information, refer to the `Storage` command description.
 
 :::note
 
-[Collection functions](../API/CollectionClass.md) that modify shared collections automatically trigger an internal **Use** for this shared collection while the function is executed, making an explicit call to the structure unnecessary. It's also the case for `ARRAY TO COLLECTION` and `OB REMOVE` commands.
+共有コレクションを編集する [コレクション関数](../API/CollectionClass.md) は関数が実行される際に内部的な **Use** をその共有コレクションに対してトリガーするため、明示的にこの構造を呼び出す必要はありません。これは `ARRAY TO COLLECTION` および `OB REMOVE` コマンドに対しても同じことが言えます。
 
 :::
 
@@ -119,30 +119,30 @@ For more information, refer to the `Storage` command description.
 
 ```4d
  ARRAY TEXT($_items;0)
- ... //fill the array with items to count
+ ... // 在庫を確認する製品を配列に格納します
  $nbItems:=Size of array($_items)
  var $inventory : Object
  $inventory:=New shared object
  Use($inventory)
     $inventory.nbItems:=$nbItems
  End use
- 
-  //Create processes
+
+  // プロセスを起動します
  For($i;1;$nbItems)
     $ps:=New process("HowMany";0;"HowMany_"+$_items{$i};$_items{$i};$inventory)
-  //$inventory object sent by reference
+  // $inventory オブジェクトは参照で渡されます
  End for
 ```
 
 "HowMany" メソッド内では、在庫確認が終わるとすぐに $inventory 共有オブジェクトが更新されます:
 
 ```4d
-	//HowMany
+	// HowMany メソッド
  #DECLARE ($what : Text ; $inventory : Object)
- 
- $count:=CountMethod($what) //method to count products
- Use($inventory) //use shared object
-    $inventory[$what]:=$count  //save the results for this item
+
+ $count:=CountMethod($what) // 在庫確認用のメソッド
+ Use($inventory) // 共有オブジェクトを使用します
+    $inventory[$what]:=$count  // 当該製品の在庫を保存します
  End use
 ```
 
@@ -154,28 +154,29 @@ For more information, refer to the `Storage` command description.
  $ob1:=New shared object
  $ob2:=New shared object
  Use($ob1)
-    $ob1.a:=$ob2  //group 1 is created
+    $ob1.a:=$ob2  // グループ1 が作成されます
  End use
- 
+
  $ob3:=New shared object
  $ob4:=New shared object
  Use($ob3)
-    $ob3.a:=$ob4  //group 2 is created
+    $ob3.a:=$ob4  // グループ2 が作成されます
  End use
- 
- Use($ob1) //use an object from group 1
-    $ob1.b:=$ob4  //ERROR
-  //$ob4 already belongs to another group
-  //assignment is not allowed
+
+ Use($ob1) // グループ1のオブジェクトを使用します
+    $ob1.b:=$ob4  // これはエラーになります
+  // $ob4 はすでに他のグループに所属しているため
+  // 代入することはできません
  End use
- 
+
  Use($ob3)
-    $ob3.a:=Null //remove any reference to $ob4 from group 2
+    $ob3.a:=Null // グループ2から$ob4 への参照をすべて解除します
+
  End use
- 
- Use($ob1) //use an object from group 1
-    $ob1.b:=$ob4  //ERROR
-  //$ob4 still belongs to group 2
-  //assignment is not allowed
+
+ Use($ob1) // グループ1のオブジェクトを使用します
+    $ob1.b:=$ob4  // これもエラーになります
+  // $ob4 は依然としてグループ2に所属しているため
+  // 代入は不可能です
  End use
 ```

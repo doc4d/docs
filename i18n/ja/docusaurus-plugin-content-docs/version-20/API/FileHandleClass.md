@@ -364,7 +364,7 @@ $s:=$fh.readText()
 
 `.readLine()` 関数は、<!-- REF #FileHandleClass.readLine().Summary -->現在の位置から次の改行文字まで、あるいはドキュメントの終端に到達するまでのテキストを返します<!-- END REF -->。
 
-When this function is executed, the current position ([.offset](#offset)) is updated.
+この関数を実行すると、現在の位置 ([`.offset`](#offset)) が更新されます。
 
 :::caution 警告
 

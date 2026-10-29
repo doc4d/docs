@@ -133,19 +133,19 @@ Utilisation du datastore principal de la base 4D :
 
 #### Description
 
-The `Open datastore` command <!-- REF #_command_.Open datastore.Summary -->connects the application to the 4D database identified by the *connectionInfo* parameter<!-- END REF --> and returns a matching `4D.DataStoreImplementation` object associated with the *localID* local alias.
+La commande `Open datastore` <!-- REF #_command_.Open datastore.Summary -->connecte l'application à la base de données 4D identifiée par le paramètre *connectionInfo*<!-- END REF --> et renvoie un objet `4D.DataStoreImplementation` correspondant, associé à l'alias local *localID*.
 
 La base de données *connectionInfo* 4D doit être disponible en tant que datastore distant, c'est-à-dire :
 
 - son serveur Web doit être lancé avec http et/ou https activé,
-- its [**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option must be checked,
+- l'option [**Exposer en tant que serveur REST**](REST/configuration.md#starting-the-rest-server) doit être cochée,
 - au moins une licence client est disponible.
 
 Si aucune base de données correspondante n'est trouvée, `Open datastore` retourne **Null**.
 
 *localID* est un alias local de la session ouverte sur le datastore distant. Si *localID* existe déjà dans l'application, il est utilisé. Sinon, une nouvelle session *localID* est créée lors de l’utilisation de l’objet datastore.
 
-Objects available in the `4D.DataStoreImplementation` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
+Les objets disponibles dans `4D.DataStoreImplementation` sont mappés à partir de la base de données cible conformément aux [règles générales ORDA](ORDA/dsMapping.md#general-rules).
 
 Une fois la session ouverte, les instructions suivantes deviennent équivalentes et renvoient une référence sur le même objet datastore :
 

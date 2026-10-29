@@ -3,6 +3,24 @@ id: updates
 title: リリースノート
 ---
 
+## 4D 21 R6
+
+Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), the blog post that lists all new features and enhancements in 4D 21 R6.
+
+#### ハイライト
+
+- Class functions and class constructors can be documented with a [comment block above their declaration](../Concepts/classes.md#function-comments): the description and parameter comments are displayed in the code completion and help of the [4D code editor](../code-editor/write-class-method.md#help-tips) and VS Code, and in the [syntax file of compiled components](../Extensions/develop-components.md#code-completion-for-compiled-components).
+- `MCP:` comment lines and behavior tags provide the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata) of `exposed MCP Function` declarations, generated at compilation in [`Project/DerivedData/syntaxMCP.json`](../Project/architecture.md#deriveddata) or provided by a custom [`Resources/syntaxMCP.json`](../Project/architecture.md#resources) file.
+- New native [MCP server](../WebServer/mcp-server.md) in the 4D Web Server: AI clients can call your [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function) functions and the [built-in CRUD tools](../WebServer/mcp-server.md#built-in-crud-tools), with the same [roles and privileges](../ORDA/privileges.md#mcp-tools) as REST requests. The MCP server is configured with the new [`WebServer.mcp`](../API/WebServerClass.md#mcp) property.
+- MCP clients authenticate with Fine-Grained Tokens managed with the new [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken), [`ds.listFineGrainedTokens()`](../API/DataStoreClass.md#listfinegrainedtokens), and [`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken) functions. The reserved [`mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated) DataStore class function prepares each MCP session, whose [`Session.info.type`](../API/SessionClass.md#info) is "mcp".
+- Optional [OAuth 2.1 mode](../WebServer/mcp-server.md#oauth-21-mode) of the MCP server, enabled by the reserved [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) DataStore class function. Grants are managed with the new [`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants) and [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant) functions.
+- New [`MCP`](../commands/mcp) command and [`4D.MCPContext`](../API/MCPContextClass.md) class to [ask the user for a confirmation](../WebServer/mcp-server.md#asking-the-user-for-confirmation) in MCP tools.
+- A reference [MCP Bundle](../WebServer/mcp-server.md#claude-desktop-bundle) lets Claude Desktop connect to a 4D MCP server on the local network.
+
+#### 動作の変更
+
+- The compiler now reports [warnings on function comments](../Project/compiler.md#warnings-on-function-comments): a class function or class constructor that has a comment block above its declaration gets a warning for each parameter without a `$name:` comment, and for contradictory MCP behavior tags.
+
 ## 4D 21 R5
 
 [**4D 21 R5 の新機能**](https://blog.4d.com/ja/whats-new-in-4d-21-r5/): 4D 21 R5 の新機能と拡張機能をすべてリストアップしたブログ記事です。
@@ -20,8 +38,9 @@ title: リリースノート
 - 新しい[`WebServer.quotas`](../API/WebServerClass.md#クォータ) プロパティと改善された[`4D.QuotaManager`](../API/QuotaManagerClass.md) クラスを使用して[Web サーバークォータ](../WebServer/quotas.md) を設定することができます。
 - テキストエリアと入力オブジェクト: 新しい[上パディング](../FormObjects/properties_CoordinatesAndSizing.md#上パディング)、 [下パディング](../FormObjects/properties_CoordinatesAndSizing.md#下パディング)、[左パディング](../FormObjects/properties_CoordinatesAndSizing.md#左パディング)、[右パディング](../FormObjects/properties_CoordinatesAndSizing.md#右パディング) と関連した[CSS サポート](../FormEditor/createStylesheet.md#属性マッピング)。[縦揃え](../FormObjects/properties_Text.md#縦揃え) のサポート。
 - パディングをプログラミングで管理するための[`OBJECT SET PADDING`](../commands/object-set-padding) および [`OBJECT Get padding`](../commands/object-get-padding) コマンド。
-- [カスタムボタン](../FormObjects/button_overview.md#カスタム)、 [カスタムチェックボックス](../FormObjects/checkbox_overview.md#カスタム) および [カスタムラジオボタン](../FormObjects/radio_overview.md#カスタム) に対しての新しい内側の境界線デザイン: [塗りカラー](../FormObjects/properties_BackgroundAndBorder.md#背景色塗りカラー) および [角の半径](../FormObjects/properties_BackgroundAndBorder.md#角の半径) プロパティのサポート; 新しい[境界線カラーborder color](../FormObjects/properties_BackgroundAndBorder.md#境界線カラー) および[境界線の幅](../FormObjects/properties_BackgroundAndBorder.md#境界線の幅) プロパティ。
-- [依存関係マネージャー](../Project/components.md#4d-cornerを使用) から[4D Corner プラットフォーム](https://corner.4d.com/) へと直接アクセスできるようになりました。
+- New inner border design for [custom buttons](../FormObjects/button_overview.md#custom), [custom check boxes](../FormObjects/checkbox_overview.md#custom) and [custom radio buttons](../FormObjects/radio_overview.md#custom): support of [fill color](../FormObjects/properties_BackgroundAndBorder.md#background-color--fill-color) and [corner radius](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) properties; new [Border width](../FormObjects/properties_BackgroundAndBorder.md#border-width) property.
+- Support of ["System rounded" border line style](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) property for [inputs](../FormObjects/input_overview.md), compliant with macOS *Liquid glass* design. Also supported by [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) and [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style) commands.
+- New ["Border color" property](../FormObjects/properties_BackgroundAndBorder.md#border-color) available for most form objects. [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) and [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) commands support a new *borderColor* parameter.
 - 4Dメソッドまたはクラスを作成または開くときに4D コードエディターを開くかVS Code を開くかを自動的に決定する[新しい**コードエディター** 設定](../Preferences/methods.md#コードエディター)。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=21_R5): 4D 21 R5 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/178/release-note-version-20r5/))。
 
@@ -41,7 +60,7 @@ In 4D 21 R5 and higher, vectors are created with a [32-bit precision by default]
 
 #### ハイライト
 
-- AI: macOS では、Apple Inteligence **Writing Tools** のおかげで、テキストを改善したり要約したりといったことができるようになりました。これは[4D Write Pro](../FormObjects/writeProArea_overview.md) および[入力](../FormObjects/input_overview.md) フォームオブジェクトにおいて、[プロパティ](../FormObjects/properties_Entry.md#writing-tools) および [標準アクション](../Desktop/standard-actions) として利用可能です。
+- AI: macOS では、Apple Intelligence **作文ツール** のおかげで、テキストを改善したり要約したりといったことができるようになりました。これは[4D Write Pro](../FormObjects/writeProArea_overview.md) および[入力](../FormObjects/input_overview.md) フォームオブジェクトにおいて、[プロパティ](../FormObjects/properties_Entry.md#writing-tools) および [標準アクション](../Desktop/standard-actions) として利用可能です。
 - QUIC ネットワークレイヤーにおける、改善された[クライアント/サーバーの接続切断のサポート](../Desktop/clientServer.md#到達不能なピアの管理): 新しい [`QUIC session timeout`](../commands/set-database-parameter#quick-session-timeout-135) データベースパラメーター、新しい [`unreachableSince` session.info](../API/SessionClass.md#info) プロパティ。
 - マルチレベルスタイルシートが、[4D Write Pro インターフェースでサポートされる](../WritePro/writeprointerface#multi-level-list-style-sheets) ようになり、これによりユーザーはツールバーとサイドバーから構造化されたマルチレベルリストを直接作成・管理できるようになりました。
 - 新しい[`defer`](../commands/defer) コマンドが追加され、これによってメソッドまたは関数の終了時に必ず実行される同じコードを宣言することができるようになりました。また新しい[`Deferred formulas`](../commands/deferred-formulas) コマンドを使用することで、遅延されたフォーミュラの一覧を取得することができます。

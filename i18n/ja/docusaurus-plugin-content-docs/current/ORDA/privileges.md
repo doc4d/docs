@@ -45,7 +45,7 @@ Webユーザーまたは RESTユーザーがログインすると、そのセッ
 
 利用可能なアクションは対象となるリソースによります。
 
-| アクション       | データストア                                                                        | dataclass                                                            | 属性                                                                        | データモデル関数またはシングルトン関数                                                                           |
+| アクション       | データストア                                                                        | データクラス                                                               | 属性                                                                        | データモデル関数またはシングルトン関数                                                                           |
 | ----------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | **create**  | 任意のデータクラスにおいてエンティティを作成                                                        | 当該データクラスにおいてエンティティを作成                                                | 当該属性に許可されたデフォルト値とは異なる値を持つエンティティを作成 (エイリアス属性の場合は無視されます) | n/a                                                                                           |
 | **read**    | 任意のデータクラスにおいて属性を読み取り                                                          | 当該データクラスにおいて属性を読み取り                                                  | 当該属性を読み取り                                                                 | n/a                                                                                           |
@@ -67,11 +67,39 @@ Webユーザーまたは RESTユーザーがログインすると、そのセッ
 
 権限の設定には一貫性が必要です。特に、**update** および **drop** 権限は**read** 権限も必要とします(ただし**create** はそれを必要としません)。
 
+### MCP tools
+
+The same permissions apply to the sessions of the [MCP server](../WebServer/mcp-server.md), with nothing specific to configure:
+
+- A [custom tool](../WebServer/mcp-server.md#custom-tools) (`exposed MCP Function`) requires the **execute** permission on its function, and benefits from its **promote** permission.
+- The [built-in CRUD tools](../WebServer/mcp-server.md#built-in-crud-tools) require the **read**, **create**, **update**, or **drop** permission on the dataclass, and the attribute permissions apply. Each attribute of a path used in a filter, a sort, or a projection requires the **read** permission.
+- The CRUD tools are listed only if the session has at least one data permission on a dataclass, and the `describeModel` tool only describes the dataclasses on which the session has a data permission, with their readable or writable attributes.
+- A tool, a dataclass, or an attribute that the session cannot access is reported as if it did not exist.
+
+#### 例題
+
+MCP clients authenticated with the "salesReader" privilege can read the Customer and Order dataclasses with the CRUD tools, and call the tools published by the `OrderManager` singleton (for example `OrderManager-getYearTotal`):
+
+```json
+{
+	"privileges": [{"privilege": "salesReader", "includes": []}],
+	"roles": [],
+	"permissions": {
+		"allowed": [
+			{"applyTo": "Customer", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "Order", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "OrderManager", "type": "singleton", "execute": ["salesReader"]}
+		]
+	},
+	"restrictedByDefault": true
+}
+```
+
 ### 継承されたパーミッション
 
 あるレベルにおいて定義されたパーミッションは基本的に下位レベルに継承されますが、パーミッションは複数のレベルで設定することもできます:
 
-- データストアレベルで定義されたパーミッションは、自動的にすべてのデータクラスに割り当てられます。データストアレベルで定義されたパーミッションは、自動的にすべてのデータクラスに割り当てられます。 データストアレベルで定義された*execute* 権限アクションは、[シングルトン](../REST/$singleton.md) 関数を含めてプロジェクトの全ての関数に対して適用されます。
+- データストアレベルで定義されたパーミッションは、自動的にすべてのデータクラスに割り当てられます。データストアレベルで定義された*execute* 権限アクションは、[シングルトン](../REST/$singleton.md) 関数を含めてプロジェクトの全ての関数に対して適用されます。
 - データクラスレベルで定義されたパーミッションは、データストアの設定をオーバーライドします (あれば)。デフォルトでは、データクラスのすべての属性が、データクラスのパーミッションを継承します。
 - データクラスとは異なり、属性レベルで定義されたパーミッションは、親のデータクラスの設定をオーバーライドするのではなく、それに追加されます。たとえば、同じ許諾アクションに対し、データクラスのレベルでは "general" という権限名を、データクラスの属性のレベルでは "detail" という権限名を割り当てた場合、その属性にアクセスするには、セッションに "general" と "detail" の両方の権限が設定されている必要があります。
 
@@ -165,7 +193,7 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
 ## `roles.json` ファイル
 
-`roles.json` ファイルは、プロジェクトのWeb セキュリティ設定の全体を記述します。 `roles.json` ファイルの構文は次のとおりです: `roles.json` ファイルの構文は次のとおりです:
+`roles.json` ファイルは、プロジェクトのWeb セキュリティ設定の全体を記述します。 `roles.json` ファイルの構文は次のとおりです:
 
 | プロパティ名              |                                                                                     |                                                                                  | 型                               | 必須 | 説明                                                                                                                 |
 | ------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------- | -- | ------------------------------------------------------------------------------------------------------------------ |

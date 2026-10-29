@@ -35,7 +35,7 @@ title: ピクチャーボタン
 
 ピクチャーは、縦、横、または縦横格子状に整理することができます (上図を参照)。ピクチャーを格子状に並べた場合、各ピクチャーには上の行から順に左から右へと、0から始まる番号が振られます。たとえば、4行と 3列で構成される格子において、2行目の 2番目の画像の番号は 4 になります (上の例では英国旗)。
 
-2. プロジェクトの Resouces フォルダーに画像があるのを確認し、そのファイルパスを [パス名](properties_Picture.md#パス名) プロパティに入力します。
+2. プロジェクトの Resources フォルダーに画像があるのを確認し、そのファイルパスを [パス名](properties_Picture.md#パス名) プロパティに入力します。
 
 3. 画像の [行と列](properties_Crop.md) プロパティを設定します。
 
@@ -60,7 +60,7 @@ title: ピクチャーボタン
 
 ## プロパティ一覧
 
-[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [タイトル](properties_Object.md#タイトル) - [CSSクラス](properties_Object.md#cssクラス) - [ボタンスタイル](properties_TextAndPicture.md#ボタンスタイル) - [パス名](properties_Picture.md#パス名) - [マウス押下中は自動更新](properties_Animation.md#マウス押下中は自動更新) - [先頭フレームに戻る](properties_Animation.md#先頭フレームに戻る) - [ロールオーバー効果](properties_Animation.md#ロールオーバー効果) - [無効時に最終フレームを使用](properties_Animation.md#無効時に最終フレームを使用) - [アニメーション間隔 (tick)](properties_Animation.md#アニメーション間隔-tick) - [行](properties_Crop.md#行) - [列](properties_Crop.md#列) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [ショートカット](properties_Entry.md#ショートカット) - [フォーカス可](properties_Entry.md#フォーカス可) - [表示状態](properties_Display.md#表示状態) - [境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル) - [イタリック](properties_Text.md#イタリック) - [ヘルプTips](properties_Help.md#ヘルプtips) - [標準アクション](properties_Action.md#標準アクション)
+[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [タイトル](properties_Object.md#タイトル) - [CSSクラス](properties_Object.md#cssクラス) - [ボタンスタイル](properties_TextAndPicture.md#ボタンスタイル) - [パス名](properties_Picture.md#パス名) - [マウス押下中は自動更新](properties_Animation.md#マウス押下中は自動更新) - [先頭フレームに戻る](properties_Animation.md#先頭フレームに戻る) - [ロールオーバー効果](properties_Animation.md#ロールオーバー効果) - [無効時に最終フレームを使用](properties_Animation.md#無効時に最終フレームを使用) - [アニメーション間隔 (tick)](properties_Animation.md#アニメーション間隔-tick) - [行](properties_Crop.md#行) - [列](properties_Crop.md#列) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [ショートカット](properties_Entry.md#ショートカット) - [フォーカス可](properties_Entry.md#フォーカス可) - [表示状態](properties_Display.md#表示状態) - [境界線スタイル](properties_BackgroundAndBorder.md#border-line-style) - [イタリック](properties_Text.md#イタリック) - [ヘルプTips](properties_Help.md#ヘルプtips) - [標準アクション](properties_Action.md#標準アクション)
 
 ## サポートされるイベント
 

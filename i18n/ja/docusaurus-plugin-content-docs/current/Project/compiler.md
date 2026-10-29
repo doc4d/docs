@@ -3,13 +3,13 @@ id: compiler
 title: コンパイル
 ---
 
-プロジェクトはコンパイルすることができます。 コンパイルとは、すべてのメソッドをマシン言語に翻訳することです。プロジェクトをコンパイルすると、コードの整合性を調べたり、実行速度を向上させることができます。 4D でプロジェクト開発をおこない、それをスタンドアロンアプリケーションとして配布するまでの間の手順として、コンパイルは不可欠です。
+プロジェクトはコンパイルすることができます。 コンパイルとは、すべてのメソッドをマシン言語に翻訳することです。プロジェクトをコンパイルすると、コードの整合性を調べたり、実行速度を向上させることができます。さらに、コード全体を難読化することにより保護することも可能です。 4D でプロジェクト開発をおこない、それをスタンドアロンアプリケーションとして配布するまでの間の手順として、コンパイルは不可欠です。
 
 ## コンパイル
 
 コンパイル処理はすべて 4Dアプリケーションにより自動的でおこなわれます。
 
-> macOS上でコンパイルするには、`Xcode` をインストールする必要があります。 このことについての詳細は [Apple Silicon用コンパイラー](#apple-silicon用コンパイラー) を参照ください。このことについての詳細は [Apple Silicon用コンパイラー](#apple-silicon用コンパイラー) を参照ください。
+> macOS上でコンパイルするには、`Xcode` をインストールする必要があります。このことについての詳細は [Apple Silicon用コンパイラー](#apple-silicon用コンパイラー) を参照ください。
 
 1. コンパイラーウィンドウを表示するには、**デザイン** メニューの **コンパイラー...** を選択するか、またはツールバーにある **コンパイラー** ボタンをクリックします。
 
@@ -26,6 +26,8 @@ title: コンパイル
 ![](../assets/en/Project/success.png)
 
 コンパイルが終了次第、[アプリケーションをコンパイル済みモードで実行](#コンパイル済み実行)し、実行速度がどれだけ向上したのか確認することができます。
+
+When the compilation succeeds, the compiler also generates the `Project/DerivedData/syntaxMCP.json` file, which contains the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata) of the project, whatever the [syntax file setting](../Extensions/develop-components.md#code-completion-for-compiled-components).
 
 エラーが検出されると処理が中止され、"コンパイルに失敗しました" というメッセージが表示されます。ウィンドウの情報エリアに、問題となるメソッド名と行番号が階層リスト形式で表示されます:
 
@@ -157,7 +159,7 @@ Symbolファイルを生成するのに使用します ([Symbolファイル](#sy
 
 #### エラーファイルを生成
 
-シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。エラーファイルは、プロジェクトの [Logs フォルダー](../Project/architecture.md#logs) 内に `ProjectName_error.xml` という名前で作成されます。
+シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。エラーファイルは、プロジェクトの [Logs フォルダー](../Project/architecture.md#logs) 内に `ProjectName_errors.xml` という名前で作成されます。
 
 #### コンパイル対象CPU
 
@@ -275,6 +277,23 @@ Symbolファイルを生成するのに使用します ([Symbolファイル](#sy
 特別な警告コメントは、警告タブでの警告表示設定よりも優先されます。
 
 :::
+
+### Warnings on function comments
+
+When a class function or a class constructor has a [comment block above its declaration](../Concepts/classes.md#function-comments), the compiler checks it and reports a warning:
+
+- for each parameter of the signature that is not documented by a `$name:` or `{$name}:` line (variadic parameters are not checked),
+- when the `MCP:` behavior tags contradict each other (`@readOnly`, `@destructive`, and `@additive` used together). In this case, the corresponding hints are omitted from the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata).
+
+Functions without a comment block are not checked. For example, the following function generates a warning for the *$factor* parameter and a warning for the `@readOnly` and `@destructive` tags:
+
+```4d
+// Scales a value by a factor
+// MCP: @readOnly @destructive
+// $value: value to scale
+Function scale($value : Real; $factor : Real) : Real
+	return $value*$factor
+```
 
 ## コンパイルツール
 

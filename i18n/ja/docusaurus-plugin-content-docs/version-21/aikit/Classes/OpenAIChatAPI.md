@@ -5,7 +5,7 @@ title: OpenAIChatAPI
 
 # OpenAIChatAPI
 
-`OpenAIChatAPI` クラスはOpenAiI のチャットベースの機能とやりとるするためのインターフェースを提供し、補完機能とビジョン機能を活用します。
+`OpenAIChatAPI` クラスはOpenAI のチャットベースの機能とやりとるするためのインターフェースを提供し、補完機能とビジョン機能を活用します。
 
 ## プロパティ
 

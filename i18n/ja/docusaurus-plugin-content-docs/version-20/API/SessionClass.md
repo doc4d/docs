@@ -3,9 +3,9 @@ id: SessionClass
 title: Session
 ---
 
-Session objects are returned by the [`Session`](#session) command when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-sessions). Webクライアント (ブラウザーなど) のセッションを制御するため、4D Webサーバーは自動的に Sessionオブジェクトを作成・管理します。このオブジェクトは、ユーザーセッションへのインターフェースを Web開発者に対して提供し、アクセス権の管理や、コンテキストデータの保存、プロセス間の情報共有、セッションに関連したプリエンプティブプロセスの開始などを可能にします。
+プロジェクトにおいて、[スケーラブルセッションが有効化されている](WebServer/sessions.md#セッションの有効化)場合、[`Session`](#session) コマンドによって `Session` オブジェクトが返されます。 Webクライアント (ブラウザーなど) のセッションを制御するため、4D Webサーバーは自動的に `Session`オブジェクトを作成・管理します。このオブジェクトは、ユーザーセッションへのインターフェースを Web開発者に対して提供し、アクセス権の管理や、コンテキストデータの保存、プロセス間の情報共有、セッションに関連したプリエンプティブプロセスの開始などを可能にします。
 
-For detailed information about the session implementation, please refer to the [web server Sessions](WebServer/sessions.md) section.
+セッションの実装に関する詳細については、[Webサーバーセッション](WebServer/sessions.md) の章を参照ください。
 
 ### 概要
 
@@ -45,15 +45,15 @@ For detailed information about the session implementation, please refer to the [
 
 #### 説明
 
-The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current scalable user web session<!-- END REF -->.
+`Session` コマンドは、 <!-- REF #_command_.Session.Summary -->カレントのスケーラブルユーザーWebセッションに対応する `Session` オブジェクトを返します<!-- END REF -->。
 
-This command only works when [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions). It returns *Null* when sessions are disabled or when legacy sessions are used.
+[スケーラブルセッションが有効化されている](WebServer/sessions.md#セッションの有効化)場合にのみ、このコマンドは機能します。セッションが無効な場合や、旧式セッションが使用されている場合には、*Null* を返します。
 
-When scalable sessions are enabled, the `Session` object is available from any web processes in the following contexts:
+スケーラブルセッションが有効化されている場合、`Session` オブジェクトは次のコンテキストにおける、あらゆる Webプロセスから利用可能です:
 
 - `On Web Authentication`、`On Web Connection`、および `On REST Authentication` データベースメソッド
 - モバイルリクエスト用の [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) と [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) データベースメソッド
-- ORDA [Data Model Class functions](ORDA/ordaClasses.md) called with REST requests,
+- RESTリクエストで呼び出された ORDA [データモデルクラス関数](ORDA/ordaClasses.md)
 - セミダイナミックページにおいて、4Dタグ (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE) を介して処理されるコード
 - "公開オプション: 4DタグとURL(4DACTION...)" を有効化されたうえで、4DACTION/ URL から呼び出されたプロジェクトメソッド
 
@@ -66,16 +66,16 @@ IP:port/4DACTION/action_Session
 ```
 
 ```4d
-  //action_Session method
+  //action_Session メソッド
  Case of
     :(Session#Null)
-       If(Session.hasPrivilege("WebAdmin")) //calling the hasPrivilege function
-          WEB SEND TEXT("4DACTION --> Session is WebAdmin")
+       If(Session.hasPrivilege("WebAdmin")) // hasPrivilege 関数を呼び出します
+          WEB SEND TEXT("4DACTION --> セッションは WebAdmin です")
        Else
-          WEB SEND TEXT("4DACTION --> Session is not WebAdmin")
+          WEB SEND TEXT("4DACTION --> セッションは WebAdmin ではありません")
        End if
     Else
-       WEB SEND TEXT("4DACTION --> session is null")
+       WEB SEND TEXT("4DACTION --> セッションは null です")
  End case
 ```
 
@@ -106,7 +106,7 @@ IP:port/4DACTION/action_Session
 
 #### 説明
 
-The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session<!-- END REF -->. 結果的に、当該セッションは自動的にゲストセッションになります。
+`.clearPrivileges()` 関数は、<!-- REF #SessionClass.clearPrivileges().Summary -->対象セッションに紐づいているアクセス権をすべて削除します<!-- END REF -->。結果的に、当該セッションは自動的にゲストセッションになります。
 
 #### 例題
 
@@ -305,7 +305,7 @@ End if
 
 #### 説明
 
-The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -->associates the privilege(s) and/or role(s) defined in the parameter to the session<!-- END REF -->.
+`.setPrivileges()` 関数は、<!-- REF #SessionClass.setPrivileges().Summary -->引数として渡したアクセス権やロールをセッションと紐づけます<!-- END REF -->。
 
 - *privilege* には、アクセス権の名称を文字列として渡します (複数の場合はカンマ区切り)。
 
@@ -367,7 +367,7 @@ End if
 
 #### 説明
 
-The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all requests of the web client<!-- END REF -->.
+`.storage` プロパティは、 <!-- REF #SessionClass.storage.Summary -->Webクライアントのリクエストに対応するために情報を保存しておける共有オブジェクト<!-- END REF -->を格納します。
 
 `Session` オブジェクトの作成時には、`.storage` プロパティは空です。共有オブジェクトのため、このプロパティはサーバー上の `Storage` オブジェクトにおいて利用可能です。
 
@@ -377,13 +377,13 @@ The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a sha
 
 #### 例題
 
-クライアントの IP を `.storage` プロパティに保存します。 `On Web Authentication` データベースメソッドに以下のように書けます: `On Web Authentication` データベースメソッドに以下のように書けます:
+クライアントの IP を `.storage` プロパティに保存します。 `On Web Authentication` データベースメソッドに以下のように書けます:
 
 ```4d
-If (Session.storage.clientIP=Null) //first access
+If (Session.storage.clientIP=Null) // 最初のアクセス
     Use (Session.storage)
         Session.storage.clientIP:=New shared object("value"; $clientIP)
-    End use
+    End use 
 End if
 
 ```

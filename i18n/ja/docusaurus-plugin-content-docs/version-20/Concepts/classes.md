@@ -5,7 +5,7 @@ title: クラス
 
 ## 概要
 
-4D ランゲージでは **クラス** の概念がサポートされています 。プログラミング言語では、クラスを利用することによって、属性やメソッドなどを持つ特定のオブジェクト種を定義することができます。
+4D ランゲージでは **クラス** の概念がサポートされています。プログラミング言語では、クラスを利用することによって、属性やメソッドなどを持つ特定のオブジェクト種を定義することができます。
 
 ユーザークラスが定義されていれば、そのクラスのオブジェクトをコード内で **インスタンス化** することができます。各オブジェクトは、それ自身が属するクラスのインスタンスです。クラスは、別のクラスを [継承](#class-extends-classname) することで、その [関数](#function) と、([宣言された](#property) および [計算された](#function-get-と-function-set)) プロパティを受け継ぐことができます。
 
@@ -14,12 +14,12 @@ title: クラス
 たとえば、次のように `Person` クラスを定義した場合:
 
 ```4d
-//Class: Person.4dm
+// クラス: Person.4dm
 Class constructor($firstname : Text; $lastname : Text)
  This.firstName:=$firstname
  This.lastName:=$lastname
 
-Function get fullName() -> $fullName : text
+Function get fullName()->$fullName : text
  $fullName:=This.firstName+" "+This.lastName
 
 Function sayHello()->$welcome : Text
@@ -40,7 +40,7 @@ $hello:=$person.sayHello() // "Hello John Doe"
 
 ### クラス定義
 
-4D においてユーザークラスとは、`/Project/Sources/Classes/` フォルダーに保存された専用の [メソッド](methods.md) ファイル (.4dm) によって定義されます。  ファイル名がクラス名になります。ファイル名がクラス名になります。
+4D においてユーザークラスとは、`/Project/Sources/Classes/` フォルダーに保存された専用の [メソッド](methods.md) ファイル (.4dm) によって定義されます。ファイル名がクラス名になります。
 
 クラスを命名する際には、次のルールに留意してください:
 
@@ -89,7 +89,7 @@ Project フォルダー Project Sources Classes Polygon.4dm
   - クラスメソッドはコードのブロックです
   - オブジェクトメンバーに対する **定義に移動** 操作はクラスの Function 宣言を探します。例: "$o.f()" の場合、"Function f" を見つけます。
   - クラス関数宣言に対する **参照箇所を検索** 操作は、その関数がオブジェクトメンバーとして使われている箇所を探します。例: "Function f" の場合 "$o.f()" を見つけます。
-- In the Runtime explorer and Debugger, class functions are displayed with the `\<ClassName>` constructor or `\<ClassName>.\<FunctionName>` format.
+- ランタイムエクスプローラーおよびデバッガーにおいて、クラスメソッドは `<ClassName>` コンストラクターまたは `<ClassName>.<FunctionName>` 形式で表示されます。
 
 ## クラスストア
 
@@ -138,7 +138,7 @@ $instance:=cs.myClass.new()
 </div>
 <!-- END REF -->
 
-`4D` コマンドは、<!-- REF #_command_.4D.Summary -->ビルトイン 4Dクラスのクラスストアを返します<!-- END REF -->。  [CryptoKey](API/CryptoKeyClass.md) などの専用 API へのアクセスを提供します。
+`4D` コマンドは、<!-- REF #_command_.4D.Summary -->ビルトイン 4Dクラスのクラスストアを返します<!-- END REF -->。 [CryptoKey](API/CryptoKeyClass.md) などの専用 API へのアクセスを提供します。
 
 #### 例題
 
@@ -150,15 +150,15 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 ## Class オブジェクト
 
-プロジェクトにおいてクラスが [定義](#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます 。  クラスとは、それ自身が ["Class" クラス](API/ClassClass.md) のオブジェクトです。 Class オブジェクトは次のプロパティや関数を持ちます: クラスとは、それ自身が ["Class" クラス](API/ClassClass.md) のオブジェクトです。 Class オブジェクトは次のプロパティや関数を持ちます:
+プロジェクトにおいてクラスが [定義](#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。クラスとは、それ自身が ["Class" クラス](API/ClassClass.md) のオブジェクトです。 Class オブジェクトは次のプロパティや関数を持ちます:
 
 - [`name`](API/ClassClass.md#name) 文字列
 - [`superclass`](API/ClassClass.md#superclass) オブジェクト (無い場合は null)
-- [`new()`](API/ClassClass.md#new) function, allowing to instantiate class objects.
+- [`new()`](API/ClassClass.md#new) 関数 (Class オブジェクトをインスタンス化します)
 
 また、Class オブジェクトは [`constructor`](#class-constructor) オブジェクトを参照することも可能です (任意)。
 
-A class object is a [shared object](shared.md) and can therefore be accessed from different 4D processes simultaneously.
+Class オブジェクトは [共有オブジェクト](shared.md) です。したがって、異なる 4Dプロセスから同時にアクセスすることができます。
 
 ### 継承
 
@@ -182,18 +182,18 @@ A class object is a [shared object](shared.md) and can therefore be accessed fro
 
 ```4d
 Function <name>({$parameterName : type; ...}){->$parameterName : type}
-// code
+// コード
 ```
 
 :::note
 
-関数コードにおいては、終了キーワードはありません。  4D ランゲージは、次の`Function` キーワードまたはクラスファイルの終了を持って、自動的に関数のコードの終わりを検知します。
+関数コードにおいては、終了キーワードはありません。 4D ランゲージは、次の`Function` キーワードまたはクラスファイルの終了を持って、自動的に関数のコードの終わりを検知します。
 
 :::
 
-クラス関数とは、当該クラスのプロパティです。クラス関数は [`4D.Function`](API/FunctionClass.md) クラスのオブジェクトです 。
+クラス関数とは、当該クラスのプロパティです。クラス関数は [`4D.Function`](API/FunctionClass.md) クラスのオブジェクトです。
 
-In the class definition file, function declarations use the `Function` keyword, and the name of the function. The function name must be compliant with [property naming rules](Concepts/identifiers.md#object-properties).
+クラス定義ファイルでは、`Function` キーワードと関数名を使用して宣言をおこないます。関数名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。
 
 :::tip
 
@@ -222,12 +222,12 @@ Function getFullname()->$fullname : Text
 
 アプリケーションのコード内では、クラス関数はオブジェクトインスタンスのメンバーメソッドとして呼び出され、[引数](#引数) を受け取ることができます。以下のシンタックスがサポートされています:
 
-- `()` 演算子の使用 。例: `myObject.methodName("hello") `
+- `()` 演算子の使用。例: `myObject.methodName("hello")`
 - "4D.Function" クラスメンバーメソッドの使用:
   - [`apply()`](API/FunctionClass.md#apply)
   - [`call()`](API/FunctionClass.md#call)
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:
+> **スレッドセーフに関する警告:** クラス関数がスレッドセーフではないのに、"プリエンプティブプロセスで実行可能" なメソッドから呼び出された場合:
 >
 > - 普通のメソッドの場合とは異なり、コンパイラーはエラーを生成しません。
 > - ランタイムにおいてのみ、4D はエラーを生成します。
@@ -262,7 +262,7 @@ Function add($x : Variant; $y : Integer): Integer
 #### 例題 1
 
 ```4d
-// Class: Rectangle
+// クラス: Rectangle
 property name : Text
 property height; width : Integer
 
@@ -271,7 +271,7 @@ Class constructor($width : Integer; $height : Integer)
  This.height:=$height
  This.width:=$width
 
-// Function definition
+// 関数定義
 Function getArea()->$result : Integer
  $result:=(This.height)*(This.width)
 ```
@@ -304,14 +304,14 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 #### シンタックス
 
 ```4d
-// Class: MyClass
+// クラス: MyClass
 Class constructor({$parameterName : type; ...})
-// code
+// コード
 ```
 
 :::note
 
-クラスコンストラクター関数コードにおいては、終了キーワードはありません。  4D ランゲージは、次の`Function` キーワードまたはクラスファイルの終了を持って、自動的に関数のコードの終わりを検知します。
+クラスコンストラクター関数コードにおいては、終了キーワードはありません。 4D ランゲージは、次の`Function` キーワードまたはクラスファイルの終了を持って、自動的に関数のコードの終わりを検知します。
 
 :::
 
@@ -321,7 +321,7 @@ Class constructor({$parameterName : type; ...})
 
 コンストラクター関数は、1つのクラスに 1つしか存在できません (そうでない場合はエラーが返されます)。 [`Super`](#super) キーワードを使用することで、コンストラクターはスーパークラス (親クラス) のコンストラクターを呼び出すことができます。
 
-コンストラクター内でインスタンスのプロパティを作成し、型宣言することができます (例題参照)。また、インスタンスプロパティの値が、コンストラクターに渡される引数に依存しない場合は、 [`property`](#property) キーワードを使用して定義することができます。
+コンストラクター内でインスタンスのプロパティを作成し、型宣言することができます (例題参照)。また、インスタンスプロパティの値が、コンストラクターに渡される引数に依存しない場合は、[`property`](#property) キーワードを使用して定義することができます。
 
 #### 例題
 
@@ -405,7 +405,7 @@ $o.age:="Smith"  // シンタックスチェックでエラーに
 
 ```4d
 Function get <name>()->$result : type
-// code
+// コード
 ```
 
 ```4d
@@ -413,7 +413,7 @@ Function set <name>($parameterName : type)
 // コード
 ```
 
-`Function get` と `Function set` は、クラスの **計算プロパティ** を定義するアクセサーです 。計算プロパティとは、計算をマスクするデータ型を持つ命名プロパティです。計算プロパティの値にアクセスすると、4D は対応するアクセサーのコードを実行します:
+`Function get` と `Function set` は、クラスの **計算プロパティ** を定義するアクセサーです。計算プロパティとは、計算をマスクするデータ型を持つ命名プロパティです。計算プロパティの値にアクセスすると、4D は対応するアクセサーのコードを実行します:
 
 - プロパティを読み取るときには `Function get` が実行されます。
 - プロパティに書き込むときには `Function set` が実行されます。
@@ -424,13 +424,13 @@ Function set <name>($parameterName : type)
 
 クラス定義ファイルでは、計算プロパティの宣言には、`Function get` (*ゲッター*) と `Function set` (*セッター*) のキーワードを使い、その後にプロパティ名を記述します。名称は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。
 
-`Function get` はプロパティの型の値を返し、`Function set` はプロパティの型の引数を受け取ります 。どちらも、標準的な [関数の引数](#引数) のルールに準拠する必要があります。
+`Function get` はプロパティの型の値を返し、`Function set` はプロパティの型の引数を受け取ります。どちらも、標準的な [関数の引数](#引数) のルールに準拠する必要があります。
 
-両方の関数が定義されている場合、計算プロパティは **read-write** となります。   `Function get` のみが定義されている場合、計算プロパティは**read-only** です。この場合、コードがプロパティを変更しようとするとエラーが返されます。 `Function set` のみが定義されている場合、4D はプロパティの読み取り時に *undefined* を返します。
+両方の関数が定義されている場合、計算プロパティは **read-write** となります。 `Function get` のみが定義されている場合、計算プロパティは **read-only** です。この場合、コードがプロパティを変更しようとするとエラーが返されます。 `Function set` のみが定義されている場合、4D はプロパティの読み取り時に *undefined* を返します。
 
 計算プロパティの型は、*ゲッター* の `$return` の型宣言によって定義されます。[有効なプロパティタイプ](dt_object.md) であれば、いずれも使用可能です。
 
-> オブジェクトプロパティに *undefined* を代入すると、型を保持したまま値がクリアされます。このためには、まず `Function get` を呼び出して値の型を取得し、 次にその型の空の値で `Function set` を呼び出します。
+> オブジェクトプロパティに *undefined* を代入すると、型を保持したまま値がクリアされます。このためには、まず `Function get` を呼び出して値の型を取得し、次にその型の空の値で `Function set` を呼び出します。
 
 #### 例題 1
 
@@ -481,7 +481,7 @@ Function get fullAddress()->$result : Object
 Class extends <ParentClass>
 ```
 
-クラス宣言において `Class extends` キーワードを使うと、別のユーザークラスの子ユーザークラスを作成することができます 。この子クラスは、親クラスのすべての機能を継承します。
+クラス宣言において `Class extends` キーワードを使うと、別のユーザークラスの子ユーザークラスを作成することができます。この子クラスは、親クラスのすべての機能を継承します。
 
 クラス継承は次のルールに沿っている必要があります:
 
@@ -540,7 +540,7 @@ Class constructor ($side : Integer)
 
 `Super` は次の 2つの目的のために使います:
 
-1. [コンストラクターコード](#class-constructor) 内において、`Super` はスーパークラスのコンストラクターを呼び出すコマンドです。 コンストラクター内で使用する際には、`Super` コマンドは単独で使用され、また `This` キーワードよりも先に使用される必要があります。 コンストラクター内で使用する際には、`Super` コマンドは単独で使用され、また `This` キーワードよりも先に使用される必要があります。コンストラクター内で使用する際には、`Super` コマンドは単独で使用され、また `This` キーワードよりも先に使用される必要があります。
+1. [コンストラクターコード](#class-constructor) 内において、`Super` はスーパークラスのコンストラクターを呼び出すコマンドです。 コンストラクター内で使用する際には、`Super` コマンドは単独で使用され、また `This` キーワードよりも先に使用される必要があります。コンストラクター内で使用する際には、`Super` コマンドは単独で使用され、また `This` キーワードよりも先に使用される必要があります。
 
 - 継承ツリーにおいて、すべてのクラスコンストラクターが正しく呼び出されていない場合には、エラー -10748 が生成されます。呼び出しが有効であることを確認するのは、開発者の役目となります。
 - スーパークラスがコンストラクトされるより先に、`This` コマンドを使った場合には、エラー -10743 が生成されます。
@@ -553,7 +553,7 @@ Super($text1) // テキスト型引数をスーパークラスコンストラク
 This.param:=$text2 // 2番目の引数を使用します
 ```
 
-2. Inside a [class member function](#function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
+2. [クラスメンバー関数](#function) 内において、`Super` はスーパークラスのプロトタイプを指し、スーパークラス階層のメンバーメソッドの呼び出しを可能にします。
 
 ```4d
 Super.doSomething(42) // スーパークラスにて宣言されている
@@ -562,7 +562,7 @@ Super.doSomething(42) // スーパークラスにて宣言されている
 
 #### 例題 1
 
-クラスコンストレクター内で`Super` を使う例です。クラスコンストレクター内で`Super` を使う例です。 `Rectangle` と `Square` クラスの共通要素がコンストラクター内で重複しないよう、このコマンドを呼び出します。
+クラスコンストレクター内で `Super` を使う例です。 `Rectangle` と `Square` クラスの共通要素がコンストラクター内で重複しないよう、このコマンドを呼び出します。
 
 ```4d
 // クラス: Rectangle
@@ -603,7 +603,7 @@ Function getArea()
 
 #### 例題 2
 
-クラスメンバーメソッド内で `Super` を使う例です。 メンバーメソッドを持つ `Rectangle` クラスを作成します: メンバーメソッドを持つ `Rectangle` クラスを作成します: 参照 関数を持つ `Rectangle` クラスを作成します:
+クラスメンバーメソッド内で `Super` を使う例です。関数を持つ `Rectangle` クラスを作成します:
 
 ```4d
 // クラス: Rectangle
@@ -653,7 +653,7 @@ $message:=$square.description() // "I have 4 sides which are all equal"
 
 `This` の値は、呼ばれ方によって決まります。 <code>This</code> の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. 例:
+オブジェクトのメンバーメソッドとしてフォーミュラが呼び出された場合、`This`はメソッドの呼び出し元であるオブジェクトを指します。例:
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
@@ -699,7 +699,7 @@ $val:=$o.f() //8
 
 ```
 
-この例では、変数 $o に代入されたオブジェクトは自身の *f* プロパティを持たないため、これをクラスより継承します。 *f* は $o のメソッドとして呼び出されるため、メソッド内の `This` は $o を指します。 *f* は $o のメソッドとして呼び出されるため、メソッド内の `This` は $o を指します。
+この例では、変数 $o に代入されたオブジェクトは自身の *f* プロパティを持たないため、これをクラスより継承します。 *f* は $o のメソッドとして呼び出されるため、メソッド内の `This` は $o を指します。
 
 ## クラスコマンド
 

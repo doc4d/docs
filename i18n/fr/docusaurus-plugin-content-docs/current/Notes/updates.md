@@ -3,6 +3,24 @@ id: updates
 title: Release Notes
 ---
 
+## 4D 21 R6
+
+Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), the blog post that lists all new features and enhancements in 4D 21 R6.
+
+#### Points forts
+
+- Class functions and class constructors can be documented with a [comment block above their declaration](../Concepts/classes.md#function-comments): the description and parameter comments are displayed in the code completion and help of the [4D code editor](../code-editor/write-class-method.md#help-tips) and VS Code, and in the [syntax file of compiled components](../Extensions/develop-components.md#code-completion-for-compiled-components).
+- `MCP:` comment lines and behavior tags provide the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata) of `exposed MCP Function` declarations, generated at compilation in [`Project/DerivedData/syntaxMCP.json`](../Project/architecture.md#deriveddata) or provided by a custom [`Resources/syntaxMCP.json`](../Project/architecture.md#resources) file.
+- New native [MCP server](../WebServer/mcp-server.md) in the 4D Web Server: AI clients can call your [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function) functions and the [built-in CRUD tools](../WebServer/mcp-server.md#built-in-crud-tools), with the same [roles and privileges](../ORDA/privileges.md#mcp-tools) as REST requests. The MCP server is configured with the new [`WebServer.mcp`](../API/WebServerClass.md#mcp) property.
+- MCP clients authenticate with Fine-Grained Tokens managed with the new [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken), [`ds.listFineGrainedTokens()`](../API/DataStoreClass.md#listfinegrainedtokens), and [`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken) functions. The reserved [`mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated) DataStore class function prepares each MCP session, whose [`Session.info.type`](../API/SessionClass.md#info) is "mcp".
+- Optional [OAuth 2.1 mode](../WebServer/mcp-server.md#oauth-21-mode) of the MCP server, enabled by the reserved [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) DataStore class function. Grants are managed with the new [`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants) and [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant) functions.
+- New [`MCP`](../commands/mcp) command and [`4D.MCPContext`](../API/MCPContextClass.md) class to [ask the user for a confirmation](../WebServer/mcp-server.md#asking-the-user-for-confirmation) in MCP tools.
+- A reference [MCP Bundle](../WebServer/mcp-server.md#claude-desktop-bundle) lets Claude Desktop connect to a 4D MCP server on the local network.
+
+#### Changements de comportement
+
+- The compiler now reports [warnings on function comments](../Project/compiler.md#warnings-on-function-comments): a class function or class constructor that has a comment block above its declaration gets a warning for each parameter without a `$name:` comment, and for contradictory MCP behavior tags.
+
 ## 4D 21 R5
 
 Lisez [**Les nouveautés de 4D 21 R5**](https://blog.4d.com/fr/whats-new-in-4d-21-r5), l'article de blog qui liste toutes les nouvelles fonctionnalités et améliorations de 4D 21 R5.
@@ -12,16 +30,17 @@ Lisez [**Les nouveautés de 4D 21 R5**](https://blog.4d.com/fr/whats-new-in-4d-2
 - Prise en charge de la signature S/MIME des e-mails grâce aux nouvelles propriétés de la classe [`4D.SMTPTransporter`](../API/SMTPTransporterClass.md) : [`.certificate`](../API/SMTPTransporterClass.md#certificate) ou [`.certificateName`](../API/SMTPTransporterClass.md#certificatename) (fourniture du certificat), et [`.certificatePassword`](../API/SMTPTransporterClass.md#certificatepassword).
 - Vous pouvez désormais [compiler un composant directement depuis l'hôte](../Project/compiler.md#compile-components).
 - Prise en charge des formulaires liste par le [**rendu Fluent UI**](../FormEditor/forms.md#fluent-ui-rendering) sous Windows.
-- 4D.Vector fields: [new specific icon](../Develop/field-properties.md#4dvector-class) and new [dedicated index types](../Develop/structure-indexes.md#vector-index).
-- Support of vector indexes in [`CREATE INDEX`](../commands/create-index) and [`SET INDEX`](../commands/set-index) 4D language commands.
-- New [dataClass.getIndexes()](../API/DataClassClass.md#getindexes) API function.
-- New [`.precision` property](../API/VectorClass.md#precision) in `4D.Vector` class objects.
+- Champs 4D.Vector : [nouvelle icône spécifique](../Develop/field-properties.md#4dvector-class) et nouveaux [types d'index vectoriels dédiés](../Develop/structure-indexes.md#vector-index).
+- Prise en charge des index vectoriels dans les commandes 4D [`CREATE INDEX`](../commands/create-index) et [`SET INDEX`](../commands/set-index).
+- Nouvelle fonction [dataClass.getIndexes()](../API/DataClassClass.md#getindexes).
+- Nouvelle [propriété `.precision`](../API/VectorClass.md#precision) dans les objets de la classe `4D.Vector`.
 - Accès direct à la [plate-forme 4D Corner](https://corner.4d.com/) depuis le [gestionnaire de dépendances](../Project/components.md#using-4d-corner).
 - Nouvelle propriété [`WebServer.quotas`](../API/WebServerClass.md#quotas) et classe [`4D.QuotaManager`](../API/QuotaManagerClass.md) étendue pour configurer les [quotas du serveur Web](../WebServer/quotas.md).
 - Objets Zone de texte et Zone de saisie : nouvelles propriétés [marge supérieure](../FormObjects/properties_CoordinatesAndSizing.md#top-padding), [marge inférieure](../FormObjects/properties_CoordinatesAndSizing.md#bottom-padding), [marge gauche](../FormObjects/properties_CoordinatesAndSizing.md#left-padding) et [marge droite](../FormObjects/properties_CoordinatesAndSizing.md#right-padding) avec [prise en charge CSS](../FormEditor/createStylesheet.md#attribute-mapping) correspondante. Prise en charge de l'[alignement vertical](../FormObjects/properties_Text.md#vertical-alignment).
 - Nouvelles commandes [`OBJECT SET PADDING`](../commands/object-set-padding) et [`OBJECT Get padding`](../commands/object-get-padding) permettant de gérer les marges intérieures par programmation.
-- Nouvelles bordures intérieures pour les [boutons personnalisés](../FormObjects/button_overview.md#custom), les [cases à cocher personnalisées](../FormObjects/checkbox_overview.md#custom) et les [boutons radio personnalisés](../FormObjects/radio_overview.md#custom) : prise en charge des propriétés [couleur de fond](../FormObjects/properties_BackgroundAndBorder.md#fill-color) et [angle d'arrondi](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) ; nouvelles propriétés [couleur de bordure](../FormObjects/properties_BackgroundAndBorder.md#border-color) et [largeur de bordure](../FormObjects/properties_BackgroundAndBorder.md#border-width).
-- Accès direct à la [plate-forme 4D Corner](https://corner.4d.com/) depuis le [gestionnaire de dépendances](../Project/components.md#using-4d-corner).
+- Nouveau design de bordures intérieures pour les [boutons personnalisés](../FormObjects/button_overview.md#custom), les [cases à cocher personnalisées](../FormObjects/checkbox_overview.md#custom) et les [boutons radio personnalisés](../FormObjects/radio_overview.md#custom) : prise en charge des propriétés [couleur de remplissage](../FormObjects/properties_BackgroundAndBorder.md#background-color--fill-color) et [rayon d'arrondi](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) ; nouvelle propriété [Largeur de bordure](../FormObjects/properties_BackgroundAndBorder.md#border-width).
+- Prise en charge de la propriété [style de bordure "Système arrondie"](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) pour les [champs de saisie](../FormObjects/input_overview.md), conforme au design *Liquid glass* de macOS. Également prise en charge par les commandes [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) et [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style).
+- Nouvelle propriété ["Couleur de la bordure"](../FormObjects/properties_BackgroundAndBorder.md#border-color) disponible pour la plupart des objets de formulaire. Les commandes [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) et [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) prennent désormais en charge un nouveau paramètre *borderColor*.
 - [Nouvelle préférence **Éditeur de code**](../Preferences/methods.md#code-editor) permettant d'utiliser automatiquement l'éditeur de code 4D ou VS Code lors de la création ou l'ouverture de méthodes et de classes 4D.
 - [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R5) : liste de tous les bugs qui ont été corrigés dans 4D 21 R5.
 
@@ -29,9 +48,9 @@ Lisez [**Les nouveautés de 4D 21 R5**](https://blog.4d.com/fr/whats-new-in-4d-2
 
 - Par souci de cohérence, la propriété **corner radius** a été déplacée de la section ["Coordonnées et dimensions"](../FormObjects/properties_CoordinatesAndSizing.md) vers la section ["Arrière-plan et bordure"](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) de la liste des propriétés.
 
-:::warning Default vector precision
+:::warning Précision par défaut des vecteurs
 
-In 4D 21 R5 and higher, vectors are created with a [32-bit precision by default](../API/VectorClass.md#4dvectornew). In previous releases, only 64-bit precision was available. If you reopen a project containing vectors created in 4D 21 R5 or later using default precision (or explicitly set to 32-bit) with an ealier version, those vectors will be empty and their values will be lost.
+Dans 4D 21 R5 et les versions ultérieures, les vecteurs sont créés avec une [précision de 32 bits par défaut](../API/VectorClass.md#4dvectornew). Dans les versions précédentes, seule la précision 64 bits était disponible. Si vous rouvrez avec une version antérieure un projet contenant des vecteurs créés dans 4D 21 R5 ou suivante avec la précision par défaut (ou explicitement définie sur 32 bits), ces vecteurs seront vides et leurs valeurs seront perdues.
 
 :::
 

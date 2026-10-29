@@ -197,8 +197,8 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |      | mmmm                                                       | 長い月名                         | January                                                         |
 |      | d                                                          | 先頭のゼロなしの日付表示                 | 1                                                               |
 |      | dd                                                         | 先頭のゼロありの日付表示                 | 01                                                              |
-|      | ddd                                                        | 短い曜日名                        | Tue                                                             |
-|      | dddd                                                       | 長い曜日名                        | Tuesday                                                         |
+|      | ddd                                                        | 短い曜日名                        | 火                                                               |
+|      | dddd                                                       | 長い曜日名                        | 火曜日                                                             |
 |      | yy                                                         | 短い年表示                        | 19                                                              |
 |      | yyyy                                                       | 長い年表示                        | 2019                                                            |
 | Time |                                                            |                              | (2:03:05 PM) |
@@ -318,7 +318,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |        | header | longint | ヘッダーのオフセット、100分の1インチ単位。デフォルト値 = 30 |
 |        | footer | longint | フッターのオフセット、100分の1インチ単位。デフォルト値 = 30 |
 
-### 方向
+### 向き
 
 向き属性は、印刷ページレイアウトの方向を指定するのに使用されます。
 
@@ -332,16 +332,16 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 ページ属性は、一般的なドキュメント印刷設定を指定するのに使用されます。
 
-| プロパティ           | 型       | 説明                                                                                                                                                                                                                                                                                                                   |
-| --------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| blackAndWhite   | boolean | 白黒で印刷します。<p>デフォルト値 = false</p><p>**注**: PDF はこの属性に影響されません。白黒で印刷します。 白黒で印刷します。 <p>デフォルト値 = false</p><p>**注**: PDF はこの属性に影響されません。 PDF のカラーはそのままです。</p> 白黒で印刷します。 白黒で印刷します。 <p>デフォルト値 = false</p><p>**注**: PDF はこの属性に影響されません。 PDF のカラーはそのままです。</p> PDF のカラーはそのままです。</p> |
-| centering       | longint | 印刷ページ上でコンテンツをどのように中央揃えするかを指定します。とりうる値: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (デフォルト), `vk print centering vertical`                                                                                                               |
-| firstPageNumber | longint | 最初のページに印刷するページ番号。 デフォルト値 = 1                                                                                                                                                                                                                                                                                         |
-| pageOrder       | longint | ページの印刷順。とりうる値: `vk print page order auto` (デフォルト), `vk print page order down then over`, `vk print page order over then down`.                                                                                                                                    |
-| pageRange       | text    | 印刷されるページの範囲                                                                                                                                                                                                                                                                                                          |
-| qualityFactor   | longint | 印刷の品質指定 (1 - 8)。印刷の品質指定 (1 - 8)。  高ければ印刷の質は高くなりますが、印刷のパフォーマンスに影響する可能性があります。<p>デフォルト値 = 2</p>デフォルト値 = 2</p>                                                                                                                                                                     |
-| useMax          | boolean | データのあるカラムと行のみが印刷されます。<p>デフォルト値 = true</p>デフォルト値 = true</p>                                                                                                                                                                                                                                                           |
-| zoomFactor      | real    | 印刷ページの拡大/縮小率。<p>デフォルト値 = 1</p>デフォルト値 = 1</p>                                                                                                                                                                                                                                                                         |
+| プロパティ           | 型       | 説明                                                                                                                                                                                                     |
+| --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| blackAndWhite   | boolean | 白黒で印刷します。<p>デフォルト値 = false</p><p>**注**: PDF はこの属性に影響されません。 PDF のカラーはそのままです。</p>                                                                                                        |
+| centering       | longint | 印刷ページ上でコンテンツをどのように中央揃えするかを指定します。とりうる値: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (デフォルト), `vk print centering vertical` |
+| firstPageNumber | longint | 最初のページに印刷するページ番号。 デフォルト値 = 1                                                                                                                                                                           |
+| pageOrder       | longint | ページの印刷順。とりうる値: `vk print page order auto` (デフォルト), `vk print page order down then over`, `vk print page order over then down`.                      |
+| pageRange       | text    | 印刷されるページの範囲                                                                                                                                                                                            |
+| qualityFactor   | longint | 印刷の品質指定 (1 - 8)。印刷の品質指定 (1 - 8)。  高ければ印刷の質は高くなりますが、印刷のパフォーマンスに影響する可能性があります。<p>デフォルト値 = 2</p>デフォルト値 = 2</p>                                                       |
+| useMax          | boolean | データのあるカラムと行のみが印刷されます。<p>デフォルト値 = true</p>デフォルト値 = true</p>                                                                                                                                             |
+| zoomFactor      | real    | 印刷ページの拡大/縮小率。<p>デフォルト値 = 1</p>デフォルト値 = 1</p>                                                                                                                                                           |
 
 ### 用紙サイズ
 

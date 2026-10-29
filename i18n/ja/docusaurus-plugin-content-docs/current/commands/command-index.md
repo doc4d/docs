@@ -155,7 +155,7 @@ title: コマンド(名前順)
 [`CREATE EMPTY SET`](../commands/create-empty-set)<br/>
 [`Create entity selection`](../commands/create-entity-selection)<br/>
 [`CREATE FOLDER`](../commands/create-folder)<br/>
-[`CREATE INDEX`](../commands/create-index) **modified 4D 21 R5**<br/>
+[`CREATE INDEX`](../commands/create-index) **4D 21 R5 で変更**<br/>
 [`Create menu`](../commands/create-menu)<br/>
 [`CREATE RECORD`](../commands/create-record)<br/>
 [`CREATE RELATED ONE`](../commands/create-related-one)<br/>
@@ -640,6 +640,7 @@ title: コマンド(名前順)
 [`Match regex`](../commands/match-regex)<br/>
 [`Max`](../commands/max)<br/>
 [`MAXIMIZE WINDOW`](../commands/maximize-window)<br/>
+[`MCP`](../commands/mcp) **new 4D 21 R6**<br/>
 [`MEMORY STATISTICS`](../commands/memory-statistics)<br/>
 [`Menu bar height`](../commands/menu-bar-height)<br/>
 [`Menu bar screen`](../commands/menu-bar-screen)<br/>
@@ -1072,7 +1073,7 @@ title: コマンド(名前順)
 [`SET GROUP ACCESS`](../commands/set-group-access)<br/>
 [`Set group properties`](../commands/set-group-properties)<br/>
 [`SET HELP MENU`](../commands/set-help-menu)<br/>
-[`SET INDEX`](../commands/set-index) **modified 4D 21 R5**<br/>
+[`SET INDEX`](../commands/set-index) **4D 21 R5 で変更**<br/>
 [`SET INDEX CACHE PRIORITY`](../commands/set-index-cache-priority)<br/>
 [`SET LIST ITEM`](../commands/set-list-item)<br/>
 [`SET LIST ITEM FONT`](../commands/set-list-item-font)<br/>

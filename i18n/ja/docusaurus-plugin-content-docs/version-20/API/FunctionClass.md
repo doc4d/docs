@@ -11,7 +11,7 @@ title: Function
 
 ### フォーミュラオブジェクト
 
-The [Formula](#formula) and [Formula from string](#formula-from-string) commands allow you to create `4D.Function` objects to execute any 4D expression or code expressed as text.
+[Formula](#formula) あるいは [Formula from string](#formula-from-string) コマンドを使用すると、`4D.Function`オブジェクトを作成することができ、それによってあらゆる 4D式やテキストとして表されたコードを実行することが可能です。
 
 Formulaオブジェクトは、オブジェクトプロパティに格納することができます。
 
@@ -130,7 +130,7 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 返されたフォーミュラは以下の方法で呼び出すことが可能です:
 
 - [`.call()`](#call) あるいは [`.apply()`](#apply) 関数
-- object notation syntax (see [formula objects](#formula-objects)).
+- オブジェクト記法シンタックス ([Formula オブジェクト](#formula-objects) 参照)
 
 ```4d
  var $f : 4D.Function
@@ -254,9 +254,9 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 
 #### 説明
 
-The `Formula from string` command <!-- REF #_command_.Formula from string.Summary -->creates a 4D.Function object based upon the *formulaString*<!-- END REF -->.  *formulaString* には単一の値のようにシンプルなものから、引数を持つプロジェクトメソッドのように複雑なものまで指定することができます。
+`Formula from string` コマンドは、<!-- REF #_command_.Formula from string.Summary -->*formulaString* に基づいた <code>4D Function</code> オブジェクトを作成します<!-- END REF -->。  *formulaString* には単一の値のようにシンプルなものから、引数を持つプロジェクトメソッドのように複雑なものまで指定することができます。
 
-This command is similar to [`Formula`](#formula), except that it handles a text-based formula. In most cases, it is recommended to use the `Formula` command. `Formula from string` should only be used when the original formula was expressed as text (e.g., stored externally in a JSON file). このコンテキストにおいては、トークンシンタックスの使用が強く推奨されます。
+このコマンドは [`Formula`](#formula) に似ていますが、テキストに基づいたフォーミュラを扱う点が異なります。多くの場合において、`Formula` コマンドの使用が推奨されます。 `Formula from string` コマンドは、元となるフォーミュラがテキストとして表現されている場合 (例: 外部の JSON ファイルに保存されていた場合など) にのみ使用されるべきです。このコンテキストにおいては、トークンシンタックスの使用が強く推奨されます。
 
 > ローカル変数の中身はコンパイル済みモードでは名前によるアクセスが不可能なため、 *formulaString* 引数内で使用することはできません。 `Formula from string` コマンドを使用してローカル変数にアクセスを試みた場合、エラー (-10737) が生成されます。 `Formula from string` コマンドを使用してローカル変数にアクセスを試みた場合、エラー (-10737) が生成されます。
 

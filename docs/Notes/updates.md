@@ -4,6 +4,25 @@ title: Release Notes
 ---
 
 
+## 4D 21 R6
+
+Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), the blog post that lists all new features and enhancements in 4D 21 R6.
+
+#### Highlights
+
+- Class functions and class constructors can be documented with a [comment block above their declaration](../Concepts/classes.md#function-comments): the description and parameter comments are displayed in the code completion and help of the [4D code editor](../code-editor/write-class-method.md#help-tips) and VS Code, and in the [syntax file of compiled components](../Extensions/develop-components.md#code-completion-for-compiled-components).
+- `MCP:` comment lines and behavior tags provide the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata) of `exposed MCP Function` declarations, generated at compilation in [`Project/DerivedData/syntaxMCP.json`](../Project/architecture.md#deriveddata) or provided by a custom [`Resources/syntaxMCP.json`](../Project/architecture.md#resources) file.
+- New native [MCP server](../WebServer/mcp-server.md) in the 4D Web Server: AI clients can call your [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function) functions and the [built-in CRUD tools](../WebServer/mcp-server.md#built-in-crud-tools), with the same [roles and privileges](../ORDA/privileges.md#mcp-tools) as REST requests. The MCP server is configured with the new [`WebServer.mcp`](../API/WebServerClass.md#mcp) property.
+- MCP clients authenticate with Fine-Grained Tokens managed with the new [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken), [`ds.listFineGrainedTokens()`](../API/DataStoreClass.md#listfinegrainedtokens), and [`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken) functions. The reserved [`mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated) DataStore class function prepares each MCP session, whose [`Session.info.type`](../API/SessionClass.md#info) is "mcp".
+- Optional [OAuth 2.1 mode](../WebServer/mcp-server.md#oauth-21-mode) of the MCP server, enabled by the reserved [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) DataStore class function. Grants are managed with the new [`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants) and [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant) functions.
+- New [`MCP`](../commands/mcp) command and [`4D.MCPContext`](../API/MCPContextClass.md) class to [ask the user for a confirmation](../WebServer/mcp-server.md#asking-the-user-for-confirmation) in MCP tools.
+- A reference [MCP Bundle](../WebServer/mcp-server.md#claude-desktop-bundle) lets Claude Desktop connect to a 4D MCP server on the local network.
+
+#### Behavior changes
+
+- The compiler now reports [warnings on function comments](../Project/compiler.md#warnings-on-function-comments): a class function or class constructor that has a comment block above its declaration gets a warning for each parameter without a `$name:` comment, and for contradictory MCP behavior tags.
+
+
 ## 4D 21 R5
 
 Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), the blog post that lists all new features and enhancements in 4D 21 R5.
@@ -13,6 +32,10 @@ Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/),
 - Support of S/MIME email signing through new [`4D.SMTPTransporter`](../API/SMTPTransporterClass.md) class properties: [`.certificate`](../API/SMTPTransporterClass.md#certificate) or [`.certificateName`](../API/SMTPTransporterClass.md#certificatename) (certificate providing), and [`.certificatePassword`](../API/SMTPTransporterClass.md#certificatepassword).
 - You can now [compile a component directly from the host](../Project/compiler.md#compile-components). 
 - Support of list forms in [**fluent UI** rendering](../FormEditor/forms.md#fluent-ui-rendering) on Windows. 
+- 4D.Vector fields: [new specific icon](../Develop/field-properties.md#4dvector-class) and new [dedicated index types](../Develop/structure-indexes.md#vector-index). 
+- Support of vector indexes in [`CREATE INDEX`](../commands/create-index) and [`SET INDEX`](../commands/set-index) 4D language commands.  
+- New [dataClass.getIndexes()](../API/DataClassClass.md#getindexes) API function. 
+- New [`.precision` property](../API/VectorClass.md#precision) in `4D.Vector` class objects.  
 - Direct access to the [4D Corner platform](https://corner.4d.com/) from the [Dependency manager](../Project/components.md#using-4d-corner).
 - New [`WebServer.quotas`](../API/WebServerClass.md#quotas) property and enhanced [`4D.QuotaManager`](../API/QuotaManagerClass.md) class to configure [Web server quotas](../WebServer/quotas.md).
 - Text Area and Input objects: New [top padding](../FormObjects/properties_CoordinatesAndSizing.md#top-padding), [bottom padding](../FormObjects/properties_CoordinatesAndSizing.md#bottom-padding), [left padding](../FormObjects/properties_CoordinatesAndSizing.md#left-padding), [right padding](../FormObjects/properties_CoordinatesAndSizing.md#right-padding) with related [CSS support](../FormEditor/createStylesheet.md#attribute-mapping). Support for [vertical alignment](../FormObjects/properties_Text.md#vertical-alignment). 

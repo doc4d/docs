@@ -306,6 +306,7 @@ text[text|=Hello]
 | 4D               | CSS                |
 | ---------------- | ------------------ |
 | `borderStyle`    | `border-style`     |
+| `borderColor`    | `border-color`     |
 | `fill`           | `background-color` |
 | `fontFamily`     | `font-family`      |
 | `fontSize`       | `font-size`        |

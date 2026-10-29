@@ -103,7 +103,7 @@ title: コンポーネントの開発
 - プロジェクトフォームメソッド
 - コマンドと定数
 - プラグイン
-- ゴミ箱
+- Trash
 
 ![tab-component](../assets/en/Project/tab-component.gif)
 
@@ -241,7 +241,7 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 ![](../assets/en/settings/syntax-code-completion-2.png)
 ![](../assets/en/settings/syntax-code-completion-1.png)
 
-[コンポーネント名前空間](#コンポーネント名前空間の宣言) を入力しない場合、シンタックスファイル生成のオプションがチェックされていても、クラスや公開メソッド用のリソースは生成されませ ん。
+[コンポーネント名前空間](#コンポーネント名前空間の宣言) を入力しない場合、シンタックスファイル生成のオプションがチェックされていても、クラスや公開メソッド用のリソースは生成されません。
 
 ## 変数の渡し方
 

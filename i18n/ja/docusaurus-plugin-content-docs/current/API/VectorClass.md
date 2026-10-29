@@ -42,10 +42,10 @@ AI の世界では、ベクトルとは、機会が複雑なデータを理解�
 
 <details><summary>履歴</summary>
 
-| リリース   | 内容                        |
-| ------ | ------------------------- |
-| 21 R5  | New *precision* parameter |
-| 20 R10 | 追加                        |
+| リリース   | 内容                 |
+| ------ | ------------------ |
+| 21 R5  | 新しい *precision* 引数 |
+| 20 R10 | 追加                 |
 
 </details>
 
@@ -55,11 +55,11 @@ AI の世界では、ベクトルとは、機会が複雑なデータを理解�
 
 <div class="no-index">
 
-| 引数        | 型                         |                             | 説明                                                                                                            |
-| --------- | ------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| 引数        | Collection                | ->                          | ベクトルを表せる実数値のコレクション                                                                                            |
-| precision | Integer                   | ->                          | Vector precision: `mk single precision` (default) or `mk double precision` |
-| 戻り値       | 4D.Vector | <- | 新規ベクトルオブジェクト                                                                                                  |
+| 引数        | 型                         |                             | 説明                                                                                                 |
+| --------- | ------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------- |
+| 引数        | Collection                | ->                          | ベクトルを表せる実数値のコレクション                                                                                 |
+| precision | Integer                   | ->                          | ベクトル精度: `mk single precision` (デフォルト) または `mk double precision` |
+| 戻り値       | 4D.Vector | <- | 新規ベクトルオブジェクト                                                                                       |
 
 </div>
 <!-- END REF -->
@@ -70,14 +70,14 @@ AI の世界では、ベクトルとは、機会が複雑なデータを理解�
 
 *parameter* 引数には、作成したベクトルを表す実数値のコレクションを渡します。これらの値は人工知能によって提供されるものであり、単語やデータなどのオブジェクトを数学的に表します。
 
-In the *precision* optional parameter, you can pass the numeric precision you want to apply to the vector creation. 次の定数が利用できます:
+オプションの*precision* 引数には、ベクトル作成に適用したい数値の精度を渡すことができます。次の定数が利用できます:
 
-| 定数                    | 値  | 説明                                                                                       |
-| --------------------- | -- | ---------------------------------------------------------------------------------------- |
-| `mk single precision` | 32 | Single (32-bit) floating-point precision (default) |
-| `mk double precision` | 64 | Double (64-bit) floating-point precision                              |
+| 定数                    | 値  | 説明                                                             |
+| --------------------- | -- | -------------------------------------------------------------- |
+| `mk single precision` | 32 | 単精度(32-bit) 浮動小数点(デフォルト) |
+| `mk double precision` | 64 | 倍精度(64-bit) 浮動小数点                           |
 
-By default, if you omit the *precision* parameter, the vector is created with a 32-bit floating-point precision. A 32-bit floating-point precision reduces the storage footprint by half compared to 64-bit vectors while retaining enough precision for similarity and distance calculations, which is why it is the recommended default for most use cases.
+デフォルトで*precision* 引数を省略した場合、ベクトルは32-bit の浮動小数点の精度で作成されます。 32-bit 浮動小数点精度は、64-bit ベクトルと比較してメモリ使用量を半分に抑えつつ、類似度と距離の計算に必要な精度を十分確保しているため、ほとんどのユースケースにおいて推奨されるデフォルト設定となっています。
 
 #### 例題 1
 
@@ -96,11 +96,11 @@ var $collection := $vector.toCollection()
 
 #### 例題 2
 
-To create a vector with a double floating-point precision:
+倍精度浮動小数点のベクトルを作成したい場合を考えます:
 
 ```4d
 var $col: Collection
-  //$col is filled by AI provider
+  //$col はAI プロバイダーによって値が入れられている
 var $vector := 4D.Vector.new($col; mk double precision) 
 ```
 
@@ -339,7 +339,7 @@ ALERT("Nearest monument: "+$places[0].name)
 
 #### 説明
 
-The `.precision` property contains <!-- REF #VectorClass.precision.Summary -->the precision value used to build the vector<!-- END REF -->: 32 (`mk single precision`, default) or 64 (`mk double precision`).
+`.precision` プロパティには<!-- REF #VectorClass.precision.Summary -->ベクトルを構築するのに使用された精度の値<!-- END REF --> が格納されています: 32 (`mk single precision`、デフォルト) または 64 (`mk double precision`)。
 
 ## .toCollection()
 
