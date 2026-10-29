@@ -36,16 +36,23 @@ displayed_sidebar: docs
 
 <!--REF #_command_.OBJECT SET FLYOUT MODE.Summary-->**OBJECT SET FLYOUT MODE** sets the flyout display mode of a drop-down list object at runtime.<!-- END REF-->
 
+See [Flyout mode](../../FormObjects/properties_Display.md#flyout-mode) for more information. 
+
+:::note
+
+On Windows, this command requires that the [FluentUI rendering mode](../../FormEditor/forms.md#fluent-ui-rendering) is used. 
+
+:::
+
 
 In *mode* you can use one of the following constants:
 
 | Constant      |  Value | Comment   |
 | ------------- | ------ | ------- |
-| `Flyout automatic`|"automatic"|depends on the OS and data source (legacy)|
-| `Flyout pop up` |`"popup"|pop-up flyout mode|
+| `Flyout automatic`|"automatic"|pop-up or pulldown, depending on the OS and data source (legacy)|
+| `Flyout pop up` |"popup"|pop-up flyout mode|
 | `Flyout pull down`|"pulldown"|menu-like flyout mode|
 
-See [Flyout mode](../../FormObjects/properties_Display.md#flyout-mode) for more information. 
 
 When called with a supported value, the object appearance is updated immediately; no form refresh is required.
 

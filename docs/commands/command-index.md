@@ -736,6 +736,7 @@ title: Commands by name
 [`OBJECT Get enterable`](../commands/object-get-enterable)<br/>
 [`OBJECT GET EVENTS`](../commands/object-get-events)<br/>
 [`OBJECT Get filter`](../commands/object-get-filter)<br/>
+[`OBJECT Get flyout mode`](../commands/object-get-flyout-mode) **new 4D 21 R6**<br/>
 [`OBJECT Get focus rectangle invisible`](../commands/object-get-focus-rectangle-invisible)<br/>
 [`OBJECT Get font`](../commands/object-get-font)<br/>
 [`OBJECT Get font size`](../commands/object-get-font-size)<br/>
@@ -786,6 +787,7 @@ title: Commands by name
 [`OBJECT SET ENTERABLE`](../commands/object-set-enterable)<br/>
 [`OBJECT SET EVENTS`](../commands/object-set-events)<br/>
 [`OBJECT SET FILTER`](../commands/object-set-filter)<br/>
+[`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) **new 4D 21 R6**<br/>
 [`OBJECT SET FOCUS RECTANGLE INVISIBLE`](../commands/object-set-focus-rectangle-invisible)<br/>
 [`OBJECT SET FONT`](../commands/object-set-font)<br/>
 [`OBJECT SET FONT SIZE`](../commands/object-set-font-size)<br/>

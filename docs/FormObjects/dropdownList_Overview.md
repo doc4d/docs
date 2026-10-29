@@ -9,7 +9,7 @@ On macOS, drop-down lists are also sometimes called "pop-up menu". Both names re
 
 ![](../assets/en/FormObjects/popupDropdown_appearance.png)
 
-Pull-down (with FluentUI on Windows)
+Pull-down flyout mode (with [FluentUI rendering](../FormEditor/forms.md#fluent-ui-rendering) on Windows)
 
 ![](../assets/en/FormObjects/dropdown-3.png)
 
@@ -108,7 +108,7 @@ Inside a `values` collection of objects, each object entry can define item-level
 
 #### Rendering and precedence rules
 
-- If `separator: true`, the item is always rendered as a non-selectable divider. In this case `value`, `selectable`, `picture`, `color`, `fontWeight`, and `fontStyle` are ignored.
+- If `separator = true`, the item is always rendered as a non-selectable divider. In this case `value`, `selectable`, `picture`, `color`, `fontWeight`, and `fontStyle` are ignored.
 - A text value of "-" is a regular label, **not** a separator.
 - If `value` is omitted and `separator` is not `true`, the item has no text label.
 - `color`, `fontWeight`, and `fontStyle` are applied only when a `value` is displayed.
@@ -117,7 +117,7 @@ Inside a `values` collection of objects, each object entry can define item-level
 
 #### Platform notes for non-selectable items
 
-When `selectable: false`:
+When `selectable`is false:
 
 - On **Windows**, if `color` is explicitly set, that color is rendered unchanged; if `color` is not set, the item appears gray.
 - On **macOS**, non-selectable items are alpha-blended, including when `color` is set.

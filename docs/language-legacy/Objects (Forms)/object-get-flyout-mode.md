@@ -1,19 +1,21 @@
 ﻿---
-id: object-get-corner-radius
-title: OBJECT Get corner radius
-slug: /commands/object-get-corner-radius
+id: object-get-flyout-mode
+title: OBJECT Get flyout mode
+slug: /commands/object-get-flyout-mode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT Get corner radius.Syntax-->**OBJECT Get corner radius** ( * ; *object* : Text ) : Integer<br/>**OBJECT Get corner radius** ( *object* : Variable, Field ) : Integer<!-- END REF-->
-<!--REF #_command_.OBJECT Get corner radius.Params-->
+<!--REF #_command_.OBJECT Get flyout mode.Syntax-->**OBJECT Get flyout mode** ( * ; *objectName* : Text ) : Text<br/>**OBJECT Get flyout mode** ( *objectRef* : Object ) : Text<!-- END REF-->
+<!--REF #_command_.OBJECT Get flyout mode.Params-->
 <div class="no-index">
 
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| * | Operator | &#8594;  | If specified, object is an object name (string)<br/>If omitted, object is a variable or a field |
-| object | Text, Variable, Field | &#8594;  | Object name (if * is specified) or <br/>Variable or field (if * is omitted) |
-| Function result | Integer | &#8592; | Radius of rounded corners (in pixels) |
+| * | Operator | -> | If specified, *objectName* is a form object name |
+| objectName | Text | -> | Name of the drop-down list object |
+| objectRef | Object | -> | Object reference to a drop-down list object |
+| Function result | Text | <- | Current flyout mode |
+
 </div>
 <!-- END REF-->
 
@@ -22,51 +24,46 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R5|Support for custom-styled buttons, radio buttons and check boxes |
-|19 R7|Modified|
-|14 R4|Created|
+|21 R6|Created|
 
 </details>
 </div>
 
-## Description 
+## Description
 
-<!--REF #_command_.OBJECT Get corner radius.Summary-->The **OBJECT Get corner radius** command returns the current value of the corner radius for the object designated by the *object* parameter.<!-- END REF--> This value may have been set at the form level using the [**Corner radius property**](../../FormObjects/properties_BackgroundAndBorder.md#corner-radius) or for the current process using the [OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius) command.
+<!--REF #_command_.OBJECT Get flyout mode.Summary-->**OBJECT Get flyout mode** returns the current flyout mode of a drop-down list object.<!-- END REF--> The current flyout mode can be [set at the form level](../../FormObjects/properties_Display.md#flyout-mode) in the Property list, or for the current process using the [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) command.
 
-The **OBJECT Get corner radius** command can be used with the following form objects:
+The following values can be returned:
 
-- [rectangles](../../FormObjects/shapes_overview.md#rectangle)
-- [inputs](../../FormObjects/input_overview.md) (4D projects only)
-- [text areas](../../FormObjects/text.md) (4D projects only)
-- custom-styled [buttons](../../FormObjects/button_overview.md#custom) with ["custom" Border Line Style](#border-line-style), custom-styled [radio buttons](../../FormObjects/radio_overview.md#custom) and custom-styled [check boxes](../../FormObjects/checkbox_overview.md#custom) (4D projects only)
+| Constant      |  Value | Comment   |
+| ------------- | ------ | ------- |
+| `Flyout automatic`|"automatic"|pop-up or pulldown, depending on the OS and data source (legacy)|
+| `Flyout pop up` |"popup"|pop-up flyout mode|
+| `Flyout pull down`|"pulldown"|menu-like flyout mode|
 
-Passing the optional *\** parameter indicates that the *object* parameter is an object name (string). If you do not pass this parameter, it indicates that the *object* parameter is a field or variable. In this case, you pass a field or variable reference instead of a string (field or variable object only).
 
-This command returns the radius of rounded corners in pixels.
+See [Flyout mode](../../FormObjects/properties_Display.md#flyout-mode) for more information.  
 
-**Note:** The command returns 0 when applied to an object that does not support the corner radius property.
 
-## Example 
-
-The following code could be added to a button method:
+## Example
 
 ```4d
- var $radius : Integer
- $radius:=OBJECT Get corner radius(*;"GreenRect") //get current value
- OBJECT SET CORNER RADIUS(*;"GreenRect";$radius+1) //increase radius
-  // Maximum value will be handled automatically:
-  // when reached, the button no longer has any effect
+var $mode : Text
+$mode:=OBJECT Get flyout mode(*; "myDrop")
 ```
 
 ## See also 
 
-[OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius)  
+[OBJECT SET FLYOUT MODE](../commands/object-set-flyout-mode)  
+[Drop-down List](../FormObjects/dropdownList_Overview.md)  
+[Flyout mode](../FormObjects/properties_Display.md#flyout-mode)
+
 
 ## Properties
 
 |  |  |
 | --- | --- |
-| Command number | 1324 |
+| Command number | 1870 |
 | Thread safe | no |
 
 

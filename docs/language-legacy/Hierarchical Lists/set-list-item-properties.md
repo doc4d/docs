@@ -5,7 +5,7 @@ slug: /commands/set-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<!-- END REF-->
+<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer {; *selectable* : Boolean}}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : Integer, Operator ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer {; *selectable* : Boolean}}} )<!-- END REF-->
 <!--REF #_command_.SET LIST ITEM PROPERTIES.Params-->
 <div class="no-index">
 
@@ -18,6 +18,7 @@ displayed_sidebar: docs
 | styles | Integer | &#8594;  | Font style for the item |
 | icon | Text, Integer | &#8594;  | Picture name or number ("" or 0 for no icon) |
 | color | Integer | &#8594;  | RGB color value or -1 = reset to original color |
+| selectable | Boolean | &#8594;  | True if the item is selectable (drop-down with List data source only |
 </div>
 <!-- END REF-->
 
@@ -26,6 +27,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|New *selectable* parameter|
 |18 R6|Modified|
 |17 R6|Modified|
 |11 SQL|Modified|
@@ -38,7 +40,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.SET LIST ITEM PROPERTIES.Summary-->The **SET LIST ITEM PROPERTIES** command modifies the item designated by the *itemRef* parameter within the list whose reference number or object name is passed in *list*.<!-- END REF--> 
 
-If you pass the first optional *\** parameter, you indicate that the *list* parameter is an object name (string) corresponding to a representation of the list in the form. If you do not pass this parameter, you indicate that the *list* parameter is a hierarchical list reference ([ListRef](# "A Longint reference to a hierachical list")). If you only use a single representation of the list or work with structural items (the second *\** is omitted), you can use either syntax. Conversely, if you use several representations of the same list and work with the current item (the second *\** is passed), the syntax based on the object name is required since each representation can have its own current item.
+If you pass the first optional *\** parameter, you indicate that the *list* parameter is an object name (string) corresponding to a representation of the list in the form. If you do not pass this parameter, you indicate that the *list* parameter is a hierarchical list reference. If you only use a single representation of the list or work with structural items (the second *\** is omitted), you can use either syntax. Conversely, if you use several representations of the same list and work with the current item (the second *\** is passed), the syntax based on the object name is required since each representation can have its own current item.
 
 You can pass a reference number in *itemRef*. If there is no item with the item reference number that is passed, the command does nothing. You can optionally pass *0* in *itemRef* to modify the last item added to the list using [APPEND TO LIST](../commands/append-to-list).
 
@@ -50,7 +52,7 @@ If you work with item reference numbers, build a list in which items have unique
 
 To make an item enterable, pass TRUE in *enterable*; otherwise, pass FALSE.
 
-**Important:** In order for an item to be enterable, it must belong to a list that is enterable. To make a whole list enterable, use the [OBJECT SET ENTERABLE](../commands/object-set-enterable) command. To make an individual list item enterable, use **SET LIST ITEM PROPERTIES**. Changing the enterable property at the list level does not affect the enterable properties of the items. However, an item can be enterable only if its list is enterable.
+**Important:** In order for an item to be enterable, it must belong to a list that is enterable. To make a whole list enterable, use the [OBJECT SET ENTERABLE](../commands/object-set-enterable) command. To make an individual list item enterable, use **SET LIST ITEM PROPERTIES**. Changing the *enterable* property at the list level does not affect the enterable properties of the items. However, an item can be enterable only if its list is enterable.
 
 You specify the font style of the item in the *styles* parameter. You pass a combination (one or a sum) of the following predefined constants (*Font Styles* theme):
 
@@ -73,6 +75,9 @@ In the *icon* parameter, you can pass a picture to be used as the icon for the i
 * If you want to use 4D picture expressions (fields, variables, etc.) to specify the icons of the items, use the [SET LIST ITEM ICON](../commands/set-list-item-icon) command.
 
 The *color* parameter (optional) lets you modify the color of the item text. The color must be specified in the form of an RGB color, i.e. a 4-byte longint in the 0x00RRGGBB format. For more information about this format, refer to the description of the [OBJECT SET RGB COLORS](../commands/object-set-rgb-colors) command. Pass -1 in the *color* parameter to reset the original color of the item.
+
+The *selectable* parameter (optional) returns whether the item is selectable in the drop-down. This parameter is only significant when `SET LIST ITEM PROPERTIES` targets a [drop-down list object](../../FormObjects/dropdownList_Overview.md) whose [data source type](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) is **List**. It does not apply to drop-down lists bound to object or array data sources. 
+
 
 ## Example 1 
 

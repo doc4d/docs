@@ -4,6 +4,15 @@ title: Release Notes
 ---
 
 
+## 4D 21 R6
+
+Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), the blog post that lists all new features and enhancements in 4D 21 R6.
+
+#### Highlights
+
+- More control over drop-down lists look and feel: new `popup` and `pull-down` flyout options and new selectable and font properties; new `OBJET SET FLYOUT PROPERTY` and `OBJECT Get flyout property` commands. 
+
+
 ## 4D 21 R5
 
 Read [**What’s new in 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), the blog post that lists all new features and enhancements in 4D 21 R5.
