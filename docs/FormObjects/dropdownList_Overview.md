@@ -7,11 +7,15 @@ Drop-down lists are form objects that allow the user to select from a list. You 
 
 On macOS, drop-down lists are also sometimes called "pop-up menu". Both names refer to the same objects. As the following example shows, the appearance of these objects can differ slightly according to the platform and the selected [flyout mode](./properties_Display.md#flyout-mode):
 
-![](../assets/en/FormObjects/popupDropdown_appearance.png)
+- macOS with "pop-up" flyout mode:   
+![](../assets/en/FormObjects/dropdown-mac.png)
 
-Pull-down flyout mode (with [FluentUI rendering](../FormEditor/forms.md#fluent-ui-rendering) on Windows)
+- Windows with "pull-down" flyout mode ([FluentUI rendering](../FormEditor/forms.md#fluent-ui-rendering) required):   
+![](../assets/en/FormObjects/dropdown-windows.png)
 
-![](../assets/en/FormObjects/dropdown-3.png)
+- Windows (Classic rendering):     
+![](../assets/en/FormObjects/dropdown-windows-classic.png)
+
 
 ## Drop-down list types
 
@@ -58,7 +62,7 @@ To initialize the object associated to the drop-down list, you can:
 
 * Execute code that creates the object and its properties. 
 
-#### Simple example
+#### Example with scalar values
 
 If "Form.myDrop" is the [expression](properties_Object.md#variable-or-expression) associated to the drop-down list, you can write in the [On Load](Events/onLoad.md) form event:
 
@@ -94,17 +98,17 @@ On Windows, item customization is only available in forms rendererd with [Fluent
 
 :::
 
-Inside a `values` collection of objects, each object entry can define item-level presentation and behavior:
+Inside the `values` collection of objects, each object entry can define item-level presentation and behavior:
 
 |Item property|Type|Description|
 |---|---|---|
-|`value`|Text, Integer, Boolean, Date, or Time|Scalar value represented by the item. If selectable, this value can become `currentValue`. If omitted and `separator` is not `true`, the item is displayed with no label.|
-|`selectable`|Boolean|Optional. Default: `true`. When `false`, the item is visible but cannot be selected.|
-|`picture`|4D.File, Picture, or Text|Optional icon/picture. A text value must be a valid picture path.|
-|`fontWeight`|Text|Optional. "normal" or "bold".|
-|`fontStyle`|Text|Optional. "normal" or "italic".|
-|`color`|Text or Integer|Optional text color. Supports CSS color names, hexadecimal color strings, RGB strings, and RGB integer values.|
-|`separator`|Boolean|Optional. Default: `false`. When `true`, the item is rendered as a separator and all other item properties are ignored.|
+|`values[].value`|Text, Integer, Boolean, Date, or Time|Scalar value represented by the item. If selectable, this value can become `currentValue`. If omitted and `separator` is not `true`, the item is displayed with no label.|
+|`values[].selectable`|Boolean|Optional. Default: `true`. When `false`, the item is visible but cannot be selected.|
+|`values[].picture`|4D.File, Picture, or Text|Optional icon/picture. A text value must be a valid picture path.|
+|`values[].fontWeight`|Text|Optional. "normal" or "bold".|
+|`values[].fontStyle`|Text|Optional. "normal" or "italic".|
+|`values[].color`|Text or Integer|Optional text color. Supports CSS color names, hexadecimal color strings, RGB strings, and RGB integer values.|
+|`values[].separator`|Boolean|Optional. Default: `false`. When `true`, the item is rendered as a separator and all other item properties are ignored.|
 
 #### Rendering and precedence rules
 
@@ -117,7 +121,7 @@ Inside a `values` collection of objects, each object entry can define item-level
 
 #### Platform notes for non-selectable items
 
-When `selectable`is false:
+When `selectable` is false:
 
 - On **Windows**, if `color` is explicitly set, that color is rendered unchanged; if `color` is not set, the item appears gray.
 - On **macOS**, non-selectable items are alpha-blended, including when `color` is set.
