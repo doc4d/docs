@@ -10,7 +10,8 @@ Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/),
 
 #### Highlights
 
-- More control over drop-down lists look and feel: [new `popup` and `pull-down` flyout options](../FormObjects/properties_Display.md#flyout-mode) and [customizable items through object properties](../FormObjects/dropdownList_Overview.md#customizing-items-with-object-entries) like `selectable` or `color`; new [`OBJET SET FLYOUT PROPERTY`](../commands/object-set-flyout-property) and [`OBJECT Get flyout property`](../commands/object-set-flyout-property) commands. 
+- More control over drop-down lists look and feel: [new `popup` and `pull-down` flyout options](../FormObjects/properties_Display.md#flyout-mode) and [customizable items through object properties](../FormObjects/dropdownList_Overview.md#customizing-items-with-object-entries) like `selectable` or `color`.
+- New [`OBJET SET FLYOUT PROPERTY`](../commands/object-set-flyout-property) and [`OBJECT Get flyout property`](../commands/object-set-flyout-property) commands. New *selectable* parameter supported by [`GET LIST ITEM PROPERTIES`](../commands/get-list-items-properties) and [`SET LIST ITEM PROPERTIES`](../commands/set-list-items-properties). 
 
 
 ## 4D 21 R5

@@ -18,7 +18,7 @@ displayed_sidebar: docs
 | styles | Integer | &#8594;  | Font style for the item |
 | icon | Text, Integer | &#8594;  | Picture name or number ("" or 0 for no icon) |
 | color | Integer | &#8594;  | RGB color value or -1 = reset to original color |
-| selectable | Boolean | &#8594;  | True if the item is selectable (drop-down with List data source only |
+| selectable | Boolean | &#8594;  | True if the item is selectable (drop-down with List data source only) |
 </div>
 <!-- END REF-->
 

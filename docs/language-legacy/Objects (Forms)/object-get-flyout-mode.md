@@ -31,7 +31,9 @@ displayed_sidebar: docs
 
 ## Description
 
-<!--REF #_command_.OBJECT Get flyout mode.Summary-->**OBJECT Get flyout mode** returns the current flyout mode of a drop-down list object.<!-- END REF--> The current flyout mode can be [set at the form level](../../FormObjects/properties_Display.md#flyout-mode) in the Property list, or for the current process using the [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) command.
+<!--REF #_command_.OBJECT Get flyout mode.Summary-->**OBJECT Get flyout mode** returns the current flyout mode of a drop-down list object.<!-- END REF--> 
+
+The current flyout mode of a drop-down list can have been be [set at the form level](../../FormObjects/properties_Display.md#flyout-mode) in the Property list, or for the current process using the [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) command.
 
 The following values can be returned:
 
