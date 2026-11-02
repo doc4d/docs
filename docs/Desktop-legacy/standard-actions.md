@@ -55,23 +55,13 @@ This syntax is available wherever a standard action can be defined, i.e. in the 
 - Spellchecking actions are available only if the [Auto Spellcheck option](../FormObjects/properties_Entry.md#auto-spellcheck) is selected for the area. 
 - When a style attribute like `fontSize` or `color` is modified via a standard action, 4D generates the `On After Edit` form event.
 - *Buttons* means all buttons and also includes check boxes that can represent actions with true/false status, e.g. `fontBold`.
-- [Pop-Up/Drop-down lists](../FormObjects/dropdownList_Overview.md) and [Hierarchical choice list](../FormObjects/dropdownList_Overview.md#using-a-hierarchical-choice-list) objects can only be associated directly with standard actions that generate a submenu (list), such as `backgroundColor` or `fontSize`. In this case, they display an automatic list of values, unless custom standard actions have been set to list items (see below).
-- *List items*: If you do not want to use automatic values, you can associate custom standard actions with items of a list (using the List editor or the [SET LIST ITEM PARAMETER](../commands/set-list-item-parameter) command) and set the list as "Choice list" for the Pop-Up/Drop-down lists and hierarchical pop up menu. Automatic values are replaced by custom actions at runtime. In this context, only standard actions with value parameters in relation with a submenu (list) main action can be used. For example, you can define a list of items associated with backgroundColor action values (`backgroundColor?value="red"`, `backgroundColor?value="blue"`...) and set it as Choice list for a hierarchical pop up menu.
+- [Drop-down lists](../FormObjects/dropdownList_Overview.md) objects can only be associated directly with standard actions that generate a submenu (list), such as `backgroundColor` or `fontSize`. In this case, they display an automatic list of values, unless custom standard actions have been set to list items (see below).
+- *List items*: If you do not want to use automatic values, you can associate custom standard actions with items of a list (using the List editor or the [SET LIST ITEM PARAMETER](../commands/set-list-item-parameter) command) and set the list as "Choice list" for the Drop-down list. Automatic values are replaced by custom actions at runtime. In this context, only standard actions with value parameters in relation with a submenu (list) main action can be used. For example, you can define a list of items associated with backgroundColor action values (`backgroundColor?value="red"`, `backgroundColor?value="blue"`...) and set it as Choice list for a Drop-down list.
 
 
 ## Supported form objects
 
-The following tables list the standard actions that can be assigned to each form object. They refer to the object that triggers the action, not the area on which the action operates.
-
-- **Supported objects**: Form objects for which support is documented. An object not listed here is not necessarily unsupported.
-- **Empty cell**: No form-object support is confirmed in this table. See the Conditions column for any restrictions.
-- **Conditions**: Additional requirements or restrictions, such as "Menu commands only". See each action's description for its activation conditions and target-area requirements.
-
-**Notes:**
-
-- Check boxes support only actions that represent a true/false status ("checkable" actions).
-- The Standard action property is available for [array list boxes](../FormObjects/listbox-object.md#supported-properties) only. Selection list boxes can be affected by subrecord actions assigned to buttons or menu commands.
-- Picture buttons support the same standard actions as buttons, except for actions restricted to a specific button style, such as `automaticSplitter` for invisible buttons.
+The following tables list the form objects that can be assigned to standard actions. They refer to the **object that triggers the action**, not the area on which the action operates. See each action's description for its activation conditions and target-area requirements.
 
 ### General actions
 
@@ -147,11 +137,12 @@ The following tables list the standard actions that can be assigned to each form
 |[visibleReferences](#visiblereferences)|[Button](../FormObjects/button_overview.md#supported-standard-actions), [Picture Button](../FormObjects/pictureButton_overview.md#supported-standard-actions), [Check Box](../FormObjects/checkbox_overview.md#supported-standard-actions)||
 |[writingTools](#writingtools)|[Button](../FormObjects/button_overview.md#supported-standard-actions), [Picture Button](../FormObjects/pictureButton_overview.md#supported-standard-actions)|Compatible macOS environment only.|
 
-For automatic formatting lists, see the [drop-down list requirements](../FormObjects/dropdownList_Overview.md#using-a-standard-action), including the target area, focus, and hierarchical drop-down restrictions. Assigning a parameterized action to a list item is distinct from assigning the base action to the drop-down list itself.
+For automatic formatting lists, see the [drop-down list requirements](../FormObjects/dropdownList_Overview.md#using-a-standard-action), including the target area, focus, and drop-down restrictions. Assigning a parameterized action to a list item is distinct from assigning the base action to the drop-down list itself.
+
 
 ### 4D Write Pro action availability
 
-The following table lists selected standard actions for 4D Write Pro areas and the form objects to which they can be assigned. These actions operate on a 4D Write Pro area, not on the form object that triggers them. For the complete list of actions and their descriptions, see [4D Write Pro standard actions](../WritePro/user-legacy/standard-actions.md).
+The following table lists standard actions for 4D Write Pro areas that can be associated to form objects. These actions operate on a 4D Write Pro area, not on the form object that triggers them. For the complete list of actions and their descriptions, see [4D Write Pro standard actions](../WritePro/user-legacy/standard-actions.md).
 
 |Action|Supported objects|Conditions|
 |---|---|---|
@@ -222,7 +213,7 @@ This standard action allows you to create custom splitters on a form. It can onl
 
 | Constant (if any) | Activation conditions | Available with |
 |---|---|---|
-| `ak background color` | None | Menu commands, Pop-up/Drop-down lists, Hierarchical Pop-up menus |
+| `ak background color` | None | Menu commands, Drop-down lists |
 
 Displays the standard background color submenu.
 
@@ -269,7 +260,7 @@ Deletes the selection. If nothing is selected, it erases the entire area contain
 
 | Constant (if any) | Activation conditions | Available with |
 |---|---|---|
-| `ak font color` | None | Menu commands, Pop-up/Drop-down lists, Hierarchical Pop-up menus |
+| `ak font color` | None | Menu commands, Drop-down lists |
 
 Displays the standard font color submenu.
 
@@ -432,7 +423,7 @@ Toggles linethrough font attribute.
 
 | Constant (if any) | Activation conditions | Available with |
 |---|---|---|
-| `ak font size` | None | Menu commands, Pop-up/Drop-down lists, Hierarchical Pop-up menus |
+| `ak font size` | None | Menu commands, Drop-down lists |
 
 Displays the standard font size submenu.
 
@@ -448,7 +439,7 @@ Sets the font size to `<size>`. Pass a CSS length value in pt. Ex: `fontSize?val
 
 | Constant (if any) | Activation conditions | Available with |
 |---|---|---|
-| `ak font style` | None | Menu commands, Pop-up/Drop-down lists, Hierarchical Pop-up menus |
+| `ak font style` | None | Menu commands, Drop-down lists |
 
 Displays the standard font style submenu.
 
