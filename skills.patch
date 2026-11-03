@@ -1,0 +1,78 @@
+diff --git a/.github/skills/4d-docs-common/SKILL.md b/.github/skills/4d-docs-common/SKILL.md
+index 01fee162..cb85308f 100644
+--- a/.github/skills/4d-docs-common/SKILL.md
++++ b/.github/skills/4d-docs-common/SKILL.md
+@@ -106,7 +106,23 @@ Text.
+ 
+ New feature/behavior change → bullet in `docs/Notes/updates.md`, current release section (`## 4D 21 Rx`), under `#### Highlights` or `#### Behavior changes`, each bullet linking to the updated pages. Only when the user asks or the change is a new feature.
+ 
+-## 12. Validation
++One summary bullet per feature (or a few for a large one), with links to the reference page. Do not restate rules, limits, or warnings, and do not add a "Behavior changes" bullet that repeats the reference page.
++
++## 12. Single source of truth (new features and impacts)
++
++A new feature is documented in **one place only**: the reference page of the subject (a dedicated concept page for a server/protocol/syntax topic, the command page or class API page for a command/class/function). Decide this page **before writing**; create it if none fits.
++
++Every other page impacted by the feature (concepts, ORDA, Project, compiler, code editor, components, permissions, release notes…):
++- gets **a short sentence or bullet of context + a link** to the reference page anchor (`[text](path.md#anchor)`), saying *that* the feature touches this page and *why*, not *how it behaves*;
++- must NOT contain: rules, option/property lists, type-conversion or other tables, JSON schemas/files, examples, limits, error cases, warnings lists, or step-by-step behavior;
++- must NOT receive a new section longer than ~3 lines. If you are about to write more, move it to the reference page and link instead. Own-page facts stay allowed (e.g. "the compiler also generates file X", "this folder may contain file Y"), followed by a link for the format/rules.
++
++Also:
++- Write each example once, in the reference page.
++- Link to the reference anchor, never to an impacted page or to a copy. Do not move a section to another page without fixing all links (`npm run build -- --locale en` reports broken anchors).
++- If existing content already duplicates the feature, replace it with a link instead of adding a second copy.
++
++## 13. Validation
+ 
+ - `npm run build -- --locale en` (Docusaurus, checks broken links/MDX).
+ - CI also runs `syntax-checker` on `docs/` (syntax strings) and `diff_images`.
+diff --git a/.github/skills/4d-docs-concepts/SKILL.md b/.github/skills/4d-docs-concepts/SKILL.md
+index 266ae746..ada57975 100644
+--- a/.github/skills/4d-docs-concepts/SKILL.md
++++ b/.github/skills/4d-docs-concepts/SKILL.md
+@@ -18,7 +18,7 @@ Apply `4d-docs-common` first.
+ 
+ ## Allowed edits (only when explicitly requested, or clearly required)
+ 
+-1. A **new language feature** of the current release (new keyword, new syntax, new type, new operator, new class feature): add a new section or a new row/paragraph; do not alter existing explanations except to add a cross-reference.
++1. A **new language feature** of the current release (new keyword, new syntax, new type, new operator, new class feature): document it once (see "Single source of truth" in `4d-docs-common`). If it is a cross-cutting topic or has its own page (e.g. comments, MCP server), write it there, not in a neighbor page such as `classes.md` or `quick-tour.md`; in the Concepts page add at most a short row/paragraph with a link. Do not alter existing explanations except to add a cross-reference.
+ 2. A **deprecation** or compatibility note: add a `:::note Compatibility` or `:::warning Deprecated` block (pattern: "The legacy syntax using `C_XXX` commands is deprecated as of 4D 20 R7.").
+ 3. Fix a verified factual error, typo, or broken link – minimal diff.
+ 
+@@ -35,3 +35,4 @@ For these edits:
+ - [ ] No existing heading/anchor renamed or removed.
+ - [ ] Existing examples unchanged.
+ - [ ] Diff is minimal and additive.
++- [ ] No behavior, table, schema or example duplicated from the feature's reference page: link only.
+diff --git a/.github/skills/4d-docs-language/SKILL.md b/.github/skills/4d-docs-language/SKILL.md
+index 5ee90e2c..f429b7dd 100644
+--- a/.github/skills/4d-docs-language/SKILL.md
++++ b/.github/skills/4d-docs-language/SKILL.md
+@@ -187,5 +187,6 @@ The `.create()` function <!-- REF #FileClass.create().Summary -->creates a file
+ - [ ] History row added (newest on top) with the current release (e.g. `21 R6`).
+ - [ ] Summary block reads well alone.
+ - [ ] Summary table / theme page / command-index updated for new items.
++- [ ] The page only describes its own command/class/function; shared concept behavior (server, protocol, syntax rules) is linked from its reference page, not repeated (see `4d-docs-common`, "Single source of truth").
+ - [ ] Links: `../commands/<slug>` for commands, `../../` from language-legacy pages.
+ - [ ] `npm run build -- --locale en` OK; syntax-checker clean.
+diff --git a/.github/skills/4d-docs-reference/SKILL.md b/.github/skills/4d-docs-reference/SKILL.md
+index 6eb834cb..c8997318 100644
+--- a/.github/skills/4d-docs-reference/SKILL.md
++++ b/.github/skills/4d-docs-reference/SKILL.md
+@@ -83,6 +83,7 @@ Intro + image → `## Handling …` → `## <Object> Styles` (one `###` per styl
+ - Add `:::tip Related blog post` links when a blog post exists.
+ - For a feature added in the current release, update `Notes/updates.md` (see common skill) when requested.
+ - Do not restructure existing pages (heading levels, order) unless asked; insert new content in the logical existing section.
++- Single source of truth (see `4d-docs-common`): Project, compiler, architecture, code-editor, components and ORDA/privileges pages only state their own behavior (e.g. "the compiler generates file X") and link to the feature's reference page for formats, rules, tables, examples and warnings. Never copy them.
+ 
+ ## 6. Checklist
+ 
+@@ -90,4 +91,5 @@ Intro + image → `## Handling …` → `## <Object> Styles` (one `###` per styl
+ - [ ] UI labels bold and identical to the product.
+ - [ ] Screenshots in `assets/en/<Section>/`, introduced, empty alt.
+ - [ ] Cross-references updated (object pages "Supported Properties", commands lists).
++- [ ] No rule, table, schema or example duplicated from another page: impacted pages only link to the reference page anchor.
+ - [ ] `npm run build -- --locale en` OK.
+-- 
+2.51.1
