@@ -32,6 +32,7 @@ Entity selections can be created from existing selections using various function
 |[<!-- INCLUDE #EntitySelectionClass.first().Syntax -->](#first)<br/><!-- INCLUDE #EntitySelectionClass.first().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.getDataClass().Syntax -->](#getdataclass)<br/><!-- INCLUDE #EntitySelectionClass.getDataClass().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.getRemoteContextAttributes().Syntax -->](#getremotecontextattributes)<br/><!-- INCLUDE #EntityClass.getRemoteContextAttributes().Summary -->|
+|[<!-- INCLUDE #EntitySelectionClass.groupBy().Syntax -->](#groupby)<br/><!-- INCLUDE #EntitySelectionClass.groupBy().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.isAlterable().Syntax -->](#isalterable)<br/><!-- INCLUDE #EntitySelectionClass.isAlterable().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.isOrdered().Syntax -->](#isordered)<br/><!-- INCLUDE #EntitySelectionClass.isOrdered().Summary -->|
 |[<!-- INCLUDE #EntitySelectionClass.last().Syntax -->](#last)<br/><!-- INCLUDE #EntitySelectionClass.last().Summary -->|
@@ -1197,6 +1198,211 @@ $info:=$persons.getRemoteContextAttributes()
 #### See also
 
 [Entity.getRemoteContextAttributes()](./EntityClass.md#getremotecontextattributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+
+
+<!-- REF EntitySelectionClass.groupBy().Desc -->
+## .groupBy()
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R6|Added|
+
+</details>
+
+<!-- REF #EntitySelectionClass.groupBy().Syntax -->**.groupBy**( *levels* : Text { ; *options* : Integer { ; *aggregates* : Collection } } ) : Collection<br/>**.groupBy**( *levels* : Collection { ; *options* : Integer { ; *aggregates* : Collection } } ) : Collection<!-- END REF -->
+
+
+<!-- REF #EntitySelectionClass.groupBy().Params -->
+<div class="no-index">
+
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|levels|Text, Collection|&#8594;|Attribute paths to group on, one per level, with their sort order: text (comma-separated paths) or collection of level objects|
+|options|Integer|&#8594;|`0` or `dk diacritical`|
+|aggregates|Collection|&#8594;|Aggregate objects `{function; path; name}` to compute for each group|
+|Result|Collection|&#8592;|Groups of the first level|
+</div>
+<!-- END REF -->
+
+#### Description
+
+The `.groupBy()` function <!-- REF #EntitySelectionClass.groupBy().Summary -->returns a collection of groups made from the entities of the entity selection, on one or more levels of attribute values<!-- END REF -->.
+
+>*	This function does not modify the original entity selection.
+>*	`.groupBy()` gives in one call the result that would require one [`.distinct()`](#distinct) and one [`.query()`](#query) per group and per level.
+
+##### Levels
+
+In *levels*, pass the attribute path(s) to group on, one per level. The first path defines the groups of level 1, the second path the groups of level 2 inside each group of level 1, and so on. You can pass:
+
+*	a text with attribute paths separated by commas, as in the *pathString* parameter of [`.orderBy()`](#orderby):
+
+```4d
+"attributePath1 {desc or asc}, attributePath2 {desc or asc},..."
+```
+
+*	a collection of level objects, one per level, as in the *pathObjects* parameter of [`.orderBy()`](#orderby). Each level object has the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|propertyPath|Text|Attribute path of the level, without "asc" or "desc"|
+|descending|Boolean|**True** to sort the groups of the level in descending order. **False** or omitted: ascending order|
+
+For example, `[{propertyPath: "country"; descending: True}; {propertyPath: "city"}]` gives the same result as `"country desc, city"`.
+
+By default, the groups of a level are sorted by value in ascending order. Pass "desc" after an attribute path (or `descending: True` in a level object) to sort the groups of this level in descending order. The order of each level is independent of the other levels.
+
+Each level can be:
+
+*	a storage attribute of type text, number, date, or boolean,
+*	an attribute of a related entity reached through many-to-one relations (for example "customer.country"),
+*	a path in an object attribute (for example "extra.address.country"),
+*	a [computed attribute](../ORDA/ordaClasses.md#computed-attributes-1) of scalar type (the value returned by its `get` function is used),
+*	an [alias attribute](../ORDA/ordaClasses.md#alias-attributes-1) of scalar type (the result is the same as with its target path).
+
+In *options*, you can pass 0 (default) or the `dk diacritical` constant (8). By default, text values are compared without regard to case or accents. With `dk diacritical`, they are compared with regard to case and accents, as with [`.distinct()`](#distinct).
+
+##### Returned collection
+
+The function returns a collection of group objects for level 1. If the entity selection is empty, an empty collection is returned. Each group object contains the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|value|Text, Number, Date, Boolean, or Null|Value of the level's attribute path for all the entities of the group|
+|groups|Collection|Levels 1 to N-1 only: groups of the next level for the entities of the group|
+|entities|4D.EntitySelection|Last level only: entities of the group|
+|aggregates|Object|Only if *aggregates* is not empty: one property for each declared aggregate (see below)|
+
+With a single level, each group object contains `value` and `entities`. Each entity of the entity selection is in exactly one last-level group. If the original entity selection is ordered and contains the same entity several times, the entity is held as many times in its last-level group.
+
+Group values follow these rules:
+
+*	Entities whose value is **null** or undefined, or that have no related entity in a related attribute path, are in a single group whose `value` is **null**. Entities whose value at a level's object path is an object or a collection are also in this group.
+*	Without `dk diacritical`, "Paris" and "paris" are in the same group. The `value` of such a group is the value that [`.distinct()`](#distinct) returns for the entities of the group.
+*	In ascending order, the **null** group comes first. When the attribute path leads to an object property that contains values of different types, they are sorted by type, in the same order as with [`.distinct()`](#distinct) (booleans, strings, numbers, dates), then by value. Descending order reverses the whole order, so the **null** group comes last.
+
+The `entities` entity selections are always [shareable](../ORDA/entities.md#shareable-or-alterable-entity-selections): call [`.copy()`](#copy) to get an alterable entity selection. If the original entity selection is [ordered](../ORDA/dsMapping.md#ordered-or-unordered-entity-selection), each `entities` entity selection is ordered and keeps the entities in the same relative order. Otherwise, it is unordered. On a 4D remote client, the `entities` entity selections are always ordered.
+
+##### Aggregates
+
+In the optional *aggregates* parameter, you can pass a collection of aggregate objects, to compute values for each group. To pass *aggregates* without option, pass 0 in *options*. Each aggregate object has the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|function|Text|"sum", "average", "min", "max", or "count" (in lowercase)|
+|path|Text|Attribute path, as accepted by the function of the same name ([`.sum()`](#sum), [`.average()`](#average), [`.min()`](#min), [`.max()`](#max), or [`.count()`](#count)). Required, except for "count"|
+|name|Text|Name of the property that holds the value in the `aggregates` object of each group. Must be unique in the collection|
+
+Every group, at every level, gets an `aggregates` object with one property for each aggregate object, named after its `name`. The value is the one returned by the function of the same name called on the entities of the group: for a group of level 1 to N-1, on all the entities of its last-level groups (not from the aggregates of its sub-groups). In addition:
+
+*	"count" without `path` gives the number of entities of the group. With a `path`, it gives the number of non-null values, as [`.count()`](#count).
+*	When `.average()`, `.min()`, or `.max()` would return undefined (for example when all values are null), the property is **null**.
+
+An empty *aggregates* collection is the same as no *aggregates*: groups have no `aggregates` property.
+
+##### Errors
+
+An error is raised, that you can catch with a [`Try...Catch`](../Concepts/error-handling.md#trycatchend-try) block, if:
+
+*	an attribute path of *levels* is not found in the dataclass,
+*	a level goes through a one-to-many relation (also through an alias), or designates a related entity, a related entity selection, a picture, a blob, a whole object attribute, or a computed attribute whose type is not scalar,
+*	a level contains the `[]` notation (a path through a collection),
+*	*levels* is an empty text, an empty collection, **Null**, or is not a text or a collection, contains the same level twice (also through an alias), or contains a keyword other than "asc" or "desc",
+*	an element of the *levels* collection is not an object, has no `propertyPath`, has a `propertyPath` that is not a text, is empty, or contains a space (for example, "country desc"), has a `descending` property that is not a boolean, or has another property,
+*	*options* is not 0 or `dk diacritical`,
+*	*aggregates* is not a collection (**Null** included), or an aggregate object is not an object, has an unknown `function` (for example "median" or "SUM"), has no `path` for "sum", "average", "min", or "max", has a `path` that is not a text, has no `name`, an empty `name`, or a `name` that is not a text, uses the same `name` as another aggregate object, or has another property,
+*	the `path` of an aggregate object is rejected by the function of the same name (for example, a related attribute, an attribute not found in the dataclass, or a text attribute for "sum"): the error of this function is raised,
+*	you do not have the permission to read the dataclass or an attribute,
+*	the entity selection belongs to a [remote datastore](../ORDA/remoteDatastores.md) opened with [`Open datastore`](../commands/open-datastore). `.groupBy()` is available on 4D remote clients, with the same results as on 4D Server.
+
+:::note
+
+If a [data model class](../ORDA/ordaClasses.md#entityselection-class) that extends the EntitySelection class defines a `groupBy()` function, the native `.groupBy()` function is called instead (see [Specific rules](../ORDA/ordaClasses.md#specific-rules)).
+
+:::
+
+#### Example 1
+
+You want to group locations by country:
+
+```4d
+var $groups : Collection
+$groups:=ds.Location.all().groupBy("country")
+//$groups[0]={value: null; entities: [locations without country]}
+//$groups[1]={value: "France"; entities: [locations in France]}
+//$groups[2]={value: "Italy"; entities: [locations in Italy]}
+//...
+```
+
+#### Example 2
+
+You want to group locations by country in descending order, then by city, and get the total population of each city:
+
+```4d
+var $country; $city : Object
+var $total : Real
+
+For each ($country; ds.Location.all().groupBy("country desc, city"))
+	For each ($city; $country.groups)
+		// $city.value is the city, $city.entities its locations
+		$total:=$city.entities.sum("population")
+	End for each
+End for each
+```
+
+#### Example 3
+
+You pass the levels in a collection of level objects and compare text values with regard to case and accents:
+
+```4d
+var $groups : Collection
+$groups:=ds.Location.all().groupBy([{propertyPath: "country"}; {propertyPath: "city"; descending: True}]; dk diacritical)
+// "Orleans" and "Orléans" are in two different groups
+```
+
+#### Example 4
+
+You want the total and the average population of each country, and of each city in the country:
+
+```4d
+var $groups; $aggregates : Collection
+var $france : Object
+$aggregates:=[{function: "sum"; path: "population"; name: "total"}; {function: "average"; path: "population"; name: "mean"}]
+$groups:=ds.Location.all().groupBy("country, city"; 0; $aggregates)
+$france:=$groups.query("value = :1"; "France").first()
+// $france.aggregates.total is the total population of France
+// $france.aggregates.mean is the average population of all locations in France
+// $france.groups[0].aggregates.total is the total population of its first city
+```
+
+#### Example 5
+
+You want the number of customers of each country, and how many of them have an email:
+
+```4d
+var $groups; $aggregates : Collection
+$aggregates:=[{function: "count"; name: "n"}; {function: "count"; path: "email"; name: "withEmail"}]
+$groups:=ds.Customer.all().groupBy("country"; 0; $aggregates)
+// $groups[0].aggregates.n is the number of customers of the first country group
+// $groups[0].aggregates.withEmail is the number of them whose email is not null
+```
+
+#### Example 6
+
+You want to group sales by the country of their customer. Sales without a customer are in the **null** group:
+
+```4d
+var $groups : Collection
+var $count : Integer
+$groups:=ds.Sale.all().groupBy("customer.country")
+If ($groups[0].value=Null) // the null group comes first
+	$count:=$groups[0].entities.length // sales without a customer or whose customer has no country
+End if
+```
+
+<!-- END REF -->
 
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()   
