@@ -114,4 +114,4 @@ var $attrs:=$tpl.attributes(ds.Students)
 ## See also
 
 - [Definition](Definition.md) — holds a `Phrase`.
-- [Playground.render()](Playground.md#render) — renders a phrase for an entity, non-persisting.
+- [StudioEmbedder.render()](StudioEmbedder.md#render) — renders a phrase for an entity, non-persisting.

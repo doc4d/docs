@@ -7,7 +7,7 @@ title: Process
 
 The `Process` class orchestrates the full embedding pipeline: it browses 4D entities, renders text from their fields using a [Definition](Definition.md), calls the embeddings API through an [Embedder](Embedder.md), and stores the resulting `4D.Vector` on each entity.
 
-For ad-hoc, non-persisting helpers (previewing rendered phrases, computing one-off vectors), see [Playground](Playground.md).
+To render or embed on demand without persistence (search query vectors, phrase previews), see [StudioEmbedder](StudioEmbedder.md).
 
 ## Properties
 
@@ -28,8 +28,8 @@ For ad-hoc, non-persisting helpers (previewing rendered phrases, computing one-o
 | `dryRun`     | Boolean   | If `True`, runs selection/filter logic but skips API calls and entity saves. |
 | `force`      | Boolean   | If `True`, recomputes every entity ignoring null-vector / dirty-flag filter. |
 | `debug`      | Boolean   | If `True`, emits additional diagnostic log entries.                        |
-| `pauseIndexes` | Boolean | If `True` (default), index maintenance on the target table is paused for the duration of a `processEntitySelection` batch run, then resumed right after (or on early exit/critical error). Speeds up large writes. |
-| `waitForIndexes` | Boolean | If `True`, resuming indexes (after `pauseIndexes`) blocks until recomputation finishes. Default `False` — resume is asynchronous (indexes recomputed in the background). |
+| `pauseIndexes` | Boolean | If `True`, index maintenance on the target table is paused for the duration of a `processEntitySelection` batch run, then resumed right after (or on early exit/critical error). Default `False` — indexes are left alone. See [Pausing indexes](#pausing-indexes) before enabling it. |
+| `waitForIndexes` | Boolean | Only used with `pauseIndexes`. If `True`, resuming indexes blocks until they are rebuilt. Default `False` — resume is asynchronous (indexes rebuilt in the background). |
 | `shouldCancel` | 4D.Function | Predicate called between chunks during selection processing. Returning `True` stops the run gracefully (cooperative cancel) — what [`Scheduler.cancel()`](Scheduler.md#cancel) uses. |
 | `embedder`   | [Embedder](Embedder.md) | Inject a custom embedder (otherwise a default one is created). |
 
@@ -164,9 +164,22 @@ The dirty field is optional per dataclass. If it doesn't exist, only the null-ve
 
 For `processEntitySelection`, the filter is executed as a server-side ORDA query before any API call, so only the rows that actually need work are loaded into memory. For `processEntity`, the check is done in memory on the already-fetched entity.
 
+### Pausing indexes
+
+By default the indexes of the target table are maintained normally while vectors are saved. With the `pauseIndexes` option, a batch run calls [`PAUSE INDEXES`](https://developer.4d.com/docs/commands/pause-indexes) on the table before writing and [`RESUME INDEXES`](https://developer.4d.com/docs/commands/resume-indexes) once done (also on early exit or critical error).
+
+Be aware of what these commands do:
+
+- `PAUSE INDEXES` disables **all** the indexes of the table (except the primary key index), not only the vector ones: every index on every other field of the table is paused too. While paused, queries and sorts on that table, including those of other processes, run without any index.
+- `RESUME INDEXES` then **rebuilds all these indexes**, for the whole table, not only for the records that were recomputed. On a table with several indexes, this rebuild can cost more than the time saved during the writes.
+- With `waitForIndexes` set to `True`, the run blocks until the rebuild completes; otherwise the rebuild runs in the background.
+- These commands cannot run on a 4D remote client: there the option is ignored (a warning is logged once) and the recalculation runs with indexes maintained normally. Run it on the server, for example through the [Scheduler](Scheduler.md), to use it.
+
+Enable it only for large recalculations, such as computing the vectors of a whole table for the first time.
+
 ## See also
 
-- [Playground](Playground.md)
+- [StudioEmbedder](StudioEmbedder.md)
 - [Settings](Settings.md)
 - [Definition](Definition.md)
 - [Embedder](Embedder.md)

@@ -34,6 +34,8 @@ var $client:=cs.AIKit.OpenAI.new({apiKey: "…"; baseURL: "https://server.ai"})
 var $proc:=cs.EmbeddingStudio.Embedder.new({client: $client; maxRetries: 5; backoffMs: 1000})
 ```
 
+> If the 4D AIKit component is not loaded (or is too old to provide `OpenAIProviders`), the constructor still succeeds with a `Null` client, and the first `embed()` / `embedBatch()` call throws an error whose `message` explains what is missing and whose `isAIKitMissing` property is `True`.
+
 ## Functions
 
 ### embed()

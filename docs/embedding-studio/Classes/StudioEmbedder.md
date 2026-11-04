@@ -1,11 +1,11 @@
 ---
-id: playground
-title: Playground
+id: studioembedder
+title: StudioEmbedder
 ---
 
-# Playground
+# StudioEmbedder
 
-The `Playground` class provides ad-hoc, non-persisting helpers for previewing rendered phrases and computing one-off embedding vectors. Useful for similarity search inputs, debugging, REPL experimentation, or previews.
+The `StudioEmbedder` class renders and embeds on demand, resolved against the Studio settings: a saved definition gives the phrase and the model, so the vector you compute matches the ones stored by [Process](Process.md). Nothing is persisted. Typical uses: building the vector of a search query, finding entities similar to a given one, or previewing the text sent for an entity.
 
 For the full batch pipeline that persists vectors on entities, see [Process](Process.md).
 
@@ -25,9 +25,9 @@ For the full batch pipeline that persists vectors on entities, see [Process](Pro
 | *options*     | Object                                    | Optional runtime options. Supports `embedder` for injection. |
 
 ```4d
-var $pg:=cs.EmbeddingStudio.Playground.new()
-var $pg:=cs.EmbeddingStudio.Playground.new($settings)
-var $pg:=cs.EmbeddingStudio.Playground.new($settings; {embedder: $mockEmbedder})
+var $studioEmbedder:=cs.EmbeddingStudio.StudioEmbedder.new()
+var $studioEmbedder:=cs.EmbeddingStudio.StudioEmbedder.new($settings)
+var $studioEmbedder:=cs.EmbeddingStudio.StudioEmbedder.new($settings; {embedder: $mockEmbedder})
 ```
 
 ## Functions
@@ -36,7 +36,7 @@ var $pg:=cs.EmbeddingStudio.Playground.new($settings; {embedder: $mockEmbedder})
 
 **render**(*entity* : 4D.Entity ; *definitionOrPhrase* : Variant) : Text
 
-Render a phrase for an entity and return the resulting text. No API call, no persistence.
+Return the text that [`embed()`](#embed) sends for an entity (the phrase rendered against it). No API call, no persistence.
 
 | Argument              | Type                                                                        | Description                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -45,14 +45,14 @@ Render a phrase for an entity and return the resulting text. No API call, no per
 | Function result       | Text                                                                        | The rendered text.                                                          |
 
 ```4d
-var $pg:=cs.EmbeddingStudio.Playground.new()
+var $studioEmbedder:=cs.EmbeddingStudio.StudioEmbedder.new()
 var $text: Text
-$text:=$pg.render($student; $def)                        // use def's phrase
-$text:=$pg.render($student; cs.EmbeddingStudio.Phrase.new("Hi {firstName}"))
-$text:=$pg.render($student; "Student: {lastName}")       // raw template
-$text:=$pg.render($student)                              // auto-resolve
-$text:=$pg.render($student; {vectorName: "student_vector_1"})  // stub → saved definition's phrase
-$text:=$pg.render($student; {phrase: "Hi {firstName}"})        // ad-hoc stub → inline template
+$text:=$studioEmbedder.render($student; $def)                        // use def's phrase
+$text:=$studioEmbedder.render($student; cs.EmbeddingStudio.Phrase.new("Hi {firstName}"))
+$text:=$studioEmbedder.render($student; "Student: {lastName}")       // raw template
+$text:=$studioEmbedder.render($student)                              // auto-resolve
+$text:=$studioEmbedder.render($student; {vectorName: "student_vector_1"})  // stub → saved definition's phrase
+$text:=$studioEmbedder.render($student; {phrase: "Hi {firstName}"})        // ad-hoc stub → inline template
 ```
 
 ### embed()
@@ -71,35 +71,35 @@ Compute a vector for an arbitrary input, without persisting anywhere.
 Throws if no model can be determined.
 
 ```4d
-var $pg:=cs.EmbeddingStudio.Playground.new()
+var $studioEmbedder:=cs.EmbeddingStudio.StudioEmbedder.new()
 var $vector: 4D.Vector
 
 // Text + model
-$vector:=$pg.embed("some text"; "text-embedding-3-small").vector
+$vector:=$studioEmbedder.embed("some text"; "text-embedding-3-small").vector
 
 // Text + definition (picks up def.modelAlias)
-$vector:=$pg.embed("some text"; $def).vector
+$vector:=$studioEmbedder.embed("some text"; $def).vector
 
 // Entity + definition (uses def.phrase + def.modelAlias)
-$vector:=$pg.embed($student; $def).vector
+$vector:=$studioEmbedder.embed($student; $def).vector
 
 // Entity + phrase + explicit model
-$vector:=$pg.embed($student; $phrase; "text-embedding-3-small").vector
+$vector:=$studioEmbedder.embed($student; $phrase; "text-embedding-3-small").vector
 
 // Entity + ad-hoc template + model
-$vector:=$pg.embed($student; "Profile: {firstName} {lastName}"; "text-embedding-3-small").vector
+$vector:=$studioEmbedder.embed($student; "Profile: {firstName} {lastName}"; "text-embedding-3-small").vector
 
 // Entity alone (auto-resolve, only when exactly one def matches the dataclass)
-$vector:=$pg.embed($student).vector
+$vector:=$studioEmbedder.embed($student).vector
 
 // Entity + stub (deduces phrase + model from the matching saved definition)
-$vector:=$pg.embed($student; {vectorName: "student_vector_1"}).vector
+$vector:=$studioEmbedder.embed($student; {vectorName: "student_vector_1"}).vector
 
 // Entity + ad-hoc stub (phrase compiled inline, model taken from the stub)
-$vector:=$pg.embed($student; {phrase: "Hi {firstName}"; modelAlias: "text-embedding-3-small"}).vector
+$vector:=$studioEmbedder.embed($student; {phrase: "Hi {firstName}"; modelAlias: "text-embedding-3-small"}).vector
 
 // Text + stub that only supplies the model
-$vector:=$pg.embed("some text"; {modelAlias: "text-embedding-3-small"}).vector
+$vector:=$studioEmbedder.embed("some text"; {modelAlias: "text-embedding-3-small"}).vector
 ```
 
 ## Stub resolution
@@ -113,7 +113,7 @@ Both `render()` and `embed()` accept a plain object in place of a `Phrase`/`Defi
 
 For `embed()`, the model is deduced in this order: an explicit `{modelAlias}` on the stub → the model of a stub-matched saved definition → the *model* argument → the entity's unique definition. An explicit `{modelAlias}` always wins.
 
-Unlike [`Process.process()`](Process.md#process-resolution), a stub is **not** turned into a brand-new `Definition` from its fields — `Playground` is ad-hoc, so use `{phrase}`/`{template}` for one-off templates.
+Unlike [`Process.process()`](Process.md#process-resolution), a stub is **not** turned into a brand-new `Definition` from its fields — `StudioEmbedder` persists nothing, so use `{phrase}`/`{template}` for one-off templates.
 
 ## See also
 

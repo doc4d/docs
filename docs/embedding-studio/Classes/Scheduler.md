@@ -34,7 +34,7 @@ The configuration lives under the `scheduler` key of `Settings/embeddings.json`:
 
 | Key             | Type    | Values / range                     | Description                                                                 |
 |-----------------|---------|------------------------------------|-----------------------------------------------------------------------------|
-| `mode`          | Text    | `"disabled"` \| `"interval"` \| `"daily"` | Scheduling mode. Absent/unknown ⇒ `disabled` (no automatic run).      |
+| `mode`          | Text    | `"never"` \| `"interval"` \| `"daily"` | Scheduling mode. Absent/unknown ⇒ `never` (no automatic run).      |
 | `intervalHours` | Integer | `1`..`24`                          | Interval mode only. Out-of-range ⇒ default `3`.                             |
 | `startFrom`     | Text    | `"reference"` \| `"lastExecution"` | Interval mode only. Anchor of the interval (see below). Anything other than `"lastExecution"` — including the legacy `"now"` — is normalized to `reference`. Default `reference`. |
 | `startReference`| Text    | `"YYYY-MM-DDThh:mm:ss"`            | Interval mode with `startFrom = "reference"`. Fixed instant the interval counts from. Absent ⇒ the moment the scheduler was armed, then the current instant. |
@@ -168,14 +168,14 @@ End if
 
 | Key             | Type          | Description                                                                     |
 |-----------------|---------------|---------------------------------------------------------------------------------|
-| `enabled`       | Boolean       | `False` when `mode = "disabled"`.                                                |
-| `mode`          | Text          | Effective mode (`disabled` \| `interval` \| `daily`).                            |
+| `enabled`       | Boolean       | `False` when `mode = "never"`.                                                |
+| `mode`          | Text          | Effective mode (`never` \| `interval` \| `daily`).                            |
 | `armed`         | Boolean       | `True` when the background loop is armed (after `start()`, until `stop()`).      |
 | `running`       | Boolean       | `True` while a recalculation batch is in progress.                              |
 | `batchStart`    | Text \| Null  | ISO timestamp of the running batch start (`Null` when idle).                    |
 | `lastExecution` | Text \| Null  | ISO timestamp of the last completed run (`Null` if none yet). Restored from the persisted history after a restart, so it survives the loss of in-memory state. |
 | `lastRunBeforeRestart` | Boolean | `True` when `lastExecution` was recovered from the history after a restart rather than produced by a run in the current session. |
-| `nextRun`       | Text \| Null  | ISO timestamp of the next scheduled run (`Null` when disabled).                 |
+| `nextRun`       | Text \| Null  | ISO timestamp of the next scheduled run (`Null` in `never` mode).                 |
 | `lastResult`    | Text \| Null  | Result of the last trigger: `started` \| `skipped` \| `completed` \| `failed`.  |
 | `error`         | Text \| Null  | Error summary when the last run failed (safe for admin display), else `Null`.   |
 | `started`       | Boolean       | `True` when the background loop is really alive (see [`isStarted()`](#isstarted)). |
@@ -254,7 +254,7 @@ cs.EmbeddingStudio.Scheduler.me.saveConfig({mode: "interval"; intervalHours: 6; 
 cs.EmbeddingStudio.Scheduler.me.saveConfig({mode: "daily"; dailyTime: "02:30"})
 
 // Disable the automatic schedule
-cs.EmbeddingStudio.Scheduler.me.saveConfig({mode: "disabled"})
+cs.EmbeddingStudio.Scheduler.me.saveConfig({mode: "never"})
 ```
 
 ### nextRun()
@@ -265,7 +265,7 @@ Computes the next scheduled run from the current configuration and state.
 
 | Result  | Type          | Description                                                                          |
 |---------|---------------|--------------------------------------------------------------------------------------|
-| result  | Object \| Null | `{date : Date; time : Time; timestamp : Text; immediate : Boolean}`, or `Null` when disabled. |
+| result  | Object \| Null | `{date : Date; time : Time; timestamp : Text; immediate : Boolean}`, or `Null` in `never` mode. |
 
 ```4d
 var $next:=cs.EmbeddingStudio.Scheduler.me.nextRun()

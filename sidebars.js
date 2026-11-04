@@ -1035,13 +1035,13 @@ module.exports =
                 "embedding-studio/Classes/embedder",
                 "embedding-studio/Classes/embedderresult",
                 "embedding-studio/Classes/phrase",
-                "embedding-studio/Classes/playground",
                 "embedding-studio/Classes/process",
                 "embedding-studio/Classes/processerror",
                 "embedding-studio/Classes/processerrorcode",
                 "embedding-studio/Classes/processresult",
                 "embedding-studio/Classes/scheduler",
-                "embedding-studio/Classes/settings"
+                "embedding-studio/Classes/settings",
+                "embedding-studio/Classes/studioembedder"
               ]
             }
           ]
