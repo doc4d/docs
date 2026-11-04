@@ -27,7 +27,7 @@ title: 背景色と境界線
 
 ## 背景色/塗りカラー
 
-オブジェクトの背景色/塗りカラーを設定します。 It can be defined for some standard objects (`fill` JSON property) or ["custom style" objects](#custom-button-custom-check-box-or-custom-radio-button) (`borderFillColor` JSON property).
+オブジェクトの背景色/塗りカラーを設定します。一部の標準のオブジェクト(`fill` JSON プロパティを使用) あるいは["custom style" オブジェクト](#custom-button-custom-check-box-or-custom-radio-button)(`borderFillColor` JSON プロパティを使用) に対して定義することが可能です。
 
 :::note
 
@@ -105,11 +105,11 @@ title: 背景色と境界線
 
 ## 境界線カラー{#border-color}
 
-Allows defining the border color. The effect of this property varies slightly depending on the type of object to which it is applied.
+境界線のカラーを定義することができます。このプロパティの効果は、適用されるオブジェクトのタイプによって若干異なります。
 
-- **objects with text properties**: [buttons](./button_overview.md) (all styles except "custom", see  below), [hierarchical lists](list_overview.md), [inputs](input_overview.md), [list boxes](listbox_overview.md), [progress indicators](./progressIndicator.md), [rulers](./ruler.md), and [text areas](text.md).  
-  By default, the border color of these objects is automatically set to their [**font color**](./properties_Text.md#font-color) property. This default configuration corresponds to the **Same as font** option in the Property List (`borderColor` property is undefined in JSON).  
-  You can separate these two properties by setting a color value for the object's "Border color" property (only available when the [**border line style**](#border-line-style) property is **plain** (`solid` in JSON property) or **dotted**).
+- **テキストプロパティを持つオブジェクト**: [ボタン](./button_overview.md) ("カスタム" を除く全てのスタイル、詳細は以下参照)、[階層リスト](list_overview.md)、[入力](input_overview.md)、[リストボックス](listbox_overview.md)、[進捗インジケーター](./progressIndicator.md)、[ルーラー](./ruler.md), and [text areas](text.md)。  
+  デフォルトで、これらのオブジェクトの境界線カラーは自動的に[**フォントカラー**](./properties_Text.md#フォントカラー) プロパティと同じに設定されています。このデフォルトの設定はプロパティリストの**Same as font** オプションに対応しています(`borderColor` プロパティはJSON では未定義です)。  
+  これらの二つのプロパティはオブジェクトの"境界線カラー" プロパティ([**境界線スタイル**](#border-line-style) プロパティが**実線** (JSON プロパティでは`solid`) あるいは **点線**のときのみ利用可能) にカラー値を設定することで分離させることができます。
 
 - **objects without text properties**: [4D View Pro areas](viewProArea_overview.md), [4D Write Pro areas](writeProArea_overview.md), [button grids](buttonGrid_overview.md), [picture buttons](pictureButton_overview.md), [picture pop-up menus](picturePopupMenu_overview.md), [plug-in areas](pluginArea_overview.md), [subforms](subform_overview.md), [spinners](spinner.md), [splitters](splitters.md), [steppers](stepper.md), [web areas](webArea_overview.md).  
   The border color property sets the color of the borders. The default color value is "Automatic", i.e. the border is displayed with the automatic color set by your OS.
