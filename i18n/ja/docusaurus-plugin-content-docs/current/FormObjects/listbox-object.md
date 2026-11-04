@@ -53,13 +53,13 @@ LIST TO ARRAY("ListName";varCol)
 myCol:=myCol.push("new value") // リストボックスに new value を表示
 ```
 
-## Supported standard actions
+## サポートされる標準アクション
 
-- [gotoPage](../Desktop-legacy/standard-actions.md#gotopage): Available for array list boxes; see the [supported properties by list box type](#supported-properties).
+- [gotoPage](../Desktop-legacy/standard-actions.md#gotopage): 配列型リストボックスに対して利用可能です。詳細は[リストボックス型ごとにサポートされるプロパティ](#プロパティ一覧) を参照してください。
 
-The [addSubrecord](../Desktop-legacy/standard-actions.md#addsubrecord), [deleteSubrecord](../Desktop-legacy/standard-actions.md#deletesubrecord), [displaySubrecord](../Desktop-legacy/standard-actions.md#displaysubrecord), and [editSubrecord](../Desktop-legacy/standard-actions.md#editsubrecord) actions can affect selection list boxes, but are assigned to buttons or menu commands, not to the selection list box itself.
+[addSubrecord](../Desktop-legacy/standard-actions.md#addsubrecord)、 [deleteSubrecord](../Desktop-legacy/standard-actions.md#deletesubrecord)、 [displaySubrecord](../Desktop-legacy/standard-actions.md#displaysubrecord)、および [editSubrecord](../Desktop-legacy/standard-actions.md#editsubrecord) アクションはセレクション型リストボックスに影響をおよぼす可能性がありますが、これらはボタンまたはメニューコマンドに対して割り当てられるもので、セレクション型リストボックス自体に割り当てられるものではありません。
 
-See the [standard action compatibility table](../Desktop-legacy/standard-actions.md#supported-form-objects).
+詳細については[標準アクション互換性表](../Desktop-legacy/standard-actions.md#サポートされるフォームオブジェクト) を参照してください。
 
 ## プロパティ一覧
 
