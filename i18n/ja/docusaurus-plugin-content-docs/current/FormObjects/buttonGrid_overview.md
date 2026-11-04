@@ -26,11 +26,11 @@ title: ボタングリッド
 
 ボタングリッドにページ指定用の `gotoPage` [標準アクション](/Desktop/standard-actions)を割り当てることができます。この標準アクションを設定すると、4D はボタングリッドで選択されたボタンの番号に相当するフォームページを自動的に表示します。たとえばグリッド上の 10 番目のボタンを選択すると、4D は現在のフォームの 10 ページ目を表示します (存在する場合)。
 
-## Supported standard actions
+## サポートされる標準アクション
 
-- [gotoPage](../Desktop-legacy/standard-actions.md#gotopage): Uses the selected button number as described in [Goto page](#goto-page).
+- [gotoPage](../Desktop-legacy/standard-actions.md#gotopage): [ページ指定アクション](#ページ指定アクション) の説明に従って選択されたボタン番号を使用します。
 
-See the [standard action compatibility table](../Desktop-legacy/standard-actions.md#supported-form-objects).
+詳細については[標準アクション互換性表](../Desktop-legacy/standard-actions.md#サポートされるフォームオブジェクト) を参照してください。
 
 ## プロパティ一覧
 
