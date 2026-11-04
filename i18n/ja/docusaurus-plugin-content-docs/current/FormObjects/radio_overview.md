@@ -154,7 +154,7 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 [カスタム](#カスタム) スタイルのラジオボタンに対しては特有の追加のプロパティが利用可能です:
 
-[背景パス名](properties_TextAndPicture.md#背景パス名) - [境界線カラー](./properties_BackgroundAndBorder.md#境界線カラー) - [境界線幅](./properties_BackgroundAndBorder.md#境界線幅) - [横方向マージン](properties_TextAndPicture.md#横方向マージン) - [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) - [縦方向マージン](properties_TextAndPicture.md#縦方向マージン) - [角の半径](properties_CoordinatesAndSizing.md#角の半径) - [塗りカラー](./properties_BackgroundAndBorder.md#背景色塗りカラー)
+[背景パス名](properties_TextAndPicture.md#背景パス名) - [境界線カラー](./properties_BackgroundAndBorder.md#border-color) - [境界線幅](./properties_BackgroundAndBorder.md#境界線幅) - [横方向マージン](properties_TextAndPicture.md#横方向マージン) - [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) - [縦方向マージン](properties_TextAndPicture.md#縦方向マージン) - [角の半径](properties_CoordinatesAndSizing.md#角の半径) - [塗りカラー](./properties_BackgroundAndBorder.md#背景色塗りカラー)
 
 ## サポートされるイベント
 
