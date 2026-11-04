@@ -332,11 +332,11 @@ Windows Classic UI テーマでは、このスタイルはサポートされま�
                 }
 ```
 
-## Supported standard actions
+## サポートされる標準アクション
 
-The following standard actions can be assigned to buttons:
+ボタンには、以下の標準アクションを割り当てることができます:
 
-### Records and forms
+### レコードとフォーム
 
 - [accept](../Desktop-legacy/standard-actions.md#accept)
 - [cancel](../Desktop-legacy/standard-actions.md#cancel)
@@ -350,7 +350,7 @@ The following standard actions can be assigned to buttons:
 - [nextRecord](../Desktop-legacy/standard-actions.md#nextrecord)
 - [previousRecord](../Desktop-legacy/standard-actions.md#previousrecord)
 
-### Pages
+### ページ
 
 - [firstPage](../Desktop-legacy/standard-actions.md#firstpage)
 - [lastPage](../Desktop-legacy/standard-actions.md#lastpage)
@@ -358,7 +358,7 @@ The following standard actions can be assigned to buttons:
 - [previousPage](../Desktop-legacy/standard-actions.md#previouspage)
 - [gotoPage?value=\<page\>](../Desktop-legacy/standard-actions.md#gotopagevaluepage)
 
-### Editing and expressions
+### 編集と式
 
 - [clear](../Desktop-legacy/standard-actions.md#clear)
 - [copy](../Desktop-legacy/standard-actions.md#copy)
@@ -371,7 +371,7 @@ The following standard actions can be assigned to buttons:
 - [freezeExpressions](../Desktop-legacy/standard-actions.md#freezeexpressions)
 - [visibleReferences](../Desktop-legacy/standard-actions.md#visiblereferences)
 
-### Formatting
+### 書式設定
 
 - [backgroundColor/showDialog](../Desktop-legacy/standard-actions.md#backgroundcolorshowdialog)
 - [backgroundColor?value=\<color\>](../Desktop-legacy/standard-actions.md#backgroundcolorvaluecolor)
@@ -384,7 +384,7 @@ The following standard actions can be assigned to buttons:
 - [fontSize?value=\<size\>](../Desktop-legacy/standard-actions.md#fontsizevaluesize)
 - [fontUnderline](../Desktop-legacy/standard-actions.md#fontunderline)
 
-### Spellchecking
+### スペルチェック
 
 - [spell/autoCorrectionEnabled](../Desktop-legacy/standard-actions.md#spellautocorrectionenabled)
 - [spell/autoDashSubstitutionsEnabled](../Desktop-legacy/standard-actions.md#spellautodashsubstitutionsenabled)
@@ -402,14 +402,14 @@ The following standard actions can be assigned to buttons:
 - [spell/unLearn](../Desktop-legacy/standard-actions.md#spellunlearn)
 - [spell/visibleSubstitutions](../Desktop-legacy/standard-actions.md#spellvisiblesubstitutions)
 
-### Web-area controls
+### Webエリアコントロール
 
 - [openBackURL](../Desktop-legacy/standard-actions.md#openbackurl)
 - [openForwardURL](../Desktop-legacy/standard-actions.md#openforwardurl)
 - [refreshCurrentURL](../Desktop-legacy/standard-actions.md#refreshcurrenturl)
 - [stopLoadingURL](../Desktop-legacy/standard-actions.md#stoploadingurl)
 
-### Other actions
+### その他のアクション
 
 - [databaseSettings](../Desktop-legacy/standard-actions.md#databasesettings)
 - [designMode](../Desktop-legacy/standard-actions.md#designmode)
@@ -418,15 +418,15 @@ The following standard actions can be assigned to buttons:
 - [showClipboard](../Desktop-legacy/standard-actions.md#showclipboard)
 - [writingTools](../Desktop-legacy/standard-actions.md#writingtools)
 
-### Invisible buttons only
+### 非表示ボタンのみ
 
 - [automaticSplitter](../Desktop-legacy/standard-actions.md#automaticsplitter)
 
-### 4D Write Pro standard actions
+### 4D Write Pro標準アクション
 
 - [formulaHighlight?value=\<mode\>](../WritePro/user-legacy/standard-actions.md#action-formulahighlight)
 
-The [empty action](../Desktop-legacy/standard-actions.md#-empty-string) leaves the button's behavior to its method. See the [standard action compatibility table](../Desktop-legacy/standard-actions.md#supported-form-objects) for comparisons with other objects.
+[empty アクション](../Desktop-legacy/standard-actions.md#-empty-string) の場合にはボタンの振る舞いはそのオブジェクトメソッドに移譲されます。他のオブジェクトとの比較のためには[標準アクション互換性表](../Desktop-legacy/standard-actions.md#サポートされるフォームオブジェクト) を参照してください。
 
 ## プロパティ一覧
 
@@ -441,7 +441,7 @@ The [empty action](../Desktop-legacy/standard-actions.md#-empty-string) leaves t
 
 [カスタム](#カスタム) スタイルのボタンに対しては特有の追加のプロパティが利用可能です:
 
-[背景パス名](properties_TextAndPicture.md#背景パス名) - [境界線カラー](./properties_BackgroundAndBorder.md#境界線カラー) - [境界線幅](./properties_BackgroundAndBorder.md#境界線幅) - [横方向マージン](properties_TextAndPicture.md#横方向マージン) - [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) - [縦方向マージン](properties_TextAndPicture.md#縦方向マージン) - [角の半径](properties_CoordinatesAndSizing.md#角の半径) - [デフォルトボタン](properties_Appearance.md#デフォルトボタン) - [塗りカラー](./properties_BackgroundAndBorder.md#背景色塗りカラー)
+[背景パス名](properties_TextAndPicture.md#背景パス名) - [境界線カラー](./properties_BackgroundAndBorder.md#border-color) - [境界線幅](./properties_BackgroundAndBorder.md#境界線幅) - [横方向マージン](properties_TextAndPicture.md#横方向マージン) - [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) - [縦方向マージン](properties_TextAndPicture.md#縦方向マージン) - [角の半径](properties_CoordinatesAndSizing.md#角の半径) - [デフォルトボタン](properties_Appearance.md#デフォルトボタン) - [塗りカラー](./properties_BackgroundAndBorder.md#背景色塗りカラー)
 
 ### フラットおよび通常ボタンにおける追加のプロパティ
 
