@@ -62,7 +62,7 @@ title: 進捗インジケーター
 [入力可](properties_Entry.md#入力可) -
 [数値フォーマット](properties_Display.md#数値フォーマット) -
 [表示状態](properties_Display.md#表示状態) -
-[境界線カラー](./properties_BackgroundAndBorder.md#境界線カラー) -
+[境界線カラー](./properties_BackgroundAndBorder.md#border-color) -
 [境界線スタイル](properties_BackgroundAndBorder.md#border-line-style) -
 [フォント](properties_Text.md#フォント) -
 [フォントサイズ](properties_Text.md#フォントサイズ) -
