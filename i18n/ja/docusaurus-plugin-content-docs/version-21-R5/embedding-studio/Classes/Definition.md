@@ -1,5 +1,5 @@
 ---
-id: 定義
+id: definition
 title: 定義
 ---
 
