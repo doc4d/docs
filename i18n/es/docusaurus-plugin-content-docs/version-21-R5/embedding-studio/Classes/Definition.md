@@ -1,5 +1,5 @@
 ---
-id: definición
+id: definition
 title: Definición
 ---
 
