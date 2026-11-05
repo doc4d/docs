@@ -67,6 +67,12 @@ Les actions disponibles sont liées à la ressource cible.
 
 Le paramétrage des permissions nécessite d'être cohérent, en particulier les permissions **update** et **drop** ont également besoin d'une permission **read** (mais **create** n'en a pas besoin).
 
+:::warning
+
+When a permission entry references an undeclared [privilege](#privileges-and-roles), 4D logs an error and ignores the entry. In this case, the permission is ignored. If the [restricted mode by default](#restriction-modes) is not enabled, the resource is accessible to `guest` sessions.
+
+:::
+
 ### Permissions héritées
 
 Une action de permission définie à un certain niveau est héritée par défaut aux niveaux inférieurs, mais plusieurs niveaux de permissions peuvent être définis :
