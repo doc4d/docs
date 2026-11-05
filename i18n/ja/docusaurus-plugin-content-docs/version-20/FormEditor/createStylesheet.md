@@ -126,7 +126,7 @@ text.center {
 }
 ```
 
-4D フォームの詳細では、[CSSクラス](../FormObjects/properties_Object.md#cssクラス) 属性を使用してクラス名を割り当てます。この属性には一つ以上のクラス名を指定することができます。 複数の場合はクラス名を半角スペースで区切ります:
+4D フォームの詳細では、[CSSクラス](../FormObjects/properties_Object.md#cssクラス) 属性を使用してクラス名を割り当てます。この属性には一つ以上のクラス名を指定することができます。複数の場合はクラス名を半角スペースで区切ります:
 
 ```
 class: "okButtons important"       
