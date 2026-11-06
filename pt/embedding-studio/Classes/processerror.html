@@ -1,4 +1,4 @@
-<!doctype html><html lang=pt dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-21-R5 docs-doc-page docs-doc-id-embedding-studio/Classes/processerror" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>ProcessError | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror /><meta data-rh=true property=og:locale content=pt /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true name=docusaurus_locale content=pt /><meta data-rh=true name=docsearch:language content=pt /><meta data-rh=true name=docusaurus_version content=21-R5 /><meta data-rh=true name=docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true name=docsearch:version content=21-R5 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true property=og:title content="ProcessError | 4D Docs"/><meta data-rh=true name=description content="A ProcessError is one structured, typed entry in the errors collection of a ProcessResult. Its typed fields let callers react to a specific failure mode programmatically — retry transient failures, abort on a fatal model outage, count save failures — without parsing message strings."/><meta data-rh=true property=og:description content="A ProcessError is one structured, typed entry in the errors collection of a ProcessResult. Its typed fields let callers react to a specific failure mode programmatically — retry transient failures, abort on a fatal model outage, count save failures — without parsing message strings."/><link data-rh=true rel=icon href=/docs/pt/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/processerror hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/embedding-studio/Classes/processerror hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/embedding-studio/Classes/processerror hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/embedding-studio/Classes/processerror hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/processerror hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/category/extensions","name":"Extensões","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror","name":"ProcessError","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/pt/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/pt/assets/css/styles.4cf13e15.css /><script src=/docs/pt/assets/js/runtime~main.5dba8f66.js defer></script><script src=/docs/pt/assets/js/main.def4c4ae.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=pt dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-21-R5 docs-doc-page docs-doc-id-embedding-studio/Classes/processerror" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>ProcessError | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror /><meta data-rh=true property=og:locale content=pt /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true name=docusaurus_locale content=pt /><meta data-rh=true name=docsearch:language content=pt /><meta data-rh=true name=docusaurus_version content=21-R5 /><meta data-rh=true name=docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true name=docsearch:version content=21-R5 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true property=og:title content="ProcessError | 4D Docs"/><meta data-rh=true name=description content="A ProcessError is one structured, typed entry in the errors collection of a ProcessResult. Its typed fields let callers react to a specific failure mode programmatically — retry transient failures, abort on a fatal model outage, count save failures — without parsing message strings."/><meta data-rh=true property=og:description content="A ProcessError is one structured, typed entry in the errors collection of a ProcessResult. Its typed fields let callers react to a specific failure mode programmatically — retry transient failures, abort on a fatal model outage, count save failures — without parsing message strings."/><link data-rh=true rel=icon href=/docs/pt/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/processerror hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/embedding-studio/Classes/processerror hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/embedding-studio/Classes/processerror hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/embedding-studio/Classes/processerror hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/processerror hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/category/extensions","name":"Extensões","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/embedding-studio/Classes/processerror","name":"ProcessError","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/pt/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/pt/assets/css/styles.4cf13e15.css /><script src=/docs/pt/assets/js/runtime~main.4e041862.js defer></script><script src=/docs/pt/assets/js/main.def4c4ae.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/pt/img/logohome.png /><div role=region aria-label="Saltar para o conteúdo principal"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Saltar para o conteúdo principal</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra de navegação" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/pt/><div class=navbar__logo><img src=/docs/pt/img/logohome.png alt="Logotipo 4D" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/pt/img/logohome.png alt="Logotipo 4D" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">Documentação 4D</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/pt/embedding-studio/Classes/processerror>Próximo</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/pt/next/embedding-studio/Classes/processerror>Próximo</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/pt/embedding-studio/Classes/processerror>Próximo</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="Page not available in this version
@@ -10,133 +10,17 @@ Opening the default page instead" href=/docs/pt/18/GettingStarted/installation>1
 <p>A <code>ProcessError</code> is one structured, typed entry in the <code>errors</code> collection of a <a class="" href=/docs/pt/embedding-studio/Classes/processresult>ProcessResult</a>. Its typed fields let callers react to a specific failure mode programmatically — retry transient failures, abort on a fatal model outage, count save failures — without parsing message strings.</p>
 <p>You read these instances from <a class="" href=/docs/pt/embedding-studio/Classes/processresult>ProcessResult</a><code>.errors</code>, directly or through its query helpers (<code>errorsByCode</code>, <code>errorsByScope</code>, <code>retryableErrors</code>).</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=properties>Properties<a href=#properties class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Property Name<th>Type<th>Description<tbody><tr><td><code>scope</code><td>Text<td>Where the error originated: <code>"pipeline"</code>, <code>"definition"</code>, <code>"chunk"</code>, or <code>"entity"</code>.<tr><td><code>severity</code><td>Text<td><code>"warning"</code>, <code>"error"</code>, or <code>"fatal"</code>. Determined by <code>code</code> (see <a class="" href=/docs/pt/embedding-studio/Classes/processerrorcode>ProcessErrorCode</a>).<tr><td><code>code</code><td>Integer<td>Machine-readable error code — compare against the constants on <a class="" href=/docs/pt/embedding-studio/Classes/processerrorcode>ProcessErrorCode</a>.<tr><td><code>ref</code><td>Variant<td>Scope-dependent reference: <code>"Dataclass.vector"</code>, an entity primary key, a model alias, or <code>Null</code>.<tr><td><code>message</code><td>Text<td>Human-readable, localized message.<tr><td><code>retryable</code><td>Boolean<td><code>True</code> when re-running the operation could plausibly succeed. Determined by <code>code</code>.</table>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=scope-values>scope values<a href=#scope-values class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Scope<th>Meaning<tbody><tr><td><code>"pipeline"</code><td>Top-level failure affecting the whole run (null selection, a model became unavailable).<tr><td><code>"definition"</code><td>A <a class="" href=/docs/pt/embedding-studio/Classes/definition>Definition</a> failed validation or was skipped.<tr><td><code>"chunk"</code><td>A whole batch (chunk) of entities failed in a single API call.<tr><td><code>"entity"</code><td>A single entity failed to embed or save.</table>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=severity-values>severity values<a href=#severity-values class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Severity<th>Meaning<tbody><tr><td><code>"warning"</code><td>Non-blocking — does <strong>not</strong> make <a class="" href=/docs/pt/embedding-studio/Classes/processresult>ProcessResult</a><code>.success</code> false.<tr><td><code>"error"</code><td>A recoverable failure scoped to one entity, chunk, or definition. Makes <code>success</code> false.<tr><td><code>"fatal"</code><td>Blocks the rest of the run (e.g. the model is unavailable). Also surfaces via <code>hasFatal</code>.</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=computed-properties>Computed properties<a href=#computed-properties class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Property<th>Type<th>Description<tbody><tr><td><code>isFatal</code><td>Boolean<td><code>True</code> when <code>severity = "fatal"</code>.</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=functions>Functions<a href=#functions class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=toobject>toObject()<a href=#toobject class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>toObject</strong>() : Object</p>
 <p>Returns a plain object (<code>{scope, severity, code, ref, message, retryable}</code>) suitable for logging or JSON serialization.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument<th>Type<th>Description<tbody><tr><td>Function result<td>Object<td>A JSON-friendly snapshot of the error.</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=example>Example<a href=#example class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
 <p>React to failures by type rather than by message text:</p>

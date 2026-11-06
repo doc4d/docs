@@ -1,4 +1,4 @@
-<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-21-R5 docs-doc-page docs-doc-id-embedding-studio/Classes/embedder" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Embedder | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=21-R5 /><meta data-rh=true name=docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true name=docsearch:version content=21-R5 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true property=og:title content="Embedder | 4D Docs"/><meta data-rh=true name=description content="The Embedder class is a thin wrapper around 4D AIKit focused on embeddings. It exposes two functions — one for a single text, one for a batch — and handles retries with exponential backoff (respecting the Retry-After header when present)."/><meta data-rh=true property=og:description content="The Embedder class is a thin wrapper around 4D AIKit focused on embeddings. It exposes two functions — one for a single text, one for a batch — and handles retries with exponential backoff (respecting the Retry-After header when present)."/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/embedder hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/embedding-studio/Classes/embedder hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/embedding-studio/Classes/embedder hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/embedding-studio/Classes/embedder hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/embedder hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/category/extensions","name":"拡張機能","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder","name":"Embedder","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.4cf13e15.css /><script src=/docs/ja/assets/js/runtime~main.1f201c59.js defer></script><script src=/docs/ja/assets/js/main.004f5e79.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-21-R5 docs-doc-page docs-doc-id-embedding-studio/Classes/embedder" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Embedder | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=21-R5 /><meta data-rh=true name=docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true name=docsearch:version content=21-R5 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-21-R5 /><meta data-rh=true property=og:title content="Embedder | 4D Docs"/><meta data-rh=true name=description content="The Embedder class is a thin wrapper around 4D AIKit focused on embeddings. It exposes two functions — one for a single text, one for a batch — and handles retries with exponential backoff (respecting the Retry-After header when present)."/><meta data-rh=true property=og:description content="The Embedder class is a thin wrapper around 4D AIKit focused on embeddings. It exposes two functions — one for a single text, one for a batch — and handles retries with exponential backoff (respecting the Retry-After header when present)."/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/embedder hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/embedding-studio/Classes/embedder hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/embedding-studio/Classes/embedder hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/embedding-studio/Classes/embedder hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/embedding-studio/Classes/embedder hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/category/extensions","name":"拡張機能","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/embedding-studio/Classes/embedder","name":"Embedder","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.4cf13e15.css /><script src=/docs/ja/assets/js/runtime~main.c80461d0.js defer></script><script src=/docs/ja/assets/js/main.c7f1217d.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/ja/img/logohome.png /><div role=region aria-label=メインコンテンツまでスキップ><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>メインコンテンツまでスキップ</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=ナビゲーションバーの切り替え aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/ja/><div class=navbar__logo><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">4D ドキュメンテーション</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/ja/embedding-studio/Classes/embedder>21 R5 BETA</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/ja/next/embedding-studio/Classes/embedder>次へ</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/ja/embedding-studio/Classes/embedder>21 R5 BETA</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="このバージョンでは、このページは利用できません
@@ -10,49 +10,9 @@
 <p>The <code>Embedder</code> class is a thin wrapper around <a href=https://developer.4d.com/docs/aikit/Classes/openai target=_blank rel="noopener noreferrer" class="">4D AIKit</a> focused on embeddings. It exposes two functions — one for a single text, one for a batch — and handles retries with exponential backoff (respecting the <code>Retry-After</code> header when present).</p>
 <p>It is stateless beyond configuration and safe to share between processes.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=properties>Properties<a href=#properties class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Property Name<th>Type<th>Description<tbody><tr><td><code>client</code><td>cs.AIKit.OpenAI<td>The underlying AIKit client used for HTTP requests.<tr><td><code>maxRetries</code><td>Integer<td>Maximum number of retries on transient errors. Default: <code>3</code>.<tr><td><code>backoffMs</code><td>Integer<td>Base delay (ms) between retries. Doubled each attempt.</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=class-constructor>Class constructor<a href=#class-constructor class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>
 <p>Create a embedder. All options are optional.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument Name<th>Type<th>Description<tbody><tr><td><em>options</em><td>Object<td><code>{client, maxRetries, backoffMs}</code> — any field may be omitted.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">// Default — uses cs.AIKit.OpenAI.new() internally</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $proc:=cs.EmbeddingStudio.Embedder.new()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Provide a pre-configured AIKit client (custom API key, base URL, etc.)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $client:=cs.AIKit.OpenAI.new({apiKey: "…"; baseURL: "https://server.ai"})</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">var $proc:=cs.EmbeddingStudio.Embedder.new({client: $client; maxRetries: 5; backoffMs: 1000})</span><br/></div></code></pre></div></div>
 <blockquote>
@@ -62,62 +22,12 @@
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=embed>embed()<a href=#embed class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h3>
 <p><strong>embed</strong>(<em>text</em> : Text ; <em>model</em> : Text) : <a class="" href=/docs/ja/embedding-studio/Classes/embedderresult>cs.EmbeddingStudio.EmbedderResult</a></p>
 <p>Embed a single text. Returns a typed result with the embedding vector, token usage, and rate-limit state.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument<th>Type<th>Description<tbody><tr><td><em>text</em><td>Text<td>The text to vectorize.<tr><td><em>model</em><td>Text<td>The embedding model to use (e.g. <code>"text-embedding-3-small"</code>).<tr><td>Function result<td><a class="" href=/docs/ja/embedding-studio/Classes/embedderresult>cs.EmbeddingStudio.EmbedderResult</a><td>Typed wrapper — <code>.vector</code> holds the embedding, <code>.promptTokens</code> / <code>.totalTokens</code> hold usage, rate-limit fields are flat camelCase.</table>
 <p>Throws if retries are exhausted or the API returns a non-retryable error.</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $result:=$proc.embed("it rains cats and dogs"; "text-embedding-3-small")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.vector          → 4D.Vector</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.promptTokens    → Integer</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.totalTokens     → Integer</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.remainingTokens → Integer (-1 if unknown)</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=embedbatch>embedBatch()<a href=#embedbatch class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h3>
 <p><strong>embedBatch</strong>(<em>texts</em> : Collection ; <em>model</em> : Text) : <a class="" href=/docs/ja/embedding-studio/Classes/embedderresult>cs.EmbedderResult</a></p>
 <p>Embed a collection of texts in a single API call. Returns a typed result with vectors in the same order as inputs, token usage, and rate-limit state.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument<th>Type<th>Description<tbody><tr><td><em>texts</em><td>Collection<td>Collection of Text to vectorize. Empty or <code>Null</code> returns an empty result.<tr><td><em>model</em><td>Text<td>The embedding model to use.<tr><td>Function result<td><a class="" href=/docs/ja/embedding-studio/Classes/embedderresult>cs.EmbedderResult</a><td>Typed wrapper — <code>.vectors</code> holds the embeddings collection, token and rate-limit fields are flat camelCase.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $result:=$proc.embedBatch(["hello"; "world"]; "text-embedding-3-small")</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.vectors[0]      → 4D.Vector for "hello"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.vectors[1]      → 4D.Vector for "world"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.totalTokens     → Integer (sum for the batch)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// $result.remainingTokens → Integer (after this call)</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=retry-policy>Retry policy<a href=#retry-policy class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h2>

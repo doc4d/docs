@@ -1,4 +1,4 @@
-<!doctype html><html lang=pt dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-embedding-studio/Classes/definition" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Definition | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition /><meta data-rh=true property=og:locale content=pt /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true name=docusaurus_locale content=pt /><meta data-rh=true name=docsearch:language content=pt /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Definition | 4D Docs"/><meta data-rh=true name=description content="The Definition class describes how a single vector field on a dataclass should be computed: which dataclass, which vector field, which model alias, and which text template (Phrase) to render from each entity."/><meta data-rh=true property=og:description content="The Definition class describes how a single vector field on a dataclass should be computed: which dataclass, which vector field, which model alias, and which text template (Phrase) to render from each entity."/><link data-rh=true rel=icon href=/docs/pt/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/definition hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/embedding-studio/Classes/definition hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/embedding-studio/Classes/definition hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/embedding-studio/Classes/definition hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/definition hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/extensions","name":"Extensões","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition","name":"Definition","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/pt/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/pt/assets/css/styles.4cf13e15.css /><script src=/docs/pt/assets/js/runtime~main.5dba8f66.js defer></script><script src=/docs/pt/assets/js/main.def4c4ae.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=pt dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-embedding-studio/Classes/definition" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Definition | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition /><meta data-rh=true property=og:locale content=pt /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true name=docusaurus_locale content=pt /><meta data-rh=true name=docsearch:language content=pt /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Definition | 4D Docs"/><meta data-rh=true name=description content="The Definition class describes how a single vector field on a dataclass should be computed: which dataclass, which vector field, which model alias, and which text template (Phrase) to render from each entity."/><meta data-rh=true property=og:description content="The Definition class describes how a single vector field on a dataclass should be computed: which dataclass, which vector field, which model alias, and which text template (Phrase) to render from each entity."/><link data-rh=true rel=icon href=/docs/pt/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/definition hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/embedding-studio/Classes/definition hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/embedding-studio/Classes/definition hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/embedding-studio/Classes/definition hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/definition hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/extensions","name":"Extensões","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/embedding-studio/Classes/definition","name":"Definition","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/pt/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/pt/assets/css/styles.4cf13e15.css /><script src=/docs/pt/assets/js/runtime~main.4e041862.js defer></script><script src=/docs/pt/assets/js/main.def4c4ae.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/pt/img/logohome.png /><div role=region aria-label="Saltar para o conteúdo principal"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Saltar para o conteúdo principal</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra de navegação" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/pt/><div class=navbar__logo><img src=/docs/pt/img/logohome.png alt="Logotipo 4D" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/pt/img/logohome.png alt="Logotipo 4D" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">Documentação 4D</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/pt/next/embedding-studio/Classes/definition>Próximo</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/pt/next/embedding-studio/Classes/definition>Próximo</a><li><a class=dropdown__link href=/docs/pt/embedding-studio/Classes/definition>Próximo</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="Page not available in this version
@@ -10,74 +10,9 @@ Opening the default page instead" href=/docs/pt/18/GettingStarted/installation>1
 <p>The <code>Definition</code> class describes how a single vector field on a dataclass should be computed: which dataclass, which vector field, which model alias, and which text template (<a class="" href=/docs/pt/next/embedding-studio/Classes/phrase>Phrase</a>) to render from each entity.</p>
 <p>A collection of these is what <a class="" href=/docs/pt/next/embedding-studio/Classes/settings>Settings</a> persists.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=properties>Properties<a href=#properties class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Property Name<th>Type<th>Description<tbody><tr><td><code>dataclassName</code><td>Text<td>Name of the target dataclass.<tr><td><code>vectorName</code><td>Text<td>Name of the <code>4D.Vector</code> field on that dataclass.<tr><td><code>modelAlias</code><td>Text<td>Embedding model alias (e.g. <code>"text-embedding-3-small"</code>).<tr><td><code>phrase</code><td><a class="" href=/docs/pt/next/embedding-studio/Classes/phrase>Phrase</a><td>Compiled template used to build the text that will be embedded.<tr><td><code>autoInvalidate</code><td>Boolean<td>Controls automatic invalidation on entity save. Default: <code>True</code>.</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=class-constructor>Class constructor<a href=#class-constructor class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
 <p>Create a definition.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument Name<th>Type<th>Description<tbody><tr><td><em>dataclassName</em><td>Text<td>Name of the target dataclass.<tr><td><em>vectorName</em><td>Text<td>Name of the target vector field.<tr><td><em>modelAlias</em><td>Text<td>Embedding model alias.<tr><td><em>phraseTemplate</em><td>Text<td>Phrase template with <code>{field}</code> placeholders — compiled into a <a class="" href=/docs/pt/next/embedding-studio/Classes/phrase>Phrase</a>.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $def:=cs.EmbeddingStudio.Definition.new(\</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	"Students"; \</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	"student_vector_1"; \</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	"text-embedding-3-small"; \</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	"Student {firstName} {lastName}")</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=computed-properties>Computed properties<a href=#computed-properties class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
@@ -89,69 +24,8 @@ Opening the default page instead" href=/docs/pt/18/GettingStarted/installation>1
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=validate>validate()<a href=#validate class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>validate</strong>( <em>settings</em> : Settings ) : Object</p>
 <p>Validates the definition against the live datastore model and the known embedding models. All errors are collected before returning — the result always describes the full set of problems found.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument<th>Type<th>Description<tbody><tr><td><em>settings</em><td><a class="" href=/docs/pt/next/embedding-studio/Classes/settings>Settings</a> | Null<td>Used to pass phrase validation options. Pass <code>Null</code> to skip phrase options.<tr><td>Function result<td>Object<td><code>{success: Boolean, errors: Collection}</code> where each error is <code>{field: Text, message: Text}</code>.</table>
 <p>Checked in order:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Check<th><code>field</code> value<tbody><tr><td><code>dataclassName</code> is not empty<td><code>"dataclassName"</code><tr><td><code>vectorName</code> is not empty<td><code>"vectorName"</code><tr><td><code>modelAlias</code> is set and recognised<td><code>"modelAlias"</code><tr><td>Dataclass exists in <code>ds</code><td><code>"dataclassName"</code><tr><td>Vector field exists<td><code>"vectorName"</code><tr><td>Field type is <code>4D.Vector</code><td><code>"vectorName"</code><tr><td>Phrase template is not empty<td><code>"phrase"</code><tr><td>Phrase keys resolve in the dataclass<td><code>"phrase"</code></table>
 <p>The first two checks (identity) return immediately on failure; the remaining checks accumulate so all problems are reported in one pass.</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $result:=$def.validate(cs.EmbeddingStudio.Settings.new())</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">If (Not($result.success))</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    var $err : Object</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    For each ($err; $result.errors)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        TRACE  // $err.field, $err.message</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    End for each</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End if</span><br/></div></code></pre></div></div>
@@ -160,39 +34,7 @@ Opening the default page instead" href=/docs/pt/18/GettingStarted/installation>1
 <p>Marks all already-computed entities for re-embedding, forcing a full rebuild on the next run. Only entities that already have a vector value are processed — entities with a <code>Null</code> vector are skipped.</p>
 <p>Useful during development or after a model/phrase change to trigger a clean rebuild of all vectors.</p>
 <p>The strategy depends on whether a companion <code>_dirty</code> field exists on the dataclass:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Companion <code>_dirty</code> field<th>Action taken<tbody><tr><td>Present<td>Sets <code>&lt;vectorName>_dirty</code> to <code>True</code> — vector is left untouched<tr><td>Absent<td>Nullifies the vector field</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument<th>Type<th>Description<tbody><tr><td>Function result<td>Object<td><code>{updated: Integer, skipped: Integer, errors: Collection of Text}</code></table>
 <ul>
 <li class=""><code>updated</code> — number of entities successfully marked</li>
@@ -203,21 +45,6 @@ Opening the default page instead" href=/docs/pt/18/GettingStarted/installation>1
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=toobject>toObject()<a href=#toobject class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>toObject</strong>() : Object</p>
 <p>Returns a plain object suitable for JSON persistence. The phrase is flattened to its template text.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Argument<th>Type<th>Description<tbody><tr><td>Function result<td>Object<td><code>{version, dataclassName, vectorName, modelAlias, phrase, autoInvalidate}</code> where <code>phrase</code> is the template string.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">$def.toObject()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// → { version: 0; dataclassName: "Students"; vectorName: "student_vector_1";</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//     modelAlias: "text-embedding-3-small"; phrase: "Student {firstName} {lastName}";</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">//     autoInvalidate: true }</span><br/></div></code></pre></div></div>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=automatic-invalidation>Automatic invalidation<a href=#automatic-invalidation class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>

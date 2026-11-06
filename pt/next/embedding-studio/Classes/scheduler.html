@@ -1,4 +1,4 @@
-<!doctype html><html lang=pt dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-embedding-studio/Classes/scheduler" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Scheduler | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler /><meta data-rh=true property=og:locale content=pt /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true name=docusaurus_locale content=pt /><meta data-rh=true name=docsearch:language content=pt /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Scheduler | 4D Docs"/><meta data-rh=true name=description content="The Scheduler class is the public entry point for the automated embedding recalculation service. It maintains a background task that runs the embedding pipeline (see Process) at a configured interval or a fixed daily time, guarantees that at most one recalculation batch runs at a time, and exposes runtime status for administration and monitoring interfaces."/><meta data-rh=true property=og:description content="The Scheduler class is the public entry point for the automated embedding recalculation service. It maintains a background task that runs the embedding pipeline (see Process) at a configured interval or a fixed daily time, guarantees that at most one recalculation batch runs at a time, and exposes runtime status for administration and monitoring interfaces."/><link data-rh=true rel=icon href=/docs/pt/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/scheduler hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/embedding-studio/Classes/scheduler hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/embedding-studio/Classes/scheduler hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/embedding-studio/Classes/scheduler hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/scheduler hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/extensions","name":"Extensões","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler","name":"Scheduler","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/pt/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/pt/assets/css/styles.4cf13e15.css /><script src=/docs/pt/assets/js/runtime~main.5dba8f66.js defer></script><script src=/docs/pt/assets/js/main.def4c4ae.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=pt dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-embedding-studio/Classes/scheduler" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Scheduler | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler /><meta data-rh=true property=og:locale content=pt /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=ja /><meta data-rh=true name=docusaurus_locale content=pt /><meta data-rh=true name=docsearch:language content=pt /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Scheduler | 4D Docs"/><meta data-rh=true name=description content="The Scheduler class is the public entry point for the automated embedding recalculation service. It maintains a background task that runs the embedding pipeline (see Process) at a configured interval or a fixed daily time, guarantees that at most one recalculation batch runs at a time, and exposes runtime status for administration and monitoring interfaces."/><meta data-rh=true property=og:description content="The Scheduler class is the public entry point for the automated embedding recalculation service. It maintains a background task that runs the embedding pipeline (see Process) at a configured interval or a fixed daily time, guarantees that at most one recalculation batch runs at a time, and exposes runtime status for administration and monitoring interfaces."/><link data-rh=true rel=icon href=/docs/pt/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/scheduler hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/next/embedding-studio/Classes/scheduler hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/next/embedding-studio/Classes/scheduler hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/next/embedding-studio/Classes/scheduler hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/next/embedding-studio/Classes/scheduler hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/extensions","name":"Extensões","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/category/4d-embedding-studio","name":"4D Embedding Studio","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/pt/next/embedding-studio/Classes/scheduler","name":"Scheduler","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/pt/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/pt/assets/css/styles.4cf13e15.css /><script src=/docs/pt/assets/js/runtime~main.4e041862.js defer></script><script src=/docs/pt/assets/js/main.def4c4ae.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/pt/img/logohome.png /><div role=region aria-label="Saltar para o conteúdo principal"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Saltar para o conteúdo principal</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra de navegação" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/pt/><div class=navbar__logo><img src=/docs/pt/img/logohome.png alt="Logotipo 4D" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/pt/img/logohome.png alt="Logotipo 4D" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">Documentação 4D</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/pt/next/embedding-studio/Classes/scheduler>Próximo</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/pt/next/embedding-studio/Classes/scheduler>Próximo</a><li><a class=dropdown__link href=/docs/pt/embedding-studio/Classes/scheduler>Próximo</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="Page not available in this version
@@ -10,68 +10,10 @@ Opening the default page instead" href=/docs/pt/18/GettingStarted/installation>1
 <p>The <code>Scheduler</code> class is the public entry point for the <strong>automated embedding recalculation</strong> service. It maintains a background task that runs the embedding pipeline (see <a class="" href=/docs/pt/next/embedding-studio/Classes/process>Process</a>) at a configured interval or a fixed daily time, guarantees that <strong>at most one</strong> recalculation batch runs at a time, and exposes runtime status for administration and monitoring interfaces.</p>
 <p>It is a <strong>singleton</strong>, accessed through <code>cs.EmbeddingStudio.Scheduler.me</code>.</p>
 <p>The scheduler runs two named workers:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Worker<th>Role<tbody><tr><td><code>EmbeddingStudioScheduler</code><td>Background loop that re-reads the config each cycle, computes the next run and fires when due.<tr><td><code>EmbeddingStudio</code><td>Execution worker that runs one recalculation batch (shared with the Studio UI, so scheduled and manual runs are serialized).</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=configuration>Configuration<a href=#configuration class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
 <p>The configuration lives under the <code>scheduler</code> key of <code>Settings/embeddings.json</code>:</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"scheduler"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    </span><span class="token property" style=color:#36acaa>"mode"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"interval"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    </span><span class="token property" style=color:#36acaa>"intervalHours"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>3</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    </span><span class="token property" style=color:#36acaa>"startFrom"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"reference"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    </span><span class="token property" style=color:#36acaa>"startReference"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"2026-09-02T14:00:00"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    </span><span class="token property" style=color:#36acaa>"dailyTime"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"00:00"</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token punctuation" style=color:#393A34>}</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token punctuation" style=color:#393A34>}</span><br/></div></code></pre></div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Key<th>Type<th>Values / range<th>Description<tbody><tr><td><code>mode</code><td>Text<td><code>"never"</code> | <code>"interval"</code> | <code>"daily"</code><td>Scheduling mode. Absent/unknown ⇒ <code>never</code> (no automatic run).<tr><td><code>intervalHours</code><td>Integer<td><code>1</code>..<code>24</code><td>Interval mode only. Out-of-range ⇒ default <code>3</code>.<tr><td><code>startFrom</code><td>Text<td><code>"reference"</code> | <code>"lastExecution"</code><td>Interval mode only. Anchor of the interval (see below). Anything other than <code>"lastExecution"</code> — including the legacy <code>"now"</code> — is normalized to <code>reference</code>. Default <code>reference</code>.<tr><td><code>startReference</code><td>Text<td><code>"YYYY-MM-DDThh:mm:ss"</code><td>Interval mode with <code>startFrom = "reference"</code>. Fixed instant the interval counts from. Absent ⇒ the moment the scheduler was armed, then the current instant.<tr><td><code>dailyTime</code><td>Text<td><code>"HH:MM"</code><td>Daily mode only. Time of day for the recalculation. Default <code>"00:00"</code>.</table>
 <p><strong>Interval anchoring (<code>startFrom</code>)</strong></p>
 <ul>
@@ -104,21 +46,6 @@ from <code>On Startup</code> (single-user setups), guard it with
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=start>start()<a href=#start class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>start</strong>() : Boolean</p>
 <p>Arms the scheduler and starts the background loop worker if it is not already running. Idempotent — calling it again while already armed simply refreshes the "start from now" anchor.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Boolean<td>Always <code>True</code>.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">cs.EmbeddingStudio.Scheduler.me.start()</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=stop>stop()<a href=#stop class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
@@ -132,133 +59,18 @@ from <code>On Startup</code> (single-user setups), guard it with
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=force>force()<a href=#force class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>force</strong>() : Object</p>
 <p>Forces a recalculation <strong>now</strong>, regardless of the schedule. It honors the single-batch rule: if a batch is already running, the forced trigger is skipped (and logged). Non-blocking — the run happens on the execution worker.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Object<td>The current <a href=#status class="">status</a> object.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $status:=cs.EmbeddingStudio.Scheduler.me.force()</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=status>status()<a href=#status class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>status</strong>() : Object</p>
 <p>Returns the current scheduler status, without any input parameter — suitable for administration and monitoring displays.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Object<td>See <a href=#status-object class="">Status object</a>.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $s:=cs.EmbeddingStudio.Scheduler.me.status()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">If ($s.running)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	ALERT("A recalculation is running since "+$s.batchStart)</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End if</span><br/></div></code></pre></div></div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=status-object>Status object<a href=#status-object class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h4>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Key<th>Type<th>Description<tbody><tr><td><code>enabled</code><td>Boolean<td><code>False</code> when <code>mode = "never"</code>.<tr><td><code>mode</code><td>Text<td>Effective mode (<code>never</code> | <code>interval</code> | <code>daily</code>).<tr><td><code>armed</code><td>Boolean<td><code>True</code> when the background loop is armed (after <code>start()</code>, until <code>stop()</code>).<tr><td><code>running</code><td>Boolean<td><code>True</code> while a recalculation batch is in progress.<tr><td><code>batchStart</code><td>Text | Null<td>ISO timestamp of the running batch start (<code>Null</code> when idle).<tr><td><code>lastExecution</code><td>Text | Null<td>ISO timestamp of the last completed run (<code>Null</code> if none yet). Restored from the persisted history after a restart, so it survives the loss of in-memory state.<tr><td><code>lastRunBeforeRestart</code><td>Boolean<td><code>True</code> when <code>lastExecution</code> was recovered from the history after a restart rather than produced by a run in the current session.<tr><td><code>nextRun</code><td>Text | Null<td>ISO timestamp of the next scheduled run (<code>Null</code> in <code>never</code> mode).<tr><td><code>lastResult</code><td>Text | Null<td>Result of the last trigger: <code>started</code> | <code>skipped</code> | <code>completed</code> | <code>failed</code>.<tr><td><code>error</code><td>Text | Null<td>Error summary when the last run failed (safe for admin display), else <code>Null</code>.<tr><td><code>started</code><td>Boolean<td><code>True</code> when the background loop is really alive (see <a href=#isstarted class=""><code>isStarted()</code></a>).<tr><td><code>autoStart</code><td>Boolean<td><code>True</code> when the host database starts the scheduler by itself (see <a href=#autostart class=""><code>autoStart()</code></a>).</table>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=isstarted>isStarted()<a href=#isstarted class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>isStarted</strong>() : Boolean</p>
 <p>Tells whether the scheduler is <strong>effectively running</strong>, i.e. whether its background loop is alive at this very moment. Unlike the <code>armed</code> flag of the <a href=#status-object class="">status</a>, it reflects reality: if the loop was never started, or was killed, the result is <code>False</code>.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Boolean<td><code>True</code> when the background loop is alive.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">If (Not(cs.EmbeddingStudio.Scheduler.me.isStarted()))</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">	cs.EmbeddingStudio.Scheduler.me.start()</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">End if</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=autostart>autoStart()<a href=#autostart class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
@@ -269,118 +81,28 @@ from <code>On Startup</code> (single-user setups), guard it with
 <li class=""><code>False</code> — nothing starts automatically: your code must call <a href=#start class=""><code>start()</code></a> and <a href=#stop class=""><code>stop()</code></a>.</li>
 </ul>
 <p>The answer is read from the host structure settings. When they cannot be read, the result is <code>False</code> — the safe answer, since starting an already-started scheduler is harmless.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Boolean<td><code>True</code> when the host starts the scheduler by itself.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $auto:=cs.EmbeddingStudio.Scheduler.me.autoStart()</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=config>config()<a href=#config class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>config</strong>() : Object</p>
 <p>Returns the effective scheduler configuration with defaults applied (as resolved from <code>embeddings.json</code>).</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Object<td><code>{mode; intervalHours; startFrom; startReference; dailyTime}</code> (see <a href=#configuration class="">Configuration</a>).</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $cfg:=cs.EmbeddingStudio.Scheduler.me.config()</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=saveconfig>saveConfig()<a href=#saveconfig class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>saveConfig</strong>( <em>cfg</em> : Object ) : Object</p>
 <p>Validates, normalizes and <strong>persists</strong> a scheduler configuration to the <code>scheduler</code> key of <code>embeddings.json</code>, then returns the normalized value. This is the programmatic equivalent of the scheduler settings window: it lets you change the schedule entirely by code, without the GUI. Only the <code>scheduler</code> key is written — other keys of the settings file are preserved.</p>
 <p>The configuration is written <strong>on the server</strong>: in a 4D Server / 4D remote setup the file is always edited on the server machine, so a remote client can safely call this method. Because the loop re-reads the configuration on every cycle, the new schedule takes effect without restarting the scheduler.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Parameter<th>Type<th>Description<tbody><tr><td>cfg<td>Object<td>Raw configuration <code>{mode; intervalHours; startFrom; startReference; dailyTime}</code> (see <a href=#configuration class="">Configuration</a>). Missing/out-of-range values are defaulted.</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Object<td>The normalized configuration that was persisted.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">// Switch to a 6-hour interval counting from the last execution</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">cs.EmbeddingStudio.Scheduler.me.saveConfig({mode: "interval"; intervalHours: 6; startFrom: "lastExecution"})</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Switch to a daily run at 02:30</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">cs.EmbeddingStudio.Scheduler.me.saveConfig({mode: "daily"; dailyTime: "02:30"})</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">// Disable the automatic schedule</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">cs.EmbeddingStudio.Scheduler.me.saveConfig({mode: "never"})</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=nextrun>nextRun()<a href=#nextrun class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>nextRun</strong>() : Object</p>
 <p>Computes the next scheduled run from the current configuration and state.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Object | Null<td><code>{date : Date; time : Time; timestamp : Text; immediate : Boolean}</code>, or <code>Null</code> in <code>never</code> mode.</table>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">var $next:=cs.EmbeddingStudio.Scheduler.me.nextRun()</span><br/></div></code></pre></div></div>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=reload>reload()<a href=#reload class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><strong>reload</strong>() : Object</p>
 <p>No-op convenience: the configuration is re-read automatically on each loop cycle, so this simply returns the current <a href=#status class="">status</a>. Provided for callers that want an explicit "config changed, give me the up-to-date status" call.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Result<th>Type<th>Description<tbody><tr><td>result<td>Object<td>The current <a href=#status class="">status</a> object.</table>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=concurrency--logging>Concurrency & logging<a href=#concurrency--logging class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
 <ul>
@@ -392,89 +114,9 @@ from <code>On Startup</code> (single-user setups), guard it with
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=execution-history-file>Execution history file<a href=#execution-history-file class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h3>
 <p><code>Logs/embeddingHistory.json</code> is written by the pipeline itself (every full <code>process()</code> run, scheduled or manual), guarded by a semaphore so concurrent processes never interleave writes. It holds the <strong>current</strong> run at the top level, the one before it under <code>previous</code>, and the same pair per definition under <code>definitions</code>.</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"startTime"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"2026-09-01T14:03:00"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"endTime"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"2026-09-01T14:03:00"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"status"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"completed"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"trigger"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"completed"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"error"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token null keyword" style=color:#00009f>null</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"nextComputeDate"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"2026-09-02T14:03:00"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"promptTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>0</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"totalTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>0</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"cumulativePromptTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>37802</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"cumulativeTotalTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>37802</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"previous"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"startTime"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"…"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"endTime"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"…"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"status"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"completed"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"error"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token null keyword" style=color:#00009f>null</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">                </span><span class="token property" style=color:#36acaa>"nextComputeDate"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"…"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"promptTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>12764</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"totalTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>12764</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">                </span><span class="token property" style=color:#36acaa>"cumulativePromptTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>37802</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"cumulativeTotalTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>37802</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>}</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"skipped"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>[</span><span class="token string" style=color:#e3116c>"2026-09-01T12:00:00"</span><span class="token punctuation" style=color:#393A34>]</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"definitions"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    </span><span class="token property" style=color:#36acaa>"Students.student_vector_1"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      </span><span class="token property" style=color:#36acaa>"startTime"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"…"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"endTime"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"…"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"status"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"completed"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"error"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token null keyword" style=color:#00009f>null</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      </span><span class="token property" style=color:#36acaa>"promptTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>1054</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"totalTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>1054</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      </span><span class="token property" style=color:#36acaa>"cumulativePromptTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>4210</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"cumulativeTotalTokens"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token number" style=color:#36acaa>4210</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      </span><span class="token property" style=color:#36acaa>"previous"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"> </span><span class="token property" style=color:#36acaa>"…"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"…"</span><span class="token plain"> </span><span class="token punctuation" style=color:#393A34>}</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    </span><span class="token punctuation" style=color:#393A34>}</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token punctuation" style=color:#393A34>}</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token punctuation" style=color:#393A34>}</span><br/></div></code></pre></div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Key<th>Type<th>Description<tbody><tr><td><code>startTime</code> / <code>endTime</code><td>Text | Null<td>ISO timestamps of the run, in the scheduler's local base. <code>endTime</code> is <code>null</code> while a run is in progress.<tr><td><code>status</code><td>Text<td><code>running</code> | <code>completed</code> | <code>failed</code>.<tr><td><code>trigger</code><td>Text<td>Last event that touched the file: <code>started</code> | <code>skipped</code> | <code>completed</code> | <code>failed</code>.<tr><td><code>error</code><td>Text | Null<td>Summary of the run's errors, or <code>null</code>. Never contains an API key.<tr><td><code>nextComputeDate</code><td>Text | Null<td>Next scheduled run computed at the end of the run (the <code>nextComputeDate</code> option of <a class="" href=/docs/pt/next/embedding-studio/Classes/process>Process</a>).<tr><td><code>promptTokens</code> / <code>totalTokens</code><td>Integer<td>Usage for this run alone.<tr><td><code>cumulativePromptTokens</code> / <code>cumulativeTotalTokens</code><td>Integer<td>Running totals across all recorded runs.<tr><td><code>previous</code><td>Object<td>Snapshot of the preceding run — the same keys, without <code>trigger</code>, <code>skipped</code> and <code>definitions</code>. Only one generation is kept.<tr><td><code>skipped</code><td>Collection<td>ISO timestamps of triggers skipped because a batch was already running. Capped at the <strong>last 50</strong>.<tr><td><code>definitions</code><td>Object<td>One entry per definition, keyed <code>"&lt;dataclassName>.&lt;vectorName>"</code>, each with its own <code>startTime</code>, <code>endTime</code>, <code>status</code> (<code>completed</code> | <code>failed</code> | <code>skipped</code>), <code>error</code>, token counters and <code>previous</code>.</table>
 <p><a href=#status class=""><code>status()</code></a> reads <code>startTime</code>, <code>endTime</code>, <code>status</code>, <code>trigger</code>, <code>error</code> and <code>nextComputeDate</code> back from this file, which is how <code>lastExecution</code> survives a server restart.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=lifecycle>Lifecycle<a href=#lifecycle class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>Host setting<th>What happens<th>What you must do<tbody><tr><td><strong>"Execute 'On Host Database Event' method of the components"</strong> checked<td>The scheduler starts when the host database opens and stops when it closes.<td>Nothing.<tr><td>Option unchecked (default)<td>The scheduler never starts by itself.<td>Call <a href=#start class=""><code>start()</code></a> at startup and <a href=#stop class=""><code>stop()</code></a> at shutdown.</table>
 <p>Ask <a href=#autostart class=""><code>autoStart()</code></a> which case you are in, and <a href=#isstarted class=""><code>isStarted()</code></a> whether the loop is currently alive. Stopping the scheduler never interrupts a batch in progress — it finishes normally.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=example>Example<a href=#example class=hash-link aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" translate=no>​</a></h2>
