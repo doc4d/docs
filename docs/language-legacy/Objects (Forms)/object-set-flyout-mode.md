@@ -5,7 +5,7 @@ slug: /commands/object-set-flyout-mode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET FLYOUT MODE.Syntax-->**OBJECT SET FLYOUT MODE** ( * ; *objectName* : Text ; *mode* : Text )<br/>**OBJECT SET FLYOUT MODE** ( *objectRef* : Object ; *mode* : Text )<!-- END REF-->
+<!--REF #_command_.OBJECT SET FLYOUT MODE.Syntax-->**OBJECT SET FLYOUT MODE** ( * ; *object* : Text ; *mode* : Text )<br/>**OBJECT SET FLYOUT MODE** ( *object* : Variable, Field ; *mode* : Text )<!-- END REF-->
 <!--REF #_command_.OBJECT SET FLYOUT MODE.Params-->
 <div class="no-index">
 
@@ -14,8 +14,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594; | If specified, *objectName* is a form object name |
-| objectName | Text | &#8594; | Name of the drop-down list object |
-| objectRef | Object | &#8594; | Object reference to a drop-down list object |
+| object | Text, Variable, Field | &#8594;  | Ddrop-down list object name (if * is specified) or <br/>Variable or field (if * is omitted) |
 | mode | Text | &#8594; | Flyout mode: "automatic", "popup", or "pulldown" |
 
 </div>
@@ -53,6 +52,7 @@ In *mode* you can use one of the following constants:
 
 See [Flyout mode](../../FormObjects/properties_Display.md#flyout-mode) for more information on the display modes. 
 
+If you specify the optional *\** parameter, you indicate an object name (a string) in *object*. If you omit the optional \* parameter, you indicate a field or a variable in *object*. In this case, you specify a field or form variable reference.
 
 When called with a supported value, the object appearance is updated immediately; no form refresh is required.
 
