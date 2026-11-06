@@ -18,7 +18,7 @@ displayed_sidebar: docs
 | styles | Integer | &#8594;  | Font style for the item |
 | icon | Text, Integer | &#8594;  | Picture name or number ("" or 0 for no icon) |
 | color | Integer | &#8594;  | RGB color value or -1 = reset to original color |
-| selectable | Boolean | &#8594;  | True if the item is selectable (drop-down with List data source only) |
+| selectable | Boolean | &#8594;  | True if the item is selectable (drop-down list only) |
 </div>
 <!-- END REF-->
 
@@ -76,8 +76,13 @@ In the *icon* parameter, you can pass a picture to be used as the icon for the i
 
 The *color* parameter (optional) lets you modify the color of the item text. The color must be specified in the form of an RGB color, i.e. a 4-byte longint in the 0x00RRGGBB format. For more information about this format, refer to the description of the [OBJECT SET RGB COLORS](../commands/object-set-rgb-colors) command. Pass -1 in the *color* parameter to reset the original color of the item.
 
-The *selectable* parameter (optional) returns whether the item is selectable in the drop-down. This parameter is only significant when `SET LIST ITEM PROPERTIES` targets a [drop-down list object](../../FormObjects/dropdownList_Overview.md) whose [data source type](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) is **List**. It does not apply to drop-down lists bound to object or array data sources. 
+The *selectable* parameter (optional) returns whether the item is selectable in the drop-down list. 
 
+:::note About drop-down lists
+
+`SET LIST ITEM PROPERTIES` can be only be used with [drop-down list objects](../../FormObjects/dropdownList_Overview.md) whose [data source types](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) are **List**. Parameters do not apply to drop-down lists bound to other data source types such as object or array. 
+
+:::
 
 ## Example 1 
 

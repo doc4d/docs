@@ -155,7 +155,7 @@ This property allows you to specify how a [Drop down list](./dropdownList_Overvi
 
 :::note
 
-On Windows, this property is only supported with [**FluentUI** rendered forms](../FormEditor/forms.md#fluent-ui-rendering).
+On Windows, this property is only supported with [**Fluent UI** rendered forms](../FormEditor/forms.md#fluent-ui-rendering).
 
 :::
 
@@ -171,14 +171,14 @@ Three flyout mode options are available. For example, with this drop-down menu:
 ![](../assets/en/FormObjects/dropdown-3.png)
 
 - **Automatic (legacy)** mode (default) - When this options is selected, the flyout mode depends on the OS and the [data source type](./dropdownList_Overview.md#drop-down-list-types) of the drop-down menu:  
-    - on Windows, hierarchical lists always use pull-down mode and non-hierarchical lists always use pop-up mode; 
+    - on Windows, hierarchical lists always use pull-down mode and non-hierarchical lists or other datasource types always use pop-up mode; 
     - on macOS, choice lists (hierarchical or not) always use pull-down mode, while all other types use pop-up mode.
 
 When explicitly set to `popup` or `pulldown`, the flyout mode is independent of the drop-down list's data source type.
 
 If `flyoutMode` is omitted, "automatic" behavior applies. Converting an existing project does not add this property, preserving the legacy flyout mode.
 
-You can change the mode at runtime using [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode). Changes take effect immediately without requiring a form refresh.
+You can change the mode at runtime using [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode). 
 
 #### JSON Grammar
 

@@ -5,15 +5,14 @@ slug: /commands/object-get-flyout-mode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT Get flyout mode.Syntax-->**OBJECT Get flyout mode** ( * ; *objectName* : Text ) : Text<br/>**OBJECT Get flyout mode** ( *objectRef* : Object ) : Text<!-- END REF-->
+<!--REF #_command_.OBJECT Get flyout mode.Syntax-->**OBJECT Get flyout mode** ( * ; *object* : Text ) : Text<br/>**OBJECT Get flyout mode** ( *object* : Variable, Field ) : Text<!-- END REF-->
 <!--REF #_command_.OBJECT Get flyout mode.Params-->
 <div class="no-index">
 
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | -> | If specified, *objectName* is a form object name |
-| objectName | Text | -> | Name of the drop-down list object |
-| objectRef | Object | -> | Object reference to a drop-down list object |
+| object | Text, Variable, Field | &#8594;  | Ddrop-down list object name (if * is specified) or <br/>Variable or field (if * is omitted) |
 | Function result | Text | <- | Current flyout mode |
 
 </div>
@@ -32,6 +31,9 @@ displayed_sidebar: docs
 ## Description
 
 <!--REF #_command_.OBJECT Get flyout mode.Summary-->**OBJECT Get flyout mode** returns the current flyout mode of a drop-down list object.<!-- END REF--> 
+
+If you specify the optional *\** parameter, you indicate an object name (a string) in *object*. If you omit the optional \* parameter, you indicate a field or a variable in *object*. In this case, you specify a field or form variable reference.
+
 
 The current flyout mode of a drop-down list can have been be [set at the form level](../../FormObjects/properties_Display.md#flyout-mode) in the Property list, or for the current process using the [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) command.
 

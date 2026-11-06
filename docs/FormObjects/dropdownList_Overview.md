@@ -94,11 +94,11 @@ Form.myDrop.index //3
 
 :::note Compatibility
 
-On Windows, item customization is only available in forms rendererd with [FluentID](../FormEditor/forms.md#fluent-ui-rendering).
+On Windows, item customization is only available in forms rendererd with [Fluent UI](../FormEditor/forms.md#fluent-ui-rendering).
 
 :::
 
-Inside the `values` collection of objects, each object entry can define item-level presentation and behavior:
+Inside the `values` collection of objects, each entry be either a scalar value or an object which can define item-level presentation and behavior:
 
 |Item property|Type|Description|
 |---|---|---|
@@ -113,7 +113,7 @@ Inside the `values` collection of objects, each object entry can define item-lev
 #### Rendering and precedence rules
 
 - If `separator = true`, the item is always rendered as a non-selectable divider. In this case `value`, `selectable`, `picture`, `color`, `fontWeight`, and `fontStyle` are ignored.
-- A text value of "-" is a regular label, **not** a separator.
+- A "-" scalar text value is interpreted as a separator (compatibility). A "-" as a `.value` property in an object entry is interpreted as a regular label, not a separator. 
 - If `value` is omitted and `separator` is not `true`, the item has no text label.
 - `color`, `fontWeight`, and `fontStyle` are applied only when a `value` is displayed.
 - If `selectable` is omitted, it behaves as `true`.
@@ -134,11 +134,9 @@ For non-separator items with a `picture`:
 - Right-aligned items: picture is displayed on the right of the value.
 - If `value` is omitted, the picture is displayed alone.
 
-:::note Exception
+:::note Technical limitation
 
- The picture is always displayed **on the left** (technical limitations):
- - with hierarchical list data source on Windows and macOS, 
- - with custom items in non-hierarchical `List` data source on macOS.
+ The picture is always displayed **on the left** with hierarchical list data source on Windows or macOS.
 
 :::
 
@@ -177,7 +175,7 @@ After the user selects a value:
 ![](../assets/en/FormObjects/dropdown-example-2.png)
 
 ```4d
-//Form.myDrop.currentValue = {"value":"Normal","fontWeight":"bold"}
+//Form.myDrop.currentValue = "Normal"
 //Form.myDrop.index = 2 
 ```
 

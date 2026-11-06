@@ -19,7 +19,7 @@ displayed_sidebar: docs
 | styles | Integer | &#8592; | Font style for the item |
 | icon | Text, Integer | &#8592; | Picture name or number |
 | color | Integer | &#8592; | RGB color value |
-| selectable | Boolean | &#8592; | True if the item is selectable (drop-down with List data source only) |
+| selectable | Boolean | &#8592; | True if the item is selectable (drop-down list only) |
 </div>
 <!-- END REF-->
 
@@ -58,14 +58,17 @@ After the call:
    * If the icon has been specified using a picture file, the command returns in *icon* the pathname using the **path:<filesystem path>** pattern.  
    * If the icon has been specified using a library picture (binary databases only), the command returns either the number or the name of the picture, depending on the type of variable passed in this parameter. The following pattern is used for a name: **pictlib:<name>**. If you do not attribute a specific type to the *icon* variable, by default, the name of the picture is returned (text). If no icon is associated with the item, the command returns a blank value.  
          
-   **Note:** You can retrieve, in a picture variable, the icon associated with an item using the [GET LIST ITEM ICON](../commands/get-list-item-icon) command*.*
+   **Note:** You can retrieve, in a picture variable, the icon associated with an item using the [GET LIST ITEM ICON](../commands/get-list-item-icon) command.
 * *color* returns the color of the text of the item specified.
-* *selectable* returns whether the item is selectable in the drop-down. This parameter is only significant when `GET LIST ITEM PROPERTIES` targets a [drop-down list object](../../FormObjects/dropdownList_Overview.md) whose [data source type](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) is **List**. It does not apply to drop-down lists bound to object or array data sources. 
-
-
+* *selectable* returns whether the item is selectable in a drop-down list. 
 
 For details about these properties, see the description of the command [`SET LIST ITEM PROPERTIES`](../commands/set-list-item-properties).
 
+:::note About drop-down lists
+
+`GET LIST ITEM PROPERTIES` can be only be used with [drop-down list objects](../../FormObjects/dropdownList_Overview.md) whose [data source types](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) are **List**. Parameters do not apply to drop-down lists bound to other data source types such as object or array. 
+
+:::
 
 ## See also 
 
