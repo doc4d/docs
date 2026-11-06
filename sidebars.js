@@ -117,7 +117,29 @@ module.exports =
         "code-editor/write-class-method",
         "Project/components",
         "Project/compiler",
-        "Desktop/building",
+        {
+          type: "category",
+          label: "Application Builder",
+          items: [
+            "Desktop/building",
+            {
+              type: "category",
+              label: "XML keys",
+              link: {
+                type: "doc",
+                id: "BuildApplication/overview"
+              },
+              items: [
+                "BuildApplication/general",
+                "BuildApplication/client-server",
+                "BuildApplication/source-files",
+                "BuildApplication/versioning",
+                "BuildApplication/auto-update",
+                "BuildApplication/licenses-signature"
+              ]
+            }
+          ]
+        },
           {
            type: "category",
            label: "Debugging",

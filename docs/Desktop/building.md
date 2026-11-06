@@ -14,7 +14,7 @@ The application builder allows you to:
 * Build client-server applications with automatic updating of client and server parts.
 * Save your build settings for future use (*Save settings* button).
 
-> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. However, you can build specific applications that support local modifications by using the `PackProject` XML key (see [doc.4d.com](https://doc.4d.com)).
+> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. However, you can build specific applications that support local modifications by using the [`PackProject`](../BuildApplication/general.md#packproject) XML key.
 
 ## Overview
 
@@ -48,7 +48,7 @@ Each build application parameter is stored as an XML key in the application proj
 
 Default parameters are used the first time the Build Application dialog box is used. The contents of the project file are updated, if necessary, when you click **Build** or **Save settings**. You can define several other XML settings file for the same project and employ them using the [`BUILD APPLICATION`](../commands/build-application) command.
 
-XML keys provide additional options besides those displayed in the Build Application dialog box. The description of these keys are detailed in the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-6335734.en.html) manual.
+XML keys provide additional options besides those displayed in the Build Application dialog box. These keys are described in the [Build Application XML keys](../BuildApplication/overview.md) section.
 
 ### Log file
 
@@ -88,7 +88,7 @@ This feature creates a *.4dz* file within a `Compiled Database/<project name>` f
 
 A .4dz file is essentially a zipped (packed) version of the project folder. .4dz files can be used by 4D Server, 4D Volume Desktop (merged applications), and 4D. The compact and optimized size of .4dz files makes project packages easy to deploy.  
 
-> When generating .4dz files, 4D uses a **standard** zip format by default. The advantage of this format is that it is easily readable by any unzip tool. If you do not want to use this standard format, add the `UseStandardZipFormat` XML key with value `False` in your [`buildApp.4DSettings`](#buildapp4dsettings) file (for more information, see the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-6335734.en.html) manual).
+> When generating .4dz files, 4D uses a **standard** zip format by default. The advantage of this format is that it is easily readable by any unzip tool. If you do not want to use this standard format, add the [`UseStandardZipFormat`](../BuildApplication/general.md#usestandardzipformat) XML key with value `False` in your [`buildApp.4DSettings`](#buildapp4dsettings) file.
 
 #### Include related folders
 
@@ -112,8 +112,8 @@ The *Contents* folder contains:
 * A *Resources* folder - any associated Resources are automatically copied into this folder. Any other components and/or plugins folders are not copied (a component cannot use plug-ins or other components).
 * An *Info.plist* file - this file is required to build [notarizeable and stapleable](#about-notarization) components for macOS (it is ignored on Windows). If an *Info.plist* file already [exists at the root of the component](../Extensions/develop-components.md#infoplist) it is merged, otherwise a default file is created. The following [Apple bundle keys](https://developer.apple.com/documentation/bundleresources/information-property-list) are prefilled:
   - `CFBundleDisplayName` and `CFBundleName` for the application name,
-  - `NSHumanReadableCopyright`, can be [set using an XML key](https://doc.4d.com/4Dv20/4D/20/CommonCopyright.300-6335859.en.html).
-  - `CFBundleShortVersionString` and `CFBundleVersion` for the application version (x.x.x format, e.g. 1.0.5), can be [set using an XML key](https://doc.4d.com/4Dv20/4D/20/CommonVersion.300-6335858.en.html). 
+  - `NSHumanReadableCopyright`, can be [set using an XML key](../BuildApplication/versioning.md#copyright).
+  - `CFBundleShortVersionString` and `CFBundleVersion` for the application version (x.x.x format, e.g. 1.0.5), can be [set using an XML key](../BuildApplication/versioning.md#version). 
 
 
 ## Application page
@@ -231,7 +231,7 @@ Only the client portion can connect to the corresponding server portion. If a us
 
 :::note
 
-If you want client/server connections to be made in [TLS](../Admin/tls.md), simply check the [appropriate setting](../settings/client-server.md#encrypt-client-server-communications). If you wish to use a custom certificate, please consider using the [`CertificateAuthoritiesCertificates`](https://doc.4d.com/4Dv20R8/4D/20-R8/CertificateAuthoritiesCertificates.300-7479862.en.html).
+If you want client/server connections to be made in [TLS](../Admin/tls.md), simply check the [appropriate setting](../settings/client-server.md#encrypt-client-server-communications). If you wish to use a custom certificate, please consider using the [`CertificateAuthoritiesCertificates`](../BuildApplication/client-server.md#certificateauthoritiescertificates) XML key.
 
 :::
 
@@ -540,7 +540,7 @@ An internet connection is required on the user machine at the first launch of th
 :::note Notes
 
 - The [`License info`](../commands/license-info) command allows you to know the application license type (*.attributes* collection) and its expiration date (*.expirationDate* object).
-- The BuildApplication [`EvaluationMode`](https://doc.4d.com/4Dv20R8/4D/20-R8/EvaluationMode.300-7542468.en.html) xml key allows you to manage evaluation versions.
+- The BuildApplication [`EvaluationMode`](../BuildApplication/licenses-signature.md#evaluationmode) xml key allows you to manage evaluation versions.
 - The [`CHANGE LICENSES`](../commands/change-licenses) command does nothing when called from an evaluation version. 
 
 :::
@@ -548,7 +548,7 @@ An internet connection is required on the user machine at the first launch of th
 
 #### Application automatically embedding available licenses
 
-Select this option to build a ready-to-use application (stand-alone or client-server), embedding automatically available [deployment licenses](../Admin/licenses.md#deployment-licenses). 
+Select this option to build a ready-to-use application (stand-alone or client-server), embedding automatically available [deployment licenses](../Admin/licenses.md#deployment-licenses). This option corresponds to the [`AutomaticLicenseIntegration`](../BuildApplication/licenses-signature.md#automaticlicenseintegration) XML key. 
 
 When building the application, 4D will automatically integrate necessary license(s) found in the [Licenses folder](../commands/get-4d-folder#licenses-folder) of the machine. If several valid licenses are available, 4D will use the most appropriate, in the following order:
 
@@ -642,7 +642,7 @@ For more information on the stapling concept, please read [this Apple forum post
 
  Your icon file must have the same name as the project file and include the *.ico* extension. 4D automatically takes this file into account when building the double-clickable application.
 
-You can also set specific [XML keys](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-6335734.en.html) in the buildApp.4DSettings file to designate each icon to use. The following keys are available:
+You can also set specific [XML keys](../BuildApplication/source-files.md) in the buildApp.4DSettings file to designate each icon to use. The following keys are available:
 
 * RuntimeVLIconWinPath
 * RuntimeVLIconMacPath
@@ -759,12 +759,12 @@ userPrefs:=Get 4D folder(Active 4D Folder)
 
 This mechanism addresses the case where the primary targeted server is temporary unavailable for some reason (maintenance mode for example). When this case occurs for the first time, the server selection dialog box is displayed (if allowed, see below) and the user can manually select an alternate server, whose path is then saved if the connection is successful. Any subsequent unavailability would be handled automatically through the "lastServer.xml" path information.
 
-> * When client applications cannot permanently benefit from the discovery service, for example because of the network configuration, it is recommended that the developer provide a host name at build time using the [IPAddress](https://doc.4d.com/4Dv20/4D/20/IPAddress.300-6335763.en.html) key in the "BuildApp.4DSettings" file. The mechanism addresses cases of temporary unavailability.  
+> * When client applications cannot permanently benefit from the discovery service, for example because of the network configuration, it is recommended that the developer provide a host name at build time using the [IPAddress](../BuildApplication/client-server.md#ipaddress) key in the "BuildApp.4DSettings" file. The mechanism addresses cases of temporary unavailability.  
 > * Pressing the **Alt/Option** key at startup to display the server selection dialog box is still supported in all cases.
 
 ### Availability of the server selection dialog box in case of error
 
-You can choose whether or not to display the standard server selection dialog box on merged client applications when the server cannot be reached. The configuration depends on the value of the [ServerSelectionAllowed](https://doc.4d.com/4Dv20/4D/20/ServerSelectionAllowed.300-6335767.en.html) XML key on the machine where the application was built:
+You can choose whether or not to display the standard server selection dialog box on merged client applications when the server cannot be reached. The configuration depends on the value of the [ServerSelectionAllowed](../BuildApplication/client-server.md#serverselectionallowed) XML key on the machine where the application was built:
 
 * **Display of an error message with no access possible to the server selection dialog box**. Default operation. The application can only quit.  
 `ServerSelectionAllowed`: **False** or key omitted
@@ -781,7 +781,7 @@ In principle, updating server applications or merged single-user applications re
 
 You can automate this procedure to a large extent using the following language commands: [`SET UPDATE FOLDER`](../commands/set-update-folder), [`RESTART 4D`](../commands/restart-4d), and also [`Last update log path`](../commands/last-update-log-path) for monitoring operations. The idea is to implement a function in your 4D application triggering the automatic update sequence described below. It can be a menu command or a process running in the background and checking at regular intervals for the presence of an archive on a server.
 
-> You also have XML keys to elevate installation privileges so that you can use protected files under Windows (see the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-6335734.en.html) manual).
+> You also have XML keys to elevate installation privileges so that you can use protected files under Windows (see the [AutoUpdate XML keys](../BuildApplication/auto-update.md)).
 
 Here is the scenario for updating a server or merged single-user application:
 
