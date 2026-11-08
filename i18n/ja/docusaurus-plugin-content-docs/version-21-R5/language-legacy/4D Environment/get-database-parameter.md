@@ -778,7 +778,7 @@ QUERY BY FORMULA Joinsセレクタで、カレントプロセスの、フォー�
 
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **スコープ**: 4D Server アプリケーション
 

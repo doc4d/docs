@@ -1197,7 +1197,7 @@ Refer to example 2.
 **Note:** If you want to be able to enable "SQL type" joins (see the QUERY BY FORMULA Joins selector), you must always execute formulas on the server so that they have access to the records. Be careful, in this context, the formula must not contain any calls to a method, otherwise it will automatically be switched to the remote machine.
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **Scope**: 4D Server application
 

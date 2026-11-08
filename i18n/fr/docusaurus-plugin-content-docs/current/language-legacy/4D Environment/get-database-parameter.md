@@ -23,7 +23,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
-|21 R4|Ajout de *QUIC session timeout* |
+|21 R4|Ajout de *QUIC Connection Timeout* |
 |21 R3|Suppression Use legacy network protocol|
 |20 R6|Modifié|
 |19 R5|Modifié|
@@ -778,7 +778,7 @@ Reportez-vous à l'exemple 2.
 
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **Portée** : Application 4D Server
 

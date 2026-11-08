@@ -23,7 +23,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
-|21 R4|Añadido *QUIC session timeout*|
+|21 R4|Añadido *QUIC Connection Timeout*|
 |21 R3|Modified|
 |20 R6|Modificado|
 |19 R5|Modificado|
@@ -1206,7 +1206,7 @@ Consulte el ejemplo 2.
 
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **Alcance**: aplicación 4D Server
 

@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
-|21 R4|*QUIC session timeout* を追加|
+|21 R4|*QUIC Connection Timeout* を追加|
 |21 R3|*Use legacy network layer* のサポートを削除、*Use legacy print rendering* を追加|
 |20 R6|変更|
 |20 R3|変更|
@@ -783,7 +783,7 @@ QUERY BY FORMULA Joinsセレクタで、カレントプロセスの、フォー�
 
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **スコープ**: 4D Server アプリケーション
 

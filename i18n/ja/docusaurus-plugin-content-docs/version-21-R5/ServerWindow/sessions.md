@@ -177,7 +177,7 @@ QUIC ネットワークレイヤーは、リモート4D が予期せず対応で
 
 ### 接続の復元または解除
 
-QUIC セッションのタイムアウトはデフォとでは900 秒(15分) となっており、これは[`SET DATABASE PARAMETER`](../commands/set-database-parameter) コマンドの`QUIC session timeout` セレクターを使用することで変更することができます。
+QUIC セッションのタイムアウトはデフォとでは900 秒(15分) となっており、これは[`SET DATABASE PARAMETER`](../commands/set-database-parameter) コマンドの`QUIC Connection Timeout` セレクターを使用することで変更することができます。
 
 QUIC セッションタイムアウトは、接続解除をモニターするために以下の様に自動的に使用されます:
 

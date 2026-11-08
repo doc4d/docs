@@ -984,7 +984,7 @@ Esse seletor permite suspender/retomar todas as operações de histórico inicia
 
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **Alcance**: aplicação 4D Server
 

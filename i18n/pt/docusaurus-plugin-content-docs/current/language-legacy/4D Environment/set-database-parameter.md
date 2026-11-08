@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
-|21 R4|Adicionado *QUIC session timeout*|
+|21 R4|Adicionado *QUIC Connection Timeout*|
 |21 R3|Removido suporte a *Use legacy network layer*, adicionado *Use legacy print rendering*|
 |20 R6|Modificado|
 |20 R3|Modificado|
@@ -984,7 +984,7 @@ Esse seletor permite suspender/retomar todas as operações de histórico inicia
 
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **Alcance**: aplicação 4D Server
 

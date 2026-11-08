@@ -210,7 +210,7 @@ When the "Unreachable" event is received on either side, an [`info.unreachableSi
 
 ### Restoring or closing connection
 
-The QUIC session timeout is 900 seconds (15 minutes) by default, it can be modified using the `QUIC session timeout` selector of the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command. 
+The QUIC session timeout is 900 seconds (15 minutes) by default, it can be modified using the `QUIC Connection Timeout` selector of the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command. 
 
 The QUIC session timeout is automatically used to monitor disconnections:
 

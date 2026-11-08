@@ -177,7 +177,7 @@ Cuando el evento "Unreachable" es recibido en ambos lados, una propiedad [`info.
 
 ### Restablecer o cerrar la conexión
 
-El tiempo de espera de la sesión QUIC es de 900 segundos (15 minutos) por defecto, pero se puede modificar utilizando el selector `QUIC session timeout` del comando [`SET DATABASE PARAMETER`](../commands/set-database-parameter).
+El tiempo de espera de la sesión QUIC es de 900 segundos (15 minutos) por defecto, pero se puede modificar utilizando el selector `QUIC Connection Timeout` del comando [`SET DATABASE PARAMETER`](../commands/set-database-parameter).
 
 El tiempo de espera de la sesión QUIC se utiliza automáticamente para supervisar las desconexiones:
 

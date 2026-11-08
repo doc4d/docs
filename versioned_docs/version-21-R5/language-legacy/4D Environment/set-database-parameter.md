@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R4|Added *QUIC session timeout* |
+|21 R4|Added *QUIC Connection Timeout* |
 |21 R3|Removed support of *Use legacy network layer*, added *Use legacy print rendering* |
 |20 R6|Modified|
 |20 R3|Modified|
@@ -806,7 +806,7 @@ Refer to example 2.
 **Note:** If you want to be able to enable "SQL type" joins (see the QUERY BY FORMULA Joins selector), you must always execute formulas on the server so that they have access to the records. Be careful, in this context, the formula must not contain any calls to a method, otherwise it will automatically be switched to the remote machine.
 
 
-### QUIC session timeout (135)
+### QUIC Connection Timeout (135)
 
 **Scope**: 4D Server application
 
