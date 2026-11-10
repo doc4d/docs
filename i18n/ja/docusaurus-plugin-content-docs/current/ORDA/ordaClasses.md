@@ -58,13 +58,13 @@ ORDA データモデルユーザークラスのオブジェクトインスタン
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                                                                                                           |
-| ----- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 21 R6 | Support for the `MCP` keyword. New reserved `mcpAuthenticated()` and `mcpGrant()` DataStore class functions. |
-| 21 R3 | `server` キーワードのサポート。                                                                                                                         |
-| 19 R4 | Entity クラスのエイリアス属性                                                                                                                           |
-| 19 R3 | Entity クラスの計算属性                                                                                                                              |
-| 18 R5 | データモデルクラス関数は、デフォルトでは REST に公開されません。新しい `exposed` および `local` キーワード。                                                                          |
+| リリース  | 内容                                                                          |
+| ----- | --------------------------------------------------------------------------- |
+| 21 R6 | `MCP` キーワードのサポート。新しい予約された`mcpAuthenticated()` および `mcpGrant()` データストアクラス関数。 |
+| 21 R3 | `server` キーワードのサポート。                                                        |
+| 19 R4 | Entity クラスのエイリアス属性                                                          |
+| 19 R3 | Entity クラスの計算属性                                                             |
+| 18 R5 | データモデルクラス関数は、デフォルトでは REST に公開されません。新しい `exposed` および `local` キーワード。         |
 
 </details>
 
@@ -77,7 +77,7 @@ ORDA データモデルユーザークラスのオブジェクトインスタン
 
 DataStore クラス内には、`ds` オブジェクトを介して使用する関数を作成することができます。
 
-The `mcpAuthenticated()` and `mcpGrant()` function names are reserved for the [MCP server](../WebServer/mcp-server.md) (see [`Function mcpAuthenticated`](#function-mcpauthenticated) and [`Function mcpGrant`](#function-mcpgrant)).
+`mcpAuthenticated()` および `mcpGrant()` 関数名は[MCP サーバー](../WebServer/mcp-server.md) ([`Function mcpAuthenticated`](#function-mcpauthenticated) および [`Function mcpGrant`](#function-mcpgrant) 参照) のために予約されています。
 
 #### 例題
 
@@ -1104,9 +1104,9 @@ exposed onHTTPGet Function getThumbnail($name : Text; $width : Integer; $height 
 IP:port/rest/Products/getThumbnail?$params='["Yellow Pack",200,200]'
 ```
 
-## MCP functions
+## MCP関数
 
-The [MCP server](../WebServer/mcp-server.md) of the 4D Web Server publishes data model class functions as tools for AI clients, and calls specific functions of the DataStore class to authenticate the clients.
+4D Web サーバーの[MCP サーバー](../WebServer/mcp-server.md) はAI クライアント用のツールとしてデータモデルクラス関数を公開し、クライアントを認証するためにデータストアクラスの特定の関数を呼び出します。
 
 ### `exposed MCP Function`
 
@@ -1114,27 +1114,27 @@ The [MCP server](../WebServer/mcp-server.md) of the 4D Web Server publishes data
 
 ```4d
 exposed MCP Function <functionName>({$parameterName : type; ...}){->$parameterName : type}
-// code
+// コード
 ```
 
-The `MCP` keyword publishes an exposed function as a [custom tool](../WebServer/mcp-server.md#custom-tools) of the MCP server. It is a second opt-in on top of the `exposed` keyword:
+`MCP` キーワードを使用すると、公開された関数をMCP サーバーの[カスタムツール](../WebServer/mcp-server.md#カスタムツール) として公開します。これは`exposed` キーワードを使用した上でさらに明示的に指定する必要があるオプトインです:
 
-- a function declared `exposed` without `MCP` can be called by REST requests but is not an MCP tool,
-- a function declared with `MCP` but without `exposed` is not published at all.
+- `exposed` と宣言されている関数で`MCP` と宣言されていないものはREST リクエストで呼び出し可能ですがMCP ツールではありません
+- `MCP` で宣言されている関数で`exposed` の宣言がないものは、どのような意味でも公開されていません。
 
-The `MCP` keyword is supported in the following classes:
+`MCP` キーワードは以下のクラスにおいてサポートされています:
 
-- the DataStore class: the tool name is the function name,
-- DataClass classes and Entity classes: the tool name is `ClassName-functionName`,
-- shared [singleton classes](../Concepts/classes.md#singleton-classes): the tool name is `ClassName-functionName`.
+- データストアクラス: ツール名は関数名です
+- データクラスクラスおよびエンティティクラス: ツール名は`ClassName-functionName` です
+- 共有[シングルトンクラス](../Concepts/classes.md#singleton-classes): ツール名は`ClassName-functionName` です。
 
-Functions of EntitySelection classes are not published.
+エンティティセレクションクラスの関数は公開されません。
 
-The [comment block](../Concepts/classes.md#function-comments) written above the declaration describes the tool and its parameters for the AI client. The client can call the tool if its session has the **execute** permission on the function in the [`roles.json`](privileges.md#rolesjson-file) file, as for a REST request.
+宣言文の上に書かれた[コメントブロック](../Concepts/classes.md#関数コメント) はAI クライアント用のツールとその引数を記述します。クライアントは、そのセッションがREST リクエストに対して[`roles.json`](privileges.md#rolesjson-file) ファイル内において関数の**execute** 許可を持っていた場合にはそのツールを呼び出すことができます。
 
-**Entity class functions**
+**エンティティクラス関数**
 
-A tool published from an Entity class function gets a required `key` argument (string or integer): the primary key of the entity on which the function is called. 4D loads this entity as `This`, with the **read** permission of the dataclass and its [restriction filter](entities.md#restricting-entity-selections). If the entity cannot be found or read, the call returns the "Entity not found" error and the function does not run.
+エンティティクラス関数から公開されるツールは、必須の`key` 引数を受け取ります(文字列または整数): これは関数が呼び出されたエンティティのプライマリーキーです。 4D loads this entity as `This`, with the **read** permission of the dataclass and its [restriction filter](entities.md#restricting-entity-selections). If the entity cannot be found or read, the call returns the "Entity not found" error and the function does not run.
 
 An Entity class function that declares a `$key` parameter is not published, and 4D logs a message.
 
