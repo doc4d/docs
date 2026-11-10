@@ -592,7 +592,7 @@ Class constructor ($side : Integer)
   $area:=This.height*This.width
 ```
 
-## Function comments
+## 関数コメント
 
 You can document a class function or a class constructor with comment lines written right above its `Function` or `Class constructor` declaration. 4D reads this comment block and shows it in the code assistance of the [4D code editor](../code-editor/write-class-method.md#help-tips) and of VS Code (completion details, help tips, and signature help), together with the function signature. The same comments also provide the [MCP tool metadata](#mcp-tool-metadata) of the function.
 
