@@ -167,7 +167,7 @@ Excluding a module could prevent your built application from working as expected
 /Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
 ```
 
-Defines the [data linking mode](../Desktop/building.md#configuring-the-data-linking-mode) of the single-user application:
+Defines the [data linking mode](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) of the single-user application:
 
 | Value | Data file path lookup | Data file path storage |
 |---|---|---|

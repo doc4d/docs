@@ -2,12 +2,12 @@
 id: auto-update
 title: AutoUpdate
 sidebar_label: AutoUpdate
-sidebar_position: 5
+sidebar_position: 6
 description: "BuildApplication XML keys of the AutoUpdate node: elevate installation privileges of the updater."
 keywords: ["BuildApplication", "XML key", "AutoUpdate", "StartElevated", "updater"]
 ---
 
-These keys elevate the installation privileges, so that the "updater" utility can install [updated merged applications](../Desktop/building.md#automatic-updating-of-server-or-single-user-applications) in protected system locations. They are located under the `<AutoUpdate>` node.
+These keys elevate the installation privileges, so that the "updater" utility can install [updated merged applications](../Desktop/managing-updates.md) in protected system locations. They are located under the `<AutoUpdate>` node.
 
 When a key is set to True and the updater has to update an application in a protected location, a dialog box informs the user that administrator privileges are required, and allows them to log on with an administrator account.
 

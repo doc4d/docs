@@ -2,7 +2,7 @@
 id: versioning
 title: Versioning keys
 sidebar_label: Versioning
-sidebar_position: 4
+sidebar_position: 5
 description: "BuildApplication XML keys of the Versioning node: version number, copyright and file information of built applications."
 keywords: ["BuildApplication", "XML key", "Versioning", "version", "copyright"]
 ---

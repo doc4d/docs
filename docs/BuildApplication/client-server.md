@@ -2,7 +2,7 @@
 id: client-server
 title: Client/Server
 sidebar_label: Client/Server
-sidebar_position: 2
+sidebar_position: 3
 description: "BuildApplication XML keys of the CS node, related to client/server applications."
 keywords: ["BuildApplication", "XML key", "CS", "client/server"]
 ---
@@ -71,7 +71,7 @@ If True, client update applications, ready to download, are built for macOS and 
 
 **Values**: IP address or host name
 
-Address of the server. This key is not mandatory since 4D features internal network mechanisms, but it is required in some cases (WAN, specific port numbers, etc.). See [Management of client connections](../Desktop/building.md#management-of-client-connections).
+Address of the server. This key is not mandatory since 4D features internal network mechanisms, but it is required in some cases (WAN, specific port numbers, etc.). See [Management of client connections](../Desktop/merged-client-connections.md).
 
 The address is stored in the "EnginedServer.4Dlink" file, in the Database folder of the client application.
 
@@ -103,7 +103,7 @@ Configures the error dialog box displayed when the automatic connection mechanis
 - **True**: the dialog box gives access to the server selection window.
 - **False**: the dialog box does not give access to the server selection window.
 
-Pressing **Alt** (Windows) or **Option** (macOS) at startup always displays the server selection dialog box. See [Availability of the server selection dialog box in case of error](../Desktop/building.md#availability-of-the-server-selection-dialog-box-in-case-of-error).
+Pressing **Alt** (Windows) or **Option** (macOS) at startup always displays the server selection dialog box. See [Availability of the server selection dialog box in case of error](../Desktop/merged-client-connections.md#availability-of-the-server-selection-dialog-box-in-case-of-error).
 
 :::note
 
@@ -182,7 +182,7 @@ Maximum client version (for example 3). Later clients are prompted to upgrade. U
 
 ### LastDataPathLookup
 
-Defines the [data linking mode](../Desktop/building.md#configuring-the-data-linking-mode) of the server application:
+Defines the [data linking mode](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) of the server application:
 
 | Value | Data file path lookup | Data file path storage |
 |---|---|---|
@@ -190,7 +190,7 @@ Defines the [data linking mode](../Desktop/building.md#configuring-the-data-link
 | ByAppName | Most recent entry in *LastDataPath.xml* | User preferences |
 | ByAppPath | Entry whose *executablePath* matches the application path | User preferences |
 
-The same key exists for single-user applications: [RuntimeVL/LastDataPathLookup](./general.md#lastdatapathlookup).
+The same key exists for single-user applications: [RuntimeVL/LastDataPathLookup](./runtime-vl.md#lastdatapathlookup).
 
 ### MacCompiledDatabaseToWin
 

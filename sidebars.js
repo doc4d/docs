@@ -119,9 +119,12 @@ module.exports =
         "Project/compiler",
         {
           type: "category",
-          label: "Application Builder",
+          label: "Building Applications",
           items: [
             "Desktop/building",
+            "Desktop/data-file-configuration",
+            "Desktop/merged-client-connections",
+            "Desktop/managing-updates",
             {
               type: "category",
               label: "XML keys",
@@ -131,6 +134,7 @@ module.exports =
               },
               items: [
                 "BuildApplication/general",
+                "BuildApplication/runtime-vl",
                 "BuildApplication/client-server",
                 "BuildApplication/source-files",
                 "BuildApplication/versioning",
