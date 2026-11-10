@@ -2,7 +2,7 @@
 id: source-files
 title: Fichiers sources
 sidebar_label: Fichiers sources
-sidebar_position: 3
+sidebar_position: 4
 description: "Clés XML BuildApplication du nœud SourcesFiles : emplacements de 4D Volume Desktop et 4D Server, icônes, licences OEM."
 keywords: ["BuildApplication", "XML key", "SourcesFiles", "4D Volume Desktop", "icon"]
 ---

@@ -2,7 +2,7 @@
 id: versioning
 title: Chaves de versionamento
 sidebar_label: Versionamento
-sidebar_position: 4
+sidebar_position: 5
 description: "Chaves XML BuildApplication do nó Versioning: número de versão, copyright e informações de arquivo das aplicações geradas."
 keywords: ["BuildApplication", "XML key", "Versioning", "version", "copyright"]
 ---

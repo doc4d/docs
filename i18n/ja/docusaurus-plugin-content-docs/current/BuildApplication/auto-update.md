@@ -2,12 +2,12 @@
 id: auto-update
 title: AutoUpdate
 sidebar_label: AutoUpdate
-sidebar_position: 5
+sidebar_position: 6
 description: "AutoUpdate ノードの BuildApplication XML キー: アップデーターのインストール権限の昇格。"
 keywords: ["BuildApplication", "XML key", "AutoUpdate", "StartElevated", "updater"]
 ---
 
-これらのキーはインストール権限を昇格させ、"アップデーター" ユーティリティが [更新された組み込みアプリケーション](../Desktop/building.md#automatic-updating-of-server-or-single-user-applications) をシステムの保護された場所にインストールできるようにします。これらは `<AutoUpdate>` ノードの下に配置されます。
+これらのキーはインストール権限を昇格させ、"アップデーター" ユーティリティが [更新された組み込みアプリケーション](../Desktop/managing-updates.md) をシステムの保護された場所にインストールできるようにします。これらは `<AutoUpdate>` ノードの下に配置されます。
 
 キーが True に設定されていて、アップデーターが保護された場所にあるアプリケーションを更新する必要がある場合、管理者権限が必要であることをユーザーに知らせるダイアログボックスが表示され、管理者アカウントでログオンできるようになります。
 

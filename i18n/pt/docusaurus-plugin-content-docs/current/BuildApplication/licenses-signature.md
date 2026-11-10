@@ -2,7 +2,7 @@
 id: licenses-signature
 title: Licenças e assinatura
 sidebar_label: Licenças e assinatura
-sidebar_position: 6
+sidebar_position: 7
 description: "Chaves XML BuildApplication dos nós Licenses e SignApplication: licenças incorporadas e assinatura macOS."
 keywords: ["BuildApplication", "XML key", "Licenses", "SignApplication", "certificate", "signature"]
 ---

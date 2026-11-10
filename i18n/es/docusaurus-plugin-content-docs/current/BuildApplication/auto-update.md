@@ -2,12 +2,12 @@
 id: auto-update
 title: AutoUpdate
 sidebar_label: AutoUpdate
-sidebar_position: 5
+sidebar_position: 6
 description: "Llaves XML BuildApplication del nodo AutoUpdate: elevar los privilegios de instalación del updater."
 keywords: ["BuildApplication", "XML key", "AutoUpdate", "StartElevated", "updater"]
 ---
 
-Estas llaves elevan los privilegios de instalación, para que el programa utilitario "updater" pueda instalar las [aplicaciones fusionadas actualizadas](../Desktop/building.md#automatic-updating-of-server-or-single-user-applications) en ubicaciones protegidas del sistema. Se encuentran bajo el nodo `<AutoUpdate>`.
+Estas llaves elevan los privilegios de instalación, para que el programa utilitario "updater" pueda instalar las [aplicaciones fusionadas actualizadas](../Desktop/managing-updates.md) en ubicaciones protegidas del sistema. Se encuentran bajo el nodo `<AutoUpdate>`.
 
 Cuando una llave está en True y el updater tiene que actualizar una aplicación en una ubicación protegida, una caja de diálogo informa al usuario de que se requieren privilegios de administrador y le permite conectarse con una cuenta de administrador.
 

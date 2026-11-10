@@ -2,7 +2,7 @@
 id: versioning
 title: Clés de versionnage
 sidebar_label: Versionnage
-sidebar_position: 4
+sidebar_position: 5
 description: "Clés XML BuildApplication du nœud Versioning : numéro de version, copyright et informations de fichier des applications générées."
 keywords: ["BuildApplication", "XML key", "Versioning", "version", "copyright"]
 ---

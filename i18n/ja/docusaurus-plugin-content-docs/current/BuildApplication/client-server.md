@@ -2,7 +2,7 @@
 id: client-server
 title: クライアント/サーバー
 sidebar_label: クライアント/サーバー
-sidebar_position: 2
+sidebar_position: 3
 description: "クライアント/サーバーアプリケーションに関連する、CS ノードの BuildApplication XML キー。"
 keywords: ["BuildApplication", "XML key", "CS", "client/server"]
 ---
@@ -71,7 +71,7 @@ True の場合、ダウンロード可能なクライアント更新用アプリ
 
 **値**: IP アドレスまたはホスト名
 
-サーバーのアドレスです。4D には内部的なネットワーク機構が備わっているため、このキーは必須ではありませんが、場合によっては (WAN、特定のポート番号など) 必要となります。[クライアント接続の管理](../Desktop/building.md#management-of-client-connections) を参照してください。
+サーバーのアドレスです。4D には内部的なネットワーク機構が備わっているため、このキーは必須ではありませんが、場合によっては (WAN、特定のポート番号など) 必要となります。[クライアント接続の管理](../Desktop/merged-client-connections.md) を参照してください。
 
 アドレスは、クライアントアプリケーションの Database フォルダー内にある "EnginedServer.4Dlink" ファイルに保存されます。
 
@@ -103,7 +103,7 @@ SET DATABASE PARAMETER(Client Server Port ID;tempport)
 - **True**: ダイアログボックスからサーバー選択ウィンドウにアクセスできます。
 - **False**: ダイアログボックスからサーバー選択ウィンドウにアクセスできません。
 
-起動時に **Alt** (Windows) または **Option** (macOS) キーを押すと、常にサーバー選択ダイアログボックスが表示されます。[エラー時のサーバー選択ダイアログボックス使用の可・不可](../Desktop/building.md#availability-of-the-server-selection-dialog-box-in-case-of-error) を参照してください。
+起動時に **Alt** (Windows) または **Option** (macOS) キーを押すと、常にサーバー選択ダイアログボックスが表示されます。[エラー時のサーバー選択ダイアログボックス使用の可・不可](../Desktop/merged-client-connections.md#availability-of-the-server-selection-dialog-box-in-case-of-error) を参照してください。
 
 :::note
 
@@ -182,7 +182,7 @@ SET DATABASE PARAMETER(Client Server Port ID;tempport)
 
 ### LastDataPathLookup
 
-サーバーアプリケーションの [データリンクモード](../Desktop/building.md#configuring-the-data-linking-mode) を定義します:
+サーバーアプリケーションの [データリンクモード](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) を定義します:
 
 | 値 | データファイルパスの検索 | データファイルパスの保存先 |
 |---|---|---|

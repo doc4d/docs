@@ -167,7 +167,7 @@ Excluir um módulo pode impedir que sua aplicação gerada funcione como esperad
 /Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
 ```
 
-Define o [modo de ligação de dados](../Desktop/building.md#configuring-the-data-linking-mode) da aplicação usuário único:
+Define o [modo de ligação de dados](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) da aplicação usuário único:
 
 | Valor | Busca do caminho do arquivo de dados | Armazenamento do caminho do arquivo de dados |
 |---|---|---|

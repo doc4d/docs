@@ -2,7 +2,7 @@
 id: client-server
 title: Cliente/Servidor
 sidebar_label: Cliente/Servidor
-sidebar_position: 2
+sidebar_position: 3
 description: "Llaves XML BuildApplication del nodo CS, relativas a las aplicaciones cliente/servidor."
 keywords: ["BuildApplication", "XML key", "CS", "client/server"]
 ---
@@ -71,7 +71,7 @@ Si es True, se generan para macOS y Windows aplicaciones de actualización de cl
 
 **Valores**: dirección IP o nombre de host
 
-Dirección del servidor. Esta llave no es obligatoria ya que 4D dispone de mecanismos de red internos, pero es necesaria en algunos casos (WAN, números de puerto específicos, etc.). Ver [Gestión de la conexión de las aplicaciones clientes](../Desktop/building.md#management-of-client-connections).
+Dirección del servidor. Esta llave no es obligatoria ya que 4D dispone de mecanismos de red internos, pero es necesaria en algunos casos (WAN, números de puerto específicos, etc.). Ver [Gestión de la conexión de las aplicaciones clientes](../Desktop/merged-client-connections.md).
 
 La dirección se almacena en el archivo "EnginedServer.4Dlink", en la carpeta Database de la aplicación cliente.
 
@@ -103,7 +103,7 @@ Configura la caja de diálogo de error que se muestra cuando fallan los mecanism
 - **True**: la caja de diálogo da acceso a la ventana de selección del servidor.
 - **False**: la caja de diálogo no da acceso a la ventana de selección del servidor.
 
-Al presionar **Alt** (Windows) u **Opción** (macOS) al inicio, siempre se muestra la caja de diálogo de selección del servidor. Ver [Disponibilidad de la caja de diálogo de selección del servidor en caso de error](../Desktop/building.md#availability-of-the-server-selection-dialog-box-in-case-of-error).
+Al presionar **Alt** (Windows) u **Opción** (macOS) al inicio, siempre se muestra la caja de diálogo de selección del servidor. Ver [Disponibilidad de la caja de diálogo de selección del servidor en caso de error](../Desktop/merged-client-connections.md#availability-of-the-server-selection-dialog-box-in-case-of-error).
 
 :::note
 
@@ -182,7 +182,7 @@ Versión máxima del cliente (por ejemplo 3). Se invita a los clientes posterior
 
 ### LastDataPathLookup
 
-Define el [modo de enlace de datos](../Desktop/building.md#configuring-the-data-linking-mode) de la aplicación servidor:
+Define el [modo de enlace de datos](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) de la aplicación servidor:
 
 | Valor | Búsqueda de la ruta del archivo de datos | Almacenamiento de la ruta del archivo de datos |
 |---|---|---|

@@ -167,7 +167,7 @@ True または省略された場合、.4dz ファイルは標準の zip 形式�
 /Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
 ```
 
-シングルユーザーアプリケーションの [データリンクモード](../Desktop/building.md#configuring-the-data-linking-mode) を定義します:
+シングルユーザーアプリケーションの [データリンクモード](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) を定義します:
 
 | 値 | データファイルパスの検索 | データファイルパスの保存先 |
 |---|---|---|

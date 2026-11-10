@@ -43,7 +43,8 @@ Todas las llaves se encuentran bajo la raíz `<Preferences4D><BuildApp>`:
 
 | Página | Nodos XML |
 |---|---|
-| [General](./general.md) | `BuildApp`, `RuntimeVL` |
+| [General](./general.md) | `BuildApp` |
+| [RuntimeVL](./runtime-vl.md) | `RuntimeVL` |
 | [Cliente/Servidor](./client-server.md) | `CS` |
 | [Archivos fuente](./source-files.md) | `SourcesFiles/RuntimeVL`, `SourcesFiles/CS` |
 | [Versiones](./versioning.md) | `Versioning/Common`, `Versioning/RuntimeVL`, `Versioning/Client`, `Versioning/Server` |

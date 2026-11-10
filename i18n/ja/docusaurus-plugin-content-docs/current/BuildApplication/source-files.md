@@ -2,7 +2,7 @@
 id: source-files
 title: ソースファイル
 sidebar_label: ソースファイル
-sidebar_position: 3
+sidebar_position: 4
 description: "SourcesFiles ノードの BuildApplication XML キー: 4D Volume Desktop および 4D Server の場所、アイコン、OEM ライセンス。"
 keywords: ["BuildApplication", "XML key", "SourcesFiles", "4D Volume Desktop", "icon"]
 ---

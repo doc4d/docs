@@ -2,7 +2,7 @@
 id: versioning
 title: バージョン管理キー
 sidebar_label: バージョン管理
-sidebar_position: 4
+sidebar_position: 5
 description: "Versioning ノードの BuildApplication XML キー: ビルドされるアプリケーションのバージョン番号、著作権、ファイル情報。"
 keywords: ["BuildApplication", "XML key", "Versioning", "version", "copyright"]
 ---

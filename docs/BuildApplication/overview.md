@@ -43,7 +43,8 @@ All keys are located under the `<Preferences4D><BuildApp>` root:
 
 | Page | XML nodes |
 |---|---|
-| [General](./general.md) | `BuildApp`, `RuntimeVL` |
+| [General](./general.md) | `BuildApp` |
+| [RuntimeVL](./runtime-vl.md) | `RuntimeVL` |
 | [Client/Server](./client-server.md) | `CS` |
 | [Source files](./source-files.md) | `SourcesFiles/RuntimeVL`, `SourcesFiles/CS` |
 | [Versioning](./versioning.md) | `Versioning/Common`, `Versioning/RuntimeVL`, `Versioning/Client`, `Versioning/Server` |

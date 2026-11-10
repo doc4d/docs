@@ -1,6 +1,5 @@
 ---
 id: building
-slug: /BuildApplication/application-builder
 title: Application Builder
 ---
 

@@ -43,7 +43,8 @@ keywords: ["BuildApplication", "XML key", "buildApp.4DSettings", "BUILD APPLICAT
 
 | ページ | XML ノード |
 |---|---|
-| [一般](./general.md) | `BuildApp`, `RuntimeVL` |
+| [一般](./general.md) | `BuildApp` |
+| [RuntimeVL](./runtime-vl.md) | `RuntimeVL` |
 | [クライアント/サーバー](./client-server.md) | `CS` |
 | [ソースファイル](./source-files.md) | `SourcesFiles/RuntimeVL`, `SourcesFiles/CS` |
 | [バージョン管理](./versioning.md) | `Versioning/Common`, `Versioning/RuntimeVL`, `Versioning/Client`, `Versioning/Server` |

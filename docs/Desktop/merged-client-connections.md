@@ -1,6 +1,5 @@
 ---
 id: merged-client-connections
-slug: /BuildApplication/merged-client-connections
 title: Merged Client Connections
 ---
 

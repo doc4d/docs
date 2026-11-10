@@ -1,6 +1,5 @@
 ---
 id: data-file-configuration
-slug: /BuildApplication/data-file-configuration
 title: Data File Configuration
 ---
 

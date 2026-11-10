@@ -2,7 +2,7 @@
 id: licenses-signature
 title: ライセンスと署名
 sidebar_label: ライセンス＆署名
-sidebar_position: 6
+sidebar_position: 7
 description: "Licenses および SignApplication ノードの BuildApplication XML キー: 埋め込みライセンスと macOS 署名。"
 keywords: ["BuildApplication", "XML key", "Licenses", "SignApplication", "certificate", "signature"]
 ---

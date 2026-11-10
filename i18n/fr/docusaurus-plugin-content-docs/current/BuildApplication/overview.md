@@ -43,7 +43,8 @@ Toutes les clés sont situées sous la racine `<Preferences4D><BuildApp>` :
 
 | Page | Nœuds XML |
 |---|---|
-| [Général](./general.md) | `BuildApp`, `RuntimeVL` |
+| [Général](./general.md) | `BuildApp` |
+| [RuntimeVL](./runtime-vl.md) | `RuntimeVL` |
 | [Client/Serveur](./client-server.md) | `CS` |
 | [Fichiers sources](./source-files.md) | `SourcesFiles/RuntimeVL`, `SourcesFiles/CS` |
 | [Versionnage](./versioning.md) | `Versioning/Common`, `Versioning/RuntimeVL`, `Versioning/Client`, `Versioning/Server` |

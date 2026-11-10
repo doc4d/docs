@@ -2,7 +2,7 @@
 id: versioning
 title: Llaves de versiones
 sidebar_label: Versiones
-sidebar_position: 4
+sidebar_position: 5
 description: "Llaves XML BuildApplication del nodo Versioning: número de versión, copyright e información de archivo de las aplicaciones generadas."
 keywords: ["BuildApplication", "XML key", "Versioning", "version", "copyright"]
 ---

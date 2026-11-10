@@ -2,12 +2,12 @@
 id: auto-update
 title: AutoUpdate
 sidebar_label: AutoUpdate
-sidebar_position: 5
+sidebar_position: 6
 description: "Clés XML BuildApplication du nœud AutoUpdate : élévation des privilèges d'installation de l'updater."
 keywords: ["BuildApplication", "XML key", "AutoUpdate", "StartElevated", "updater"]
 ---
 
-Ces clés élèvent les privilèges d'installation, afin que l'utilitaire "updater" puisse installer les [applications fusionnées mises à jour](../Desktop/building.md#automatic-updating-of-server-or-single-user-applications) dans des emplacements système protégés. Elles sont situées sous le nœud `<AutoUpdate>`.
+Ces clés élèvent les privilèges d'installation, afin que l'utilitaire "updater" puisse installer les [applications fusionnées mises à jour](../Desktop/managing-updates.md) dans des emplacements système protégés. Elles sont situées sous le nœud `<AutoUpdate>`.
 
 Lorsqu'une clé est à True et que l'updater doit mettre à jour une application située dans un emplacement protégé, une boîte de dialogue informe l'utilisateur que des privilèges d'administrateur sont requis, et lui permet de se connecter avec un compte administrateur.
 

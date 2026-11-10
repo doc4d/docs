@@ -2,7 +2,7 @@
 id: client-server
 title: Cliente/Servidor
 sidebar_label: Cliente/Servidor
-sidebar_position: 2
+sidebar_position: 3
 description: "Chaves XML BuildApplication do nó CS, relativas às aplicações cliente/servidor."
 keywords: ["BuildApplication", "XML key", "CS", "client/server"]
 ---
@@ -71,7 +71,7 @@ Se True, as aplicações de atualização dos clientes, prontas para download, s
 
 **Valores**: endereço IP ou nome de host
 
-Endereço do servidor. Essa chave não é obrigatória, já que o 4D dispõe de mecanismos de rede internos, mas é necessária em alguns casos (WAN, números de porta específicos, etc.). Consulte [Gestão da(s) ligação(ões) cliente](../Desktop/building.md#management-of-client-connections).
+Endereço do servidor. Essa chave não é obrigatória, já que o 4D dispõe de mecanismos de rede internos, mas é necessária em alguns casos (WAN, números de porta específicos, etc.). Consulte [Gestão da(s) ligação(ões) cliente](../Desktop/merged-client-connections.md).
 
 O endereço é armazenado no arquivo "EnginedServer.4Dlink", na pasta Database da aplicação cliente.
 
@@ -103,7 +103,7 @@ Configura a caixa de diálogo de erro exibida quando os mecanismos de conexão a
 - **True**: a caixa de diálogo dá acesso à janela de seleção do servidor.
 - **False**: a caixa de diálogo não dá acesso à janela de seleção do servidor.
 
-Pressionar **Alt** (Windows) ou **Option** (macOS) na inicialização sempre exibe a caixa de diálogo de seleção do servidor. Consulte [Disponibilidade da caixa de diálogo de seleção do servidor em caso de erro](../Desktop/building.md#availability-of-the-server-selection-dialog-box-in-case-of-error).
+Pressionar **Alt** (Windows) ou **Option** (macOS) na inicialização sempre exibe a caixa de diálogo de seleção do servidor. Consulte [Disponibilidade da caixa de diálogo de seleção do servidor em caso de erro](../Desktop/merged-client-connections.md#availability-of-the-server-selection-dialog-box-in-case-of-error).
 
 :::note
 
@@ -182,7 +182,7 @@ Versão máxima do cliente (por exemplo 3). Os clientes posteriores são convida
 
 ### LastDataPathLookup
 
-Define o [modo de ligação de dados](../Desktop/building.md#configuring-the-data-linking-mode) da aplicação servidor:
+Define o [modo de ligação de dados](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) da aplicação servidor:
 
 | Valor | Busca do caminho do arquivo de dados | Armazenamento do caminho do arquivo de dados |
 |---|---|---|

@@ -167,7 +167,7 @@ L'exclusion d'un module peut empêcher votre application générée de fonctionn
 /Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
 ```
 
-Définit le [mode de liaison des données](../Desktop/building.md#configuring-the-data-linking-mode) de l'application monoposte :
+Définit le [mode de liaison des données](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) de l'application monoposte :
 
 | Valeur | Recherche du chemin du fichier de données | Stockage du chemin du fichier de données |
 |---|---|---|
