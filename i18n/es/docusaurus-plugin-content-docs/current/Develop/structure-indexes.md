@@ -24,26 +24,26 @@ Los campos indexados se muestran en el tipo **negrita** en el editor de estructu
 
 - **Índice estándar:** estos son índices de un solo campo utilizados para acelerar las operaciones estándar de bases de datos (búsquedas y ordenes). 4D le permite elegir la arquitectura interna de este tipo de índice (excepto los campos de objetos): B-Tree o Cluster B-Tree.
 - **Índice compuesto:** este índice almacena los valores combinados de dos o más campos que a menudo se buscan juntos, por ejemplo Apellido+Nombre.
-- **Keyword indexes:** These indexes are only available for Alpha, Text and Picture type fields. They are intended to facilitate fast searching inside text or, in the case of pictures, among the keywords associated with the pictures.
-- **Vector indexes**: These indexes are designed to accelerate AI-based queries on Object fields storing [embeddings](./field-properties.md#4dvector-class).
+- **Índice de palabras clave:** estos índices solo están disponibles para campos de tipo Alfa, Texto e Imagen. Su objetivo es facilitar la búsqueda rápida dentro del texto o, en el caso de las imágenes, entre las palabras clave asociadas a las imágenes.
+- **Índices vectoriales**: estos índices están diseñados para acelerar las consultas IA basadas en los campos objeto almacenando las [representaciones vectoriales](./field-properties.md#4dvector-class).
 
 ### Índices estándar
 
-A standard index is intended to accelerate database operations (a standard index refers to a generic index as opposed to a keyword or composite index). 4D offers two types of architectures for standard indexes: B-Tree and Cluster B-Tree.
+Un índice estándar está destinado a acelerar las operaciones de base de datos (un índice estándar se refiere a un índice genérico frente a una palabra clave o índice compuesto). 4D ofrece dos tipos de arquitecturas para índices estándar: B-Tree y Cluster B-Tree.
 
-- **B-Tree:** Standard B-Tree type index. This multipurpose index type meets most indexing requirements.
-- **Cluster B-Tree:** B-Tree type index using clusters. This architecture is more efficient when the index does not contain a large number of keys, i.e. when the same values occur frequently in the data.
+- **B-Tree:** Índice de tipo B-Tree estándar. Este tipo de índice polivalente satisface la mayoría de los requisitos de indexación.
+- **B-Clúster B-Tree:** índice de tipo B-Tree usando clusters. Esta arquitectura es más eficiente cuando el índice no contiene un gran número de llaves, es decir, cuando los mismos valores ocurren frecuentemente en los datos.
 
 :::note
 
-A B-Tree index associated with a Text type field stores the first 1024 characters of the field (maximum). Therefore in this context, searches for strings containing more than 1024 characters will fail.
+Un índice B-Tree asociado a un campo de tipo Texto almacena los primeros 1024 caracteres del campo (máximo). Por lo tanto, en este contexto, las búsquedas de cadenas que contengan más de 1024 caracteres fallarán.
 
 :::
 
-When you choose the index architecture, 4D also provides the Automatic option. In this case, 4D automatically selects the architecture according to the type of data concerned.
-The **Automatic** option is the only option available for Object type fields, except if you associated a 4D.Vector class to the field ([see below](#vector-index)). In fact, with the **Automatic** option, all attribute paths are automatically indexed.
+Cuando elige la arquitectura de índice, 4D también ofrece la opción Automática. En este caso, 4D selecciona automáticamente la arquitectura de acuerdo con el tipo de datos en cuestión.
+La opción **Automática** es la única opción disponible para campos de tipo Objeto, excepto si asoció una clase 4D.Vector al campo ([ver abajo](#vector-index)). De hecho, con la opción **Automático**, todas las rutas de atributos se indexan automáticamente.
 
-### Composite indexes
+### Índices compuestos
 
 Composite indexes store the combined values of two or more fields for each entry. The classic example is a composite index based on the FirstName+LastName fields. Searching for “Peter Smith” will therefore be optimized compared with a standard search (searching for “Smith” then searching for “Peter”).
 
