@@ -303,21 +303,20 @@ La classe de Dataclass `Students` possède la fonction `pushData()` qui reçoit 
 Class extends DataClass
 
 exposed Function pushData
-	var $1; $entity; $status; $0 : Object
+ var $1;$entity;$status;$0 : Object
 
-	$entity:=$1
+ $entity:=$1
 
-	$status:=checkData($entity) // $status is an object with a success boolean property
+ $status:=checkData($entity) // $status est un objet avec une propriété booléenne success
 
-	$0:=$status
+ $0:=$status
 
-	If ($status.success)
-	    $status:=$entity.save()
- 	   If ($status.success)
- 	       $0:=$entity
-  	  End if 
-	End if
-
+ If ($status.success)
+     $status:=$entity.save()
+     If ($status.success)
+         $0:=$entity
+     End if 
+ End if
 ```
 
 Lancez cette requête :
@@ -485,8 +484,8 @@ Class extends DataClass
 
 exposed Function setFinalExam()
 
-    var $1; $es; $student; $status : Object
-    var $2; $examResult : Text
+    var $1, $es, $student, $status : Object
+    var $2, $examResult : Text
 
     var $keys, $0 : Collection
 
@@ -497,7 +496,7 @@ exposed Function setFinalExam()
 
     $keys:=New collection()
 
-      //Loop on the entity selection
+      //Boucle sur la sélection d'entité
     For each ($student;$es)
         $student.finalExam:=$examResult
         $status:=$student.save()
@@ -551,15 +550,15 @@ A l'aide de la fonction `getAgeAverage()` [définie ci-dessus](#using-an-entitys
 var $remoteDS; $newStudent; $students : Object
 var $ageAverage : Integer
 
-$remoteDS:=Open datastore(New object("hostname";"127.0.0.1:8044");"students")
+$remoteDS:=Open datastore(New object("hostname" ; "127.0.0.1:8044") ; "students")
 
-// $newStudent is a student entity to procees
+// $newStudent est une entité étudiant à traiter
 $newStudent:=...
-$students:=$remoteDS.Students.query("school.name = :1";"Math school")
-// We add an entity to the $students entity selection on the client
-$students.add($newStudent) 
+$students:=$remoteDS.Students.query("school.name = :1" ; "Math school")
+// Nous ajoutons une entité à l'entity selection $students sur le client
+$students.add($newStudent)
 
-// We call a function on the StudentsSelection class returning the age average of the students in the entity selection
-// The function is executed on the server on the updated $students entity selection which included the student added from the client
+// Nous appelons une fonction de la classe StudentsSelection qui renvoie la moyenne d'âge des étudiants de l'entity selection
+// La fonction est exécutée sur le serveur dans l'entity selection $students mise à jour qui comprend l'étudiant ajouté par le client
 $ageAverage:=$students.getAgeAverage()
 ```
