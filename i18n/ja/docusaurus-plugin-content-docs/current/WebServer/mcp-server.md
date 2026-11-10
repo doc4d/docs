@@ -220,7 +220,7 @@ Requests are stateless, but 4D keeps one web session per token and caller IP add
 - Its privileges are those of the token. Then 4D calls the [`ds.mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated) function of your DataStore class, if defined, once per session: you can use it to fill [`Session.storage`](../API/SessionClass.md#storage) from the information stored with the token.
 - The session closes after the [inactivity timeout of web sessions](sessions.md#session-lifetime), when its token is revoked or expires, or when the MCP server is disabled. Its license is then released.
 
-### OAuth 2.1 mode
+### OAuth 2.1モード
 
 In OAuth mode, 4D is the OAuth authorization server: users log in from their AI client through a 4D login page, without any external identity provider. The OAuth mode is enabled when your DataStore class defines the [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) function. Fine-Grained Tokens remain accepted.
 
@@ -309,7 +309,7 @@ Function event restrict() : cs.OrderSelection
 	return Null // no filter for other sessions
 ```
 
-## Custom tools
+## カスタムツール
 
 You publish a class function as an MCP tool by declaring it with the `exposed` and `MCP` keywords:
 
@@ -420,7 +420,7 @@ exposed MCP Function getYearTotal($customerID : Integer; $year : Integer) : Real
 	return ds.Order.query("customer.ID = :1 and year = :2"; $customerID; $year).sum("amount")
 ```
 
-## Asking the user for confirmation
+## ユーザーに確認を求める
 
 A custom tool can ask the user to confirm an action or to provide values before running it. The [`MCP`](../commands/mcp) command returns the [`4D.MCPContext`](../API/MCPContextClass.md) object of the current call:
 
@@ -459,7 +459,7 @@ exposed MCP Function cancel() : Text
 	return This.status
 ```
 
-## Built-in CRUD tools
+## ビルトインCRUDツール
 
 The built-in CRUD tools let a client read and write the data of the datastore without custom code. They are listed when the session has at least one data permission (**read**, **create**, **update**, or **drop**) on a dataclass, and each call requires the corresponding permission:
 
@@ -548,7 +548,7 @@ var $webServer : 4D.WebServer:=WEB Server
 $webServer.quotas.nbRequestsPerMinPerSession:=60
 ```
 
-## Claude Desktop bundle
+## Claude デスクトップバンドル
 
 Claude Desktop runs local MCP servers over stdio and does not speak the `2026-07-28` revision. To let it reach a 4D server on the local network without exposing this server on the internet, 4D provides a reference **MCP Bundle** (`.mcpb` file). The bundle is a small Node.js adapter run by Claude Desktop:
 
