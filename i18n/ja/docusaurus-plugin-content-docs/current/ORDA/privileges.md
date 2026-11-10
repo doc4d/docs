@@ -45,7 +45,7 @@ When a permission entry references an undeclared [privilege](#privileges-and-rol
 
 :::
 
-### MCP tools
+### MCPツール
 
 The same permissions apply to the sessions of the [MCP server](../WebServer/mcp-server.md), with nothing specific to configure:
 
@@ -73,7 +73,7 @@ MCP clients authenticated with the "salesReader" privilege can read the Customer
 }
 ```
 
-### MCP tools
+### MCPツール
 
 The same permissions apply to the sessions of the [MCP server](../WebServer/mcp-server.md), with nothing specific to configure:
 
@@ -287,10 +287,16 @@ The project's web security settings are defined in `roles.json`:
 :::note 注記
 
 - The `WebAdmin` privilege name is reserved for the application; do not use it for custom privileges.
-- Privilege and role names are case-insensitive. Unknown names passed to [`.setPrivileges()`](../API/SessionClass.md#setprivileges) are ignored.
+- Privileges および roles の名称においては文字の大小が区別されません。 Unknown names passed to [`.setPrivileges()`](../API/SessionClass.md#setprivileges) are ignored.
 - Qodly Studio can add an optional `id` property to privileges and roles to preserve references when they are renamed.
 - Multiple entries with the same `applyTo` are not merged: the last entry wins without an error. Define only one entry per resource.
 - A resource entry that grants no actions has no effect.
+
+:::
+
+:::warning
+
+When a permission entry references an undeclared [privilege](#privileges-and-roles), 4D logs an error and ignores the entry. In this case, the permission is ignored. If the [restricted mode by default](#restriction-modes) is not enabled, the resource is accessible to `guest` sessions.
 
 :::
 
