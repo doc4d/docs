@@ -946,10 +946,8 @@ VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; $options.tableColumns.length; 1); 
 
 - レンジにカラムと行の両方が含まれる場合、カラムのみが削除されます。
 - レンジに行しか含まれていない場合、コマンドは何もしません。
-  &#062; カラムは右から左に向かって削除されます。
 
-> &#062; カラムは右から左に向かって削除されます。
-> &#062; カラムは右から左に向かって削除されます。
+> カラムは右から左に向かって削除されます。
 
 #### 例題
 
@@ -1056,7 +1054,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 | -------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | format               | text    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 You can use the following constants:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D adds the appropriate extension to the file name if needed. 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。                                                                                                                |
 | password             | text    | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| formula              | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).                                                                                                                                                                                                                                                                                                                                                                |
+| formula              | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 The callback method must be used with the [`Formula`](https://doc.4d.com/4dv20/help/command/en/page1597.html) command (see below for more information).                                                                                                                                                                                                                                                                                                                                                                |
 | valuesOnly           | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | includeFormatInfo    | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | includeBindingSource | Boolean | 4DVP および Microsoft Excel のみ。 true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したドキュメントのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。それ以外は false。セルバインドは常にエクスポートされます。データコンテキストおよびセルバインドの管理については、[VP SET DATA CONTEXT](#vp-set-data-context) および [VP SET BINDING PATH](#vp-set-binding-path) を参照ください。                                                                                                                                                                                                                                                                                                                                                                        |
@@ -1084,7 +1082,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 #### コールバックメソッド (フォーミュラ) の渡し方
 
-When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` command allows you to use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command to call a 4D method which will be executed once the export has completed. コールバックメソッドは、以下の値をローカル変数として受け取ります:
+When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` command allows you to use the [`Formula`](https://doc.4d.com/4dv20/help/command/en/page1597.html) command to call a 4D method which will be executed once the export has completed. コールバックメソッドは、以下の値をローカル変数として受け取ります:
 
 | 変数 |                               | 型       | 説明                                    |
 | -- | ----------------------------- | ------- | ------------------------------------- |
@@ -1336,10 +1334,10 @@ End if
 
 <div class="no-index">
 
-| 引数       | 型      |                             | 説明         |
-| -------- | ------ | --------------------------- | ---------- |
-| rangeObj | Object | ->                          | セルのレンジ     |
-| 戻り値      | Text   | <- | Table name |
+| 引数       | 型      |                             | 説明     |
+| -------- | ------ | --------------------------- | ------ |
+| rangeObj | Object | ->                          | セルのレンジ |
+| 戻り値      | Text   | <- | 表組みの名称 |
 
 </div>
 <!-- END REF -->
@@ -2734,7 +2732,7 @@ $styles:=VP Get stylesheets("ViewProArea")
 | 引数         | 型       |                             | 説明                                             |
 | ---------- | ------- | --------------------------- | ---------------------------------------------- |
 | vpAreaName | Text    | ->                          | 4D View Pro フォームオブジェクト名                        |
-| tableName  | Text    | ->                          | Table name                                     |
+| tableName  | Text    | ->                          | 表組みの名称                                         |
 | column     | Integer | ->                          | 表の列のインデックス                                     |
 | sheet      | Integer | ->                          | シートのインデックス (省略した場合はカレントシート) |
 | 戻り値        | Object  | <- | *column* の属性                                   |
@@ -2799,7 +2797,7 @@ End if
 | 引数         | 型       |                             | 説明                                             |
 | ---------- | ------- | --------------------------- | ---------------------------------------------- |
 | vpAreaName | Text    | ->                          | 4D View Pro フォームオブジェクト名                        |
-| tableName  | Text    | ->                          | Table name                                     |
+| tableName  | Text    | ->                          | 表組みの名称                                         |
 | columnName | Text    | ->                          | 列の名称                                           |
 | sheet      | Integer | ->                          | シートのインデックス (省略した場合はカレントシート) |
 | 戻り値        | Integer | <- | *columnName* のインデックス                           |
@@ -2853,13 +2851,13 @@ VP REMOVE TABLE COLUMNS($area; $tableName; $id)
 
 <div class="no-index">
 
-| 引数         | 型          |                             | 説明                                                                                 |
-| ---------- | ---------- | --------------------------- | ---------------------------------------------------------------------------------- |
-| vpAreaName | Text       | ->                          | 4D View Pro フォームオブジェクト名                                                            |
-| tableName  | Text       | ->                          | Table name                                                                         |
-| reset      | Boolean    | ->                          | 現在の表から "ダーティ" ステータスをクリアするには true、そのままにするには false を指定します。 デフォルト = true デフォルト = true |
-| sheet      | Integer    | ->                          | シートのインデックス (省略した場合はカレントシート)                                     |
-| 戻り値        | Collection | <- | 前回のリセット以降に変更された全項目を格納するオブジェクトのコレクション                                               |
+| 引数         | 型          |                             | 説明                                                                   |
+| ---------- | ---------- | --------------------------- | -------------------------------------------------------------------- |
+| vpAreaName | Text       | ->                          | 4D View Pro フォームオブジェクト名                                              |
+| tableName  | Text       | ->                          | 表組みの名称                                                               |
+| reset      | Boolean    | ->                          | 現在の表から "ダーティ" ステータスをクリアするには true、そのままにするには false を指定します。デフォルト = true |
+| sheet      | Integer    | ->                          | シートのインデックス (省略した場合はカレントシート)                       |
+| 戻り値        | Collection | <- | 前回のリセット以降に変更された全項目を格納するオブジェクトのコレクション                                 |
 
 </div>
 <!-- END REF -->
@@ -2923,7 +2921,7 @@ VP SET NUM VALUE(VP Cell("ViewProArea"; 0; 0); $dirty.length)
 | 引数         | 型       |                             | 説明                                                                         |
 | ---------- | ------- | --------------------------- | -------------------------------------------------------------------------- |
 | vpAreaName | Text    | ->                          | 4D View Pro フォームオブジェクト名                                                    |
-| tableName  | Text    | ->                          | Table name                                                                 |
+| tableName  | Text    | ->                          | 表組みの名称                                                                     |
 | onlyData   | Integer | ->                          | `vk table full range` (デフォルト) または `vk table data range` |
 | sheet      | Integer | ->                          | シートのインデックス (省略した場合はカレントシート)                             |
 | 戻り値        | Object  | <- | 表組みが含まれるレンジ                                                                |
@@ -2976,7 +2974,7 @@ VP SET NUM VALUE(VP Cell("ViewProArea"; 0; 0); $dirty.length)
 | 引数         | 型                                                                              |                             | 説明                      |
 | ---------- | ------------------------------------------------------------------------------ | --------------------------- | ----------------------- |
 | vpAreaName | Text                                                                           | ->                          | 4D View Pro フォームオブジェクト名 |
-| tableName  | Text                                                                           | ->                          | Table name              |
+| tableName  | Text                                                                           | ->                          | 表組みの名称                  |
 | 戻り値        | [cs.ViewPro.TableTheme](classes.md#tabletheme) | <- | 現在の表テーマのプロパティ値          |
 
 </div>
@@ -3253,14 +3251,14 @@ $workbookOptions:=VP Get workbook options("ViewProArea")
 
 任意の *paramObj* 引数を渡すことで、読み込まれるドキュメントのプロパティを定義することができます:
 
-| 引数         |                 | 型      | 説明                                                                                                                                                                                                |
-| ---------- | --------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| formula    |                 | object | 書き出し終了時に実行させるコールバックメソッド名。 The method must use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command. [コールバックメソッドの渡し方](#コールバックメソッド-フォーミュラ-の渡し方) を参照ください。 |
-| password   |                 | text   | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されているパスワード。                                                                                                                     |
-| csvOptions |                 | object | CSV読み込みのオプション                                                                                                                                                                                     |
-|            | range           | object | 書き出されるデータの、最初のセルを格納しているセルレンジ。指定されたレンジがセルレンジではない場合、レンジの最初のセルが使用されます。                                                                                                                               |
-|            | rowDelimiter    | text   | 行の区切り文字。渡されなかった場合、区切り文字は 4D によって自動的に定義されます。                                                                                                                                                       |
-|            | columnDelimiter | text   | カラムの区切り文字。デフォルト: ","                                                                                                                                                              |
+| 引数         |                 | 型      | 説明                                                                                                                                                                     |
+| ---------- | --------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| formula    |                 | object | 書き出し終了時に実行させるコールバックメソッド名。メソッドは、[`Formula`](https://doc.4d.com/4dv20/help/command/ja/page1597.html) コマンドを使用する必要があります。[コールバックメソッドの渡し方](#コールバックメソッド-フォーミュラ-の渡し方) を参照ください。 |
+| password   |                 | text   | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されているパスワード。                                                                                          |
+| csvOptions |                 | object | CSV読み込みのオプション                                                                                                                                                          |
+|            | range           | object | 書き出されるデータの、最初のセルを格納しているセルレンジ。指定されたレンジがセルレンジではない場合、レンジの最初のセルが使用されます。                                                                                                    |
+|            | rowDelimiter    | text   | 行の区切り文字。渡されなかった場合、区切り文字は 4D によって自動的に定義されます。                                                                                                                            |
+|            | columnDelimiter | text   | カラムの区切り文字。デフォルト: ","                                                                                                                                   |
 
 > CSV形式およびユーザー定義区切りの値 (DSV) に関する詳細については、こちらの [Wikipedia の記事](https://en.wikipedia.org/wiki/Delimiter-separated_values) (英文) を参照ください。
 
@@ -3461,7 +3459,7 @@ VP INSERT ROWS(VP Row("ViewProArea";0;3))
 | 引数          | 型       |    | 説明                                                   |
 | ----------- | ------- | -- | ---------------------------------------------------- |
 | vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                              |
-| tableName   | Text    | -> | Table name                                           |
+| tableName   | Text    | -> | 表組みの名称                                               |
 | column      | Integer | -> | 列の挿入場所を指定する表組み内のインデックス                               |
 | count       | Text    | -> | 挿入する列の数 (>0)                      |
 | insertAfter | Integer | -> | `vk table insert before` または `vk table insert after` |
@@ -3516,7 +3514,7 @@ VP INSERT ROWS(VP Row("ViewProArea";0;3))
 | 引数          | 型       |    | 説明                                                   |
 | ----------- | ------- | -- | ---------------------------------------------------- |
 | vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                              |
-| tableName   | Text    | -> | Table name                                           |
+| tableName   | Text    | -> | 表組みの名称                                               |
 | row         | Integer | -> | 行の挿入場所を指定する表組み内のインデックス                               |
 | count       | Text    | -> | 挿入する行の数 (>0)                      |
 | insertAfter | Integer | -> | `vk table insert before` または `vk table insert after` |
@@ -4047,7 +4045,8 @@ VP REMOVE SHEET("ViewProArea";2)
 
 </div>
 <!-- END REF -->
-#### Description
+
+#### 説明
 
 `VP REMOVE SPAN` コマンドは、<!-- REF #_method_.VP REMOVE SPAN.Summary -->*rangeObj* で指定したレンジ内のセル結合を解除します<!-- END REF -->。
 
@@ -4199,7 +4198,7 @@ VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 | 引数         | 型       |    | 説明                                             |
 | ---------- | ------- | -- | ---------------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                        |
-| tableName  | Text    | -> | Table name                                     |
+| tableName  | Text    | -> | 表組みの名称                                         |
 | column     | Integer | -> | 列の削除の開始場所を指定する表組み内のインデックス                      |
 | count      | Text    | -> | 削除する列の数 (>0)                |
 | sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |
@@ -4248,7 +4247,7 @@ VP REMOVE TABLE COLUMNS("ViewProArea"; "dataTable"; 3; 2)
 | 引数         | 型       |    | 説明                                             |
 | ---------- | ------- | -- | ---------------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                        |
-| tableName  | Text    | -> | Table name                                     |
+| tableName  | Text    | -> | 表組みの名称                                         |
 | row        | Integer | -> | 行の削除の開始場所を指定する表組み内のインデックス                      |
 | count      | Text    | -> | 削除する行の数 (>0)                |
 | sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |
@@ -5596,7 +5595,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 *formula* 引数に、*rangeObj* 引数のレンジに割り当てたいフォーミュラまたは 4Dメソッド名を指定します。
 
 > *formula* が文字列の場合、数値の区切り文字にピリオド `.` そして引数の区切り文字にカンマ `,` を使用します。
-> If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-methods) command.
+> 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-methods) コマンドで許可されている必要があります。
 
 任意の *formatPattern* 引数は、*formula* に対する [パターン](configuring.md#セルフォーマット) を定義します。
 
@@ -5656,7 +5655,7 @@ VP SET FORMULA($range;"SUM(A1,B7,C11)") // 引数の区切り文字に ","
 - それぞれのサブコレクションは行におけるセルの値を定義します。値は、セルに割り当てるフォーミュラを格納したテキスト要素でなくてはなりません。
 
 > フォーミュラが文字列の場合、数値の区切り文字にピリオド `.` そして引数の区切り文字にカンマ `,` を使用します。
-> If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-methods) command.
+> 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-methods) コマンドで許可されている必要があります。
 
 *rangeObj* 内のフォーミュラは、空の文字列 ("") で置き換えることで削除することができます。
 
@@ -6305,7 +6304,7 @@ VP SET SHOW PRINT LINES("ViewProArea";True;1)
 | 引数         | 型       |    | 説明                                             |
 | ---------- | ------- | -- | ---------------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                        |
-| tableName  | Text    | -> | Table name                                     |
+| tableName  | Text    | -> | 表組みの名称                                         |
 | column     | Integer | -> | 表の列のインデックス                                     |
 | attributes | Object  | -> | *column* の列に適用する属性                             |
 | sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |
@@ -6321,14 +6320,14 @@ VP SET SHOW PRINT LINES("ViewProArea";True;1)
 
 *attributes* 引数には、設定するプロパティを含むオブジェクトを渡します:
 
-| プロパティ               | 型       | 説明                                                                                                                                                         |
-| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataField           | text    | データコンテキストにおける、表の列のプロパティ名。                                                                                                                                  |
-| name                | text    | 表の列の名前。表組み内でユニークでなくてはなりません。すでに他の列で使われている場合、名前は適用されず、自動的にデフォルトの名前が使われます。                                                                                    |
-| formula             | text    | 列の各セルにフォーミュラを設定します。 See [Structured Reference Formulas in the SpreadJS documentation](https://www.grapecity.com/spreadjs/docs/features/tablegen/structref) |
-| footerText          | text    | 列のフッター値                                                                                                                                                    |
-| footerFormula       | text    | 列のフッターのフォーミュラ。                                                                                                                                             |
-| filterButtonVisible | boolean | 表組みの列のフィルターボタンを表示するかどうかを設定します (表組み作成時のデフォルトは `true`)。                                                                                   |
+| プロパティ               | 型       | 説明                                                                                                                                           |
+| ------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| dataField           | text    | データコンテキストにおける、表の列のプロパティ名。                                                                                                                    |
+| name                | text    | 表の列の名前。表組み内でユニークでなくてはなりません。すでに他の列で使われている場合、名前は適用されず、自動的にデフォルトの名前が使われます。                                                                      |
+| formula             | text    | 列の各セルにフォーミュラを設定します。 SpreadJS のドキュメント [Structured Reference Formulas](https://www.grapecity.com/spreadjs/docs/features/tablegen/structref) 参照 |
+| footerText          | text    | 列のフッター値                                                                                                                                      |
+| footerFormula       | text    | 列のフッターのフォーミュラ。                                                                                                                               |
+| filterButtonVisible | boolean | 表組みの列のフィルターボタンを表示するかどうかを設定します (表組み作成時のデフォルトは `true`)。                                                                     |
 
 *sheet* には、ターゲットシートのインデックスを渡します。 index が省略された場合、または -1 が渡された場合、コマンドはカレントシートに対して適用されます。
 
@@ -6411,7 +6410,7 @@ VP SET TABLE COLUMN ATTRIBUTES("ViewProArea"; "PeopleTable"; 0; \
 | 引数         | 型                                                                              |    | 説明                      |
 | ---------- | ------------------------------------------------------------------------------ | -- | ----------------------- |
 | vpAreaName | Text                                                                           | -> | 4D View Pro フォームオブジェクト名 |
-| tableName  | Text                                                                           | -> | Table name              |
+| tableName  | Text                                                                           | -> | 表組みの名称                  |
 | options    | [cs.ViewPro.TableTheme](classes.md#tabletheme) | -> | 設定する表テーマのプロパティ          |
 
 </div>
@@ -6745,7 +6744,7 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 | enableFormulaTextbox                  | boolean                 | フォーミュラテキストボックスを有効化します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | grayAreaBackColor                     | string                  | グレー領域の背景色を表すカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | highlightInvalidData                  | boolean                 | 無効なデータをハイライト表示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| iterativeCalculation                  | boolean                 | 反復計算を有効にします。 See on [Grapecity's website](https://www.grapecity.com/spreadjs/docs/v14/online/calculating-iterative.html).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| iterativeCalculation                  | boolean                 | 反復計算を有効にします。反復計算を有効にします。 See on [Grapecity's website](https://www.grapecity.com/spreadjs/docs/v14/online/calculating-iterative.html).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | iterativeCalculationMaximumChange     | numeric                 | 2つの計算値の最大差。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | iterativeCalculationMaximumIterations | numeric                 | フォーミュラが反復計算される最大回数。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | newTabVisible                         | boolean                 | 新規シートを挿入するための特別なタブを表示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
