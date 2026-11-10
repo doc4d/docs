@@ -29,7 +29,7 @@ Chaque objet de formulaire actif est associé à un nom d'objet. Chaque nom d'ob
 
 > Les noms d'objets sont limités à une taille de 255 octets.
 
-When using 4D’s language, you can refer to an active form object by its object name (for more information about this, refer to [Object Properties](https://doc.4d.com/4Dv20/4D/20.6/Object-Properties.300-7487807.en.html) in the 4D Language Reference manual).
+When using 4D’s language, you can refer to an active form object by its object name (for more information about this, refer to [Object Properties](https://doc.4d.com/4Dv17R5/4D/17-R5/Object-Properties.300-4128195.en.html) in the 4D Language Reference manual).
 
 Pour plus d'informations sur les règles de nommage pour les objets de formulaire, reportez-vous à la section [Identifiers](Concepts/identifiers.md).
 
@@ -271,7 +271,7 @@ Pour insérer un \ dans le libellé, entrez "&#92;&#92;".
 
 Par défaut, le libellé est placé au centre de l'objet. Lorsque l'objet contient également une icône, vous pouvez modifier l'emplacement relatif de ces deux éléments à l'aide de la propriété [Position Titre/Image](properties_TextAndPicture.md#titlepicture-position).
 
-Pour des raisons de traduction d'applications, vous pouvez entrer une référence XLIFF dans la zone de titre d'un bouton (voir [Annexe B : architecture XLIFF](https://doc.4d.com/4Dv20/4D/20.2/Appendix-B-XLIFF-architecture.300-6750166.en.html)).
+Pour des raisons de traduction d'applications, vous pouvez entrer une référence XLIFF dans la zone de titre d'un bouton (voir [Annexe B : architecture XLIFF](https://doc.4d.com/4Dv17R5/4D/17-R5/Appendix-B-XLIFF-architecture.300-4163748.en.html)).
 
 #### Grammaire JSON
 
