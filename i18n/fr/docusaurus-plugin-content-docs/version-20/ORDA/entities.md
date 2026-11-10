@@ -90,7 +90,7 @@ Vous pouvez gérer les entités comme n'importe quel autre objet dans 4D et pass
 
 ## Utilisation des attributs d'entités
 
-Les attributs d'entité stockent les données et sont reliés aux champs correspondants dans la table correspondante. Entity attributes of the storage kind can be set or get as simple properties of the entity object, while attributes of the **relatedEntity** or **relatedEntities** kind will return an entity or an entity selection.
+Les attributs d'entité stockent les données et sont reliés aux champs correspondants dans la table correspondante. Les attributs d'entité de type stockage peuvent être écrits ou lus sous forme de propriétés simples de l'objet entité, tandis que les attributs de type **relatedEntity** ou **relatedEntities** renverront une entité ou une entity selection.
 
 > Pour plus d'informations sur le type d'attribut, reportez-vous au paragraphe [Attributs de stockage et de relation](dsMapping.md#storage-and-relation-attributes).
 
