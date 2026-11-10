@@ -17,11 +17,11 @@ Les formulaires 4D prennent en charge un grand nombre d'objets **actifs** et **s
 Vous pouvez ajouter des objets dans un formulaire de nombreuses manières :
 
 - **[Éditeur de formulaire](FormEditor/formEditor.md) :** en glissant un objet de la barre d'outils de l'éditeur de formulaire vers le formulaire. Utilisez ensuite la liste de propriétés pour indiquer les propriétés de l'objet.  
-  See the [Building Forms](https://doc.4d.com/4Dv17R6/4D/17-R6/Building-forms.200-4354618.en.html) chapter for more information.
+  Voir le chapitre [Construire des formulaires](https://doc.4d.com/4Dv20/4D/20.2/Building-forms.200-6750076.en.html) pour plus d'informations.
 
-- **4D language**: Commands from the [Objects (Forms)](https://doc.4d.com/4Dv17R5/4D/17-R5/Objects-Forms.201-4127128.en.html) theme such as `OBJECT DUPLICATE` or `OBJECT SET FONT STYLE` allow to create and define form objects.
+- **4D language**: Commands from the [Objects (Forms)](https://doc.4d.com/4Dv20/4D/20.6/Objects-Forms.201-7486936.en.html) theme such as `OBJECT DUPLICATE` or `OBJECT SET FONT STYLE` allow to create and define form objects.
 
-- **Code JSON dans les formulaires dynamiques :** Définissez les propriétés à l'aide du JSON. Use the [type](properties_Object.md#type) property to define the object type, then set its available properties.  See the [Dynamic Forms](https://doc.4d.com/4Dv17R5/4D/17-R5/Dynamic-Forms.300-4163740.en.html#3692292) page for information.  
+- **Code JSON dans les formulaires dynamiques :** Définissez les propriétés à l'aide du JSON. Utilisez la propriété [type](properties_Object.md#type) pour définir le type d'objet puis indiquez ses propriétés disponibles.  See the [Dynamic Forms](https://doc.4d.com/4Dv21R4/4D/21-R4/Dynamic-Forms.300-7753010.en.html) page for information.  
   Exemple d'un objet bouton :
   ```
   {
