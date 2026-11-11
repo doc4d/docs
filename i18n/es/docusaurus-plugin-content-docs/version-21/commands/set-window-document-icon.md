@@ -83,10 +83,3 @@ En este ejemplo, queremos crear cuatro ventanas:
 ## Ver también
 
 [Create entity selection](create-entity-selection.md)
-
-## Propiedades
-
-|                   |      |
-| ----------------- | ---- |
-| Número de comando | 1840 |
-| Hilo seguro       | no   |
