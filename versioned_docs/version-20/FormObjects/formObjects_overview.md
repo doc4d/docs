@@ -24,7 +24,7 @@ See the [Building Forms](https://doc.4d.com/4Dv20/4D/20.2/Building-forms.200-675
 
 *	**JSON code in dynamic forms:** Define the properties using JSON. Use the [type](properties_Object.md#type) property to define the object type, then set its available properties.  See the [Dynamic Forms](https://doc.4d.com/4Dv20/4D/20.2/Dynamic-Forms.300-6750140.en.html) page for information.  
 Example for a button object:  
-	```
+	```json
 	{
 		"type": "button", 
 		"style": "bevel", 
