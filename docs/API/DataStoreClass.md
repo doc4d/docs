@@ -315,7 +315,7 @@ ds.unlock() //Our copy is over, we can now unlock the datastore
 
 </details>
 
-<!-- REF #DataStoreClass.generateFineGrainedToken().Syntax -->**.generateFineGrainedToken**( *privilege* : Text ; *name* : Text ; *expiry* : Date {; *info* : Object} ) : Object<br/>**.generateFineGrainedToken**( *privileges* : Collection ; *name* : Text ; *expiry* : Date {; *info* : Object} ) : Object<br/>**.generateFineGrainedToken**( *settings* : Object ; *name* : Text ; *expiry* : Date {; *info* : Object} ) : Object<!-- END REF -->
+<!-- REF #DataStoreClass.generateFineGrainedToken().Syntax -->**.generateFineGrainedToken**( *privilege* : Text ; *name* : Text {; *expiry* : Date {; *info* : Object}} ) : Object<br/>**.generateFineGrainedToken**( *privileges* : Collection ; *name* : Text {; *expiry* : Date {; *info* : Object}} ) : Object<br/>**.generateFineGrainedToken**( *settings* : Object ; *name* : Text {; *expiry* : Date {; *info* : Object}} ) : Object<!-- END REF -->
 
 
 <!-- REF #DataStoreClass.generateFineGrainedToken().Params -->
@@ -347,7 +347,7 @@ Unlike `Session.setPrivileges()`, a name that is not declared in the [`roles.jso
 
 In *name*, pass a name that identifies the token, for example the user and the client that will use it. It is the user name of the MCP sessions opened with the token.
 
-In *expiry*, pass the expiration date of the token. It is required, and it must be later than the current date and at most 366 days ahead.
+In *expiry*, pass the expiration date of the token. It must be later than the current date and at most 366 days ahead. If *expiry* is omitted, an error is raised.
 
 In *info*, you can pass an object that 4D stores with the token as is, and passes to the [`ds.mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated) function when an MCP session is opened with the token. Since it cannot be modified later, store stable identifiers (such as a user ID) and read the current values in `ds.mcpAuthenticated()`. Build *info* from the authenticated session, never from values sent by the client.
 
