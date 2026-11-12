@@ -987,7 +987,7 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 
 </details>
 
-<!-- REF #DataStoreClass.revokeFineGrainedToken().Syntax -->**.revokeFineGrainedToken**( *id* : Text )<br/>**.revokeFineGrainedToken**( *tokenObj* : Object )<!-- END REF -->
+<!-- REF #DataStoreClass.revokeFineGrainedToken().Syntax -->**.revokeFineGrainedToken**( *id* : Text ) : Boolean<br/>**.revokeFineGrainedToken**( *tokenObj* : Object ) : Boolean<!-- END REF -->
 
 
 <!-- REF #DataStoreClass.revokeFineGrainedToken().Params -->
@@ -997,6 +997,7 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 |---|---|---|---|
 |id|Text|&#8594;|Identifier of the token to revoke|
 |tokenObj|Object|&#8594;|Object with a `token` property containing the token to revoke|
+|Result|Boolean|&#8592;|True if the token was revoked|
 </div>
 <!-- END REF -->
 
@@ -1008,6 +1009,8 @@ You designate the token:
 
 - in the *id* parameter, with its identifier (returned by [`.generateFineGrainedToken()`](#generatefinegrainedtoken) and [`.listFineGrainedTokens()`](#listfinegrainedtokens)),
 - or in the *tokenObj* parameter, with an object whose `token` property contains the token itself (`"4dfgt_..."`), for example to let the holder of a token revoke it.
+
+The function returns **True** if the token was revoked, **False** otherwise (for example if the token does not exist or was already revoked).
 
 The token stops working at the next request, and the MCP sessions opened with it are closed. [Binary URLs](../WebServer/mcp-server.md#binary-attributes) already returned to the client remain valid until they expire (10 minutes at most).
 
@@ -1041,7 +1044,7 @@ End if
 
 </details>
 
-<!-- REF #DataStoreClass.revokeOAuthGrant().Syntax -->**.revokeOAuthGrant**( *id* : Text )<!-- END REF -->
+<!-- REF #DataStoreClass.revokeOAuthGrant().Syntax -->**.revokeOAuthGrant**( *id* : Text ) : Boolean<!-- END REF -->
 
 
 <!-- REF #DataStoreClass.revokeOAuthGrant().Params -->
@@ -1050,12 +1053,15 @@ End if
 |Parameter|Type||Description|
 |---|---|---|---|
 |id|Text|&#8594;|Identifier of the grant to revoke|
+|Result|Boolean|&#8592;|True if the grant was revoked|
 </div>
 <!-- END REF -->
 
 #### Description
 
 The `.revokeOAuthGrant()` function <!-- REF #DataStoreClass.revokeOAuthGrant().Summary -->revokes a grant given to a user through the OAuth mode of the MCP server<!-- END REF --> (see [`.listOAuthGrants()`](#listoauthgrants)).
+
+The function returns **True** if the grant was revoked, **False** otherwise (for example if the grant does not exist or was already revoked).
 
 The access tokens of the grant get an HTTP 401 status from the next request, its refresh token is refused, and its MCP sessions are closed. The user must log in again from the MCP client.
 
