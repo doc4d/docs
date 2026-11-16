@@ -36,7 +36,7 @@ The **ADJUST INDEX CACHE PRIORITY** command modifies the *priority* value of the
 
 **Note:** This command only works in local mode (4D Server and 4D); it cannot be used in 4D remote mode. 
 
- This command handles priority for all indexes related to the *aField*, including keyword indexes. However, it does not change composite indexes priority. 
+This command handles priority for all indexes related to the *aField*, including keyword indexes and vector indexes. However, it does not change composite indexes priority. 
 
 Pass one of the following constants from the "*Cache Management*" theme in the *priority* parameter:
 

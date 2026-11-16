@@ -50,7 +50,7 @@ In the *priority* parameter, pass one of the following constants from the "*Cach
 
 ## Example 
 
-In the , you want to set a high priority for the \[Customer\] scalar data:
+In the **On Startup** database method, you want to set a high priority for the \[Customer\] scalar data:
 
 ```4d
  SET TABLE CACHE PRIORITY([Customer];Cache priority very high)
@@ -61,6 +61,8 @@ In the , you want to set a high priority for the \[Customer\] scalar data:
 [ADJUST INDEX CACHE PRIORITY](../commands/adjust-index-cache-priority)  
 [ADJUST TABLE CACHE PRIORITY](../commands/adjust-table-cache-priority)  
 [Get adjusted table cache priority](../commands/get-adjusted-table-cache-priority)  
+[Managing priorities in database cache](../../settings/database.md#managing-priorities-in-database-cache)  
+
 
 ## Properties
 

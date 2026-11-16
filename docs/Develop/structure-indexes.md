@@ -94,6 +94,18 @@ You can select one or more index types for your vector fields, the appropriate i
 
 :::
 
+
+:::tip Cache sizing
+
+Vector indexes, like all indexes, benefit from the optimization of the 4D database cache. Queries on vector fields are extremely fast when the whole vector index is loaded in memory.
+
+Since vector indexes can be large, it is recommended to **adjust the maximum cache size** so that all your vector indexes fit in it. You can modify it either in the [Memory page of the Database settings](../settings/database.md#database-cache-settings) (value applied at application startup), or dynamically using the [`SET CACHE SIZE`](../commands/set-cache-size) command.
+
+You can fine-tune your cache requirements using the commands of the [Cache Management](../commands/theme/Cache_Management.md) theme and the [**Information** item of the debugger Expression list](../Debugging/debugger.md#information).
+
+:::
+
+
 :::warning Limitation: Vector indexes and transactions
 
 Vector indexes are not compatible with [transaction processing](../Develop/transactions). When vector-indexed records are inserted, updated, or deleted within a transaction, the corresponding index changes are not committed or rolled back with the transaction. As a result, the vector index may become inconsistent with the database state after a rollback, and search results may not reflect the persisted data.

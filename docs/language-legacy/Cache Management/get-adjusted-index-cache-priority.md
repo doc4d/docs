@@ -35,8 +35,9 @@ displayed_sidebar: docs
 ## See also 
 
 [ADJUST INDEX CACHE PRIORITY](../commands/adjust-index-cache-priority)  
-*Managing priorities in database cache*  
 [SET INDEX CACHE PRIORITY](../commands/set-index-cache-priority)  
+[Managing priorities in database cache](../../settings/database.md#managing-priorities-in-database-cache)  
+
 
 ## Properties
 

@@ -35,8 +35,8 @@ displayed_sidebar: docs
 ## See also 
 
 [ADJUST BLOBS CACHE PRIORITY](../commands/adjust-blobs-cache-priority)  
-*Managing priorities in database cache*  
 [SET BLOBS CACHE PRIORITY](../commands/set-blobs-cache-priority)  
+[Managing priorities in database cache](../../settings/database.md#managing-priorities-in-database-cache)  
 
 ## Properties
 

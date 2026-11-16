@@ -50,7 +50,7 @@ In the *priority* parameter, pass one of the following constants from the "*Cach
 
 ## Example 
 
-In the , you want to set a high priority for the \[Customer\]LastName field indexes:
+In the **On Startup** database method, you want to set a high priority for the \[Customer\]LastName field indexes:
 
 ```4d
  SET INDEX CACHE PRIORITY([Customer]LastName;Cache priority very high)
@@ -60,6 +60,9 @@ In the , you want to set a high priority for the \[Customer\]LastName field inde
 
 [ADJUST INDEX CACHE PRIORITY](../commands/adjust-index-cache-priority)  
 [Get adjusted index cache priority](../commands/get-adjusted-index-cache-priority)  
+[Managing priorities in database cache](../../settings/database.md#managing-priorities-in-database-cache)  
+
+
 
 ## Properties
 

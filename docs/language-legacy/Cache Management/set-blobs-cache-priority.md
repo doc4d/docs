@@ -60,6 +60,8 @@ In the , you want to set a high priority for the \[Customer\] table "blobs" data
 
 [ADJUST BLOBS CACHE PRIORITY](../commands/adjust-blobs-cache-priority)  
 [Get adjusted blobs cache priority](../commands/get-adjusted-blobs-cache-priority)  
+[Managing priorities in database cache](../../settings/database.md#managing-priorities-in-database-cache)  
+
 
 ## Properties
 
