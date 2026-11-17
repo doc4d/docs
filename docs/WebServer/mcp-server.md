@@ -347,7 +347,53 @@ Functions of the following classes can be published:
 
 Functions declared without `exposed` or without `MCP`, and functions of EntitySelection classes, are not published. See [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function).
 
+
+### Describing the tools
+
 The [comment block](../Concepts/comments.md#syntax-description) written above the declaration provides the description of the tool, of its parameters, and its behavior tags. A function without description is published, with a warning in the diagnostic log.
+
+The following tags are supported for the MCP tools:
+
+|Line|Meaning|
+|---|---|
+|`// <text>`|Standard description of function (see [Comments](../Concepts/comments.md)). Several description lines are combined in order, with their line breaks. Empty `//` lines at the start or at the end of the block are ignored.|
+|`// $name: <text>`|Description of the *$name* parameter.|
+|`// {$name}: <text>`|Description of the *$name* parameter, marked as optional for MCP.|
+|`// ...: <text>`|Description of the [variadic parameters](parameters.md#declaring-variadic-parameters) (`... : Type`).|
+|`// param: $name <text>`, `// param: {$name} <text>`, `// param: ... <text>`|Same as `$name:`, `{$name}:`, and `...:` lines.|
+|`// MCP: <text>`|Description of the function for MCP only. Several `MCP:` description lines are combined in order.|
+|`// MCP: @tag {@tag}` or `// @tag {@tag}`|MCP behavior tags (see [MCP tool metadata](../WebServer/mcp-server.md#mcp-tool-metadata)). The line must contain only supported tags, otherwise it is a description line.|
+
+A `$name:` or `{$name}:` line is a parameter description only if *$name* is a parameter of the function signature. Otherwise, it is a description line (for example `// $120: price in dollars`). A `...:` line is a parameter description only if the function has variadic parameters.
+
+The code assistance displays the description lines, then a blank line, then the parameter lines as written. `MCP:` lines are never displayed in the code assistance.
+
+When you [compile](../Project/compiler.md) the project, the compiler reports a [warning](../Project/compiler.md#warnings-on-function-comments) for each parameter of the signature that has no `$name:` or `{$name}:` line in the comment block, and for contradictory MCP behavior tags. Functions without a comment block are not checked.
+
+:::note
+
+Comment blocks are supported in project classes (including shared and singleton classes) and in component classes. For compiled components, the descriptions are provided by the [syntax file](../Extensions/develop-components.md#code-completion-for-compiled-components).
+
+:::
+
+#### Warnings on comments
+
+When a class function or a class constructor has a comment block above its declaration, the compiler checks it and reports a warning:
+
+- for each parameter of the signature that is not documented by a `$name:` or `{$name}:` line (variadic parameters are not checked),
+- when the `MCP:` behavior tags contradict each other (`@readOnly`, `@destructive`, and `@additive` used together). In this case, the corresponding hints are omitted from the [MCP tool metadata](../WebServer/mcp-server.md#mcp-tool-metadata).
+
+Functions without a comment block are not checked. For example, the following function generates a warning for the *$factor* parameter and a warning for the `@readOnly` and `@destructive` tags:
+
+```4d
+// Scales a value by a factor
+// MCP: @readOnly @destructive
+// $value: value to scale
+Function scale($value : Real; $factor : Real) : Real
+	return $value*$factor
+```
+
+
 
 #### Example
 
@@ -395,7 +441,7 @@ Each tool is described as follows:
 
 ### MCP tool metadata
 
-The comment blocks of `exposed MCP Function` declarations also describe these functions as MCP tools. When the project is compiled, 4D generates the `Project/DerivedData/syntaxMCP.json` file, which contains the metadata of these tools in a `toolList` array.
+The [comment blocks of `exposed MCP Function` declarations](#describing-the-tools) also describe these functions as MCP tools. When the project is compiled, 4D generates the `Project/DerivedData/syntaxMCP.json` file, which contains the metadata of these tools in a `toolList` array.
 
 Only functions of the following classes are listed:
 
