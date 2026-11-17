@@ -130,7 +130,7 @@ Array keys (such as `ArrayLicenseWin` or `ArrayExcludedPluginName`) contain an `
 | IsOEM | `SourcesFiles/CS` | [Source files](./source-files.md#isoem) |
 | IsOEM | `SourcesFiles/RuntimeVL` | [Source files](./source-files.md#isoem) |
 | LastDataPathLookup | `CS` | [Client/Server](./client-server.md#lastdatapathlookup) |
-| LastDataPathLookup | `RuntimeVL` | [General](./general.md#lastdatapathlookup) |
+| LastDataPathLookup | `RuntimeVL` | [RuntimeVL](./runtime-vl.md#lastdatapathlookup) |
 | MacCertificate | `SignApplication` | [Licenses & signature](./licenses-signature.md#maccertificate) |
 | MacCompiledDatabaseToWin | `CS` | [Client/Server](./client-server.md#maccompileddatabasetowin) |
 | MacCompiledDatabaseToWinIncludeIt | `CS` | [Client/Server](./client-server.md#maccompileddatabasetowinincludeit) |

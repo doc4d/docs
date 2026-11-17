@@ -7,7 +7,7 @@ description: "BuildApplication XML keys located directly under the BuildApp node
 keywords: ["BuildApplication", "XML key", "BuildApp", "RuntimeVL"]
 ---
 
-These keys are located directly under the `<BuildApp>` node, except [LastDataPathLookup](#lastdatapathlookup) which belongs to the `<RuntimeVL>` node.
+These keys are located directly under the `<BuildApp>` node.
 
 ```xml
 <Preferences4D>
@@ -41,7 +41,7 @@ These keys are located directly under the `<BuildApp>` node, except [LastDataPat
 | [ArrayExcludedPluginID](#arrayexcludedpluginid) | Array of IDs | Plug-ins to exclude, by ID |
 | [ArrayExcludedComponentName](#arrayexcludedcomponentname) | Array of names | Components to exclude |
 | [ArrayExcludedModuleName](#arrayexcludedmodulename) | Array of names | Optional modules to exclude |
-| [RuntimeVL/LastDataPathLookup](#lastdatapathlookup) | InDbStruct / ByAppName / ByAppPath | Data linking mode of the single-user application |
+
 
 ## Application name and destination
 
@@ -159,20 +159,3 @@ Excluding a module could prevent your built application from working as expected
 
 :::
 
-## Single-user application (RuntimeVL)
-
-### LastDataPathLookup
-
-```text title="XML path"
-/Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
-```
-
-Defines the [data linking mode](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) of the single-user application:
-
-| Value | Data file path lookup | Data file path storage |
-|---|---|---|
-| InDbStruct | Path stored in the structure file | Inside the structure file (legacy behavior) |
-| ByAppName | Most recent entry in *LastDataPath.xml* | User preferences |
-| ByAppPath | Entry whose *executablePath* matches the application path | User preferences |
-
-The same key exists for client/server applications: [CS/LastDataPathLookup](./client-server.md#lastdatapathlookup).

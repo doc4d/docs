@@ -12,8 +12,8 @@ You can automate this procedure to a large extent using the following language c
 Here is the scenario for updating a server or merged single-user application:
 
 1. You transfer, for example using an HTTP server, the new version of the server application or the merged single-user application onto the machine in production.
-2. In the application in production, you call the `SET UPDATE FOLDER` command: this command designates the location of the folder where the "pending" update of the current application is found. Optionally, you can copy in this folder the custom elements of the version in production (user files).
-3. In the application in production, call the `RESTART 4D` command: this command automatically triggers execution of a utility program named "updater" that exits the current application, replaces it using the "pending" update if one is specified, and restarts the application with the current data file. The former version is renamed.
+2. In the application in production, you call the [`SET UPDATE FOLDER`](../commands/set-update-folder) command: this command designates the location of the folder where the "pending" update of the current application is found. Optionally, you can copy in this folder the custom elements of the version in production (user files).
+3. In the application in production, call the [`RESTART 4D`](../commands/restart-4d) command: this command automatically triggers execution of a utility program named "updater" that exits the current application, replaces it using the "pending" update if one is specified, and restarts the application with the current data file. The former version is renamed.
 
 > This sequence is compatible with Windows server applications [run as a Service](../server/service.md).
 
