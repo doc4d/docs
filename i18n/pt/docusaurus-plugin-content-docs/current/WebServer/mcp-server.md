@@ -11,7 +11,6 @@ title: Servidor MCP
 
 </details>
 
-
 O 4D Web Server inclui um servidor nativo [Model Context Protocol (MCP)](https://modelcontextprotocol.io). Assistentes e agentes de IA (Claude Desktop, Claude Code, MCP Inspector, etc.) podem se conectar a ele para descobrir e chamar a lógica de negócios e os dados da sua aplicação.
 
 O servidor MCP publica dois tipos de **ferramentas**:
