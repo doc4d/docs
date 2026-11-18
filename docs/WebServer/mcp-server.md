@@ -12,7 +12,7 @@ title: MCP server
 </details>
 
 
-4D includes a native [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server. AI assistants and agents (Claude Desktop, Claude Code, MCP Inspector, etc.) can connect to it to discover and call the business logic and the data of your application.
+The 4D Web Server includes a native [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server. AI assistants and agents (Claude Desktop, Claude Code, MCP Inspector, etc.) can connect to it to discover and call the business logic and the data of your application.
 
 The MCP server publishes two kinds of **tools**:
 
