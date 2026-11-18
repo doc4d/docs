@@ -28,8 +28,6 @@ If no errors are detected, the actual compilation begins and the "Compilation su
 
 You can immediately [run your application in compiled mode](#run-compiled) and see how faster it is. 
 
-When the compilation succeeds, the compiler also generates the `Project/DerivedData/syntaxMCP.json` file, which contains the [MCP tool metadata](../WebServer/mcp-server.md#mcp-tool-metadata) of the project, whatever the [syntax file setting](../Extensions/develop-components.md#code-completion-for-compiled-components).
-
 If errors are detected, the process is stopped and the "Compilation failed" message is displayed. The information area of the window displays the method names and line numbers concerned in a hierarchical list:
 
 ![](../assets/en/Project/compilerWin2.png)
