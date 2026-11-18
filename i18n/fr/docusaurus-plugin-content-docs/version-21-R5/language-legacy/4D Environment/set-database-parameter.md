@@ -790,7 +790,7 @@ Reportez-vous à l'exemple 2.
 
 **Valeurs possibles** : Entier positif. Valeur par défaut = 900, valeur minimale = 60. 
 
-**Description** : Délai en secondes pour les sessions client/serveur en cas de déconnexion inattendue lors de l'utilisation de la couche réseau QUIC. Ce délai est la période accordée à une session pendant laquelle la connexion entre le serveur et le client peut être rétablie automatiquement suite à une déconnexion involontaire. Si, à l'issue de ce délai, la connexion n'a pas été rétablie, la session est fermée.  
+**Description** : Délai en secondes pour les sessions client/serveur en cas de déconnexion inattendue lors de l'utilisation de la couche réseau QUIC. Ce délai est la période accordée à une session pendant laquelle la connexion entre le serveur et le client peut être rétablie automatiquement suite à une déconnexion involontaire. Si, à l'issue de ce délai, la connexion n'a pas été rétablie, la session client est fermée avec un message.  
 
 Ce paramètre ne peut être défini que sur 4D Server et s'applique à toutes les nouvelles sessions distantes 4D (la valeur du délai des sessions existantes n'est pas modifiée). 
 
@@ -1045,22 +1045,6 @@ Quand elle est utilisée avec [SET DATABASE PARAMETER](../commands/set-database-
 * Le paramètre *laTable* est utilisé par les sélecteurs 31, 46 et 47 uniquement. Dans les autres cas, il est ignoré s'il est passé.
 * Lorsqu'un paramétrage n'est pas conservé entre les sessions, vous pouvez le définir au démarrage via la ou la [On Server Startup database method](../commands/on-server-startup-database-method).
 
-## Sélecteurs thread-safe 
-
-La commande **SET DATABASE PARAMETER** peut être utilisée dans des processus préemptifs lors de l'appel des sélecteurs suivants :
-
-* [4D Server log recording](#4d-server-log-recording-28)
-* [Debug log recording](#debug-log-recording-34)
-* [Diagnostic log recording](#diagnostic-log-recording-79)
-* [Diagnostic log level](#diagnostic-log-level-86)
-* [Circular log limitation](#circular-log-limitation-90)
-* [Cache flush periodicity](#cache-flush-periodicity-95)
-* [SMTP Log](#smtp-log-110)
-* [POP3 Log](#pop3-log-116)
-* [IMAP Log](#imap-log-119)
-* [Pause logging](#pause-logging-121)
-
-
 ## Exemple 1 
 
 L’instruction suivante permet d'anticiper un éventuel problème de **timeout**
@@ -1108,6 +1092,7 @@ Vous souhaitez exporter des données en JSON contenant une date 4D convertie. A 
 |  |  |
 | --- | --- |
 | Numéro de commande | 642 |
-| Thread safe | no |
+| Thread safe | yes (partially). Thread-safe selectors: [4D Server log recording](#4d-server-log-recording-28) - [Debug log recording](#debug-log-recording-34) - [Diagnostic log recording](#diagnostic-log-recording-79) - [Diagnostic log level](#diagnostic-log-level-86) - [Circular log limitation](#circular-log-limitation-90) - [Cache flush periodicity](#cache-flush-periodicity-95) - [SMTP Log](#smtp-log-110) - [POP3 Log](#pop3-log-116) - [IMAP Log](#imap-log-119) - [Pause logging](#pause-logging-121)|
+
 
 

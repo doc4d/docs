@@ -67,7 +67,7 @@ The 4D Remote mode timeout selector is only taken into account if you are using 
 
 **Scope**: 4D Server, 4D remote*
 
-* **Kept between two sessions**: No
+**Kept between two sessions**: No
 
 **Possible values**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, added to the file name).
 
@@ -355,9 +355,9 @@ SET DATABASE PARAMETER (34;0) // disables file
 For any type of interpreted or compiled 4D application (4D all modes, 4D Server, 4D Volume Desktop), you can avoid having a file record too much information by:
 
 - restricting the 4D commands that are examined by using Log command list (selector 80), or 
-- restricting it to the current process only with Current process debug log recording (selector 111). This will add the letter "p" and the process number to the file name: *4DDebugLog\[\_pn\_n\].txt*  or *4DDebugLogServer\[\_pn\_n\].txt* *
+- restricting it to the current process only with Current process debug log recording (selector 111). This will add the letter "p" and the process number to the file name: *4DDebugLog\[\_pn\_n\].txt*  or *4DDebugLogServer\[\_pn\_n\].txt*   
 
-*For more information about this format and on the use of the *4DDebugLog* file, please refer to the *Description of log files* section..
+For more information about this format and on the use of the *4DDebugLog* file, please refer to the [*Description of log files*](../../Debugging/debugLogFiles.md) section.
 
  This selector is provided solely for the purpose of debugging and should be used with care since it can impact the application performance. 
 
@@ -812,9 +812,9 @@ Refer to example 2.
 
 **Kept between two sessions**: No
 
-**Possible values**: Positive integer. Default value = 15, minimum value = 1. 
+**Possible values**: Positive integer. Default value = 900, minimum value = 60. 
 
-**Description**: Timeout in minutes for client/server sessions in the event of an unexpected disconnection from the QUIC network layer. This timeout is the period of time allowed for a session during which the connection between the server and the client can be automatically reestablished following an unintended disconnection. If, at the end of this timeout, the connection has not been reestablished. 
+**Description**: Timeout in seconds for client/server sessions in the event of an unexpected disconnection from the QUIC network layer. This timeout is the period of time allowed for a session during which the connection between the server and the client can be automatically reestablished following an unintended disconnection. If, at the end of this timeout, the connection has not been reestablished, the client session is closed with a message. 
 
 This setting can only be set on 4D Server and applies to all new 4D remote sessions (existing sessions timeout value is untouched). 
 
@@ -1068,7 +1068,7 @@ In previous releases, time values were converted and stored as number of millise
 
 **Description:** Custom string passed from one session to the next one when the 4D application is restarted. This selector is useful in the context of automated unit tests that require applications to restart with different parameters. 
 
-When used with [SET DATABASE PARAMETER](../commands/set-database-parameter), defines a new value that will be available within the next opened database after 4D is restarted manually or using the [OPEN DATABASE](../commands/open-database)(\*), [OPEN DATA FILE](../commands/open-data-file), or [RESTART 4D](../commands/restart-4d) commands. When used with [Get database parameter](../commands/get-database-parameter), gets the currently available user parameter value, defined using a command line (see [Command Line Interface](../../Admin/cli.md)), the .4DLink file (see [Using a 4DLink file](../../GettingStarted/creating.md#opening-a-project-with-a-4dlink-file)), or a call to [SET DATABASE PARAMETER](../commands/set-database-parameter) during the previous session. 
+When used with [SET DATABASE PARAMETER](../commands/set-database-parameter), defines a new value that will be available within the next opened database after 4D is restarted manually or using the [OPEN DATABASE](../commands/open-database)(\*), [OPEN DATA FILE](../commands/open-data-file), or [RESTART 4D](../commands/restart-4d) commands. When used with [Get database parameter](../commands/get-database-parameter), gets the currently available user parameter value, defined using a command line (see [Command Line Interface](../../Admin/cli.md)), the .4DLink file (see [About 4DLink Files](../../GettingStarted/creating.md#about-4dlink-files)), or a call to [SET DATABASE PARAMETER](../commands/set-database-parameter) during the previous session. 
 
 (\*) If [SET DATABASE PARAMETER](../commands/set-database-parameter) sets a User param value before a call to [OPEN DATABASE](../commands/open-database) with a .4DLink file that also contains a user-param xml attribute, 4D takes into account only the parameter provided by [SET DATABASE PARAMETER](../commands/set-database-parameter).
 
@@ -1082,20 +1082,6 @@ When used with [SET DATABASE PARAMETER](../commands/set-database-parameter), def
 
 :::
 
-## Thread-safe selectors 
-
-The **SET DATABASE PARAMETER** command can be used in preemptive processes when calling the following selectors:
-
-* [4D Server log recording](#4d-server-log-recording-28)
-* [Debug log recording](#debug-log-recording-34)
-* [Diagnostic log recording](#diagnostic-log-recording-79)
-* [Diagnostic log level](#diagnostic-log-level-86)
-* [Circular log limitation](#circular-log-limitation-90)
-* [Cache flush periodicity](#cache-flush-periodicity-95)
-* [SMTP Log](#smtp-log-110)
-* [POP3 Log](#pop3-log-116)
-* [IMAP Log](#imap-log-119)
-* [Pause logging](#pause-logging-121)
 
 ## Example 1 
 
@@ -1144,6 +1130,7 @@ You want to export data in JSON that contains a converted 4D date. Note that con
 |  |  |
 | --- | --- |
 | Command number | 642 |
-| Thread safe | no |
+| Thread safe | yes (partially). Thread-safe selectors: [4D Server log recording](#4d-server-log-recording-28) - [Debug log recording](#debug-log-recording-34) - [Diagnostic log recording](#diagnostic-log-recording-79) - [Diagnostic log level](#diagnostic-log-level-86) - [Circular log limitation](#circular-log-limitation-90) - [Cache flush periodicity](#cache-flush-periodicity-95) - [SMTP Log](#smtp-log-110) - [POP3 Log](#pop3-log-116) - [IMAP Log](#imap-log-119) - [Pause logging](#pause-logging-121)|
+
 
 

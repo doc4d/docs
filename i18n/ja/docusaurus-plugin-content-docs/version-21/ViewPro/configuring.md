@@ -141,7 +141,7 @@ title: 4D View Pro エリアの設定
 | 0                                                             | ゼロを表示する桁のプレースホルダー                                                                                            | #.00 は 1.1 を 1.10 と表示します。                                                                                                                                                                                                                                                            |
 | 。                                                             | 小数点を表示します                                                                                                    | 0.00 は 1999 を 1999.00 と表示します。                                                                                                                                                                                                                                                                        |
 | ,                                                             | 数値内に千区切りのカンマを表示します。数値記号 "#" あるいはゼロに挟まれたカンマがフォーマットに含まれる場合、3桁ごとにカンマで区切られます。桁のプレースホルダーの後にくるカンマは、数値を 1000 で割ります。 | #,0 は 12200000 を 12,200,000 と表示します。                                                                                                                                                                                                                                                                                                  |
-| \_                                      | アンダーバーに続く文字の幅をスキップします。                                                                                       | \_( のようにカッコなどと組み合わせることで、左や右にスペースを追加します。                                                                                                                                                                                                                                                     |
+| \_                                      | アンダーバーに続く文字の幅をスキップします。                                                                                       | \_( や _) のようにカッコなどと組み合わせることで、左や右にスペースを追加します。                                                                                                                                                                                                                           |
 | @                                                | テキストのフォーマット文字。セル内のすべてのテキストにフォーマットを適用します。                                                                     | "\[Red]@" はテキスト値に対して赤のフォントカラーを適用します。                                                                                                                                                                                                                               |
 | \*                                                            | 列幅いっぱいまで、後に続く文字を繰り返します。                                                                                      | 0\*- は、数値の後にセルの幅いっぱいまでダッシュを繰り返します。対して、\*0 をフォーマットの前につけると、先頭に 0 が複数表示されます。                                                                                                                                                                                                                                                            |
 | " "                                                           | 引用符にはさまれたテキストを、解釈せずにそのまま表示します。                                                                               | "8%" は 8% と表示されます。                                                                                                                                                                                                                                                                                                                   |
@@ -165,17 +165,17 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 4D View Pro では IS0 8601 の日付と時間パターンを示す以下の定数を提供しています:
 
-| 定数                                        | 値                                    | 説明                                                                                                                                                                           |
-| ----------------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vk pattern full date time`               | "*fullDateTimePattern*"              | カレント言語設定における ISO 8601 フォーマットの完全な日付と時間。 アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy HH:mm:ss"                                     |
-| `vk pattern long date`                    | "*longDatePattern*"                  | カレント言語設定における ISO 8601 フォーマットの完全な日付。 アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy"                                                                                 |
-| `vk pattern long time`                    | "*longTimePattern*"                  | カレント言語設定における ISO 8601 フォーマットの時間。 アメリカ合衆国でのデフォルトパターン: "HH:mm:ss"                                                              |
-| `vk pattern month day`                    | "*monthDayPattern*"                  | カレント言語設定における ISO 8601 フォーマットの月日の日付。 アメリカ合衆国でのデフォルトパターン: "MMMM dd"                                                                                            |
-| `vk pattern short date`                   | "*shortDatePattern*"                 | カレント言語設定における省略形の ISO 8601 フォーマットの日付。 アメリカ合衆国でのデフォルトパターン: "MM/dd/yyyy"                                                                                        |
-| `vk pattern short time`                   | "*shortTimePattern*"                 | カレント言語設定における省略形の ISO 8601 フォーマットの時間。 アメリカ合衆国でのデフォルトパターン: "HH:mm"                                                                             |
-| `vk pattern sortable date time`           | "*sortableDateTimePattern*"          | カレント言語設定における、並べ替え可能な ISO 8601 フォーマットの日付と時間。 アメリカ合衆国でのデフォルトパターン: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"          |
-| `vk pattern universal sortable date time` | "*universalSortableDateTimePattern*" | カレント言語設定における、UTCを使用した並べ替え可能な ISO 8601 フォーマットの日付と時間。 アメリカ合衆国でのデフォルトパターン: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'" |
-| `vk pattern year month`                   | "*yearMonthPattern*"                 | カレント言語設定における ISO 8601 フォーマットの年月。 アメリカ合衆国でのデフォルトパターン: "yyyy MMMM"                                                                                             |
+| 定数                                        | 値                                    | 説明                                                                                                                                                                          |
+| ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `vk pattern full date time`               | "*fullDateTimePattern*"              | カレント言語設定における ISO 8601 フォーマットの完全な日付と時間。アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy HH:mm:ss"                                     |
+| `vk pattern long date`                    | "*longDatePattern*"                  | カレント言語設定における ISO 8601 フォーマットの完全な日付。アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy"                                                                                 |
+| `vk pattern long time`                    | "*longTimePattern*"                  | カレント言語設定における ISO 8601 フォーマットの時間。アメリカ合衆国でのデフォルトパターン: "HH:mm:ss"                                                              |
+| `vk pattern month day`                    | "*monthDayPattern*"                  | カレント言語設定における ISO 8601 フォーマットの月日の日付。アメリカ合衆国でのデフォルトパターン: "MMMM dd"                                                                                            |
+| `vk pattern short date`                   | "*shortDatePattern*"                 | カレント言語設定における省略形の ISO 8601 フォーマットの日付。アメリカ合衆国でのデフォルトパターン: "MM/dd/yyyy"                                                                                        |
+| `vk pattern short time`                   | "*shortTimePattern*"                 | カレント言語設定における省略形の ISO 8601 フォーマットの時間。アメリカ合衆国でのデフォルトパターン: "HH:mm"                                                                             |
+| `vk pattern sortable date time`           | "*sortableDateTimePattern*"          | カレント言語設定における、並べ替え可能な ISO 8601 フォーマットの日付と時間。アメリカ合衆国でのデフォルトパターン: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"          |
+| `vk pattern universal sortable date time` | "*universalSortableDateTimePattern*" | カレント言語設定における、UTCを使用した並べ替え可能な ISO 8601 フォーマットの日付と時間。アメリカ合衆国でのデフォルトパターン: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'" |
+| `vk pattern year month`                   | "*yearMonthPattern*"                 | カレント言語設定における ISO 8601 フォーマットの年月。アメリカ合衆国でのデフォルトパターン: "yyyy MMMM"                                                                                             |
 
 #### 例題
 
@@ -313,8 +313,8 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | margin |        | object  | 印刷マージン                             |
 |        | top    | longint | 上部マージン、100分の1インチ単位。デフォルト値 = 75     |
 |        | bottom | longint | 下部マージン、100分の1インチ単位。デフォルト値 = 75     |
-|        | left   | longint | 右マージン、100分の1インチ単位。デフォルト値 = 70      |
-|        | right  | longint | 左マージン、100分の1インチ単位。デフォルト値 = 70      |
+|        | left   | longint | 左マージン、100分の1インチ単位。デフォルト値 = 70      |
+|        | right  | longint | 右マージン、100分の1インチ単位。デフォルト値 = 70      |
 |        | header | longint | ヘッダーのオフセット、100分の1インチ単位。デフォルト値 = 30 |
 |        | footer | longint | フッターのオフセット、100分の1インチ単位。デフォルト値 = 30 |
 
@@ -336,12 +336,12 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | blackAndWhite   | boolean | 白黒で印刷します。<p>デフォルト値 = false</p><p>**注**: PDF はこの属性に影響されません。 PDF のカラーはそのままです。</p>                                                                                                        |
 | centering       | longint | 印刷ページ上でコンテンツをどのように中央揃えするかを指定します。とりうる値: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (デフォルト), `vk print centering vertical` |
-| firstPageNumber | longint | 最初のページに印刷するページ番号。 デフォルト値 = 1                                                                                                                                                                           |
+| firstPageNumber | longint | 最初のページに印刷するページ番号。デフォルト値 = 1                                                                                                                                                                            |
 | pageOrder       | longint | ページの印刷順。とりうる値: `vk print page order auto` (デフォルト), `vk print page order down then over`, `vk print page order over then down`.                      |
 | pageRange       | text    | 印刷されるページの範囲                                                                                                                                                                                            |
-| qualityFactor   | longint | 印刷の品質指定 (1 - 8)。印刷の品質指定 (1 - 8)。  高ければ印刷の質は高くなりますが、印刷のパフォーマンスに影響する可能性があります。<p>デフォルト値 = 2</p>デフォルト値 = 2</p>                                                       |
-| useMax          | boolean | データのあるカラムと行のみが印刷されます。<p>デフォルト値 = true</p>デフォルト値 = true</p>                                                                                                                                             |
-| zoomFactor      | real    | 印刷ページの拡大/縮小率。<p>デフォルト値 = 1</p>デフォルト値 = 1</p>                                                                                                                                                           |
+| qualityFactor   | longint | 印刷の品質指定 (1 - 8)。高ければ印刷の質は高くなりますが、印刷のパフォーマンスに影響する可能性があります。<p>デフォルト値 = 2</p>                                                                                                          |
+| useMax          | boolean | データのあるカラムと行のみが印刷されます。<p>デフォルト値 = true</p>                                                                                                                                                              |
+| zoomFactor      | real    | 印刷ページの拡大/縮小率。<p>デフォルト値 = 1</p>                                                                                                                                                                         |
 
 ### 用紙サイズ
 
@@ -403,7 +403,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 \* テキスト型を使用する場合には、画像のファイルパス (絶対パスまたは相対パス) を渡します。相対パスを渡す場合、ファイルはデータベースのストラクチャーファイルのと階層に置かれてなければなりません。 Windows では、ファイル拡張子も含めて渡します。画像指定に使用するデータ型にかかわらず、4D View Pro エリアには (参照ではなく) 画像そのものが保存され、[VP Get print info](commands/vp-get-print-info.md) によって返されます。
 
-## スタイルオブジェクト {#style-objects} {#style-objects}
+## スタイルオブジェクト{#style-objects}
 
 4D View Pro スタイルオブジェクトとスタイルシートを使用すると、4D View Pro ドキュメントのグラフィカル要素や見た目を管理することができるようになります。
 

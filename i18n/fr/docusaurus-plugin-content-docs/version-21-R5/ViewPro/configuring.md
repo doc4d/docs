@@ -340,8 +340,8 @@ Les attributs de page sont utilisés pour spécifier les paramètres généraux 
 | pageOrder       | entier long | L'ordre d'impression des pages. Valeurs disponibles : `vk print page order auto` (par défaut), `vk print page order down then over`, `vk print page order over then down`.                                 |
 | pageRange       | text        | La plage de pages pour l'impression                                                                                                                                                                                                                                           |
 | qualityFactor   | entier long | Le facteur de qualité pour l'impression (1 - 8).  Plus le facteur de qualité est élevé, meilleure est la qualité d'impression, cependant les performances d'impression peuvent être affectées.<p>Valeur par défaut = 2</p> |
-| useMax          | boolean     | Seules les colonnes et les lignes avec des données sont imprimées.<p>Valeur par défaut = true</p>                                                                                                                                                             |
-| zoomFactor      | réel        | Le montant de l'agrandissement ou de la réduction de la page imprimée.<p>Valeur par défaut = 1</p>                                                                                                                                                            |
+| useMax          | boolean     | Seules les colonnes et les lignes contenant des données sont imprimées.<p>Valeur par défaut = true</p>                                                                                                                                                        |
+| zoomFactor      | réel        | Le montant pour agrandir ou réduire la page imprimée.<p>Valeur par défaut = 1</p>                                                                                                                                                                             |
 
 ### Taille du papier
 
@@ -402,7 +402,7 @@ Les attributs du filigrane sont utilisés pour superposer du texte ou une image 
 
 \* Si vous utilisez un type texte, passez le chemin d'accès (absolu ou relatif) de l'image. Si vous passez un chemin relatif, le fichier doit être situé à côté du fichier de structure de la base de données. Sous Windows, l'extension de fichier doit être indiquée. Peu importe le type utilisé pour définir une image, l'image elle-même (pas une référence) est stockée dans la zone 4D View Pro et est retournée par [VP Get print info](commands/vp-get-print-info.md).
 
-## Style Objects {#style-objects} {#style-objects}
+## Style Objects {#style-objects}
 
 Les objets et les feuilles de style 4D View Pro vous permettent de contrôler les aspects graphiques et l'apparence de vos documents 4D View Pro.
 

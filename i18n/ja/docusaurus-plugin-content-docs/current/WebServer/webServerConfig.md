@@ -64,7 +64,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | Text |
 
-セキュアプロトコルに使用される暗号リストです。 Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
+セキュアプロトコルに使用される暗号リストです。Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
 > 4D が使用するデフォルトの暗号リストは、`SET DATABASE PARAMETER` コマンドを使用してセッションごとに変更することができます。この場合、変更は 4Dアプリケーション全体に適用されます (Webサーバー・SQLサーバー・クライアント/サーバー接続、HTTPクライアント、セキュアプロトコルを使用するすべての 4Dコマンドを含む)。
 
@@ -133,7 +133,7 @@ Webサーバーの HTTPリクエストログファイル (アプリケーショ�
 
 | 設定できる場所             | 名称                                                         | コメント              |
 | ------------------- | ---------------------------------------------------------- | ----------------- |
-| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | Text              |
+| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | テキスト              |
 | `WEB SET HOME PAGE` |                                                            | Webプロセス毎に異なる設定が可能 |
 | 設定ダイアログボックス         | [設定ページ / デフォルトホームページ](../settings/web.md#デフォルトホームページ)      |                   |
 
@@ -161,7 +161,7 @@ Webサーバーの初回起動時には、4D はデフォルトで "index.html" 
 | `WEB SET OPTION` | `Web CORS enabled`                                                          | 0 (デフォルト値; 無効) または 1 (有効) |
 | 設定ダイアログボックス      | [オプション (II) ページ / CORSを有効化](../settings/web.md#corsを有効化) | デフォルトではチェックなし                                                   |
 
-4D Webサーバーは、クロスオリジンリソースシェアリング (CORS) を実装しており、これによって別ドメインにて提供されている特定の Webページが、REST などを使用した XHRコールを介してカレントWebアプリケーションのリソースにアクセスできるようにすることが可能です。セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。有効化されている場合、ドメイン外 Webページからの XHRコール (RESTリクエストなど) をアプリケーションにおいて許可することができます (CORSドメインリストに許可されたアドレスのリストを定義する必要があります。有効時に、許可されていないドメインやメソッドがサイト間リクエストを送信した場合、"403 - forbidden" エラーレスポンスによって拒否されます。
+4D Webサーバーは、クロスオリジンリソースシェアリング (CORS) を実装しており、これによって別ドメインにて提供されている特定の Webページが、REST などを使用した XHRコールを介してカレントWebアプリケーションのリソースにアクセスできるようにすることが可能です。セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。有効化されている場合、ドメイン外 Webページからの XHRコール (RESTリクエストなど) をアプリケーションにおいて許可することができます (CORSドメインリストに許可されたアドレスのリストを定義する必要があります。後述の CORSSettings 参照)。有効時に、許可されていないドメインやメソッドがサイト間リクエストを送信した場合、"403 - forbidden" エラーレスポンスによって拒否されます。
 
 無効化されている場合 (デフォルト) には、CORS で送信されたサイト間リクエストはすべて無視されます。
 
@@ -255,7 +255,7 @@ HTTP接続を受け付ける IP (TCP) ポート番号。デフォルトで、4D 
 
 デフォルトでない HTTPポート番号を使用して公開された Webアプリケーションに接続するには、Webブラウザーで入力するアドレスにポート番号を含めなければなりません。アドレスの後にコロンに続けてポート番号を指定します。たとえば、HTTPポート番号 8080を使用する場合、"123.4.567.89:8080" のように書きます。
 
-> **警告**: デフォルトの TCPポート番号 (標準モードで 80、HTTPSモードで 443) 以外を指定する場合、同時に使用する他のサービスのデフォルトポート番号を使わないよう注意が必要です。たとえば、Webサーバーマシンで FTPプロトコルを使用する計画である場合、このプロトコルのデフォルトである TCPポート 20 と 21 を使用してはいけません。 256 より下のポート番号は、well-known サービスに予約されています。 また、256 から 1024 は UNIXプラットフォーム由来のサービスに予約されています。セキュリティのため、これらの数値よりも上、たとえば 2000台や 3000台などを指定します。
+> **警告**: デフォルトの TCPポート番号 (標準モードで 80、HTTPSモードで 443) 以外を指定する場合、同時に使用する他のサービスのデフォルトポート番号を使わないよう注意が必要です。たとえば、Webサーバーマシンで FTPプロトコルを使用する計画である場合、このプロトコルのデフォルトである TCPポート 20 と 21 を使用してはいけません。 256 より下のポート番号は、well-known サービスに予約されています。また、256 から 1024 は UNIXプラットフォーム由来のサービスに予約されています。セキュリティのため、これらの数値よりも上、たとえば 2000台や 3000台などを指定します。
 
 0 を指定すると、4D はデフォルトの HTTPポート番号 80を使用します。
 
@@ -320,7 +320,7 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。デフォル�
 - **TCPポートが使用済みでも警告は出ません**<br/>
   サーバーが応答する IPアドレスが "任意" に設定されていた場合、TCPポートが他のアプリケーションで使用されていても、それはサーバー起動時に指摘されません。 IPv6 アドレスのポートが空いているため、この場合 4D Server はどのようなエラーも検知しません。しかしながら、マシンの IPv4アドレスを使用、またはローカルアドレス 127.0.0.1 を使用してアクセスすることは不可能です。
 
-定義されたポートで 4D Server が反応していないようであれば、サーバーマシンで [::1] のアドレスを試してみてください (IPv6 における 127.0.0.1 と同義です。 他のポート番号をテストするには [:portNum] を追加してください)。 4D が応答するようであれば、IPv4 のポートを他のアプリケーションが使用している可能性が高いです。
+定義されたポートで 4D Server が反応していないようであれば、サーバーマシンで [::1] のアドレスを試してみてください (IPv6 における 127.0.0.1 と同義です。他のポート番号をテストするには [:portNum] を追加してください)。 4D が応答するようであれば、IPv4 のポートを他のアプリケーションが使用している可能性が高いです。
 
 - **IPv4-マップされた IPv6アドレス**<br/>
   プロセスを標準化するために、4D では IPv4アドレスの標準ハイブリッド表示を IPv6 で提供しています。これらのアドレスは IPv6フォーマットにおいて 96ビットの接頭辞付きで書かれ、その後に IPv4ドット区切り表記で書かれた 32ビットが続きます。たとえば、::ffff:192.168.2.34 は、192.168.2.34 という IPv4アドレスを表します。
@@ -456,9 +456,9 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 
 ## 一時的なコンテキストを再利用する (リモートモード)
 
-| 設定できる場所     | 名称                                                                                                                    | コメント |
-| ----------- | --------------------------------------------------------------------------------------------------------------------- | ---- |
-| 設定ダイアログボックス | [[オプション (I) ページ / 一時的なコンテキストを再利用する](../settings/web.md#一時的なコンテキストを再利用する) |      |
+| 設定できる場所     | 名称                                                                                         | コメント |
+| ----------- | ------------------------------------------------------------------------------------------ | ---- |
+| 設定ダイアログボックス | [オプション (I) ページ / 一時的なコンテキストを再利用する](../settings/web.md#一時的なコンテキストを再利用する) |      |
 
 > このオプションは、**セッションなし** オプションがチェックされている場合にのみ利用できます。
 
@@ -524,9 +524,9 @@ User-Agent: <name>
 
 デフォルトHTMLルートフォルダーを変更するには、パスを "デフォルトHTMLルート" に入力します。
 
-- このとき、相対パスの起点は [Projectフォルダー](Project/architecture.md#project-folder) (4Dローカルおよび 4D Server) 、または、4Dアプリケーションやソフトウェアーパッケージを含むフォルダーです (4Dリモートモード)。
+- このとき、相対パスの起点は [Projectフォルダー](Project/architecture.md#project-folder) (4Dローカルおよび 4D Server) 、または、4Dアプリケーションやソフトウェアパッケージを含むフォルダーです (4Dリモートモード)。
 - パスは POSIX シンタックスで表します (フォルダーはスラッシュ ("/") で区切ります)。
-- フォルダー階層で 1つ上にあがるには、フォルダー名の前にピリオドを2つ “..” 置きます。置きます。
+- フォルダー階層で 1つ上にあがるには、フォルダー名の前にピリオドを2つ “..”  置きます。
 - パスはスラッシュ (“/”) で始まってはいけません (HTMLルートフォルダーを Projectフォルダーや 4Dリモートフォルダーにしながら、それより上階層へのアクセスを禁止したい場合には、"/" を入力します)。
 
 たとえば、HTMLルートフォルダーを "MyWebApp" フォルダーの “Web” サブフォルダーにしたい場合、"MyWebApp/Web" と入力します。
@@ -582,13 +582,31 @@ User-Agent: <name>
 
 次の値が提供されています:
 
-- "Strict" (4Dセッションcookie の `SameSite` 属性のデフォルト値): ファーストパーティのコンテキスト、すなわち現在のサイトのドメインに一致するコンテキストでのみ cookie は送信され、サードパーティの Webサイトには決して送信されません。
-- "Lax": クロスサイトのサブリクエストでは cookie は送信されませんが (たとえば、画像やフレームをサードパーティのサイトにロードする場合など)、ユーザーがオリジンのサイトに移動するとき (つまり、リンクを辿っているとき) には送信されます。
+- "Strict" (default `SameSite` attribute value for 4D session cookies): the session cookie is only sent with requests coming from pages of the same site, and never with requests coming from other websites. A "site" is a domain with all its subdomains, with the same scheme: `https://app.example.com` and `https://blog.example.com` are the same site, `http://app.example.com` is another one.
+- "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site with a GET request (i.e. they follow a link).
 - "None": ファーストパーティやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。 "None" を使用する場合は、cookie の `Secure` 属性も設定する必要があります (設定しないと、cookie がブロックされます)。
 
-セッションcookie の `Secure` 属性値は、HTTPS接続の場合には (`SameSite` 属性値が何であれ)、自動的に "True" に設定されます。
+#### Effect on exposed functions
 
-> HTTPサーバーで `SameSite=None` を設定することは、(HTTPS でのみ使用される) `Secure` 属性が欠落し、cookie がブロックされるため、推奨されません。
+Any web page open in a user's browser can make that browser send requests to your application. If the user has opened a 4D web session in the same browser, the `SameSite` value determines whether these requests carry the 4D session cookie:
+
+- with the cookie, the request runs in the user's session. This can be intended (from an intranet portal, for example), but a malicious website can use it to act on behalf of the user (cross-site request forgery, CSRF);
+- without the cookie, the request runs as a guest.
+
+In both cases, the function is executed only if the privileges of that session allow it.
+
+| Request from another website to                                                                               | "Strict"        | "Lax"                                                                            | "None"                                                                                 |
+| ------------------------------------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function (POST only) | Runs as a guest | Runs as a guest                                                                  | Runs in the user's session (form, script)                           |
+| an exposed [onHTTPGet](../ORDA/ordaClasses.md#onhttpget-keyword) function (GET and POST)   | Runs as a guest | Runs in the user's session through a link or a redirection; as a guest otherwise | Runs in the user's session (link, redirection, image, form, script) |
+
+:::note 注記
+
+- Keep in mind that a site includes its subdomains. Whatever the `SameSite` value, requests sent by pages of another application on your site (for example https://blog.example.com for https://app.example.com) run in the user's session.
+- Use "None" only if your application must be used inside another website (for example in a frame), and check that each exposed function can safely run in the user's session when another website requests it.
+- セッションcookie の `Secure` 属性値は、HTTPS接続の場合には (`SameSite` 属性値が何であれ)、自動的に "True" に設定されます。 HTTPサーバーで `SameSite=None` を設定することは、(HTTPS でのみ使用される) `Secure` 属性が欠落し、cookie がブロックされるため、推奨されません。
+
+:::
 
 ## プリエンプティブプロセスを使用
 

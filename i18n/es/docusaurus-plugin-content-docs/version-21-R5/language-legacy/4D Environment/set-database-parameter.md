@@ -822,7 +822,7 @@ Consulte el ejemplo 2.
 
 **Valores posibles**: entero positivo. Valor predeterminado = 900, valor mínimo = 60. 
 
-**Descripción**: tiempo de espera en segundos para las sesiones cliente/servidor en caso de desconexión inesperada al utilizar la capa de red QUIC. Este tiempo de espera es el período permitido para una sesión durante el cual la conexión entre el servidor y el cliente puede restablecerse automáticamente tras una desconexión involuntaria. Si, al final de este tiempo de espera, la conexión no se ha restablecido, la sesión se cierra.  
+**Descripción**: tiempo de espera en segundos para las sesiones cliente/servidor en caso de desconexión inesperada al utilizar la capa de red QUIC. Este tiempo de espera es el período permitido para una sesión durante el cual la conexión entre el servidor y el cliente puede restablecerse automáticamente tras una desconexión involuntaria. Si, al final de este tiempo de espera, la conexión no se ha restablecido, la sesión cliente se cierra con un mensaje.  
 
 Este parámetro solo puede configurarse en 4D Server y se aplica a todas las nuevas sesiones remotas de 4D (el valor del tiempo de espera de las sesiones existentes no se modifica). 
 
@@ -1080,21 +1080,6 @@ Cuando se utiliza con [SET DATABASE PARAMETER](../commands/set-database-paramete
 
 :::
 
-#### Selectores hilo seguro 
-
-El comando **SET DATABASE PARAMETER** puede utilizarse en procesos apropiativos al llamar a los siguientes selectores:
-
-* [4D Server log recording](#4d-server-log-recording-28)
-* [Debug log recording](#debug-log-recording-34)
-* [Diagnostic log recording](#diagnostic-log-recording-79)
-* [Diagnostic log level](#diagnostic-log-level-86)
-* [Circular log limitation](#circular-log-limitation-90)
-* [Cache flush periodicity](#cache-flush-periodicity-95)
-* [SMTP Log](#smtp-log-110)
-* [POP3 Log](#pop3-log-116)
-* [IMAP Log](#imap-log-119)
-* [Pause logging](#pause-logging-121)
-
 #### Ejemplo 1 
 
 La siguiente instrucción evitará un posible problema de timeout:
@@ -1142,4 +1127,4 @@ Usted quiere exportar datos en JSON que contienen una fecha 4D convertida. Note 
 |  |  |
 | --- | --- |
 | Número de comando | 642 |
-| Hilo seguro | no |
+| Hilo seguro | yes (partially). Selectores hilo seguro: [4D Server log recording](#4d-server-log-recording-28) - [Debug log recording](#debug-log-recording-34) - [Diagnostic log recording](#diagnostic-log-recording-79) - [Diagnostic log level](#diagnostic-log-level-86) - [Circular log limitation](#circular-log-limitation-90) - [Cache flush periodicity](#cache-flush-periodicity-95) - [SMTP Log](#smtp-log-110) - [POP3 Log](#pop3-log-116) - [IMAP Log](#imap-log-119) - [Pause logging](#pause-logging-121)|

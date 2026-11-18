@@ -27,8 +27,8 @@ Le texte sélectionné est plus foncé et plus épais.
 
 Vous pouvez définir cette propriété en utilisant la commande [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> Ceci est du texte normal.<br/>
-> **Ceci est du texte en gras.**
+> Ceci est un texte normal.<br/>
+> **Ceci est un texte en gras.**
 
 #### Grammaire JSON
 
@@ -52,8 +52,8 @@ Fait pencher le texte sélectionné légèrement vers la droite.
 
 Vous pouvez également définir cette propriété via la commande [**OBJECT SET FONT STYLE**](../commands/object-set-font-style).
 
-> Ceci est du texte normal.<br/>
-> *Ceci est du texte en italique.*
+> Ceci est un texte normal.<br/>
+> *Ceci est un texte en italique.*
 
 #### Grammaire JSON
 
@@ -286,7 +286,7 @@ Emplacement horizontal du texte dans la zone où il apparait.
 
 :::note
 
-- "automatic" is not supported by [buttons](button_overview.md), [check boxes](checkbox_overview.md), and [radio buttons](radio_overview.md)
+- "automatic" n'est pas pris en charge par les [boutons](button_overview.md), [cases à cocher](checkbox_overview.md) et [boutons radio](radio_overview.md)
 - "justify" n'est pris en charge que par les [zones de saisie](input_overview.md) et les [zones de texte](text.md)
 
 :::

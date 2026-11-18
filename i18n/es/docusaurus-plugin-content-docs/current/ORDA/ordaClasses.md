@@ -1020,7 +1020,7 @@ $status:=$remoteDS.Schools.registerNewStudent($student) // OK
 $id:=$remoteDS.Schools.computeIDNumber() // Error "Unknown member method"
 ```
 
-## Palabra clave onHTTPGet
+## `onHTTPGet` keyword
 
 Utilice la palabra clave `onHTTPGet` para declarar funciones que pueden ser llamadas a través de peticiones HTTP utilizando el verbo `GET`. Estas funciones pueden devolver cualquier contenido web, por ejemplo utilizando la clase [`4D.OutgoingMessage`](../API/OutgoingMessageClass.md).
 
@@ -1044,7 +1044,9 @@ En este caso también debe añadirse la palabra clave `exposed`, de lo contrario
 
 :::caution
 
-Como este tipo de llamada es una acción que se ofrece fácilmente, el desarrollador debe asegurarse de que no se realiza ninguna acción sensible en dichas funciones.
+`onHTTPGet` lets the function also be called with GET, for example by following a link. Depending on the session cookie's [`SameSite` value](../WebServer/webServerConfig.md#session-cookie-samesite), a link on another website can then send a request that runs in the session of the user logged in to your application.
+
+Use `onHTTPGet` only for functions that read and return content, such as a file to download, a picture or a report. Do not use `onHTTPGet` for a function that changes anything (i.e. that creates, modifies or deletes data, issues or revokes credentials, sends a message).
 
 :::
 
@@ -1160,20 +1162,20 @@ Use it to prepare the session from the information stored with the token, for ex
 
 The *$info* parameter contains:
 
-| Propiedad  | Tipo                       | Descripción                                                                                                                                                                          |
-| ---------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| type       | Text                       | "fineGrainedToken" for a [Fine-Grained Token](../WebServer/mcp-server.md#fine-grained-tokens), "oauth" for an [OAuth](../WebServer/mcp-server.md#oauth-21-mode) access token         |
-| id         | Text                       | Identifier of the token or of the OAuth grant                                                                                                                                        |
-| name       | Text                       | Fine-Grained Token: name of the token                                                                                                                                |
-| userName   | Text                       | OAuth: user name of the grant                                                                                                                                        |
-| clientId   | Text                       | OAuth: identifier of the MCP client                                                                                                                                  |
-| clientName | Text                       | OAuth: name of the MCP client                                                                                                                                        |
-| privileges | Text, Collection or Object | Privileges and roles of the token or of the grant                                                                                                                                    |
-| expiry     | Text                       | Fine-Grained Token: expiration date of the token                                                                                                                     |
-| expiresAt  | Text                       | OAuth: expiration date and time of the grant                                                                                                                         |
-| info       | Object                     | Fine-Grained Token: *info* object passed to [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken) (*Null* if none) |
-| createdAt  | Text                       | Date and time of the token generation or of the login                                                                                                                                |
-| IPAddress  | Text                       | IP address of the MCP client                                                                                                                                                         |
+| Propiedad  | Tipo                      | Descripción                                                                                                                                                                          |
+| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| type       | Text                      | "fineGrainedToken" for a [Fine-Grained Token](../WebServer/mcp-server.md#fine-grained-tokens), "oauth" for an [OAuth](../WebServer/mcp-server.md#oauth-21-mode) access token         |
+| id         | Text                      | Identifier of the token or of the OAuth grant                                                                                                                                        |
+| name       | Text                      | Fine-Grained Token: name of the token                                                                                                                                |
+| userName   | Text                      | OAuth: user name of the grant                                                                                                                                        |
+| clientId   | Text                      | OAuth: identifier of the MCP client                                                                                                                                  |
+| clientName | Text                      | OAuth: name of the MCP client                                                                                                                                        |
+| privileges | Text, Collection u Object | Privileges and roles of the token or of the grant                                                                                                                                    |
+| expiry     | Text                      | Fine-Grained Token: expiration date of the token                                                                                                                     |
+| expiresAt  | Text                      | OAuth: expiration date and time of the grant                                                                                                                         |
+| info       | Object                    | Fine-Grained Token: *info* object passed to [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken) (*Null* if none) |
+| createdAt  | Text                      | Date and time of the token generation or of the login                                                                                                                                |
+| IPAddress  | Text                      | IP address of the MCP client                                                                                                                                                         |
 
 Se aplican las siguientes reglas:
 

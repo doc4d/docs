@@ -73,7 +73,11 @@ Voir la section [Fonctions exposées vs non exposées](../ORDA/ordaClasses.md#ex
 
 ### `onHTTPGet`
 
-Les fonctions autorisées à être appelées à partir de requêtes HTTP `GET` doivent également être spécifiquement déclarées avec le [mot-clé `onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword). Par exemple :
+Les fonctions autorisées à être appelées à partir de requêtes HTTP `GET` doivent également être spécifiquement déclarées avec le [mot-clé `onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword). Functions declared with `exposed` alone can only be called with `POST`.
+
+Declare with `onHTTPGet` only functions that read and return content: depending on the session cookie's [`SameSite` value](../WebServer/webServerConfig.md#session-cookie-samesite), a link on another website can send a request that runs in the session of a logged-in user (see the caution in [`onHTTPGet` keyword section](../ORDA/ordaClasses.md#onhttpget-keyword)).
+
+Par exemple :
 
 ```4d
 //autoriser les requêtes GET
@@ -120,7 +124,7 @@ Par exemple, avec une fonction de la dataclass `getCities()` recevant des param�
 
 `/rest/City/getCities?$params='["Aguada","Paris"]'`
 
-### Paramètres des entités
+### Paramètre d'entité
 
 Les entités passées en paramètres sont référencées sur le serveur via leur clé (c'est-à-dire la propriété __KEY). Si le paramètre clé est omis dans une requête, une nouvelle entité est chargée en mémoire sur le serveur.
 Vous pouvez également transmettre des valeurs pour tous les attributs de l'entité. Ces valeurs seront automatiquement utilisées pour l'entité traitée sur le serveur.

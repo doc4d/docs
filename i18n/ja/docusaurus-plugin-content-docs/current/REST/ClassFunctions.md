@@ -10,8 +10,7 @@ REST リクエストを使って、ORDA データモデルに定義されてい�
 - **POST リクエスト** を使用する。この場合、データ引数はリクエストの本文内で渡します。
 - **GET リクエスト** を使用する。この場合、引数はURL 内に直接渡します。
 
-POST リクエストは、リンクをクリックするだけのようなシンプルなアクションでセンシティブなコードを実行するのを避けられるため、より優れたセキュリティレベルを提供します。一方で、GET リクエストは、URL をブラウザーに入れるだけで関数を呼び出すことができるため、
-よりユーザーエクスペリエンスに沿っていると言えます(注意: 開発者は、このような機能でセンシティブなアクションが実行されないようにしなければなりません)。
+POST リクエストは、リンクをクリックするだけのようなシンプルなアクションでセンシティブなコードを実行するのを避けられるため、より優れたセキュリティレベルを提供します。一方で、GET リクエストは、URL をブラウザーに入れるだけで関数を呼び出すことができるため、よりユーザーエクスペリエンスに沿っていると言えます(注意: 開発者は、このような機能でセンシティブなアクションが実行されないようにしなければなりません)。
 
 ## 関数の呼び出し
 
@@ -74,7 +73,11 @@ exposed Function getSomeInfo() : 4D.OutgoingMessage
 
 ### `onHTTPGet`
 
-HTTP `GET` リクエストから呼び出すことのできる関数は、[`onHTTPGet` キーワード](../ORDA/ordaClasses.md#onHttpGet-キーワード) も使用して明確に宣言されていなければなりません。例:
+HTTP `GET` リクエストから呼び出すことのできる関数は、[`onHTTPGet` キーワード](../ORDA/ordaClasses.md#onHttpGet-キーワード) も使用して明確に宣言されていなければなりません。 Functions declared with `exposed` alone can only be called with `POST`.
+
+Declare with `onHTTPGet` only functions that read and return content: depending on the session cookie's [`SameSite` value](../WebServer/webServerConfig.md#session-cookie-samesite), a link on another website can send a request that runs in the session of a logged-in user (see the caution in [`onHTTPGet` keyword section](../ORDA/ordaClasses.md#onhttpget-keyword)).
+
+例:
 
 ```4d
 // GET リクエストを許可する

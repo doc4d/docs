@@ -28,7 +28,7 @@ LIST TO ARRAY("ListName";varCol)
 
 ## セレクションリストボックス
 
-このタイプのリストボックスでは、列ごとにフィールド (例: `[Employees]LastName`) や式を割り当てます。式は 1つ以上のフィールド (たとえば `[Employees]FirstName+“ ”[Employees]LastName`) または単にフォーミュラ (たとえば `String(Milliseconds)`) を使用できます。式にはプロジェクトメソッド、変数、あるいは配列項目も指定できます。カラムをプログラムで変更するには、`LISTBOX SET COLUMN FORMULA` および `LISTBOX INSERT COLUMN FORMULA` コマンドを使用します。
+このタイプのリストボックスでは、列ごとにフィールド (例: `[Employees]LastName`) や式を割り当てます。式は 1つ以上のフィールド (たとえば `[Employees]FirstName+" "[Employees]LastName`) または単にフォーミュラ (たとえば `String(Milliseconds)`) を使用できます。式にはプロジェクトメソッド、変数、あるいは配列項目も指定できます。カラムをプログラムで変更するには、`LISTBOX SET COLUMN FORMULA` および `LISTBOX INSERT COLUMN FORMULA` コマンドを使用します。
 
 それぞれの行はセレクションのレコードを基に評価されます。セレクションは **カレントセレクション** または **命名セレクション**です。
 
@@ -103,7 +103,7 @@ myCol:=myCol.push("new value") // リストボックスに new value を表示
 | [右](properties_CoordinatesAndSizing.md#右)                                | ○         | ○             | ○                            |
 | [行背景色配列](properties_BackgroundAndBorder.md#行背景色配列)                       | ○         |               |                              |
 | [行コントロール配列](properties_ListBox.md#行コントロール配列)                             | ○         |               |                              |
-| [行フォントカラー配列](properties_Text.md#行フォントカラー式)                               | ○         |               |                              |
+| [行フォントカラー配列](properties_Text.md#行フォントカラー配列])                             | ○         |               |                              |
 | [行の高さ](properties_CoordinatesAndSizing.md#行の高さ)                          | ○         |               |                              |
 | [行高さ配列](properties_CoordinatesAndSizing.md#行高さ配列)                        | ○         |               |                              |
 | [行スタイル配列](properties_Text.md#行スタイル配列)                                    | ○         |               |                              |
@@ -117,7 +117,7 @@ myCol:=myCol.push("new value") // リストボックスに new value を表示
 | [透過](properties_BackgroundAndBorder.md#透過)                               | ○         | ○             | ○                            |
 | [タイプ](properties_Object.md#タイプ)                                          | ○         | ○             | ○                            |
 | [下線](properties_Text.md#下線)                                              | ○         | ○             | ○                            |
-| [変数あるいは式](properties_Object.md#変数あるいは式)                                  | ○         | ○             |                              |
+| [変数あるいは式](properties_Object.md#variable-or-expression)                   | ○         | ○             |                              |
 | [縦揃え](properties_Text.md#縦揃え)                                            | ○         | ○             | ○                            |
 | [縦線カラー](properties_Gridlines.md#縦線カラー)                                   | ○         | ○             | ○                            |
 | [縦スクロールバー](properties_Appearance.md#縦スクロールバー)                            | ○         | ○             | ○                            |

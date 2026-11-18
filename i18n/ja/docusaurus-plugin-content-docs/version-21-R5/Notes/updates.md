@@ -12,17 +12,17 @@ title: リリースノート
 - [`4D.SMTPTransporter`](../API/SMTPTransporterClass.md) クラスの新しいクラスプロパティを使用したS/MIME Eメール署名のサポート: [`.certificate`](../API/SMTPTransporterClass.md#certificate) または [`.certificateName`](../API/SMTPTransporterClass.md#certificatename) (証明書の提供)、および[`.certificatePassword`](../API/SMTPTransporterClass.md#certificatepassword)。
 - [コンポーネントをホストから直接コンパイルする](../Project/compiler.md#コンポーネントのコンパイル) ことができるようになりました。
 - Windows 上での [**fluent UI** レンダリング](../FormEditor/forms.md#fluent-ui-レンダリング) でのリストフォームのサポート。
-- 4D.Vector fields: [new specific icon](../Develop/field-properties.md#4dvector-class) and new [dedicated index types](../Develop/structure-indexes.md#vector-index).
-- Support of vector indexes in [`CREATE INDEX`](../commands/create-index) and [`SET INDEX`](../commands/set-index) 4D language commands.
-- New [dataClass.getIndexes()](../API/DataClassClass.md#getindexes) API function.
-- New [`.precision` property](../API/VectorClass.md#precision) in `4D.Vector` class objects.
+- 4D.Vector フィールド: [新しい専用のアイコン](../Develop/field-properties.md#4dvector-クラス) および新しい[専用のインデックスタイプ](../Develop/structure-indexes.md#ベクトルインデックス)。
+- [`CREATE INDEX`](../commands/create-index) および [`SET INDEX`](../commands/set-index) 4D ランゲージコマンドにおけるベクトルインデックスのサポート。
+- 新しい[dataClass.getIndexes()](../API/DataClassClass.md#getindexes) API 関数。
+- `4D.Vector` クラスオブジェクト内の新しい[`.precision` プロパティ](../API/VectorClass.md#precision)。
 - [依存関係マネージャー](../Project/components.md#4d-cornerを使用) から[4D Corner プラットフォーム](https://corner.4d.com/) へと直接アクセスできるようになりました。
 - 新しい[`WebServer.quotas`](../API/WebServerClass.md#クォータ) プロパティと改善された[`4D.QuotaManager`](../API/QuotaManagerClass.md) クラスを使用して[Web サーバークォータ](../WebServer/quotas.md) を設定することができます。
 - テキストエリアと入力オブジェクト: 新しい[上パディング](../FormObjects/properties_CoordinatesAndSizing.md#上パディング)、 [下パディング](../FormObjects/properties_CoordinatesAndSizing.md#下パディング)、[左パディング](../FormObjects/properties_CoordinatesAndSizing.md#左パディング)、[右パディング](../FormObjects/properties_CoordinatesAndSizing.md#右パディング) と関連した[CSS サポート](../FormEditor/createStylesheet.md#属性マッピング)。[縦揃え](../FormObjects/properties_Text.md#縦揃え) のサポート。
 - パディングをプログラミングで管理するための[`OBJECT SET PADDING`](../commands/object-set-padding) および [`OBJECT Get padding`](../commands/object-get-padding) コマンド。
-- New inner border design for [custom buttons](../FormObjects/button_overview.md#custom), [custom check boxes](../FormObjects/checkbox_overview.md#custom) and [custom radio buttons](../FormObjects/radio_overview.md#custom): support of [fill color](../FormObjects/properties_BackgroundAndBorder.md#background-color--fill-color) and [corner radius](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) properties; new [Border width](../FormObjects/properties_BackgroundAndBorder.md#border-width) property.
-- Support of ["System rounded" border line style](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) property for [inputs](../FormObjects/input_overview.md), compliant with macOS *Liquid glass* design. Also supported by [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) and [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style) commands.
-- New ["Border color" property](../FormObjects/properties_BackgroundAndBorder.md#border-color) available for most form objects. [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) and [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) commands support a new *borderColor* parameter.
+- [カスタムボタン](../FormObjects/button_overview.md#カスタム)、[カスタムチェックボックス](../FormObjects/checkbox_overview.md#カスタム) および [カスタムラジオボタン](../FormObjects/radio_overview.md#カスタム) における新しい内部境界線デザイン: support of [塗りカラー](../FormObjects/properties_BackgroundAndBorder.md#背景色-塗りカラー) および [角の半径](../FormObjects/properties_BackgroundAndBorder.md#角の半径) プロパティのサポート、新しい[境界線幅](../FormObjects/properties_BackgroundAndBorder.md#border-width) プロパティ。
+- macOS の*Liquid glass* デザインに準拠した、[入力](../FormObjects/input_overview.md) における["システムの丸み" 境界線スタイル](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) プロパティのサポート。これはまた[`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) および [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style) コマンドによってもサポートされています。
+- 多くのフォームオブジェクトにおいて利用可能な新しい["境界線カラー" プロパティ](../FormObjects/properties_BackgroundAndBorder.md#border-color)。 [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) および [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) コマンドは新しい*borderColor* 引数をサポートします。
 - 4Dメソッドまたはクラスを作成または開くときに4D コードエディターを開くかVS Code を開くかを自動的に決定する[新しい**コードエディター** 設定](../Preferences/methods.md#コードエディター)。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=21_R5): 4D 21 R5 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/178/release-note-version-20r5/))。
 
@@ -30,9 +30,9 @@ title: リリースノート
 
 - 一貫性のために、**角の半径** プロパティはプロパティリストの["座標とサイズ"](../FormObjects/properties_CoordinatesAndSizing.md) セクションから["背景と境界線"](../FormObjects/properties_BackgroundAndBorder.md#角の半径) セクションへと移動されました。
 
-:::warning Default vector precision
+:::warning デフォルトのベクトル精度
 
-In 4D 21 R5 and higher, vectors are created with a [32-bit precision by default](../API/VectorClass.md#4dvectornew). In previous releases, only 64-bit precision was available. If you reopen a project containing vectors created in 4D 21 R5 or later using default precision (or explicitly set to 32-bit) with an ealier version, those vectors will be empty and their values will be lost.
+4D 21 R5 以降のバージョンでは、ベクトルは[デフォルトでは32-bit 精度](../API/VectorClass.md#4dvectornew) で作成されます。以前のリリースでは、64-bit 精度のみが利用可能でした。 4D 21 R5 以降のバージョンで作成されたベクトルを格納しているプロジェクトをそれより前のバージョンでデフォルトの精度を使用している(あるいは32-bit に明示的に設定されている)もので再度開いた場合、それらのベクトルは空となりそれらの値は失われます。
 
 :::
 
@@ -43,7 +43,7 @@ In 4D 21 R5 and higher, vectors are created with a [32-bit precision by default]
 #### ハイライト
 
 - AI: macOS では、Apple Intelligence **作文ツール** のおかげで、テキストを改善したり要約したりといったことができるようになりました。これは[4D Write Pro](../FormObjects/writeProArea_overview.md) および[入力](../FormObjects/input_overview.md) フォームオブジェクトにおいて、[プロパティ](../FormObjects/properties_Entry.md#writing-tools) および [標準アクション](../Desktop/standard-actions) として利用可能です。
-- QUIC ネットワークレイヤーにおける、改善された[クライアント/サーバーの接続切断のサポート](../Desktop/clientServer.md#到達不能なピアの管理): 新しい [`QUIC session timeout`](../commands/set-database-parameter#quick-session-timeout-135) データベースパラメーター、新しい [`unreachableSince` session.info](../API/SessionClass.md#info) プロパティ。
+- QUIC ネットワークレイヤーにおける、改善された[クライアント/サーバーの接続切断のサポート](../Desktop/clientServer.md#到達不能なピアの管理): 新しい [`QUIC session timeout`](../commands/set-database-parameter#quic-session-timeout-135) データベースパラメーター、新しい [`unreachableSince` session.info](../API/SessionClass.md#info) プロパティ。
 - マルチレベルスタイルシートが、[4D Write Pro インターフェースでサポートされる](../WritePro/writeprointerface#multi-level-list-style-sheets) ようになり、これによりユーザーはツールバーとサイドバーから構造化されたマルチレベルリストを直接作成・管理できるようになりました。
 - 新しい[`defer`](../commands/defer) コマンドが追加され、これによってメソッドまたは関数の終了時に必ず実行される同じコードを宣言することができるようになりました。また新しい[`Deferred formulas`](../commands/deferred-formulas) コマンドを使用することで、遅延されたフォーミュラの一覧を取得することができます。
 - セッションのREST しきい値を設定するための、セッションオブジェクトの新しい[`.quotas` プロパティ](../API/SessionClass.md#quotas)。
@@ -124,12 +124,11 @@ In 4D 21 R5 and higher, vectors are created with a [32-bit precision by default]
 | ICU             | 77.1                   | 21             | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。                                                                                                     |
 | libldap         | 2.6.10 | 21             |                                                                                                                                                      |
 | libsasl         | 2.1.28 | 20             |                                                                                                                                                      |
-| Liblsquic       | 4.2.0  | 20 R10         | QUIC に使用                                                                                                                                             |
-| Libuv           | 1.52.1 | 21 R4          | QUIC に使用                                                                                                                                             |
+| Libuv           | 1.53.0 | **21 R5**      | QUIC に使用                                                                                                                                             |
 | libZip          | 1.11.4 | 21             | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                                                |
 | LZMA            | 5.8.1  | 21             |                                                                                                                                                      |
 | ngtcp2          | 1.24.0 | 21 R4          | QUIC に使用                                                                                                                                             |
-| OpenSSL         | 4.0.1  | **21 R5**      |                                                                                                                                                      |
+| OpenSSL         | 4.0.3  | **21 R5**      |                                                                                                                                                      |
 | PDFWriter       | 4.7.0  | 21             | [`WP Export document`](../WritePro/commands/wp-export-document.md) および [`WP Export variable`](../WritePro/commands/wp-export-variable.md) において使用されます |
 | SpreadJS        | 18.2.0 | 21 R2          | 新機能の概要については、 [このブログ記事](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) を参照してください。                                                            |
 | webKit          | WKWebView                              | 19             |                                                                                                                                                      |

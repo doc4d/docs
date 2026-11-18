@@ -577,13 +577,31 @@ Valor del atributo `SameSite` de la cookie de sesión. Este atributo le permite 
 
 Hay tres valores disponibles:
 
-- "Estricto" (valor predeterminado del atributo `SameSite` para las cookies de sesión de 4D): las cookies sólo se enviarán en el contexto de primera parte, es decir, el contexto correspondiente al dominio del sitio y nunca a sitios web de terceros.
-- "Lax": las cookies no se envían en las subpeticiones de sitios cruzados (por ejemplo, para cargar imágenes o marcos en un sitio de terceros), sino que se envían cuando un usuario está navegando hacia el sitio de origen (es decir, sigue un enlace).
+- "Strict" (default `SameSite` attribute value for 4D session cookies): the session cookie is only sent with requests coming from pages of the same site, and never with requests coming from other websites. A "site" is a domain with all its subdomains, with the same scheme: `https://app.example.com` and `https://blog.example.com` are the same site, `http://app.example.com` is another one.
+- "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site with a GET request (i.e. they follow a link).
 - "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. Cuando se utiliza el valor "None", el atributo cookie `Secure` también debe ser definido (o la cookie será bloqueada).
 
-El valor del atributo `Secure` de la cookie de sesión se define automáticamente en "True" si la conexión es HTTPS (sea cual sea el valor del atributo `SameSite`).
+#### Effect on exposed functions
 
-> No se recomienda definir `SameSite=None` en un servidor HTTP ya que faltará el atributo `Secure` (utilizado sólo en HTTPS) y se bloquearán las cookies.
+Any web page open in a user's browser can make that browser send requests to your application. If the user has opened a 4D web session in the same browser, the `SameSite` value determines whether these requests carry the 4D session cookie:
+
+- with the cookie, the request runs in the user's session. This can be intended (from an intranet portal, for example), but a malicious website can use it to act on behalf of the user (cross-site request forgery, CSRF);
+- without the cookie, the request runs as a guest.
+
+In both cases, the function is executed only if the privileges of that session allow it.
+
+| Request from another website to                                                                               | "Strict"        | "Lax"                                                                            | "None"                                                                                 |
+| ------------------------------------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function (POST only) | Runs as a guest | Runs as a guest                                                                  | Runs in the user's session (form, script)                           |
+| an exposed [onHTTPGet](../ORDA/ordaClasses.md#onhttpget-keyword) function (GET and POST)   | Runs as a guest | Runs in the user's session through a link or a redirection; as a guest otherwise | Runs in the user's session (link, redirection, image, form, script) |
+
+:::note Notas
+
+- Keep in mind that a site includes its subdomains. Whatever the `SameSite` value, requests sent by pages of another application on your site (for example https://blog.example.com for https://app.example.com) run in the user's session.
+- Use "None" only if your application must be used inside another website (for example in a frame), and check that each exposed function can safely run in the user's session when another website requests it.
+- El valor del atributo `Secure` de la cookie de sesión se define automáticamente en "True" si la conexión es HTTPS (sea cual sea el valor del atributo `SameSite`). No se recomienda definir `SameSite=None` en un servidor HTTP ya que faltará el atributo `Secure` (utilizado sólo en HTTPS) y se bloquearán las cookies.
+
+:::
 
 ## Utilizar procesos apropiativos
 
@@ -623,9 +641,9 @@ En algunos casos, se pueden invocar otras funciones internas optimizadas. Las co
 
 Dos opciones le permiten definir cómo funcionan las conexiones persistentes:
 
-- **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limitar el número de peticiones por conexión le permite evitar la inundación del servidor debido a un gran número de peticiones entrantes (una técnica utilizada por los hackers).<p>
-  El valor por defecto (100) puede aumentarse o disminuirse en función de los recursos de la máquina que aloja el Servidor Web 4D.</p>
+- **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limitar el número de peticiones por conexión permite evitar la saturación del servidor, debido a un gran número de peticiones entrantes (una técnica utilizada por los hackers).<p>
+  El valor por defecto (100) puede ser aumentado o disminuido en función de los recursos de la máquina que aloja el servidor 4D web.</p>
 
-- **Tiempo de espera antes de desconexión**: este valor define el periodo máximo de espera (en segundos) durante el cual el servidor web mantiene una conexión TCP abierta sin recibir ninguna petición del navegador web. Una vez transcurrido este periodo, el servidor cierra la conexión.<p>
-  Si el navegador envía una solicitud después de que se haya cerrado la conexión, se crea automáticamente una nueva conexión TCP. Esta operación no es visible para el usuario.</p>
+- **Tiempo de espera antes de desconexión**: este valor define el periodo máximo de espera (en segundos) durante el cual el servidor web mantiene una conexión TCP abierta sin recibir ninguna petición del navegador web. **Tiempo de espera antes de desconexión**: este valor define el periodo máximo de espera (en segundos) durante el cual el servidor web mantiene una conexión TCP abierta sin recibir ninguna petición del navegador web.
+  Si el navegador web envía una solicitud después de cerrar la conexión, se crea automáticamente una nueva conexión TCP. Esta operación no es visible para el usuario.</p>
 

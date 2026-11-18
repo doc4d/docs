@@ -1,4 +1,4 @@
-﻿---
+---
 id: get-database-parameter
 title: Get database parameter
 slug: /commands/get-database-parameter
@@ -23,7 +23,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
-|21 R4|Adicionado *QUIC session timeout*|
+|21 R3|Removido suporte a *Use legacy network layer*, adicionado *Use legacy print rendering*|
 |20 R6|Modificado|
 |19 R5|Modificado|
 |16 R4|Modificado|
@@ -244,7 +244,11 @@ Para todo tipo de aplicação 4D interpretada ou compilada (4D todos os modos, 4
 
 -restrição de comandos 4D que são examinados usando Log command list (selector 80), ou
 
--restrição do processo atual com Current process debug log recording (selector 111). Isso vai adicionar a letra "p" e o número de processo ao nome de arquivo: 4DDebugLog\[\_pn\_n\].txt ou 4DDebugLogServer\[\_pn\_n\].txt Para saber mais sobre esse formato e o uso do arquivo 4DDebugLog, veja a seção *Descrição de arquivos de log* **Nota**: Esta opção se oferece unicamente com fins de depuração e deve ser utilizada com cuidado já que pode afetar o rendimento da aplicação.
+-restrição do processo atual com Current process debug log recording (selector 111). Isso vai adicionar a letra "p" e o número de processo ao nome de arquivo: 4DDebugLog\[\_pn\_n\].txt ou 4DDebugLogServer\[\_pn\_n\].txt  
+
+Para saber mais sobre esse formato e o uso do arquivo 4DDebugLog, veja a seção [*Descrição de arquivos de log*](../../Debugging/debugLogFiles.md).
+
+**Nota**: Esta opção se oferece unicamente com fins de depuração e deve ser utilizada com cuidado já que pode afetar o rendimento da aplicação.
 
 
 
@@ -420,7 +424,7 @@ O seletor QUERY BY FORMULA Joins permite definir o modo de funcionamento dos com
 
 **Se conserva entre duas sessões**: não
 
-**Valores possíveis**: 1 a 9 (1 = mais rápido, 9 = mais comprimido) ou -1 = o mejor compromiso.
+**Valores possíveis**: 1 a 9 (1 = mais rápido, 9 = mais comprimido) ou -1 = o mejor compromisso.
 
 **Descrição**: nível de compressão para todos os intercambios HTTP comprimidos efetuados para os serviços web (petições cliente ou respostas servidor). Os intercâmbios comprimidos são uma otimização que pode implementar quando tiver duas aplicações 4D que se comunicam através serviços web (ver o comando *SET WEB SERVICE OPTION*). Este seletor lhe permite otimizar os intercâmbios n seja privilegiando a velocidade de execução (menor compressão) ou a quantidade de compressão (menor velocidade). A escolha de um valor depende do tamanho e da natureza dos dados intercambiados. Passe de 1 a 9 no parâmetro valor onde 1 é a compressão mais rápida e 9 a mais alta. Também pode passar -1 para obter um compromisso entre velocidade e taxa de compressão. Por padrão, o nível de compressão é 1 (compressão rápida).
 
@@ -661,24 +665,6 @@ Este funcionamento pode ser uma fonte de erros se deseja enviar valores de data 
 **Valores possíveis**: uma das seguintes constantes (Log info por padrão): Log trace: ativa ERROR, WARN, INFO, DEBUG, TRACE (nivel mais detalhado) Log debug: ativa ERROR, WARN, INFO, DEBUG Log info: ativa ERROR, WARN, INFO (por padrão) Log warn: ativa ERROR, WARN Log error: ativa ERROR (nivel menos detalhado)
 
 
-
-### Use legacy network layer (87)
-
-**Alcance:** 4D em modo local, 4D Server**
-
-Se conserva entre duas sessões:** sim**
-
-** **Descrição:** fixa ou obtém o estado atual da capa de rede antiga para as conexões cliente/servidor. 
-
-A capa de rede antiga é obsoleta a partir de 4D v14 R5 e deve ser substituída progressivamente em suas aplicações pela capa de rede   *ServerNet*. *ServerNet* será requerida em próximas versões 4D com o propósito de se beneficiar das futuras evoluções da rede. Por razões de compatibilidade, a capa de rede antiga ainda é suportada para permitir uma transição sem problemas para as aplicações existentes; (se usar por padrão em aplicações convertidas de uma versão anterior a v14 R5). Passe 1 neste parâmetro para utilizar a capa de rede antiga (e desativar *ServerNet*) para as conexões cliente/servidor, e passe 0 para desabilitar a rede antiga (e utilizar *ServerNet*).
-
-Esta propriedade também pode ser definida mediante a opção "Usar capa de rede antiga " que se encontram em *Página Compatibilidade* das Propriedades da base (ver *Preferências de configuração*). Nesta seção, também pode encontrar uma discussão sobre a estratégia de migração. Lhe recomendamos que ative *ServerNet* o mais rápido possível.
-
-Deverá reiniciar a aplicação para que este parâmetro seja levado em conta. Não está disponível em 4D Server v14 R5 64-bit versão para macOS, que só suporta o *ServetNet*; (sempre devolve 0).
-
-**Valores possíveis**: 0 ou 1 (0 = não utilizam capa de rede antiga, 1 = uso capa de rede antiga)
-
-**Valor por padrão:** 0 em bases de dados criadas com 4D v14 R5 ou superior, 1 em bases de dados convertidas de 4D v14 R4 ou anteriores.
 
 
 
@@ -1021,23 +1007,7 @@ Esta configuração só pode ser definida no 4D Server e aplica-se a todas as no
 
 
 
-## seletores Thread-seguro 
-
-O comando **Get database parameter** pode ser usado em processos preemptivos ao chamar os seletores abaixo:
-
-* [4D Server log recording](#4d-server-log-recording-28)
-* [Debug log recording](#debug-log-recording-34)
-* [Diagnostic log recording](#diagnostic-log-recording-79)
-* [Diagnostic log level](#diagnostic-log-level-86)
-* [Circular log limitation](#circular-log-limitation-90)
-* [Cache flush periodicity](#cache-flush-periodicity-95)
-* [SMTP Log](#smtp-log-110)
-* [POP3 Log](#pop3-log-116)
-* [IMAP Log](#imap-log-119)
-* [Pause logging](#pause-logging-121)
-
-
-## Exemplo 
+## Exemplo
 
 Imagine que queira que sua aplicação reinicie após a primeira execução. A aplicação é lançada, com, por exemplo, uma linha de comando em Windows:
 
@@ -1069,11 +1039,11 @@ Em [Método banco de dados On Startup](../commands/metodo-banco-de-dados-on-star
 [SET DATABASE PARAMETER](../commands/set-database-parameter)  
 
 ## Propriedades
-
 |  |  |
 | --- | --- |
 | Número do comando | 643 |
-| Thread-seguro | no |
+| Thread-seguro | yes (parcialmente). Seletores thread-seguros: [4D Server log recording](#4d-server-log-recording-28) - [Debug log recording](#debug-log-recording-34) - [Diagnostic log recording](#diagnostic-log-recording-79) - [Diagnostic log level](#diagnostic-log-level-86) - [Circular log limitation](#circular-log-limitation-90) - [Cache flush periodicity](#cache-flush-periodicity-95) - [SMTP Log](#smtp-log-110) - [POP3 Log](#pop3-log-116) - [IMAP Log](#imap-log-119) - [Pause logging](#pause-logging-121)|
+
 
 
 

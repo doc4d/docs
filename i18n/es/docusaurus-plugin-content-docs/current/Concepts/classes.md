@@ -605,15 +605,15 @@ The comment block follows these rules:
 
 Each line of the block is interpreted according to its beginning:
 
-| Línea                                                                        | Significado                                                                                                                                                                                                                 |
-| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `// <text>`                                                                  | Description of the function. Several description lines are combined in order, with their line breaks. Empty `//` lines at the start or at the end of the block are ignored. |
-| `// $name: <text>`                                                           | Description of the *$name* parameter.                                                                                                                                                                       |
-| `// {$name}: <text>`                                                         | Description of the *$name* parameter, marked as optional for MCP.                                                                                                                                           |
-| `// ...: <text>`                                                             | Description of the [variadic parameters](parameters.md#declaring-variadic-parameters) (`... : Tipo`).                                                                                    |
-| `// param: $name <text>`, `// param: {$name} <text>`, `// param: ... <text>` | Same as `$name:`, `{$name}:`, and `...:` lines.                                                                                                                                                             |
-| `// MCP: <text>`                                                             | Description of the function for MCP only. Several `MCP:` description lines are combined in order.                                                                                           |
-| `// MCP: @tag {@tag}` or `// @tag {@tag}`                                    | MCP behavior tags (see [MCP tool metadata](#mcp-tool-metadata)). The line must contain only supported tags, otherwise it is a description line.                          |
+| Línea                                                                        | Significado                                                                                                                                                                                                               |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `// <text>`                                                                  | Descripción de la función. Several description lines are combined in order, with their line breaks. Empty `//` lines at the start or at the end of the block are ignored. |
+| `// $name: <text>`                                                           | Description of the *$name* parameter.                                                                                                                                                                     |
+| `// {$name}: <text>`                                                         | Description of the *$name* parameter, marked as optional for MCP.                                                                                                                                         |
+| `// ...: <text>`                                                             | Description of the [variadic parameters](parameters.md#declaring-variadic-parameters) (`... : Tipo`).                                                                                  |
+| `// param: $name <text>`, `// param: {$name} <text>`, `// param: ... <text>` | Same as `$name:`, `{$name}:`, and `...:` lines.                                                                                                                                                           |
+| `// MCP: <text>`                                                             | Description of the function for MCP only. Several `MCP:` description lines are combined in order.                                                                                         |
+| `// MCP: @tag {@tag}` or `// @tag {@tag}`                                    | MCP behavior tags (see [MCP tool metadata](#mcp-tool-metadata)). The line must contain only supported tags, otherwise it is a description line.                        |
 
 A `$name:` or `{$name}:` line is a parameter description only if *$name* is a parameter of the function signature. Otherwise, it is a description line (for example `// $120: price in dollars`). A `...:` line is a parameter description only if the function has variadic parameters.
 
@@ -681,7 +681,7 @@ Functions of EntitySelection classes and of other classes, as well as functions 
 
 :::note
 
-If a `Resources/syntaxMCP.json` file exists in the project, it is used instead of the generated file. The compiler never overwrites it. See [`Resources` folder](../Project/architecture.md#resources).
+If a `Resources/syntaxMCP.json` file exists in the project, it is used instead of the generated file. El compilador nunca lo sobrescribe. See [`Resources` folder](../Project/architecture.md#resources).
 
 :::
 
@@ -765,7 +765,7 @@ exposed MCP Function addDayOffsets(... : Integer) : Date
 	return This.date
 ```
 
-After compilation, `Project/DerivedData/syntaxMCP.json` contains:
+Tras la compilación, el archivo `Project/DerivedData/syntaxMCP.json` contiene:
 
 ```json
 {

@@ -65,7 +65,7 @@ The 4D Remote mode timeout selector is only taken into account if you are using 
 
 **Scope**: 4D Server, 4D remote*
 
-* **Kept between two sessions**: No
+**Kept between two sessions**: No
 
 **Possible values**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, added to the file name).
 
@@ -1145,6 +1145,6 @@ You want to export data in JSON that contains a converted 4D date. Note that con
 |  |  |
 | --- | --- |
 | Command number | 642 |
-| Thread safe | no |
+| Thread safe | yes (partially) |
 
 

@@ -11,12 +11,6 @@ title: QuotaManager
 
 :::
 
-:::tip 関連したBlog 記事
-
-[A 4D web server that knows when to say No](https://blog.4d.com/a-4d-web-server-that-knows-when-to-say-no/)
-
-:::
-
 `4D.QuotaManager` オブジェクトは以下の方法でインスタンス化することが可能です:
 
 - [Session オブジェクトの`quotas` プロパティ](./SessionClass.md#quotas)
@@ -394,7 +388,7 @@ Session.quotas.nbEntitySets:=50
 
 #### 説明
 
-`.outBytesPerMin` プロパティには<!-- REF #QuotaManagerClass.outBytesPerMin.Summary -->Web サーバーが1分間に送信できる最大バイト数<!-- END REF --> が格納されています。このクォータは、Web サーバーの圧縮設定に関わらず、圧縮されていないレスポンスのペイロードサイズに基づいて評価されます。
+`.outBytesPerMin` プロパティには <!-- REF #QuotaManagerClass.outBytesPerMin.Summary -->Web サーバーが 1分間に送信できる最大バイト数<!-- END REF -->が格納されています。このクォータは、Web サーバーの圧縮設定に関わらず、圧縮されていないレスポンスのペイロードサイズに基づいて評価されます。
 
 スコープ: [サーバーグローバルレベル](./WebServerClass.md#スコープレベル)
 
@@ -408,8 +402,7 @@ Session.quotas.nbEntitySets:=50
 
 #### 説明
 
-`.outBytesPerMinPerSession` プロパティには<!-- REF #QuotaManagerClass.outBytesPerMinPerSession.Summary -->Web サーバーがセッションに対して
-1分間に送信できる最大の総バイト数<!-- END REF --> が格納されています。このクォータは、Web サーバーの圧縮設定に関わらず、圧縮されていないレスポンスのペイロードサイズに基づいて評価されます。
+`.outBytesPerMinPerSession` プロパティには<!-- REF #QuotaManagerClass.outBytesPerMinPerSession.Summary -->Web サーバーがセッションに対して 1分間に送信できる最大の総バイト数<!-- END REF --> が格納されています。このクォータは、Web サーバーの圧縮設定に関わらず、圧縮されていないレスポンスのペイロードサイズに基づいて評価されます。
 
 スコープ: [セッションデフォルトレベル](./WebServerClass.md#スコープレベル)
 

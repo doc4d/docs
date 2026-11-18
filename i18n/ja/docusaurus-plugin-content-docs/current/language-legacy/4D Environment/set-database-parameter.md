@@ -791,7 +791,7 @@ QUERY BY FORMULA Joinsセレクタで、カレントプロセスの、フォー�
 
 **取り得る値**: 正の整数。デフォルト値 = 900、最小値 = 60。 
 
-**説明**: QUICネットワーク層を使用した場合に、予期しない切断が発生した際のクライアント/サーバーセッションのタイムアウト秒数。このタイムアウトは、意図しない切断の後にサーバーとクライアント間の接続が自動的に再確立できるセッションの許容期間です。このタイムアウト終了時に接続が再確立されていない場合、セッションは閉じられます。  
+**説明**: QUICネットワーク層を使用した場合に、予期しない切断が発生した際のクライアント/サーバーセッションのタイムアウト秒数。このタイムアウトは、意図しない切断の後にサーバーとクライアント間の接続が自動的に再確立できるセッションの許容期間です。このタイムアウト終了時に接続が再確立されていない場合、クライアントセッションはメッセージとともに閉じられます。  
 
 この設定は4D Server上でのみ設定可能であり、すべての新しい4Dリモートセッションに適用されます(既存のセッションのタイムアウト値は変更されません)。 
 
@@ -1050,22 +1050,6 @@ QUERY BY FORMULA Joinsセレクタで、カレントプロセスの、フォー�
 * *table* 引数はセレクター31, 46, そして47で使用されます。それ以外の場合、この引数は無視されます。
 * 異なるセッション間で値が保持されない定数について、その値を確実に適用したい場合には、[On Startupデータベースメソッド](../commands/on-startup-database-method) あるいは [On Server Startupデータベースメソッド](../commands/on-server-startup-database-method). 内において実行して下さい。
 
-## スレッドセーフなセレクター 
-
-**SET DATABASE PARAMETER** コマンドは、以下のセレクターを使用する場合にはプリエンプティブプロセスで使用することができます:
-
-* [4D Server log recording](#4d-server-log-recording-28)
-* [Debug log recording](#debug-log-recording-34)
-* [Diagnostic log recording](#diagnostic-log-recording-79)
-* [Diagnostic log level](#diagnostic-log-level-86)
-* [Circular log limitation](#circular-log-limitation-90)
-* [Cache flush periodicity](#cache-flush-periodicity-95)
-* [SMTP Log](#smtp-log-110)
-* [POP3 Log](#pop3-log-116)
-* [IMAP Log](#imap-log-119)
-* [Pause logging](#pause-logging-121)
-
-
 ## 例題 1 
 
 以下の文は予期しないタイムアウトを避けます:
@@ -1113,6 +1097,6 @@ QUERY BY FORMULA Joinsセレクタで、カレントプロセスの、フォー�
 |  |  |
 | --- | --- |
 | コマンド番号 | 642 |
-| スレッドセーフである | no |
+| スレッドセーフである | yes (partially). スレッドセーフなセレクター: [4D Server log recording](#4d-server-log-recording-28) - [Debug log recording](#debug-log-recording-34) - [Diagnostic log recording](#diagnostic-log-recording-79) - [Diagnostic log level](#diagnostic-log-level-86) - [Circular log limitation](#circular-log-limitation-90) - [Cache flush periodicity](#cache-flush-periodicity-95) - [SMTP Log](#smtp-log-110) - [POP3 Log](#pop3-log-116) - [IMAP Log](#imap-log-119) - [Pause logging](#pause-logging-121)|
 
 
