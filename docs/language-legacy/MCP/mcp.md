@@ -83,9 +83,10 @@ End if
 
 ## See also
 
-[MCPContext class](../../API/MCPContextClass.md)  
-[MCP server](../../WebServer/mcp-server.md)  
-[Session](../../commands/session)
+- [MCPContext class](../../API/MCPContextClass.md)
+- [MCP server](../../WebServer/mcp-server.md)
+- [MCP behavior tags](../../WebServer/mcp-server.md#mcp-tool-metadata)
+- [Session](../../commands/session)
 
 ## Properties
 

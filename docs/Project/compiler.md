@@ -28,8 +28,6 @@ If no errors are detected, the actual compilation begins and the "Compilation su
 
 You can immediately [run your application in compiled mode](#run-compiled) and see how faster it is. 
 
-When the compilation succeeds, the compiler also generates the `Project/DerivedData/syntaxMCP.json` file, which contains the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata) of the `exposed mcp` functions of the project, whatever the [syntax file setting](../Extensions/develop-components.md#code-completion-for-compiled-components).
-
 If errors are detected, the process is stopped and the "Compilation failed" message is displayed. The information area of the window displays the method names and line numbers concerned in a hierarchical list:
 
 ![](../assets/en/Project/compilerWin2.png)
@@ -291,25 +289,6 @@ The special warnings comments have priority over the warnings display settings s
 
 :::
 
-### Warnings on function comments
-
-The compiler checks the [comment block above the declaration](../Concepts/classes.md#function-comments) of each `exposed mcp` function and reports a warning:
-
-- for each parameter of the signature that is not documented by a `$name:` or `{$name}:` line, when the function has a comment block (variadic parameters are not checked),
-- when the function has no description at all (neither description lines nor `MCP:` description lines),
-- for each line that contains only behavior tags without the `MCP:` prefix (for example `// @readOnly`): such a line is ignored, write `// MCP: @readOnly` instead,
-- when the `MCP:` behavior tags contradict each other (`@readOnly`, `@destructive`, and `@additive` used together). In this case, the corresponding hints are omitted from the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata),
-- when the function cannot be an MCP tool (for example, it has a `Pointer` parameter or its tool name is longer than 64 characters). The warning gives the reason, and the function gets no entry in the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata).
-
-These warnings are numbered: like other numbered warnings, you can disable them in the [warnings tab](#warnings-tab) or [locally](#disabling-and-enabling-warnings-locally) with `//%W-` comments. Functions that are not declared `exposed mcp` are not checked. For example, the following function generates a warning for the *$factor* parameter and a warning for the `@readOnly` and `@destructive` tags:
-
-```4d
-// Scales a value by a factor
-// MCP: @readOnly @destructive
-// $value: value to scale
-exposed mcp Function scale($value : Real; $factor : Real) : Real
-	return $value*$factor
-```
 
 ## Compilation tools
 

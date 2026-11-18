@@ -161,7 +161,7 @@ Within these folders, deleted element names are in parentheses, e.g. "(myMethod)
 
 The DerivedData folder contains cached data used internally by 4D to optimize processing. It is automatically created or recreated when necessary. You can ignore this folder.
 
-When the project is compiled, 4D also generates in this folder the `syntaxMCP.json` file, which contains the [MCP tool metadata](../Concepts/classes.md#mcp-tool-metadata) of the `exposed mcp Function` class functions. If a `syntaxMCP.json` file exists in the [`Resources`](#resources) folder, its descriptions are applied over this file.
+When the project is compiled, 4D also generates in this folder the `syntaxMCP.json` file, which contains the [MCP tool metadata](../WebServer/mcp-server.md#mcp-tool-metadata) of the `exposed MCP Function` class functions. This file is not used if a `syntaxMCP.json` file exists in the [`Resources`](#resources) folder.
 
 ## `Libraries`
 
@@ -177,7 +177,7 @@ Contents|Description|Format
 --------|-------|----
 *item*|Project resource files and folders|various
 Images/Library/*item*|Pictures from the Picture Library as separate files(*). Names of these items become file names. If a duplicate exists, a number is added to the name.|picture
-syntaxMCP.json|Custom descriptions of the [MCP tools](../Concepts/classes.md#mcp-tool-metadata), written after compilation. If this file exists, it is applied over the `Project/DerivedData/syntaxMCP.json` file generated at compilation: it can only override the descriptions of tools and of their parameters, the rest comes from the generated file. The compiler never modifies it.|JSON
+syntaxMCP.json|Custom descriptions of the [MCP tools](../WebServer/mcp-server.md#mcp-tool-metadata), written after compilation. If this file exists, it is applied over the `Project/DerivedData/syntaxMCP.json` file generated at compilation: it can only override the descriptions of tools and of their parameters, the rest comes from the generated file. The compiler never modifies it.|JSON
 
 (*) only if the project was exported from a .4db binary database.
 
