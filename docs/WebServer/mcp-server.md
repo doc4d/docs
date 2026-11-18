@@ -1,6 +1,6 @@
 ---
 id: mcp-server
-title: MCP server
+title: MCP Server
 ---
 
 <details><summary>History</summary>
@@ -242,33 +242,6 @@ Requests are stateless, but 4D keeps one web session per token and caller IP add
 - Only 4D calls `ds.mcpAuthenticated()` and `ds.mcpGrant()`. A REST request or a remote datastore call never runs them: if they are not declared `exposed`, it gets the usual answer for a non-exposed function (404 for REST, "not a function" for a remote datastore); if they are declared `exposed`, it gets a permission error naming the function (403 for REST, error 1561 for a remote datastore), and 4D logs a warning.
 - The session closes after the [inactivity timeout of web sessions](sessions.md#session-lifetime), when its token is revoked or expires, or when the MCP server is disabled. Its license is then released.
 
-#### Permissions
-
-MCP sessions require the same permissions as REST sessions:
-
-- A [custom tool](#custom-tools) (`exposed MCP Function`) requires the **execute** permission on its function, and benefits from its **promote** permission.
-- The [built-in CRUD tools](#built-in-crud-tools) require the **read**, **create**, **update**, or **drop** permission on the dataclass, and the attribute permissions apply. Each attribute of a path used in a filter, a sort, or a projection requires the **read** permission.
-- The CRUD tools are listed only if the session has at least one data permission on a dataclass, and the `describeModel` tool only describes the dataclasses on which the session has a data permission, with their readable or writable attributes.
-- A tool, a dataclass, or an attribute that the session cannot access is reported as if it did not exist.
-
-#### Example
-
-MCP clients authenticated with the "salesReader" privilege can read the Customer and Order dataclasses with the CRUD tools, and call the tools published by the `OrderManager` singleton (for example `OrderManager-getYearTotal`):
-
-```json
-{
-	"privileges": [{"privilege": "salesReader", "includes": []}],
-	"roles": [],
-	"permissions": {
-		"allowed": [
-			{"applyTo": "Customer", "type": "dataclass", "read": ["salesReader"]},
-			{"applyTo": "Order", "type": "dataclass", "read": ["salesReader"]},
-			{"applyTo": "OrderManager", "type": "singleton", "execute": ["salesReader"]}
-		]
-	},
-	"restrictedByDefault": true
-}
-```
 ### OAuth 2.1 mode
 
 In OAuth mode, 4D is the OAuth authorization server: users log in from their AI client through a 4D login page, without any external identity provider. The OAuth mode is enabled when your DataStore class defines the [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) function. Fine-Grained Tokens remain accepted.
@@ -331,12 +304,13 @@ To protect the login page against password guessing:
 - after 10 failed logins from one caller IP address within 15 minutes, this address gets a 429 status for 15 minutes,
 - after 20 failed logins for one user name within 15 minutes, this user name is refused for 15 minutes, with the same message as a wrong password.
 
-## Authorization
+## Permissions
 
 The MCP server uses the [`roles.json`](../ORDA/privileges.md) file of the project, exactly as the REST server. Review it before enabling MCP (see [Before enabling MCP](#before-enabling-mcp)):
 
-- a custom tool requires the **execute** permission on its function (and benefits from its **promote** permission),
-- the built-in CRUD tools require the **read**, **create**, **update**, or **drop** permission on the dataclass and its attributes,
+- a [custom tool](#custom-tools) requires the **execute** permission on its function and benefits from its **promote** permission,
+- the [built-in CRUD tools](#built-in-crud-tools) require the **read**, **create**, **update**, or **drop** permission on the dataclass and its attributes,
+- The CRUD tools are listed only if the session has at least one data permission on a dataclass, and the `describeModel` tool only describes the dataclasses on which the session has a data permission, with their readable or writable attributes.
 - `restrictedByDefault` applies to the tools as to REST requests.
 
 The tool catalog only lists the tools that the session can call, but every call is checked again. A tool that the session cannot call gets the same "Unknown tool" error as a tool that does not exist (the reason is logged on the server).
@@ -359,6 +333,7 @@ For example, this configuration lets an MCP client with the `salesReader` privil
 ```
 
 
+### Restricted entity selections
 
 Data accessed through the tools goes through ORDA, so [restricted entity selections](../ORDA/entities.md#restricting-entity-selections) (`Function event restrict`) apply. You can filter differently for MCP sessions by testing `Session.info.type`.
 
@@ -407,7 +382,7 @@ The following tags are supported for the MCP tools:
 |`// <text>`|Standard description of function (see [Comments](../Concepts/comments.md)). Several description lines are combined in order, with their line breaks. Empty `//` lines at the start or at the end of the block are ignored.|
 |`// $name: <text>`|Description of the *$name* parameter.|
 |`// {$name}: <text>`|Description of the *$name* parameter, marked as optional for MCP.|
-|`// ...: <text>`|Description of the [variadic parameters](parameters.md#declaring-variadic-parameters) (`... : Type`).|
+|`// ...: <text>`|Description of the [variadic parameters](../Concepts/parameters.md#declaring-variadic-parameters) (`... : Type`).|
 |`// param: $name <text>`, `// param: {$name} <text>`, `// param: ... <text>`|Same as `$name:`, `{$name}:`, and `...:` lines.|
 |`// MCP: <text>`|Description of the function for MCP only. Several `MCP:` description lines are combined in order.|
 |`// MCP: @tag {@tag}` or `// @tag {@tag}`|MCP behavior tags (see [MCP tool metadata](../WebServer/mcp-server.md#mcp-tool-metadata)). The line must contain only supported tags, otherwise it is a description line.|
