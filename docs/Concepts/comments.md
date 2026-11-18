@@ -135,7 +135,7 @@ You can display:
 
 ### MCP tool
 
-When a function is published as an [MCP tool], its comments are used to provide [MCP tool code description](../WebServer/mcp-server.md#describing-the-tools), including MCP behavior tags.
+When a function is published as an **MCP tool**, its comments are used to provide [MCP tool code description](../WebServer/mcp-server.md#describing-the-tools), including MCP behavior tags.
 
 
 ### Code navigation markers
