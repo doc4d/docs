@@ -84,10 +84,11 @@ A 4D database exposes its own DataStore class in the `cs` class store.
 
 You can create functions in the DataStore class that will be available through the `ds` object.
 
+#### MCP Server
+
 The `mcpAuthenticated()` and `mcpGrant()` function names are reserved for the [MCP server](../WebServer/mcp-server.md) (see [`Function mcpAuthenticated`](#function-mcpauthenticated) and [`Function mcpGrant`](#function-mcpgrant)).
 
-The names of the MCP functions of the DataStore class, `generateFineGrainedToken`, `listFineGrainedTokens`, `revokeFineGrainedToken`, `listOAuthGrants`, and `revokeOAuthGrant`, cannot be used for functions of your DataStore class: such a declaration is reported as an error by the code editor, the syntax check, and the compiler.
-
+:::
 
 
 #### Example
