@@ -177,7 +177,7 @@ Contents|Description|Format
 --------|-------|----
 *item*|Project resource files and folders|various
 Images/Library/*item*|Pictures from the Picture Library as separate files(*). Names of these items become file names. If a duplicate exists, a number is added to the name.|picture
-syntaxMCP.json|Custom [MCP tool metadata](../WebServer/mcp-server.md#mcp-tool-metadata). If this file exists, it is used instead of the `Project/DerivedData/syntaxMCP.json` file generated at compilation. The compiler never modifies it.|JSON
+syntaxMCP.json|Custom descriptions of the [MCP tools](../WebServer/mcp-server.md#mcp-tool-metadata), written after compilation. If this file exists, it is applied over the `Project/DerivedData/syntaxMCP.json` file generated at compilation: it can only override the descriptions of tools and of their parameters, the rest comes from the generated file. The compiler never modifies it.|JSON
 
 (*) only if the project was exported from a .4db binary database.
 

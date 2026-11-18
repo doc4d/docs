@@ -15,6 +15,8 @@ Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/),
 
 #### Behavior changes
 
+- [Permission inheritance](../ORDA/privileges.md#inherited-permissions): a function permission now inherits each action it does not list from its singleton or dataclass, then from the datastore, and a **promote** permission never grants **execute**. Previously, a singleton function permission that only defined **promote** fell back to the datastore **execute** permission, which could open a restricted function to every session allowed to execute on the datastore (for example through REST). To keep a privilege able to call a promoted function, list it in the function's **execute** permission.
+- The live checker and the compiler now generate [warnings](../Project/compiler.md#warnings) on function comments: a class function or class constructor that has a comment block above its declaration gets a warning for each parameter without a $name: comment, and for contradictory MCP behavior tags.
 
 
 ## 4D 21 R5
