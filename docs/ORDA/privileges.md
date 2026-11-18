@@ -36,17 +36,11 @@ Permissions control access to datastore objects or functions. If you want to fil
 
 ## Scope
 
-Permissions apply to **web and REST sessions**: [REST requests](../REST/gettingStarted.md), including [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview), and **4D code executed in a web process**. This includes [exposed functions](./ordaClasses.md), [HTTP request handlers](../WebServer/http-request-handler.md), the [On Web Connection database method](../commands/on-web-connection-database-method), and any code they call. For example, an allowed function call still fails if the function reads a dataclass for which the session has no read permission.
+Permissions apply to **web and REST sessions**: [REST requests](../REST/gettingStarted.md), including [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview), [`Open datastore`](../commands/open-datastore) sessions, [MCP sessions](../WebServer/mcp-server.md) and **4D code executed in a web process**. This includes [exposed functions](./ordaClasses.md), [HTTP request handlers](../WebServer/http-request-handler.md), the [On Web Connection database method](../commands/on-web-connection-database-method), and any code they call. For example, an allowed function call still fails if the function reads a dataclass for which the session has no read permission.
 
-:::info Notes
+:::info Exception
 
-- An [alias](./ordaClasses.md#alias-attributes-1) can be read as soon as the session privileges allow the access to the alias itself, even if the session privileges do no allow the access to the attributes resolving the alias.
-- A [computed attribute](./ordaClasses.md#computed-attributes-1) can be accessed even if there are no permissions on the attributes upon which it is built.
-- You can assign a permission action to a singleton class (`singleton` type), in which case it will be applied to all its exposed functions, or to a singleton function (`singletonMethod` type). 
-- You can set/remove the **promote** action dynamically to a web process using the [`promote()`](../API/SessionClass.md#promote) and [`demote()`](../API/SessionClass.md#demote) functions. 
-- Default values: in the current implementation, only *Null* is available as default value.
-- In REST [force login mode](../REST/authUsers.md#force-login-mode), the [`authentify()` function](../REST/authUsers.md#function-authentify) is always executable by guest users, whatever the permissions configuration.
-- MCP sessions use the same permission rules as REST sessions. See [Tool permissions on the MCP server](../WebServer/mcp-server.md#tool-permissions) for details and an example.
+The **execute** permission of a [shared singleton](../Concepts/classes.md#shared-singleton) or [singleton function](../Concepts/classes.md#singleton-classes) is checked only when the function is [called through REST](../REST/$singleton.md). When 4D code running in a web session directly calls it (`cs.MySingleton.me.myFunction()`), no permission is checked, unlike dataclass, entity, entity selection and datastore functions, which are checked in both cases.
 
 :::
 

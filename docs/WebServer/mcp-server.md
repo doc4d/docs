@@ -12,7 +12,7 @@ title: MCP server
 </details>
 
 
-The 4D Web Server includes a native [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server. AI assistants and agents (Claude Desktop, Claude Code, MCP Inspector, etc.) can connect to it to discover and call the business logic and the data of your application.
+4D includes a native [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server. AI assistants and agents (Claude Desktop, Claude Code, MCP Inspector, etc.) can connect to it to discover and call the business logic and the data of your application.
 
 The MCP server publishes two kinds of **tools**:
 
@@ -234,6 +234,33 @@ Requests are stateless, but 4D keeps one web session per token and caller IP add
 - Its privileges are those of the token. Then 4D calls the [`ds.mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated) function of your DataStore class, if defined, once per session: you can use it to fill [`Session.storage`](../API/SessionClass.md#storage) from the information stored with the token.
 - The session closes after the [inactivity timeout of web sessions](sessions.md#session-lifetime), when its token is revoked or expires, or when the MCP server is disabled. Its license is then released.
 
+#### Permissions
+
+MCP sessions require the same permissions as REST sessions:
+
+- A [custom tool](#custom-tools) (`exposed MCP Function`) requires the **execute** permission on its function, and benefits from its **promote** permission.
+- The [built-in CRUD tools](#built-in-crud-tools) require the **read**, **create**, **update**, or **drop** permission on the dataclass, and the attribute permissions apply. Each attribute of a path used in a filter, a sort, or a projection requires the **read** permission.
+- The CRUD tools are listed only if the session has at least one data permission on a dataclass, and the `describeModel` tool only describes the dataclasses on which the session has a data permission, with their readable or writable attributes.
+- A tool, a dataclass, or an attribute that the session cannot access is reported as if it did not exist.
+
+#### Example
+
+MCP clients authenticated with the "salesReader" privilege can read the Customer and Order dataclasses with the CRUD tools, and call the tools published by the `OrderManager` singleton (for example `OrderManager-getYearTotal`):
+
+```json
+{
+	"privileges": [{"privilege": "salesReader", "includes": []}],
+	"roles": [],
+	"permissions": {
+		"allowed": [
+			{"applyTo": "Customer", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "Order", "type": "dataclass", "read": ["salesReader"]},
+			{"applyTo": "OrderManager", "type": "singleton", "execute": ["salesReader"]}
+		]
+	},
+	"restrictedByDefault": true
+}
+```
 ### OAuth 2.1 mode
 
 In OAuth mode, 4D is the OAuth authorization server: users log in from their AI client through a 4D login page, without any external identity provider. The OAuth mode is enabled when your DataStore class defines the [`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant) function. Fine-Grained Tokens remain accepted.
