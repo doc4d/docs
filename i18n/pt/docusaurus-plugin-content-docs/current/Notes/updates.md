@@ -14,7 +14,7 @@ Leia [**O que há de novo no 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-
 
 #### Mudanças de comportamento
 
-- [Herança de permissões](../ORDA/privileges.md#inherited-permissions): uma permissão de função agora herda cada ação que não lista de seu singleton ou dataclass, depois do datastore, e uma permissão **promote** nunca concede **execute**. Anteriormente, uma permissão de função singleton que só definia **promote** recorria à permissão **execute** do datastore, o que poderia abrir uma função restrita para toda sessão autorizada a executar no datastore (por exemplo via REST). Para manter um privilégio capaz de chamar uma função promovida, liste-o na permissão **execute** da função.
+- [Herança de permissões](../ORDA/privileges.md#inherited-permissions): uma permissão de função agora herda cada ação que não lista de seu singleton ou dataclass, depois do datastore, e uma permissão **promote** nunca concede **execute**. Anteriormente, uma permissão de função singleton que definia apenas **promote** recorria à permissão **execute** do datastore, o que podia abrir uma função restrita para toda sessão autorizada a executar no datastore (por exemplo via REST). Para manter um privilégio capaz de chamar uma função promovida, liste-o na permissão **execute** da função.
 - O live checker e o compilador agora geram [avisos](../Project/compiler.md#warnings) em comentários de função: uma função de classe ou construtor de classe que possui um bloco de comentário acima de sua declaração recebe um aviso para cada parâmetro sem um comentário $name:, e para tags de comportamento MCP contraditórias.
 
 ## 4D 21 R5
