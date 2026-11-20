@@ -28,9 +28,9 @@ displayed_sidebar: docs
 
 ## Description
 
-**Project dependencies**<!--REF #_command_.Project dependencies.Summary--> returns the current project's dependencies, or the dependencies of the `.4DProject` file passed in *projectFile*. The dependencies are returned in the order required to compile them before the root project.<!-- END REF-->
+**Project dependencies**<!--REF #_command_.Project dependencies.Summary--> returns the current project's dependencies, or the dependencies of the `.4DProject` file passed in *projectFile*.<!-- END REF--> The dependencies are returned in the order required to [compile them](../../Project/compiler.md#compile-components) before the root project.
 
-The command uses the project's `dependencies-lock.json` file to determine the dependency order. In a dependency graph where multiple components depend on the same component, the shared dependency is returned only once and before its dependents. Dependency cycles do not prevent the command from returning a result; they are reported as warnings.
+The command uses the project's [`dependencies-lock.json` file](../../Project/components.md#dependency-lockjson) to determine the dependency order. In a dependency graph where multiple components depend on the same component, the shared dependency is returned only once and before its dependents. Dependency cycles do not prevent the command from returning a result; they are reported as warnings.
 
 :::note
 
@@ -52,6 +52,13 @@ The object returned by **Project dependencies** contains the following propertie
 | dependencies[].name | Text | Dependency project name. |
 | dependencies[].errors | Collection | Errors for this dependency. These can describe a corrupted or invalid component, a network failure while retrieving it, or a missing component folder. |
 | dependencies[].warnings | Collection | Non-blocking dependency issues. This property is returned only when at least one warning is present. Warnings can report inconsistencies between `dependencies.json` and the lock file when the dependency can still be resolved locally, dependency cycles, and warnings recorded by the dependency manager.|
+
+
+:::tip Related blog post
+
+[Compile 4D project dependencies in the right order using code](https://blog.4d.com/compile-4d-project-dependencies-in-the-right-order-using-code)
+
+:::
 
 
 ## Example
@@ -93,6 +100,7 @@ return $result
 ## See also
 
 [Compile project](../commands/compile-project)
+[Monitoring Project Dependencies](../../Project/components.md#monitoring-project-dependencies-monitoring-project-dependencies)
 
 ## Properties
 

@@ -75,6 +75,11 @@ A list of components being compiled is displayed in the Compiler window. If an e
 - Components wihout errors cannot be unfolded. 
 
 
+:::note
+
+If your components must be compiled in a dependency order, consider using the [`Project dependencies`](../commands/project-dependencies) command with the [`Compile project`](../commands/compile-project) command to organize an ordered component compilation sequence. 
+
+:::
 
 
 #### Requirements
