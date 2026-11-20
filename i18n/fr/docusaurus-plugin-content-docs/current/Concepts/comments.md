@@ -5,12 +5,12 @@ title: Commentaires
 
 ## Principes de base
 
-Les commentaires sont des lignes d’instructions inactives. Ces lignes ne sont pas interprétées par le programme (4D n’applique aucun style spécifique à l’intérieur de la ligne de commentaire) et ne sont pas exécutées lorsque la méthode est appelée. Specific features rely on comments for documenting and tagging your code.
+Les commentaires sont des lignes d’instructions inactives. Ces lignes ne sont pas interprétées par le programme (4D n’applique aucun style spécifique à l’intérieur de la ligne de commentaire) et ne sont pas exécutées lorsque la méthode est appelée. Des fonctionnalités spécifiques s'appuient sur les commentaires pour documenter et baliser votre code.
 
 Voici deux manières de créer des commentaires :
 
 - `//` pour créer une ligne de commentaire
-- `/* ... */` for inline or multiline comments.
+- `/* ... */` pour les commentaires sur une seule ligne ou sur plusieurs lignes.
 
 Les deux styles de commentaires peuvent être utilisés simultanément.
 
@@ -39,7 +39,7 @@ For /* ligne de commentaire */ ($vCounter;1;100)
 End for
 ```
 
-- **Multiline comment blocks** allow commenting an unlimited number of lines. Les blocs de commentaires peuvent être imbriqués (ce qui est utile, étant donné que l'éditeur de code 4D prend en charge les blocs condensés). Exemple :
+- Les **blocs de commentaires multi-lignes** permettent de commenter un nombre illimité de lignes. Les blocs de commentaires peuvent être imbriqués (ce qui est utile, étant donné que l'éditeur de code 4D prend en charge les blocs condensés). Exemple :
 
 ```4d
 For ($vCounter;1;100)
