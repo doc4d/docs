@@ -1,5 +1,5 @@
 ---
-id: コメント
+id: comments
 title: コメント
 ---
 
