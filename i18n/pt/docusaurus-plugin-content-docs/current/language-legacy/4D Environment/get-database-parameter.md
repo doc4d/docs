@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Adicionado *ORDA JSON encoding*|
 |21 R3|Removido suporte a *Use legacy network layer*, adicionado *Use legacy print rendering*|
 |20 R6|Modificado|
 |19 R5|Modificado|
@@ -1014,9 +1015,21 @@ Esta configuração só pode ser definida no 4D Server e aplica-se a todas as no
 **Descrição:** Define ou obtém o status atual do [renderizador de impressão legado](../../FormEditor/forms.md#legacy-print-renderer) no macOS ou Windows. Quando o renderizador de impressão legado está *desativado*, o [motor de renderização de impressão moderno](../../FormEditor/forms.md) do 4D é utilizado. Note que quando os formulários são renderizados sob as interfaces Liquid Glass (macOS) ou Fluent UI (Windows), este seletor é ignorado (nesses contextos os formulários são sempre impressos usando o renderizador moderno, veja [esta seção](../../FormEditor/forms.md#legacy-print-renderer)). Em projetos convertidos, este parâmetro também pode ser definido permanentemente usando uma [configuração de compatibilidade](../../settings/compatibility.md). 
 
 
+### ORDA JSON encoding (139)
+
+**Escopo**: 4D Server (conexões abertas após a chamada)
+
+**Mantido entre sessões**: Não
+
+**Valores possíveis**: 0 = codificação binária (padrão), 1 = codificação JSON
+
+**Descrição**: Codificação das [requisições ORDA trocadas entre o 4D Server e aplicações 4D remotas](../../ORDA/client-server-optimization.md#binary-encoding-of-orda-requests) através do [`ds`](../commands/ds).
+
+- No 4D Server, retorna o valor atual: o valor da configuração [**Use JSON for ORDA requests**](../../settings/client-server.md#use-json-for-orda-requests) lida quando o 4D Server foi iniciado (0 se desmarcado, 1 se marcado), ou o último valor definido com [SET DATABASE PARAMETER](../commands/set-database-parameter) durante a sessão. Este valor é usado pelas aplicações 4D remotas que se conectarem posteriormente.
+- Em uma aplicação 4D remota ou em um 4D single-user, sempre retorna 0, qualquer que seja a codificação usada pela conexão. Para saber a codificação de uma conexão de aplicação 4D remota, use a propriedade `useORDABinaryEncoding` retornada por [`Application info`](../commands/application-info).
 
 
-## Exemplo
+## Exemplo 1
 
 Imagine que queira que sua aplicação reinicie após a primeira execução. A aplicação é lançada, com, por exemplo, uma linha de comando em Windows:
 
@@ -1038,6 +1051,20 @@ Em [Método banco de dados On Startup](../commands/metodo-banco-de-dados-on-star
        RESTART 4D
     End if
  End if
+```
+
+## Exemplo 2
+
+Em um método executado no 4D Server, você deseja saber qual codificação as aplicações 4D remotas que se conectarem irão usar para suas requisições ORDA:
+
+```4d
+ var $encoding : Integer
+ $encoding:=Get database parameter(ORDA JSON encoding)
+ If ($encoding=1)
+  // novas conexões usam a codificação JSON
+ Else
+  // novas conexões usam a codificação binária (padrão)
+ End if
 ```
 
 ## Ver também 
