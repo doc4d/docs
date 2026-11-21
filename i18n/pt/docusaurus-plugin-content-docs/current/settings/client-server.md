@@ -101,6 +101,21 @@ No caso de uma modificação, você precisa reiniciar o aplicativo para que a al
 
 :::
 
+#### Usar JSON para requisições ORDA
+
+Por padrão, as requisições ORDA trocadas entre o 4D Server e as aplicações remotas 4D através do [`ds`](../commands/ds) usam uma [codificação binária](../ORDA/client-server-optimization.md#binary-encoding-of-orda-requests). Quando esta opção está marcada, elas usam a codificação JSON em vez disso, por exemplo, para fins de compatibilidade ou diagnóstico.
+
+-   Quando esta opção não está marcada (padrão), a codificação binária é usada.
+-   Quando esta opção está marcada, a codificação JSON é usada.
+
+Esta opção está disponível em projetos e bancos de dados binários, com todas as [camadas de rede](#network-layer).
+
+:::note
+
+A opção é lida quando o 4D Server é iniciado: se você modificá-la, deve reiniciar o 4D Server para que a alteração seja levada em conta. Conexões já abertas mantêm sua codificação. Para alterar a codificação durante uma sessão, chame [`SET DATABASE PARAMETER`](../commands/set-database-parameter) com o seletor `ORDA JSON encoding` no 4D Server.
+
+:::
+
 #### Tempo para desconectar cliente-servidor
 
 :::note
@@ -117,7 +132,7 @@ Quando um tempo limite for selecionado, o servidor fechará a conexão de um cli
 
 #### Registrar clientes na inicialização para Execute On Client
 
-Quando essa opção estiver marcada, todas as máquinas remotas 4D conectando à base de dados podem executar os métodos remotamente. Este mecanismo se detalla en la sección [Procedimientos almacenados en las máquinas cliente](../Desktop/clientServer.md#stored-procedures-on-client-machines).
+Quando essa opção estiver marcada, todas as máquinas remotas 4D conectando à base de dados podem executar os métodos remotamente. Este mecanismo se detalla en la seção [Procedimentos armazenados nas máquinas cliente](../Desktop/clientServer.md#stored-procedures-on-client-machines).
 
 #### Encriptar as comunicações cliente-servidor
 

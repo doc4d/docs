@@ -361,6 +361,12 @@ Os registos de pedidos ORDA podem registar cada pedido ORDA e a resposta do serv
 - um registo de pedidos ORDA do lado do cliente, em formato .txt
 - um registo de pedidos ORDA do lado do servidor, em formato .jsonl
 
+:::note
+
+Quando um aplicativo 4D remoto e o 4D Server trocam solicitações ORDA na [codificação binária](../ORDA/client-server-optimization.md#binary-encoding-of-orda-requests), ambos os logs registram o mesmo conteúdo legível que com a codificação JSON: o campo `url` contém a URL da solicitação e o campo `response` contém a resposta do servidor como um objeto. Os logs nunca contêm dados binários brutos.
+
+:::
+
 ### Do lado do cliente
 
 O registo ORDA do lado do cliente regista cada pedido ORDA enviado a partir de uma máquina remota. Pode direcionar as informações de registo para a memória ou para um arquivo .txt no disco da máquina remota. O nome e rota desse arquivo pode ser escolhido.
@@ -408,6 +414,19 @@ Eis um exemplo de um registo de ficheiro de registo ORDA do lado do cliente:
 			"body": 75651
 		}
 	}
+```
+
+Você também pode registrar solicitações na memória e lê-las com [`ds.getRequestLog()`](../API/DataStoreClass.md#getrequestlog). Com a codificação binária assim como com a codificação JSON, cada entrada é um objeto legível:
+
+```4d
+	//numa máquina remota
+var $log : Collection
+var $sel : 4D.EntitySelection
+ds.startRequestLog(100) //log the next 100 requests in memory
+$sel:=ds.Employee.query("lastname = :1"; "Smith")
+ds.stopRequestLog()
+$log:=ds.getRequestLog()
+	// $log[0].url é um texto, $log[0].response é um objeto como {status: 200; body: {...}}
 ```
 
 ### Do lado do servidor
