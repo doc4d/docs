@@ -140,11 +140,12 @@ $element:=$col.at(10) // undefined
 
 |Release|Changes|
 |---|---|
+|21 R6|Support of formula|
 |v16 R6|Added|
 
 </details>
 
-<!-- REF #collection.average().Syntax -->**.average**( {*propertyPath* : Text } ) : Real<!-- END REF -->
+<!-- REF #collection.average().Syntax -->**.average**( {*propertyPath* : Text } ) : Real<br/>**.average**( *formula* : 4D.Function { ; *...param* : any } ) : Real<!-- END REF -->
 
 
 <!-- REF #collection.average().Params -->
@@ -153,7 +154,9 @@ $element:=$col.at(10) // undefined
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |propertyPath|Text|->|Object property path to be used for calculation|
-|Result|Real, Undefined|<-|Arithmetic mean (average) of collection values|
+|formula|4D.Function|->|Formula evaluated for each element|
+|param|any|->|Parameter(s) to pass to *formula*|
+|Result|Real, Undefined|<-|Arithmetic mean (average) of collection values, or of the values returned by *formula*|
 </div>
 <!-- END REF -->
 
@@ -161,7 +164,7 @@ $element:=$col.at(10) // undefined
 
 #### Description
 
-The `.average()` function <!-- REF #collection.average().Summary -->returns the arithmetic mean (average) of defined values in the collection instance<!-- END REF -->.
+The `.average()` function <!-- REF #collection.average().Summary -->returns the arithmetic mean (average) of defined values in the collection instance, or of the values returned by *formula* on each element<!-- END REF -->.
 
 
 
@@ -169,11 +172,14 @@ Only numerical elements are taken into account for the calculation (other elemen
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property to take into account.
 
+You can also pass in *formula* a [Formula object](FunctionClass.md) to compute the value of each element. `.average()` evaluates *formula* once for each element, with the optional *param* parameter(s), and returns the average of the returned values. *formula* works as with [`.sum()`](#sum): it receives the element in *$1.value* and the *param* values in *$2...$N*, a project method sets *$1.result*, and *$1.stop* is not supported. Non-numerical returned values are ignored, and a Time value is counted as a number of seconds or milliseconds, depending on the [`Times inside objects`](../commands/set-database-parameter#times-inside-objects-109) setting.
+
 `.average()` returns `undefined` if:
 
 *	the collection is empty,
 *	the collection does not contain numerical elements,
-*	*propertyPath* is not found in the collection.
+*	*propertyPath* is not found in the collection,
+*	*formula* returns no numerical value.
 
 
 #### Example 1
@@ -193,6 +199,18 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
  $col.push(New object("name";"Wesson";"salary";50000))
  $col.push(New object("name";"Gross";"salary";10500))
  $vAvg:=$col.average("salary") //23500
+```
+
+#### Example 3
+
+You want the average amount of order lines, computed from their price and quantity:
+
+```4d
+var $lines : Collection
+var $vAvg : Real
+$lines:=New collection(New object("price"; 10; "qty"; 3); New object("price"; 4.5; "qty"; 2))
+$vAvg:=$lines.average(Formula($1.value.price*$1.value.qty)) // 19.5
+$vAvg:=$lines.average(Formula($1.value.price*$2); 2) // 14.5
 ```
 
 <!-- END REF -->
@@ -2034,11 +2052,12 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 
 |Release|Changes|
 |---|---|
+|21 R6|Support of formula|
 |v16 R6|Added|
 
 </details>
 
-<!-- REF #collection.max().Syntax -->**.max**( { *propertyPath* : Text } ) : any <!-- END REF -->
+<!-- REF #collection.max().Syntax -->**.max**( { *propertyPath* : Text } ) : any<br/>**.max**( *formula* : 4D.Function { ; *...param* : any } ) : any<!-- END REF -->
 
 
 <!-- REF #collection.max().Params -->
@@ -2047,14 +2066,16 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |propertyPath|Text|->|Object property path to be used for evaluation|
-|Result|any |<-|Maximum value in the collection|
+|formula|4D.Function|->|Formula evaluated for each element|
+|param|any|->|Parameter(s) to pass to *formula*|
+|Result|any |<-|Maximum value in the collection, or highest value returned by *formula*|
 </div>
 <!-- END REF -->
 
 
 #### Description
 
-The `.max()` function <!-- REF #collection.max().Summary -->returns the element with the highest value in the collection<!-- END REF --> (the last element of the collection as it would be sorted in ascending order using the [`.sort()`](#sort) function).
+The `.max()` function <!-- REF #collection.max().Summary -->returns the element with the highest value in the collection, or the highest value returned by *formula* on each element<!-- END REF --> (the last element of the collection as it would be sorted in ascending order using the [`.sort()`](#sort) function).
 
 >This function does not modify the original collection.
 
@@ -2064,9 +2085,11 @@ If the collection contains different [types of values](../Concepts/data-types.md
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose maximum value you want to get.
 
+You can also pass in *formula* a [Formula object](FunctionClass.md) to compute the value of each element. `.max()` evaluates *formula* once for each element, with the optional *param* parameter(s), and returns the highest returned value (not the element that produced it). *formula* works as with [`.sum()`](#sum): it receives the element in *$1.value* and the *param* values in *$2...$N*, a project method sets *$1.result*, and *$1.stop* is not supported. The returned values are compared with the same rules as collection elements. A Time value is converted to a number of seconds or milliseconds, depending on the [`Times inside objects`](../commands/set-database-parameter#times-inside-objects-109) setting: if it is the highest value, `.max()` returns this number (a Real), not a Time.
+
 If the collection is empty, `.max()` returns *Undefined*.
 
-#### Example
+#### Example 1
 
 
 ```4d
@@ -2078,6 +2101,18 @@ If the collection is empty, `.max()` returns *Undefined*.
  $max:=$col.max() //{name:Alabama,salary:10500}
  $maxSal:=$col.max("salary") //50000
  $maxName:=$col.max("name") //"Wesson"
+```
+
+#### Example 2
+
+You want the highest amount of order lines, computed from their price and quantity:
+
+```4d
+var $lines : Collection
+var $max : Real
+$lines:=New collection(New object("price"; 10; "qty"; 3); New object("price"; 4.5; "qty"; 2))
+$max:=$lines.max(Formula($1.value.price*$1.value.qty)) // 30, a value, not an element
+$max:=New collection(1; 2).max(Formula(Time($1.value*60))) // 120 (a Real)
 ```
 
 <!-- END REF -->
@@ -2092,11 +2127,12 @@ If the collection is empty, `.max()` returns *Undefined*.
 
 |Release|Changes|
 |---|---|
+|21 R6|Support of formula|
 |v16 R6|Added|
 
 </details>
 
-<!-- REF #collection.min().Syntax -->**.min**( { *propertyPath* : Text } ) : any <!-- END REF -->
+<!-- REF #collection.min().Syntax -->**.min**( { *propertyPath* : Text } ) : any<br/>**.min**( *formula* : 4D.Function { ; *...param* : any } ) : any<!-- END REF -->
 
 
 <!-- REF #collection.min().Params -->
@@ -2105,14 +2141,16 @@ If the collection is empty, `.max()` returns *Undefined*.
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |propertyPath|Text|->|Object property path to be used for evaluation|
-|Result|any |<-|Minimum value in the collection|
+|formula|4D.Function|->|Formula evaluated for each element|
+|param|any|->|Parameter(s) to pass to *formula*|
+|Result|any |<-|Minimum value in the collection, or smallest value returned by *formula*|
 </div>
 <!-- END REF -->
 
 
 #### Description
 
-The `.min()` function <!-- REF #collection.min().Summary -->returns the element with the smallest value in the collection<!-- END REF --> (the first element of the collection as it would be sorted in ascending order using the [`.sort()`](#sort) function).
+The `.min()` function <!-- REF #collection.min().Summary -->returns the element with the smallest value in the collection, or the smallest value returned by *formula* on each element<!-- END REF --> (the first element of the collection as it would be sorted in ascending order using the [`.sort()`](#sort) function).
 
 >This function does not modify the original collection.
 
@@ -2120,9 +2158,11 @@ If the collection contains different [types of values](../Concepts/data-types.md
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose minimum value you want to get.
 
+You can also pass in *formula* a [Formula object](FunctionClass.md) to compute the value of each element. `.min()` evaluates *formula* once for each element, with the optional *param* parameter(s), and returns the smallest returned value (not the element that produced it). *formula* works as with [`.sum()`](#sum): it receives the element in *$1.value* and the *param* values in *$2...$N*, a project method sets *$1.result*, and *$1.stop* is not supported. The returned values are compared with the same rules as collection elements. A Time value is converted to a number of seconds or milliseconds, depending on the [`Times inside objects`](../commands/set-database-parameter#times-inside-objects-109) setting: if it is the smallest value, `.min()` returns this number (a Real), not a Time.
+
 If the collection is empty, `.min()` returns *Undefined*.
 
-#### Example
+#### Example 1
 
 
 ```4d
@@ -2134,6 +2174,19 @@ If the collection is empty, `.min()` returns *Undefined*.
  $min:=$col.min() //55
  $minSal:=$col.min("salary") //10000
  $minName:=$col.min("name") //"Alabama"
+```
+
+#### Example 2
+
+You want the smallest amount of order lines, computed from their price and quantity:
+
+```4d
+var $lines : Collection
+var $min : Real
+var $minText : Text
+$lines:=New collection(New object("price"; 10; "qty"; 3); New object("price"; 4.5; "qty"; 2))
+$min:=$lines.min(Formula($1.value.price*$1.value.qty)) // 9, a value, not an element
+$minText:=New collection(5; "b"; "a").min(Formula($1.value)) // "a" (Text comes before Number in the type order)
 ```
 
 <!-- END REF -->
@@ -3641,11 +3694,12 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sor
 
 |Release|Changes|
 |---|---|
+|21 R6|Support of formula|
 |v16 R6|Added|
 
 </details>
 
-<!-- REF #collection.sum().Syntax -->**.sum**( { *propertyPath* : Text } ) : Real<!-- END REF -->
+<!-- REF #collection.sum().Syntax -->**.sum**( { *propertyPath* : Text } ) : Real<br/>**.sum**( *formula* : 4D.Function { ; *...param* : any } ) : Real<!-- END REF -->
 
 
 <!-- REF #collection.sum().Params -->
@@ -3654,24 +3708,45 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sor
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |propertyPath |Text |->|Object property path to be used for calculation|
-|Result|Real|<-|Sum of collection values|
+|formula|4D.Function|->|Formula evaluated for each element|
+|param|any|->|Parameter(s) to pass to *formula*|
+|Result|Real|<-|Sum of collection values, or of the values returned by *formula*|
 </div>
 <!-- END REF -->
 
 
 #### Description
 
-The `.sum()` function <!-- REF #collection.sum().Summary -->returns the sum for all values in the collection instance<!-- END REF -->.
+The `.sum()` function <!-- REF #collection.sum().Summary -->returns the sum for all values in the collection instance, or for the values returned by *formula* on each element<!-- END REF -->.
 
 Only numerical elements are taken into account for the calculation (other element types are ignored).
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property to take into account.
 
+You can also pass in *formula* a [Formula object](FunctionClass.md) to compute the value of each element, for example a total from several properties. `.sum()` evaluates *formula* once for each element and returns the sum of the returned values. You do not need to create an intermediate collection with [`.map()`](#map).
+
+*formula* receives the following parameters:
+
+*	in *$1.value*: element value to be evaluated
+*	in *$2*: param
+*	in *$N...*: paramN...
+
+The value returned by *formula* is used for the element. If *formula* calls a project method that returns no value (for example `Formula(MyMethod)`), the method must set *$1.result* to the value to use. *$1.stop* is not supported: *formula* is always evaluated for every element. If *formula* raises an error, the evaluation stops at that element.
+
+The values returned by *formula* follow the same rules as collection elements: non-numerical values (Text, Boolean, Date, Object, Collection, Null, Undefined) are ignored, without error. A Time value is counted as a number of seconds, or of milliseconds, depending on the [`Times inside objects`](../commands/set-database-parameter#times-inside-objects-109) setting (seconds by default).
+
+:::note
+
+A Text first parameter is always a *propertyPath*, never a method name. To use a project method, pass `Formula(MyMethod)`.
+
+:::
+
 `.sum()` returns 0 if:
 
 *	the collection is empty,
 *	the collection does not contain numerical elements,
-*	*propertyPath* is not found in the collection.
+*	*propertyPath* is not found in the collection,
+*	*formula* returns no numerical value.
 
 #### Example 1
 
@@ -3693,6 +3768,56 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
  $col.push(New object("name";"Wesson";"salary";50000))
  $col.push(New object("name";"Gross";"salary";10500,5))
  $vSum:=$col.sum("salary") //$vSum=70500,5
+```
+
+#### Example 3
+
+You want the total amount of order lines, computed from their price and quantity:
+
+```4d
+var $lines : Collection
+var $total : Real
+$lines:=New collection(New object("price"; 10; "qty"; 3); New object("price"; 4.5; "qty"; 2))
+$total:=$lines.sum(Formula($1.value.price*$1.value.qty)) // 39
+```
+
+#### Example 4
+
+You want the same total with a 20% tax rate passed as a parameter to the formula:
+
+```4d
+var $lines : Collection
+var $total : Real
+$lines:=New collection(New object("price"; 10; "qty"; 3); New object("price"; 4.5; "qty"; 2))
+$total:=$lines.sum(Formula($1.value.price*$1.value.qty*$2); 1.2) // 46.8
+```
+
+#### Example 5
+
+You want to compute the line total in a project method. The `LineTotal` method sets *$1.result*:
+
+```4d
+// LineTotal project method
+#DECLARE($e : Object)
+$e.result:=$e.value.price*$e.value.qty
+```
+
+```4d
+var $lines : Collection
+var $total : Real
+$lines:=New collection(New object("price"; 10; "qty"; 3); New object("price"; 4.5; "qty"; 2))
+$total:=$lines.sum(Formula(LineTotal)) // 39
+```
+
+#### Example 6
+
+Non-numerical values returned by the formula are ignored, and Time values are counted in seconds by default:
+
+```4d
+var $total : Real
+$total:=New collection(1; "a"; 2; Null).sum(Formula($1.value)) // 3
+$total:=New collection(1; 2).sum(Formula(String($1.value))) // 0
+$total:=New collection(1; 2).sum(Formula(?00:01:00?)) // 120
 ```
 
 <!-- END REF -->
