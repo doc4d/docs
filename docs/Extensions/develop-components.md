@@ -77,6 +77,8 @@ In this context, you can open, edit, and save your component code in the Code ed
 - from the Component Methods section of the Explorer (shared code only)
 - in a dedicated component tab (all code)
 
+When the files of an editable component are modified outside 4D (for example after a *pull* from a source control repository), they are reloaded along with the host project, either by the [`RELOAD PROJECT`](../commands/reload-project) command or when the 4D application window comes back to the foreground.
+
 #### Editing shared component code
 
 [Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer. 
