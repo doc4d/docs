@@ -19,6 +19,8 @@ Information logged needs to be analyzed to detect and fix issues. This section p
 * [ORDA requests log file](#orda-requests)
 * [4DTCPUDPLog.txt](#4dtcpudplogtxt)
 
+You can also send traces of the application to a monitoring tool with the [OpenTelemetry connector](opentelemetry.md), which can be started with a [log configuration file](#opentelemetry-connector).
+
 > When a log file can be generated either on 4D Server or on the remote client, the word "Server" is added to the server-side log file name, for example "4DRequestsLogServer.txt"
 
 Log files share some fields so that you can establish a chronology and make connections between entries while debugging:
@@ -700,6 +702,70 @@ The log configuration file is a `.json` file that must comply with the following
                     "type": "string"
                 }
             }
+        },
+        "openTelemetry": {
+            "description": "Configuration of the OpenTelemetry connector, as for OpenTelemetry.start(). The values are checked when the connector starts, and the errors are written in the diagnostic log",
+            "type": "object",
+            "properties": {
+                "state": {
+                    "description": "Start/Stop the OpenTelemetry connector (0 = stopped, 1 = started)",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "endpoint": {
+                    "description": "Address of the OTLP/HTTP collector (default http://localhost:4318)",
+                    "type": "string"
+                },
+                "serviceName": {
+                    "description": "service.name of the traces",
+                    "type": "string"
+                },
+                "samplingRatio": {
+                    "description": "Ratio of the sampled traces, from 0 to 1 (default 1)",
+                    "type": "number"
+                },
+                "headers": {
+                    "description": "HTTP headers of the export requests",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "categories": {
+                    "description": "Traced categories, an omitted category is off",
+                    "type": "object",
+                    "properties": {
+                        "database": {
+                            "type": "boolean"
+                        },
+                        "methods": {
+                            "type": "boolean"
+                        },
+                        "network": {
+                            "type": "boolean"
+                        },
+                        "clientServer": {
+                            "type": "boolean"
+                        },
+                        "rest": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "exporter": {
+                    "description": "\"otlp\" (default) or \"file\" (OpenTelemetryTraces.jsonl in the Logs folder)",
+                    "type": "string"
+                },
+                "resourceAttributes": {
+                    "description": "Attributes added to the resource of the traces",
+                    "type": "object"
+                },
+                "httpBodies": {
+                    "description": "Record the bodies of the HTTP requests and responses (default false)",
+                    "type": "boolean"
+                }
+            }
         }
     }
 }
@@ -712,6 +778,33 @@ The log configuration file is a `.json` file that must comply with the following
 - For diagnosticLogs, the "level" property corresponds to the `Diagnostic log level` constant values described in the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command.
 
 :::
+
+### OpenTelemetry connector
+
+The `openTelemetry` section starts the [OpenTelemetry connector](opentelemetry.md) before any code runs. It contains:
+
+- `state`: 1 starts the connector, 0 stops it if the file started it,
+- the properties of the configuration object of [`OpenTelemetry.start()`](../API/OpenTelemetryClass.md#start): `endpoint`, `serviceName`, `samplingRatio`, `headers`, `categories`, `exporter`, `resourceAttributes`, and `httpBodies`.
+
+```json
+{
+	"openTelemetry": {
+		"state": 1,
+		"exporter": "file",
+		"categories": {
+			"methods": true,
+			"database": true
+		}
+	}
+}
+```
+
+The values are checked when the connector starts: if a value is wrong (for example a `samplingRatio` of 2), the connector is not started and the error is written in the [diagnostic log](#4ddiagnosticlogtxt). The section is ignored on a remote 4D.
+
+The `OTEL_*` environment variables win over the same settings of the section (see [Starting the connector at startup](opentelemetry.md#starting-the-connector-at-startup)).
+
+- **forceConfiguration**: when the file has `"forceConfiguration": true`, the calls by code are ignored: [`OpenTelemetry.start()`](../API/OpenTelemetryClass.md#start) returns `success` **False** with an error, and [`OpenTelemetry.stop()`](../API/OpenTelemetryClass.md#stop) does nothing.
+- **Load logs configuration file**: on 4D Server, the [Load logs configuration file](../ServerWindow/maintenance.md#load-logs-configuration-file) button of the Maintenance page also applies the `openTelemetry` section. When the logs are stopped from the Maintenance page, the connector is stopped only if the file started it.
 
 ### Example
 

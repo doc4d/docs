@@ -36,6 +36,7 @@ slug: /commands/theme/4D-Environment
 |[<!-- INCLUDE #_command_.OPEN RUNTIME EXPLORER.Syntax -->](../../commands/open-runtime-explorer)<br/>|
 |[<!-- INCLUDE #_command_.OPEN SECURITY CENTER.Syntax -->](../../commands/open-security-center)<br/>|
 |[<!-- INCLUDE #_command_.OPEN SETTINGS WINDOW.Syntax -->](../../commands/open-settings-window)<br/>|
+|[<!-- INCLUDE #_command_.OpenTelemetry.Syntax -->](../../commands/opentelemetry)<br/>|
 |[<!-- INCLUDE #_command_.PLUGIN LIST.Syntax -->](../../commands/plugin-list)<br/>|
 |[<!-- INCLUDE #_command_.QUIT 4D.Syntax -->](../../commands/quit-4d)<br/>|
 |[<!-- INCLUDE #_command_.REJECT NEW REMOTE CONNECTIONS.Syntax -->](../../commands/reject-new-remote-connections)<br/>|

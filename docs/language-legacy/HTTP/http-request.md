@@ -27,6 +27,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|W3C trace context headers added when the OpenTelemetry connector runs|
 |16 R4|Modified|
 |14|Modified|
 |13|Created|
@@ -104,6 +105,8 @@ If the result returned by the server does not correspond to the *response* varia
 In *headerNames* and *headerValues*, you pass arrays containing the names and values of the request headers.   
 After this method is executed, these arrays contain the names and values of headers returned by the HTTP server. More specifically, this lets you manage cookies. 
 
+When the [OpenTelemetry connector](../../Debugging/opentelemetry.md) runs and a span is current, 4D adds the W3C `traceparent` header (and the `tracestate` header received with the current request, if any) to the request, so that the called service can join the same trace. If *headerNames* already contains a `traceparent` header, 4D sends it unchanged. When the connector is stopped, no header is added. With the `network` category of the connector on, the call also creates a span (see [Network calls](../../Debugging/opentelemetry.md#network-calls)).
+
 The *\** parameter enables the keep-alive mechanism for the server connection. By default, if this parameter is omitted, keep-alive is not enabled.
 
 The command returns a standard HTTP status code (200=OK and so on) as returned by the server. The list of HTTP status codes is provided in *RFC 2616*.   
@@ -141,6 +144,18 @@ Request to add a record in JSON to a remote database::
  var $content : Object
  OB SET($content;"lastname";"Doe";"firstname";"John")
  $result:=HTTP Request(HTTP PUT method;"database.example.com";$content;$response)
+```
+
+## Example 4
+
+You want the call to an external service to appear, with its duration and status, in the traces of the OpenTelemetry connector:
+
+```4d
+var $response : Text
+var $status : Integer
+OpenTelemetry.start({categories: {methods: True; network: True}})
+$status:=HTTP Request(HTTP GET method; "https://api.example.com/stock"; ""; $response)
+// a network span "GET", child of the "HTTP Request" span; the request carried a traceparent header
 ```
 
 ## See also 

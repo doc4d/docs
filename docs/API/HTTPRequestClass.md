@@ -98,6 +98,7 @@ HTTPRequest objects provide the following properties and functions:
 
 |Release|Changes|
 |---|---|
+|21 R6|W3C trace context headers added when the OpenTelemetry connector runs|
 |21 R3|Support of *storeCertificateName* property on macOS|
 |21|Support of *storeCertificateName* property on Windows|
 |20|TLS validation by default |
@@ -214,6 +215,22 @@ An authentication object handles the `options.serverAuthentication` or `options.
 |name|Text|Name used for authentication|undefined|
 |password|Text|Password used for authentication|undefined|
 |method|Text|Method used for authentication:"basic", "digest", "auto"|"auto"|
+
+#### OpenTelemetry trace context
+
+When the [OpenTelemetry connector](../Debugging/opentelemetry.md) runs and a span is current, 4D adds the W3C `traceparent` header (and the `tracestate` header received with the current request, if any) to the request, so that the called service can join the same trace. If the `headers` property of *options* already contains a `traceparent` header, 4D sends it unchanged. When the connector is stopped, no header is added.
+
+With the `network` category of the connector on, the request also creates a span, from the sending of the request to the response or the failure (see [Network calls](../Debugging/opentelemetry.md#network-calls)).
+
+#### Example
+
+You call another service that uses OpenTelemetry: its spans join the trace of the current 4D request:
+
+```4d
+var $request : 4D.HTTPRequest
+$request:=4D.HTTPRequest.new("https://api.example.com/stock").wait()
+// with the connector running, the request carried a traceparent header
+```
 
 <!-- END REF -->
 
