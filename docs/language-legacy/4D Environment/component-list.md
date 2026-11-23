@@ -45,6 +45,7 @@ For more information about 4D components, please refer to [this page](../../Conc
 ## See also 
 
 [PLUGIN LIST](../commands/plugin-list)  
+[Project dependencies](../commands/project-dependencies)
 
 ## Properties
 
