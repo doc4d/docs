@@ -9,9 +9,9 @@ A 4D project contains all of the source code of a 4D application, whatever its d
 
 ## Project files
 
-4D project files are open and edited using regular 4D platform applications (4D or 4D Server), on Windows or macOS. With 4D, full-featured editors are available to manage files, including a [code editor](../code-editor/write-class-method.md), a [web interface builder (4D Qodly Pro)](https://developer.4d.com/qodly/), a [form editor](../FormEditor/formEditor.md), a structure editor, a menu editor...
- 
-Since projects are in human-readable, plain text files (JSON, XML, etc.), they can be read or edited manually by developers, using any code editor. 
+4D project files are open and edited using regular 4D platform applications (4D or 4D Server), on Windows or macOS. With 4D, full-featured editors are available to manage files, including a [code editor](../code-editor/write-class-method.md), a [web interface builder (4D Qodly Pro)](https://developer.4d.com/qodly/), a [form editor](../FormEditor/formEditor.md), a [structure editor](../Develop/structure-editor.md), a [menu editor](../Menus/overview.md)...
+
+Since projects are in human-readable, plain text files (JSON, XML, etc.), they can be read or edited manually by developers, using any code editor, e.g. [VS Code](https://github.com/4d/4D-Analyzer-VSCode). 
 
 In addition, 4D project files make it easier to program generically, create application templates, and share code. Project are organized internally in [folders and files](../Project/architecture.md).
 
@@ -19,6 +19,8 @@ In addition, 4D project files make it easier to program generically, create appl
 ## Development
 
 4D projects are developed using the **4D** application. It provides an Integrated Development Environment (IDE) for 4D projects as well as a web server, a web interface builder, a mobile project generator, and an application runtime, allowing you to develop, test, and debug any kind of project. 
+
+During a development session, project files are automatically saved or reloaded by the 4D IDE when the application **moves to the foreground or background**. You can also trigger this update at any time using the [`RELOAD PROJECT`](../commands/reload-project) command.
 
 ### Source control
 
