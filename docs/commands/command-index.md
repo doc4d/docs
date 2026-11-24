@@ -840,6 +840,7 @@ title: Commands by name
 [`OPEN SETTINGS WINDOW`](../commands/open-settings-window)<br/>
 [`OPEN URL`](../commands/open-url)<br/>
 [`Open window`](../commands/open-window)<br/>
+[`OpenTelemetry`](../commands/opentelemetry) **new 4D 21 R6**<br/>
 [`ORDER BY`](../commands/order-by)<br/>
 [`ORDER BY ATTRIBUTE`](../commands/order-by-attribute)<br/>
 [`ORDER BY FORMULA`](../commands/order-by-formula)<br/>

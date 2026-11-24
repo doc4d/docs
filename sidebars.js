@@ -254,12 +254,14 @@ module.exports =
             "API/MailAttachmentClass",
             "API/MCPContextClass",
             "API/MethodClass",
+            "API/OpenTelemetryClass",
             "API/OutgoingMessageClass",
             "API/POP3TransporterClass",
             "API/QuotaManagerClass",
             "API/SessionClass",
             "API/SignalClass",
             "API/SMTPTransporterClass",
+            "API/SpanClass",
             "API/SystemWorkerClass",
             "API/TCPConnectionClass",
             "API/TCPEventClass",
@@ -871,6 +873,11 @@ module.exports =
           type: "doc",
           label: "Log Files",
           id: "Debugging/debugLogFiles"
+        },
+        {
+          type: "doc",
+          label: "OpenTelemetry",
+          id: "Debugging/opentelemetry"
         },
         {
           type: "category",
