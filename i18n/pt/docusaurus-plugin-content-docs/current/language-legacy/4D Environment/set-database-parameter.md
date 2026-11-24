@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Adicionado *ORDA JSON encoding*|
 |21 R4|Adicionado *QUIC session timeout*|
 |21 R3|Removido suporte a *Use legacy network layer*, adicionado *Use legacy print rendering*|
 |20 R6|Modificado|
@@ -1006,6 +1007,35 @@ Esta configuração só pode ser definida no 4D Server e aplica-se a todas as no
 
 
 
+### ORDA JSON encoding (139)
+
+**Escopo**: 4D Server (conexões abertas após a chamada)
+
+**Mantido entre sessões**: Não
+
+**Valores possíveis**: 0 = codificação binária (padrão), 1 = codificação JSON
+
+**Descrição**: Codificação das [requisições ORDA trocadas entre o 4D Server e aplicações 4D remotas](../../ORDA/client-server-optimization.md#binary-encoding-of-orda-requests) através de [`ds`](../commands/ds). Por padrão, essas requisições usam uma codificação binária (CBOR). Passe 1 para que as aplicações 4D remotas que se conectarem a partir de agora usem a codificação JSON, e 0 para voltar à codificação binária.
+
+- O novo valor se aplica às conexões abertas após a chamada. Conexões já abertas mantêm a codificação escolhida quando foram abertas.
+- O valor não é salvo nas configurações. Quando o 4D Server inicia, o valor vem da configuração [**Use JSON for ORDA requests**](../../settings/client-server.md#use-json-for-orda-requests) (0 quando está desmarcada).
+- Em uma aplicação 4D remota ou 4D single-user, o seletor é ignorado e nenhum erro é gerado. Ele não é enviado ao 4D Server: para alterar a codificação a partir de uma aplicação 4D remota, chame-o em um método executado no servidor.
+
+Você pode saber qual codificação uma aplicação 4D remota está usando com a propriedade `useORDABinaryEncoding` retornada por [`Application info`](../commands/application-info).
+
+
+
+### Use legacy print rendering (136)
+
+**Scope:** 4D application
+
+**Kept between two sessions:** No
+
+**Possible values:** 0 = legacy print rendering disabled, 1 = legacy print rendering enabled
+
+**Description:** Sets or gets the current status of the [legacy print renderer](../../FormEditor/forms.md#legacy-print-renderer) on macOS or Windows. When the legacy print renderer is *disabled*, 4D’s [modern print rendering engine](../../FormEditor/forms.md) is used. Note that when forms are rendered under Liquid Glass (macOS) or Fluent UI (Windows) interfaces, this selector is ignored (in such contexts forms are always printed using the modern print renderer, see [this section](../../FormEditor/forms.md#legacy-print-renderer)). In converted projects, this parameter can also be set permanently using a [compatibility setting](../../settings/compatibility.md). 
+
+
 ### RDP optimization (133)
 
 **Scope:** 4D application.
@@ -1060,6 +1090,16 @@ Você quer exportar dados em JSON que contém uma data 4D convertida. Note que a
  OB SET($o ;"myDate";Current date) // conversão JSON
  $json:=JSON Stringify($o)
  SET DATABASE PARAMETER(Dates inside objects;1)
+```
+
+## Exemplo 4
+
+No [On Server Startup database method](../commands/on-server-startup-database-method), você deseja que as aplicações 4D remotas que se conectam usem a codificação JSON para suas requisições ORDA:
+
+```4d
+ // On Server Startup database method
+ SET DATABASE PARAMETER(ORDA JSON encoding; 1) // connections opened from now on use JSON
+ $value:=Get database parameter(ORDA JSON encoding) // $value is 1
 ```
 
 ## Ver também 

@@ -7,6 +7,7 @@ title: Otimização cliente/servidor
 
 - o **contexto de otimização**
 - o **Cache ORDA**
+- a **codificação binária** das solicitações ORDA entre aplicações 4D remotas e o 4D Server
 
 ## Arquiteturas suportadas
 
@@ -141,9 +142,9 @@ Por padrão, o cache ORDA é tratado de forma transparente pelo 4D. No entanto, 
 - [dataClass.getRemoteCache()](../API/DataClassClass.md#getremotecache)
 - [dataClass.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)
 
-### Using the `local` keyword
+### Usando a palavra-chave `local`
 
-By default, [ORDA data model functions](../ORDA/ordaClasses.md) are executed on the server, which usually provides the best performance since only the function request and the result are sent over the network. However, it could happen that a function processes data that's already in the local cache and is fully executable on the client side. In this case, you can save requests to the server and thus, enhance the application performance by [using the `local` keyword in the function definition](../Concepts/classes.md#local).
+Por padrão, as [funções do modelo de dados ORDA](../ORDA/ordaClasses.md) são executadas no servidor, o que geralmente proporciona o melhor desempenho, pois apenas a solicitação da função e o resultado são enviados pela rede. No entanto, pode acontecer que uma função processe dados que já estão no cache local e seja totalmente executável no lado do cliente. Nesse caso, você pode economizar solicitações ao servidor e, assim, melhorar o desempenho do aplicativo [usando a palavra-chave `local` na definição da função](../Concepts/classes.md#local).
 
 Note-se que a função funcionará mesmo que eventualmente seja necessário aceder ao servidor (por exemplo, se a cache ORDA tiver expirado). No entanto, é altamente recomendável certificar-se de que a função local não acede a dados no servidor, caso contrário a execução local não poderá trazer qualquer benefício em termos de desempenho. Uma função local que gera muitos pedidos ao servidor é menos eficiente do que uma função executada no servidor que apenas devolveria os valores resultantes. Por exemplo, considere a seguinte função na classe de entidade Escolas:
 
@@ -157,7 +158,7 @@ local Function getYoungest() : Object
 - **sem** a palavra-chave `local`, o resultado é dado através de um único pedido
 - **com** a palavra-chave `local`, 4 pedidos são necessários: um para obter os alunos da entidade das escolas, um para a `query()`, um para o `orderBy()`, e um para o `slice()`. Neste exemplo, usar a palavra-chave `local` é inapropriado.
 
-#### Example: Checking attributes
+#### Exemplo: Verificando atributos
 
 Pretendemos verificar a consistência dos atributos de uma entidade carregada no cliente e actualizada pelo utilizador antes de solicitar ao servidor que os guarde.
 
@@ -189,6 +190,65 @@ var $status : Object
 $status:=Form.student.checkData()
 If ($status.success)
     $status:=Form.student.save() // call the server End if
+```
+
+## Codificação binária das solicitações ORDA
+
+No modo cliente/servidor, as solicitações ORDA que uma aplicação 4D remota envia ao 4D Server através de [`ds`](../commands/ds), e as respostas do 4D Server, trafegam em uma codificação binária: [CBOR](https://www.rfc-editor.org/rfc/rfc8949) (Concise Binary Object Representation, RFC 8949). Mensagens binárias são menores e mais rápidas de processar do que texto JSON.
+
+A codificação binária se aplica a todas as trocas ORDA, em ambas as direções: consultas, carregamento de entidades e entity selection (incluindo [list boxes baseados em entity selection](#entity-selection-based-list-box)), salvamentos, drops, locks e unlocks, reloads, chamadas de [função de classe ORDA](ordaClasses.md) com seus parâmetros e resultados, e atualizações do cache ORDA. As mensagens não são comprimidas.
+
+A codificação binária é transparente para o seu código:
+
+- O código existente roda sem alterações, e todo valor recebido (valores de atributos, parâmetros e resultados de funções, objetos de status, erros retornados por [`Last errors`](../commands/last-errors)) é idêntico ao recebido com a codificação JSON.
+- O [contexto de otimização](#optimization-context), o [cache ORDA](#orda-cache) e funções [`local`](#using-the-local-keyword) funcionam como antes. A codificação binária reduz o tamanho de cada mensagem, não o número de solicitações.
+- Os [logs de solicitações ORDA](../Debugging/debugLogFiles.md#orda-requests) mantêm o mesmo conteúdo legível.
+
+:::note
+
+A codificação binária só se aplica ao datastore principal acessado através de `ds` por aplicações 4D remotas. [Datastores remotos](remoteDatastores.md) abertos com [`Open datastore`](../commands/open-datastore) e solicitações REST ainda usam JSON.
+
+:::
+
+### Codificação de uma conexão
+
+A codificação é escolhida uma vez, quando uma aplicação 4D remota abre sua conexão com o 4D Server, e é mantida durante toda a conexão:
+
+- Se o 4D Server ou a aplicação 4D remota for de uma versão anterior ao 4D 21 R6, a conexão usa a codificação JSON. A conexão é aberta normalmente.
+- Caso contrário, a conexão usa a codificação atualmente definida no 4D Server: a codificação binária por padrão, ou a codificação JSON se você tiver retornado para JSON (veja abaixo).
+
+Várias aplicações 4D remotas conectadas ao mesmo 4D Server podem usar codificações diferentes, cada uma mantendo a sua própria.
+
+Em uma aplicação 4D remota, a propriedade `useORDABinaryEncoding` retornada por [`Application info`](../commands/application-info) informa qual codificação a conexão está usando.
+
+Se uma mensagem binária não puder ser decodificada, a solicitação ORDA falha com um erro, e um erro é escrito no [log de diagnóstico](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt).
+
+### Retornando à codificação JSON
+
+Você pode fazer com que as solicitações ORDA usem a codificação JSON, por exemplo, para fins de compatibilidade ou diagnóstico:
+
+- Com a opção [**Usar JSON para solicitações ORDA**](../settings/client-server.md#use-json-for-orda-requests) na página "Cliente-servidor/Opções de rede" das Configurações. A opção é lida quando o 4D Server é iniciado.
+- Com o seletor `ORDA JSON encoding` do [`SET DATABASE PARAMETER`](../commands/set-database-parameter), chamado no 4D Server (1 = JSON, 0 = binário). O novo valor se aplica às conexões abertas posteriormente, até que o 4D Server seja encerrado. Não é salvo nas configurações. Em uma aplicação 4D remota ou em um 4D single-user, o seletor é ignorado.
+
+Em ambos os casos, as conexões já abertas mantêm sua codificação.
+
+#### Exemplo 1
+
+Em uma aplicação 4D remota, você verifica a codificação da conexão:
+
+```4d
+var $info : Object:=Application info
+var $binary : Boolean:=$info.useORDABinaryEncoding
+// $binary é True com um 4D Server da mesma versão e as configurações padrão
+```
+
+#### Exemplo 2
+
+Você deseja que as aplicações 4D remotas que se conectarem a partir de agora usem a codificação JSON. Você chama este código no 4D Server, por exemplo no [método de banco de dados On Server Startup](../commands/on-server-startup-database-method):
+
+```4d
+SET DATABASE PARAMETER(ORDA JSON encoding; 1)
+// conexões existentes mantêm sua codificação, novas conexões usam JSON
 ```
 
 
