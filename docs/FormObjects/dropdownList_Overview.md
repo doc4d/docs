@@ -98,7 +98,7 @@ On Windows, item customization is only available in forms rendererd with [Fluent
 
 :::
 
-Inside the `values` collection of objects, each entry can be either a scalar value or an object which can define item-level presentation and behavior:
+Inside the `values` collection of objects, each entry can be an object which defines item-level presentation and behavior:
 
 |Item property|Type|Description|
 |---|---|---|
