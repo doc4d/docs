@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Attribut "folder" dans les projets à dossiers disque|
 |18 R3|Modifié|
 |15 R4|Modifié|
 |15|Modifié|
@@ -63,7 +64,7 @@ Dans le texte du *code* généré par la commande :
   // %attributes = {"lang":"fr","invisible":true,"folder":"Web3"}  
 ```  
     
-En cas d’import, cette ligne n’est pas importée, elle est utilisée pour définir les attributs à appliquer (les attributs non spécifiés sont remis à leur valeur par défaut). L’attribut "lang" définit la langue d’export, il permet d’empêcher un import dans une application en langue différente (dans ce cas, une erreur est générée). L'attribut "folder" contient le nom du dossier parent de la méthode, il n’apparaît pas si la méthode n’a pas de dossier parent.  
+En cas d’import, cette ligne n’est pas importée, elle est utilisée pour définir les attributs à appliquer (les attributs non spécifiés sont remis à leur valeur par défaut). L’attribut "lang" définit la langue d’export, il permet d’empêcher un import dans une application en langue différente (dans ce cas, une erreur est générée). L'attribut "folder" contient le nom du dossier parent de la méthode, il n’apparaît pas si la méthode n’a pas de dossier parent. Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), l'attribut "folder" correspond au dossier dans lequel le fichier de la méthode est stocké sur le disque (par exemple, "Invoices" pour `Sources/Invoices/Methods/createInvoice.4dm`), bien que le fichier de la méthode lui-même ne contienne pas de clé "folder" ; il n'est pas retourné pour une méthode située au niveau racine.  
 Des attributs supplémentaires peuvent être définis. Pour plus d'informations, reportez-vous à la description de la commande [METHOD SET ATTRIBUTES](../commands/method-set-attributes).
 
 Le paramètre *option* vous permet de sélectionner le mode d'exportation du code concernant les éléments "tokenisés" de la ou des méthode(s) :
@@ -136,6 +137,16 @@ Au cas ou
     : (Evenement formulaire code:C388=Sur chargement:K2:1)
         TOUT SELECTIONNER:C47([Customer:1])
 Fin de cas
+```
+
+## Exemple 3
+
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), le fichier de la méthode `createInvoice` est stocké dans `Sources/Invoices/Methods`. Vous souhaitez obtenir son code avec son dossier :
+
+```4d
+var $code : Text
+METHOD GET CODE("createInvoice"; $code)
+// la première ligne de $code contient "folder":"Invoices"
 ```
 
 ## Voir aussi 

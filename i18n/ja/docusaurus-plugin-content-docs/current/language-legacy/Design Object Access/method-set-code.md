@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|ディスクフォルダープロジェクトにおいて、"folder" 属性でメソッドファイルを移動または作成|
 |18 R3|変更|
 |15|変更|
 |14|変更|
@@ -77,9 +78,11 @@ displayed_sidebar: docs
 * このプロパティが明示されていないかフォルダーが存在しない場合、コマンドは親フォルダーの階層に変更を加えません。
 * このプロパティが空の文字列を含む場合、メソッドはルート階層に置かれます。
 
+[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) においては、"folder" プロパティはディスク上のメソッドファイルを `Sources/<folder path>/Methods` へ(空の文字列の場合は `Sources/Methods` へ)移動し、新規メソッドはそのフォルダー内に直接作成されます。同じ名前のフォルダーが複数ある場合、パス順で最初のフォルダーが使用されます。メソッドファイルは常に "folder" キーなしで保存されます。
+
 このコマンドをコンポーネントから実行することもできますが、この場合 (コンポーネントコードには書き込みアクセスができないため) *\** 引数を渡さなければなりません。この状況で *\** 引数を省略するとエラー-9763が生成されます。
 
-## 例題 
+## 例題 1 
 
 この例題ではアプリケーションのすべてのメソッドを書き出し/読み込みします:
 
@@ -109,6 +112,17 @@ displayed_sidebar: docs
     End for
  End if
  SHOW ON DISK($root_t)
+```
+
+## 例題 2 
+
+[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) において、`Invoices` フォルダー内に `sendInvoice` メソッドを作成したい場合を考えます:
+
+```4d
+var $code : Text
+$code:="//%attributes = {\"folder\":\"Invoices\"}\r#DECLARE()\rALERT(\"Sent\")"
+METHOD SET CODE("sendInvoice"; $code)
+// ファイルは "folder" キーなしで Sources/Invoices/Methods/sendInvoice.4dm として作成されます
 ```
 
 ## 参照 

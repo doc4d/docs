@@ -19,6 +19,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Recharge la hiérarchie des dossiers des projets à dossiers disque|
 |18 R4|Créé|
 
 </details>
@@ -42,6 +43,19 @@ Lorsque la commande est appelée depuis :
 * un 4D Developer connecté à un 4D Server sur la même machine, elle est d'abord exécutée sur un 4D Server, puis sur 4D Developer.
 * un 4D Developer connecté à distance à un 4D Server, elle est exécutée uniquement sur un 4D Server.
 * un 4D monoposte ou un 4D Server, elle est exécutée localement.
+
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), la commande recharge également la hiérarchie des dossiers de la page Démarrage de l'Explorateur à partir des dossiers trouvés sur le disque sous `Project/Sources` : dossiers ajoutés, renommés, déplacés ou supprimés, et éléments déplacés d'un dossier à l'autre. Une méthode déplacée vers un autre dossier conserve son identité (les éditeurs ouverts et les points d'arrêt la suivent). Les [fichiers en anomalie](../../Develop/explorer.md#files-at-fault) trouvés sur le disque sont signalés dans une boîte de dialogue, ou dans le journal de diagnostic en l'absence d'IDE.
+
+## Exemple
+
+Dans un projet à dossiers disque, vous souhaitez ajouter un dossier contenant une méthode en dehors de l'Explorateur, puis l'afficher dans la page Démarrage :
+
+```4d
+var $folder : 4D.Folder:=Folder(fk database folder).folder("Project/Sources/Reports/Methods")
+$folder.create()
+$folder.file("monthlyReport.4dm").setText("//%attributes = {}\r#DECLARE()\r")
+RELOAD PROJECT  // le dossier Reports et sa méthode monthlyReport apparaissent dans la page Démarrage
+```
 
 ## Voir aussi 
 

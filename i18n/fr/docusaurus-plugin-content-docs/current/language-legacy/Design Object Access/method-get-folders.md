@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Prise en charge des projets à dossiers disque|
 |13|Créé|
 
 </details>
@@ -38,6 +39,18 @@ Comme les noms des dossiers doivent être uniques, la hiérarchie n’est pas re
 Vous pouvez restreindre la liste des dossiers en passant une chaîne de comparaison dans le paramètre *filtre* : dans ce cas, seuls les dossiers dont le nom correspond au filtre seront retournés. Vous pouvez utiliser le caractère @ afin de définir des filtres de type "commence par", "se termine par" ou "contient". Si vous passez une chaîne vide, le paramètre *filtre* est ignoré. 
 
 Si la commande est exécutée depuis un composant, elle retourne par défaut les chemins des méthodes du composant. Si vous passez le paramètre *\**, le tableau contiendra les chemins des méthodes de la base hôte.
+
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), la commande retourne les noms des dossiers trouvés sur le disque sous `Project/Sources`, y compris les dossiers vides, ainsi que les dossiers nommés dans le fichier `tableFolders.json`. Les dossiers de type (`Methods`, `Classes`, `Forms`, `WebForms`) et les dossiers fixes (`DatabaseMethods`, `TableForms`, `Triggers`, `Shared`) ne sont pas retournés. Le fichier `folders.json` est ignoré.
+
+## Exemple
+
+Dans un projet à dossiers disque contenant les dossiers `Sources/Invoices` et `Sources/Invoices/Archive`, vous souhaitez obtenir les noms des dossiers de la page Démarrage :
+
+```4d
+ARRAY TEXT($folders; 0)
+METHOD GET FOLDERS($folders)
+// $folders contient "Invoices" et "Archive"
+```
 
 ## Voir aussi 
 

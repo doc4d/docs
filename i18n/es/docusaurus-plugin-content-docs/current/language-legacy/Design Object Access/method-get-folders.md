@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|Soporte de los proyectos con carpetas en disco|
 |13|Creado por|
 
 </details>
@@ -37,6 +38,18 @@ Como los nombres de las carpetas deben ser únicos, la jerarquía no se devuelve
 Puede limitar la lista de carpetas pasando una cadena de comparación en el parámetro *filtro*, en este caso, sólo se devuelven las carpetas cuyos nombres coincidan con el filtro. Puede utilizar el carácter @ para definir los filtros de tipo "comienza por", "termina en" o "contiene". Si pasa una cadena vacía, el parámetro *filtro* se ignora.   
   
 Si se ejecuta este comando desde un componente, devuelve por defecto las rutas de los métodos del componente. Si pasa el parámetro *\**, el array contendrá las rutas de los métodos de la base local.
+
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), el comando devuelve los nombres de las carpetas encontradas en el disco bajo `Project/Sources`, incluidas las carpetas vacías, y las carpetas nombradas en el archivo `tableFolders.json`. Las carpetas de tipo (`Methods`, `Classes`, `Forms`, `WebForms`) y las carpetas fijas (`DatabaseMethods`, `TableForms`, `Triggers`, `Shared`) no se devuelven. El archivo `folders.json` se ignora.
+
+## Ejemplo
+
+En un proyecto con carpetas en disco con las carpetas `Sources/Invoices` y `Sources/Invoices/Archive`, desea obtener los nombres de las carpetas de la página Inicio:
+
+```4d
+ARRAY TEXT($folders; 0)
+METHOD GET FOLDERS($folders)
+// $folders contiene "Invoices" y "Archive"
+```
 
 ## Ver también 
 

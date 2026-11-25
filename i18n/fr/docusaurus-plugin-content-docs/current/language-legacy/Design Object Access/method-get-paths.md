@@ -25,6 +25,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Prise en charge des projets à dossiers disque|
 |18 R3|Modifié|
 |13|Créé|
 
@@ -38,6 +39,8 @@ displayed_sidebar: docs
 Si votre code est organisé en "dossiers" dans l’Explorateur de 4D (page Démarrage), vous pouvez passer dans le paramètre optionnel *nomDossier* un nom de dossier. Dans ce cas, le tableau *tabChemins* ne contient que les chemins des méthodes situées à cet emplacement. 
 
 **Note :** Il n’est pas possible d’utiliser le caractère "@" dans *nomDossier*. 
+
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), *nomDossier* désigne un dossier trouvé sur le disque sous `Project/Sources`, et les méthodes et classes de ce dossier sont celles dont les fichiers sont stockés dans ses dossiers de type. Si plusieurs dossiers portent le même nom (ce qui est [signalé comme une anomalie](../../Develop/explorer.md#files-at-fault)), seul le premier dans l'ordre des chemins est utilisé.
 
 Passez dans *typeMéthode* le type de méthode dont vous souhaitez obtenir les chemins dans le tableau *tabChemins*. Vous pouvez utiliser les constantes suivantes, placées dans le thème *Accès objets développement* (vous pouvez utiliser une constante ou une combinaison de constantes) :
 
@@ -92,6 +95,16 @@ Récupération des méthodes projet modifiées depuis le dernier backup :
 ## Exemple 4 
 
 Reportez-vous à l'exemple de la commande [METHOD SET CODE](../commands/method-set-code).
+
+## Exemple 5
+
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects) contenant les dossiers `Sources/A/Utils` et `Sources/B/Utils`, vous souhaitez obtenir les méthodes projet du dossier `Utils` :
+
+```4d
+ARRAY TEXT($paths; 0)
+METHOD GET PATHS("Utils"; Path project method; $paths)
+// $paths contient uniquement les méthodes de Sources/A/Utils/Methods
+```
 
 ## Voir aussi 
 

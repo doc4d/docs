@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|ディスクフォルダープロジェクトのサポート|
 |13|初出|
 
 </details>
@@ -38,6 +39,18 @@ displayed_sidebar: docs
 *filter*引数に比較文字列を渡して、このフォルダーリストを絞り込むことができます。この場合コマンドは名前がフィルターにマッチするフォルダーのみを返します。"@"をワイルドカードとして使用することができます。空の文字列を渡すと*filter*引数は無視されます。 
 
 このコマンドがコンポーネントから呼ばれると、デフォルトでコンポーネントのフォルダー名が返されます。*\** 引数を渡すと配列にはホストデータベースのフォルダーが返されます。
+
+[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) においては、コマンドは `Project/Sources` 下のディスク上にあるフォルダー(空のフォルダーを含む)、および `tableFolders.json` ファイル内で指定されているフォルダーの名前を返します。タイプ別フォルダー(`Methods`、`Classes`、`Forms`、`WebForms`)と固定フォルダー(`DatabaseMethods`、`TableForms`、`Triggers`、`Shared`)は返されません。`folders.json` ファイルは無視されます。
+
+## 例題
+
+`Sources/Invoices` と `Sources/Invoices/Archive` フォルダーを持つディスクフォルダープロジェクトにおいて、ホームページのフォルダー名を取得したい場合を考えます:
+
+```4d
+ARRAY TEXT($folders; 0)
+METHOD GET FOLDERS($folders)
+// $folders には "Invoices" と "Archive" が格納されます
+```
 
 ## 参照 
 

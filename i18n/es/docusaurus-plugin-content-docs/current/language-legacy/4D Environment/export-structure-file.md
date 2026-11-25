@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|Nueva opción *diskFolders*|
 |18|Modificado|
 |17 R5|Modificado|
 |17 R3|Creado por|
@@ -50,6 +51,7 @@ El parámetro *opciones* le permite personalizar el proceso de conversión. El o
 | -------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | withLog                    | booleano o cadena | <table><tbody><tr><td>true o "always": crea un archivo de registro de conversión en la carpeta de Registros de destino.</td></tr><tr><td>"ifNotEmpty": cree un archivo de registro de conversión solo si contiene algunos mensajes</td></tr><tr><td>false u omitido (predeterminado): no crea un archivo de registro de conversión</td></tr></tbody></table> |
 | makeProject                | booleano          | true para generar un archivo.4DProject en la carpeta "Project"                                                                                                                                                                                                                                                                                                                                                                                               |
+| diskFolders                | booleano          | true para exportar un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects) (ver abajo). false u omitido (predeterminado): exporta un proyecto con carpetas virtuales (archivo `folders.json`). Cualquier otro valor se ignora |
 | filter                     | objeto            | Contenidos para exportar. Si se omite (por defecto), todo se exporta                                                                                                                                                                                                                                                                                                                                                                                         |
 | projectMethods             | booleano          | true para exportar métodos proyecto                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | databaseMethods            | booleano          | true para exportar métodos base                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -77,6 +79,10 @@ El parámetro *opciones* le permite personalizar el proceso de conversión. El o
  (\*) El filtro "trash" es útil solo si también se seleccionan los filtros "projectMethods" o "forms".
 
 **Atención**: cuando se pasa el parámetro *opciones* y se usa el objeto "filtro", debe declarar explícitamente cada propiedad para exportar con el valor **true**. Cuando se pasa este objeto, 4D asume que todas las propiedades están en **false** por defecto.
+
+Cuando *diskFolders* es true, cada carpeta de la página Inicio del Explorador de la base se convierte en una carpeta en `Project/Sources`, y sus métodos proyecto y formularios proyecto se escriben en sus carpetas de tipo (`Sources/<folder path>/Methods` y `Sources/<folder path>/Forms`), con su documentación en `Documentation/<folder path>`. Las carpetas de las tablas y de los formularios tabla se escriben en `Sources/tableFolders.json` en lugar de `folders.json`, y los archivos de métodos no tienen atributo "folder". Cuando se genera el archivo .4DProject, se marca como proyecto con carpetas en disco. Los nombres de carpetas que no pueden utilizarse en el disco se renombran según las reglas de [**Convertir en carpetas en disco...**](../../Develop/explorer.md#converting-a-project) (por ejemplo, `CON` se convierte en `CON 2`), y cada cambio de nombre se reporta como un mensaje "info" en el resultado. Los elementos en la papelera se exportan a la Papelera como de costumbre.
+
+**Nota:** el comando de menú **Archivo > Exportar > Estructura a proyecto** muestra primero un diálogo con una casilla de selección **Usar carpetas en disco**, no seleccionada por defecto, que define esta opción. Haga clic en **Convertir** para exportar el proyecto, o en **Cancelar** para no exportar nada.
 
 ### Resultado 
 
@@ -122,6 +128,16 @@ Desea exportar solo los métodos proyecto y base, y un archivo de registro:
  $option.filter.databaseMethods:=True
  $option.withLog:="always"
  $result:=Export structure file("exportWithLog";$option)
+```
+
+## Ejemplo 3
+
+Desea exportar la base como un proyecto con carpetas en disco, con un archivo .4DProject:
+
+```4d
+var $result : Object
+$result:=Export structure file("ExportDisk"; {makeProject: True; diskFolders: True})
+// los métodos de la carpeta "Web" están en ExportDisk/Project/Sources/Web/Methods
 ```
 
 ## Ver también 

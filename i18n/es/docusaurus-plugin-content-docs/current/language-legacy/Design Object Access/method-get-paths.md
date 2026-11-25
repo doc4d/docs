@@ -24,6 +24,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|Soporte de los proyectos con carpetas en disco|
 |18 R3|Modificado|
 |13|Creado por|
 
@@ -38,6 +39,8 @@ Si su código está organizado en "carpetas" en el Explorador de 4D (página Ini
   
 **Nota**: no puede utilizar el carácter comodín, "@" en *nomCarpeta*.  
   
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), *nomCarpeta* designa una carpeta encontrada en el disco bajo `Project/Sources`, y los métodos y clases de esta carpeta son aquellos cuyos archivos se almacenan en sus carpetas de tipo. Si varias carpetas tienen el mismo nombre (lo que se [señala como un error](../../Develop/explorer.md#files-at-fault)), solo se utiliza la primera en el orden de las rutas.
+
 Pase en el parámetro *tipoMetodo* el tipo de método del cual quiere obtener la rutas en el array *arrRutas*. Puede utilizar las siguientes constantes (individualmente o combinadas), del tema *Acceso objetos diseño*:
 
 | Constante            | Tipo         | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -91,6 +94,16 @@ Recuperación de los métodos de proyecto modificados desde el último backup:
 ## Ejemplo 4 
 
 Consulte el ejemplo del comando [METHOD SET CODE](../commands/method-set-code).
+
+## Ejemplo 5
+
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects) con las carpetas `Sources/A/Utils` y `Sources/B/Utils`, desea obtener los métodos proyecto de la carpeta `Utils`:
+
+```4d
+ARRAY TEXT($paths; 0)
+METHOD GET PATHS("Utils"; Path project method; $paths)
+// $paths solo contiene los métodos de Sources/A/Utils/Methods
+```
 
 ## Ver también 
 

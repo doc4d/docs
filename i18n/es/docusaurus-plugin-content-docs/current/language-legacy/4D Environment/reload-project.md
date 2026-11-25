@@ -19,6 +19,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|Recarga la jerarquía de carpetas de los proyectos con carpetas en disco|
 |18 R4|Creado por|
 
 </details>
@@ -42,6 +43,19 @@ Cuando se llama al comando desde:
 * un 4D Developer conectado a un 4D Server en la misma máquina, primero se ejecuta en el 4D Server, luego del lado 4D Developer.
 * un 4D Developer conectado de forma remota a un 4D Server, se ejecuta solo en el 4D Server.
 * un 4D mono usuario o un 4D Server, se ejecuta localmente.
+
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), el comando también recarga la jerarquía de carpetas de la página Inicio del Explorador a partir de las carpetas encontradas en el disco bajo `Project/Sources`: carpetas añadidas, renombradas, desplazadas o eliminadas, y elementos desplazados entre carpetas. Un método desplazado a otra carpeta conserva su identidad (los editores abiertos y los puntos de interrupción lo siguen). Los [archivos con errores](../../Develop/explorer.md#files-at-fault) encontrados en el disco se reportan en un diálogo, o en el historial de diagnóstico cuando no hay IDE.
+
+## Ejemplo
+
+En un proyecto con carpetas en disco, desea añadir una carpeta con un método fuera del Explorador y luego mostrarla en la página Inicio:
+
+```4d
+var $folder : 4D.Folder:=Folder(fk database folder).folder("Project/Sources/Reports/Methods")
+$folder.create()
+$folder.file("monthlyReport.4dm").setText("//%attributes = {}\r#DECLARE()\r")
+RELOAD PROJECT  // la carpeta Reports y su método monthlyReport aparecen en la página Inicio
+```
 
 ## Ver también 
 

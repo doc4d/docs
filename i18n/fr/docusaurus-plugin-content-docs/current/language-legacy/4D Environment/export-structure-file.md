@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Nouvelle option *diskFolders*|
 |18|Modifié|
 |17 R5|Modifié|
 |17 R3|Créé|
@@ -50,6 +51,7 @@ Le paramètre *options* vous permet de personnaliser le processus de conversion.
 | -------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | withLog              | booléen ou chaîne  | <table><tbody><tr><td>vrai ou "always" : crée un fichier log de conversion dans le dossier de destination Logs.</td></tr><tr><td>"ifNotEmpty" : crée un fichier log de conversion uniquement s'il contient des messages</td></tr><tr><td>faux ou omis (défaut) : ne crée pas de fichier log de conversion </td></tr></tbody></table> |
 | makeProject          | booléen            | vrai pour générer un fichier .4DProject dans le dossier "Project"                                                                                                                                                                                                                                                                                                                                                                    |
+| diskFolders          | booléen            | vrai pour exporter un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects) (voir ci-dessous). faux ou omis (défaut) : exporte un projet avec des dossiers virtuels (fichier `folders.json`). Toute autre valeur est ignorée |
 | filter               | objet              | Contenus à exporter. Si omis (défaut), tout est exporté                                                                                                                                                                                                                                                                                                                                                                              |
 | projectMethods       | booléen            | vrai pour exporter les méthodes projet                                                                                                                                                                                                                                                                                                                                                                                               |
 | databaseMethods      | booléen            | vrai pour exporter les méthodes base de données                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -77,6 +79,10 @@ Le paramètre *options* vous permet de personnaliser le processus de conversion.
 (\*) Le filtre "corbeille" est utile uniquement si les filtres "projectMethods" ou "forms" sont également sélectionnés.
 
 **Attention :** Lorsque le paramètre *options* est passé et que l'objet "filter" est utilisé, vous devez déclarer explicitement chaque propriété destinée à l'export avec la valeur **vrai**. Lorsque cet objet est passé, 4D considère que toutes les propriétés sont, par défaut, fixées à **faux**. 
+
+Lorsque *diskFolders* est vrai, chaque dossier de la page Démarrage de l'Explorateur de la base devient un dossier dans `Project/Sources`, et ses méthodes projet et formulaires projet sont écrits dans ses dossiers de type (`Sources/<folder path>/Methods` et `Sources/<folder path>/Forms`), avec leur documentation dans `Documentation/<folder path>`. Les dossiers des tables et des formulaires table sont écrits dans `Sources/tableFolders.json` au lieu de `folders.json`, et les fichiers de méthodes n'ont pas d'attribut "folder". Lorsque le fichier .4DProject est généré, il est marqué comme projet à dossiers disque. Les noms de dossiers qui ne peuvent pas être utilisés sur le disque sont renommés selon les règles de [**Convert to Disk Folders...**](../../Develop/explorer.md#converting-a-project) (par exemple, `CON` devient `CON 2`), et chaque renommage est signalé par un message de niveau "info" dans le résultat. Les éléments placés dans la corbeille sont exportés dans la corbeille comme d'habitude.
+
+**Note :** La commande de menu **File > Export > Structure to project** affiche d'abord une boîte de dialogue contenant une case à cocher **Use disk folders**, non cochée par défaut, qui définit cette option. Cliquez sur **Convert** pour exporter le projet, ou sur **Cancel** pour ne rien exporter.
 
 ### Résultat 
 
@@ -123,6 +129,16 @@ Vous souhaitez exporter uniquement les méthodes projet et les méthodes base, a
  $option.filter.databaseMethods:=True
  $option.withLog:="always"
  $result:=Export structure file("exportWithLog";$option)
+```
+
+## Exemple 3
+
+Vous souhaitez exporter la base de données sous forme de projet à dossiers disque, avec un fichier .4DProject :
+
+```4d
+var $result : Object
+$result:=Export structure file("ExportDisk"; {makeProject: True; diskFolders: True})
+// les méthodes du dossier "Web" se trouvent dans ExportDisk/Project/Sources/Web/Methods
 ```
 
 ## Voir aussi 

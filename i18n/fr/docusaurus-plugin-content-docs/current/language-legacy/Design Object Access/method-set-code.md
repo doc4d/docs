@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|L'attribut "folder" déplace ou crée le fichier de la méthode dans les projets à dossiers disque|
 |18 R3|Modifié|
 |15|Modifié|
 |14|Modifié|
@@ -75,9 +76,11 @@ Concernant la propriété "folder" des métadonnées :
 * si cette propriété n’est pas présente ou si le dossier n’existe pas, la commande ne change rien au niveau du dossier parent,
 * si cette propriété est présente et contient une chaîne vide, la méthode sera placée au niveau racine.
 
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), la propriété "folder" déplace le fichier de la méthode sur le disque vers `Sources/<folder path>/Methods` (ou vers `Sources/Methods` pour une chaîne vide), et une nouvelle méthode est créée directement dans ce dossier. Si plusieurs dossiers portent le même nom, le premier dans l'ordre des chemins est utilisé. Le fichier de la méthode est toujours enregistré sans la clé "folder".
+
 Vous pouvez exécuter cette commande depuis un composant, mais dans ce cas vous devez passer le paramètre *\** car l’accès en écriture au code du composant n’est pas possible. Si vous omettez le paramètre *\** dans ce contexte, l’erreur -9763 est générée.
 
-## Exemple 
+## Exemple 1
 
 Cet exemple permet d’exporter et d’importer la totalité des méthodes projet d’une application :
 
@@ -107,6 +110,17 @@ Cet exemple permet d’exporter et d’importer la totalité des méthodes proje
     End for
  End if
  SHOW ON DISK($root_t)
+```
+
+## Exemple 2
+
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), vous souhaitez créer la méthode `sendInvoice` dans le dossier `Invoices` :
+
+```4d
+var $code : Text
+$code:="//%attributes = {\"folder\":\"Invoices\"}\r#DECLARE()\rALERT(\"Sent\")"
+METHOD SET CODE("sendInvoice"; $code)
+// le fichier est créé sous Sources/Invoices/Methods/sendInvoice.4dm, sans la clé "folder"
 ```
 
 ## Voir aussi 

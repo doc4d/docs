@@ -19,6 +19,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Recarrega a hierarquia de pastas dos projetos com pastas em disco|
 |18 R4|Criado por|
 
 </details>
@@ -42,6 +43,19 @@ Quando o comando for chamado de:
 * um 4D Developer conecteado a um 4D Server na mesma máquina, é executado primeiro no 4D Server, depois no lado 4D Developer.
 * um 4D Developer conectado remotamente a um 4D Server, é executado apenas em 4D Server.
 * um 4D monousuário ou um 4D Server, é executado localmente.
+
+Em um [projeto com pastas em disco](../../Project/architecture.md#disk-folder-projects), o comando também recarrega a hierarquia de pastas da página Início do Explorador a partir das pastas encontradas no disco em `Project/Sources`: pastas adicionadas, renomeadas, movidas ou apagadas, e elementos movidos entre pastas. Um método movido para outra pasta mantém sua identidade (os editores abertos e os pontos de interrupção o acompanham). Os [arquivos com falha](../../Develop/explorer.md#files-at-fault) encontrados no disco são relatados em uma caixa de diálogo, ou no registro de diagnóstico quando não houver IDE.
+
+## Exemplo
+
+Em um projeto com pastas em disco, se quiser adicionar uma pasta com um método fora do Explorador, e depois mostrá-la na página Início:
+
+```4d
+var $folder : 4D.Folder:=Folder(fk database folder).folder("Project/Sources/Reports/Methods")
+$folder.create()
+$folder.file("monthlyReport.4dm").setText("//%attributes = {}\r#DECLARE()\r")
+RELOAD PROJECT  // a pasta Reports e seu método monthlyReport aparecem na página Início
+```
 
 ## Ver também 
 
