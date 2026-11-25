@@ -190,7 +190,7 @@ Définit le [mode de liaison des données](../Desktop/data-file-configuration.md
 | ByAppName | Entrée la plus récente dans *LastDataPath.xml* | Préférences utilisateur |
 | ByAppPath | Entrée dont l'attribut *executablePath* correspond au chemin de l'application | Préférences utilisateur |
 
-La même clé existe pour les applications monoposte : [RuntimeVL/LastDataPathLookup](./general.md#lastdatapathlookup).
+La même clé existe pour les applications monoposte : [RuntimeVL/LastDataPathLookup](./runtime-vl.md#lastdatapathlookup).
 
 ### MacCompiledDatabaseToWin
 

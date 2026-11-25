@@ -190,7 +190,7 @@ Define el [modo de enlace de datos](../Desktop/data-file-configuration.md#config
 | ByAppName | Entrada más reciente en *LastDataPath.xml* | Preferencias del usuario |
 | ByAppPath | Entrada cuyo *executablePath* coincide con la ruta de la aplicación | Preferencias del usuario |
 
-La misma llave existe para las aplicaciones monopuesto: [RuntimeVL/LastDataPathLookup](./general.md#lastdatapathlookup).
+La misma llave existe para las aplicaciones monopuesto: [RuntimeVL/LastDataPathLookup](./runtime-vl.md#lastdatapathlookup).
 
 ### MacCompiledDatabaseToWin
 

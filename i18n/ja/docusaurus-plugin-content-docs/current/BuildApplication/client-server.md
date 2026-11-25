@@ -190,7 +190,7 @@ SET DATABASE PARAMETER(Client Server Port ID;tempport)
 | ByAppName | *LastDataPath.xml* 内の最新のエントリー | ユーザー環境設定 |
 | ByAppPath | *executablePath* がアプリケーションのパスに合致するエントリー | ユーザー環境設定 |
 
-シングルユーザーアプリケーションにも同じキーが存在します: [RuntimeVL/LastDataPathLookup](./general.md#lastdatapathlookup)。
+シングルユーザーアプリケーションにも同じキーが存在します: [RuntimeVL/LastDataPathLookup](./runtime-vl.md#lastdatapathlookup)。
 
 ### MacCompiledDatabaseToWin
 

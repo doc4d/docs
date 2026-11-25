@@ -16,9 +16,6 @@ These keys are located directly under the `<BuildApp>` node.
     <BuildWinDestFolder>C:\Builds\</BuildWinDestFolder>
     <BuildCompiled>True</BuildCompiled>
     <BuildApplicationSerialized>True</BuildApplicationSerialized>
-    <RuntimeVL>
-      <LastDataPathLookup>ByAppPath</LastDataPathLookup>
-    </RuntimeVL>
   </BuildApp>
 </Preferences4D>
 ```

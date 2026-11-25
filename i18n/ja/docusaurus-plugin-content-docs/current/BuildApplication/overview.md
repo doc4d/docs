@@ -130,7 +130,7 @@ keywords: ["BuildApplication", "XML key", "buildApp.4DSettings", "BUILD APPLICAT
 | IsOEM | `SourcesFiles/CS` | [ソースファイル](./source-files.md#isoem) |
 | IsOEM | `SourcesFiles/RuntimeVL` | [ソースファイル](./source-files.md#isoem) |
 | LastDataPathLookup | `CS` | [クライアント/サーバー](./client-server.md#lastdatapathlookup) |
-| LastDataPathLookup | `RuntimeVL` | [一般](./general.md#lastdatapathlookup) |
+| LastDataPathLookup | `RuntimeVL` | [RuntimeVL](./runtime-vl.md#lastdatapathlookup) |
 | MacCertificate | `SignApplication` | [ライセンス＆署名](./licenses-signature.md#maccertificate) |
 | MacCompiledDatabaseToWin | `CS` | [クライアント/サーバー](./client-server.md#maccompileddatabasetowin) |
 | MacCompiledDatabaseToWinIncludeIt | `CS` | [クライアント/サーバー](./client-server.md#maccompileddatabasetowinincludeit) |

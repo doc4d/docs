@@ -130,7 +130,7 @@ Les clés de type tableau (telles que `ArrayLicenseWin` ou `ArrayExcludedPluginN
 | IsOEM | `SourcesFiles/CS` | [Fichiers sources](./source-files.md#isoem) |
 | IsOEM | `SourcesFiles/RuntimeVL` | [Fichiers sources](./source-files.md#isoem) |
 | LastDataPathLookup | `CS` | [Client/Serveur](./client-server.md#lastdatapathlookup) |
-| LastDataPathLookup | `RuntimeVL` | [Général](./general.md#lastdatapathlookup) |
+| LastDataPathLookup | `RuntimeVL` | [RuntimeVL](./runtime-vl.md#lastdatapathlookup) |
 | MacCertificate | `SignApplication` | [Licences & signature](./licenses-signature.md#maccertificate) |
 | MacCompiledDatabaseToWin | `CS` | [Client/Serveur](./client-server.md#maccompileddatabasetowin) |
 | MacCompiledDatabaseToWinIncludeIt | `CS` | [Client/Serveur](./client-server.md#maccompileddatabasetowinincludeit) |

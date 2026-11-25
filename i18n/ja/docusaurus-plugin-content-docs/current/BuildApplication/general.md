@@ -7,7 +7,7 @@ description: "BuildApp ノードの直下に配置される BuildApplication XML
 keywords: ["BuildApplication", "XML key", "BuildApp", "RuntimeVL"]
 ---
 
-これらのキーは `<BuildApp>` ノードの直下に配置されます。ただし、[LastDataPathLookup](#lastdatapathlookup) は `<RuntimeVL>` ノードに属します。
+これらのキーは `<BuildApp>` ノードの直下に配置されます。
 
 ```xml
 <Preferences4D>
@@ -16,9 +16,6 @@ keywords: ["BuildApplication", "XML key", "BuildApp", "RuntimeVL"]
     <BuildWinDestFolder>C:\Builds\</BuildWinDestFolder>
     <BuildCompiled>True</BuildCompiled>
     <BuildApplicationSerialized>True</BuildApplicationSerialized>
-    <RuntimeVL>
-      <LastDataPathLookup>ByAppPath</LastDataPathLookup>
-    </RuntimeVL>
   </BuildApp>
 </Preferences4D>
 ```
@@ -41,7 +38,6 @@ keywords: ["BuildApplication", "XML key", "BuildApp", "RuntimeVL"]
 | [ArrayExcludedPluginID](#arrayexcludedpluginid) | ID の配列 | 除外するプラグイン (ID で指定) |
 | [ArrayExcludedComponentName](#arrayexcludedcomponentname) | 名前の配列 | 除外するコンポーネント |
 | [ArrayExcludedModuleName](#arrayexcludedmodulename) | 名前の配列 | 除外するオプションモジュール |
-| [RuntimeVL/LastDataPathLookup](#lastdatapathlookup) | InDbStruct / ByAppName / ByAppPath | シングルユーザーアプリケーションのデータリンクモード |
 
 ## アプリケーション名と保存先
 
@@ -158,21 +154,3 @@ True または省略された場合、.4dz ファイルは標準の zip 形式�
 モジュールを除外すると、ビルドしたアプリケーションが期待どおりに動作しなくなる可能性があります。モジュールがアプリケーションから一切呼び出されないと 100% 確信できない場合は、そのモジュールを含めたままにしてください。
 
 :::
-
-## シングルユーザーアプリケーション (RuntimeVL)
-
-### LastDataPathLookup
-
-```text title="XML パス"
-/Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
-```
-
-シングルユーザーアプリケーションの [データリンクモード](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) を定義します:
-
-| 値 | データファイルパスの検索 | データファイルパスの保存先 |
-|---|---|---|
-| InDbStruct | ストラクチャーファイルに保存されたパス | ストラクチャーファイル内 (以前の動作) |
-| ByAppName | *LastDataPath.xml* 内の最新のエントリー | ユーザー環境設定 |
-| ByAppPath | *executablePath* がアプリケーションのパスに合致するエントリー | ユーザー環境設定 |
-
-クライアント/サーバーアプリケーションにも同じキーが存在します: [CS/LastDataPathLookup](./client-server.md#lastdatapathlookup)。

@@ -130,7 +130,7 @@ As chaves de tipo array (como `ArrayLicenseWin` ou `ArrayExcludedPluginName`) co
 | IsOEM | `SourcesFiles/CS` | [Arquivos fonte](./source-files.md#isoem) |
 | IsOEM | `SourcesFiles/RuntimeVL` | [Arquivos fonte](./source-files.md#isoem) |
 | LastDataPathLookup | `CS` | [Cliente/Servidor](./client-server.md#lastdatapathlookup) |
-| LastDataPathLookup | `RuntimeVL` | [Geral](./general.md#lastdatapathlookup) |
+| LastDataPathLookup | `RuntimeVL` | [RuntimeVL](./runtime-vl.md#lastdatapathlookup) |
 | MacCertificate | `SignApplication` | [Licenças e assinatura](./licenses-signature.md#maccertificate) |
 | MacCompiledDatabaseToWin | `CS` | [Cliente/Servidor](./client-server.md#maccompileddatabasetowin) |
 | MacCompiledDatabaseToWinIncludeIt | `CS` | [Cliente/Servidor](./client-server.md#maccompileddatabasetowinincludeit) |

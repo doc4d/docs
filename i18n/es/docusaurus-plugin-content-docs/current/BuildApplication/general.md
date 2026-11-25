@@ -7,7 +7,7 @@ description: "Llaves XML BuildApplication ubicadas directamente bajo el nodo Bui
 keywords: ["BuildApplication", "XML key", "BuildApp", "RuntimeVL"]
 ---
 
-Estas llaves se encuentran directamente bajo el nodo `<BuildApp>`, excepto [LastDataPathLookup](#lastdatapathlookup) que pertenece al nodo `<RuntimeVL>`.
+Estas llaves se encuentran directamente bajo el nodo `<BuildApp>`.
 
 ```xml
 <Preferences4D>
@@ -16,9 +16,6 @@ Estas llaves se encuentran directamente bajo el nodo `<BuildApp>`, excepto [Last
     <BuildWinDestFolder>C:\Builds\</BuildWinDestFolder>
     <BuildCompiled>True</BuildCompiled>
     <BuildApplicationSerialized>True</BuildApplicationSerialized>
-    <RuntimeVL>
-      <LastDataPathLookup>ByAppPath</LastDataPathLookup>
-    </RuntimeVL>
   </BuildApp>
 </Preferences4D>
 ```
@@ -41,7 +38,6 @@ Estas llaves se encuentran directamente bajo el nodo `<BuildApp>`, excepto [Last
 | [ArrayExcludedPluginID](#arrayexcludedpluginid) | Array de IDs | Plug-ins a excluir, por ID |
 | [ArrayExcludedComponentName](#arrayexcludedcomponentname) | Array de nombres | Componentes a excluir |
 | [ArrayExcludedModuleName](#arrayexcludedmodulename) | Array de nombres | Módulos opcionales a excluir |
-| [RuntimeVL/LastDataPathLookup](#lastdatapathlookup) | InDbStruct / ByAppName / ByAppPath | Modo de enlace de datos de la aplicación monopuesto |
 
 ## Nombre de la aplicación y destino
 
@@ -158,21 +154,3 @@ Componentes a excluir. Por defecto, se incluyen todos los componentes de la carp
 Excluir un módulo podría impedir que su aplicación generada funcione como se espera. Si no está 100% seguro de que un módulo nunca es llamado por su aplicación, manténgalo incluido.
 
 :::
-
-## Aplicación monopuesto (RuntimeVL)
-
-### LastDataPathLookup
-
-```text title="Ruta XML"
-/Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
-```
-
-Define el [modo de enlace de datos](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) de la aplicación monopuesto:
-
-| Valor | Búsqueda de la ruta del archivo de datos | Almacenamiento de la ruta del archivo de datos |
-|---|---|---|
-| InDbStruct | Ruta almacenada en el archivo de estructura | Dentro del archivo de estructura (funcionamiento heredado) |
-| ByAppName | Entrada más reciente en *LastDataPath.xml* | Preferencias del usuario |
-| ByAppPath | Entrada cuyo *executablePath* coincide con la ruta de la aplicación | Preferencias del usuario |
-
-La misma llave existe para las aplicaciones cliente/servidor: [CS/LastDataPathLookup](./client-server.md#lastdatapathlookup).

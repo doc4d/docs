@@ -7,7 +7,7 @@ description: "Chaves XML BuildApplication localizadas diretamente sob o nó Buil
 keywords: ["BuildApplication", "XML key", "BuildApp", "RuntimeVL"]
 ---
 
-Essas chaves estão localizadas diretamente sob o nó `<BuildApp>`, exceto [LastDataPathLookup](#lastdatapathlookup), que pertence ao nó `<RuntimeVL>`.
+Essas chaves estão localizadas diretamente sob o nó `<BuildApp>`.
 
 ```xml
 <Preferences4D>
@@ -16,9 +16,6 @@ Essas chaves estão localizadas diretamente sob o nó `<BuildApp>`, exceto [Last
     <BuildWinDestFolder>C:\Builds\</BuildWinDestFolder>
     <BuildCompiled>True</BuildCompiled>
     <BuildApplicationSerialized>True</BuildApplicationSerialized>
-    <RuntimeVL>
-      <LastDataPathLookup>ByAppPath</LastDataPathLookup>
-    </RuntimeVL>
   </BuildApp>
 </Preferences4D>
 ```
@@ -41,7 +38,6 @@ Essas chaves estão localizadas diretamente sob o nó `<BuildApp>`, exceto [Last
 | [ArrayExcludedPluginID](#arrayexcludedpluginid) | Array de IDs | Plug-ins a excluir, por ID |
 | [ArrayExcludedComponentName](#arrayexcludedcomponentname) | Array de nomes | Componentes a excluir |
 | [ArrayExcludedModuleName](#arrayexcludedmodulename) | Array de nomes | Módulos opcionais a excluir |
-| [RuntimeVL/LastDataPathLookup](#lastdatapathlookup) | InDbStruct / ByAppName / ByAppPath | Modo de ligação de dados da aplicação usuário único |
 
 ## Nome da aplicação e destino
 
@@ -158,21 +154,3 @@ Componentes a excluir. Por padrão, todos os componentes da pasta Components da 
 Excluir um módulo pode impedir que sua aplicação gerada funcione como esperado. Se você não tiver 100% de certeza de que um módulo nunca é chamado pela sua aplicação, mantenha-o incluído.
 
 :::
-
-## Aplicação usuário único (RuntimeVL)
-
-### LastDataPathLookup
-
-```text title="Caminho XML"
-/Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
-```
-
-Define o [modo de ligação de dados](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) da aplicação usuário único:
-
-| Valor | Busca do caminho do arquivo de dados | Armazenamento do caminho do arquivo de dados |
-|---|---|---|
-| InDbStruct | Caminho armazenado no arquivo de estrutura | Dentro do arquivo de estrutura (comportamento legado) |
-| ByAppName | Entrada mais recente em *LastDataPath.xml* | Preferências do usuário |
-| ByAppPath | Entrada cujo *executablePath* corresponde ao caminho da aplicação | Preferências do usuário |
-
-A mesma chave existe para aplicações cliente/servidor: [CS/LastDataPathLookup](./client-server.md#lastdatapathlookup).

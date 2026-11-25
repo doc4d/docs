@@ -7,7 +7,7 @@ description: "Clés XML BuildApplication situées directement sous le nœud Buil
 keywords: ["BuildApplication", "XML key", "BuildApp", "RuntimeVL"]
 ---
 
-Ces clés sont situées directement sous le nœud `<BuildApp>`, à l'exception de [LastDataPathLookup](#lastdatapathlookup) qui appartient au nœud `<RuntimeVL>`.
+Ces clés sont situées directement sous le nœud `<BuildApp>`.
 
 ```xml
 <Preferences4D>
@@ -16,9 +16,6 @@ Ces clés sont situées directement sous le nœud `<BuildApp>`, à l'exception d
     <BuildWinDestFolder>C:\Builds\</BuildWinDestFolder>
     <BuildCompiled>True</BuildCompiled>
     <BuildApplicationSerialized>True</BuildApplicationSerialized>
-    <RuntimeVL>
-      <LastDataPathLookup>ByAppPath</LastDataPathLookup>
-    </RuntimeVL>
   </BuildApp>
 </Preferences4D>
 ```
@@ -41,7 +38,6 @@ Ces clés sont situées directement sous le nœud `<BuildApp>`, à l'exception d
 | [ArrayExcludedPluginID](#arrayexcludedpluginid) | Tableau d'ID | Plug-ins à exclure, par ID |
 | [ArrayExcludedComponentName](#arrayexcludedcomponentname) | Tableau de noms | Composants à exclure |
 | [ArrayExcludedModuleName](#arrayexcludedmodulename) | Tableau de noms | Modules optionnels à exclure |
-| [RuntimeVL/LastDataPathLookup](#lastdatapathlookup) | InDbStruct / ByAppName / ByAppPath | Mode de liaison des données de l'application monoposte |
 
 ## Nom de l'application et dossier de destination
 
@@ -158,21 +154,3 @@ Composants à exclure. Par défaut, tous les composants du dossier Components de
 L'exclusion d'un module peut empêcher votre application générée de fonctionner correctement. Si vous n'êtes pas certain à 100 % qu'un module n'est jamais appelé par votre application, conservez-le.
 
 :::
-
-## Application monoposte (RuntimeVL)
-
-### LastDataPathLookup
-
-```text title="Chemin XML"
-/Preferences4D/BuildApp/RuntimeVL/LastDataPathLookup
-```
-
-Définit le [mode de liaison des données](../Desktop/data-file-configuration.md#configuring-the-data-linking-mode) de l'application monoposte :
-
-| Valeur | Recherche du chemin du fichier de données | Stockage du chemin du fichier de données |
-|---|---|---|
-| InDbStruct | Chemin stocké dans le fichier de structure | Dans le fichier de structure (fonctionnement historique) |
-| ByAppName | Entrée la plus récente dans *LastDataPath.xml* | Préférences utilisateur |
-| ByAppPath | Entrée dont l'attribut *executablePath* correspond au chemin de l'application | Préférences utilisateur |
-
-La même clé existe pour les applications client/serveur : [CS/LastDataPathLookup](./client-server.md#lastdatapathlookup).
