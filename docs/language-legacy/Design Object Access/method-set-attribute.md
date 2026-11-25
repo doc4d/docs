@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|Attribute folder name moves the method file in disk-folder projects|
 |14|Modified|
 |13|Created|
 
@@ -53,6 +54,8 @@ In the *attribValue* parameter, you can pass either:
 
 You can pass multiple *attribType*;*attribValue* pairs in a single call.
 
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects), the Attribute folder name constant moves the method file on disk, like a move on the Home page of the Explorer: to `Sources/<folder path>/Methods` for a folder, or to `Sources/Methods` if you pass an empty string. Its documentation file moves with it. If the folder does not exist, the method is not moved and no folder is created. If several folders have the same name, the first one in path order is used.
+
 You can execute this command from a component, but in this case, you must pass the *\** parameter because access to the component code is read-only. If you omit the *\** parameter in this context, the error -9763 is generated.
 
 ### 
@@ -73,6 +76,17 @@ Setting several attribute/value pairs:
 
 ```4d
  METHOD SET ATTRIBUTE(vPath;Attribute invisible;vInvisible;Attribute published Web;v4DAction;Attribute published SOAP;vSoap;Attribute published WSDL;vWSDL;Attribute shared;vExported;Attribute published SQL;vSQL;Attribute executed on server;vRemote;Attribute folder name;vFolder;*)
+```
+
+## Example 3
+
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects), you want to move the `createInvoice` method to the `Archive` folder, then back to Top Level:
+
+```4d
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "Archive")
+// the file is now Sources/Invoices/Archive/Methods/createInvoice.4dm
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "")
+// the file is now Sources/Methods/createInvoice.4dm
 ```
 
 ## See also 

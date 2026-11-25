@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|Support of disk-folder projects|
 |13|Created|
 
 </details>
@@ -38,6 +39,18 @@ Since folder names must be unique, the hierarchy is not returned in this array.
 You can limit this list of folders by passing a comparison string in the *filter* parameter: in this case, only folders whose names match the filter are returned. You can use the @ character in order to specify "starts with", "ends with" or "contains" type filters. If you pass an empty string, the *filter* parameter is ignored. 
 
 If the command is executed from a component, it returns by default the paths of the component methods. If you pass the *\** parameter, the array contains the paths of the methods of the host database.
+
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects), the command returns the names of the folders found on disk under `Project/Sources`, including empty folders, and the folders named in the `tableFolders.json` file. Type folders (`Methods`, `Classes`, `Forms`, `WebForms`) and fixed folders (`DatabaseMethods`, `TableForms`, `Triggers`, `Shared`) are not returned. The `folders.json` file is ignored.
+
+## Example
+
+In a disk-folder project with the folders `Sources/Invoices` and `Sources/Invoices/Archive`, you want to get the names of the Home page folders:
+
+```4d
+ARRAY TEXT($folders; 0)
+METHOD GET FOLDERS($folders)
+// $folders contains "Invoices" and "Archive"
+```
 
 ## See also 
 

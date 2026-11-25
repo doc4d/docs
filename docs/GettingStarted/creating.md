@@ -31,6 +31,8 @@ The **Database...** and **Database From Structure Definition...** items are only
 
 When you validate the **Save** dialog, 4D closes the current project (if any), creates a project folder at the indicated location, and puts all files needed for the project into it. For more information, refer to [Architecture of a 4D Project](Project/architecture.md).
 
+New projects are [disk-folder projects](../Project/architecture.md#disk-folder-projects): each folder you create on the Home page of the Explorer is a real folder under `Project/Sources`. Components created from the host with **File > New > Component...** are also disk-folder projects.
+
 You can then start developing your project.
 
 ## Opening a project
