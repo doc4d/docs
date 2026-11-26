@@ -225,7 +225,7 @@ Les propriétés suivantes peuvent être définies :
   Pour modifier le format d'affichage de l'image, sélectionnez une valeur dans le menu des formats d'image. Les formats proposés correspondent aux formats d'affichage d'images standard de 4D.
   Pour supprimer une image personnalisée, cliquez sur le bouton **Effacer** ou faites un clic droit dans la zone d'aperçu et sélectionnez **Effacer** dans le menu contextuel.
 - **Couleur de fond :** Vous pouvez modifier la couleur utilisée pour l'arrière-plan de la fenêtre de l'éditeur. Pour cela, cliquez dans la zone de sélection de couleurs et choisissez une couleur dans le menu de sélection.
-- **Police par défaut :** Pour changer la police utilisée pour les noms de tables et de champs, choisissez une valeur dans ce menu. Vous pouvez également utiliser le menu Taille pour modifier la taille de police par défaut.
+- **Default Font:** To change the default font used for table and field names, choose a value from this menu. Vous pouvez également utiliser le menu Taille pour modifier la taille de police par défaut.
 
 ## Chercher dans la structure
 
