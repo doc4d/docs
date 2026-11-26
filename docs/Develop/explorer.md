@@ -20,6 +20,8 @@ The Home page shows the folders you create to organize the elements of your proj
 
 In a [disk-folder project](../Project/architecture.md#disk-folder-projects), the folders of the Home page are the real folders found on disk under `Project/Sources`, and each method, class, project form, or Qodly page is shown in the folder where its file is stored. New projects are disk-folder projects. Other projects use virtual folders, stored in the `folders.json` file, until you [convert them](#converting-a-project).
 
+![Explorer Home page of a disk-folder project](../assets/en/Develop/explorer-disk-folders.png)
+
 In a disk-folder project, every change made on the Home page is made on disk:
 
 - Creating, renaming, or moving a folder creates, renames, or moves the folder under `Sources`, with all its content, and its mirror folder under `Documentation` when it exists.
@@ -49,6 +51,8 @@ In a disk-folder project, 4D refuses a folder name that can't be used on disk, o
 |The name of another folder, whatever the case|A folder named "Utils" already exists.|
 |A name longer than 31 characters|A folder name can't be longer than 31 characters.|
 
+![Alert for a folder name used by 4D](../assets/en/Develop/folder-name-reserved.png)
+
 You can rename a folder by changing only the case of its name.
 
 The folder menus of other editors list the same folders: the **in the folder** menu of [Find in design](../Project/search-replace.md#folder) and the **Folders** menu of the [Structure editor](structure-editor.md#highlightdim-tables-by-folder).
@@ -60,6 +64,8 @@ In a disk-folder project:
 - Qodly pages are shown in the folders of the Home page. You can move them between folders like forms. Double-clicking a page opens it in Qodly Studio.
 - The **Project Methods** list of the Methods page, and the **Project Forms** and **Qodly Pages** lists of the Forms page show their elements in the folder hierarchy: folders are expandable items, and Top Level elements are at the root. The other lists are unchanged.
 - For an interpreted component that is a disk-folder project, the **Component Methods** list shows its shared methods in its folders (see [Editing components](../Extensions/develop-components.md#editing-components)).
+
+![Project Methods list with folders](../assets/en/Develop/explorer-methods-folders.png)
 
 #### Changes made on disk
 
@@ -88,6 +94,8 @@ Some files or folders found under `Sources` break the rules of disk-folder proje
 
 With the 4D IDE, the **Files at fault** dialog lists each path, relative to the project root folder (for example, `Project/Sources/DupA/Methods/doIt.4dm`), with its problem. Click **OK** to close the dialog: the project stays open. Fix the files on disk, then come back to 4D. The dialog is shown again only when the list has changed.
 
+![Files at fault dialog](../assets/en/Develop/files-at-fault.png)
+
 Without an IDE (4D Server, tool4d, or headless 4D), each path is written with its problem at the `Log error` level in the [diagnostic log](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt), only when the diagnostic log is recording.
 
 #### Converting a project
@@ -97,7 +105,11 @@ You can convert an existing project from virtual folders to disk folders, and ba
 - **Convert to Disk Folders...**: each Home page folder becomes a folder in `Project/Sources` and `Documentation`, and the files of the methods, classes, forms, and Qodly pages it holds move into it. Empty folders are created. The `folders.json` file is deleted, the `"folder"` keys are removed from method files, and tables and table forms are placed in `tableFolders.json`. Each element goes to the folder shown on the Home page before the conversion.
 - **Convert to Virtual Folders...**: the files of methods, classes, forms, and Qodly pages move back to the type folders at the root of `Project/Sources`, and documentation files go back to `Documentation/<type folder>`. Their folders are recorded in `folders.json` and in the `"folder"` key of method files, and `tableFolders.json` is deleted. Trash entries go back to `Trash/<type folder>`: of two deleted elements with the same name, only the most recent one is kept.
 
+![Convert commands in the Design menu](../assets/en/Develop/design-menu-convert.png)
+
 Open editors are saved first. A confirmation dialog describes the conversion: click **Convert** to proceed, or **Cancel** to leave the project unchanged. Commit or back up your project before converting.
+
+![Convert to Disk Folders confirmation dialog](../assets/en/Develop/convert-confirmation.png)
 
 When converting to disk folders, folder names that can't be used on disk are renamed, on disk and on the Home page:
 

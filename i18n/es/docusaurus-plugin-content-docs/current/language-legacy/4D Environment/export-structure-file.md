@@ -84,6 +84,8 @@ Cuando *diskFolders* es true, cada carpeta de la página Inicio del Explorador d
 
 **Nota:** el comando de menú **Archivo > Exportar > Estructura a proyecto** muestra primero un diálogo con una casilla de selección **Usar carpetas en disco**, no seleccionada por defecto, que define esta opción. Haga clic en **Convertir** para exportar el proyecto, o en **Cancelar** para no exportar nada.
 
+![Diálogo Exportar estructura a proyecto](../../assets/en/language/export-structure-to-project.png)
+
 ### Resultado 
 
 El comando devuelve un objeto que ofrece el estado final de la exportación, así como también información sobre problemas encontrados o errores, si los hay. Se devuelven las siguientes propiedades:

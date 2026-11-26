@@ -85,6 +85,8 @@ Quando *diskFolders* for true, cada pasta da página Início do Explorador do ba
 
 **Nota:** o comando de menu **Arquivo > Exportar > Estrutura para projeto** mostra primeiro uma caixa de diálogo com uma caixa de seleção **Usar pastas em disco**, desmarcada por padrão, que define esta opção. Clique em **Converter** para exportar o projeto, ou em **Cancelar** para não exportar nada.
 
+![Caixa de diálogo Exportar estrutura para projeto](../../assets/en/language/export-structure-to-project.png)
+
 ### Result 
 
 O comando devolve um objeto que oferece o estado final da exportação, assim como informação sobre problemas encontrados ou erros, se houver São devolvidas as propriedades abaixo:

@@ -84,6 +84,8 @@ Lorsque *diskFolders* est vrai, chaque dossier de la page Démarrage de l'Explor
 
 **Note :** La commande de menu **File > Export > Structure to project** affiche d'abord une boîte de dialogue contenant une case à cocher **Use disk folders**, non cochée par défaut, qui définit cette option. Cliquez sur **Convert** pour exporter le projet, ou sur **Cancel** pour ne rien exporter.
 
+![Boîte de dialogue Exporter la structure en projet](../../assets/en/language/export-structure-to-project.png)
+
 ### Résultat 
 
 La commande retourne un objet qui indique le statut final de l'export ainsi que des informations sur les irrégularités et les erreurs survenues, le cas échéant. Les propriétés suivantes sont retournées :

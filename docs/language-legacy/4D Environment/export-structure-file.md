@@ -84,6 +84,8 @@ When *diskFolders* is true, each folder of the Explorer Home page of the databas
 
 **Note:** The **File > Export > Structure to project** menu command first displays a dialog with a **Use disk folders** checkbox, unchecked by default, which sets this option. Click **Convert** to export the project, or **Cancel** to export nothing.
 
+![Export structure to project dialog](../../assets/en/language/export-structure-to-project.png)
+
 ### Result 
 
 The command returns an object providing the final status of the export as well as information on encountered issues or errors, if any. The following properties are returned:
