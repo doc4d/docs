@@ -51,6 +51,8 @@ In a disk-folder project, 4D refuses a folder name that can't be used on disk, o
 
 You can rename a folder by changing only the case of its name.
 
+The folder menus of other editors list the same folders: the **in the folder** menu of [Find in design](../Project/search-replace.md#folder) and the **Folders** menu of the [Structure editor](structure-editor.md#highlightdim-tables-by-folder).
+
 #### Qodly pages and lists
 
 In a disk-folder project:
@@ -84,7 +86,7 @@ Some files or folders found under `Sources` break the rules of disk-folder proje
 |Not in a type folder|An element file is not in a type folder (for example, `Sources/Invoices/doIt.4dm`)|The file is not loaded|
 |Folder name over 31 characters|A folder name is longer than 31 characters|The folder is loaded with its content|
 
-With the 4D IDE, the **Files at fault** dialog lists each path, relative to the project folder, with its problem. Click **OK** to close the dialog: the project stays open. Fix the files on disk, then come back to 4D. The dialog is shown again only when the list has changed.
+With the 4D IDE, the **Files at fault** dialog lists each path, relative to the project root folder (for example, `Project/Sources/DupA/Methods/doIt.4dm`), with its problem. Click **OK** to close the dialog: the project stays open. Fix the files on disk, then come back to 4D. The dialog is shown again only when the list has changed.
 
 Without an IDE (4D Server, tool4d, or headless 4D), each path is written with its problem at the `Log error` level in the [diagnostic log](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt), only when the diagnostic log is recording.
 

@@ -297,7 +297,7 @@ SET DATABASE PARAMETER (Diagnostic log level; Log trace)
 
 ### Files at fault of disk-folder projects
 
-When a [disk-folder project](../Project/architecture.md#disk-folder-projects) is run without an IDE (4D Server, tool4d, or headless 4D), the [files at fault](../Develop/explorer.md#files-at-fault) found in `Project/Sources` are written in the *4DDiagnosticLog.txt* file at the `Log error` level, when the project is opened and at each reload. Each entry contains the path of the file or folder, relative to the project folder, and its problem: "Duplicate element name", "Duplicate folder name", "Not in a type folder", or "Folder name over 31 characters". For example, the message of an entry can be:
+When a [disk-folder project](../Project/architecture.md#disk-folder-projects) is run without an IDE (4D Server, tool4d, or headless 4D), the [files at fault](../Develop/explorer.md#files-at-fault) found in `Project/Sources` are written in the *4DDiagnosticLog.txt* file at the `Log error` level, when the project is opened and at each reload. Each entry contains the path of the file or folder, relative to the project root folder, and its problem: "Duplicate element name", "Duplicate folder name", "Not in a type folder", or "Folder name over 31 characters". For example, the message of an entry can be:
 
 ```
 Project/Sources/DupA/Methods/doIt.4dm: Duplicate element name

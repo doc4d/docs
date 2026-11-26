@@ -137,7 +137,7 @@ The **in the folder** menu restricts the search to a specific folder of the proj
 
 :::note
 
-Folders are defined on the Home Page of the Explorer.
+Folders are defined on the Home Page of the Explorer. In a [disk-folder project](architecture.md#disk-folder-projects), the menu lists the folders found on disk under `Project/Sources`, and the search takes place in the elements whose files are stored in the selected folder. Searches give the same results before and after you [convert the project](../Develop/explorer.md#converting-a-project).
 
 :::
 
