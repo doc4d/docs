@@ -37,7 +37,7 @@ Pour récupérer le nom de la classe associée lors de l'exécution, utilisez la
 
 ### Classe `4D.Vector`
 
-Si vous assignez la classe `4D.Vector` à un champ de type Objet, vous définissez un **champ vectoriel**. Ces champs stockent des vecteurs (ou *embeddings*) et peuvent être utilisés pour interroger les données à l'aide des fonctionnalités d'IA. Reportez-vous à la documentation de la [classe `4D.Vector`](../API/VectorClass.md) pour savoir comment effectuer des requêtes à l'aide de vecteurs.
+Si vous assignez la classe `4D.Vector` à un champ de type Objet, vous définissez un **champ vectoriel**. Such fields store embeddings and can be used to query data using AI features. Reportez-vous à la documentation de la [classe `4D.Vector`](../API/VectorClass.md) pour savoir comment effectuer des requêtes à l'aide de vecteurs.
 
 Notez que le [composant **4D Embedding Studio**](https://corner.4d.com/component/4d-embedding-studio) peut vous aider à configurer et à mettre à jour vos champs 4D.Vector.
 
