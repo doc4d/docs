@@ -90,7 +90,7 @@ title: (
         <Link to="settings/overview" >
           <Translate>Settings</Translate>
         </Link>
-        <Link to="Develop/field-properties">
+        <Link to="Develop/structure-editor">
           <Translate>Database Structure</Translate>
         </Link>
         <Link to="Project/code-overview" >
@@ -316,6 +316,10 @@ title: (
         </Link>
         <Link to="https://marketplace.visualstudio.com/items?itemName=4D.4d-analyzer">
           <Translate>4D Analyzer</Translate> <i class="fa-solid fa-up-right-from-square"></i>
+        </Link>
+        <Link to="embedding-studio/overview">
+          <Translate>4D Embedding Studio</Translate>
+          <span style={{ backgroundColor: '#e8590c', color: '#fff', fontSize: '0.65rem', fontWeight: 700, padding: '1px 5px', borderRadius: 4, marginLeft: '0.4rem', verticalAlign: 'middle' }}>new!</span>
         </Link>
         <Link to="https://github.com/4d/4D-Mobile-App-Server/blob/main/README.md">
           <Translate>4D Mobile App Server</Translate> <i class="fa-solid fa-up-right-from-square"></i>

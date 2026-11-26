@@ -10,14 +10,14 @@ Lisez [**Les nouveautés de 4D 21 R4**](https://blog.4d.com/fr/whats-new-in-4d-2
 #### Points forts
 
 - IA : Sous macOS, les utilisateurs finaux peuvent améliorer ou résumer des textes grâce aux **outils d'écriture** d’Apple Intelligence, disponibles sous forme de [propriété](../FormObjects/properties_Entry.md#writing-tools) et d’une [action standard](../Desktop/standard-actions) pour les objets de formulaire [4D Write Pro](../FormObjects/writeProArea_overview.md) et [input](../FormObjects/input_overview.md).
-- Amélioration de la [prise en charge des déconnexions client/serveur](../Desktop/clientServer.md#management-of-unreachable-peer) avec la couche réseau QUIC : nouveau paramètre de base de données [`QUIC session timeout`](../commands/set-database-parameter#quick-session-timeout-135), nouvelle propriété [`unreachableSince` de session.info](../API/SessionClass.md#info).
+- Amélioration de la [prise en charge des déconnexions client/serveur](../Desktop/clientServer.md#management-of-unreachable-peer) avec la couche réseau QUIC : nouveau paramètre de base de données [`QUIC session timeout`](../commands/set-database-parameter#quic-session-timeout-135), nouvelle propriété [`unreachableSince` de session.info](../API/SessionClass.md#info).
 - Les feuilles de style pour listes à plusieurs niveaux sont désormais [prises en charge dans 4D Write Pro Interface](../WritePro/writeprointerface#multi-level-list-style-sheets), ce qui permet aux utilisateurs de créer et de gérer des listes structurées à plusieurs niveaux directement depuis la barre d'outils et la barre latérale.
 - Nouvelle commande [`defer`](../commands/defer) permettant de déclarer du code qui sera toujours exécuté à la sortie d'une méthode ou d'une fonction ; nouvelle commande [`Deferred formulas`](../commands/deferred-formulas) permettant d'obtenir la liste des formules différées.
 - Nouvelle [propriété `.quotas`](../API/SessionClass.md#quotas) permettant de configurer les seuils REST pour les sessions.
 - Nouvelle classe [`4D.QuotaManager`](../API/QuotaManagerClass.md) permettant de gérer des objets définissant des seuils destinés à protéger le serveur.
 - Nouvelle requête REST [`$entityset/$release`](../REST/$entityset.md#entitysetrelease) permettant de supprimer des entity sets du cache du serveur.
 - Informations de session améliorées dans la fenêtre d'administration du serveur 4D dans une nouvelle page [**Sessions**](../ServerWindow/sessions.md) (anciennement **Utilisateurs**).
-- [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R4) : liste de tous les bugs qui ont été corrigés dans 4D 21 R4.
+- [**Liste des bugs corrigés**](https://developer.4d.com/FixedBugsList/versions/21_R4) : liste de tous les bugs qui ont été corrigés dans 4D 21 R4.
 
 #### Changements de comportement
 
@@ -40,7 +40,7 @@ Lisez [**Les nouveautés de 4D 21 R3**](https://blog.4d.com/fr/whats-new-in-4d-2
 - Prise en charge du [mot-clé `server`](../Concepts/classes.md#server) pour les fonctions du modèle de données ORDA et les fonctions singleton partagées/session.
 - Nouveau [moteur de rendu d'impression](../FormEditor/forms.md#print-rendering-engine) pour les formulaires dans les interfaces Liquid Glass et Fluent UI. Nouvelle option de compatibilité permettant d'[activer le moteur de rendu sur les interfaces classiques](../FormEditor/forms.md#legacy-print-renderer).
 - Dépendances : prise en charge des [composants stockés sur les dépôts GitLab](../Project/components.md#configuring-a-gitlab-repository).
-- [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R3) : liste de tous les bugs qui ont été corrigés dans 4D 21 R3.
+- [**Liste des bugs corrigés**](https://developer.4d.com/FixedBugsList/versions/21_R3) : liste de tous les bugs qui ont été corrigés dans 4D 21 R3.
 
 #### Prise en charge de Liquid glass sur macOS
 
@@ -69,7 +69,7 @@ Lisez [**Les nouveautés de 4D 21 R2**](https://blog.4d.com/fr-whats-new-in-4d-2
 - Vous pouvez [personnaliser les icônes de vos composants](../Extensions/develop-components.md#custom-icon).
 - Composant 4D AIKit : nouvelle classe [File API](../aikit/Classes/OpenAIFilesAPI.md) pour implémenter les fonctionnalités de **téléversement de fichiers**.
 - Les fonctions [**Chercher dans le développement**](../Project/search-replace.md#search-in-components) et [**Remplacer dans le contenu**](../Project/search-replace.md#replace-in-content) peuvent maintenant intégrer les composants modifiables.
-- [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R2) : liste de tous les bugs qui ont été corrigés dans 4D 21 R2.
+- [**Liste des bugs corrigés**](https://developer.4d.com/FixedBugsList/versions/21_R2) : liste de tous les bugs qui ont été corrigés dans 4D 21 R2.
 
 #### Developer Preview
 
@@ -92,7 +92,6 @@ Lisez [**Les nouveautés de 4D 21 R2**](https://blog.4d.com/fr-whats-new-in-4d-2
 | ICU             | 77.1                   | 21                  | Cette mise à jour entraîne une reconstruction automatique des index alphanumériques, textes et objets.                                |
 | libldap         | 2.6.10 | 21                  |                                                                                                                                                       |
 | libsasl         | 2.1.28 | 20                  |                                                                                                                                                       |
-| Liblsquic       | 4.2.0  | 20 R10              | Utilisé pour QUIC                                                                                                                                     |
 | Libuv           | 1.52.1 | **21 R4**           | Utilisé pour QUIC                                                                                                                                     |
 | libZip          | 1.11.4 | 21                  | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                                                            |
 | LZMA            | 5.8.1  | 21                  |                                                                                                                                                       |

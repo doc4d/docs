@@ -26,9 +26,9 @@ title: データ収集
 
 | データ                                                                                                               | 型                                 | 注記                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| appServer                                                                                                         | Object                            | アプリケーションサーバー情報に関する情報を格納したオブジェクト                                                                             |
+| appServer                                                                                                         | Object                            | アプリケーションサーバーの情報を格納したオブジェクト                                                                                  |
 | appServer.hits                                                                                    | Number                            | 内部プロセスからのリクエスト数                                                                                             |
-| appServer.bytesIn                                                                                 | Number                            | 内部プロセスから受信したバイト数                                                                                            |
+| appServer.bytesIn                                                                                 | Number                            | 内部プロセスが受信したバイト数                                                                                             |
 | appServer.bytesOut                                                                                | Number                            | 内部プロセスから送信されたバイト数                                                                                           |
 | appServer.executionTime                                                                           | Number                            | 内部プロセスのCPU実行時間                                                                                              |
 | cacheMissBytes                                                                                                    | Object                            | キャッシュミスバイト数                                                                                                 |
@@ -74,7 +74,7 @@ title: データ収集
 | dataSize                                                                                                          | Number                            | データファイルのサイズ (バイト単位)                                                                      |
 | dbServer                                                                                                          | Object                            | DB4D サーバーの情報を格納したオブジェクト                                                                                     |
 | dbServer.hits                                                                                     | Number                            | 内部プロセスからのリクエスト数                                                                                             |
-| dbServer.bytesIn                                                                                  | Number                            | 内部プロセスから受信したバイト数                                                                                            |
+| dbServer.bytesIn                                                                                  | Number                            | 内部プロセスが受信したバイト数                                                                                             |
 | dbServer.bytesOut                                                                                 | Number                            | 内部プロセスから送信されたバイト数                                                                                           |
 | dbServer.executionTime                                                                            | Number                            | 内部プロセスのCPU実行時間                                                                                              |
 | encryptedConnections                                                                                              | Boolean                           | クライアント/サーバー接続が暗号化されている場合は True                                                                              |
@@ -145,12 +145,12 @@ title: データ収集
 
 ## 保存先と送信先
 
-収集されたデータは、4D Server の起動やシャットダウンなどの特定のイベントが発生した際に、データベースごとにテキストファイル(JSON 形式)に書き込まれます。このファイルは[active 4D folder](../commands/get-4d-folder) 内、つまり以下の場所に保存されます: このファイルは[active 4D folder](../commands/get-4d-folder) 内、つまり以下の場所に保存されます:
+収集されたデータは、4D Server の起動やシャットダウンなどの特定のイベントが発生した際に、データベースごとにテキストファイル(JSON 形式)に書き込まれます。このファイルは[active 4D folder](../commands/get-4d-folder) 内、つまり以下の場所に保存されます:
 
 - Windows: `Users\[userName]\AppData\Roaming\4D Server`
 - macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
 
-週に一度、ファイルはネットワーク経由で自動的に 4D に送信されます。その後、ファイルは Active 4D Folder から削除されます。その後、ファイルは Active 4D Folder から削除されます。
+週に一度、ファイルはネットワーク経由で自動的に 4D に送信されます。その後、ファイルは Active 4D Folder から削除されます。
 
 ![](../assets/en/Admin/data-collect.png)
 

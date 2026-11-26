@@ -71,20 +71,20 @@ Un privilège ou un rôle peut être associé à plusieurs combinaisons "action 
 
 ### Exemple
 
-Pour permettre un rôle dans une session :
+Pour attribuer un rôle dans une session :
 
 ```4d
 
 exposed Function authenticate($identifier : Text; $password : Text)->$result : Text
-
+    
     var $user : cs.UsersEntity
-
+    
     Session.clearPrivileges()
-
+    
     $result:="Your are authenticated as Guest"
-
+    
     $user:=ds.Users.query("identifier = :1"; $identifier).first()
-
+    
     If ($user#Null)
         If (Verify password hash($password; $user.password))
             Session.setPrivileges(New object("roles"; $user.role))
@@ -185,7 +185,7 @@ Le fichier `roles.json` est analysé par 4D au démarrage. Vous devez redémarre
 
 En cas d'erreur(s) lors de l'analyse du fichier `roles.json`, 4D charge le projet mais désactive la protection globale d'accès - cela permet au développeur d'accéder aux fichiers et de corriger l'erreur. Un fichier d'erreur nommé `Roles_Errors.json` est généré dans le [dossier `Logs` du projet](../Project/architecture.md#logs) et décrit les lignes d'erreur. Ce fichier est automatiquement supprimé lorsque le fichier `roles.json` ne contient plus d'erreur.
 
-Il est recommandé de vérifier au démarrage si un fichier `Roles_Errors.json` existe dans le dossier [Logs](.. Project/architecture.md#logs), ce qui signifie qu'il y a eu une erreur d'analyse et que les accès ne seront pas limités. Vous pouvez écrire par exemple :
+Il est recommandé de vérifier au démarrage si un fichier `Roles_Errors.json` existe dans le dossier [Logs](..Project/architecture.md#logs), ce qui signifie qu'il y a eu une erreur d'analyse et que les accès ne seront pas limités. Vous pouvez écrire par exemple :
 
 ```4d title="/Sources/DatabaseMethods/onStartup.4dm"
 If (Not(File("/LOGS/"+"Roles_Errors.json").exists))
@@ -200,89 +200,89 @@ End if
 
 Par défaut, si aucun paramètre spécifique n'est défini dans le fichier `roles.json`, les accès ne sont pas limités. Cette configuration vous permet de développer l'application sans avoir à vous soucier des accès.
 
-Cependant, lorsque l'application est sur le point d'être déployée, une bonne pratique consiste à verrouiller tous les privilèges, puis à configurer le fichier pour n'ouvrir que les parties contrôlées aux sessions autorisées. Pour verrouiller tous les privilèges sur toutes les ressources, mettez le fichier `roles.json` suivant dans votre dossier de projet (il inclut des exemples de méthodes) :
+Cependant, lorsque l'application est sur le point d'être déployée, une bonne pratique consiste à verrouiller tous les privilèges, puis à configurer le fichier pour n'ouvrir que les parties contrôlées aux sessions autorisées. Pour verrouiller tous les privilèges sur toutes les ressources, placez le fichier `roles.json` suivant dans votre dossier de projet (il inclut des exemples de méthodes) :
 
 ```json title="/Project/Sources/roles.json"
 {
-    "privileges": [
-        {
-            "privilege": "none",
-            "includes": []
-        }
-    ],
+	"privileges": [
+		{
+			"privilege": "none",
+			"includes": []
+		}
+	],
 
-    "roles": [],
+	"roles": [],
 
-    "permissions": {
-        "allowed": [{
-            "applyTo": "ds",
-            "type": "datastore",
-            "read": [
-                "none"
-            ],
-            "create": [
-                "none"
-            ],
-            "update": [
-                "none"
-            ],
-            "drop": [
-                "none"
-            ],
-            "execute": [
-                "none"
-            ],
-            "describe": [
-                "none"
-            ],
-            "promote": [
-                "none"
-            ]
-        },
-        {
-            "applyTo": "ds.loginAs",
-            "type": "method",
-            "execute": [
-                    "guest"
-                ]
-        },
-        {
-            "applyTo": "ds.hasPrivilege",
-            "type": "method",
-            "execute": [
-                    "guest"
-                ]
-        },
-        {
-            "applyTo": "ds.clearPrivileges",
-            "type": "method",
-            "execute": [
-                    "guest"
-                ]
-        },
-        {
-            "applyTo": "ds.isGuest",
-            "type": "method",
-            "execute": [
-                    "guest"
-                ]
-        },
-        {
-            "applyTo": "ds.getPrivileges",
-            "type": "method",
-            "execute": [
-                    "guest"
-                ]
-        },
-        {
-            "applyTo": "ds.setAllPrivileges",
-            "type": "method",
-            "execute": [
-                "guest"
-            ]
-    }
+	"permissions": {
+		"allowed": [{
+			"applyTo": "ds",
+			"type": "datastore",
+			"read": [
+				"none"
+			],
+			"create": [
+				"none"
+			],
+			"update": [
+				"none"
+			],
+			"drop": [
+				"none"
+			],
+			"execute": [
+				"none"
+			],
+			"describe": [
+				"none"
+			],
+			"promote": [
+				"none"
+			]
+		},
+		{
+			"applyTo": "ds.loginAs",
+			"type": "method",
+			"execute": [
+					"guest"
+				]
+		},
+		{
+			"applyTo": "ds.hasPrivilege",
+			"type": "method",
+			"execute": [
+					"guest"
+				]
+		},
+		{
+			"applyTo": "ds.clearPrivileges",
+			"type": "method",
+			"execute": [
+					"guest"
+				]
+		},
+		{
+			"applyTo": "ds.isGuest",
+			"type": "method",
+			"execute": [
+					"guest"
+				]
+		},
+		{
+			"applyTo": "ds.getPrivileges",
+			"type": "method",
+			"execute": [
+					"guest"
+				]
+		},
+		{
+			"applyTo": "ds.setAllPrivileges",
+			"type": "method",
+			"execute": [
+				"guest"
+			]
+	}
 
-        ]
-    }
+		]
+	}
 }
 ```

@@ -13,7 +13,7 @@ title: Webサーバーインスタンス
 
 1つの 4Dアプリケーションプロジェクトに接続できるコンポーネントの数、つまり Webサーバーの数には、メモリ以外の制限はありません。
 
-メインアプリケーションの Webサーバーを含む、各 4D Webサーバーは、`4D.WebServer` クラスの **オブジェクト** として公開されます。インスタンス化された Webサーバーオブジェクトは、[多数のプロパティや関数](API/WebServerClass.md) を使用して、カレントのアプリケーションまたは任意のコンポーネントから操作することができます。インスタンス化された Webサーバーオブジェクトは、[多数のプロパティや関数](API/WebServerClass.md) を使用して、カレントのアプリケーションまたは任意のコンポーネントから操作することができます。
+メインアプリケーションの Webサーバーを含む、各 4D Webサーバーは、`4D.WebServer` クラスの **オブジェクト** として公開されます。インスタンス化された Webサーバーオブジェクトは、[多数のプロパティや関数](API/WebServerClass.md) を使用して、カレントのアプリケーションまたは任意のコンポーネントから操作することができます。
 
 > 4Dランゲージの従来の [WEB コマンド](../commands/theme/Web_Server) はサポートされていますが、その対象となる Webサーバーを選択することはできません (後述参照)。
 
@@ -27,7 +27,7 @@ title: Webサーバーインスタンス
 
 ## Webサーバーオブジェクトのインスタンス化
 
-ホストアプリケーション (デフォルトWebサーバー) の Webサーバーオブジェクトは、4D 起動時に自動的に読み込まれます。したがって、新規作成したプロジェクトに次のように書いた場合: したがって、新規作成したプロジェクトに次のように書いた場合:
+ホストアプリケーション (デフォルトWebサーバー) の Webサーバーオブジェクトは、4D 起動時に自動的に読み込まれます。したがって、新規作成したプロジェクトに次のように書いた場合:
 
 ```4d
 $nbSrv:=WEB Server list.length   
@@ -101,6 +101,19 @@ Webサーバーオブジェクトには、Webサーバーを構成する [さま
 - Webサーバーが起動されている場合、プロパティには Webサーバーで使用される実際の値が含まれます (デフォルトの定は [`.start()`](API/WebServerClass.md#start) 関数の `settings` パラメーターによって上書きされている可能性があります)。
 
 > *isRunning*、*name*、*openSSLVersion*、*perfectForwardSecrecy* は読み取り専用のプロパティで、[`start()`](API/WebServerClass.md#start)関数の `settings` オブジェクトパラメーターで事前に定義することはできません。
+
+### MCP server settings
+
+The [`mcp`](../API/WebServerClass.md#mcp) property contains the settings of the [MCP server](mcp-server.md) of the host application's web server: `enabled`, `serverName`, `serverVersion`, `instructions`, `maxResults`, `crudTools`, `allowInsecureHTTP`, `trustedProxies`, `publicURL`, and `oauthDynamicRegistration`. Unlike other properties:
+
+- `mcp.enabled` can be modified while the web server is running, to enable or disable the MCP server without restarting the web server (the change is not saved in the settings: the next start of 4D uses the settings); the other `mcp` properties are read-only and can only be set in the settings or passed to the [`.start()`](../API/WebServerClass.md#start) function,
+- the `mcp` settings passed to the [`.start()`](../API/WebServerClass.md#start) function are kept when the web server is restarted.
+
+```4d
+var webServer : 4D.WebServer:=WEB Server
+	//enable the MCP server of the running web server
+webServer.mcp.enabled:=True
+```
 
 ## 4D Webコマンドのスコープ
 

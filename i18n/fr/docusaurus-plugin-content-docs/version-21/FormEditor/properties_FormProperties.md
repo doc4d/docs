@@ -33,15 +33,15 @@ Un fichier CSS défini au niveau du formulaire remplacera la ou les feuilles de 
 
 #### Grammaire JSON
 
-| Nom | Type de données      | Valeurs possibles                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| css | string ou collection | Chemin(s) de fichier(s) CSS fourni(s) sous la forme<li>d'une chaîne (un fichier pour les deux plates-formes)</li><li>d'une collection de chaînes (une liste de fichiers pour les deux plates-formes)</li><li>d'une collection d'objets {"path":chaîne ; "media" : "mac" &#124; "win"}. </li> |
+| Nom | Type de données      | Valeurs possibles                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| css | string ou collection | Chemin(s) de fichier(s) CSS fourni(s) sous la forme<li>d'une chaîne (un fichier pour les deux plates-formes)</li><li>d'une collection de chaînes (une liste de fichiers pour les deux plates-formes)</li><li>d'une collection d'objets {"path":chaîne ; "media" : "mac" &#124; "windows"} </li> |
 
 ---
 
 ## Form Class
 
-Nom d'une [classe utilisateurs](../Concepts/classes.md#class-definition) existante à associer au formulaire. Nom d'une [classe utilisateur] existante (../Project/code-overview.md#user-classes) à associer au formulaire.
+Nom d'une [classe utilisateurs](../Concepts/classes.md#class-definition) existante à associer au formulaire. La classe utilisateur peut appartenir au projet hôte ou à un [composant](../Extensions/develop-components.md#sharing-of-classes), auquel cas la syntaxe formelle est "[*componentNameSpace*](../settings/general.md#component-namespace-in-the-class-store).className".
 
 L'association d'une classe au formulaire offre les avantages suivants :
 
@@ -115,7 +115,7 @@ Cette propriété désigne le [formulaire à hériter](forms.md#inherited-forms)
 
 Pour hériter d'un formulaire table, définissez la table dans la propriété [Table du formulaire hérité](#inherited-form-table).
 
-Pour supprimer l'héritage, sélectionnez \<Aucun>\\\` dans la liste des propriétés (ou " " en JSON).
+Pour supprimer l'héritage, sélectionnez \<Aucun>\\` dans la liste des propriétés (ou " " en JSON).
 
 #### Grammaire JSON
 
@@ -129,7 +129,7 @@ Pour supprimer l'héritage, sélectionnez \<Aucun>\\\` dans la liste des propri�
 
 Cette propriété spécifie la table de la base de données à partir de laquelle [hériter d'un formulaire](forms.md#inherited-forms) dans le formulaire courant.
 
-Fixé à \<Aucun>\\\` dans la liste des propriétés (ou " " en JSON) pour hériter d'un formulaire projet.
+Fixé à \<Aucun>\\` dans la liste des propriétés (ou " " en JSON) pour hériter d'un formulaire projet.
 
 #### Grammaire JSON
 

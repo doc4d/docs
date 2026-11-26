@@ -42,10 +42,10 @@ Les objets vectoriels sont partagés, immuables et transmissibles.
 
 <details><summary>Historique</summary>
 
-| Release | Modifications             |
-| ------- | ------------------------- |
-| 21 R5   | New *precision* parameter |
-| 20 R10  | Ajout                     |
+| Release | Modifications                 |
+| ------- | ----------------------------- |
+| 21 R5   | Nouveau paramètre *precision* |
+| 20 R10  | Ajout                         |
 
 </details>
 
@@ -55,11 +55,11 @@ Les objets vectoriels sont partagés, immuables et transmissibles.
 
 <div class="no-index">
 
-| Paramètres | Type                      |                             | Description                                                                                                   |
-| ---------- | ------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| paramètres | Collection                | ->                          | Collection de nombres réels représentant un vecteur                                                           |
-| precision  | Integer                   | ->                          | Vector precision: `mk single precision` (default) or `mk double precision` |
-| Résultat   | 4D.Vector | <- | Nouvel objet vectoriel                                                                                        |
+| Paramètres | Type                      |                             | Description                                                                                                            |
+| ---------- | ------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| paramètres | Collection                | ->                          | Collection de nombres réels représentant un vecteur                                                                    |
+| precision  | Integer                   | ->                          | Précision vectorielle : `mk single precision` (par défaut) ou `mk double precision` |
+| Résultat   | 4D.Vector | <- | Nouvel objet vectoriel                                                                                                 |
 
 </div>
 <!-- END REF -->
@@ -70,14 +70,14 @@ La fonction `4D.Vector.new()` <!-- REF #4D.Vector.new().Summary -->crée et renv
 
 Dans *parameter*, passez une collection de nombres réels représentant le vecteur à créer. Ces valeurs sont fournies par les intelligences artificielles et représentent mathématiquement des objets tels que des mots ou des données.
 
-In the *precision* optional parameter, you can pass the numeric precision you want to apply to the vector creation. Vous pouvez passer une des constantes suivantes :
+Dans le paramètre optionnel *precision*, vous pouvez passer la précision numérique que vous voulez appliquer à la création du vecteur. Vous pouvez passer une des constantes suivantes :
 
-| Constante             | Valeur | Commentaire                                                                              |
-| --------------------- | ------ | ---------------------------------------------------------------------------------------- |
-| `mk single precision` | 32     | Single (32-bit) floating-point precision (default) |
-| `mk double precision` | 64     | Double (64-bit) floating-point precision                              |
+| Constante             | Valeur | Commentaire                                                                                      |
+| --------------------- | ------ | ------------------------------------------------------------------------------------------------ |
+| `mk single precision` | 32     | Précision à virgule flottante simple (32-bit) (par défaut) |
+| `mk double precision` | 64     | Précision à virgule flottante double (64-bit)                                 |
 
-By default, if you omit the *precision* parameter, the vector is created with a 32-bit floating-point precision. A 32-bit floating-point precision reduces the storage footprint by half compared to 64-bit vectors while retaining enough precision for similarity and distance calculations, which is why it is the recommended default for most use cases.
+Par défaut, si vous omettez le paramètre *precision*, le vecteur est créé avec une précision à virgule flottante de 32 bits. Une précision à virgule flottante de 32 bits réduit l'empreinte de stockage de moitié par rapport aux vecteurs 64 bits tout en conservant une précision suffisante pour les calculs de similarité et de distance, c'est pourquoi c'est la valeur par défaut recommandée pour la plupart des cas d'utilisation.
 
 #### Exemple 1
 
@@ -96,12 +96,12 @@ var $collection := $vector.toCollection()
 
 #### Exemple 2
 
-To create a vector with a double floating-point precision:
+Pour créer un vecteur avec une précision à virgule flottante double :
 
 ```4d
 var $col: Collection
-  //$col is filled by AI provider
-var $vector := 4D.Vector.new($col; mk double precision) 
+  //$col est remplie par le fournisseur d'IA
+var $vector := 4D.Vector.new($col; double précision) 
 ```
 
 ## .cosineSimilarity()
@@ -337,7 +337,7 @@ La propriété `.length` contient <!-- REF #VectorClass.length.Summary -->le nom
 
 #### Description
 
-The `.precision` property contains <!-- REF #VectorClass.precision.Summary -->the precision value used to build the vector<!-- END REF -->: 32 (`mk single precision`, default) or 64 (`mk double precision`).
+La propriété `.precision` contient <!-- REF #VectorClass.precision.Summary -->la valeur de précision utilisée pour construire le vecteur<!-- END REF -->: 32 (`mk single precision`, par défaut) ou 64 (`mk double precision`).
 
 ## .toCollection()
 

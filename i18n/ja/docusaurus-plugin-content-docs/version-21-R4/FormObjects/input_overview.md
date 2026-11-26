@@ -3,7 +3,7 @@ id: inputOverview
 title: 入力
 ---
 
-入力オブジェクトを使って、データベースフィールド や [変数](Concepts/variables.md) といった式をフォーム上に追加することができます。入力オブジェクトは文字ベースのデータ (テキスト、日付、数値など)およびピクチャー型のデータを扱えます。入力オブジェクトは文字ベースのデータ (テキスト、日付、数値など)およびピクチャー型のデータを扱えます。
+入力オブジェクトを使って、データベースフィールド や [変数](Concepts/variables.md) といった式をフォーム上に追加することができます。入力オブジェクトは文字ベースのデータ (テキスト、日付、数値など)およびピクチャー型のデータを扱えます。
 
 ![](../assets/en/FormObjects/input.png)
 
@@ -15,7 +15,7 @@ title: 入力
 
 :::note
 
-セキュリティ上の理由から、[マルチスタイル](./properties_Text.md#マルチスタイル) の入力エリアでは、別の4D アプリケーションや外部環境からフォーミュラがペーストされた際には、コピーした時点で取得可能な*計算された値*(テキストまたは画像)のみがペーストされます。値が何も取得できない場合(例: フォーミュラが一度も計算されていないなど)、4D はフォーミュラのソースを標準テキストとしてペーストします。値が何も取得できない場合(例: フォーミュラが一度も計算されていないなど)、4D はフォーミュラのソースを標準テキストとしてペーストします。
+セキュリティ上の理由から、[マルチスタイル](./properties_Text.md#マルチスタイル) の入力エリアでは、別の4D アプリケーションや外部環境からフォーミュラがペーストされた際には、コピーした時点で取得可能な*計算された値*(テキストまたは画像)のみがペーストされます。値が何も取得できない場合(例: フォーミュラが一度も計算されていないなど)、4D はフォーミュラのソースを標準テキストとしてペーストします。
 
 :::
 
@@ -45,7 +45,7 @@ title: 入力
 
 [タイプ](properties_Object.md#タイプ)
 [オブジェクト名](properties_Object.md#オブジェクト名)
-[変数あるいは式](properties_Object.md#変数あるいは式)
+[変数あるいは式](properties_Object.md#variable-or-expression)
 [CSSクラス](properties_Object.md#cssクラス)
 [選択リスト](properties_DataSource.md#選択リスト-静的リスト)
 [左](properties_CoordinatesAndSizing.md#左)
@@ -81,7 +81,7 @@ title: 入力
 [縦スクロールバー](properties_Appearance.md#縦スクロールバー)
 [背景色](properties_BackgroundAndBorder.md#背景色-塗りカラー)
 [塗りカラー](properties_BackgroundAndBorder.md#背景色-塗りカラー)
-[境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル)
+[境界線スタイル](properties_BackgroundAndBorder.md#border-line-style)
 [フォント](properties_Text.md#フォント)
 [フォントサイズ](properties_Text.md#フォントサイズ)
 [太字](properties_Text.md#太字)

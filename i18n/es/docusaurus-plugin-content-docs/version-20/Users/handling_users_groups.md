@@ -27,7 +27,6 @@ El diseñador puede:
 - crear usuarios y grupos,
 - asignar privilegios de acceso a los grupos,
 - acceder al entorno Diseño.
-  acceder al entorno Diseño.
   En un entorno monopuesto, siempre se utilizan los derechos de acceso del Diseñador.
   En el entorno cliente/servidor, la asignación de una contraseña al Diseñador activa la visualización del diálogo de inicio de sesión del usuario 4D.  El acceso al entorno Diseño es de sólo lectura.
 
@@ -196,7 +195,7 @@ Estos accesos se definen en la caja de diálogo Parámetros. El siguiente ejempl
 
 ![](../assets/en/Users/Access1.png)
 
-También se utilizan grupos para [distribuir las licencias disponibles](#assigning-a-group-to-a-plug-in-or-to-a-server). Esta distribución se define en el editor Grupos.
+También se utilizan grupos para [distribuir las licencias disponibles](#assigning-a-license-to-a-group). Esta distribución se define en el editor Grupos.
 
 ## Archivo directory.json
 

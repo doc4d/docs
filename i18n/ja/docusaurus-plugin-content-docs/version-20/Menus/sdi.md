@@ -7,7 +7,7 @@ Windows において、組みこみ 4Dアプリケーションを SDI (シング
 
 :::info
 
-SDI/MDI という概念は macOS には存在しません。 この機能は Windows用アプリケーション専用のもので、関連オプションは macOS においてはすべて無視されます。この機能は Windows用アプリケーション専用のもので、関連オプションは macOS においてはすべて無視されます。
+SDI/MDI という概念は macOS には存在しません。この機能は Windows用アプリケーション専用のもので、関連オプションは macOS においてはすべて無視されます。
 
 :::
 
@@ -17,7 +17,7 @@ SDIモードは以下の実行環境に限り利用可能です:
 
 - Windows
 - 組み込みの [スタンドアロン](../Desktop/building#スタンドアロンアプリケーションをビルド) または [クライアント](../Desktop/building#クライアントアプリケーションをビルド) 4Dアプリケーション
-- **実行** メニューにて提供されている [\*\* アプリケーションをテスト\*\* 機能](bars.md#メニューバーのプレビュー) から利用可能です。
+- **実行** メニューにて提供されている [**アプリケーションをテスト** 機能](bars.md#メニューバーのプレビュー) から利用可能です。
 
 ## SDIモードの有効化
 
@@ -92,6 +92,6 @@ MDIモードで実行時、ユーザーによってアプリケーションウ�
 
 :::info
 
-[**Get application info**](https://doc.4d.com/4dv19R/help/command/ja/page1599.html) コマンドを使用すると、Windows で現在実行中のモードを確認することができます。
+You can use the [Get application info](https://doc.4d.com/4dv20/help/command/en/page1599.html) command to know the current running mode on Windows.
 
 :::

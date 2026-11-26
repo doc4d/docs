@@ -53,3 +53,10 @@ En cas d'erreur, la commande génère un code qui peut être intercepté à l'ai
 ## Voir également
 
 [SELECT LOG FILE](select-log-file.md)
+
+## Propriétés
+
+|                    |     |
+| ------------------ | --- |
+| Numéro de commande | 926 |
+| Thread safe        | oui |

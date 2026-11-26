@@ -7,25 +7,25 @@ title: ボタン
 
 ![](../assets/en/FormObjects/button_regular.png)
 
-割り当てられたスタイルやアクションに応じて、ボタンはさまざまな役割を果たします。たとえば、ユーザーがアンケートやフォーム内を移動したり、選択したりといった操作を可能にします。割り当てられたスタイルやアクションに応じて、ボタンはさまざまな役割を果たします。たとえば、ユーザーがアンケートやフォーム内を移動したり、選択したりといった操作を可能にします。設定によって、ボタンをワンクリックすることでコマンド実行することもできれば、複数回クリックすることで望む結果を得られるようにすることもできます。
+割り当てられたスタイルやアクションに応じて、ボタンはさまざまな役割を果たします。たとえば、ユーザーがアンケートやフォーム内を移動したり、選択したりといった操作を可能にします。設定によって、ボタンをワンクリックすることでコマンド実行することもできれば、複数回クリックすることで望む結果を得られるようにすることもできます。
 
 ## ボタンの使用
 
 ボタンには、あらかじめ設定されている [標準アクション](properties_Action.md#standard-action) またはオブジェクトメソッドを割り当てることができます。典型的なアクションの例は、レコードの受け入れ・削除・編集キャンセルのほか、データのコピー / ペースト、複数ページあるフォームにおけるページ移動、サブフォームのレコード操作、テキストエリアのフォント属性の操作、などです。
 
-フォーム実行時、標準アクションが設定されたボタンは必要に応じてグレー表示されます。フォーム実行時、標準アクションが設定されたボタンは必要に応じてグレー表示されます。たとえば、あるテーブルの1番目のレコードが表示されていると、先頭レコード (`firstRecord`) 標準アクションがついたボタンはグレー表示されます。
+フォーム実行時、標準アクションが設定されたボタンは必要に応じてグレー表示されます。たとえば、あるテーブルの1番目のレコードが表示されていると、先頭レコード (`firstRecord`) 標準アクションがついたボタンはグレー表示されます。
 
-標準アクションとして提供されていない動作をボタンに実行させたい場合には、標準アクションのフィールドは空欄にしておき、 [ボタンのアクションを指定するオブジェクトメソッドを書きます](../FormObjects/properties_Action.md#メソッド)。通常は、イベントテーマで `On Clicked` イベントを有効にして、ボタンのクリック時にのみメソッドを実行します。どのタイプのボタンにもメソッドを割り当てることができます。通常は、イベントテーマで `On Clicked` イベントを有効にして、ボタンのクリック時にのみメソッドを実行します。どのタイプのボタンにもメソッドを割り当てることができます。
+標準アクションとして提供されていない動作をボタンに実行させたい場合には、標準アクションのフィールドは空欄にしておき、 [ボタンのアクションを指定するオブジェクトメソッドを書きます](../FormObjects/properties_Action.md#メソッド)。通常は、イベントテーマで `On Clicked` イベントを有効にして、ボタンのクリック時にのみメソッドを実行します。どのタイプのボタンにもメソッドを割り当てることができます。
 
-ボタンに関連付けられた変数 ([variable](properties_Object.md#変数あるいは式) 属性) は、デザインモードやアプリケーションモードでフォームが初めて開かれるときに自動で **0** に初期化されます。ボタンをクリックすると、変数の値は **1** になります。ボタンをクリックすると、変数の値は **1** になります。
+ボタンに関連付けられた変数 ([variable](properties_Object.md#variable-or-expression) 属性) は、デザインモードやアプリケーションモードでフォームが初めて開かれるときに自動で **0** に初期化されます。ボタンをクリックすると、変数の値は **1** になります。
 
-> ボタンには標準アクションとメソッドの両方を割り当てることもできます。この場合、標準アクションによってボタンが無効化されていなければ、標準アクションより先にメソッドが実行されます。この場合、標準アクションによってボタンが無効化されていなければ、標準アクションより先にメソッドが実行されます。
+> ボタンには標準アクションとメソッドの両方を割り当てることもできます。この場合、標準アクションによってボタンが無効化されていなければ、標準アクションより先にメソッドが実行されます。
 
 ## ボタンスタイル
 
-ボタンスタイルは、ボタンの外観を制御すると同時に、提供されるプロパティをも決定します。ボタンには、あらかじめ定義されたスタイルやポップアップメニューを割り当てることができます。これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。ボタンには、あらかじめ定義されたスタイルやポップアップメニューを割り当てることができます。これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。
+ボタンスタイルは、ボタンの外観を制御すると同時に、提供されるプロパティをも決定します。ボタンには、あらかじめ定義されたスタイルやポップアップメニューを割り当てることができます。これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。
 
-スタイルによって [提供されるプロパティ](#プロパティ一覧) は異なりますが、大多数のボタンは *構造上* 同じです。違いは、関連づけられた変数の処理にあります。違いは、関連づけられた変数の処理にあります。
+スタイルによって [提供されるプロパティ](#プロパティ一覧) は異なりますが、大多数のボタンは *構造上* 同じです。違いは、関連づけられた変数の処理にあります。
 
 次の既定スタイルが提供されています:
 
@@ -85,15 +85,15 @@ title: ボタン
 
 ### ツールバー
 
-ツールバースタイルのボタンは、主としてツールバーで使用するためのものです。このスタイルには、複数の選択肢を提示するためのポップアップメニュー (逆三角形で示されます) を追加するオプションがあります。このスタイルには、複数の選択肢を提示するためのポップアップメニュー (逆三角形で示されます) を追加するオプションがあります。
+ツールバースタイルのボタンは、主としてツールバーで使用するためのものです。このスタイルには、複数の選択肢を提示するためのポップアップメニュー (逆三角形で示されます) を追加するオプションがあります。
 
-ツールバーボタンは、透明の背景に中央配置のラベルがデフォルトで付いています。ボタンにマウスオーバーしたときの表示は OS によって異なります: ボタンにマウスオーバーしたときの表示は OS によって異なります:
+ツールバーボタンは、透明の背景に中央配置のラベルがデフォルトで付いています。ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
 - *Windows* - ボタンがハイライト表示されます。"ポップアップメニューあり" プロパティを使用ていると、ボタンの右側中央に三角形が表示されます。
 
 ![](../assets/en/FormObjects/button_toolbar.png)
 
-- *macOS* - ボタンはハイライト表示されません。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
+- *macOS* - ボタンはハイライト表示されません。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
 
 #### JSON 例:
 
@@ -121,7 +121,7 @@ title: ボタン
 
 ![](../assets/en/FormObjects/button_bevel.png)
 
-- *macOS* - ボタンはハイライト表示されません。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
+- *macOS* - ボタンはハイライト表示されません。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
 
 #### JSON 例:
 
@@ -141,7 +141,7 @@ title: ボタン
 
 ### 角の丸いベベル
 
-角の丸いベベルスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。角の丸いベベルスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。ベベルスタイルと同様に、角の丸いベベルスタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルのポップアップメニューを追加可能にしたものです。
+角の丸いベベルスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。ベベルスタイルと同様に、角の丸いベベルスタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルのポップアップメニューを追加可能にしたものです。
 
 角の丸いベベルボタンは、明るいグレーの背景に中央配置のラベルがデフォルトで付いています。ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
@@ -149,7 +149,7 @@ title: ボタン
 
 ![](../assets/en/FormObjects/button_roundedbevel.png)
 
-- *macOS* - 角が丸くなっています。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
+- *macOS* - 角が丸くなっています。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
 
 #### JSON 例:
 
@@ -169,15 +169,15 @@ title: ボタン
 
 ### OS Xグラデーション
 
-OS Xグラデーションスタイルは [ベベル](#ベベル) スタイルとほぼ同一です。 OS Xグラデーションスタイルは [ベベル](#ベベル) スタイルとほぼ同一です。ベベルスタイルと同様に、OS Xグラデーションスタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルのポップアップメニューを追加可能にしたものです。
+OS Xグラデーションスタイルは [ベベル](#ベベル) スタイルとほぼ同一です。ベベルスタイルと同様に、OS Xグラデーションスタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルのポップアップメニューを追加可能にしたものです。
 
-OS Xグラデーションボタンは、明るいグレーの背景に中央配置のラベルがデフォルトで付いています。ボタンにマウスオーバーしたときの表示は OS によって異なります: ボタンにマウスオーバーしたときの表示は OS によって異なります:
+OS Xグラデーションボタンは、明るいグレーの背景に中央配置のラベルがデフォルトで付いています。ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
-- *Windows* - ベベルボタンと同じです。 *Windows* - ベベルボタンと同じです。"ポップアップメニューあり" プロパティを使用ていると、ボタンの右側中央に三角形が表示されます。
+- *Windows* - ベベルボタンと同じです。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
 
 ![](../assets/en/FormObjects/button_osxgradient.png)
 
-- *macOS* - 2トーンのシステムボタンです。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
+- *macOS* - 2トーンのシステムボタンです。"ポップアップメニューあり" プロパティを使用していると、ボタンの右側に三角形が表示されます。
 
 #### JSON 例:
 
@@ -197,7 +197,7 @@ OS Xグラデーションボタンは、明るいグレーの背景に中央配�
 
 ### OS Xテクスチャー
 
-OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、サイズがより小さいです (最大サイズは macOS の標準的なシステムボタンのサイズです)。ベベルスタイルと同様に、OS Xテクスチャースタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルのポップアップメニューを追加可能にしたものです。ベベルスタイルと同様に、OS Xテクスチャースタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルのポップアップメニューを追加可能にしたものです。
+OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、サイズがより小さいです (最大サイズは macOS の標準的なシステムボタンのサイズです)。ベベルスタイルと同様に、OS Xテクスチャースタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルのポップアップメニューを追加可能にしたものです。
 
 デフォルトで、OS Xテクスチャーボタンの外観は次の通りです:
 
@@ -205,7 +205,7 @@ OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルとほ
 
 ![](../assets/en/FormObjects/button_osxtextured.png)
 
-- *macOS* - 灰色のグラデーションを表示する標準のシステムボタンです。高さは定義済みで、変更できません。高さは定義済みで、変更できません。
+- *macOS* - 灰色のグラデーションを表示する標準のシステムボタンです。高さは定義済みで、変更できません。
 
 #### JSON 例:
 
@@ -227,7 +227,7 @@ OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルとほ
 
 ベベルスタイルと同様に、Office XPスタイルは [通常](#通常) スタイルの外観 (四角にラベル) に [ツールバー](#ツールバー) スタイルの透過性を加え、ポップアップメニューを追加可能にしたものです。
 
-Office XPボタンの反転表示と背景のカラーはシステムカラーに基づいています。ボタンにマウスオーバーしたときの表示は OS によって異なります: ボタンにマウスオーバーしたときの表示は OS によって異なります:
+Office XPボタンの反転表示と背景のカラーはシステムカラーに基づいています。ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
 - *Windows* - マウスオーバー時にのみ背景が表示されます。
 
@@ -253,7 +253,7 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 ### ヘルプ
 
-このスタイルはシステム標準のヘルプボタンを表示するために使用します。デフォルトで、ヘルプボタンは丸の中に表示されたハテナマーク (疑問符) です。デフォルトで、ヘルプボタンは丸の中に表示されたハテナマーク (疑問符) です。
+このスタイルはシステム標準のヘルプボタンを表示するために使用します。デフォルトで、ヘルプボタンは丸の中に表示されたハテナマーク (疑問符) です。
 
 ![](../assets/en/FormObjects/button_help.png)
 
@@ -332,22 +332,61 @@ Windows Classic UI テーマでは、このスタイルはサポートされま�
                 }
 ```
 
+## サポートされる標準アクション
+
+ボタンには、以下の標準アクションを割り当てることができます。
+[empty アクション](../Desktop-legacy/standard-actions.md#-empty-string) の場合にはボタンの振る舞いはそのオブジェクトメソッドに移譲されます。他のオブジェクトとの比較のためには[標準アクション互換性表](../Desktop-legacy/standard-actions.md#サポートされるフォームオブジェクト) を参照してください。
+
+#### レコードとフォーム
+
+[accept](../Desktop-legacy/standard-actions.md#accept) - [cancel](../Desktop-legacy/standard-actions.md#cancel) - [deleteRecord](../Desktop-legacy/standard-actions.md#deleterecord) - [addSubrecord](../Desktop-legacy/standard-actions.md#addsubrecord) - [deleteSubrecord](../Desktop-legacy/standard-actions.md#deletesubrecord) - [displaySubrecord](../Desktop-legacy/standard-actions.md#displaysubrecord) - [editSubrecord](../Desktop-legacy/standard-actions.md#editsubrecord) - [firstRecord](../Desktop-legacy/standard-actions.md#firstrecord) - [lastRecord](../Desktop-legacy/standard-actions.md#lastrecord) - [nextRecord](../Desktop-legacy/standard-actions.md#nextrecord) - [previousRecord](../Desktop-legacy/standard-actions.md#previousrecord)
+
+#### ページ
+
+[firstPage](../Desktop-legacy/standard-actions.md#firstpage) - [lastPage](../Desktop-legacy/standard-actions.md#lastpage) - [nextPage](../Desktop-legacy/standard-actions.md#nextpage) - [previousPage](../Desktop-legacy/standard-actions.md#previouspage) - [gotoPage?value=\<page\>](../Desktop-legacy/standard-actions.md#gotopagevaluepage)
+
+#### 編集と式
+
+[clear](../Desktop-legacy/standard-actions.md#clear) - [copy](../Desktop-legacy/standard-actions.md#copy) - [cut](../Desktop-legacy/standard-actions.md#cut) - [paste](../Desktop-legacy/standard-actions.md#paste) - [redo](../Desktop-legacy/standard-actions.md#redo) - [undo](../Desktop-legacy/standard-actions.md#undo) - [selectAll](../Desktop-legacy/standard-actions.md#selectall) - [computeExpressions](../Desktop-legacy/standard-actions.md#computeexpressions) - [freezeExpressions](../Desktop-legacy/standard-actions.md#freezeexpressions) - [visibleReferences](../Desktop-legacy/standard-actions.md#visiblereferences)
+
+#### 書式設定
+
+[backgroundColor/showDialog](../Desktop-legacy/standard-actions.md#backgroundcolorshowdialog) - [backgroundColor?value=\<color\>](../Desktop-legacy/standard-actions.md#backgroundcolorvaluecolor) - [color/showDialog](../Desktop-legacy/standard-actions.md#colorshowdialog) - [color?value=\<color\>](../Desktop-legacy/standard-actions.md#colorvaluecolor) - [font/showDialog](../Desktop-legacy/standard-actions.md#fontshowdialog) - [fontBold](../Desktop-legacy/standard-actions.md#fontbold) - [fontItalic](../Desktop-legacy/standard-actions.md#fontitalic) - [fontLinethrough](../Desktop-legacy/standard-actions.md#fontlinethrough) - [fontSize?value=\<size\>](../Desktop-legacy/standard-actions.md#fontsizevaluesize) - [fontUnderline](../Desktop-legacy/standard-actions.md#fontunderline)
+
+#### スペルチェック
+
+[spell/autoCorrectionEnabled](../Desktop-legacy/standard-actions.md#spellautocorrectionenabled) - [spell/autoDashSubstitutionsEnabled](../Desktop-legacy/standard-actions.md#spellautodashsubstitutionsenabled) - [spell/autoLanguageEnabled](../Desktop-legacy/standard-actions.md#spellautolanguageenabled) - [spell/autoQuoteSubstitutionsEnabled](../Desktop-legacy/standard-actions.md#spellautoquotesubstitutionsenabled) - [spell/autoSubstitutionsEnabled](../Desktop-legacy/standard-actions.md#spellautosubstitutionsenabled) - [spell/enabled](../Desktop-legacy/standard-actions.md#spellenabled) - [spell/forgetIgnore](../Desktop-legacy/standard-actions.md#spellforgetignore) - [spell/grammarEnabled](../Desktop-legacy/standard-actions.md#spellgrammarenabled) - [spell/ignore](../Desktop-legacy/standard-actions.md#spellignore) - [spell/learn](../Desktop-legacy/standard-actions.md#spelllearn) - [spell/removeSubstitution](../Desktop-legacy/standard-actions.md#spellremovesubstitution) - [spell/showDialog](../Desktop-legacy/standard-actions.md#spellshowdialog) - [spell/suggestion?index=\<1-number\<=10\>](../Desktop-legacy/standard-actions.md#spellsuggestionindex1-number10) - [spell/unLearn](../Desktop-legacy/standard-actions.md#spellunlearn) - [spell/visibleSubstitutions](../Desktop-legacy/standard-actions.md#spellvisiblesubstitutions)
+
+#### Webエリアコントロール
+
+[openBackURL](../Desktop-legacy/standard-actions.md#openbackurl) - [openForwardURL](../Desktop-legacy/standard-actions.md#openforwardurl) - [refreshCurrentURL](../Desktop-legacy/standard-actions.md#refreshcurrenturl) - [stopLoadingURL](../Desktop-legacy/standard-actions.md#stoploadingurl)
+
+#### その他のアクション
+
+[databaseSettings](../Desktop-legacy/standard-actions.md#databasesettings) - [designMode](../Desktop-legacy/standard-actions.md#designmode) - [msc](../Desktop-legacy/standard-actions.md#msc) - [quit](../Desktop-legacy/standard-actions.md#quit) - [showClipboard](../Desktop-legacy/standard-actions.md#showclipboard) - [writingTools](../Desktop-legacy/standard-actions.md#writingtools)
+
+#### 非表示ボタンのみ
+
+[automaticSplitter](../Desktop-legacy/standard-actions.md#automaticsplitter)
+
+#### 4D Write Pro標準アクション
+
+[formulaHighlight?value=\<mode\>](../WritePro/user-legacy/standard-actions.md#action-formulahighlight)
+
 ## プロパティ一覧
 
 すべてのボタンは次の基本プロパティを共有します:
 
-[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [タイトル](properties_Object.md#タイトル) - [CSSクラス](properties_Object.md#cssclass) - [ボタンスタイル](properties_TextAndPicture.md#ボタンスタイル) - [ピクチャーパス名](properties_TextAndPicture.md#ピクチャーパス名)(1) - [状態の数](properties_TextAndPicture.md#状態の数)(1) - [タイトル/ピクチャー位置](properties_TextAndPicture.md#タイトルピクチャー位置)(1) - [ポップアップメニューあり](properties_TextAndPicture.md#ポップアップメニューあり)(2) - [タイトルと画像を隣接させる](properties_TextAndPicture.md#タイトルと画像を隣接させる)(1) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [フォーカス可](properties_Entry.md#フォーカス可) - [ショートカット](properties_Entry.md#ショートカット) - [表示状態](properties_Display.md#表示状態) - [レンダリングしない](properties_Display.md#レンダリングしない) - [境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル) - [フォント](properties_Text.md#フォント) - [フォントサイズ](properties_Text.md#フォントサイズ) - [太字](properties_Text.md#太字) - [イタリック](properties_Text.md#イタリック) - [下線](properties_Text.md#下線) - [フォントカラー](properties_Text.md#フォントカラー) - [横揃え](properties_Text.md#横揃え) - [ヘルプTips](properties_Help.md#ヘルプtips) - [標準アクション](properties_Action.md#標準アクション) - [ドロップ有効](properties_Action.md#ドロップ有効)
+[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#variable-or-expression) - [タイトル](properties_Object.md#タイトル) - [CSSクラス](properties_Object.md#cssclass) - [ボタンスタイル](properties_TextAndPicture.md#ボタンスタイル) - [ピクチャーパス名](properties_TextAndPicture.md#ピクチャーパス名)(1) - [状態の数](properties_TextAndPicture.md#状態の数)(1) - [タイトル/ピクチャー位置](properties_TextAndPicture.md#タイトルピクチャー位置)(1) - [ポップアップメニューあり](properties_TextAndPicture.md#ポップアップメニューあり)(2) - [タイトルと画像を隣接させる](properties_TextAndPicture.md#タイトルと画像を隣接させる)(1) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [フォーカス可](properties_Entry.md#フォーカス可) - [ショートカット](properties_Entry.md#ショートカット) - [表示状態](properties_Display.md#表示状態) - [レンダリングしない](properties_Display.md#レンダリングしない) - [境界線スタイル](properties_BackgroundAndBorder.md#border-line-style) - [フォント](properties_Text.md#フォント) - [フォントサイズ](properties_Text.md#フォントサイズ) - [太字](properties_Text.md#太字) - [イタリック](properties_Text.md#イタリック) - [下線](properties_Text.md#下線) - [フォントカラー](properties_Text.md#フォントカラー) - [横揃え](properties_Text.md#横揃え) - [ヘルプTips](properties_Help.md#ヘルプtips) - [標準アクション](properties_Action.md#標準アクション) - [ドロップ有効](properties_Action.md#ドロップ有効)
 
 > (1) [Help](#help) スタイルではサポートされていません。<br/>
-> (2) [Help](#help)、[Flat](#flat)、[Regular](#regular) スタイルではサポートされていません。
-> (2) [Help](#help)、[Flat](#flat)、[Regular](#regular) スタイルではサポートされていません。
 > (2) [Help](#help)、[Flat](#flat)、[Regular](#regular) スタイルではサポートされていません。
 
 ### カスタムボタンにおける追加のプロパティ
 
 [カスタム](#カスタム) スタイルのボタンに対しては特有の追加のプロパティが利用可能です:
 
-[背景パス名](properties_TextAndPicture.md#背景パス名) - [境界線カラー](./properties_BackgroundAndBorder.md#境界線カラー) - [境界線幅](./properties_BackgroundAndBorder.md#境界線幅) - [横方向マージン](properties_TextAndPicture.md#横方向マージン) - [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) - [縦方向マージン](properties_TextAndPicture.md#縦方向マージン) - [角の半径](properties_CoordinatesAndSizing.md#角の半径) - [デフォルトボタン](properties_Appearance.md#デフォルトボタン) - [塗りカラー](./properties_BackgroundAndBorder.md#背景色塗りカラー)
+[背景パス名](properties_TextAndPicture.md#背景パス名) - [境界線カラー](./properties_BackgroundAndBorder.md#border-color) - [境界線幅](./properties_BackgroundAndBorder.md#境界線幅) - [横方向マージン](properties_TextAndPicture.md#横方向マージン) - [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) - [縦方向マージン](properties_TextAndPicture.md#縦方向マージン) - [角の半径](properties_CoordinatesAndSizing.md#角の半径) - [デフォルトボタン](properties_Appearance.md#デフォルトボタン) - [塗りカラー](./properties_BackgroundAndBorder.md#背景色塗りカラー)
 
 ### フラットおよび通常ボタンにおける追加のプロパティ
 

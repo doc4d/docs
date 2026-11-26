@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 `Create entity selection` コマンドは、<!--REF #_command_.Create entity selection.Summary-->*dsTable* で指定したテーブルに対応するデータクラスの[追加可能な](../ORDA/entities.md#shareable-or-alterable-entity-selections)新規エンティティセレくションを、同テーブルのカレントセレクションに基づいてビルドして返します。<!-- END REF-->
 
-ソートされたカレントセレクションの場合、[順列のある](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) エンティティセレクションが作成されます (カレントセレクションの並び順が受け継がれます)。  カレントセレクションがソートされていない場合、順列のないエンティティセレクションが作成されます。カレントセレクションがソートされていない場合、順列のないエンティティセレクションが作成されます。カレントセレクションがソートされていない場合、順列のないエンティティセレクションが作成されます。
+ソートされたカレントセレクションの場合、[順列のある](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) エンティティセレクションが作成されます (カレントセレクションの並び順が受け継がれます)。  カレントセレクションがソートされていない場合、順列のないエンティティセレクションが作成されます。カレントセレクションがソートされていない場合、順列のないエンティティセレクションが作成されます。
 
 [`ds`](ds.md) において *dsTable* が公開されていない場合には、エラーが返されます。 リモートデータストアの場合は、このコマンドは使用できません。リモートデータストアの場合は、このコマンドは使用できません。
 
@@ -43,6 +43,16 @@ displayed_sidebar: docs
 | プロパティ   | 型    | 説明                                                                            |
 | ------- | ---- | ----------------------------------------------------------------------------- |
 | context | Text | エンティティセレクションに適用されている [最適化コンテキスト](../ORDA/client-server-optimization.md) のラベル。 |
+
+:::info
+
+For performance reasons, in 4D single-user and 4D Server, the returned entity selection is directly connected to the current selection of *dsTable* (it is not a copy). Until the current selection is replaced, changes made to one are reflected in the other. For example, [`REDUCE SELECTION`](../commands-legacy/reduce-selection.md) shortens the entity selection, and [`.add()`](../API/EntitySelectionClass.md#add) on the entity selection adds the entity to the current selection. To get an independent entity selection, call [`.copy()`](../API/EntitySelectionClass.md#copy) on the result:
+
+```4d
+$es:=Create entity selection([Employee]).copy()
+```
+
+:::
 
 ## 例題
 

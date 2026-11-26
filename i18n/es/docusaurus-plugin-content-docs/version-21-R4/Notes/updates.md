@@ -10,14 +10,14 @@ Lea [**Novedades en 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/), la 
 #### Lo más destacado
 
 - IA: en macOS, los usuarios finales pueden mejorar o resumir textos gracias a las **herramientas de escritura** de Apple Intelligence, disponibles como [propiedad](../FormObjects/properties_Entry.md#writing-tools) y como [acción estándar](../Desktop/standard-actions) para los objetos de formulario [4D Write Pro](../FormObjects/writeProArea_overview.md) e [input](../FormObjects/input_overview.md).
-- Se ha mejorado la [gestión de las desconexiones cliente/servidor](../Desktop/clientServer.md#management-of-unreachable-peer) con la capa de red QUIC: nuevo parámetro de base de datos [`QUIC session timeout`](../commands/set-database-parameter#quick-session-timeout-135) y nueva propiedad [`unreachableSince` de session.info](../API/SessionClass.md#info).
+- Se ha mejorado la [gestión de las desconexiones cliente/servidor](../Desktop/clientServer.md#management-of-unreachable-peer) con la capa de red QUIC: nuevo parámetro de base de datos [`QUIC session timeout`](../commands/set-database-parameter#quic-session-timeout-135) y nueva propiedad [`unreachableSince` de session.info](../API/SessionClass.md#info).
 - Las hojas de estilo para listas de varios niveles ya son [compatibles con 4D Write Pro Interface](../WritePro/writeprointerface#multi-level-list-style-sheets), lo que permite a los usuarios crear y gestionar listas estructuradas de varios niveles directamente desde la barra de herramientas y la barra lateral.
 - Nuevo comando [`defer`](../commands/defer) para declarar que un fragmento de código se ejecute siempre al salir de un método o una función; nuevo comando [`Deferred formulas`](../commands/deferred-formulas) para obtener la lista de fórmulas diferidas.
 - Nueva [propiedad `.quotas`](../API/SessionClass.md#quotas) para configurar los límites REST para las sesiones.
 - Nueva clase [`4D.QuotaManager`](../API/QuotaManagerClass.md) para manejar objetos umbrales para proteger el servidor.
 - Nueva petición REST [`$entityset/$release`](../REST/$entityset.md#entitysetrelease) para eliminar conjuntos de entidades de la caché del servidor.
 - Se ha mejorado la información sobre las sesiones en la ventana de administración del servidor 4D, en una nueva página [**Sessions**](../ServerWindow/sessions.md) (antes **Users**).
-- [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=21_R4): lista de todos los bugs que se han corregido en 4D 21 R4.
+- [**Lista de bugs corregidos**](https://developer.4d.com/FixedBugsList/versions/21_R4): lista de todos los bugs que se han corregido en 4D 21 R4.
 
 #### Cambios de comportamiento
 
@@ -40,7 +40,7 @@ Lea [**Novedades en 4D 21 R3**](https://blog.4d.com/es/whats-new-in-4d-21-r3/), 
 - Soporte de [palabra clave `server`](../Concepts/classes.md#server) para las funciones del modelo de datos ORDA y funciones singleton compartidas/sesión.
 - Nuevo [renderizador de impresión](../FormEditor/forms.md#print-rendering-engine) para formularios en interfaces Liquid glass y Fluent UI. Nuevas opciones de compatibilidad para [activar el renderizador en las interfaces clásicas](../FormEditor/forms.md#legacy-print-renderer).
 - Dependencias: soporte de los [componentes almacenados en los repositorios GitLab](../Project/components.md#configuring-a-gitlab-repository).
-- [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=21_R3): lista de todos los bugs que se han corregido en 4D 21 R3.
+- [**Lista de bugs corregidos**](https://developer.4d.com/FixedBugsList/versions/21_R3): lista de todos los bugs que se han corregido en 4D 21 R3.
 
 #### Soporte de Liquid glass en macOS
 
@@ -69,7 +69,7 @@ Lea [**Novedades en 4D 21 R2**](https://blog.4d.com/whats-new-in-4d-21-r2/), la 
 - Puede [personalizar los iconos de sus componentes](../Extensions/develop-components.md#custom-icon).
 - Componente 4D AIKit: nueva clase [File API](../aikit/Classes/OpenAIFilesAPI.md) para implementar las funcionalidades de **carga de archivos**.
 - Las funcionalidades [**Buscar en diseño**](../Project/search-replace.md#search-in-components) y [**Reemplazar en el contenido**](../Project/search-replace.md#replace-in-content) ahora admiten componentes editables.
-- [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=21_R2): lista de todos los bugs que se han corregido en 4D 21 R2.
+- [**Lista de bugs corregidos**](https://developer.4d.com/FixedBugsList/versions/21_R2): lista de todos los bugs que se han corregido en 4D 21 R2.
 
 #### Vista previa para desarrolladores
 
@@ -92,7 +92,6 @@ Lea [**Novedades en 4D 21 R2**](https://blog.4d.com/whats-new-in-4d-21-r2/), la 
 | ICU             | 77.1                   | 21                | Esta actualización fuerza una reconstrucción automática de los índices alfanuméricos, textos y objetos.                                |
 | libldap         | 2.6.10 | 21                |                                                                                                                                                        |
 | libsasl         | 2.1.28 | 20                |                                                                                                                                                        |
-| Liblsquic       | 4.2.0  | 20 R10            | Utilizado para QUIC                                                                                                                                    |
 | Libuv           | 1.52.1 | **21 R4**         | Utilizado para QUIC                                                                                                                                    |
 | libZip          | 1.11.4 | 21                | Utilizado por los componentes zip class, 4D Write Pro, svg y serverNet                                                                                 |
 | LZMA            | 5.8.1  | 21                |                                                                                                                                                        |

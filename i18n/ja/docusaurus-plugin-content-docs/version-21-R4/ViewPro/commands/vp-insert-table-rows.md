@@ -22,7 +22,7 @@ title: VP INSERT TABLE ROWS
 | 引数          | 型       |    | 説明                                                   |
 | ----------- | ------- | -- | ---------------------------------------------------- |
 | vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                              |
-| tableName   | Text    | -> | Table name                                           |
+| tableName   | Text    | -> | 表組みの名称                                               |
 | row         | Integer | -> | 行の挿入場所を指定する表組み内のインデックス                               |
 | count       | Integer | -> | 挿入する行の数 (>0)                      |
 | insertAfter | Integer | -> | `vk table insert before` または `vk table insert after` |
@@ -42,7 +42,7 @@ title: VP INSERT TABLE ROWS
 | `vk table insert before` | 0 | *row* の前に行を挿入します (省略時のデフォルト) |
 | `vk table insert after`  | 1 | *row* の後に行を挿入します                                |
 
-このコマンドは、シート内ではなく、*tableName* の表組みに行を挿入します。したがって、シートの総行数は、このコマンドの影響を受けません。表組みより下側にデータがある場合は、挿入された行の数に応じて自動的に下に移動します。したがって、シートの総行数は、このコマンドの影響を受けません。表組みより下側にデータがある場合は、挿入された行の数に応じて自動的に下に移動します。
+このコマンドは、シート内ではなく、*tableName* の表組みに行を挿入します。したがって、シートの総行数は、このコマンドの影響を受けません。表組みより下側にデータがある場合は、挿入された行の数に応じて自動的に下に移動します。
 
 *tableName* の表組みが [データコンテキスト](vp-set-data-context.md) にバインドされている場合、このコマンドはコレクションに新しい空の要素を挿入します。
 

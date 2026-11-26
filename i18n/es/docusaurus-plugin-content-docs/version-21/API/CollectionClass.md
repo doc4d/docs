@@ -265,7 +265,7 @@ Por defecto, los elementos *col2* se añaden al final de la colección original.
 var $c; $fruits : Collection
 $c:=New collection(1;2;3;4;5;6)
 $fruits:=New collection("Orange";"Banana";"Apple";"Grape")
-$c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
+$c.combine($fruits;3) //$c=[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 ```
 
 <!-- END REF -->
@@ -1449,7 +1449,7 @@ En *toSearch*, pase la expresión a encontrar en la colección. Puede pasar:
 Opcionalmente, puede pasar el índice de la colección desde el que iniciar la búsqueda en *startFrom*.
 
 - Si *startFrom* >= la longitud de la colección, se devuelve False, lo que significa que no se busca en la colección.
-- Si *startFrom* < 0, se considera el desplazamiento desde el final de la colección (*startFrom:=startFrom+length*). **Nota**: incluso si *startFrom* es negativo, la colección se sigue buscando de izquierda a derecha.
+- Si *startFrom* < 0, se considera el desplazamiento desde el final de la colección (*startFrom:=startFrom+length*). Tenga en cuenta que incluso si *startFrom* es negativo, la colección se sigue buscando de izquierda a derecha.
 - Si *startFrom* = 0, se busca en toda la colección (por defecto).
 
 #### Ejemplo

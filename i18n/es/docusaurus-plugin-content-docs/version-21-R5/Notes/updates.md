@@ -14,22 +14,24 @@ Lea [**Las novedades en 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/),
 - Soporte de formularios lista en la [renderización **Fluent UI**](../FormEditor/forms.md#fluent-ui-rendering) en Windows.
 - 4D.Vector fields: [new specific icon](../Develop/field-properties.md#4dvector-class) and new [dedicated index types](../Develop/structure-indexes.md#vector-index).
 - Support of vector indexes in [`CREATE INDEX`](../commands/create-index) and [`SET INDEX`](../commands/set-index) 4D language commands.
-- New [dataClass.getIndexes()](../API/DataClassClass.md#getindexes) API function.
+- Nueva función [dataClass.getIndexes()](../API/DataClassClass.md#getindexes).
 - New [`.precision` property](../API/VectorClass.md#precision) in `4D.Vector` class objects.
 - Acceso directo a la [plataforma 4D Corner](https://corner.4d.com/) desde el [gestor de dependencias](../Project/components.md#using-4d-corner).
 - Nueva propiedad [`WebServer.quotas`](../API/WebServerClass.md#quotas) y clase [`4D.QuotaManager`](../API/QuotaManagerClass.md) mejorada para configurar [las cuotas del servidor web](../WebServer/quotas.md).
 - Text Area and Input objects: New [top padding](../FormObjects/properties_CoordinatesAndSizing.md#top-padding), [bottom padding](../FormObjects/properties_CoordinatesAndSizing.md#bottom-padding), [left padding](../FormObjects/properties_CoordinatesAndSizing.md#left-padding), [right padding](../FormObjects/properties_CoordinatesAndSizing.md#right-padding) with related [CSS support](../FormEditor/createStylesheet.md#attribute-mapping). Soporte de [alineación vertical](../FormObjects/properties_Text.md#vertical-alignment).
 - Nuevos comandos [`OBJECT SET PADDING`](../commands/object-set-padding) y [`OBJECT Get padding`](../commands/object-get-padding) para gestionar las márgenes interiores por programación.
-- New inner border design for [custom buttons](../FormObjects/button_overview.md#custom), [custom check boxes](../FormObjects/checkbox_overview.md#custom) and [custom radio buttons](../FormObjects/radio_overview.md#custom): support of [fill color](../FormObjects/properties_BackgroundAndBorder.md#background-color--fill-color) and [corner radius](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) properties; new [border color](../FormObjects/properties_BackgroundAndBorder.md#border-color) and [border width](../FormObjects/properties_BackgroundAndBorder.md#border-width) properties.
-- Acceso directo a la [plataforma 4D Corner](https://corner.4d.com/) desde el [gestor de dependencias](../Project/components.md#using-4d-corner).
+- New inner border design for [custom buttons](../FormObjects/button_overview.md#custom), [custom check boxes](../FormObjects/checkbox_overview.md#custom) and [custom radio buttons](../FormObjects/radio_overview.md#custom): support of [fill color](../FormObjects/properties_BackgroundAndBorder.md#background-color--fill-color) and [corner radius](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) properties; new [Border width](../FormObjects/properties_BackgroundAndBorder.md#border-width) property.
+- Support of ["System rounded" border line style](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) property for [inputs](../FormObjects/input_overview.md), compliant with macOS *Liquid glass* design. Also supported by [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) and [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style) commands.
+- New ["Border color" property](../FormObjects/properties_BackgroundAndBorder.md#border-color) available for most form objects. Los comandos [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) y [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) admiten un nuevo parámetro *borderColor*.
 - [Nueva preferencia **Editor de código**](../Preferences/methods.md#code-editor) para utilizar automáticamente el editor de código 4D o VS Code al crear o abrir métodos y clases 4D.
-- [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=21_R5): lista de todos los bugs que se han corregido en 4D 21 R5.
+- [New **4D Embedding Studio** component](../embedding-studio/overview.md) that helps you create and manage vector embeddings within your entities.
+- [**Lista de bugs corregidos**](https://developer.4d.com/FixedBugsList/versions/21_R5): lista de todos los bugs que se han corregido en 4D 21 R5.
 
 #### Cambios de comportamiento
 
 - For consistency, the **corner radius** property has been moved from the ["Coordinates & Sizing"](../FormObjects/properties_CoordinatesAndSizing.md) to the ["Background and Border"](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) section of the Property List.
 
-:::warning Default vector precision
+:::warning Precisión por defecto de los vectores
 
 In 4D 21 R5 and higher, vectors are created with a [32-bit precision by default](../API/VectorClass.md#4dvectornew). In previous releases, only 64-bit precision was available. If you reopen a project containing vectors created in 4D 21 R5 or later using default precision (or explicitly set to 32-bit) with an ealier version, those vectors will be empty and their values will be lost.
 
@@ -42,14 +44,14 @@ Lea [**Novedades en 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/), la 
 #### Lo más destacado
 
 - IA: en macOS, los usuarios finales pueden mejorar o resumir textos gracias a las **herramientas de escritura** de Apple Intelligence, disponibles como [propiedad](../FormObjects/properties_Entry.md#writing-tools) y como [acción estándar](../Desktop/standard-actions) para los objetos de formulario [4D Write Pro](../FormObjects/writeProArea_overview.md) e [input](../FormObjects/input_overview.md).
-- Se ha mejorado la [gestión de las desconexiones cliente/servidor](../Desktop/clientServer.md#management-of-unreachable-peer) con la capa de red QUIC: nuevo parámetro de base de datos [`QUIC session timeout`](../commands/set-database-parameter#quick-session-timeout-135) y nueva propiedad [`unreachableSince` de session.info](../API/SessionClass.md#info).
+- Se ha mejorado la [gestión de las desconexiones cliente/servidor](../Desktop/clientServer.md#management-of-unreachable-peer) con la capa de red QUIC: nuevo parámetro de base de datos [`QUIC session timeout`](../commands/set-database-parameter#quic-session-timeout-135) y nueva propiedad [`unreachableSince` de session.info](../API/SessionClass.md#info).
 - Las hojas de estilo para listas de varios niveles ya son [compatibles con 4D Write Pro Interface](../WritePro/writeprointerface#multi-level-list-style-sheets), lo que permite a los usuarios crear y gestionar listas estructuradas de varios niveles directamente desde la barra de herramientas y la barra lateral.
 - Nuevo comando [`defer`](../commands/defer) para declarar que un fragmento de código se ejecute siempre al salir de un método o una función; nuevo comando [`Deferred formulas`](../commands/deferred-formulas) para obtener la lista de fórmulas diferidas.
 - Nueva [propiedad `.quotas`](../API/SessionClass.md#quotas) para configurar los límites REST para las sesiones.
 - Nueva clase [`4D.QuotaManager`](../API/QuotaManagerClass.md) para manejar objetos umbrales para proteger el servidor.
 - Nueva petición REST [`$entityset/$release`](../REST/$entityset.md#entitysetrelease) para eliminar conjuntos de entidades de la caché del servidor.
 - Se ha mejorado la información sobre las sesiones en la ventana de administración del servidor 4D, en una nueva página [**Sessions**](../ServerWindow/sessions.md) (antes **Users**).
-- [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=21_R4): lista de todos los bugs que se han corregido en 4D 21 R4.
+- [**Lista de bugs corregidos**](https://developer.4d.com/FixedBugsList/versions/21_R4): lista de todos los bugs que se han corregido en 4D 21 R4.
 
 #### Cambios de comportamiento
 
@@ -72,7 +74,7 @@ Lea [**Novedades en 4D 21 R3**](https://blog.4d.com/es/whats-new-in-4d-21-r3/), 
 - Soporte de [palabra clave `server`](../Concepts/classes.md#server) para las funciones del modelo de datos ORDA y funciones singleton compartidas/sesión.
 - Nuevo [renderizador de impresión](../FormEditor/forms.md#print-rendering-engine) para formularios en interfaces Liquid glass y Fluent UI. Nuevas opciones de compatibilidad para [activar el renderizador en las interfaces clásicas](../FormEditor/forms.md#legacy-print-renderer).
 - Dependencias: soporte de los [componentes almacenados en los repositorios GitLab](../Project/components.md#configuring-a-gitlab-repository).
-- [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=21_R3): lista de todos los bugs que se han corregido en 4D 21 R3.
+- [**Lista de bugs corregidos**](https://developer.4d.com/FixedBugsList/versions/21_R3): lista de todos los bugs que se han corregido en 4D 21 R3.
 
 #### Soporte de Liquid glass en macOS
 
@@ -101,7 +103,7 @@ Lea [**Novedades en 4D 21 R2**](https://blog.4d.com/whats-new-in-4d-21-r2/), la 
 - Puede [personalizar los iconos de sus componentes](../Extensions/develop-components.md#custom-icon).
 - Componente 4D AIKit: nueva clase [File API](../aikit/Classes/OpenAIFilesAPI.md) para implementar las funcionalidades de **carga de archivos**.
 - Las funcionalidades [**Buscar en diseño**](../Project/search-replace.md#search-in-components) y [**Reemplazar en el contenido**](../Project/search-replace.md#replace-in-content) ahora admiten componentes editables.
-- [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=21_R2): lista de todos los bugs que se han corregido en 4D 21 R2.
+- [**Lista de bugs corregidos**](https://developer.4d.com/FixedBugsList/versions/21_R2): lista de todos los bugs que se han corregido en 4D 21 R2.
 
 #### Vista previa para desarrolladores
 
@@ -123,12 +125,11 @@ Lea [**Novedades en 4D 21 R2**](https://blog.4d.com/whats-new-in-4d-21-r2/), la 
 | ICU             | 77.1                   | 21                | Esta actualización fuerza una reconstrucción automática de los índices alfanuméricos, textos y objetos.                                |
 | libldap         | 2.6.10 | 21                |                                                                                                                                                        |
 | libsasl         | 2.1.28 | 20                |                                                                                                                                                        |
-| Liblsquic       | 4.2.0  | 20 R10            | Utilizado para QUIC                                                                                                                                    |
-| Libuv           | 1.52.1 | 21 R4             | Utilizado para QUIC                                                                                                                                    |
+| Libuv           | 1.53.0 | **21 R5**         | Utilizado para QUIC                                                                                                                                    |
 | libZip          | 1.11.4 | 21                | Utilizado por los componentes zip class, 4D Write Pro, svg y serverNet                                                                                 |
 | LZMA            | 5.8.1  | 21                |                                                                                                                                                        |
 | ngtcp2          | 1.24.0 | 21 R4             | Utilizado para QUIC                                                                                                                                    |
-| OpenSSL         | 4.0.1  | **21 R5**         |                                                                                                                                                        |
+| OpenSSL         | 4.0.3  | **21 R5**         |                                                                                                                                                        |
 | PDFWriter       | 4.7.0  | 21                | Utilizado para [`WP Export document`](../WritePro/commands/wp-export-document.md) y [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 | SpreadJS        | 18.2.0 | 21 R2             | Consulte [esta entrada de blog](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) para obtener una visión general de las nuevas funciones        |
 | webKit          | WKWebView                              | 19                |                                                                                                                                                        |

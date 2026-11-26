@@ -283,32 +283,32 @@ Les expressions sont rarement «autonomes». Il existe plusieurs endroits dans 4
 
 ### Types d’expressions
 
-Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Il existe plusieurs types d’expressions : Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
+Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
 
-| Expression                                                                                  | Type                  | Description                                                                                                                                                                                                                                         |
-| ------------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| “Bonjour”                                                                                   | Text                  | Le mot Bonjour est une constante chaîne, signalée par les guillemets.                                                                                                                                                               |
-| “Bonjour ” + “à tous”                                                                       | Text                  | Deux chaînes, “Bonjour ” et “à tous”, sont mises bout à bout (concaténées) à l'aide de l'opérateur de concaténation de chaînes (+). La chaîne “Bonjour à tous” est retournée. |
-| “Mr. ” + [Personnes]Nom | Text                  | Deux chaînes sont concaténées : la chaîne "Mr." et la valeur courante du champ Nom dans la table Personnes. Si le champ contient “Dupont”, l'expression retourne “M.                |
-| Uppercase("smith")                                                       | Text                  | Cette expression utilise `Uppercase`, une commande du langage, pour convertir la chaîne "dupont" en majuscules. Elle retourne “DUPONT”.                                                                             |
-| 4                                                                                           | Number                | C'est une constante numérique, 4.                                                                                                                                                                                                   |
-| 4 \* 2                                                                                      | Number                | Deux nombres, 4 et 2, sont multipliés à l'aide de l'opérateur de multiplication (\*). Le résultat est le nombre 8.                                                                               |
-| MonBouton                                                                                   | Number                | C'est le nom d'un bouton. Il retourne la valeur courante du bouton : 1 s'il y a eu un clic sur le bouton, 0 sinon.                                                                                  |
-| !1997-01-25!                                                                                | Date                  | C'est une constante date pour la date 25/01/97 (25 janvier 1997).                                                                                                                                                |
-| Current date+ 30                                                                            | Date                  | C'est une expression de type Date qui utilise la commande `Current date` pour récupérer la date courante. Elle ajoute 30 jours à la date d'aujourd'hui et retourne la nouvelle date.                                |
-| ?8:05:30?                                                   | Time                  | C'est une constante heure qui représente 8 heures, 5 minutes, et 30 secondes.                                                                                                                                                       |
-| ?2:03:04? + ?1:02:03?       | Time                  | Cette expression ajoute une heure à une autre et retourne l'heure 3:05:07.                                                                                                                          |
-| True                                                                                        | Boolean               | Cette commande retourne la valeur booléenne TRUE.                                                                                                                                                                                   |
-| 10 # 20                                                                                     | Boolean               | C'est une comparaison logique entre deux nombres. Le symbole (#) signifie “est différent de”. Comme 10 “est différent de” 20, l'expression retourne TRUE.                        |
-| “ABC” = “XYZ”                                                                               | Boolean               | C'est une comparaison logique entre deux chaînes. Elles sont différentes, donc l'expression retourne FALSE.                                                                                                         |
-| MonImage + 50                                                                               | Picture               | Cette expression considère l'image placée dans MonImage, la déplace de 50 pixels vers la droite, et retourne l'image résultante.                                                                                                    |
-| ->[Amis]Nom                             | Pointer               | Cette expression retourne un pointeur vers le champ [Amis]Nom.                                                                                                                  |
-| Table(1)                                                                 | Pointer               | C'est une commande qui retourne un pointeur vers la première table.                                                                                                                                                                 |
-| JSON Parse (MaChaine)                                                    | Object                | C'est une commande qui retourne MaChaine sous forme d'objet (si format adéquat)                                                                                                                                                  |
-| JSON Parse (MonTabJSON)                                                  | Collection            | C'est une commande qui retourne MonTabJSON sous forme de collection (si format adéquat)                                                                                                                                          |
-| Form.pageNumber                                                             | Propriété objet       | Une propriété objet est une expression qui peut être de tout type                                                                                                                                                                                   |
-| Col[5]                                  | Élément de collection | Un élément de collection est une expression qui peut être de tout type                                                                                                                                                                              |
-| $entitySel[0]                           | Entity                | Un élément d'une sélection d'entité ORDA est une expression de type entité. Ce type d'expression n'est **pas affectable**                                                                                                           |
+| Expression                                                                                  | Type                  | Description                                                                                                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| “Bonjour”                                                                                   | Text                  | Le mot Bonjour est une constante chaîne, signalée par les guillemets.                                                                                                                                                                         |
+| “Bonjour ” + “à tous”                                                                       | Text                  | Deux chaînes, “Bonjour ” et “à tous”, sont mises bout à bout (concaténées) à l'aide de l'opérateur de concaténation de chaînes (+). La chaîne “Bonjour à tous” est retournée.           |
+| “Mr. ” + [Personnes]Nom | Text                  | Deux chaînes sont concaténées : la chaîne "Mr." et la valeur courante du champ Nom dans la table Personnes. Si le champ contient “Dupont”, l'expression retourne “M. Dupont”. |
+| Uppercase("smith")                                                       | Text                  | Cette expression utilise `Uppercase`, une commande du langage, pour convertir la chaîne "dupont" en majuscules. Elle retourne “DUPONT”.                                                                                       |
+| 4                                                                                           | Number                | C'est une constante numérique, 4.                                                                                                                                                                                                             |
+| 4 \* 2                                                                                      | Number                | Deux nombres, 4 et 2, sont multipliés à l'aide de l'opérateur de multiplication (\*). Le résultat est le nombre 8.                                                                                         |
+| MonBouton                                                                                   | Number                | C'est le nom d'un bouton. Il retourne la valeur courante du bouton : 1 s'il y a eu un clic sur le bouton, 0 sinon.                                                                                            |
+| !1997-01-25!                                                                                | Date                  | C'est une constante date pour la date 25/01/97 (25 janvier 1997).                                                                                                                                                          |
+| Current date+ 30                                                                            | Date                  | C'est une expression de type Date qui utilise la commande `Current date` pour récupérer la date courante. Elle ajoute 30 jours à la date d'aujourd'hui et retourne la nouvelle date.                                          |
+| ?8:05:30?                                                   | Time                  | C'est une constante heure qui représente 8 heures, 5 minutes, et 30 secondes.                                                                                                                                                                 |
+| ?2:03:04? + ?1:02:03?       | Time                  | Cette expression ajoute une heure à une autre et retourne l'heure 3:05:07.                                                                                                                                    |
+| True                                                                                        | Boolean               | Cette commande retourne la valeur booléenne TRUE.                                                                                                                                                                                             |
+| 10 # 20                                                                                     | Boolean               | C'est une comparaison logique entre deux nombres. Le symbole (#) signifie “est différent de”. Comme 10 “est différent de” 20, l'expression retourne TRUE.                                  |
+| “ABC” = “XYZ”                                                                               | Boolean               | C'est une comparaison logique entre deux chaînes. Elles sont différentes, donc l'expression retourne FALSE.                                                                                                                   |
+| MonImage + 50                                                                               | Picture               | Cette expression considère l'image placée dans MonImage, la déplace de 50 pixels vers la droite, et retourne l'image résultante.                                                                                                              |
+| ->[Amis]Nom                             | Pointer               | Cette expression retourne un pointeur vers le champ [Amis]Nom.                                                                                                                            |
+| Table(1)                                                                 | Pointer               | C'est une commande qui retourne un pointeur vers la première table.                                                                                                                                                                           |
+| JSON Parse (MaChaine)                                                    | Object                | C'est une commande qui retourne MaChaine sous forme d'objet (si format adéquat)                                                                                                                                                            |
+| JSON Parse (MonTabJSON)                                                  | Collection            | C'est une commande qui retourne MonTabJSON sous forme de collection (si format adéquat)                                                                                                                                                    |
+| Form.pageNumber                                                             | Propriété objet       | Une propriété objet est une expression qui peut être de tout type                                                                                                                                                                                             |
+| Col[5]                                  | Élément de collection | Un élément de collection est une expression qui peut être de tout type                                                                                                                                                                                        |
+| $entitySel[0]                           | Entity                | Un élément d'une sélection d'entité ORDA est une expression de type entité. Ce type d'expression n'est **pas affectable**                                                                                                                     |
 
 ### Expressions assignables ou non assignables {#assignable-vs-non-assignable-expressions}
 
@@ -350,56 +350,6 @@ $str:=String("hello world !")
 $str:=String("hello"+\
 " world"+\
 "!")
-```
-
-## Commentaires
-
-Les commentaires sont des lignes d’instructions inactives. Ces lignes ne sont pas interprétées par le programme (4D n’applique aucun style spécifique à l’intérieur de la ligne de commentaire) et ne sont pas exécutées lorsque la méthode est appelée.
-
-Voici deux manières de créer des commentaires :
-
-- `//` pour créer une ligne de commentaire
-- `/...**/` pour les blocs de commentaire en ligne et multi-lignes.
-
-Les deux styles de commentaires peuvent être utilisés simultanément.
-
-#### Commentaires sur une seule ligne (`//commentaire`)
-
-Insérez les caractères `//` au début de la ligne ou après une instruction pour ajouter une ligne de commentaire. Exemple :
-
-```4d
-//Ceci est un commentaire
-For($vCounter;1;100) //Début de la boucle
-  //commentaire
-  //commentaire
-  //commentaire
-End for
-```
-
-#### Commentaires en ligne ou multilignes (`/*comment*/`)
-
-Encadrez le contenu avec les caractères `/*` ... `*/` pour créer des blocs de commentaires en ligne ou multi-lignes. Les blocs de commentaire en ligne et multi-lignes commencent par `/*` et se terminent par `*/`.
-
-- Les **lignes de commentaires en ligne** - peuvent être insérées n'importe où dans le code. Exemple :
-
-```4d
-For /* ligne de commentaire */ ($vCounter;1;100)
- ...
-End for
-```
-
-- Les **blocs de commentaires multi-lignes** permettent de commenter un nombre illimité de lignes. Les blocs de commentaires peuvent être imbriqués (ce qui est utile, étant donné que l'éditeur de code 4D prend en charge les blocs condensés). Exemple :
-
-```4d
-For ($vCounter;1;100)
-/*
-commentaires  
-	/*
-	autres commentaires
-	*/
-*/
-...
-End for
 ```
 
 ## Séquences d’échappement

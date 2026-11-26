@@ -35,7 +35,7 @@ Debe distinguir el operador de asignación := de los demás operadores. En lugar
 
 ## Variables
 
-El lenguaje 4D es estricto con los tipos de datos, aunque se permite cierta flexibilidad en muchos casos. Por ejemplo, para crear una variable de tipo fecha, puede escribir: Por ejemplo, para crear una variable de tipo fecha, puede escribir: Se crea una variable digitada utilizando la palabra clave <code>var</code>.
+El lenguaje 4D es estricto con los tipos de datos, aunque se permite cierta flexibilidad en muchos casos. Por ejemplo, para crear una variable de tipo fecha, puede escribir: Se crea una variable digitada utilizando la palabra clave <code>var</code>.
 
 ```4d
 var MyDate : Date
@@ -352,54 +352,6 @@ $str:=String("hello"+\
 "!")
 ```
 
-## Comentarios
-
-Los comentarios son líneas de instrucciones inactivas. Estas líneas no son interpretadas por el programa 4D y no se ejecutan cuando el código se llama.
-
-Hay dos maneras de crear comentarios:
-
-- `//` para crear una línea de comentario
-- `/...**/` para los bloques de comentarios en línea o multilínea.
-
-Ambos estilos de comentarios pueden utilizarse simultáneamente.
-
-#### Comentarios de una línea (`//comentario`)
-
-Inserte `//` al principio de una línea o después de una instrucción para añadir una línea de comentario. Ejemplo:
-
-```4d
-//Este es un comentario
-For($vCounter;1;100) //Bucle inicial
-  //comentario
-  //comentario
-  //comentario
-End for
-```
-
-#### Comentarios en línea o multilínea (`/*comment*/`)
-
-Rodea el contenido con los caracteres `/*` ... `*/` para para crear bloques de comentarios en línea o multilíneas. Tanto los bloques de comentarios en línea como los multilínea comienzan con `/*` y terminan con `*/`.
-
-- Las **líneas de comentarios en línea** se pueden insertar en cualquier parte del código. Ejemplo:
-
-```4d
-For /* inline comment */ ($vCounter;1;100)
-	...
-End for
-```
-
-- Los **bloques de comentarios multilíneas** permiten comentar un número ilimitado de líneas. Los bloques de comentarios pueden anidarse (útil desde que el editor de código 4D soporta los bloques contraídos). Ejemplo:
-
-```4d
-For ($vCounter;1;100)
-/*
-comentarios  
-    /* 
-    otros comentarios
-    */
-*/
-```
-
 ## Secuencias de escape
 
 El lenguaje 4D permite utilizar secuencias de escape (también llamadas caracteres de escape). Una secuencia de escape es una secuencia de caracteres que puede utilizarse para sustituir a un caracter "especial".
@@ -426,7 +378,7 @@ En el siguiente ejemplo, el caracter **Retorno de carro** (secuencia de escape `
 
 Las siguientes convenciones se utilizan en la documentación del lenguaje 4D:
 
-- los caracteres{ }` (llaves) indican parámetros opcionales. For example,`.delete({ option : Integer })\\\` means that the *option* parameter may be omitted when calling the function.
+- los caracteres{ }` (llaves) indican parámetros opcionales. For example,`.delete({ option : Integer })\\` means that the *option* parameter may be omitted when calling the function.
 - la palabra clave `any` se utiliza para los parámetros que pueden ser de cualquier valor (número, texto, booleano, fecha, hora, objeto, colección...).
 - when a parameter can accept several types, they are listed and separated by comma, for example: `value : Text, Real, Date, Time`
   This means the parameter *value* can be Text OR Real OR Date OR Time.

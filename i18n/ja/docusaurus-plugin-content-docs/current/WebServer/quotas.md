@@ -20,7 +20,7 @@ Web サーバークォータを使用して、トラフィック、リクエス�
 
 ### 開始時
 
-開始時に、ホストWeb サーバーまたはコンポーネントのWeb サーバーの[`WebServer.start()`](../API/WebServerClass.md#start) に渡したオブジェクトの`quotas` プロパティ内にてクォータを設定することができます。ホストWeb サーバーの場合に限り、[`Project/Sources`](../Project/architecture.md#sources) フォルダ内に保存された**HTTPQuotas.json** ファイルからクォータをロードすることもできます。ホストWeb サーバーの場合に限り、[`Project/Sources`](../Project/architecture.md#sources) フォルダ内に保存された**HTTPQuotas.json** ファイルからクォータをロードすることもできます。
+開始時に、ホストWeb サーバーまたはコンポーネントのWeb サーバーの[`WebServer.start()`](../API/WebServerClass.md#start) に渡したオブジェクトの`quotas` プロパティ内にてクォータを設定することができます。ホストWeb サーバーの場合に限り、[`Project/Sources`](../Project/architecture.md#sources) フォルダ内に保存された**HTTPQuotas.json** ファイルからクォータをロードすることもできます。
 
 #### `quotas` プロパティの使用
 
@@ -36,7 +36,7 @@ WEB Server().start({quotas: $quotas})
 
 #### HTTPQuotas.json ファイルを使用して設定する
 
-ホストWeb サーバーの場合、**HTTPQuotas.json** ファイルを作成し、[`Project/Sources`](../Project/architecture.md#sources) フォルダ内に保管しておくことができます。 This file is loaded at startup by the host Web server. This file is loaded at startup by the host Web server. The file must contain a JSON object whose properties are [quota property names](../API/QuotaManagerClass.md):
+ホストWeb サーバーの場合、**HTTPQuotas.json** ファイルを作成し、[`Project/Sources`](../Project/architecture.md#sources) フォルダ内に保管しておくことができます。 This file is loaded at startup by the host Web server. The file must contain a JSON object whose properties are [quota property names](../API/QuotaManagerClass.md):
 
 ```json title="/Project/Sources/HTTPQuotas.json"
 {
@@ -101,6 +101,19 @@ For each incoming request, the Web server checks quotas during preprocessing, be
 If either quota is exceeded, the request is rejected with an **HTTP 429 Too Many Requests** response. No web process is created and [`On Web Connection`](./httpRequests.md#on-web-connection) is not called (if defined).
 
 If an output byte quota is exceeded while a response is being sent, the current request is interrupted. The preprocessing rules above apply to the next request in the same time window.
+
+### MCP requests
+
+Requests to the [MCP server](mcp-server.md) (`/mcp` URL) are Web server requests: they count in the server global quotas, and each MCP session counts as a session in the session quotas. Requests over a quota get the **HTTP 429 Too Many Requests** response before any 4D code runs, including authentication code.
+
+For example, to limit each session, including MCP sessions used by AI agents, to 30 requests per minute:
+
+```4d
+var $webServer : 4D.WebServer:=WEB Server
+$webServer.quotas.nbRequestsPerMinPerSession:=30
+```
+
+MCP sessions cannot get their own quotas: the session default quotas apply to every Web session alike, and [`Session.quotas`](../API/SessionClass.md#quotas) only holds the REST entity-set limits.
 
 ### Rate limiting responses
 

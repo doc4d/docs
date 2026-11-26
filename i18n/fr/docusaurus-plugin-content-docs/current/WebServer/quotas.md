@@ -102,6 +102,19 @@ Si l'un ou l'autre de ces quotas est dépassé, la requête est rejetée avec un
 
 Si le quota d'octets de sortie est dépassé pendant l'envoi d'une réponse, la requête en cours est interrompue. Les règles de prétraitement ci-dessus s'appliquent à la requête suivante dans la même fenêtre temporelle.
 
+### MCP requests
+
+Requests to the [MCP server](mcp-server.md) (`/mcp` URL) are Web server requests: they count in the server global quotas, and each MCP session counts as a session in the session quotas. Requests over a quota get the **HTTP 429 Too Many Requests** response before any 4D code runs, including authentication code.
+
+For example, to limit each session, including MCP sessions used by AI agents, to 30 requests per minute:
+
+```4d
+var $webServer : 4D.WebServer:=WEB Server
+$webServer.quotas.nbRequestsPerMinPerSession:=30
+```
+
+MCP sessions cannot get their own quotas: the session default quotas apply to every Web session alike, and [`Session.quotas`](../API/SessionClass.md#quotas) only holds the REST entity-set limits.
+
 ### Réponses de limitation de débit
 
 Les quotas de limitation de débit s'appuient sur des fenêtres horaires définies. Lorsqu'un quota est atteint, les requêtes suivantes sont rejetées jusqu'à la fin de la fenêtre courante d'une minute ou d'une heure. La réponse **HTTP 429 Too Many Requests** comprend un en-tête `Retry-After` indiquant le délai à respecter avant d'envoyer une nouvelle requête.

@@ -117,7 +117,33 @@ module.exports =
         "code-editor/write-class-method",
         "Project/components",
         "Project/compiler",
-        "Desktop/building",
+        {
+          type: "category",
+          label: "Building Applications",
+          items: [
+            "Desktop/building",
+            "Desktop/data-file-configuration",
+            "Desktop/merged-client-connections",
+            "Desktop/managing-updates",
+            {
+              type: "category",
+              label: "XML keys",
+              link: {
+                type: "doc",
+                id: "BuildApplication/overview"
+              },
+              items: [
+                "BuildApplication/general",
+                "BuildApplication/runtime-vl",
+                "BuildApplication/client-server",
+                "BuildApplication/source-files",
+                "BuildApplication/versioning",
+                "BuildApplication/auto-update",
+                "BuildApplication/licenses-signature"
+              ]
+            }
+          ]
+        },
           {
            type: "category",
            label: "Debugging",
@@ -193,6 +219,7 @@ module.exports =
             "Concepts/parameters",
             "Concepts/shared",
             "Concepts/classes",
+            "Concepts/comments",
             "Concepts/control-flow",
             "Concepts/error-handling",
             "Concepts/interpreted-compiled",
@@ -251,6 +278,7 @@ module.exports =
             "API/IMAPTransporterClass",
             "API/IncomingMessageClass",
             "API/MailAttachmentClass",
+            "API/MCPContextClass",
             "API/MethodClass",
             "API/OutgoingMessageClass",
             "API/POP3TransporterClass",
@@ -408,6 +436,7 @@ module.exports =
             "WebServer/preemptiveWeb"
           ]
         },
+        "WebServer/mcp-server",
         {
           type: "category",
           label: "REST API",
@@ -525,7 +554,7 @@ module.exports =
         },
        {
           type: "doc",
-          label: "Sessions",
+          label: "Desktop sessions",
           id: "Desktop/desktop-sessions"
         },
         {
@@ -783,7 +812,7 @@ module.exports =
       label: "Server & Admin",
       link: {
         type: "generated-index",
-        title: "Administration",
+        title: "Server & Admin",
         description: "How to monitor your 4D applications",
         keywords: [
           "administration"
@@ -1008,6 +1037,41 @@ module.exports =
           type: "link",
           label: "4D Analyzer",
           href: "https://marketplace.visualstudio.com/items?itemName=4D.4d-analyzer"
+        },
+        {
+          type: "category",
+          label: "4D Embedding Studio",
+          link: {
+            type: "generated-index",
+            title: "4D Embedding Studio",
+            slug: "/category/4d-embedding-studio",
+            keywords: [
+              "4D Embedding Studio"
+            ],
+            image: "/img/docusaurus.png"
+          },
+          items: [
+            "embedding-studio/overview",
+            {
+              type: "category",
+              label: "Classes",
+              key: "embedding-studio-classes",
+              items: [
+                "embedding-studio/Classes/definition",
+                "embedding-studio/Classes/embedder",
+                "embedding-studio/Classes/embedderresult",
+                "embedding-studio/Classes/phrase",
+                "embedding-studio/Classes/process",
+                "embedding-studio/Classes/processerror",
+                "embedding-studio/Classes/processerrorcode",
+                "embedding-studio/Classes/processresult",
+                "embedding-studio/Classes/scheduler",
+                "embedding-studio/Classes/settings",
+                "embedding-studio/Classes/studioembedder"
+              ]
+            },
+            "embedding-studio/ratelimit"
+          ]
         },
         {
           type: "link",

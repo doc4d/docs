@@ -3,7 +3,7 @@ id: WebServerClass
 title: WebServer
 ---
 
-`WebServer` クラス API を使って、メイン (ホスト) アプリケーションおよび、各コンポーネントの Webサーバーを開始・モニターすることができます ([Webサーバーオブジェクト](WebServer/webServerObject.md) 参照)。このクラスは `4D` クラスストアより提供されます。このクラスは `4D` クラスストアより提供されます。
+`WebServer` クラス API を使って、メイン (ホスト) アプリケーションおよび、各コンポーネントの Webサーバーを開始・モニターすることができます ([Webサーバーオブジェクト](WebServer/webServerObject.md) 参照)。このクラスは `4D` クラスストアより提供されます。
 
 ### プロパティ
 
@@ -45,6 +45,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server) コ�
 | [<!-- INCLUDE #WebServerClass.maxConcurrentProcesses.Syntax -->](#maxconcurrentprocesses)<br/><!-- INCLUDE #WebServerClass.maxConcurrentProcesses.Summary -->             |
 | [<!-- INCLUDE #WebServerClass.maxRequestSize.Syntax -->](#maxrequestsize)<br/><!-- INCLUDE #WebServerClass.maxRequestSize.Summary -->                                     |
 | [<!-- INCLUDE #WebServerClass.maxSessions.Syntax -->](#maxsessions)<br/><!-- INCLUDE #WebServerClass.maxSessions.Summary -->                                              |
+| [<!-- INCLUDE #WebServerClass.mcp.Syntax -->](#mcp)<br/><!-- INCLUDE #WebServerClass.mcp.Summary -->                                                                      |
 | [<!-- INCLUDE #WebServerClass.minTLSVersion.Syntax -->](#mintlsversion)<br/><!-- INCLUDE #WebServerClass.minTLSVersion.Summary -->                                        |
 | [<!-- INCLUDE #WebServerClass.name.Syntax -->](#name)<br/><!-- INCLUDE #WebServerClass.name.Summary -->                                                                   |
 | [<!-- INCLUDE #WebServerClass.openSSLVersion.Syntax -->](#opensslversion)<br/><!-- INCLUDE #WebServerClass.openSSLVersion.Summary -->                                     |
@@ -65,7 +66,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server) コ�
 
 <!-- REF #WebServerClass.accessKeyDefined.Syntax -->**.accessKeyDefined** : Boolean<!-- END REF -->
 
-**.accessKeyDefined** プロパティは、<!-- REF #WebServerClass.accessKeyDefined.Summary -->Webサーバーの設定にアクセスキーが定義されていれば true<!-- END REF -->を格納します。このプロパティは WebAdmin Webサーバーによって、管理インターフェースのセキュリティ設定を有効化するのに使用されます。このプロパティは WebAdmin Webサーバーによって、管理インターフェースのセキュリティ設定を有効化するのに使用されます。
+**.accessKeyDefined** プロパティは、<!-- REF #WebServerClass.accessKeyDefined.Summary -->Webサーバーの設定にアクセスキーが定義されていれば true<!-- END REF -->を格納します。このプロパティは WebAdmin Webサーバーによって、管理インターフェースのセキュリティ設定を有効化するのに使用されます。
 
 <!-- REF WebServerClass.certificateFolder.Desc -->
 
@@ -73,7 +74,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server) コ�
 
 <!-- REF #WebServerClass.certificateFolder.Syntax -->**.certificateFolder** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.certificateFolder.Summary -->証明書ファイルが保存されているフォルダー<!-- END REF -->のパス。パスは、ファイルシステムを使用した POSIXフルパスの形式です。のパス。パスは、ファイルシステムを使用した POSIXフルパスの形式です。 [`.start()`](#start) 関数に渡す `settings` 引数内でこのプロパティを使用する場合、[`Folder` オブジェクト](FolderClass.md) も使用可能です。
+<!-- REF #WebServerClass.certificateFolder.Summary -->証明書ファイルが保存されているフォルダー<!-- END REF -->のパス。パスは、ファイルシステムを使用した POSIXフルパスの形式です。 [`.start()`](#start) 関数に渡す `settings` 引数内でこのプロパティを使用する場合、[`Folder` オブジェクト](FolderClass.md) も使用可能です。
 
 <!-- END REF -->
 
@@ -83,7 +84,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server) コ�
 
 <!-- REF #WebServerClass.characterSet.Syntax -->**.characterSet** : Number<br/>**.characterSet** : Text<!-- END REF -->
 
-アプリケーションに接続してくるブラウザーとの通信に 4D Webサーバーが使用すべき文字セットデフォルト値は OS の言語に依存します。値には、MIBenum 整数や名称の文字列、[IANA](http://www.iana.org/assignments/character-sets/character-sets.xhtml) が定義する識別子を使用できます。。デフォルト値は OS の言語に依存します。値には、MIBenum 整数や名称の文字列、[IANA](http://www.iana.org/assignments/character-sets/character-sets.xhtml) が定義する識別子を使用できます。以下は、4D Webサーバーがサポートしている文字セットに対応する識別子のリストです:
+<!-- REF #WebServerClass.characterSet.Summary -->アプリケーションに接続してくるブラウザーとの通信に 4D Webサーバーが使用すべき文字セット<!-- END REF -->。デフォルト値は OS の言語に依存します。値には、MIBenum 整数や名称の文字列、[IANA](http://www.iana.org/assignments/character-sets/character-sets.xhtml) が定義する識別子を使用できます。以下は、4D Webサーバーがサポートしている文字セットに対応する識別子のリストです:
 
 - 4 = ISO-8859-1
 - 12 = ISO-8859-9
@@ -107,7 +108,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server) コ�
 
 <!-- REF #WebServerClass.cipherSuite.Syntax -->**.cipherSuite** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.cipherSuite.Summary -->保護されたプロトコルのために使用される暗号スイートリスト<!-- END REF -->。。これは、4D Webサーバーが実装する暗号化アルゴリズムの優先順位を設定します。コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
+<!-- REF #WebServerClass.cipherSuite.Summary -->保護されたプロトコルのために使用される暗号スイートリスト<!-- END REF -->。これは、4D Webサーバーが実装する暗号化アルゴリズムの優先順位を設定します。コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
 <!-- END REF -->
 
@@ -117,7 +118,7 @@ Webサーバーオブジェクトは [`WEB Server`](../commands/web-server) コ�
 
 <!-- REF #WebServerClass.CORSEnabled.Syntax -->**.CORSEnabled** : Boolean<!-- END REF -->
 
-Web サーバーの CORS (*Cross-origin resource sharing*、オリジン間リソース共有) サービス状態セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。。セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。有効化されている場合 (true)、ドメイン外 Webページからの XHRコール (RESTリクエストなど) をアプリケーションにおいて許可することができます (CORSドメインリストに許可されたアドレスのリストを定義する必要があります。後述の `CORSSettings` 参照)。無効化されている場合 (false、デフォルト) には、CORS で送信されたサイト間リクエストはすべて無視されます。有効時 (true) に、許可されていないドメインやメソッドがサイト間リクエストを送信した場合、"403 - forbidden" エラーレスポンスによって拒否されます。無効化されている場合 (false、デフォルト) には、CORS で送信されたサイト間リクエストはすべて無視されます。有効時 (true) に、許可されていないドメインやメソッドがサイト間リクエストを送信した場合、"403 - forbidden" エラーレスポンスによって拒否されます。
+<!-- REF #WebServerClass.CORSEnabled.Summary -->Web サーバーの CORS (*Cross-origin resource sharing*、オリジン間リソース共有) サービス状態<!-- END REF -->。セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。有効化されている場合 (true)、ドメイン外 Webページからの XHRコール (RESTリクエストなど) をアプリケーションにおいて許可することができます (CORSドメインリストに許可されたアドレスのリストを定義する必要があります。後述の `CORSSettings` 参照)。無効化されている場合 (false、デフォルト) には、CORS で送信されたサイト間リクエストはすべて無視されます。有効時 (true) に、許可されていないドメインやメソッドがサイト間リクエストを送信した場合、"403 - forbidden" エラーレスポンスによって拒否されます。
 
 デフォルト: false (無効)
 
@@ -131,21 +132,21 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 <!-- REF #WebServerClass.CORSSettings.Syntax -->**.CORSSettings** : Collection<!-- END REF -->
 
-CORSサービスに許可されたホストとメソッドの一覧各オブジェクトは必ず **host** プロパティを格納していなくてはなりません。 **methods** プロパティは任意です。
+<!-- REF #WebServerClass.CORSSettings.Summary -->CORSサービスに許可されたホストとメソッドの一覧<!-- END REF --> ([`CORSEnabled`](#corsenabled) プロパティ参照)。各オブジェクトは必ず **host** プロパティを格納していなくてはなりません。 **methods** プロパティは任意です。
 
-- **host** (テキスト、必須): CORS を介したサーバーへのデータリクエスト送信が許可されている外部ページのドメイン名または IPアドレス。複数のドメインを追加してホワイトリストを作成することができます。 *host* が存在しない、または空の場合、当該オブジェクトは無視されます。複数のシンタックスがサポートされています: 複数のドメインを追加してホワイトリストを作成することができます。 *host* が存在しない、または空の場合、当該オブジェクトは無視されます。複数のシンタックスがサポートされています:
+- **host** (テキスト、必須): CORS を介したサーバーへのデータリクエスト送信が許可されている外部ページのドメイン名または IPアドレス。複数のドメインを追加してホワイトリストを作成することができます。 *host* が存在しない、または空の場合、当該オブジェクトは無視されます。複数のシンタックスがサポートされています:
   - 192.168.5.17:8081
   - 192.168.5.17
   - 192.168.\*
   - 192.168.\*:8081
   - <http://192.168.5.17:8081>
-  - <http://\\\\\*.myDomain.com>
+  - <http://\\*.myDomain.com>
   - <http://myProject.myDomain.com>
   - \*.myDomain.com
   - myProject.myDomain.com
   - \*
 
-- **methods** (テキスト、任意): 対応する CORSホストに対して許可する HTTPメソッド。メソッド名はセミコロン区切りで指定します(例: "post;get")。 *methods* が空、null、あるいは undefined の場合、すべてのメソッドが許可されます。メソッド名はセミコロン区切りで指定します(例: "post;get")。 *methods* が空、null、あるいは undefined の場合、すべてのメソッドが許可されます。
+- **methods** (テキスト、任意): 対応する CORSホストに対して許可する HTTPメソッド。メソッド名はセミコロン区切りで指定します(例: "post;get")。 *methods* が空、null、あるいは undefined の場合、すべてのメソッドが許可されます。
 
 <!-- END REF -->
 
@@ -191,7 +192,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 *読み取り専用プロパティ*
 
-カスタム HTTPハンドラーオブジェクトのコレクション HTTPハンドラーオブジェクトには聞いている URLパターン、管理される動詞 (メソッド)、そして呼び出されるべきコードが格納されています。。 HTTPハンドラーオブジェクトには聞いている URLパターン、管理される動詞 (メソッド)、そして呼び出されるべきコードが格納されています。 HTTPハンドラーは HTTPHandlers.json ファイルまたは [`.start()`](#start) 関数の *settings* 引数で定義することができます。詳細については [HTTPリクエストハンドラー](../WebServer/http-request-handler.md)のページを参照してください。詳細については [HTTPリクエストハンドラー](../WebServer/http-request-handler.md)のページを参照してください。
+<!-- REF #WebServerClass.handlers.Summary -->カスタム HTTPハンドラーオブジェクトのコレクション<!-- END REF -->。 HTTPハンドラーオブジェクトには聞いている URLパターン、管理される動詞 (メソッド)、そして呼び出されるべきコードが格納されています。 HTTPハンドラーは HTTPHandlers.json ファイルまたは [`.start()`](#start) 関数の *settings* 引数で定義することができます。詳細については [HTTPリクエストハンドラー](../WebServer/http-request-handler.md)のページを参照してください。
 
 <!-- END REF -->
 
@@ -201,7 +202,7 @@ The <!-- REF #WebServerClass.debugLog.Summary -->HTTPリクエストログファ
 
 <!-- REF #WebServerClass.HSTSEnabled.Syntax -->**.HSTSEnabled** : Boolean<!-- END REF -->
 
-HTTP Strict Transport Security (HSTS) 状態 HSTS によって、Webサーバーはブラウザーに対し、セキュアな HTTPS接続のみを許可すると宣言できます。 Webサーバーからの初回レスポンスを受け取った際にブラウザーは HSTS情報を記録し、以降の HTTPリクエストは自動的に HTTPSリクエストに変換されます。ブラウザー側でこの情報が保存される時間は `HSTSMaxAge` プロパティによって指定されます。 HSTS のためには、サーバー上で HTTPS が有効になっていなくてはなりません。また、初回のクライアント接続を許可するために、HTTP も有効でなくてはなりません。
+<!-- REF #WebServerClass.HSTSEnabled.Summary -->HTTP Strict Transport Security (HSTS) 状態<!-- END REF -->。 HSTS によって、Webサーバーはブラウザーに対し、セキュアな HTTPS接続のみを許可すると宣言できます。 Webサーバーからの初回レスポンスを受け取った際にブラウザーは HSTS情報を記録し、以降の HTTPリクエストは自動的に HTTPSリクエストに変換されます。ブラウザー側でこの情報が保存される時間は `HSTSMaxAge` プロパティによって指定されます。 HSTS のためには、サーバー上で HTTPS が有効になっていなくてはなりません。また、初回のクライアント接続を許可するために、HTTP も有効でなくてはなりません。
 
 <!-- END REF -->
 
@@ -211,7 +212,7 @@ HTTP Strict Transport Security (HSTS) 状態 HSTS によって、Webサーバー
 
 <!-- REF #WebServerClass.HSTSMaxAge.Syntax -->**.HSTSMaxAge** : Integer<!-- END REF -->
 
-新規クライアント接続ごとに HSTS がアクティブな最長時間 (秒単位)。この情報はクライアント側で指定された時間のあいだ保存されます。
+<!-- REF #WebServerClass.HSTSMaxAge.Summary -->新規クライアント接続ごとに HSTS がアクティブな最長時間 (秒単位)<!-- END REF -->。この情報はクライアント側で指定された時間のあいだ保存されます。
 
 デフォルト値: 63072000 (2年)。
 
@@ -223,7 +224,7 @@ HTTP Strict Transport Security (HSTS) 状態 HSTS によって、Webサーバー
 
 <!-- REF #WebServerClass.HTTPCompressionLevel.Syntax -->**.HTTPCompressionLevel** : Integer<!-- END REF -->
 
-4D HTTPサーバーの HTTP圧縮通信 (クライアントリクエストまたはサーバーレスポンス) における圧縮レベル。このセレクターを使って、実行速度を優先するか (圧縮少)、それとも圧縮レベルを優先するか (速度減) を指定し、通信を最適化することができます。
+<!-- REF #WebServerClass.HTTPCompressionLevel.Summary -->4D HTTPサーバーの HTTP圧縮通信 (クライアントリクエストまたはサーバーレスポンス) における圧縮レベル<!-- END REF -->。このセレクターを使って、実行速度を優先するか (圧縮少)、それとも圧縮レベルを優先するか (速度減) を指定し、通信を最適化することができます。
 
 とりうる値:
 
@@ -262,7 +263,7 @@ HTTP Strict Transport Security (HSTS) 状態 HSTS によって、Webサーバー
 
 <!-- REF #WebServerClass.HTTPPort.Syntax -->**.HTTPPort** : Integer<!-- END REF -->
 
-HTTP のリッスンIPポート番号
+<!-- REF #WebServerClass.HTTPPort.Summary -->HTTP のリッスンIPポート番号<!-- END REF -->。
 
 デフォルト = 80
 
@@ -274,7 +275,7 @@ HTTP のリッスンIPポート番号
 
 <!-- REF #WebServerClass.HTTPTrace.Syntax -->**.HTTPTrace** : Boolean<!-- END REF -->
 
-<!-- REF #WebServerClass.HTTPTrace.Summary -->`HTTP TRACE` の有効化状態<!-- END REF -->。。セキュリティ上の理由により、Webサーバーはデフォルトで `HTTP TRACE` リクエストをエラー405 で拒否します。有効化されている場合、`HTTP TRACE` リクエストに対して Webサーバーは、リクエスト行、ヘッダー、および本文を返します。有効化されている場合、`HTTP TRACE` リクエストに対して Webサーバーは、リクエスト行、ヘッダー、および本文を返します。
+<!-- REF #WebServerClass.HTTPTrace.Summary -->`HTTP TRACE` の有効化状態<!-- END REF -->。セキュリティ上の理由により、Webサーバーはデフォルトで `HTTP TRACE` リクエストをエラー405 で拒否します。有効化されている場合、`HTTP TRACE` リクエストに対して Webサーバーは、リクエスト行、ヘッダー、および本文を返します。
 
 <!-- END REF -->
 
@@ -294,7 +295,7 @@ HTTP のリッスンIPポート番号
 
 <!-- REF #WebServerClass.HTTPSPort.Syntax -->**.HTTPSPort** : Integer<!-- END REF -->
 
-HTTPS のリッスンIPポート番号
+<!-- REF #WebServerClass.HTTPSPort.Summary -->HTTPS のリッスンIPポート番号<!-- END REF -->。
 
 デフォルト = 443
 
@@ -308,7 +309,7 @@ HTTPS のリッスンIPポート番号
 
 > [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは返されません。
 
-<!-- REF #WebServerClass.inactiveProcessTimeout.Summary -->旧式セッションプロセスの非アクティブタイムアウト時間 (分単位)<!-- END REF -->。。タイムアウト時間が経過すると、サーバーはプロセスを終了します。すると、`On Web Legacy Close Session` データベースメソッドが呼び出され、旧式セッションのコンテキストは削除されます。
+<!-- REF #WebServerClass.inactiveProcessTimeout.Summary -->旧式セッションプロセスの非アクティブタイムアウト時間 (分単位)<!-- END REF -->。タイムアウト時間が経過すると、サーバーはプロセスを終了します。すると、`On Web Legacy Close Session` データベースメソッドが呼び出され、旧式セッションのコンテキストは削除されます。
 
 デフォルト = 480 分
 
@@ -322,7 +323,7 @@ HTTPS のリッスンIPポート番号
 
 > [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは返されません。
 
-旧式セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)。タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。
+<!-- REF #WebServerClass.inactiveSessionTimeout.Summary -->旧式セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)<!-- END REF -->。タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。
 
 デフォルト = 480 分
 
@@ -334,7 +335,7 @@ HTTPS のリッスンIPポート番号
 
 <!-- REF #WebServerClass.IPAddressToListen.Syntax -->**.IPAddressToListen** : Text<!-- END REF -->
 
-4D Webサーバーが HTTPリクエストを受信する IPアドレスデフォルトでは、特定のアドレスは定義されていません。。デフォルトでは、特定のアドレスは定義されていません。 IPv6 および IPv4 文字列形式の両方がサポートされています。
+<!-- REF #WebServerClass.IPAddressToListen.Summary -->4D Webサーバーが HTTPリクエストを受信する IPアドレス<!-- END REF -->。デフォルトでは、特定のアドレスは定義されていません。 IPv6 および IPv4 文字列形式の両方がサポートされています。
 
 <!-- END REF -->
 
@@ -356,7 +357,7 @@ HTTPS のリッスンIPポート番号
 
 <!-- REF #WebServerClass.keepSession.Syntax -->**.keepSession** : Boolean<!-- END REF -->
 
-Webサーバーで旧式セッションが有効されている場合に `true`、それ以外は `false`
+<!-- REF #WebServerClass.keepSession.Summary -->Webサーバーで旧式セッションが有効されている場合に `true`、それ以外は `false`<!-- END REF -->。
 
 ##### 参照
 
@@ -386,7 +387,7 @@ Webサーバーで旧式セッションが有効されている場合に `true`�
 
 <!-- REF #WebServerClass.maxConcurrentProcesses.Syntax -->**.maxConcurrentProcesses** : Integer<!-- END REF -->
 
-Webサーバーにてサポートする最大同時Webプロセス数。この数値 (マイナス1) に達すると、4D はプロセスを作成しなくなり、新規リクエストに対して HTTPステータス 503 - Service Unavailable を返します。
+<!-- REF #WebServerClass.maxConcurrentProcesses.Summary -->Webサーバーにてサポートする最大同時Webプロセス数<!-- END REF -->。この数値 (マイナス1) に達すると、4D はプロセスを作成しなくなり、新規リクエストに対して HTTPステータス 503 - Service Unavailable を返します。
 
 とりうる値: 10 - 32000
 
@@ -400,7 +401,7 @@ Webサーバーにてサポートする最大同時Webプロセス数。この�
 
 <!-- REF #WebServerClass.maxRequestSize.Syntax -->**.maxRequestSize** : Integer<!-- END REF -->
 
-Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイズ (バイト単位)最大値 (2147483647) に設定した場合、実際には制限無しということになります。制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。。最大値 (2147483647) に設定した場合、実際には制限無しということになります。制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。リクエストのサイズが制限に達していると、Webサーバーによって拒否されます。
+<!-- REF #WebServerClass.maxRequestSize.Summary -->Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイズ (バイト単位)<!-- END REF -->。最大値 (2147483647) に設定した場合、実際には制限無しということになります。制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。リクエストのサイズが制限に達していると、Webサーバーによって拒否されます。
 
 とりうる値: 500000 - 2147483647
 
@@ -414,7 +415,64 @@ Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイ�
 
 > [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは返されません。
 
-<!-- REF #WebServerClass.maxSessions.Summary -->旧式セッションにおける同時セッションの最大数<!-- END REF -->。。制限に達すると、Webサーバーが新規セッションを作成するときに、一番古い旧式セッションが閉じられます (`On Web Legacy Close Session` データベースメソッドが呼び出されます)。旧式セッションの同時セッション数は、Webプロセスの合計値を超えることはできません (`maxConcurrentProcesses` プロパティ、デフォルト値は 100)。旧式セッションの同時セッション数は、Webプロセスの合計値を超えることはできません (`maxConcurrentProcesses` プロパティ、デフォルト値は 100)。
+<!-- REF #WebServerClass.maxSessions.Summary -->旧式セッションにおける同時セッションの最大数<!-- END REF -->。制限に達すると、Webサーバーが新規セッションを作成するときに、一番古い旧式セッションが閉じられます (`On Web Legacy Close Session` データベースメソッドが呼び出されます)。旧式セッションの同時セッション数は、Webプロセスの合計値を超えることはできません (`maxConcurrentProcesses` プロパティ、デフォルト値は 100)。
+
+<!-- END REF -->
+
+<!-- REF WebServerClass.mcp.Desc -->
+
+## .mcp
+
+<details><summary>履歴</summary>
+
+| リリース  | 内容 |
+| ----- | -- |
+| 21 R6 | 追加 |
+
+</details>
+
+<!-- REF #WebServerClass.mcp.Syntax -->**.mcp** : Object<!-- END REF -->
+
+#### 説明
+
+The `.mcp` property contains <!-- REF #WebServerClass.mcp.Summary -->the settings of the MCP server of the web server<!-- END REF -->. For more information, see [MCP server](../WebServer/mcp-server.md).
+
+The MCP server is only available on the web server of the host application, and requires [scalable sessions](#scalablesession).
+
+The `.mcp` object contains the following properties:
+
+| プロパティ                    | 型          | デフォルト                                                  | 説明                                                                                                                                                                                                                                                                                             |
+| ------------------------ | ---------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enabled                  | Boolean    | false                                                  | True to enable the MCP server on the `/mcp` URL. Can be modified while the web server is running                                                                                                                                                                               |
+| serverName               | Text       | ""                                                     | Name of the server returned by `server/discover`. If empty, the application name is returned                                                                                                                                                                                   |
+| serverVersion            | Text       | ""                                                     | Version of the server returned by `server/discover`. If empty, the version of the built application is returned ("0.0.0" if the application is not built)                                                                   |
+| instructions             | Text       | ""                                                     | Instructions for the MCP clients, returned by `server/discover`                                                                                                                                                                                                                                |
+| maxResults               | Integer    | 100                                                    | Maximum number of entities returned by a `queryEntities` page or by a custom tool returning an entity selection                                                                                                                                                                                |
+| crudTools                | Collection | All the tools                                          | Names of the [built-in CRUD tools](../WebServer/mcp-server.md#built-in-crud-tools) available to the clients: "describeModel", "getEntity", "queryEntities", "aggregateEntities", "addEntity", "updateEntity", "dropEntity", "getBinaryAttribute", "setBinaryAttribute"         |
+| allowInsecureHTTP        | Boolean    | false                                                  | True to accept MCP requests over plain HTTP from any address (not recommended). By default, plain HTTP is only accepted from a loopback address or a trusted proxy. See [Secure connections](../WebServer/mcp-server.md#secure-connections) |
+| trustedProxies           | Collection | [] | IP addresses of the reverse proxies whose `X-Forwarded-For`, `X-Forwarded-Proto`, and `X-Forwarded-Host` headers are used                                                                                                                                                                      |
+| publicURL                | Text       | ""                                                     | Base URL (scheme and host) of the URLs published by the MCP server, for example "https://sales.example.com". If empty, the base URL is built from the request                                               |
+| oauthDynamicRegistration | Boolean    | true                                                   | True to allow dynamic client registration in [OAuth mode](../WebServer/mcp-server.md#oauth-21-mode)                                                                                                                                                                                            |
+
+The MCP settings are defined in the Settings of the application, or by passing an `mcp` object in the *settings* parameter of the [`.start()`](#start) function. On the `.mcp` object, all properties are read-only except `enabled`: while the web server is running, setting `mcp.enabled` to **True** or **False** enables or disables the MCP server without restarting the web server. This change applies until 4D quits: it is not saved in the settings, and the next start of 4D uses the settings. The MCP settings are kept when the web server is restarted.
+
+#### 例題 1
+
+You enable the MCP server at startup:
+
+```4d
+var $webServer : 4D.WebServer:=WEB Server
+var $status:=$webServer.start({mcp: {enabled: True; serverName: "Sales"; maxResults: 50}})
+```
+
+#### 例題 2
+
+You disable the MCP server while the web server is running:
+
+```4d
+var $webServer : 4D.WebServer:=WEB Server
+$webServer.mcp.enabled:=False // /mcp now answers 404, MCP sessions are closed
+```
 
 <!-- END REF -->
 
@@ -424,7 +482,7 @@ Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイ�
 
 <!-- REF #WebServerClass.minTLSVersion.Syntax -->**.minTLSVersion** : Integer<!-- END REF -->
 
-<!-- REF #WebServerClass.minTLSVersion.Summary -->接続に必要な最低TLSバージョン<!-- END REF -->。。これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。
+<!-- REF #WebServerClass.minTLSVersion.Summary -->接続に必要な最低TLSバージョン<!-- END REF -->。これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。
 
 とりうる値:
 
@@ -445,7 +503,7 @@ Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイ�
 
 *読み取り専用プロパティ*
 
-Webサーバーアプリケーションの名称
+<!-- REF #WebServerClass.name.Summary -->Webサーバーアプリケーションの名称<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -457,7 +515,7 @@ Webサーバーアプリケーションの名称
 
 *読み取り専用プロパティ*
 
-使用されている OpenSSLライブラリのバージョン
+<!-- REF #WebServerClass.openSSLVersion.Summary -->使用されている OpenSSLライブラリのバージョン<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -493,20 +551,20 @@ Webサーバーアプリケーションの名称
 
 :::note
 
-クォータは、スケーラブルセッションが有効化されている場合にのみ使用可能です。クォータは、スケーラブルセッションが有効化されている場合にのみ使用可能です。スケーラブルセッションが無効化されている場合、このプロパティは*Undefined*(未定義) となります。
+クォータは、スケーラブルセッションが有効化されている場合にのみ使用可能です。スケーラブルセッションが無効化されている場合、このプロパティは*Undefined*(未定義) となります。
 
 :::
 
 ##### スコープレベル
 
-このプロパティにアクセスすると、`4D.QuotaManager` オブジェクトが返され、これはランタイムで更新していくことができます。クォータは2つの異なるスコープレベルで設定することが可能です: クォータは2つの異なるスコープレベルで設定することが可能です:
+このプロパティにアクセスすると、`4D.QuotaManager` オブジェクトが返され、これはランタイムで更新していくことができます。クォータは2つの異なるスコープレベルで設定することが可能です:
 
-- **サーバーグローバル**: クォータは、Web サーバー上の全てのセッションの合計アクティビティに対して適用されます。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。
-- **セッションデフォルト**: クォータはセッションの作成時にそれぞれの新しいセッションに対してデフォルトで適用されます。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。
+- **サーバーグローバル**: クォータは、Web サーバー上の全てのセッションの合計アクティビティに対して適用されます。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。
+- **セッションデフォルト**: クォータはセッションの作成時にそれぞれの新しいセッションに対してデフォルトで適用されます。詳細については[At startup](../WebServer/quotas.md#at-startup) および[At runtime](../WebServer/quotas.md#at-runtime) を参照してください。
 
-サーバーグローバルとセッションデフォルトのクォータの両方が設定されている場合、セッションクォータが先にチェックされます。リクエストが受け入れられると、次にサーバーグローバルクォータがチェックされます。リクエストが受け入れられると、次にサーバーグローバルクォータがチェックされます。
+サーバーグローバルとセッションデフォルトのクォータの両方が設定されている場合、セッションクォータが先にチェックされます。リクエストが受け入れられると、次にサーバーグローバルクォータがチェックされます。
 
-クォータのプロパティの完全な一覧については、[`4D.QuotaManager` クラス](./QuotaManagerClass.md) を参照してください。設定と適用に関する詳細については、[Web サーバークォータ](../WebServer/quotas.md) を参照してください。設定と適用に関する詳細については、[Web サーバークォータ](../WebServer/quotas.md) を参照してください。
+クォータのプロパティの完全な一覧については、[`4D.QuotaManager` クラス](./QuotaManagerClass.md) を参照してください。設定と適用に関する詳細については、[Web サーバークォータ](../WebServer/quotas.md) を参照してください。
 
 デフォルトではクォータプロパティは*Undefined* (未定義)であり、クォータは何も適用されていません。
 
@@ -587,7 +645,7 @@ $webServer.quotas.outBytesPerMinPerSession:=$quotas.outBytesPerMinPerSession
 
 <!-- REF #WebServerClass.rootFolder.Syntax -->**.rootFolder** : Text<!-- END REF -->
 
-Webサーバーのルートフォルダーのパスパスは、ファイルシステムを使用した POSIXフルパスの形式です。 `settings` 引数内でこのプロパティを使用する場合、`Folder` オブジェクトも使用可能です。
+<!-- REF #WebServerClass.rootFolder.Summary -->Webサーバーのルートフォルダーのパス<!-- END REF -->。パスは、ファイルシステムを使用した POSIXフルパスの形式です。 `settings` 引数内でこのプロパティを使用する場合、`Folder` オブジェクトも使用可能です。
 
 <!-- END REF -->
 
@@ -607,7 +665,7 @@ Webサーバーのルートフォルダーのパスパスは、ファイルシ�
 
 *読み取り専用プロパティ*
 
-HTTP ヘッダーをカスタマイズするために現在管理されているルールオブジェクトのコレクションルールオブジェクトには"regexPattern" プロパティに加え、アクション名と値が格納されています。。ルールオブジェクトには"regexPattern" プロパティに加え、アクション名と値が格納されています。 HTTP ルールはHTTPRules.json ファイルまたは[`.start()`](#start) 関数の*settings* 引数で定義することができます。詳細については[HTTP ルール](../WebServer/http-rules.md) のページを参照してください。詳細については[HTTP ルール](../WebServer/http-rules.md) のページを参照してください。
+<!-- REF #WebServerClass.rules.Summary -->HTTP ヘッダーをカスタマイズするために現在管理されているルールオブジェクトのコレクション<!-- END REF -->。ルールオブジェクトには"regexPattern" プロパティに加え、アクション名と値が格納されています。 HTTP ルールはHTTPRules.json ファイルまたは[`.start()`](#start) 関数の*settings* 引数で定義することができます。詳細については[HTTP ルール](../WebServer/http-rules.md) のページを参照してください。
 
 <!-- END REF -->
 
@@ -617,7 +675,7 @@ HTTP ヘッダーをカスタマイズするために現在管理されている
 
 <!-- REF #WebServerClass.scalableSession.Syntax -->**.scalableSession** : Boolean<!-- END REF -->
 
-Webサーバーがスケーラブルセッションを使用している場合に `true`、それ以外は `false`
+<!-- REF #WebServerClass.scalableSession.Summary -->Webサーバーがスケーラブルセッションを使用している場合に `true`、それ以外は `false`<!-- END REF -->。
 
 ##### 参照
 
@@ -631,7 +689,7 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 <!-- REF #WebServerClass.sessionCookieDomain.Syntax -->**.sessionCookieDomain** : Text<!-- END REF -->
 
-<!-- REF #WebServerClass.sessionCookieDomain.Summary -->セッションcookie の "path" フィールド<!-- END REF -->。セッションcookie のスコープを制御するのに使用されます。。セッションcookie のスコープを制御するのに使用されます。たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。
+<!-- REF #WebServerClass.sessionCookieDomain.Summary -->セッションcookie の "path" フィールド<!-- END REF -->。セッションcookie のスコープを制御するのに使用されます。たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。
 
 <!-- END REF -->
 
@@ -641,7 +699,7 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 <!-- REF #WebServerClass.sessionCookieName.Syntax -->**.sessionCookieName** : Text<!-- END REF -->
 
-セッションID の保存に使用されるセッションcookie の名称
+<!-- REF #WebServerClass.sessionCookieName.Summary -->セッションID の保存に使用されるセッションcookie の名称<!-- END REF -->。
 
 *読み取り専用プロパティ*
 
@@ -653,7 +711,7 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 <!-- REF #WebServerClass.sessionCookiePath.Syntax -->**.sessionCookiePath** : Text<!-- END REF -->
 
-セッションcookie の "path" フィールドセッションcookie のスコープを制御するのに使用されます。。セッションcookie のスコープを制御するのに使用されます。たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
+<!-- REF #WebServerClass.sessionCookiePath.Summary -->セッションcookie の "path" フィールド<!-- END REF -->。セッションcookie のスコープを制御するのに使用されます。たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
 
 <!-- END REF -->
 
@@ -671,13 +729,13 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 <!-- REF #WebServerClass.sessionCookieSameSite.Syntax -->**.sessionCookieSameSite** : Text<!-- END REF -->
 
-セッションcookie の "SameSite" 属性の値。とりうる値 (定数使用):
+<!-- REF #WebServerClass.sessionCookieSameSite.Summary -->セッションcookie の "SameSite" 属性の値<!-- END REF -->。とりうる値 (定数使用):
 
-| 定数                  | 値        | 説明                                                              |
-| ------------------- | -------- | --------------------------------------------------------------- |
-| Web SameSite Strict | "Strict" | *デフォルト値* - ファーストパーティのコンテキストでのみ cookie が送信されます。                  |
-| Web SameSite Lax    | "Lax"    | サイト間のサブリクエストにおいても cookie が送信されますが、ユーザーがリンクを辿って大元のサイトに戻る場合に限ります。 |
-| Web SameSite None   | "None"   | ファーストパーティやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。       |
+| 定数                  | 値        | 説明                                                                                                                                                                                                                                                                        |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Web SameSite Strict | "Strict" | *デフォルト値* - ファーストパーティのコンテキストでのみ cookie が送信されます。                                                                                                                                                                                                                            |
+| Web SameSite Lax    | "Lax"    | Cookies are not sent with requests coming from other websites (images, frames, forms, scripts), except when the user navigates to the site from another website with a GET request (following a link, redirection). |
+| Web SameSite None   | "None"   | ファーストパーティやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。                                                                                                                                                                                                                 |
 
 詳細については [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-samesite) の説明を参照ください。
 
@@ -691,7 +749,7 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 > [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは使用されません (IPアドレスを検証しません)。
 
-セッションcookie の IP アドレス検証セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。
+<!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->セッションcookie の IP アドレス検証<!-- END REF -->。セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。
 
 <!-- END REF -->
 
@@ -701,10 +759,11 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                        |
-| ----- | ------------------------- |
-| 21 R5 | `settings` 引数内でのクォータのサポート |
-| 18 R3 | 追加                        |
+| リリース  | 内容                                           |
+| ----- | -------------------------------------------- |
+| 21 R6 | Support of `mcp` in the `settings` parameter |
+| 21 R5 | `settings` 引数内でのクォータのサポート                    |
+| 18 R3 | 追加                                           |
 
 </details>
 
@@ -724,21 +783,23 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 `.start()` 関数は、任意の *settings* オブジェクト引数に設定したプロパティを使用して、<!-- REF #WebServerClass.start().Summary -->対象の Webサーバーを開始させます<!-- END REF -->。
 
-プロジェクトの設定ファイルに定義されているデフォルトの設定、または `WEB SET OPTION` コマンドで定義された設定 (ホストデータベースのみ) を使用して、Webサーバーは開始されます。しかし、*settings* 引数を渡せば、Webサーバーセッションにおいてカスタマイズされた設定を定義することができます。しかし、*settings* 引数を渡せば、Webサーバーセッションにおいてカスタマイズされた設定を定義することができます。
+プロジェクトの設定ファイルに定義されているデフォルトの設定、または `WEB SET OPTION` コマンドで定義された設定 (ホストデータベースのみ) を使用して、Webサーバーは開始されます。しかし、*settings* 引数を渡せば、Webサーバーセッションにおいてカスタマイズされた設定を定義することができます。
 
 [Web Server オブジェクト](../commands/web-server) の設定は、読み取り専用プロパティ ([.isRunning](#isrunning), [.name](#name)、 [.openSSLVersion](#opensslversion)、 [.perfectForwardSecrecy](#perfectforwardsecrecy)、および [.sessionCookieName](#sessioncookiename)) を除いて、すべてカスタマイズ可能です。
 
 :::note
 
-クォータは、*settings* 引数の`quotas` プロパティを使用して設定できるほか、メインWeb サーバーに対しては、[`HTTPQuotas.json`](../WebServer/quotas.md) ファイルを使用することで設定することもできます。 `settings.quotas` が渡された場合、**HTTPQuotas.json** は無視されます。 `settings.quotas` が渡された場合、**HTTPQuotas.json** は無視されます。
+クォータは、*settings* 引数の`quotas` プロパティを使用して設定できるほか、メインWeb サーバーに対しては、[`HTTPQuotas.json`](../WebServer/quotas.md) ファイルを使用することで設定することもできます。 `settings.quotas` が渡された場合、**HTTPQuotas.json** は無視されます。
 
 :::
 
-カスタマイズされた設定は [`.stop()`](#stop) が呼び出されたときにリセットされます。
+You can configure the [MCP server](../WebServer/mcp-server.md) via the [`mcp`](#mcp) property in the *settings* parameter.
+
+Customized session settings will be reset when the [`.stop()`](#stop) function is called, except the `mcp` settings, which are kept.
 
 #### 返されるオブジェクト
 
-関数は Webサーバーの開始ステータスを表すオブジェクトを返します。このオブジェクトには、次のプロパティが格納されることがあります: このオブジェクトには、次のプロパティが格納されることがあります:
+関数は Webサーバーの開始ステータスを表すオブジェクトを返します。このオブジェクトには、次のプロパティが格納されることがあります:
 
 | プロパティ   |                                                                                             | 型          | 説明                                                      |
 | ------- | ------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------- |
@@ -771,6 +832,15 @@ Webサーバーがスケーラブルセッションを使用している場合�
  End if
 ```
 
+#### 例題 2
+
+The following example starts the web server with the MCP server enabled:
+
+```4d
+var $webServer:=WEB Server
+var $result:=$webServer.start({mcp: {enabled: True; instructions: "Use describeModel to learn the data model."}})
+```
+
 <!-- END REF -->
 
 <!-- REF WebServerClass.stop().Desc -->
@@ -800,7 +870,7 @@ Webサーバーがスケーラブルセッションを使用している場合�
 
 `.stop()` 関数は、<!-- REF #WebServerClass.stop().Summary -->対象の Webサーバーを停止します<!-- END REF -->。
 
-Webサーバーが開始されている場合は、処理中のリクエストが完了次第、すべての Web接続と Webプロセスが閉じられます。 Webサーバーが開始されていなかった場合、関数はなにもしません。 Webサーバーが開始されていなかった場合、関数はなにもしません。
+Webサーバーが開始されている場合は、処理中のリクエストが完了次第、すべての Web接続と Webプロセスが閉じられます。 Webサーバーが開始されていなかった場合、関数はなにもしません。
 
 > この関数は、[`.start()`](#start) 関数の *settings* 引数を使用してセッションに対して定義したカスタマイズされた Web設定があった場合、それらをリセットします。
 

@@ -3,6 +3,20 @@ id: updates
 title: Notas de lançamento
 ---
 
+## 4D 21 R6
+
+Leia [**O que há de novo no 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D 21 R6.
+
+#### Destaques
+
+- Novo [servidor MCP](../WebServer/mcp-server.md) nativo no 4D Web Server. Clientes de IA podem chamar funções [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function) e [ferramentas CRUD integradas](../WebServer/mcp-server.md#built-in-crud-tools), com os mesmos [papéis e privilégios](../WebServer/mcp-server.md#permissions) que as requisições REST. O servidor é configurado com [`WebServer.mcp`](../API/WebServerClass.md#mcp), suporta Fine-Grained Tokens e [OAuth 2.1](../WebServer/mcp-server.md#oauth-21-mode) opcional, e pode ser usado com o [Claude Desktop bundle](../WebServer/mcp-server.md#claude-desktop-bundle).
+- Novos recursos de linguagem e API para MCP: o comando [`MCP`](../commands/mcp) e a classe [`4D.MCPContext`](../API/MCPContextClass.md), além de novas funções da classe DataStore para Fine-Grained Tokens ([`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken), [`ds.listFineGrainedTokens()`](../API/DataStoreClass.md#listfinegrainedtokens), [`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken)), autenticação de sessão ([`mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated)) e concessões OAuth ([`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant), [`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants), [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant)).
+
+#### Mudanças de comportamento
+
+- [Herança de permissões](../ORDA/privileges.md#inherited-permissions): uma permissão de função agora herda cada ação que não lista de seu singleton ou dataclass, depois do datastore, e uma permissão **promote** nunca concede **execute**. Anteriormente, uma permissão de função singleton que definia apenas **promote** recorria à permissão **execute** do datastore, o que podia abrir uma função restrita para toda sessão autorizada a executar no datastore (por exemplo via REST). Para manter um privilégio capaz de chamar uma função promovida, liste-o na permissão **execute** da função.
+- O live checker e o compilador agora geram [avisos](../Project/compiler.md#warnings) em comentários de função: uma função de classe ou construtor de classe que possui um bloco de comentário acima de sua declaração recebe um aviso para cada parâmetro sem um comentário $name:, e para tags de comportamento MCP contraditórias.
+
 ## 4D 21 R5
 
 Leia [**O que há de novo no 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-r5/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D 21 R5.
@@ -24,7 +38,8 @@ Leia [**O que há de novo no 4D 21 R5**](https://blog.4d.com/whats-new-in-4d-21-
 - Support of ["System rounded" border line style](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) property for [inputs](../FormObjects/input_overview.md), compliant with macOS *Liquid glass* design. Also supported by [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) and [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style) commands.
 - New ["Border color" property](../FormObjects/properties_BackgroundAndBorder.md#border-color) available for most form objects. [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) and [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) commands support a new *borderColor* parameter.
 - [New **Code editor** preference](../Preferences/methods.md#code-editor) to use automatically the 4D code editor or VS Code when creating or opening 4D methods and classes.
-- [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=21_R5): lista de todos os bugs corrigidos em 4D 21 R5.
+- [Novo componente **4D Embedding Studio**](../embedding-studio/overview.md) que ajuda você a criar e gerenciar embeddings vetoriais dentro de suas entities.
+- [**Lista de erros corrigida**](https://developer.4d.com/FixedBugsList/versions/21_R5): lista de todos os bugs corrigidos em 4D 21 R5.
 
 #### Mudanças de comportamento
 
@@ -43,14 +58,14 @@ Leia [**O que há de novo no 4D v21 R4**](https://blog.4d.com/whats-new-in-4d-21
 #### Destaques
 
 - AI: On macOS, end users can enhance or summarize texts thanks to the Apple Intelligence **Writing Tools**, available as a [property](../FormObjects/properties_Entry.md#writing-tools) and a [standard action](../Desktop/standard-actions) for [4D Write Pro](../FormObjects/writeProArea_overview.md) and [input](../FormObjects/input_overview.md) form objects.
-- Enhanced [support of client/server disconnections](../Desktop/clientServer.md#management-of-unreachable-peer) with QUIC network layer: new [`QUIC session timeout`](../commands/set-database-parameter#quick-session-timeout-135) database parameter, new [`unreachableSince` session.info](../API/SessionClass.md#info) property.
+- Enhanced [support of client/server disconnections](../Desktop/clientServer.md#management-of-unreachable-peer) with QUIC network layer: new [`QUIC session timeout`](../commands/set-database-parameter#quic-session-timeout-135) database parameter, new [`unreachableSince` session.info](../API/SessionClass.md#info) property.
 - Multi-level list style sheets are now [supported in 4D Write Pro Interface](../WritePro/writeprointerface#multi-level-list-style-sheets), allowing users to create and manage structured multi-level lists directly from the toolbar and sidebar.
 - New [`defer`](../commands/defer) command to declare some code to be always executed at method or function exit; new [`Deferred formulas`](../commands/deferred-formulas) command to get the list of deferred formulas.
 - New session [`.quotas` property](../API/SessionClass.md#quotas) to configure REST thresholds for sessions.
 - New [`4D.QuotaManager`](../API/QuotaManagerClass.md) class to handle threshold objects for protecting the server.
 - New [`$entityset/$release`](../REST/$entityset.md#entitysetrelease) REST request to delete entity sets from server cache.
 - Improved session information in the 4D Server Administration window in a new [**Sessions**](../ServerWindow/sessions.md) page (formerly **Users**).
-- [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=21_R4): lista de todos os bugs corrigidos em 4D 21 R4.
+- [**Lista de erros corrigida**](https://developer.4d.com/FixedBugsList/versions/21_R4): lista de todos os bugs corrigidos em 4D 21 R4.
 
 #### Mudanças de comportamento
 
@@ -73,7 +88,7 @@ Leia [**O que há de novo no 4D v21 R3**](https://blog.4d.com/whats-new-in-4d-21
 - Support of [`server` keyword](../Concepts/classes.md#server) for ORDA data model functions and shared/session singleton functions.
 - New [printing renderer](../FormEditor/forms.md#print-rendering-engine) for forms on Liquid glass and Fluent UI interfaces. New compatibility options to [enable the renderer on Classic interfaces](../FormEditor/forms.md#legacy-print-renderer).
 - Dependencies: support of [components stored on GitLab repositories](../Project/components.md#configuring-a-gitlab-repository).
-- [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=21_R3): lista de todos os bugs corrigidos em 4D 21 R3.
+- [**Lista de erros corrigida**](https://developer.4d.com/FixedBugsList/versions/21_R3): lista de todos os bugs corrigidos em 4D 21 R3.
 
 #### Support of Liquid glass on macOS
 
@@ -102,7 +117,7 @@ Leia [**O que há de novo no 4D v21 R2**](https://blog.4d.com/whats-new-in-4d-21
 - You can [customize the icons of your components](../Extensions/develop-components.md#custom-icon).
 - 4D AIKit component: new [File API](../aikit/Classes/OpenAIFilesAPI.md) class to implement **file upload** features.
 - [**Find in Design**](../Project/search-replace.md#search-in-components) and [**Replace in content**](../Project/search-replace.md#replace-in-content) features can now support editable components.
-- [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=21_R2): lista de todos os bugs corrigidos em 4D 21 R2.
+- [**Lista de erros corrigida**](https://developer.4d.com/FixedBugsList/versions/21_R2): lista de todos os bugs corrigidos em 4D 21 R2.
 
 #### Prévia do desenvolvedor
 
@@ -124,12 +139,11 @@ Leia [**O que há de novo no 4D v21 R2**](https://blog.4d.com/whats-new-in-4d-21
 | ICU             | 77.1                   | 21               | This upgrade forces an automatic rebuild of alphanumeric, text and object indexes.                                                 |
 | libldap         | 2.6.10 | 21               |                                                                                                                                                    |
 | libsasl         | 2.1.28 | 20               |                                                                                                                                                    |
-| Liblsquic       | 4.2.0  | 20 R10           | Usado para QUIC                                                                                                                                    |
-| Libuv           | 1.53.0 | **21 R6**            | Usado para QUIC                                                                                                                                    |
+| Libuv           | 1.53.0 | 21 R5            | Usado para QUIC                                                                                                                                    |
 | libZip          | 1.11.4 | 21               | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                                                               |
 | LZMA            | 5.8.1  | 21               |                                                                                                                                                    |
-| ngtcp2          | 1.24.0 | 21 R4            | Usado para QUIC                                                                                                                                    |
-| OpenSSL         | 4.0.3  | **21 R6**        |                                                                                                                                                    |
+| ngtcp2          | 1.26.0 | **21 R6**            | Usado para QUIC                                                                                                                                    |
+| OpenSSL         | 4.0.3  | 21 R5        |                                                                                                                                                    |
 | PDFWriter       | 4.7.0  | 21               | Used for [`WP Export document`](../WritePro/commands/wp-export-document.md) and [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 | SpreadJS        | 18.2.0 | 21 R2            | Veja [este post de blog](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) para uma visão geral dos novos recursos                           |
 | webKit          | WKWebView                              | 19               |                                                                                                                                                    |

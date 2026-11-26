@@ -391,6 +391,8 @@ Si les caractères saisis correspondent à différents types d'objets, la liste 
 
 > Pour des raisons pratiques, vous pouvez désactiver l'affichage automatique de la liste des suggestions pour les **constantes**, les **variables (locales ou interprocess) et attributs d'objets**, les **tables** et/ou les **prototypes**. Ces options se trouvent dans **Préférences** > **Méthodes** > **Options**
 
+Lorsqu'une fonction ou un constructeur de classe proposé est documenté par un [bloc de commentaires situé au-dessus de sa déclaration](../Concepts/comments.md#syntax-description), sa description et les commentaires relatifs à ses paramètres s'affichent avec sa signature dans les détails de la suggestion.
+
 #### Noms de propriétés d'objets
 
 4D affiche automatiquement des suggestions sensibles à la casse de tous les noms de propriétés d'objet valides dans le code 4D lorsque vous :
@@ -539,6 +541,25 @@ La [barre d'état](#status-bar) fournit également des informations contextuelle
     ![](../assets/en/code-editor/help-tip.png)
 
 - Vous pouvez également créer un **fichier de documentation dédié** nommé `<MethodName>MethodName<MethodName>.md` dans le dossier `<package>package<package>/documentation`. Voir [Afficher la documentation dans l'éditeur de code](../Project/documentation.md#viewing-documentation-in-the-code-editor)
+
+- **Commentaires de fonctions de classe et de constructeurs** : lorsque vous appelez une fonction de classe ou un constructeur (`cs.MyClass.new()`), l'info-bulle et l'aide affichent sa signature ainsi que le [bloc de commentaires situé juste au-dessus de sa déclaration](../Concepts/comments.md#syntax-description) : les lignes de description, puis les lignes de paramètres `$name:`. `MCP:` lines are not displayed. This applies to project classes, shared and singleton classes, and component classes, and works the same in VS Code.
+
+  - The text is displayed as plain text: Markdown markers are shown as written.
+  - Only the saved code is used: an edited comment is displayed once the class is saved.
+  - If there is no comment block right above the declaration (for example, if a blank line separates them), only the signature is displayed.
+
+  For example, with the following class function:
+
+  ```4d
+  // Class: Invoice
+
+  // Returns the price with taxes
+  // $rate: tax rate to apply (20 for 20%)
+  Function priceWithTaxes($rate : Real) : Real
+  	return This.price*(1+($rate/100))
+  ```
+
+  typing `$invoice.priceWithTaxes(` displays "Returns the price with taxes" and "$rate: tax rate to apply (20 for 20%)" below the signature.
 
 ## Commenter / Ne pas commenter
 

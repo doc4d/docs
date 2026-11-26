@@ -51,7 +51,7 @@ Tanto la interfaz de la cinta de opciones como la de la barra de herramientas ag
 
 Los siguientes eventos formulario están disponibles en la Lista de propiedades de las áreas 4D View Pro.
 
-Algunos de los eventos son eventos formulario estándar (disponibles para todos los objetos activos) y otros son eventos formulario específicos de 4D View Pro. Algunos de los eventos son eventos formulario estándar (disponibles para todos los objetos activos) y otros son eventos formulario específicos de 4D View Pro. La siguiente tabla indica los eventos estándar y los eventos específicos o los que ofrecen información adicional a las áreas 4D View Pro:
+Algunos de los eventos son eventos formulario estándar (disponibles para todos los objetos activos) y otros son eventos formulario específicos de 4D View Pro. Algunos eventos de formulario estándar ofrecen información ampliada en el objeto devuelto por el comando [`FORM Event`](https://doc.4d.com/4dv20/help/command/en/page1606.html) cuando se generan para áreas 4D View Pro. La siguiente tabla indica los eventos estándar y los eventos específicos o los que ofrecen información adicional a las áreas 4D View Pro:
 
 | Evento 4D estándar                              | Eventos 4D View Pro específicos y extendidos          |
 | ----------------------------------------------- | ----------------------------------------------------- |
@@ -221,7 +221,7 @@ Además de los caracteres y códigos especiales descritos en las secciones anter
 
 | Caracter               | Descripción                                                                                                                 | Ejemplo                                      |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| + y -                  | Signos más y menos                                                                                                          | ### + ### = ###,##\\#                       |
+| + y -                  | Signos más y menos                                                                                                          | ### + ### = ###,##\#                         |
 | ( ) | Paréntesis izquierdo y derecho                                                                                              | (-###.##) |
 | :      | Dos puntos                                                                                                                  | hh:mm:ss     |
 | ^                      | Circunflejo                                                                                                                 | #\^#                                        |

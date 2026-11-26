@@ -31,6 +31,24 @@ Sous Windows, le concept de "choix recommandé" n'est pas pris en charge : seul 
 
 ---
 
+## Afficher la formule source avec un symbole
+
+Affiche le texte source des formules sous forme de symboles lorsque les expressions sont affichées comme références.
+
+#### Grammaire JSON
+
+| Nom                    | Type de données | Valeurs possibles                           |
+| ---------------------- | --------------- | ------------------------------------------- |
+| displayFormulaAsSymbol | boolean         | true (par défaut), false |
+
+#### Objets pris en charge
+
+[4D Write Pro area](writeProArea_overview.md)
+
+#### Commandes
+
+WP Get view properties - WP SET VIEW PROPERTIES
+
 ## Cacher rectangle de focus
 
 A l'exécution, un champ ou toute zone saisissable est délimité par un rectangle de sélection lorsqu'il a le focus (via la touche Tab ou un simple clic). Vous pouvez masquer ce rectangle en activant cette propriété. Masquer le rectangle de focus peut être utile dans le cas d'interfaces spécifiques.
@@ -115,7 +133,7 @@ Définit la résolution d'écran pour le contenu de la zone 4D Write Pro. Par d�
 
 ---
 
-## Afficher l'arrière-plan
+## Montrer le fond les éléments ancrés
 
 Affiche/masque les images d'arrière-plan et la couleur d'arrière-plan.
 
@@ -130,6 +148,24 @@ Affiche/masque les images d'arrière-plan et la couleur d'arrière-plan.
 [4D Write Pro area](writeProArea_overview.md)
 
 ---
+
+## Montrer les images vides ou non prises en charge
+
+Affiche/masque un rectangle noir pour les images qui ne peuvent pas être chargées ou générées (images vides ou images dans un format non pris en charge).
+
+#### Grammaire JSON
+
+| Nom             | Type de données | Valeurs possibles                           |
+| --------------- | --------------- | ------------------------------------------- |
+| showEmptyImages | boolean         | true (par défaut), false |
+
+#### Objets pris en charge
+
+[4D Write Pro area](writeProArea_overview.md)
+
+#### Commandes
+
+WP Get view properties - WP SET VIEW PROPERTIES
 
 ## Afficher les pieds de page
 
@@ -297,7 +333,7 @@ Lorsque des onglets sont affichés avec une direction personnalisée sous Window
 
 | Nom             | Type de données | Valeurs possibles |
 | --------------- | --------------- | ----------------- |
-| labelsPlacement | boolean         | "top", "bottom"   |
+| labelsPlacement | text            | "top", "bottom"   |
 
 #### Objets pris en charge
 

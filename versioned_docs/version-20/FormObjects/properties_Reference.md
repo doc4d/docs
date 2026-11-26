@@ -67,7 +67,7 @@ You will find in this page a comprehensive list of all object properties sorted 
 |[`deletableInList`](properties_Subform.md#allow-deletion)|Specifies if the user can delete subrecords in a list subform|true, false|
 |[`detailForm`](properties_ListBox.md#detail-form-name) (list box)<br/>[`detailForm`](properties_Subform.md#detail-form) (subform)|Associates a detail form with a list subform.|Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
 |[`display`](properties_Display.md#not-rendered)|The object is drawn or not on the form.|true, false|
-|[`displayFormulaAsSymbol`](properties_Display.md#display-formula-source-as-symbol)|Displays source text of formulas as symbols.|true, false|
+|[`displayFormulaAsSymbol`](properties_Appearance.md#display-formula-source-as-symbol)|Displays source text of formulas as symbols.|true, false|
 |[`doubleClickInEmptyAreaAction`](properties_Subform.md#double-click-on-empty-row)|Action to perform in case of a double-click on an empty line of a list subform.|"addSubrecord" or "" to do nothing|
 |[`doubleClickInRowAction`](properties_ListBox.md#double-click-on-row) (list box)<br/>[`doubleClickInRowAction`](properties_Subform.md#double-click-on-row) (subform)|Action to perform in case of a double-click on a record. |"editSubrecord", "displaySubrecord"|
 |[`dpi`](properties_Appearance.md#resolution)|Screen resolution for the 4D Write Pro area contents.|0=automatic, 72, 96|
@@ -167,7 +167,8 @@ You will find in this page a comprehensive list of all object properties sorted 
 |[`shortcutKey`](properties_Entry.md#shortcut)|The letter or name of a special meaning key.|"a", "b",... or "[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"|
 |[`shortcutShift`](properties_Entry.md#shortcut)	|Designates the Shift key	|true, false|
 |[`showBackground`](properties_Appearance.md#show-background-and-anchored-elements)| Displays or hides background contents. |true, false|   
-|[`showEmptyImages`](properties_Appearance.md#show-empty-or-unsupported-images)|Displays/hides a black rectangle for empty images|true, false||[`showFooters`](properties_Footers.md#display-footers)|Displays or hides column footers. |true, false|
+|[`showEmptyImages`](properties_Appearance.md#show-empty-or-unsupported-images)|Displays/hides a black rectangle for empty images|true, false|   
+|[`showFooters`](properties_Footers.md#display-footers)|Displays or hides column footers. |true, false|
 |[`showGraduations`](properties_Scale.md#display-graduation)|Displays/Hides the graduations next to the labels. |true, false|
 |[`showHeaders`](properties_Headers.md#display-headers)|Displays or hides column headers. |true, false|
 |[`showHiddenChars`](properties_Appearance.md#show-hidden-characters)|Displays/hides invisible characters.|true, false|

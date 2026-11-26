@@ -7,7 +7,7 @@ title: ルーラー
 
 ![](../assets/en/FormObjects/indicator_ruler.png)
 
-[割り当てられた変数](properties_Object.md#変数あるいは式) の値を入力エリア (フィールドまたは変数) に代入して格納したり、逆にオブジェクトの現在値を設定することもできます。
+[割り当てられた変数](properties_Object.md#variable-or-expression) の値を入力エリア (フィールドまたは変数) に代入して格納したり、逆にオブジェクトの現在値を設定することもできます。
 
 詳細については [インジケーターの使用](progressIndicator.md#インジケーターの使用) を参照ください。
 
@@ -15,7 +15,7 @@ title: ルーラー
 
 [タイプ](properties_Object.md#タイプ) -
 [オブジェクト名](properties_Object.md#オブジェクト名) -
-[変数あるいは式](properties_Object.md#変数あるいは式) -
+[変数あるいは式](properties_Object.md#variable-or-expression) -
 [式の型](properties_Object.md#式の型式タイプ) -
 [CSSクラス](properties_Object.md#cssクラス) -
 [最小](properties_Scale.md#最小) -
@@ -35,7 +35,10 @@ title: ルーラー
 [入力可](properties_Entry.md#入力可) -
 [数値フォーマット](properties_Display.md#数値フォーマット) -
 [表示状態](properties_Display.md#表示状態) -
-[境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル) -
+[境界線カラー](./properties_BackgroundAndBorder.md#border-color) -
+[境界線スタイル](properties_BackgroundAndBorder.md#border-line-style) -
+[フォントカラー](properties_Text.md#フォントカラー) -
+[フォントサイズ](properties_Text.md#フォントサイズ) -
 [太字](properties_Text.md#太字) -
 [ヘルプTips](properties_Help.md#ヘルプtips) -
 [オブジェクトメソッド実行](properties_Action.md#オブジェクトメソッド実行)

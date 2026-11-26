@@ -179,7 +179,6 @@ Les groupes sont hiérarchisés afin que les privilèges soient correctement aff
 - Le groupe Comptabilité contient des opérateurs de saisie mais aussi les utilisateurs des groupes Dir. finance et donc Direction générale. Super_Utilisateur et Administrateur
   Super_Utilisateur et Administrateur
   ![](../assets/en/Users/schema3.png)
-  ![](../assets/en/Users/schema3.png)
 
 Vous pouvez ensuite décider des privilèges affectés à chaque groupe suivant le niveau de responsabilité des utilisateurs qu’il contient.
 
@@ -198,7 +197,7 @@ Ces accès sont définis dans la boîte de dialogue Paramètres. L'exemple suiva
 
 ![](../assets/en/Users/Access1.png)
 
-Vous utilisez également des groupes pour [distribuer les licences disponibles](#assigning-a-group-to-a-plug-in-or-to-a-server). Cette distribution est définie dans l'éditeur Groupes.
+Vous utilisez également des groupes pour [distribuer les licences disponibles](#assigning-a-license-to-a-group). Cette distribution est définie dans l'éditeur Groupes.
 
 ## Fichier directory.json
 

@@ -167,6 +167,8 @@ If the function is declared in a [shared class](#shared-classes), you can use th
 
 In the context of a client/server application, the `local` or `server` keyword allows you to specify on which machine the function must be executed. These keywords can only be used with ORDA data model functions and shared/session singleton functions. For more information, refer to the [local and server functions](#local-and-server) paragraph below. 
 
+In ORDA data model classes and singleton classes, the [`exposed`](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) keyword allows a function to be called by REST requests, and the `exposed mcp Function` declaration publishes the function as a tool of the [MCP server](../WebServer/mcp-server.md). The `mcp` keyword is supported in the DataStore class, DataClass and Entity classes, and shared singleton classes. A function declared with `mcp` but without `exposed` is not published. For more information, refer to [`exposed mcp Function`](../ORDA/ordaClasses.md#exposed-mcp-function).
+
 
 The function name must be compliant with [object naming rules](Concepts/identifiers.md#object-properties).
 
@@ -609,6 +611,7 @@ Class constructor ($side : Integer)
  Function getArea() -> $area : Integer
   $area:=This.height*This.width
 ```
+
 
 
 ## Class function commands

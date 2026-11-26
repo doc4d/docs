@@ -41,7 +41,7 @@ Dado que un hilo se maneja de forma independiente a partir del método del proce
 
 La propiedad "seguridad de hilo" de cada elemento depende del elemento en sí:
 
-- Comandos 4D: hilo seguro es una propiedad interna. En la documentación de 4D, los comandos hilo seguro se identifican con el icono ![](../assets/en/Develop/thread-safe.png). También puede utilizar el comando [`Nombre del comando`](../commands/command-name) para saber si un comando es hilo seguro. Gran parte de los comandos 4D pueden ejecutarse en modo apropiativo.
+- Comandos 4D: hilo seguro es una propiedad interna. The 4D documentation indicates whether each command is thread-safe or not in the Properties section.  También puede utilizar el comando [`Nombre del comando`](../commands/command-name) para saber si un comando es hilo seguro. Gran parte de los comandos 4D pueden ejecutarse en modo apropiativo.
 - Métodos de proyecto: las condiciones para seguridad de hilo se listan en [este párrafo](#writing-a-thread-safe-method).
 
 Básicamente, el código que se ejecuta en hilos apropiativos no puede llamar a las partes con las interacciones externas, tal como el código plug-in o las variables interproceso. Los accesos a los datos, sin embargo, son permitidos desde el servidor de datos 4D que soporta la ejecución apropiativa.
@@ -265,7 +265,7 @@ El uso de parámetros de tipo DocRef (referencia de documento abierto, utilizada
 
 En algunos casos, puede que prefiera que la verificación "thread-safety" de los comandos no se aplique a algunas partes del código, como por ejemplo, cuando tiene comandos no hilo seguro que sabe que nunca se van a llamar.
 
-Para hacer esto, debe rodear el código a excluir del comando hilo seguro utilizando las directivas específicas `%T-` y `%T+ como comentarios. El comentario `//%T-`desactiva la verificación hilo seguro y el comentario`//%T+\\\\\` la reactiva:
+Para hacer esto, debe rodear el código a excluir del comando hilo seguro utilizando las directivas específicas `%T-` y `%T+ como comentarios. El comentario `//%T-`desactiva la verificación hilo seguro y el comentario`//%T+\\\\` la reactiva:
 
 ```4d
   // %T- para deshabilitar la verificación hilo seguro

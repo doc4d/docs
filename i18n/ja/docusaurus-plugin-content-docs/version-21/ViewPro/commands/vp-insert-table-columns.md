@@ -22,7 +22,7 @@ title: VP INSERT TABLE COLUMNS
 | 引数          | 型       |    | 説明                                                   |
 | ----------- | ------- | -- | ---------------------------------------------------- |
 | vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                              |
-| tableName   | Text    | -> | Table name                                           |
+| tableName   | Text    | -> | 表組みの名称                                               |
 | column      | Integer | -> | 列の挿入場所を指定する表組み内のインデックス                               |
 | count       | Integer | -> | 挿入する列の数 (>0)                      |
 | insertAfter | Integer | -> | `vk table insert before` または `vk table insert after` |
@@ -44,7 +44,7 @@ title: VP INSERT TABLE COLUMNS
 | `vk table insert before` | 0 | *column* の前に列を挿入します (省略時のデフォルト) |
 | `vk table insert after`  | 1 | *column* の後に列を挿入します                                |
 
-このコマンドは、シート内ではなく、*tableName* の表組みに列を挿入します。したがって、シートの総列数は、このコマンドの影響を受けません。表組みより右側にデータがある場合は、挿入された列の数に応じて自動的に右に移動します。したがって、シートの総列数は、このコマンドの影響を受けません。表組みより右側にデータがある場合は、挿入された列の数に応じて自動的に右に移動します。
+このコマンドは、シート内ではなく、*tableName* の表組みに列を挿入します。したがって、シートの総列数は、このコマンドの影響を受けません。表組みより右側にデータがある場合は、挿入された列の数に応じて自動的に右に移動します。
 
 *tableName* の表組みが存在しない場合、あるいはシートに十分なスペースがない場合は、何も起こりません。
 

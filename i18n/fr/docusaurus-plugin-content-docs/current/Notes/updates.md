@@ -3,6 +3,20 @@ id: updates
 title: Release Notes
 ---
 
+## 4D 21 R6
+
+Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/), the blog post that lists all new features and enhancements in 4D 21 R6.
+
+#### Points forts
+
+- New native [MCP server](../WebServer/mcp-server.md) in the 4D Web Server. AI clients can call [`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function) functions and [built-in CRUD tools](../WebServer/mcp-server.md#built-in-crud-tools), with the same [roles and privileges](../WebServer/mcp-server.md#permissions) as REST requests. The server is configured with [`WebServer.mcp`](../API/WebServerClass.md#mcp), supports Fine-Grained Tokens and optional [OAuth 2.1](../WebServer/mcp-server.md#oauth-21-mode), and can be used with the [Claude Desktop bundle](../WebServer/mcp-server.md#claude-desktop-bundle).
+- New language and API features for MCP: the [`MCP`](../commands/mcp) command and [`4D.MCPContext`](../API/MCPContextClass.md) class, plus new DataStore class functions for Fine-Grained Tokens ([`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken), [`ds.listFineGrainedTokens()`](../API/DataStoreClass.md#listfinegrainedtokens), [`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken)), session authentication ([`mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated)), and OAuth grants ([`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant), [`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants), [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant)).
+
+#### Changements de comportement
+
+- [Permission inheritance](../ORDA/privileges.md#inherited-permissions): a function permission now inherits each action it does not list from its singleton or dataclass, then from the datastore, and a **promote** permission never grants **execute**. Previously, a singleton function permission that only defined **promote** fell back to the datastore **execute** permission, which could open a restricted function to every session allowed to execute on the datastore (for example through REST). To keep a privilege able to call a promoted function, list it in the function's **execute** permission.
+- The live checker and the compiler now generate [warnings](../Project/compiler.md#warnings) on function comments: a class function or class constructor that has a comment block above its declaration gets a warning for each parameter without a $name: comment, and for contradictory MCP behavior tags.
+
 ## 4D 21 R5
 
 Lisez [**Les nouveautés de 4D 21 R5**](https://blog.4d.com/fr/whats-new-in-4d-21-r5), l'article de blog qui liste toutes les nouvelles fonctionnalités et améliorations de 4D 21 R5.
@@ -12,15 +26,20 @@ Lisez [**Les nouveautés de 4D 21 R5**](https://blog.4d.com/fr/whats-new-in-4d-2
 - Prise en charge de la signature S/MIME des e-mails grâce aux nouvelles propriétés de la classe [`4D.SMTPTransporter`](../API/SMTPTransporterClass.md) : [`.certificate`](../API/SMTPTransporterClass.md#certificate) ou [`.certificateName`](../API/SMTPTransporterClass.md#certificatename) (fourniture du certificat), et [`.certificatePassword`](../API/SMTPTransporterClass.md#certificatepassword).
 - Vous pouvez désormais [compiler un composant directement depuis l'hôte](../Project/compiler.md#compile-components).
 - Prise en charge des formulaires liste par le [**rendu Fluent UI**](../FormEditor/forms.md#fluent-ui-rendering) sous Windows.
+- Champs 4D.Vector : [nouvelle icône spécifique](../Develop/field-properties.md#4dvector-class) et nouveaux [types d'index vectoriels dédiés](../Develop/structure-indexes.md#vector-index).
+- Prise en charge des index vectoriels dans les commandes 4D [`CREATE INDEX`](../commands/create-index) et [`SET INDEX`](../commands/set-index).
+- Nouvelle fonction [dataClass.getIndexes()](../API/DataClassClass.md#getindexes).
+- Nouvelle [propriété `.precision`](../API/VectorClass.md#precision) dans les objets de la classe `4D.Vector`.
 - Accès direct à la [plate-forme 4D Corner](https://corner.4d.com/) depuis le [gestionnaire de dépendances](../Project/components.md#using-4d-corner).
 - Nouvelle propriété [`WebServer.quotas`](../API/WebServerClass.md#quotas) et classe [`4D.QuotaManager`](../API/QuotaManagerClass.md) étendue pour configurer les [quotas du serveur Web](../WebServer/quotas.md).
 - Objets Zone de texte et Zone de saisie : nouvelles propriétés [marge supérieure](../FormObjects/properties_CoordinatesAndSizing.md#top-padding), [marge inférieure](../FormObjects/properties_CoordinatesAndSizing.md#bottom-padding), [marge gauche](../FormObjects/properties_CoordinatesAndSizing.md#left-padding) et [marge droite](../FormObjects/properties_CoordinatesAndSizing.md#right-padding) avec [prise en charge CSS](../FormEditor/createStylesheet.md#attribute-mapping) correspondante. Prise en charge de l'[alignement vertical](../FormObjects/properties_Text.md#vertical-alignment).
 - Nouvelles commandes [`OBJECT SET PADDING`](../commands/object-set-padding) et [`OBJECT Get padding`](../commands/object-get-padding) permettant de gérer les marges intérieures par programmation.
-- New inner border design for [custom buttons](../FormObjects/button_overview.md#custom), [custom check boxes](../FormObjects/checkbox_overview.md#custom) and [custom radio buttons](../FormObjects/radio_overview.md#custom): support of [fill color](../FormObjects/properties_BackgroundAndBorder.md#background-color--fill-color) and [corner radius](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) properties; new [Border width](../FormObjects/properties_BackgroundAndBorder.md#border-width) property.
-- Support of ["System rounded" border line style](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) property for [inputs](../FormObjects/input_overview.md), compliant with macOS *Liquid glass* design. Also supported by [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) and [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style) commands.
-- New ["Border color" property](../FormObjects/properties_BackgroundAndBorder.md#border-color) available for most form objects. [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) and [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) commands support a new *borderColor* parameter.
+- Nouveau design de bordures intérieures pour les [boutons personnalisés](../FormObjects/button_overview.md#custom), les [cases à cocher personnalisées](../FormObjects/checkbox_overview.md#custom) et les [boutons radio personnalisés](../FormObjects/radio_overview.md#custom) : prise en charge des propriétés [couleur de remplissage](../FormObjects/properties_BackgroundAndBorder.md#background-color--fill-color) et [rayon d'arrondi](../FormObjects/properties_BackgroundAndBorder.md#corner-radius) ; nouvelle propriété [Largeur de bordure](../FormObjects/properties_BackgroundAndBorder.md#border-width).
+- Prise en charge de la propriété [style de bordure "Système arrondie"](../FormObjects/properties_BackgroundAndBorder.md#border-line-style) pour les [champs de saisie](../FormObjects/input_overview.md), conforme au design *Liquid glass* de macOS. Également prise en charge par les commandes [`OBJECT SET BORDER STYLE`](../commands/object-set-border-style) et [`OBJECT GET BORDER STYLE`](../commands/object-get-border-style).
+- Nouvelle propriété ["Couleur de la bordure"](../FormObjects/properties_BackgroundAndBorder.md#border-color) disponible pour la plupart des objets de formulaire. Les commandes [`OBJECT SET RGB COLORS`](../commands/object-set-rgb-colors) et [`OBJECT GET RGB COLORS`](../commands/object-get-rgb-colors) prennent désormais en charge un nouveau paramètre *borderColor*.
 - [Nouvelle préférence **Éditeur de code**](../Preferences/methods.md#code-editor) permettant d'utiliser automatiquement l'éditeur de code 4D ou VS Code lors de la création ou l'ouverture de méthodes et de classes 4D.
-- [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R5) : liste de tous les bugs qui ont été corrigés dans 4D 21 R5.
+- [New **4D Embedding Studio** component](../embedding-studio/overview.md) that helps you create and manage vector embeddings within your entities.
+- [**Liste des bugs corrigés**](https://developer.4d.com/FixedBugsList/versions/21_R5) : liste de tous les bugs qui ont été corrigés dans 4D 21 R5.
 
 #### Changements de comportement
 
@@ -39,14 +58,14 @@ Lisez [**Les nouveautés de 4D 21 R4**](https://blog.4d.com/fr/whats-new-in-4d-2
 #### Points forts
 
 - IA : Sous macOS, les utilisateurs finaux peuvent améliorer ou résumer des textes grâce aux **outils d'écriture** d’Apple Intelligence, disponibles sous forme de [propriété](../FormObjects/properties_Entry.md#writing-tools) et d’une [action standard](../Desktop/standard-actions) pour les objets de formulaire [4D Write Pro](../FormObjects/writeProArea_overview.md) et [input](../FormObjects/input_overview.md).
-- Amélioration de la [prise en charge des déconnexions client/serveur](../Desktop/clientServer.md#management-of-unreachable-peer) avec la couche réseau QUIC : nouveau paramètre de base de données [`QUIC session timeout`](../commands/set-database-parameter#quick-session-timeout-135), nouvelle propriété [`unreachableSince` de session.info](../API/SessionClass.md#info).
+- Amélioration de la [prise en charge des déconnexions client/serveur](../Desktop/clientServer.md#management-of-unreachable-peer) avec la couche réseau QUIC : nouveau paramètre de base de données [`QUIC session timeout`](../commands/set-database-parameter#quic-session-timeout-135), nouvelle propriété [`unreachableSince` de session.info](../API/SessionClass.md#info).
 - Les feuilles de style pour listes à plusieurs niveaux sont désormais [prises en charge dans 4D Write Pro Interface](../WritePro/writeprointerface#multi-level-list-style-sheets), ce qui permet aux utilisateurs de créer et de gérer des listes structurées à plusieurs niveaux directement depuis la barre d'outils et la barre latérale.
 - Nouvelle commande [`defer`](../commands/defer) permettant de déclarer du code qui sera toujours exécuté à la sortie d'une méthode ou d'une fonction ; nouvelle commande [`Deferred formulas`](../commands/deferred-formulas) permettant d'obtenir la liste des formules différées.
 - Nouvelle [propriété `.quotas`](../API/SessionClass.md#quotas) permettant de configurer les seuils REST pour les sessions.
 - Nouvelle classe [`4D.QuotaManager`](../API/QuotaManagerClass.md) permettant de gérer des objets définissant des seuils destinés à protéger le serveur.
 - Nouvelle requête REST [`$entityset/$release`](../REST/$entityset.md#entitysetrelease) permettant de supprimer des entity sets du cache du serveur.
 - Informations de session améliorées dans la fenêtre d'administration du serveur 4D dans une nouvelle page [**Sessions**](../ServerWindow/sessions.md) (anciennement **Utilisateurs**).
-- [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R4) : liste de tous les bugs qui ont été corrigés dans 4D 21 R4.
+- [**Liste des bugs corrigés**](https://developer.4d.com/FixedBugsList/versions/21_R4) : liste de tous les bugs qui ont été corrigés dans 4D 21 R4.
 
 #### Changements de comportement
 
@@ -69,7 +88,7 @@ Lisez [**Les nouveautés de 4D 21 R3**](https://blog.4d.com/fr/whats-new-in-4d-2
 - Prise en charge du [mot-clé `server`](../Concepts/classes.md#server) pour les fonctions du modèle de données ORDA et les fonctions singleton partagées/session.
 - Nouveau [moteur de rendu d'impression](../FormEditor/forms.md#print-rendering-engine) pour les formulaires dans les interfaces Liquid Glass et Fluent UI. Nouvelle option de compatibilité permettant d'[activer le moteur de rendu sur les interfaces classiques](../FormEditor/forms.md#legacy-print-renderer).
 - Dépendances : prise en charge des [composants stockés sur les dépôts GitLab](../Project/components.md#configuring-a-gitlab-repository).
-- [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R3) : liste de tous les bugs qui ont été corrigés dans 4D 21 R3.
+- [**Liste des bugs corrigés**](https://developer.4d.com/FixedBugsList/versions/21_R3) : liste de tous les bugs qui ont été corrigés dans 4D 21 R3.
 
 #### Prise en charge de Liquid glass sur macOS
 
@@ -98,7 +117,7 @@ Lisez [**Les nouveautés de 4D 21 R2**](https://blog.4d.com/fr-whats-new-in-4d-2
 - Vous pouvez [personnaliser les icônes de vos composants](../Extensions/develop-components.md#custom-icon).
 - Composant 4D AIKit : nouvelle classe [File API](../aikit/Classes/OpenAIFilesAPI.md) pour implémenter les fonctionnalités de **téléversement de fichiers**.
 - Les fonctions [**Chercher dans le développement**](../Project/search-replace.md#search-in-components) et [**Remplacer dans le contenu**](../Project/search-replace.md#replace-in-content) peuvent maintenant intégrer les composants modifiables.
-- [**Liste des bugs corrigés**](https://bugs.4d.fr/fixedbugslist?version=21_R2) : liste de tous les bugs qui ont été corrigés dans 4D 21 R2.
+- [**Liste des bugs corrigés**](https://developer.4d.com/FixedBugsList/versions/21_R2) : liste de tous les bugs qui ont été corrigés dans 4D 21 R2.
 
 #### Developer Preview
 
@@ -120,12 +139,11 @@ Lisez [**Les nouveautés de 4D 21 R2**](https://blog.4d.com/fr-whats-new-in-4d-2
 | ICU             | 77.1                   | 21                  | Cette mise à jour entraîne une reconstruction automatique des index alphanumériques, textes et objets.                                |
 | libldap         | 2.6.10 | 21                  |                                                                                                                                                       |
 | libsasl         | 2.1.28 | 20                  |                                                                                                                                                       |
-| Liblsquic       | 4.2.0  | 20 R10              | Utilisé pour QUIC                                                                                                                                     |
-| Libuv           | 1.53.0 | **21 R6**           | Utilisé pour QUIC                                                                                                                                     |
+| Libuv           | 1.53.0 | 21 R5               | Utilisé pour QUIC                                                                                                                                     |
 | libZip          | 1.11.4 | 21                  | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                                                            |
 | LZMA            | 5.8.1  | 21                  |                                                                                                                                                       |
-| ngtcp2          | 1.24.0 | 21 R4               | Utilisé pour QUIC                                                                                                                                     |
-| OpenSSL         | 4.0.3  | **21 R6**           |                                                                                                                                                       |
+| ngtcp2          | 1.26.0 | **21 R6**           | Utilisé pour QUIC                                                                                                                                     |
+| OpenSSL         | 4.0.3  | 21 R5               |                                                                                                                                                       |
 | PDFWriter       | 4.7.0  | 21                  | Utilisé pour [`WP Export document`](../WritePro/commands/wp-export-document.md) et [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 | SpreadJS        | 18.2.0 | 21 R2               | Voir [ce blog post](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) pour un aperçu des nouvelles fonctionnalités.             |
 | webKit          | WKWebView                              | 19                  |                                                                                                                                                       |

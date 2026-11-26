@@ -12,7 +12,7 @@ Par défaut, 4D affecte le nom “ColonneN” à chaque variable de colonne. Vou
 > Les list box basées sur des tableaux peuvent être affichées sous forme de [list box hiérarchiques](listbox_overview.md#list-box-hierarchiques), disposant de mécanismes spécifiques.
 
 Avec les list box de type tableau, les valeurs des colonnes (saisie et affichage) sont gérées à l’aide des commandes du langage 4D. Vous pouvez également associer une [énumération](properties_DataSource.md#choice-list) à une colonne afin de contrôler la saisie.
-Par exemple, pour initialiser le contenu d’une colonne, vous pouvez utiliser l’instruction suivante : The values of columns are managed using high-level List box commands (such as [`LISTBOX INSERT ROWS`](../commands/listbox-insert-rows) or [`LISTBOX DELETE ROWS`](../commands/listbox-delete-rows)) as well as array manipulation commands. The values of columns are managed using high-level List box commands (such as [`LISTBOX INSERT ROWS`](../commands/listbox-insert-rows) or [`LISTBOX DELETE ROWS`](../commands/listbox-delete-rows)) as well as array manipulation commands.
+Par exemple, pour initialiser le contenu d’une colonne, vous pouvez utiliser l’instruction suivante : The values of columns are managed using high-level List box commands (such as [`LISTBOX INSERT ROWS`](../commands/listbox-insert-rows) or [`LISTBOX DELETE ROWS`](../commands/listbox-delete-rows)) as well as array manipulation commands.
 
 ```4d
 ARRAY TEXT(varCol;size)
@@ -53,6 +53,14 @@ Lorsque la source de données est une collection, toute modification apportée a
 ```4d
 myCol:=myCol.push("new value") //afficher new value dans la list box
 ```
+
+## Actions standard prises en charge
+
+- [gotoPage](../Desktop-legacy/standard-actions.md#gotopage) : Disponible pour les listbox de type tableau ; voir les [propriétés prises en charge par type de listbox](#supported-properties).
+
+Les actions [addSubrecord](../Desktop-legacy/standard-actions.md#addsubrecord), [deleteSubrecord](../Desktop-legacy/standard-actions.md#deletesubrecord), [displaySubrecord](../Desktop-legacy/standard-actions.md#displaysubrecord) et [editSubrecord](../Desktop-legacy/standard-actions.md#editsubrecord) peuvent avoir une incidence sur les listbox de type sélection, mais elles sont associées à des boutons ou à des commandes de menu, et non à la listbox de type sélection elle-même.
+
+Voir le [tableau de compatibilité des actions standard](../Desktop-legacy/standard-actions.md#supported-form-objects).
 
 ## Propriétés prises en charge
 

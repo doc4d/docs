@@ -10,10 +10,10 @@ title: VP PASTE FROM OBJECT
 |19 R4|Added
 </details>
 
-<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->
+<!-- REF #_method_.VP PASTE FROM OBJECT.Syntax -->
 **VP PASTE FROM OBJECT** ( *rangeObj* : Object ; *dataObject* : Object {; *options* : Integer} )<!-- END REF -->
 
-<!-- REF #_method_.PASTE FROM OBJECT.Params -->
+<!-- REF #_method_.VP PASTE FROM OBJECT.Params -->
 <div class="no-index">
 
 |Parameter|Type||Description|
@@ -26,7 +26,7 @@ title: VP PASTE FROM OBJECT
 
 ## Description
 
-The `VP PASTE FROM OBJECT` command <!-- REF #_method_.PASTE FROM OBJECT.Summary -->pastes the contents, style and formulas stored in *dataObject* to the *rangeObj* object<!-- END REF -->.
+The `VP PASTE FROM OBJECT` command <!-- REF #_method_.VP PASTE FROM OBJECT.Summary -->pastes the contents, style and formulas stored in *dataObject* to the *rangeObj* object<!-- END REF -->.
 
 In *rangeObj*, pass the cell range object where the values, formatting, and/or formula cells will be pasted. If *rangeObj* refers to more than one cell, only the first one is used.
 
@@ -35,7 +35,7 @@ In *dataObject*, pass the object that contains the cell data, formatting, and fo
 In the optional *options* parameter, you can specify what to paste in the cell range. Possible values:
 
 |Constant|Description|
-|---|---|---|
+|---|---|
 |`vk clipboard options all`|Pastes all data objects, including values, formatting, and formulas.|
 |`vk clipboard options formatting`|Pastes only the formatting.|
 |`vk clipboard options formulas`|Pastes only the formulas.|

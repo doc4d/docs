@@ -3,17 +3,17 @@ id: datastores
 title: Utiliser un datastore distant
 ---
 
-Un [datastore](dsMapping.md#datastore) exposé sur une application 4D Server est accessible simultanément via différents clients :
+Un [datastore](dsMapping.md#datastore) exposé dans une application 4D est accessible simultanément via différents clients :
 
-- Les applications 4D distantes utilisant ORDA pour accéder au datastore principal à l’aide de la commande `ds`. A noter que l'application 4D distante peut toujours accéder à la base de données en mode classique. Ces accès sont gérés par le **serveur d'applications 4D**.
-- D'autres applications 4D (4D Remote, 4D Server) ouvrant une session sur le datastore distant via la commande [`Open datastore`](../API/DataStoreClass.md#open-datastore). Ces accès sont transmis par le **serveur HTTP REST**.
-- Les requêtes [4D for iOS ou 4D for Android](https://developer.4d.com/go-mobile/) pour la mise à jour des applications mobiles. Ces accès sont remis par le **serveur HTTP**.
+- Des applications 4D distantes utilisant ORDA pour accéder au datastore principal à l’aide de la commande `ds`. A noter que l'application 4D distante peut toujours accéder à la base de données en mode classique. Ces accès sont gérés par le **serveur d'applications de 4D**.
+- D'autres applications 4D (4D distant, 4D Server) ouvrant une session sur le datastore distant via la commande [`Open datastore`](../API/DataStoreClass.md#open-datastore). Ces accès sont gérés par le **serveur HTTP REST**.
+- Des requêtes [4D pour iOS ou 4D pour Android](https://developer.4d.com/go-mobile/) pour mettre à jour les applications mobiles. Ces accès sont gérés par le **serveur HTTP REST**.
 
 ## Ouverture des sessions
 
-Lorsque vous travaillez avec un datastore distant référencé par des appels à la commande `Open datastore`, la connexion entre les process qui effectuent la requête et le datastore distant est gérée par des sessions.
+Lorsque vous travaillez avec un datastore distant référencé par des appels à la commande `Open datastore`, la connexion entre les process qui effectuent les requêtes et le datastore distant est gérée via des sessions.
 
-Une session est créée sur le datastore distant pour gérer la connexion. Cette session est identifiée à l'aide d'un ID de session interne, associé au `localID` de l'application 4D. Cette session gère automatiquement l'accès aux données, aux entity selections et aux entités.
+Une session est créée sur le datastore distant pour gérer la connexion. Cette session est identifiée à l'aide d'un ID de session interne, associé au `localID` du côté de l'application 4D locale. Cette session gère automatiquement l'accès aux données, aux entity selections et aux entités.
 
 Le `localID` est local à la machine qui se connecte au datastore distant, ce qui signifie que :
 
@@ -60,7 +60,7 @@ Si une demande est envoyée au datastore distant après la fermeture de la sessi
 
 ## Optimisation client/serveur
 
-4D optimise automatiquement les requêtes ORDA qui utilisent des entity selections ou qui chargent des entités dans des configurations client/serveur (datastore accessible à distance à l'aide de `ds` ou de `Open datastore`). Ces optimisations accélèrent l'exécution de votre application 4D en réduisant drastiquement le volume d'informations transmises sur le réseau. Elles incluent :
+4D optimise automatiquement les requêtes ORDA qui utilisent des entity selections ou qui chargent des entités en configurations client/serveur (datastore accessible à distance à l'aide de `ds` ou via `Open datastore`). Ces optimisations accélèrent l'exécution de votre application 4D en réduisant drastiquement le volume d'informations transmises sur le réseau. Elles incluent :
 
 - le **contexte d'optimisation**
 - le **Cache ORDA**
@@ -85,7 +85,7 @@ Le contexte d'optimisation est fondé sur ce qui suit :
   - [`entitySelection.slice()`](../API/EntitySelectionClass.md#slice)
   - [`entitySelection.drop()`](../API/EntitySelectionClass.md#drop)
 
-- Un contexte d'optimisation existant peut être passé en tant que propriété à une autre sélection d'entité de la même dataclass, ce qui permet d'éviter la phase d'apprentissage et d'accélérer l'application (voir [Utilisation de la propriété context](#reusing-the-context-property) ci-dessous).
+- Un contexte d'optimisation existant peut être passé en tant que propriété à une autre entity selection de la même dataclass, ce qui permet d'éviter la phase d'apprentissage et d'accélérer l'application (voir [Utilisation de la propriété context](#reusing-the-context-property) ci-dessous).
 
 - Vous pouvez créer des contextes d'optimisation manuellement à l'aide de la fonction [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) (voir [Préconfiguration des contextes](#preconfiguring-contexts)).
 
@@ -93,7 +93,7 @@ Le contexte d'optimisation est fondé sur ce qui suit :
 
 :::warning Note de compatibilité
 
-Les contextes gérés dans les connexions établies via [`Open datastore`](../API/DataStoreClass.md#open-datastore) ne peuvent être utilisés qu'entre les versions principales similaires de 4D. Par exemple, une application distante 4D 20.x ne peut utiliser que des contextes d'un datastore 4D Server 20.x.
+Les contextes gérés dans les connexions établies via [`Open datastore`](../API/DataStoreClass.md#open-datastore) peuvent uniquement être utilisés entre des versions principales similaires de 4D. Par exemple, une application distante 4D 20.x ne peut utiliser que des contextes d'un datastore 4D Server 20.x.
 
 :::
 
@@ -125,24 +125,24 @@ Une même propriété de contexte d'optimisation peut être passée à un nombre
 ```4d
  var $sel1; $sel2; $sel3; $sel4; $querysettings; $querysettings2 : Object
  var $data : Collection
- $querysettings:=New object("context" ; "shortList")
- $querysettings2:=New object("context" ; "longList")
-
- $sel1:=ds.Employee.query("lastname = S@" ;$querysettings)
- $data:=extractData($sel1) // Dans la méthode extractData, une optimisation est 
- // déclenchée et associée au contexte "shortList"
-
- $sel2:=ds.Employee.query("lastname = Sm@" ;$querysettings)
- $data:=extractData($sel2) // Dans la méthode extractData l'optimisation associée   
- // au contexte "shortList" est appliquée
-
- $sel3:=ds.Employee.query("lastname = Smith" ;$querysettings2)
- $data:=extractDetailedData($sel3) // Dans la méthode extractDetailedData une 
- // optimisation est déclenchée et associée au contexte "longList"
-
- $sel4:=ds.Employee.query("lastname = Brown" ;$querysettings2)
- $data:=extractDetailedData($sel4) // Dans la méthode extractDetailedData l'optimisation  
- // associée au contexte "longList" est appliquée
+ $querysettings:=New object("context";"shortList")
+ $querysettings2:=New object("context";"longList")
+ 
+ $sel1:=ds.Employee.query("lastname = S@";$querysettings)
+ $data:=extractData($sel1) // dans la méthode extractData un contexte d'optimisation    
+ // est généré et associé au contexte "shortList"
+ 
+ $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
+ $data:=extractData($sel2) // dans la méthode extractData le contexte d'optimisation   
+ // associé au contexte "shortList" est appliqué
+ 
+ $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
+ $data:=extractDetailedData($sel3) // dans la méthode extractDetailedData un contexte d'optimisation  
+ // est généré et associé au contexte "longList"
+ 
+ $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
+ $data:=extractDetailedData($sel4) // dans extractDetailedData  le contexte d'optimisation  
+ // associé au contexte "longList" est appliqué
 ```
 
 #### List box de type entity selection

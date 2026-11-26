@@ -164,6 +164,8 @@ Si les fonctions sont déclarées dans une [classe partagée](#shared-classes), 
 
 Dans le contexte d'une application client/serveur, le mot-clé `local` ou `server` permet de spécifier sur quelle machine la fonction doit être exécutée. Ces mots-clés ne peuvent être utilisés qu'avec les fonctions du modèle de données ORDA et les fonctions singleton partagées/session. Pour plus d'informations, reportez-vous au paragraphe [fonctions locales et serveur](#local-and-server) ci-dessous.
 
+In ORDA data model classes and singleton classes, the [`exposed`](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) keyword allows a function to be called by REST requests, and the `exposed mcp Function` declaration publishes the function as a tool of the [MCP server](../WebServer/mcp-server.md). The `mcp` keyword is supported in the DataStore class, DataClass and Entity classes, and shared singleton classes. A function declared with `mcp` but without `exposed` is not published. For more information, refer to [`exposed mcp Function`](../ORDA/ordaClasses.md#exposed-mcp-function).
+
 Le nom de la fonction doit être conforme aux [règles de nommage des objets](Concepts/identifiers.md#object-properties).
 
 :::note

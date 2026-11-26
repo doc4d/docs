@@ -18,18 +18,18 @@ title: リストボックスのヘッダーとフッター
 
 リストボックスの各列ヘッダー毎に標準のテキストプロパティを設定できます。 設定すると、これらのプロパティの方がリストボックスや列に対する設定よりも優先されます。
 
-さらに、ヘッダー特有のプロパティを設定することができます。さらに、ヘッダー特有のプロパティを設定することができます。[カスタマイズされた並び替え](./listbox_overview.md#ソートの管理) などの用途に、ヘッダーの列タイトルの隣、あるいはタイトルの代わりにアイコンを表示することができます。
+さらに、ヘッダー特有のプロパティを設定することができます。[カスタマイズされた並び替え](./listbox_overview.md#ソートの管理) などの用途に、ヘッダーの列タイトルの隣、あるいはタイトルの代わりにアイコンを表示することができます。
 
 ![](../assets/en/FormObjects/lbHeaderIcon.png)
 
 ランタイムにおいてヘッダーで発生したイベントは、その列のオブジェクトメソッド が受け取ります。
 
-ヘッダーに `OBJECT SET VISIBLE` コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのヘッダーが対象になります。ヘッダーに [`OBJECT SET VISIBLE`](../commands/object-set-visible) コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのヘッダーが対象になります。たとえば、`OBJECT SET VISIBLE(*;"header3";False)` という命令の場合、指定したヘッダーだけではなく、*header3* が属するリストボックスの全ヘッダーを非表示にします。
+ヘッダーに `OBJECT SET VISIBLE` コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのヘッダーが対象になります。たとえば、`OBJECT SET VISIBLE(*;"header3";False)` という命令の場合、指定したヘッダーだけではなく、*header3* が属するリストボックスの全ヘッダーを非表示にします。
 
 ### ヘッダー特有のプロパティ
 
 [オブジェクト名](properties_Object.md#オブジェクト名) -
-[変数あるいは式](properties_Object.md#変数あるいは式) -
+[変数あるいは式](properties_Object.md#variable-or-expression) -
 [タイトル](properties_Object.md#タイトル) -
 [CSSクラス](properties_Object.md#cssクラス) -
 [パス名](properties_TextAndPicture.md#ピクチャーパス名) -
@@ -56,12 +56,12 @@ title: リストボックスのヘッダーとフッター
 
 ランタイムにおいてフッターで発生したイベントは、その列のオブジェクトメソッド が受け取ります。
 
-フッターに `OBJECT SET VISIBLE` コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのフッターが対象になります。フッターに [`OBJECT SET VISIBLE`](../commands/object-set-visible) コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのフッターが対象になります。たとえば、`OBJECT SET VISIBLE(*;"footer3";False)` という命令の場合、指定したフッターだけではなく、*footer3* が属するリストボックスの全フッターを非表示にします。
+フッターに `OBJECT SET VISIBLE` コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのフッターが対象になります。たとえば、`OBJECT SET VISIBLE(*;"footer3";False)` という命令の場合、指定したフッターだけではなく、*footer3* が属するリストボックスの全フッターを非表示にします。
 
 ### フッター特有のプロパティ
 
 [オブジェクト名](properties_Object.md#オブジェクト名) -
-[変数あるいは式](properties_Object.md#変数あるいは式) -
+[変数あるいは式](properties_Object.md#variable-or-expression) -
 [式の型](properties_Object.md#式の型式タイプ) -
 [変数の計算](properties_Object.md#変数の計算) -
 [CSSクラス](properties_Object.md#cssクラス) -
