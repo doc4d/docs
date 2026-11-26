@@ -101,6 +101,32 @@ Vector indexes are not compatible with [transaction processing](../Develop/trans
 :::
 
 
+## Indexes for sorts on related attributes
+
+An ORDA sort on an attribute of a related entity, for example [`orderBy("company.name")`](../API/EntitySelectionClass.md#sorting-on-related-attributes) on employees, uses the indexes when they exist. To make such a sort fast on large entity selections:
+
+- give a standard index (B-Tree, Cluster B-Tree, or Automatic) to the field holding each N-to-1 relation of the path (the foreign key, for example `Employee.companyID`). A composite index whose first field is the foreign key is not used for this.
+- give a standard index to the sorted field of the related table (`Company.name`), or a composite index that starts with this field (`name+city`).
+- for a sort on several fields of the related table (`"company.name, company.city"`), create a composite index of the related table that starts with these fields in the same order (`name+city`, or `name+city+zipCode`).
+
+Keyword and vector indexes are not used for these sorts. Without the required indexes, the sort is sequential. See [Sorting on related attributes](../API/EntitySelectionClass.md#sorting-on-related-attributes) for the full list of conditions.
+
+### Example
+
+You want `ds.Employee.all().orderBy("company.name, company.city")` to use the indexes. You create an index on the foreign key of the Employee table and a composite index on the Company table:
+
+```4d
+ARRAY POINTER($fields; 1)
+$fields{1}:=->[Employee]companyID
+CREATE INDEX([Employee]; $fields; Standard BTree index; "EmployeeCompanyID")
+
+ARRAY POINTER($fields; 2)
+$fields{1}:=->[Company]name
+$fields{2}:=->[Company]city
+CREATE INDEX([Company]; $fields; Standard BTree index; "CompanyNameCity")
+```
+
+
 ## Index List
 
 The ![](../assets/en/Develop/index-list.png) button of the toolbar in the Structure editor displays the Index List window. This window displays the list of all the indexes of the structure, regardless of their type:

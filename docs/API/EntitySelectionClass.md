@@ -1657,6 +1657,7 @@ If the original entity selection and the parameter are not related to the same d
 
 |Release|Changes|
 |---|---|
+|21 R6|Sorts on related attributes use indexes|
 |17|Added|
 
 </details>
@@ -1709,8 +1710,29 @@ If the entity selection attributes contain values of different [types](../Concep
 
 If you pass an invalid attribute path in *pathString* or *pathObject*, the function returns an empty entity selection.
 
+#### Sorting on related attributes
 
-#### Example
+You can sort on an attribute of a related entity by passing its path, for example `"company.name"` or `"company.country.name"`. Such a sort uses the indexes of the database, and is much faster on large entity selections, when all the following conditions are met:
+
+- Every relation of the path is an N-to-1 relation based on the primary key of the related dataclass. The primary key is a single attribute of type Integer, Long Integer, Integer 64 bits, or UUID, and the attribute holding the relation (the foreign key, for example `companyID` for the `company` relation) has the same type.
+- The attribute holding each relation of the path has a [standard index](../Develop/structure-indexes.md#standard-indexes) (B-Tree, Cluster B-Tree, or Automatic). A composite index whose first field is this attribute does not count.
+- The sorted attribute is a storage attribute of the last related dataclass, of type Text, Alpha, Boolean, Integer, Long Integer, Integer 64 bits, Real, Date, Time, or UUID (without the Auto UUID property), and it has a standard index, or it is the first field of a [composite index](../Develop/structure-indexes.md#composite-indexes). Keyword and vector indexes are not used.
+- With several sort levels, all levels are attributes of the same related dataclass, reached through the same path (for example `"company.name, company.city"`), they are all ascending or all descending, and a composite index of this dataclass starts with these attributes in the same order (`name+city` or `name+city+zipCode`, for example).
+
+These sorts are also covered:
+
+- an [alias attribute](../ORDA/ordaClasses.md#alias-attributes-1) whose target is such a path, for example `Alias employerName company.name`,
+- a [computed attribute](../ORDA/ordaClasses.md#computed-attributes-1) whose [`orderBy` function](../ORDA/ordaClasses.md#function-orderby-attributename) returns such a path,
+- the `order by` clause of [`dataClass.query()`](DataClassClass.md#query) and of [`.query()`](#query),
+- the standard sort of an entity selection list box column bound to such a path (for example `This.company.name`),
+- the [`$orderby`](../REST/$orderby.md) REST request,
+- client/server and remote datastores (the indexes of the server are used).
+
+In the other cases, for example a property of an object attribute reached through a relation (`"company.data.city"`), a sort level outside the related dataclass (`"company.name, lastName"`), or levels in different directions, the entities are sorted sequentially, as in previous releases. 4D also keeps the sequential sort when it is faster, for example when the entity selection is small compared to the related dataclasses.
+
+The indexed sort and the sequential sort return exactly the same order: entities with no related entity or with a null related value come first in ascending order and last in descending order.
+
+#### Example 1
 
 
 ```4d
@@ -1730,6 +1752,49 @@ If you pass an invalid attribute path in *pathString* or *pathObject*, the funct
 
  $orderColl.push(New object("propertyPath";"salary"))
  $sortedEntitySelection:=$entitySelection.orderBy($orderColl)
+```
+
+#### Example 2
+
+The Employee dataclass has a `company` N-to-1 relation held by the `companyID` attribute, and the Company dataclass has a `country` N-to-1 relation held by `countryID`. `Employee.companyID`, `Company.countryID`, and `Country.name` have a standard index, and Company has a composite index on `name+city`. You want to sort employees on attributes of their company and of its country:
+
+```4d
+var $employees : cs.EmployeeSelection
+
+// uses the indexes on Employee.companyID and on Company.name+city
+$employees:=ds.Employee.all().orderBy("company.name desc")
+
+// uses the indexes on Employee.companyID, Company.countryID, and Country.name
+$employees:=ds.Employee.all().orderBy("company.country.name")
+
+// two levels on the same related dataclass, same direction: uses the composite index name+city
+$employees:=ds.Employee.all().orderBy([{propertyPath: "company.name"}; {propertyPath: "company.city"}])
+
+// a level outside Company: sequential sort
+$employees:=ds.Employee.all().orderBy("company.name, lastName")
+```
+
+#### Example 3
+
+In the Employee entity class, an alias and a computed attribute give the name of the company. Sorting on them uses the same indexes as `"company.name"`:
+
+```4d
+// EmployeeEntity class
+Class extends Entity
+
+Alias employerName company.name
+
+Function get companyName($event : Object)-> $result : Text
+	$result:=This.company.name
+
+Function orderBy companyName($event : Object)-> $result : Text
+	$result:="company.name "+$event.operator
+```
+
+```4d
+var $employees : cs.EmployeeSelection
+$employees:=ds.Employee.all().orderBy("employerName")  // same order as orderBy("company.name")
+$employees:=ds.Employee.all().orderBy("companyName desc")  // same order as orderBy("company.name desc")
 ```
 
 

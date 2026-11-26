@@ -964,6 +964,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 
 |Release|Changes|
 |---|---|
+|21 R6|`order by` on related attributes uses indexes|
 |21|Support 4D.Vector objects|
 |17 R6|Support of Formula parameters|
 |17 R5|Support of placeholders for values|
@@ -1056,6 +1057,7 @@ When using a constant value, the following rules must be respected:
 
 * **order by attributePath**: you can include an order by *attributePath* statement in the query so that the resulting data will be sorted according to that statement. You can use multiple order by statements, separated by commas (e.g., order by *attributePath1* desc, *attributePath2* asc). By default, the order is ascending. Pass 'desc' to define a descending order and 'asc' to define an ascending order.
  >If you use this statement, the returned entity selection is ordered (for more information, please refer to [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
+ >An order by on an attribute of a related entity (for example `order by company.name`) uses the indexes under the same conditions as [`.orderBy()`](EntitySelectionClass.md#sorting-on-related-attributes).
 
 If the entity selection attributes contain values of different [types](../Concepts/data-types.md), they will be sorted according to the [4D ordering principles](../Concepts/ordering.md).
 
@@ -1742,6 +1744,16 @@ Vector-based semantic ordering can be combined with traditional ORDA filters in 
 ```4d
 var $comparisonVector := {vector: $myVector; metric: mk cosine; threshold: 0.4} 
 var $results := ds.MyTable.query("myVectorField <= :1 AND salary>100000 order by myVectorField, salary desc"; $comparisonVector)
+```
+
+#### Example 6
+
+`Employee.companyID` (the attribute holding the `company` relation) and `Company.name` have a standard index. You want the employees whose last name starts with "S", sorted on the name of their company:
+
+```4d
+var $employees : cs.EmployeeSelection
+// the order by clause uses the indexes on Employee.companyID and Company.name
+$employees:=ds.Employee.query("lastName = :1 order by company.name desc"; "S@")
 ```
 
 
