@@ -33,6 +33,16 @@ When you validate the **Save** dialog, 4D closes the current project (if any), c
 
 You can then start developing your project.
 
+
+## Saving changes
+
+
+During a working session in the [development (Design) environment](../Project/overview.md#development), a project is automatically saved or reloaded when 4D detects that a source file has been added, modified, or deleted. It is the case when a file was directly edited from the 4D IDE, or after the 4D application window moves to the foreground or background. 
+
+You can trigger a manual update of the project files at any time using the [`RELOAD PROJECT`](../commands/reload-project) command.
+
+
+
 ## Opening a project
 
 To open an existing project from 4D:
