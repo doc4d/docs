@@ -69,7 +69,9 @@ This class is [**streamable**](../Concepts/dt_object.md#binary-streaming-variabl
 |[<!-- INCLUDE #collection.remove().Syntax -->](#remove)<br/><!-- INCLUDE #collection.remove().Summary -->|
 |[<!-- INCLUDE #collection.resize().Syntax -->](#resize)<br/><!-- INCLUDE #collection.resize().Summary -->|
 |[<!-- INCLUDE #collection.reverse().Syntax -->](#reverse)<br/><!-- INCLUDE #collection.reverse().Summary -->|
+|[<!-- INCLUDE #collection.sample().Syntax -->](#sample)<br/><!-- INCLUDE #collection.sample().Summary -->|
 |[<!-- INCLUDE #collection.shift().Syntax -->](#shift)<br/><!-- INCLUDE #collection.shift().Summary -->|
+|[<!-- INCLUDE #collection.shuffle().Syntax -->](#shuffle)<br/><!-- INCLUDE #collection.shuffle().Summary -->|
 |[<!-- INCLUDE #collection.slice().Syntax -->](#slice)<br/><!-- INCLUDE #collection.slice().Summary -->|
 |[<!-- INCLUDE #collection.some().Syntax -->](#some)<br/><!-- INCLUDE #collection.some().Summary -->|
 |[<!-- INCLUDE #collection.sort().Syntax -->](#sort)<br/><!-- INCLUDE #collection.sort().Summary -->|
@@ -3341,6 +3343,83 @@ The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a ne
 
 
 
+<!-- REF collection.sample().Desc -->
+## .sample()
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R6|Added|
+
+</details>
+
+<!-- REF #collection.sample().Syntax -->**.sample**() : any<!-- END REF -->
+
+
+<!-- REF #collection.sample().Params -->
+<div class="no-index">
+
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|Result|any|&#8592;|A random element of the collection|
+</div>
+<!-- END REF -->
+
+
+#### Description
+
+The `.sample()` function <!-- REF #collection.sample().Summary -->returns one element of the collection, chosen at random, or Undefined if the collection is empty<!-- END REF -->.
+
+>This function does not modify the original collection.
+
+Every element has the same chance of being returned, whatever the collection size. If the returned element is an object or a collection, it is returned by reference (not copied): changes made to it are visible in the original collection.
+
+The function returns Undefined if the collection is empty, like [`.first()`](#first) and [`.last()`](#last). It can be called on a [shared collection](../Concepts/shared.md) outside a **Use...End use** structure.
+
+To get several distinct elements chosen at random, use [`.shuffle()`](#shuffle) on a [`.copy()`](#copy) of the collection, then [`.slice()`](#slice).
+
+:::note
+
+`.sample()` does not accept a seed: a random draw cannot be reproduced. This function is not suited to security uses (tokens, passwords, keys).
+
+:::
+
+#### Example 1
+
+You want to display a random tip, and handle an empty collection:
+
+```4d
+var $tips : Collection
+var $tip : Variant
+$tips:=New collection("Save often"; "Use ORDA"; "Read the doc")
+$tip:=$tips.sample() // "Save often", "Use ORDA" or "Read the doc"
+// $tips is unchanged
+
+$tip:=New collection.sample()
+If (Undefined($tip)) // True: the collection is empty
+	ALERT("No tip available")
+End if
+```
+
+#### Example 2
+
+An object element is returned by reference:
+
+```4d
+var $c : Collection
+var $o; $picked : Object
+$o:=New object("x"; 1)
+$c:=New collection($o)
+$picked:=$c.sample()
+$picked.x:=2 // $o.x is 2
+```
+
+<!-- END REF -->
+
+
+
+
 
 <!-- REF collection.shift().Desc -->
 ## .shift()
@@ -3384,6 +3463,87 @@ If the collection is empty, this method does nothing.
  $val:=$c.shift()
   // $val=1
   // $c=[2,4,5,6,7,8]
+```
+
+<!-- END REF -->
+
+
+
+
+<!-- REF collection.shuffle().Desc -->
+## .shuffle()
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R6|Added|
+
+</details>
+
+<!-- REF #collection.shuffle().Syntax -->**.shuffle**() : Collection<!-- END REF -->
+
+
+<!-- REF #collection.shuffle().Params -->
+<div class="no-index">
+
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|Result|Collection|&#8592;|Original collection, with its elements in a random order|
+</div>
+<!-- END REF -->
+
+
+#### Description
+
+The `.shuffle()` function <!-- REF #collection.shuffle().Summary -->puts the elements of the original collection in a random order and returns the original collection<!-- END REF -->.
+
+>This function modifies the original collection.
+
+Every order has the same chance, whatever the collection size. Elements of any type are reordered (scalar values, null, objects, collections). Object and collection elements keep their references: they are not copied.
+
+If the collection is empty or contains only one element, it is returned unchanged.
+
+To get a shuffled copy and keep the original order, call `.shuffle()` on a [`.copy()`](#copy) of the collection.
+
+On a [shared collection](../Concepts/shared.md), `.shuffle()` follows the same rules as [`.sort()`](#sort): it triggers an [internal **Use...End use**](../Concepts/shared.md#automatic-useend-use-calls), so you can call it outside a **Use...End use** structure. If another process is using the collection, the call waits until that process reaches **End use**. The function returns the same shared collection.
+
+:::note
+
+`.shuffle()` does not accept a seed: a random order cannot be reproduced. This function is not suited to security uses (tokens, passwords, keys).
+
+:::
+
+#### Example 1
+
+You want to shuffle a deck of cards:
+
+```4d
+var $cards : Collection
+$cards:=New collection("A"; "K"; "Q"; "J"; "10")
+$cards.shuffle() // $cards is in a random order, for example ["Q","10","A","J","K"]
+```
+
+#### Example 2
+
+You want to draw 3 distinct winners and keep the original list in its order:
+
+```4d
+var $players; $winners : Collection
+$players:=New collection("Ann"; "Bob"; "Chen"; "Dana"; "Eli")
+$winners:=$players.copy().shuffle().slice(0; 3) // for example ["Dana","Ann","Eli"]
+// $players is unchanged
+```
+
+#### Example 3
+
+You want to shuffle a shared collection without a **Use...End use** structure:
+
+```4d
+var $queue; $result : Collection
+$queue:=New shared collection(1; 2; 3; 4; 5)
+$result:=$queue.shuffle() // for example [4,1,5,3,2]
+// $result=$queue is True: the same shared collection is returned
 ```
 
 <!-- END REF -->
