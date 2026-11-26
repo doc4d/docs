@@ -5,7 +5,7 @@ slug: /commands/get-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( * ; *liste* : Text ; *refElément* : Integer, Operator ; *saisissable* : Boolean {; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer}}} )<br/>**GET LIST ITEM PROPERTIES** ( *liste* : Integer ; *refElément* : Integer, Operator ; *saisissable* : Boolean {; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer}}} )<!-- END REF-->
+<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( * ; *liste* : Text ; *refElément* : Integer, Operator ; *saisissable* : Boolean {; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer {; *sélectionnable* : Boolean}}}} )<br/>**GET LIST ITEM PROPERTIES** ( *liste* : Integer ; *refElément* : Integer, Operator ; *saisissable* : Boolean {; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer {; *sélectionnable* : Boolean}}}} )<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM PROPERTIES.Params-->
 <div class="no-index">
 
@@ -18,6 +18,7 @@ displayed_sidebar: docs
 | style | Integer | &#8592; | Style de police de l'élément |
 | icône | Text, Integer | &#8592; | 131072 + numéro de référence d'image |
 | couleur | Integer | &#8592; | Valeur de couleur RVB |
+| sélectionnable | Boolean | &#8592; | Vrai si l'élément est sélectionnable (liste déroulante uniquement) |
 </div>
 <!-- END REF-->
 
@@ -26,6 +27,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Nouveau paramètre *sélectionnable*, prise en charge des listes déroulantes basées sur des énumérations|
 |17 R6|Modifié|
 |11 SQL|Modifié|
 |<6|Créé|
@@ -48,7 +50,7 @@ Si vous travaillez avec les numéros de référence des éléments, assurez-vous
 
 Après l'appel :
 
-* *saisissable* retourne Vrai si l'élément est saisissable.
+* *saisissable* retourne Vrai si l'élément est saisissable. Dans le contexte d'un objet liste déroulante dont le type de source de données est **Liste**, ce paramètre n'est pas pris en compte, utilisez plutôt le paramètre *sélectionnable*.
 * *style* retourne le style de caractères de l'élément.
 * *icône* retourne l'image associée à l'élément, le cas échéant.  
    * Si l'icône a été renseignée à l'aide d'un fichier image, la commande retourne dans icône le chemin d'accès à l'aide du modèle **path:<filesystem** **path>**  
@@ -56,8 +58,15 @@ Après l'appel :
          
    **Note :** Vous pouvez récupérer dans une variable image l'icône associée à un élément à l’aide de la commande [GET LIST ITEM ICON](../commands/get-list-item-icon).
 * *couleur* retourne la couleur du texte de l’élément désigné.
+* *sélectionnable* indique si l'élément est sélectionnable dans une liste déroulante.
 
 Pour plus d'informations sur ces propriétés, reportez-vous à la description de la commande [SET LIST ITEM PROPERTIES](../commands/set-list-item-properties).
+
+:::note À propos des listes déroulantes
+
+`GET LIST ITEM PROPERTIES` peut être utilisée uniquement avec les [objets listes déroulantes](../../FormObjects/dropdownList_Overview.md) dont le [type de source de données](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) est **Liste**. Les paramètres sont ignorés avec les listes déroulantes associées à d'autres types de sources de données, tels qu'objet ou tableau.
+
+:::
 
 ## Voir aussi 
 

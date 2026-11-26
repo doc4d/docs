@@ -124,6 +124,96 @@ Customized date formats can be built using several patterns described in the [**
 
 ---
 
+## Display Type
+
+Used to associate a display format with the column data. The formats provided depends on the variable type (array type list box) or the data/field type (selection and collection type list boxes).
+
+Boolean and number (numeric or integer) columns can be displayed as check boxes. In this case, the [Title](#title) property can be defined.
+
+Boolean columns can also be displayed as pop-up menus. In this case, the [Text when False and Text when True](#text-when-falsetext-when-true) properties must be defined.
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|controlType|string|<li>**number columns**: "automatic" (default) or "checkbox"</li><li>**boolean columns**: "checkbox" (default) or "popup"</li>|
+
+#### Objects Supported
+
+[List Box Column](listbox-column.md)
+
+#### Commands
+
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
+
+
+
+
+## Flyout mode
+
+This property allows you to specify how a [Drop down list](./dropdownList_Overview.md) will be displayed at runtime. 
+
+:::note
+
+On Windows, this property is only supported with [**Fluent UI** rendered forms](../FormEditor/forms.md#fluent-ui-rendering).
+
+:::
+
+Three flyout mode options are available. For example, with this drop-down menu:  
+
+![](../assets/en/FormObjects/dropdown-1.png)
+
+
+- **Pop-up** - The drop-down list overlaps the area and moves up or down depending on the selected value.  
+![](../assets/en/FormObjects/dropdown-2.png)
+ 
+- **Pull-down** - The drop-down list always opens below the area, whatever the selected value. The current value stays visible.
+![](../assets/en/FormObjects/dropdown-3.png)
+
+- **Automatic (legacy)** mode (default) - When this options is selected, the flyout mode depends on the OS and the [data source type](./dropdownList_Overview.md#drop-down-list-types) of the drop-down menu:  
+    - on Windows, hierarchical lists always use pull-down mode and non-hierarchical lists or other datasource types always use pop-up mode; 
+    - on macOS, choice lists (hierarchical or not) always use pull-down mode, while all other types use pop-up mode.
+
+When explicitly set to `popup` or `pulldown`, the flyout mode is independent of the drop-down list's data source type.
+
+If `flyoutMode` is omitted, "automatic" behavior applies. Converting an existing project does not add this property, preserving the legacy flyout mode.
+
+You can change the mode at runtime using [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode). 
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|flyoutMode| text|"automatic" (default), "popup", "pulldown"|
+
+#### Objects Supported
+
+[Drop-down List](dropdownList_Overview.md)
+
+#### Commands
+
+[OBJECT Get flyout mode](../commands/object-get-flyout-mode) - [OBJECT SET FLYOUT MODE](../commands/object-set-flyout-mode)
+
+
+
+## Not rendered
+
+When this property is enabled, the object is not drawn on the form, however it can still be activated.
+
+In particular, this property allows implementing "invisible" buttons. Non-rendered buttons can be placed on top of graphic objects. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|display| boolean|true, false|
+
+#### Objects Supported
+
+[Button](button_overview.md) - [Drop-down List](dropdownList_Overview.md)
+
+---
+
 ## Number Format
 
 >Number fields include the Integer, Long integer, Integer 64 bits, Real and Float types.
@@ -354,6 +444,71 @@ If the field is reduced to a size smaller than that of the original picture, the
 
 ---
 
+## Text when False/Text when True
+
+When a [boolean expression](properties_Object.md#expression-type) is displayed as:
+
+* a text in an [input object](input_overview.md)
+* a ["popup"](properties_Display.md#display-type) in a [list box column](listbox-column.md),
+
+... you can select the text to display for each value:
+
+* **Text when True** - the text to be displayed when the value is "true"
+* **Text when False** - the text to be displayed when the value is "false"
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|booleanFormat|string|"\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned"|
+
+#### Objects Supported
+
+[List Box Column](listbox-column.md) - [Input](input_overview.md)
+
+#### Commands
+
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
+
+
+---
+
+## Three-States
+
+Allows a check box object to accept a third state. The variable associated with the check box returns the value 2 when the check box is in the third state.
+
+#### Three-states check boxes in list box columns
+
+List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
+
+* 0 = unchecked box,
+* 1 = checked box,
+* 2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
+* -1 = invisible check box,
+* -2 = unchecked box, not enterable,
+* -3 = checked box, not enterable,
+* -4 = semi-checked box, not enterable
+
+In this case as well, the [Title](#title) property is also available so that the title of the check box can be entered.
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|threeState| boolean|true, false|
+
+#### Objects Supported
+
+[Check box](checkbox_overview.md) - [List Box Column](listbox-column.md)
+
+#### Commands
+
+[OBJECT Get three states checkbox](../commands/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands/object-set-three-states-checkbox)
+
+
+
+---
+
 ## Time Format
 
 Time formats control the way times appear when displayed or printed. For data entry, you enter times in the 24-hour HH:MM:SS format or the 12-hour HH:MM:SS AM/PM format, regardless of the display format you have chosen.
@@ -413,114 +568,6 @@ By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blan
 #### Commands
 
 [OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
-
----
-
-## Text when False/Text when True
-
-When a [boolean expression](properties_Object.md#expression-type) is displayed as:
-
-* a text in an [input object](input_overview.md)
-* a ["popup"](properties_Display.md#display-type) in a [list box column](listbox-column.md),
-
-... you can select the text to display for each value:
-
-* **Text when True** - the text to be displayed when the value is "true"
-* **Text when False** - the text to be displayed when the value is "false"
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|booleanFormat|string|"\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned"|
-
-#### Objects Supported
-
-[List Box Column](listbox-column.md) - [Input](input_overview.md)
-
-#### Commands
-
-[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
-
----
-
-## Display Type
-
-Used to associate a display format with the column data. The formats provided depends on the variable type (array type list box) or the data/field type (selection and collection type list boxes).
-
-Boolean and number (numeric or integer) columns can be displayed as check boxes. In this case, the [Title](#title) property can be defined.
-
-Boolean columns can also be displayed as pop-up menus. In this case, the [Text when False and Text when True](#text-when-falsetext-when-true) properties must be defined.
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|controlType|string|<li>**number columns**: "automatic" (default) or "checkbox"</li><li>**boolean columns**: "checkbox" (default) or "popup"</li>|
-
-#### Objects Supported
-
-[List Box Column](listbox-column.md)
-
-#### Commands
-
-[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
-
----
-
-## Not rendered
-
-When this property is enabled, the object is not drawn on the form, however it can still be activated.
-
-In particular, this property allows implementing "invisible" buttons. Non-rendered buttons can be placed on top of graphic objects. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.  
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|display| boolean|true, false|
-
-#### Objects Supported
-
-[Button](button_overview.md) - [Drop-down List](dropdownList_Overview.md)
-
----
-
-## Three-States
-
-Allows a check box object to accept a third state. The variable associated with the check box returns the value 2 when the check box is in the third state.
-
-#### Three-states check boxes in list box columns
-
-List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
-
-* 0 = unchecked box,
-* 1 = checked box,
-* 2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
-* -1 = invisible check box,
-* -2 = unchecked box, not enterable,
-* -3 = checked box, not enterable,
-* -4 = semi-checked box, not enterable
-
-In this case as well, the [Title](#title) property is also available so that the title of the check box can be entered.  
-
-#### JSON Grammar
-
-|Name|Data Type|Possible Values|
-|---|---|---|
-|threeState| boolean|true, false|
-
-#### Objects Supported
-
-[Check box](checkbox_overview.md) - [List Box Column](listbox-column.md)
-
-#### Commands
-
-[OBJECT Get three states checkbox](../commands/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands/object-set-three-states-checkbox)
-
 
 
 ---

@@ -25,6 +25,7 @@ slug: /commands/theme/Objects-Forms
 |[<!-- INCLUDE #_command_.OBJECT Get enterable.Syntax -->](../../commands/object-get-enterable)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT GET EVENTS.Syntax -->](../../commands/object-get-events)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT Get filter.Syntax -->](../../commands/object-get-filter)<br/>|
+|[<!-- INCLUDE #_command_.OBJECT Get flyout mode.Syntax -->](../../commands/object-get-flyout-mode)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT Get focus rectangle invisible.Syntax -->](../../commands/object-get-focus-rectangle-invisible)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT Get font.Syntax -->](../../commands/object-get-font)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT Get font size.Syntax -->](../../commands/object-get-font-size)<br/>|
@@ -75,6 +76,7 @@ slug: /commands/theme/Objects-Forms
 |[<!-- INCLUDE #_command_.OBJECT SET ENTERABLE.Syntax -->](../../commands/object-set-enterable)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT SET EVENTS.Syntax -->](../../commands/object-set-events)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT SET FILTER.Syntax -->](../../commands/object-set-filter)<br/>|
+|[<!-- INCLUDE #_command_.OBJECT SET FLYOUT MODE.Syntax -->](../../commands/object-set-flyout-mode)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT SET FOCUS RECTANGLE INVISIBLE.Syntax -->](../../commands/object-set-focus-rectangle-invisible)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT SET FONT.Syntax -->](../../commands/object-set-font)<br/>|
 |[<!-- INCLUDE #_command_.OBJECT SET FONT SIZE.Syntax -->](../../commands/object-set-font-size)<br/>|

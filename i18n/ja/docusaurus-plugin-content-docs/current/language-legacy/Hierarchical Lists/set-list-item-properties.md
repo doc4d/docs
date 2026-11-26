@@ -5,7 +5,7 @@ slug: /commands/set-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : 演算子, 倍長整数 ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; * ; *itemRef* : 倍長整数, 演算子 ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}} )<!-- END REF-->
+<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : 演算子, 倍長整数 ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer {; *selectable* : Boolean}}} )<br/>**SET LIST ITEM PROPERTIES** ( *list* : Integer ; * ; *itemRef* : 倍長整数, 演算子 ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer {; *selectable* : Boolean}}} )<!-- END REF-->
 <!--REF #_command_.SET LIST ITEM PROPERTIES.Params-->
 <div class="no-index">
 
@@ -18,6 +18,7 @@ displayed_sidebar: docs
 | styles | Integer | &#8594; | 項目のフォントスタイル |
 | icon | Text, Integer | &#8594; | ピクチャー名または番号 (アイコンを使用しない場合は "" または 0) |
 | color | Integer | &#8594; | RGBカラー値 または -1 = 元のカラーにリセット |
+| selectable | Boolean | &#8594; | 項目が選択可能な場合は True (ドロップダウンリストのみ) |
 </div>
 <!-- END REF-->
 
@@ -26,6 +27,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|*selectable* 引数を追加、リストに基づくドロップダウンリストをサポート|
 |18 R6|変更|
 |17 R6|変更|
 |11 SQL|変更|
@@ -75,6 +77,14 @@ displayed_sidebar: docs
 * 4D ピクチャー式 (フィールド, 変数, 等) を使用して項目アイコンを指定するには、[SET LIST ITEM ICON](../commands/set-list-item-icon) コマンドを使用します。
 
 *color* 引数 (オプション) を使用して、項目テキストの色を変更することができます。この色はRGBフォーマット、例えば0x00RRGGBB形式の4バイトの倍長整数で指定しなくてはなりません。このフォーマットに関する詳細は、[OBJECT SET RGB COLORS](../commands/object-set-rgb-colors) コマンドの説明を参照してください。項目をオリジナルの色にリセットするには、*color*引数に-1を渡します。
+
+*selectable* 引数 (オプション) を使用して、ドロップダウンリストで項目が選択可能かどうかを設定します。
+
+:::note ドロップダウンリストについて
+
+`SET LIST ITEM PROPERTIES` の引数は、[データソースの型](../../FormObjects/dropdownList_Overview.md#ドロップダウンリストの種類) が **リスト** である [ドロップダウンリストオブジェクト](../../FormObjects/dropdownList_Overview.md) でサポートされます。オブジェクトや配列など、他のデータソースの型にバインドされたドロップダウンリストでは、引数は無視されます。
+
+:::
 
 ## 例題 1 
 

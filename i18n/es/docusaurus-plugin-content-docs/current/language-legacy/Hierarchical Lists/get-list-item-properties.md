@@ -5,7 +5,7 @@ slug: /commands/get-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( {* ;} *lista* : Integer, Text ; refElem | * ; *editable* : Boolean {; *estilos* : Integer {; *icono* : Text, Integer {; *color* : Integer}}} )<!-- END REF-->
+<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( {* ;} *lista* : Integer, Text ; refElem | * ; *editable* : Boolean {; *estilos* : Integer {; *icono* : Text, Integer {; *color* : Integer {; *seleccionable* : Boolean}}}} )<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM PROPERTIES.Params-->
 <div class="no-index">
 
@@ -18,6 +18,7 @@ displayed_sidebar: docs
 | estilos | Integer | &#8592; | Estilo de fuente del elemento |
 | icono | Text, Integer | &#8592; | Número de recurso Mac OS ‘cicn’, o 65536 + número de recurso Mac OS ‘PICT’, o 131072 + número de referencia de imagen |
 | color | Integer | &#8592; | Valor de color RGB |
+| seleccionable | Boolean | &#8592; | True si el elemento es seleccionable (solo lista desplegable) |
 </div>
 <!-- END REF-->
 
@@ -26,6 +27,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|Nuevo parámetro *seleccionable*, soporte de listas desplegables basadas en listas de selección|
 |17 R6|Modificado|
 |11 SQL|Modificado|
 |<6|Creado|
@@ -49,7 +51,7 @@ Si trabaja con números de referencia de los elementos, asegúrese de utilizar, 
 
 Después de la llamada:
 
-* *e* *ditable* devuelve TRUE si el elemento es editable.
+* *e* *ditable* devuelve TRUE si el elemento es editable. En el contexto de un objeto lista desplegable cuyo tipo de fuente de datos es **Lista**, este parámetro no se tiene en cuenta, utilice en su lugar el parámetro *seleccionable*.
 * *estilos* devuelve el estilo de fuente del elemento.
 * *icono* devuelve la imagen asignada al elemento, si lo hay.  
    * Si el ícono se ha especificado utilizando un archivo de imagen, el comando devuelve en el *icono* la ruta de acceso utilizando **path:<filesystem path>**.  
@@ -57,8 +59,15 @@ Después de la llamada:
          
    **Nota:** puede recuperar, en una variable imagen, el icono asociado con un elemento utilizando el comando [GET LIST ITEM ICON](../commands/get-list-item-icon)*.*
 * *color* devuelve el color del texto del elemento especificado.
+* *seleccionable* indica si el elemento es seleccionable en una lista desplegable.
 
 Para mayor información sobre estas propiedades, consulte la descripción del comando [SET LIST ITEM PROPERTIES](../commands/set-list-item-properties).
+
+:::note Sobre las listas desplegables
+
+`GET LIST ITEM PROPERTIES` solo puede utilizarse con [objetos lista desplegable](../../FormObjects/dropdownList_Overview.md) cuyo [tipo de fuente de datos](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) es **Lista**. Los parámetros se ignoran con las listas desplegables asociadas a otros tipos de fuentes de datos, como objeto o array.
+
+:::
 
 ## Ver también 
 
