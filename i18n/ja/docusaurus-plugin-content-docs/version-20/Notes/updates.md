@@ -193,7 +193,7 @@ Windows 11 24H2 では、Microsoft Print to PDFドライバーを使用して PD
   - 新しい [VP Get table dirty rows](../ViewPro/method-list.md#vp-get-table-dirty-rows) コマンドの追加
 - 4Dランゲージコマンド: doc.4d.com の [新着](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6101683.en.html) ページ。
 - 4D Write Pro: doc.4d.com の [新着](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6130471.ja.html) ページ。
-- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/19_R8): 4D 19 R8 で修正されたバグのリストです。
+- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/19_R8): 4D 19 R8 で修正されたバグのリストです(日本語版は [こちら](https://4d-jp.github.io/2024/360/release-note-version-20r8/))。
 
 #### 動作の変更
 
@@ -217,7 +217,7 @@ Windows 11 24H2 では、Microsoft Print to PDFドライバーを使用して PD
 - テキストエリアおよび入力フォームオブジェクトにおいて、[角の半径プロパティ](../FormObjects/properties_CoordinatesAndSizing#角の半径) をサポート。
 - 4Dランゲージコマンド: doc.4d.com の [新着](https://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new.901-5944528.ja.html) ページ。
 - 4D Write Pro: doc.4d.com の [新着](https://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new.901-6011873.ja.html) ページ。
-- [**修正リスト**](https://4d-jp.github.io/283/release-note-version-19r7/): 4D 19 R7 で修正されたバグのリストです。
+- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/19_R7): 4D 19 R7 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/274/release-note-version-20r7/))。
 
 #### 動作の変更
 
