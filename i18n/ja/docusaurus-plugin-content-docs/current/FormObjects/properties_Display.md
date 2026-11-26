@@ -118,6 +118,99 @@ RB-1762-1
 
 ---
 
+## 表示タイプ
+
+列のデータに表示フォーマットを割り当てるために使用します。提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。
+
+ブール式および数値 (数値または整数) 式の列はチェックボックスとして表示することができます。表示タイプにチェックボックスを選択すると、[タイトル](#タイトル)プロパティが表示され、チェックボックスのタイトルを設定できます。
+
+ブール式の列はポップアップメニューとしても表示することができます。この場合には、[テキスト (True時) とテキスト (False時)](#テキスト-true時-テキスト-false時) プロパティが表示され、ポップアップメニューの対応するタイトルを設定する必要があります。
+
+#### JSON 文法
+
+| 名称          | データタイプ | とりうる値                                                                                                 |
+| ----------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| controlType | string | <li>**数値列**: "automatic" (デフォルト) または "checkbox"</li><li>**ブール列**: "checkbox" (デフォルト) または "popup"</li> |
+
+#### 対象オブジェクト
+
+[リストボックスカラム](listbox-column.md)
+
+#### コマンド
+
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
+
+## Flyout mode
+
+This property allows you to specify how a [Drop down list](./dropdownList_Overview.md) will be displayed at runtime.
+
+:::note
+
+On Windows, this property is only supported with [**Fluent UI** rendered forms](../FormEditor/forms.md#fluent-ui-rendering).
+
+:::
+
+Three flyout mode options are available. For example, with this drop-down menu:
+
+変数が 1 のとき、列は昇順で並べ替えられており、並べ替え矢印が表示されています。
+![](../assets/en/FormObjects/dropdown-1.png)  
+![](../assets/en/FormObjects/sorticon1.png)  
+![](../assets/en/FormObjects/sorticon1.png)
+
+- **Pop-up** - The drop-down list overlaps the area and moves up or down depending on the selected value.  
+  変数が 1 のとき、列は昇順で並べ替えられており、並べ替え矢印が表示されています。
+  ![](../assets/en/FormObjects/dropdown-2.png)  
+  ![](../assets/en/FormObjects/sorticon1.png)  
+  ![](../assets/en/FormObjects/sorticon1.png)
+
+- **Pull-down** - The drop-down list always opens below the area, whatever the selected value. The current value stays visible.
+  変数が 1 のとき、列は昇順で並べ替えられており、並べ替え矢印が表示されています。
+  ![](../assets/en/FormObjects/dropdown-3.png)  
+  ![](../assets/en/FormObjects/sorticon1.png)  
+  ![](../assets/en/FormObjects/sorticon1.png)
+
+- **Automatic (legacy)** mode (default) - When this options is selected, the flyout mode depends on the OS and the [data source type](./dropdownList_Overview.md#drop-down-list-types) of the drop-down menu:
+  - on Windows, hierarchical lists always use pull-down mode and non-hierarchical lists or other datasource types always use pop-up mode;
+  - on macOS, choice lists (hierarchical or not) always use pull-down mode, while all other types use pop-up mode.
+
+When explicitly set to `popup` or `pulldown`, the flyout mode is independent of the drop-down list's data source type.
+
+If `flyoutMode` is omitted, "automatic" behavior applies. Converting an existing project does not add this property, preserving the legacy flyout mode.
+
+You can change the mode at runtime using [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode).
+
+#### JSON 文法
+
+| 名称         | データタイプ | とりうる値                                                         |
+| ---------- | ------ | ------------------------------------------------------------- |
+| flyoutMode | text   | "automatic" (default), "popup", "pulldown" |
+
+#### 対象オブジェクト
+
+[ドロップダウンリスト](dropdownList_Overview.md)
+
+#### コマンド
+
+[OBJECT Get flyout mode](../commands/object-get-flyout-mode) - [OBJECT SET FLYOUT MODE](../commands/object-set-flyout-mode)
+
+## レンダリングしない
+
+このプロパティが選択されていると、アプリケーションモードでオブジェクトが描画されません (あとから描画することができます)。
+
+このプロパティは、”透明” ボタンの実装を可能にします。レンダリングされていないボタンは、描画オブジェクトの上に配置することができます。レンダリングされていないボタンは、クリックされてもハイライトされることはなく非表示のままですが、クリックによるイベントは発生します。
+
+#### JSON 文法
+
+| 名称      | データタイプ  | とりうる値       |
+| ------- | ------- | ----------- |
+| display | boolean | true, false |
+
+#### 対象オブジェクト
+
+[ボタン](button_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md)
+
+---
+
 ## 数値フォーマット
 
 > 数値フィールドには整数、倍長整数、整数64bit、実数、そしてフロート型が含まれます。
@@ -352,6 +445,68 @@ RB-1762-1
 
 ---
 
+## テキスト (True時)/テキスト (False時)
+
+[ブール式](properties_Object.md#式の型式タイプ) を次のフォームオブジェクトで表示した場合:
+
+- [入力オブジェクト](input_overview.md) にテキストとして
+- [リストボックスカラム](listbox-column.md) に表示タイプ ["ポップアップ"](properties_Display.md#表示タイプ) を選択して
+
+... 値の代わりに表示するテキストを指定することができます:
+
+- **テキスト (True時)** - 値が "true" の時に表示するテキスト
+- **テキスト (False時)** - 値が "false" の時に表示するテキスト
+
+#### JSON 文法
+
+| 名称            | データタイプ | とりうる値                                                                                                                                                             |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| booleanFormat | string | "\<*テキスト (true時)*\>;\<*テキスト (false時)*\>", 例: "済み;未処理" |
+
+#### 対象オブジェクト
+
+[リストボックスカラム](listbox-column.md) - [入力](input_overview.md)
+
+#### コマンド
+
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
+
+---
+
+## スリーステート
+
+チェックボックスオブジェクトに、3 番目の状態を付加します。チェックボックスが 3番目の状態になると、チェックボックスに関連付けられた変数は値2を返します。
+
+#### リストボックス列におけるスリーステートチェックボックス
+
+[式タイプ](properties_Object.md#式の型式タイプ) が数値型のリストボックス列は、スリーステートチェックボックスとして表示できます。スリーステートチェックボックスタイプを選択すると、以下の値が表示されます:
+
+- 0 = チェックされていない
+- 1 = チェックされている
+- 2 (または2以上の任意の数値) セミチェックボックス (三番目の状態)データ入力時、この状態は2を返します。
+- -1 = 非表示チェックボックス
+- -2 = チェックされていない、入力不可
+- -3 = チェックされている、入力不可
+- -4 = セミチェックボックス、入力不可
+
+スリーステートチェックボックスの場合も、[タイトル](#タイトル)プロパティが表示され、チェックボックスのタイトルを設定できます。
+
+#### JSON 文法
+
+| 名称         | データタイプ  | とりうる値       |
+| ---------- | ------- | ----------- |
+| threeState | boolean | true, false |
+
+#### 対象オブジェクト
+
+[チェックボックス](checkbox_overview.md) - [リストボックスカラム](listbox-column.md)
+
+#### コマンド
+
+[OBJECT Get three states checkbox](../commands/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands/object-set-three-states-checkbox)
+
+---
+
 ## 時間フォーマット
 
 時間フォーマットは、表示や印刷時に時間を表示する方法を制御します。選択した表示フォーマットとは関係なく、データ入力の際は 24時間制の “HH:MM:SS” フォーマット、または 12時間制の “HH:MM:SS AM/PM” フォーマットで時間を入力します。
@@ -407,110 +562,6 @@ RB-1762-1
 #### コマンド
 
 [OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
----
-
-## テキスト (True時)/テキスト (False時)
-
-[ブール式](properties_Object.md#式の型式タイプ) を次のフォームオブジェクトで表示した場合:
-
-- [入力オブジェクト](input_overview.md) にテキストとして
-- [リストボックスカラム](listbox-column.md) に表示タイプ ["ポップアップ"](properties_Display.md#表示タイプ) を選択して
-
-... 値の代わりに表示するテキストを指定することができます:
-
-- **テキスト (True時)** - 値が "true" の時に表示するテキスト
-- **テキスト (False時)** - 値が "false" の時に表示するテキスト
-
-#### JSON 文法
-
-| 名称            | データタイプ | とりうる値                                                                                                                                                             |
-| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| booleanFormat | string | "\<*テキスト (true時)*\>;\<*テキスト (false時)*\>", 例: "済み;未処理" |
-
-#### 対象オブジェクト
-
-[リストボックスカラム](listbox-column.md) - [入力](input_overview.md)
-
-#### コマンド
-
-[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
----
-
-## 表示タイプ
-
-列のデータに表示フォーマットを割り当てるために使用します。提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。
-
-ブール式および数値 (数値または整数) 式の列はチェックボックスとして表示することができます。表示タイプにチェックボックスを選択すると、[タイトル](#タイトル)プロパティが表示され、チェックボックスのタイトルを設定できます。
-
-ブール式の列はポップアップメニューとしても表示することができます。この場合には、[テキスト (True時) とテキスト (False時)](#テキスト-true時-テキスト-false時) プロパティが表示され、ポップアップメニューの対応するタイトルを設定する必要があります。
-
-#### JSON 文法
-
-| 名称          | データタイプ | とりうる値                                                                                                 |
-| ----------- | ------ | ----------------------------------------------------------------------------------------------------- |
-| controlType | string | <li>**数値列**: "automatic" (デフォルト) または "checkbox"</li><li>**ブール列**: "checkbox" (デフォルト) または "popup"</li> |
-
-#### 対象オブジェクト
-
-[リストボックスカラム](listbox-column.md)
-
-#### コマンド
-
-[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
----
-
-## レンダリングしない
-
-このプロパティが選択されていると、アプリケーションモードでオブジェクトが描画されません (あとから描画することができます)。
-
-このプロパティは、”透明” ボタンの実装を可能にします。レンダリングされていないボタンは、描画オブジェクトの上に配置することができます。レンダリングされていないボタンは、クリックされてもハイライトされることはなく非表示のままですが、クリックによるイベントは発生します。
-
-#### JSON 文法
-
-| 名称      | データタイプ  | とりうる値       |
-| ------- | ------- | ----------- |
-| display | boolean | true, false |
-
-#### 対象オブジェクト
-
-[ボタン](button_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md)
-
----
-
-## スリーステート
-
-チェックボックスオブジェクトに、3 番目の状態を付加します。チェックボックスが 3番目の状態になると、チェックボックスに関連付けられた変数は値2を返します。
-
-#### リストボックス列におけるスリーステートチェックボックス
-
-[式タイプ](properties_Object.md#式の型式タイプ) が数値型のリストボックス列は、スリーステートチェックボックスとして表示できます。スリーステートチェックボックスタイプを選択すると、以下の値が表示されます:
-
-- 0 = チェックされていない
-- 1 = チェックされている
-- 2 (または2以上の任意の数値) セミチェックボックス (三番目の状態)データ入力時、この状態は2を返します。
-- -1 = 非表示チェックボックス
-- -2 = チェックされていない、入力不可
-- -3 = チェックされている、入力不可
-- -4 = セミチェックボックス、入力不可
-
-スリーステートチェックボックスの場合も、[タイトル](#タイトル)プロパティが表示され、チェックボックスのタイトルを設定できます。
-
-#### JSON 文法
-
-| 名称         | データタイプ  | とりうる値       |
-| ---------- | ------- | ----------- |
-| threeState | boolean | true, false |
-
-#### 対象オブジェクト
-
-[チェックボックス](checkbox_overview.md) - [リストボックスカラム](listbox-column.md)
-
-#### コマンド
-
-[OBJECT Get three states checkbox](../commands/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands/object-set-three-states-checkbox)
 
 ---
 
