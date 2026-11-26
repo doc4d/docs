@@ -29,8 +29,8 @@ A single class handles both single and batch results — `embed()` populates `.v
 
 | Propiedad           | Tipo    | Por defecto | Descripción                                                                                                         |
 | ------------------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------------- |
-| `remainingTokens`   | Integer | `-1`        | Tokens left in the current window. `-1` = unknown.                                  |
-| `remainingRequests` | Integer | `-1`        | Requests left in the current window. `-1` = unknown.                                |
+| `remainingTokens`   | Integer | `-1`        | Tokens left in the current window. `-1` = desconocido.                              |
+| `remainingRequests` | Integer | `-1`        | Requests left in the current window. `-1` = desconocido.                            |
 | `limitTokens`       | Integer | `0`         | TPM ceiling for the account.                                                                        |
 | `limitRequests`     | Integer | `0`         | RPM ceiling for the account.                                                                        |
 | `resetTokens`       | Text    | `""`        | Time until token bucket refills (e.g. `"6m0s"`). |
