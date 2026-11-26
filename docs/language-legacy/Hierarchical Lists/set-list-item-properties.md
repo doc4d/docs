@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R6|New *selectable* parameter|
+|21 R6|New *selectable* parameter, support of list-based drop-down lists|
 |18 R6|Modified|
 |17 R6|Modified|
 |11 SQL|Modified|
@@ -80,7 +80,7 @@ The *selectable* parameter (optional) returns whether the item is selectable in 
 
 :::note About drop-down lists
 
-`SET LIST ITEM PROPERTIES` can be only be used with [drop-down list objects](../../FormObjects/dropdownList_Overview.md) whose [data source types](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) are **List**. Parameters do not apply to drop-down lists bound to other data source types such as object or array. 
+`SET LIST ITEM PROPERTIES` parameters are supported with [drop-down list objects](../../FormObjects/dropdownList_Overview.md) whose [data source types](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) are **List**. Parameters are ignored with drop-down lists bound to other data source types such as object or array. 
 
 :::
 

@@ -10,9 +10,13 @@ Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/),
 
 #### Highlights
 
-- More control over drop-down lists look and feel: [new `popup` and `pull-down` flyout options](../FormObjects/properties_Display.md#flyout-mode) and [customizable items through object properties](../FormObjects/dropdownList_Overview.md#customizing-items-with-object-entries) like `selectable` or `color`.
-- New [`OBJET SET FLYOUT PROPERTY`](../commands/object-set-flyout-property) and [`OBJECT Get flyout property`](../commands/object-set-flyout-property) commands. New *selectable* parameter supported by [`GET LIST ITEM PROPERTIES`](../commands/get-list-items-properties) and [`SET LIST ITEM PROPERTIES`](../commands/set-list-items-properties). 
+- More control over [drop-down lists](../FormObjects/dropdownList_Overview.md) look and feel:
+    - [new `popup` and `pull-down` flyout options](../FormObjects/properties_Display.md#flyout-mode); new [`OBJET SET FLYOUT PROPERTY`](../commands/object-set-flyout-property) and [`OBJECT Get flyout property`](../commands/object-set-flyout-property) commands.
+    - item attributes are now [customizable through properties](../FormObjects/dropdownList_Overview.md#customizing-items-with-object-entries) like `selectable` or `color` and rendered on Windows (*Fluent UI*) and macOS; new *selectable* parameter supported by [`GET LIST ITEM PROPERTIES`](../commands/get-list-items-properties) and [`SET LIST ITEM PROPERTIES`](../commands/set-list-items-properties). 
 
+#### Behavior changes
+
+- In a [choice list](../FormObjects/dropdownList_Overview.md#using-a-choice-list) or [hierachical choice list](../FormObjects/dropdownList_Overview.md#using-a-hierarchical-choice-list) used as a [drop-down list](../FormObjects/dropdownList_Overview.md), item attributes (style, color...) are now rendered on Windows (*Fluent UI*) and macOS. It was only supported with [menus](../Menus/overview.md) in previous releases. 
 
 ## 4D 21 R5
 
