@@ -69,7 +69,7 @@ title: リリースノート
 - [コンポーネントのアイコンをカスタマイズできる](../Extensions/develop-components.md#custom-icon) ようになりました。
 - 4D AIKit component: 新しい [ファイル API](../aikit/Classes/OpenAIFilesAPI.md) クラスを使用することで **ファイルアップロード** 機能を実装できます。
 - [**デザインモードを検索**](../Project/search-replace.md#コンポーネント内を検索) および [**コンテンツを置換**](../Project/search-replace.md#コンテンツを置換) 機能は編集可能なコンポーネントをサポートするようになりました。
-- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/21_R2): 4D 21 R2 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2026/54/release-note-version-21r2/))。
+- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/21_R2): 4D 21 R2 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2023/349/release-note-version-20r2/))。
 
 #### デベロッパー・プレビュー
 
