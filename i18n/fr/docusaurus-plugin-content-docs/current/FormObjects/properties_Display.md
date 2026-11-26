@@ -119,6 +119,90 @@ Des formats de date personnalisés peuvent être construits en utilisant plusieu
 
 ---
 
+## Type d'affichage
+
+Utilisé pour associer un format d'affichage aux données de la colonne. Les formats fournis dépendent du type de variable (list box de type tableau) ou du type de données/de champ (list box de type sélection et collection).
+
+Les colonnes booléennes et numériques (réel ou entier) peuvent être affichées sous forme de cases à cocher. Dans ce cas, la propriété [Titre](#titre) peut être définie.
+
+Les colonnes booléennes peuvent également être affichées sous forme de pop up menus. Dans ce cas, les propriétés [Texte si Faux et Texte si Vrai](#text-when-falsetext-when-true) doivent être définies.
+
+#### Grammaire JSON
+
+| Nom         | Type de données | Valeurs possibles                                                                                                                                                       |
+| ----------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| controlType | string          | <li>**colonnes numériques**: "automatique" (par défaut) ou "case à cocher"</li><li>**colonnes booléennes**: "case à cocher" (par défaut) ou "fenêtre contextuelle"</li> |
+
+#### Objets pris en charge
+
+[Colonne de list box](listbox-column.md)
+
+#### Commandes
+
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
+
+## Flyout mode
+
+This property allows you to specify how a [Drop down list](./dropdownList_Overview.md) will be displayed at runtime.
+
+:::note
+
+On Windows, this property is only supported with [**Fluent UI** rendered forms](../FormEditor/forms.md#fluent-ui-rendering).
+
+:::
+
+Three flyout mode options are available. For example, with this drop-down menu:
+
+![](../assets/en/FormObjects/dropdown-1.png)
+
+- **Pop-up** - The drop-down list overlaps the area and moves up or down depending on the selected value.  
+  ![](../assets/en/FormObjects/dropdown-2.png)
+
+- **Pull-down** - The drop-down list always opens below the area, whatever the selected value. The current value stays visible.
+  ![](../assets/en/FormObjects/dropdown-3.png)
+
+- **Automatic (legacy)** mode (default) - When this options is selected, the flyout mode depends on the OS and the [data source type](./dropdownList_Overview.md#drop-down-list-types) of the drop-down menu:
+  - on Windows, hierarchical lists always use pull-down mode and non-hierarchical lists or other datasource types always use pop-up mode;
+  - on macOS, choice lists (hierarchical or not) always use pull-down mode, while all other types use pop-up mode.
+
+When explicitly set to `popup` or `pulldown`, the flyout mode is independent of the drop-down list's data source type.
+
+If `flyoutMode` is omitted, "automatic" behavior applies. Converting an existing project does not add this property, preserving the legacy flyout mode.
+
+You can change the mode at runtime using [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode).
+
+#### Grammaire JSON
+
+| Nom        | Type de données | Valeurs possibles                                             |
+| ---------- | --------------- | ------------------------------------------------------------- |
+| flyoutMode | text            | "automatic" (default), "popup", "pulldown" |
+
+#### Objets pris en charge
+
+[Liste déroulante](dropdownList_Overview.md)
+
+#### Commandes
+
+[OBJECT Get flyout mode](../commands/object-get-flyout-mode) - [OBJECT SET FLYOUT MODE](../commands/object-set-flyout-mode)
+
+## Non représenté
+
+Lorsque cette propriété est activée, l'objet n'est pas affiché sur le formulaire, mais il peut toujours être activé.
+
+En particulier, cette propriété permet de mettre en œuvre des boutons "invisibles". Des boutons non représentés peuvent être placés par-dessus des objets graphiques. Ils restent invisibles et ne se mettent pas en surbrillance lorsqu'ils sont cliqués, cependant leur action est déclenchée dans ce cas.
+
+#### Grammaire JSON
+
+| Nom     | Type de données | Valeurs possibles |
+| ------- | --------------- | ----------------- |
+| display | boolean         | true, false       |
+
+#### Objets pris en charge
+
+[Bouton](button_overview.md) - [Liste déroulante](dropdownList_Overview.md)
+
+---
+
 ## Format numérique
 
 > Les champs numériques comprennent les types Entier, Entier long, Entier 64 bits, Réel et Float.
@@ -348,6 +432,68 @@ Si le champ est réduit à une taille plus petite que celle de l'image d'origine
 
 ---
 
+## Texte si Faux / Texte si Vrai
+
+Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est affichée comme :
+
+- un texte dans un [input](input_overview.md)
+- une ["popup"](properties_Display.md#display-type) dans une [colonne de list box](listbox-column.md),
+
+... vous pouvez sélectionner le texte à afficher pour chaque valeur :
+
+- **Texte si vrai** - le texte à afficher lorsque la valeur est "true"
+- **Texte si faux** - le texte à afficher lorsque la valeur est "false"
+
+#### Grammaire JSON
+
+| Nom           | Type de données | Valeurs possibles                                                                                                                 |
+| ------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| booleanFormat | string          | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", par exemple "Assigné;Non assigné" |
+
+#### Objets pris en charge
+
+[Colonne de list box](listbox-column.md) - [Input](input_overview.md)
+
+#### Commandes
+
+[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
+
+---
+
+## Trois états
+
+Permet à un objet case à cocher d'accepter un troisième état. La variable associée à la case à cocher retourne la valeur 2 lorsque celle-ci se trouve dans le troisième état.
+
+#### Cases à cocher à trois états dans des colonnes de list box
+
+Les colonnes de list box avec un [type de données](properties_Object.md#expression-type) numérique peuvent être affichées sous forme de cases à cocher à trois états. Si choisi, les valeurs suivantes sont affichées :
+
+- 0 = case non cochée,
+- 1 = case cochée,
+- 2 (ou toute valeur >0) = case partiellement cochée (troisième état). Pour la saisie des données, cet état renvoie la valeur 2.
+- -1 = case à cocher invisible,
+- -2 = case non cochée, non modifiable,
+- -3 = case cochée, non modifiable,
+- -4 = case semi-cochée, non modifiable
+
+Dans ce cas également, la propriété [Titre](#titre) est également disponible afin que le libellé de la case à cocher puisse être saisi.
+
+#### Grammaire JSON
+
+| Nom        | Type de données | Valeurs possibles |
+| ---------- | --------------- | ----------------- |
+| threeState | boolean         | true, false       |
+
+#### Objets pris en charge
+
+[Case à cocher](checkbox_overview.md) - [Colonne de list box](listbox-column.md)
+
+#### Commandes
+
+[OBJECT Get three states checkbox](../commands/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands/object-set-three-states-checkbox)
+
+---
+
 ## Format heure
 
 Les formats heure contrôlent la façon dont les heures apparaissent lorsqu'elles sont affichées ou imprimées. Pour la saisie des données, vous entrez les heures dans le format 24 heures HH:MM:SS ou dans le format 12 heures HH:MM:SS AM/PM, quel que soit le format d'affichage que vous avez choisi.
@@ -403,110 +549,6 @@ Par défaut, une heure nulle est affichée avec des zéros, par exemple "00:00:0
 #### Commandes
 
 [OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
----
-
-## Texte si Faux / Texte si Vrai
-
-Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est affichée comme :
-
-- un texte dans un [input](input_overview.md)
-- une ["popup"](properties_Display.md#display-type) dans une [colonne de list box](listbox-column.md),
-
-... vous pouvez sélectionner le texte à afficher pour chaque valeur :
-
-- **Texte si vrai** - le texte à afficher lorsque la valeur est "true"
-- **Texte si faux** - le texte à afficher lorsque la valeur est "false"
-
-#### Grammaire JSON
-
-| Nom           | Type de données | Valeurs possibles                                                                                                                 |
-| ------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| booleanFormat | string          | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", par exemple "Assigné;Non assigné" |
-
-#### Objets pris en charge
-
-[Colonne de list box](listbox-column.md) - [Input](input_overview.md)
-
-#### Commandes
-
-[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
----
-
-## Type d'affichage
-
-Utilisé pour associer un format d'affichage aux données de la colonne. Les formats fournis dépendent du type de variable (list box de type tableau) ou du type de données/de champ (list box de type sélection et collection).
-
-Les colonnes booléennes et numériques (réel ou entier) peuvent être affichées sous forme de cases à cocher. Dans ce cas, la propriété [Titre](#titre) peut être définie.
-
-Les colonnes booléennes peuvent également être affichées sous forme de pop up menus. Dans ce cas, les propriétés [Texte si Faux et Texte si Vrai](#text-when-falsetext-when-true) doivent être définies.
-
-#### Grammaire JSON
-
-| Nom         | Type de données | Valeurs possibles                                                                                                                                                       |
-| ----------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| controlType | string          | <li>**colonnes numériques**: "automatique" (par défaut) ou "case à cocher"</li><li>**colonnes booléennes**: "case à cocher" (par défaut) ou "fenêtre contextuelle"</li> |
-
-#### Objets pris en charge
-
-[Colonne de list box](listbox-column.md)
-
-#### Commandes
-
-[OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
-
----
-
-## Non représenté
-
-Lorsque cette propriété est activée, l'objet n'est pas affiché sur le formulaire, mais il peut toujours être activé.
-
-En particulier, cette propriété permet de mettre en œuvre des boutons "invisibles". Des boutons non représentés peuvent être placés par-dessus des objets graphiques. Ils restent invisibles et ne se mettent pas en surbrillance lorsqu'ils sont cliqués, cependant leur action est déclenchée dans ce cas.
-
-#### Grammaire JSON
-
-| Nom     | Type de données | Valeurs possibles |
-| ------- | --------------- | ----------------- |
-| display | boolean         | true, false       |
-
-#### Objets pris en charge
-
-[Bouton](button_overview.md) - [Liste déroulante](dropdownList_Overview.md)
-
----
-
-## Trois états
-
-Permet à un objet case à cocher d'accepter un troisième état. La variable associée à la case à cocher retourne la valeur 2 lorsque celle-ci se trouve dans le troisième état.
-
-#### Cases à cocher à trois états dans des colonnes de list box
-
-Les colonnes de list box avec un [type de données](properties_Object.md#expression-type) numérique peuvent être affichées sous forme de cases à cocher à trois états. Si choisi, les valeurs suivantes sont affichées :
-
-- 0 = case non cochée,
-- 1 = case cochée,
-- 2 (ou toute valeur >0) = case partiellement cochée (troisième état). Pour la saisie des données, cet état renvoie la valeur 2.
-- -1 = case à cocher invisible,
-- -2 = case non cochée, non modifiable,
-- -3 = case cochée, non modifiable,
-- -4 = case semi-cochée, non modifiable
-
-Dans ce cas également, la propriété [Titre](#titre) est également disponible afin que le libellé de la case à cocher puisse être saisi.
-
-#### Grammaire JSON
-
-| Nom        | Type de données | Valeurs possibles |
-| ---------- | --------------- | ----------------- |
-| threeState | boolean         | true, false       |
-
-#### Objets pris en charge
-
-[Case à cocher](checkbox_overview.md) - [Colonne de list box](listbox-column.md)
-
-#### Commandes
-
-[OBJECT Get three states checkbox](../commands/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands/object-set-three-states-checkbox)
 
 ---
 
