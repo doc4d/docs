@@ -5,7 +5,7 @@ slug: /commands/set-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( * ; *liste* : Text ; *refElément* : Integer, Operator ; *saisissable* : Boolean ; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( *liste* : Integer ; *refElément* : Integer, Operator ; *saisissable* : Boolean ; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer}} )<!-- END REF-->
+<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( * ; *liste* : Text ; *refElément* : Integer, Operator ; *saisissable* : Boolean ; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer {; *sélectionnable* : Boolean}}} )<br/>**SET LIST ITEM PROPERTIES** ( *liste* : Integer ; *refElément* : Integer, Operator ; *saisissable* : Boolean ; *style* : Integer {; *icône* : Text, Integer {; *couleur* : Integer {; *sélectionnable* : Boolean}}} )<!-- END REF-->
 <!--REF #_command_.SET LIST ITEM PROPERTIES.Params-->
 <div class="no-index">
 
@@ -18,6 +18,7 @@ displayed_sidebar: docs
 | style | Integer | &#8594;  | Style de police pour l'élément |
 | icône | Text, Integer | &#8594;  | Nom ou numéro d'image ("" ou 0 pour ne pas associer d'icône) |
 | couleur | Integer | &#8594;  | Valeur de couleur RVB ou -1 = rétablir couleur originale |
+| sélectionnable | Boolean | &#8594;  | Vrai si l'élément est sélectionnable (liste déroulante uniquement) |
 </div>
 <!-- END REF-->
 
@@ -26,6 +27,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Nouveau paramètre *sélectionnable*, prise en charge des listes déroulantes basées sur des énumérations|
 |18 R6|Modifié|
 |17 R6|Modifié|
 |11 SQL|Modifié|
@@ -73,6 +75,14 @@ Dans le paramètre *icône*, vous pouvez passer une image pour l'utiliser comme 
 * Si vous souhaitez utiliser des expressions image 4D (champs, variables...) pour définir les icônes des éléments, utilisez la commande [SET LIST ITEM ICON](../commands/set-list-item-icon).
 
 Le paramètre *couleur* (facultatif) permet de modifier la couleur du texte de l’élément. La couleur doit être définie sous forme de couleur RVB, c’est-à-dire un entier long de 4 octets au format 0x00RRVVBB. Pour plus d’informations sur ce format, reportez-vous à la description de la commande [OBJECT SET RGB COLORS](../commands/object-set-rgb-colors). Passez -1 dans le paramètre *couleur* pour rétablir la couleur d’origine de l’élément.
+
+Le paramètre *sélectionnable* (facultatif) permet de définir si l'élément est sélectionnable dans la liste déroulante.
+
+:::note À propos des listes déroulantes
+
+Les paramètres de `SET LIST ITEM PROPERTIES` sont pris en charge avec les [objets listes déroulantes](../../FormObjects/dropdownList_Overview.md) dont le [type de source de données](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) est **Liste**. Les paramètres sont ignorés avec les listes déroulantes associées à d'autres types de sources de données, tels qu'objet ou tableau.
+
+:::
 
 ## Exemple 1 
 

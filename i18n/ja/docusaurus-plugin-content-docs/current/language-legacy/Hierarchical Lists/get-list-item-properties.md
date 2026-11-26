@@ -5,7 +5,7 @@ slug: /commands/get-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : 倍長整数, 演算子 ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<br/>**GET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : 倍長整数, 演算子 ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<!-- END REF-->
+<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( * ; *list* : Text ; *itemRef* : 倍長整数, 演算子 ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer {; *selectable* : Boolean}}}} )<br/>**GET LIST ITEM PROPERTIES** ( *list* : Integer ; *itemRef* : 倍長整数, 演算子 ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer {; *selectable* : Boolean}}}} )<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM PROPERTIES.Params-->
 <div class="no-index">
 
@@ -18,6 +18,7 @@ displayed_sidebar: docs
 | styles | Integer | &#8592; | 項目のフォントスタイル |
 | icon | Text, Integer | &#8592; | ピクチャー名または番号 |
 | color | Integer | &#8592; | RGBカラー値 |
+| selectable | Boolean | &#8592; | 項目が選択可能な場合は True (ドロップダウンリストのみ) |
 </div>
 <!-- END REF-->
 
@@ -26,6 +27,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|*selectable* 引数を追加、リストに基づくドロップダウンリストをサポート|
 |17 R6|変更|
 |11 SQL|変更|
 |<6|初出|
@@ -48,7 +50,7 @@ displayed_sidebar: docs
 
 呼出し後に、以下の値を取得できます:
 
-* 項目が編集可の場合、*enterable* にTRUEが返されます。
+* 項目が編集可の場合、*enterable* にTRUEが返されます。データソースの型が **リスト** であるドロップダウンリストオブジェクトの場合、この引数は考慮されません。代わりに *selectable* 引数を使用してください。
 * *styles* には項目のフォントスタイルが返されます。
 * *icon* には項目に割り当てられたピクチャーが返されます。  
    * ピクチャーファイルを使用してアイコンが指定されていた場合、コマンドは *icon* にピクチャーのパス名 ( **path:<filesystem path>** ) を返します。  
@@ -56,8 +58,15 @@ displayed_sidebar: docs
          
    **注:** [GET LIST ITEM ICON](../commands/get-list-item-icon) コマンドを使用すれば、ピクチャー変数にアイコンを取得できます。
 * *color* には項目のテキストカラーが返されます。
+* *selectable* には、ドロップダウンリストで項目が選択可能かどうかが返されます。
 
 これらのプロパティに関する詳細は、[SET LIST ITEM PROPERTIES](../commands/set-list-item-properties) コマンドの説明を参照してください。
+
+:::note ドロップダウンリストについて
+
+`GET LIST ITEM PROPERTIES` は、[データソースの型](../../FormObjects/dropdownList_Overview.md#ドロップダウンリストの種類) が **リスト** である [ドロップダウンリストオブジェクト](../../FormObjects/dropdownList_Overview.md) でのみ使用できます。オブジェクトや配列など、他のデータソースの型にバインドされたドロップダウンリストでは、引数は無視されます。
+
+:::
 
 ## 参照 
 

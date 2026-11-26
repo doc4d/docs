@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R6|New *selectable* parameter|
+|21 R6|New *selectable* parameter, support of list-based drop-down lists|
 |17 R6|Modified|
 |11 SQL|Modified|
 |<6|Created|
@@ -52,7 +52,7 @@ If you work with item reference numbers, build a list in which items have unique
 
 After the call:
 
-* *enterable* returns True if the item is enterable. In the context of a drop-down list object whose data source type is **List**, this parameter is not taken into account, use the *selectable* paramater instead. 
+* *enterable* returns True if the item is enterable. In the context of a drop-down list object whose data source type is **List**, this parameter is not taken into account, use the *selectable* parameter instead. 
 * *styles* returns the font style of the item.
 * *icon* returns the picture assigned to the item, if any.  
    * If the icon has been specified using a picture file, the command returns in *icon* the pathname using the **path:<filesystem path>** pattern.  
@@ -64,11 +64,13 @@ After the call:
 
 For details about these properties, see the description of the command [`SET LIST ITEM PROPERTIES`](../commands/set-list-item-properties).
 
+
 :::note About drop-down lists
 
-`GET LIST ITEM PROPERTIES` can be only be used with [drop-down list objects](../../FormObjects/dropdownList_Overview.md) whose [data source types](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) are **List**. Parameters do not apply to drop-down lists bound to other data source types such as object or array. 
+`GET LIST ITEM PROPERTIES` can only be used with [drop-down list objects](../../FormObjects/dropdownList_Overview.md) whose [data source types](../../FormObjects/dropdownList_Overview.md#drop-down-list-types) are **List**. Parameters are ignored with drop-down lists bound to other data source types such as object or array. 
 
 :::
+
 
 ## See also 
 

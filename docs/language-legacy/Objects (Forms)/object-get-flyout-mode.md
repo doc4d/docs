@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | -> | If specified, *objectName* is a form object name |
-| object | Text, Variable, Field | &#8594;  | Ddrop-down list object name (if * is specified) or <br/>Variable or field (if * is omitted) |
+| object | Text, Variable, Field | &#8594;  | Drop-down list object name (if * is specified) or <br/>Variable or field (if * is omitted) |
 | Function result | Text | <- | Current flyout mode |
 
 </div>
@@ -35,7 +35,7 @@ displayed_sidebar: docs
 If you specify the optional *\** parameter, you indicate an object name (a string) in *object*. If you omit the optional \* parameter, you indicate a field or a variable in *object*. In this case, you specify a field or form variable reference.
 
 
-The current flyout mode of a drop-down list can have been be [set at the form level](../../FormObjects/properties_Display.md#flyout-mode) in the Property list, or for the current process using the [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) command.
+The current flyout mode of a drop-down list can have been [set at the form level](../../FormObjects/properties_Display.md#flyout-mode) in the Property list, or for the current process using the [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) command.
 
 The following values can be returned:
 

@@ -76,7 +76,7 @@ In the *icon* parameter, you can pass a picture to be used as the icon for the i
 
 The *color* parameter (optional) lets you modify the color of the item text. The color must be specified in the form of an RGB color, i.e. a 4-byte longint in the 0x00RRGGBB format. For more information about this format, refer to the description of the [OBJECT SET RGB COLORS](../commands/object-set-rgb-colors) command. Pass -1 in the *color* parameter to reset the original color of the item.
 
-The *selectable* parameter (optional) returns whether the item is selectable in the drop-down list. 
+The *selectable* parameter (optional) lets you define whether the item is selectable in the drop-down list. 
 
 :::note About drop-down lists
 

@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594; | If specified, *objectName* is a form object name |
-| object | Text, Variable, Field | &#8594;  | Ddrop-down list object name (if * is specified) or <br/>Variable or field (if * is omitted) |
+| object | Text, Variable, Field | &#8594;  | Drop-down list object name (if * is specified) or <br/>Variable or field (if * is omitted) |
 | mode | Text | &#8594; | Flyout mode: "automatic", "popup", or "pulldown" |
 
 </div>
