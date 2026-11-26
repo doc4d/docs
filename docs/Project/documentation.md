@@ -63,6 +63,42 @@ The `Documentation` folder architecture is the following:
 
 > Renaming or deleting a documented element in your project will also rename or delete the element's associated Markdown file.
 
+### Disk-folder projects
+
+In a [disk-folder project](architecture.md#disk-folder-projects), the `Documentation` folder mirrors the Explorer folders of `Project/Sources`: the documentation of a method, a class, or a project form stored in an Explorer folder is in `Documentation/<folder path>/<type folder>`. For example:
+
+- `Documentation`
+	+ `Methods`
+		* topLevelMethod.md
+	+ `Invoices`
+		* `Methods`
+			- createInvoice.md
+		* `Classes`
+			- Invoice.md
+		* `Forms`
+			- InvoiceForm.md
+
+Elements at Top Level, table forms, database methods, and triggers keep their documentation in the folders described above.
+
+The documentation files follow their elements:
+
+- Clicking **Create** in the Explorer creates the file in the mirror folder of the element.
+- Moving an element to another folder moves its documentation file.
+- Renaming, moving, or deleting a folder on the Home page renames, moves, or deletes its mirror folder under `Documentation`.
+- [Converting the project](../Develop/explorer.md#converting-a-project) moves the documentation files with their elements.
+
+#### Example
+
+You want to read the documentation of the `createInvoice` method, stored in the `Invoices` folder:
+
+```4d
+var $doc : 4D.File:=Folder(fk database folder).file("Documentation/Invoices/Methods/createInvoice.md")
+var $text : Text
+If ($doc.exists)
+	$text:=$doc.getText()
+End if
+```
+
 
 ## Documentation in the Explorer
 

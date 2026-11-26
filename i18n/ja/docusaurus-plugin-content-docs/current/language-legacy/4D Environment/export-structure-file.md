@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|新しい *diskFolders* オプション|
 |18|変更|
 |17 R5|変更|
 |17 R3|初出|
@@ -50,6 +51,7 @@ displayed_sidebar: docs
 | ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | withLog           | ブールまたは文字列 | <table><tbody><tr><td>true または "always": 指定先のLogs フォルダーに変換ログファイルを作成します</td></tr><tr><td>"ifNotEmpty": 変換ログファイルに何らかのメッセージが含まれる場合にのみ変換ログファイルを作成します</td></tr><tr><td>false または省略(デフォルト): 変換ログファイルを作成しません</td></tr></tbody></table> |
 | makeProject       | ブール       | true を渡すと"Project" フォルダーに.4DProject ファイルを書き出します。                                                                                                                                                                                                                                                                                |
+| diskFolders       | ブール       | true を渡すと[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) を書き出します(以下参照)。false または省略(デフォルト): 仮想フォルダー(`folders.json` ファイル)を使用したプロジェクトを書き出します。その他の値は無視されます |
 | filter            | オブジェクト    | 書き出されるコンテンツ。省略された場合(デフォルト)、全てが書き出されます。                                                                                                                                                                                                                                                                                         |
 | projectMethods    | ブール       | プロジェクトメソッドを書き出すにはtrue                                                                                                                                                                                                                                                                                                          |
 | databaseMethods   | ブール       | データベースメソッドを書き出すにはtrue                                                                                                                                                                                                                                                                                                          |
@@ -77,6 +79,12 @@ displayed_sidebar: docs
 (\*) "trash" フィルターは、"projectMethods" あるいは "forms" も選択されている場合に限り有効です。
 
 **警告:** *options* 引数が渡されて、かつ"filter" オブジェクトが使用されている場合、書き出すプロパティに対してそれぞれ**true** 値を指定する必要があります。このオブジェクトが渡された場合、4D はデフォルトでは全てのプロパティが**false** に設定されているとみなします。
+
+*diskFolders* が true の場合、データベースのエクスプローラーのホームページの各フォルダーは `Project/Sources` 内のフォルダーとなり、そのプロジェクトメソッドとプロジェクトフォームはタイプ別のフォルダー(`Sources/<folder path>/Methods` および `Sources/<folder path>/Forms`)に、そのドキュメンテーションは `Documentation/<folder path>` に書き出されます。テーブルとテーブルフォームのフォルダーは、`folders.json` ではなく `Sources/tableFolders.json` に書き出され、メソッドファイルには "folder" 属性が含まれません。.4DProject ファイルが生成される場合、そのファイルはディスクフォルダープロジェクトとしてマークされます。ディスク上で使用できないフォルダー名は、[**Convert to Disk Folders...**](../../Develop/explorer.md#converting-a-project) のルールに従って名前が変更され(たとえば `CON` は `CON 2` になります)、各名前変更は戻り値において "info" メッセージとして報告されます。ゴミ箱に入った要素は通常どおりゴミ箱に書き出されます。
+
+**注:** **ファイル > 書き出し > Structure to project** メニューコマンドは、まず **Use disk folders** チェックボックス(デフォルトでは未選択)を含むダイアログを表示します。このチェックボックスでこのオプションを設定します。**Convert** をクリックするとプロジェクトが書き出され、**キャンセル** をクリックすると何も書き出されません。
+
+![ストラクチャーをプロジェクトに書き出すダイアログ](../../assets/en/language/export-structure-to-project.png)
 
 ### 戻り値 
 
@@ -123,6 +131,16 @@ displayed_sidebar: docs
  $option.filter.databaseMethods:=True
  $option.withLog:="always"
  $result:=Export structure file("exportWithLog";$option)
+```
+
+## 例題 3 
+
+データベースを、.4DProject ファイル付きのディスクフォルダープロジェクトとして書き出したい場合を考えます:
+
+```4d
+var $result : Object
+$result:=Export structure file("ExportDisk"; {makeProject: True; diskFolders: True})
+// "Web" フォルダーのメソッドは ExportDisk/Project/Sources/Web/Methods 内にあります
 ```
 
 ## 参照 

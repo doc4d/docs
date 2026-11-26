@@ -49,7 +49,7 @@ Project development file, used to designate and launch the project. This file ca
 
 > In 4D projects, development is done with 4D and multi-user development is managed through source control tools. 4D Server can open .4DProject files for testing purposes.
 
-This text file can also contain configuration keys, in particular [`"tokenizedText": false`](../Preferences/general.md#excluding-tokens-in-existing-projects).
+This text file can also contain configuration keys, in particular [`"tokenizedText": false`](../Preferences/general.md#excluding-tokens-in-existing-projects) and `"diskFolders": true`, which marks a [disk-folder project](#disk-folder-projects).
 
 ### `Sources`
 
@@ -57,7 +57,8 @@ Contents|Description|Format
 --------|-------|----
 catalog.4DCatalog|Table and field definitions|XML
 catalog_editor.json|Custom positions and colors of tables, fields, and links in the Structure editor. Depends on a [Compatibility setting](../settings/compatibility.md) in converted projects|JSON
-folders.json|Explorer folder definitions|JSON
+folders.json|Explorer folder definitions. Not used in [disk-folder projects](#disk-folder-projects)|JSON
+tableFolders.json|[Disk-folder projects](#disk-folder-projects) only: Explorer folders of tables and table forms|JSON
 menus.json|Menu definitions|JSON
 roles.json|[Privileges, permissions](../ORDA/privileges.md#rolesjson-file) and other security settings for the project|JSON
 settings.4DSettings|*Structure* database settings. They are not taken into account if *[user settings](#settings-user)* or *[user settings for data](#settings-user-data)* are defined (see also [Priority of settings](../settings/overview.md#priority-of-settings). **Warning**: In compiled applications, structure settings are stored in the .4dz file (read-only). For deployment needs, it is necessary to [enable](../settings/overview.md#enabling-user-settings) and use *user settings* or *user settings for data* to define custom settings.|XML
@@ -155,6 +156,72 @@ The Trash folder contains methods and forms that were deleted from the project (
 - `TableForms`
 
 Within these folders, deleted element names are in parentheses, e.g. "(myMethod).4dm". The folder organization is identical to the [Sources](#sources) folder.
+
+In a [disk-folder project](#disk-folder-projects), an element deleted from an Explorer folder keeps its folder path in the Trash: for example, the `createInvoice` method of the `Invoices` folder goes to `Trash/Invoices/Methods/(createInvoice).4dm`. The Trash page of the Explorer lists these elements and restores them with **Move To**, as usual.
+
+
+### Disk-folder projects
+
+In a disk-folder project, the folders of the Explorer [Home page](../Develop/explorer.md#disk-folders) are real folders on disk, under `Project/Sources`. The same organization is shown in 4D, on disk, in git, and in other tools such as VS Code.
+
+A disk-folder project has the `"diskFolders": true` key in its [`.4DProject` file](#applicationname4dproject-file). [New projects](../GettingStarted/creating.md#creating-a-project) are disk-folder projects. Other projects use *virtual folders*, defined in the `folders.json` file and in the `"folder"` attribute of methods, until you [convert them](../Develop/explorer.md#converting-a-project).
+
+#### Layout
+
+Each Explorer folder is a folder in `Sources`, next to the type folders (`Methods`, `Classes`, `Forms`...). A subfolder of an Explorer folder is a subfolder on disk. Inside each Explorer folder, elements are stored in type folders:
+
+- `Methods`: project methods (*methodName*.4dm)
+- `Classes`: classes (*className*.4dm)
+- `Forms`: project forms (*formName*/form.4DForm, with its method, `Images` and `ObjectMethods`)
+- `WebForms`: Qodly pages (*pageName*.WebForm)
+
+For example:
+
+- `Sources`
+	+ `Methods`
+		* topLevelMethod.4dm (element at Top Level)
+	+ `Classes`, `Forms`, `WebForms` (elements at Top Level)
+	+ `DatabaseMethods`, `TableForms`, `Triggers`, `Shared` (unchanged)
+	+ tableFolders.json
+	+ `Invoices` (Explorer folder "Invoices")
+		* `Methods`
+			- createInvoice.4dm
+		* `Classes`
+			- Invoice.4dm
+		* `Forms`
+			- InvoiceForm/form.4DForm
+		* `WebForms`
+			- Checkout.WebForm
+		* `Archive` (subfolder "Archive" of "Invoices")
+			- `Methods`
+				+ archiveInvoice.4dm
+
+Elements at Top Level stay in the type folders at the root of `Sources`. Database methods, triggers and table forms keep their usual folders (`DatabaseMethods`, `Triggers`, `TableForms`).
+
+In a disk-folder project:
+
+- The folder of an element is the folder where its file is stored. The `folders.json` file and the `"folder"` key of the `%attributes` line of method files are ignored, and the `"folder"` key is never written when a method is saved.
+- Tables and table forms have no file in a folder: their Explorer folder is stored in `Sources/tableFolders.json`, which has the format of `folders.json` limited to tables and table forms. A folder named in this file but absent on disk is still shown on the Home page. 4D removes the file when no folder holds a table or a table form.
+- Element names must stay unique in the project, whatever their folder. Folder names must also be unique. See [Files at fault](../Develop/explorer.md#files-at-fault).
+- The [`Documentation`](#documentation) folder follows the same folder hierarchy (see [Documenting a project](documentation.md#disk-folder-projects)).
+- Empty folders are shown on the Home page. Note that git does not keep empty folders.
+
+#### Example
+
+You want to add a project method to the `Invoices` folder by writing its file on disk, then reload the project:
+
+```4d
+var $folder : 4D.Folder:=Folder(fk database folder).folder("Project/Sources/Invoices/Methods")
+$folder.create()
+$folder.file("printInvoice.4dm").setText("//%attributes = {}\r#DECLARE()\rALERT(\"Invoice\")\r")
+RELOAD PROJECT  // printInvoice appears in the Invoices folder of the Home page
+```
+
+:::note
+
+Versions of 4D that do not support disk-folder projects cannot use them: depending on the version, they refuse to open the project with the message "This project uses disk folders. Open it with a version of 4D that supports them.", or they open it without the elements stored in Explorer folders.
+
+:::
 
 
 ### `DerivedData`

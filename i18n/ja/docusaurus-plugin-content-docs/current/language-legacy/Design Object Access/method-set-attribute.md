@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|ディスクフォルダープロジェクトにおいて、Attribute folder name でメソッドファイルを移動|
 |14|変更|
 |13|初出|
 
@@ -53,6 +54,8 @@ displayed_sidebar: docs
 
 一度の呼び出しに複数の*attribType*;*attribValue* ペアを渡す事ができます。
 
+[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) においては、Attribute folder name 定数は、エクスプローラーのホームページ上での移動と同様に、ディスク上のメソッドファイルを移動します: フォルダーの場合は `Sources/<folder path>/Methods` へ、空の文字列を渡した場合は `Sources/Methods` へと移動します。メソッドのドキュメンテーションファイルも一緒に移動されます。フォルダーが存在しない場合、メソッドは移動されず、フォルダーも作成されません。同じ名前のフォルダーが複数ある場合、パス順で最初のフォルダーが使用されます。
+
 このコマンドをコンポーネントから実行することもできますが、この場合 (コンポーネントコードには書き込みアクセスができないため) *\** 引数を渡さなければなりません。この状況で *\** 引数を省略するとエラー-9763が生成されます。
 
 ### 
@@ -73,6 +76,17 @@ displayed_sidebar: docs
 
 ```4d
  METHOD SET ATTRIBUTE(vPath;Attribute invisible;vInvisible;Attribute published Web;v4DAction;Attribute published SOAP;vSoap;Attribute published WSDL;vWSDL;Attribute shared;vExported;Attribute published SQL;vSQL;Attribute executed on server;vRemote;Attribute folder name;vFolder;*)
+```
+
+## 例題 3 
+
+[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) において、`createInvoice` メソッドを `Archive` フォルダーに移動し、その後トップレベルに戻したい場合を考えます:
+
+```4d
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "Archive")
+// ファイルは Sources/Invoices/Archive/Methods/createInvoice.4dm になります
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "")
+// ファイルは Sources/Methods/createInvoice.4dm になります
 ```
 
 ## 参照 

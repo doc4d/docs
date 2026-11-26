@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|Atributo "folder" en los proyectos con carpetas en disco|
 |18 R3|Modificado|
 |15 R4|Modificado|
 |15|Modificado|
@@ -65,7 +66,7 @@ En el texto del *codigo* generado por este comando:
 ```  
     
     
-Durante una importación, esta línea no se importa, se utiliza para definir los atributos correspondientes (los atributos no especificados se reinicializan a su valor por defecto). El atributo "lang" define el lenguaje de exportación e impide una importación en una aplicación en lenguaje diferente (en este caso, se genera un error). El atributo "folder" contiene el nombre de la carpeta padre del método; no se muestra cuando el método no tiene una carpeta padre.  
+Durante una importación, esta línea no se importa, se utiliza para definir los atributos correspondientes (los atributos no especificados se reinicializan a su valor por defecto). El atributo "lang" define el lenguaje de exportación e impide una importación en una aplicación en lenguaje diferente (en este caso, se genera un error). El atributo "folder" contiene el nombre de la carpeta padre del método; no se muestra cuando el método no tiene una carpeta padre. En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), el atributo "folder" es la carpeta donde se almacena el archivo del método en el disco (por ejemplo, "Invoices" para `Sources/Invoices/Methods/createInvoice.4dm`), aunque el archivo del método en sí no tenga la llave "folder"; no se devuelve para un método situado en el nivel raíz.  
 Pueden definirse atributos adicionales. Para mayor información, consulte la descripción del comando [METHOD SET ATTRIBUTES](../commands/method-set-attributes).
 
 El parámetro *opcion* le permite seleccionar el modo de exportación del código con respecto a los elementos del lenguaje tokenizados de los métodos: 
@@ -138,6 +139,16 @@ El documento resultante contendrá:
 Case of
     : (Form event code:C388=On Load:K2:1)
         ALL RECORDS:C47([Customer:1])µEnd case
+```
+
+## Ejemplo 3
+
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), el archivo del método `createInvoice` se almacena en `Sources/Invoices/Methods`. Desea obtener su código con su carpeta:
+
+```4d
+var $code : Text
+METHOD GET CODE("createInvoice"; $code)
+// la primera línea de $code contiene "folder":"Invoices"
 ```
 
 ## Ver también 

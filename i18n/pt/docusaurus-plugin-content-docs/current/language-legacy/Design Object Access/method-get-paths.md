@@ -24,6 +24,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Suporte dos projetos com pastas em disco|
 |18 R3|Modificado|
 |13|Criado por|
 
@@ -38,6 +39,8 @@ Se seu código está organizado em "pastas" no Navegador de 4D (página Inicio),
   
 **Nota**: não pode utilizar o caractere curinga, "@" em *nomPasta*.  
   
+Em um [projeto com pastas em disco](../../Project/architecture.md#disk-folder-projects), *nomPasta* designa uma pasta encontrada no disco em `Project/Sources`, e os métodos e classes desta pasta são aqueles cujos arquivos estão armazenados em suas pastas de tipo. Se várias pastas tiverem o mesmo nome (o que é [relatado como uma falha](../../Develop/explorer.md#files-at-fault)), apenas a primeira na ordem dos caminhos é usada.
+
 Passe no parâmetro *tipoMetodo* o tipo de método ao qual quer obter a rotas no array *arrRotas*. Pode utilizar as seguintes constantes (individualmente ou em combinação), do tema *Design Object Access*:
 
 | Constante            | Tipo          | Valor | Comentário                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -91,6 +94,16 @@ Recuperação dos métodos de projeto modificados desde o último backup:
 ## Exemplo 4 
 
 Consulte o exemplo do comando [METHOD SET CODE](../commands/method-set-code).
+
+## Exemplo 5
+
+Em um [projeto com pastas em disco](../../Project/architecture.md#disk-folder-projects) com as pastas `Sources/A/Utils` e `Sources/B/Utils`, se quiser obter os métodos projeto da pasta `Utils`:
+
+```4d
+ARRAY TEXT($paths; 0)
+METHOD GET PATHS("Utils"; Path project method; $paths)
+// $paths contém apenas os métodos de Sources/A/Utils/Methods
+```
 
 ## Ver também 
 

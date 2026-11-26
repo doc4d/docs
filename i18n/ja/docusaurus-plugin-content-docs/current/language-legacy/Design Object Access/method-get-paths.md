@@ -24,6 +24,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|ディスクフォルダープロジェクトのサポート|
 |18 R3|変更|
 |13|初出|
 
@@ -37,6 +38,8 @@ displayed_sidebar: docs
 メソッドが4Dエクスプローラーのホームページでフォルダーを使用して階層化されていれば、オプションの*folderName*引数にフォルダー名を渡すことができます。この場合*arrPaths*配列にはこのフォルダーに含まれるメソッドのみのパスが返されます。
 
 **注:** *folderName*に"@"文字は使用できません。
+
+[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) においては、*folderName* は `Project/Sources` 下のディスク上にあるフォルダーを指定し、このフォルダー内のメソッドとクラスとは、そのファイルがこのフォルダーのタイプ別フォルダーに保存されているものを指します。同じ名前のフォルダーが複数ある場合(これは[問題として報告されます](../../Develop/explorer.md#files-at-fault))、パス順で最初のフォルダーのみが使用されます。
 
 *methodType* 引数には*arrPaths*配列にパスを取得したいメソッドのタイプを渡します。*Design Object Access*テーマの以下の定数を個別にあるいは加算して使用できます:
 
@@ -91,6 +94,16 @@ displayed_sidebar: docs
 ## 例題 4 
 
 [METHOD SET CODE](../commands/method-set-code)コマンドの例題参照。
+
+## 例題 5 
+
+`Sources/A/Utils` と `Sources/B/Utils` フォルダーを持つ[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) において、`Utils` フォルダーのプロジェクトメソッドを取得したい場合を考えます:
+
+```4d
+ARRAY TEXT($paths; 0)
+METHOD GET PATHS("Utils"; Path project method; $paths)
+// $paths には Sources/A/Utils/Methods のメソッドのみが格納されます
+```
 
 ## 参照 
 

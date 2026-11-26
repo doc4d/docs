@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |Version|Changements|
 |---|---|
+|21 R6|Attribute folder name déplace le fichier de la méthode dans les projets à dossiers disque|
 |14|Modifié|
 |13|Créé|
 
@@ -53,6 +54,8 @@ Passez dans le paramètre *valeurAttribut* soit :
 
 Vous pouvez passer plusieurs paires *typeAttribut*;*valeurAttribut* en un seul appel. 
 
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), la constante Attribute folder name déplace le fichier de la méthode sur le disque, comme un déplacement dans la page Démarrage de l'Explorateur : vers `Sources/<folder path>/Methods` pour un dossier, ou vers `Sources/Methods` si vous passez une chaîne vide. Son fichier de documentation est déplacé avec lui. Si le dossier n'existe pas, la méthode n'est pas déplacée et aucun dossier n'est créé. Si plusieurs dossiers portent le même nom, le premier dans l'ordre des chemins est utilisé.
+
 Vous pouvez exécuter cette commande depuis un composant, mais dans ce cas vous devez passer le paramètre *\** car l’accès en écriture au code du composant n’est pas possible. Si vous omettez le paramètre *\** dans ce contexte, l’erreur -9763 est générée. 
 
 ### 
@@ -73,6 +76,17 @@ Définition de plusieurs paires attribut/valeur :
 
 ```4d
  METHOD SET ATTRIBUTE(vChemin;Attribute invisible;vInvisible;Attribute published Web;v4DAction;Attribute published SOAP;vSoap;Attribute published WSDL;vWSDL;Attribute shared;vExported;Attribute published SQL;vSQL;Attribute executed on server;vRemote;Attribute folder name;vDossier;*)
+```
+
+## Exemple 3
+
+Dans un [projet à dossiers disque](../../Project/architecture.md#disk-folder-projects), vous souhaitez déplacer la méthode `createInvoice` dans le dossier `Archive`, puis la replacer au niveau racine :
+
+```4d
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "Archive")
+// le fichier est maintenant Sources/Invoices/Archive/Methods/createInvoice.4dm
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "")
+// le fichier est maintenant Sources/Methods/createInvoice.4dm
 ```
 
 ## Voir aussi 

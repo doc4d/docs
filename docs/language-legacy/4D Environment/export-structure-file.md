@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|New *diskFolders* option|
 |18|Modified|
 |17 R5|Modified|
 |17 R3|Created|
@@ -50,6 +51,7 @@ The *options* parameter allows you to customize the conversion process. The *opt
 | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | withLog           | boolean or string | <table><tbody><tr><td>true or "always": create a conversion log file the destination Logs folder.</td></tr><tr><td>"ifNotEmpty": create a conversion log file only if it contains some messages</td></tr><tr><td>false or omitted (default): do not create a conversion log file</td></tr></tbody></table> |
 | makeProject       | boolean           | true to generate a .4DProject file in the "Project" folder                                                                                                                                                                                                                                                                                                                                                 |
+| diskFolders       | boolean           | true to export a [disk-folder project](../../Project/architecture.md#disk-folder-projects) (see below). false or omitted (default): export a project with virtual folders (`folders.json` file). Any other value is ignored |
 | filter            | object            | Contents to export. If omitted (default), everything is exported                                                                                                                                                                                                                                                                                                                                           |
 | projectMethods    | boolean           | true to export project methods                                                                                                                                                                                                                                                                                                                                                                             |
 | databaseMethods   | boolean           | true to export database methods                                                                                                                                                                                                                                                                                                                                                                            |
@@ -77,6 +79,12 @@ The *options* parameter allows you to customize the conversion process. The *opt
 (\*) The "trash" filter is useful only if "projectMethods" or "forms" filters are also selected.
 
 **Warning:** When the *options* parameter is passed and the "filter" object is used, you must explicitly declare each property to export with the **true** value. When this object is passed, 4D assumes all properties are set to **false** by default. 
+
+When *diskFolders* is true, each folder of the Explorer Home page of the database becomes a folder in `Project/Sources`, and its project methods and project forms are written in its type folders (`Sources/<folder path>/Methods` and `Sources/<folder path>/Forms`), with their documentation in `Documentation/<folder path>`. The folders of tables and table forms are written in `Sources/tableFolders.json` instead of `folders.json`, and method files have no "folder" attribute. When the .4DProject file is generated, it is marked as a disk-folder project. Folder names that can't be used on disk are renamed with the rules of [**Convert to Disk Folders...**](../../Develop/explorer.md#converting-a-project) (for example, `CON` becomes `CON 2`), and each renaming is reported as an "info" message in the result. Trashed elements are exported to the Trash as usual.
+
+**Note:** The **File > Export > Structure to project** menu command first displays a dialog with a **Use disk folders** checkbox, unchecked by default, which sets this option. Click **Convert** to export the project, or **Cancel** to export nothing.
+
+![Export structure to project dialog](../../assets/en/language/export-structure-to-project.png)
 
 ### Result 
 
@@ -123,6 +131,16 @@ You want to export only project and database methods, and a log file:
  $option.filter.databaseMethods:=True
  $option.withLog:="always"
  $result:=Export structure file("exportWithLog";$option)
+```
+
+## Example 3
+
+You want to export the database as a disk-folder project, with a .4DProject file:
+
+```4d
+var $result : Object
+$result:=Export structure file("ExportDisk"; {makeProject: True; diskFolders: True})
+// the methods of the "Web" folder are in ExportDisk/Project/Sources/Web/Methods
 ```
 
 ## See also 

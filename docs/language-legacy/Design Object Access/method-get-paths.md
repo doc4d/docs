@@ -24,6 +24,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|Support of disk-folder projects|
 |18 R3|Modified|
 |13|Created|
 
@@ -37,6 +38,8 @@ displayed_sidebar: docs
 If your code is organized in "folders" in the 4D Explorer (Home page), you can pass a folder name in the optional *folderName* parameter. In this case, the *arrPaths* array only contains paths of methods that are found in this location. 
 
 **Note:** You cannot use the "@" character in *folderName*.
+
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects), *folderName* designates a folder found on disk under `Project/Sources`, and the methods and classes in this folder are the ones whose files are stored in its type folders. If several folders have the same name (which is [reported as a fault](../../Develop/explorer.md#files-at-fault)), only the first one in path order is used.
 
 In the *methodType* parameter, you pass the type of method whose paths you want to get in the *arrPaths* array. You can use the following constants (individually or a combination of them), found in the *Design Object Access* theme:
 
@@ -91,6 +94,16 @@ Retrieval of project methods that were modified since the last backup:
 ## Example 4 
 
 Refer to the example of the [METHOD SET CODE](../commands/method-set-code) command.
+
+## Example 5
+
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects) with the folders `Sources/A/Utils` and `Sources/B/Utils`, you want to get the project methods of the `Utils` folder:
+
+```4d
+ARRAY TEXT($paths; 0)
+METHOD GET PATHS("Utils"; Path project method; $paths)
+// $paths contains only the methods of Sources/A/Utils/Methods
+```
 
 ## See also 
 

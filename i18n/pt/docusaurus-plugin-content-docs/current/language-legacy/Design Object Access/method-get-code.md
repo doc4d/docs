@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Atributo "folder" nos projetos com pastas em disco|
 |18 R3|Modificado|
 |15 R4|Modificado|
 |15|Modificado|
@@ -65,7 +66,7 @@ No texto do *codigo* gerado por este comando:
 ```  
     
     
-Durante uma importação, esta linha não se importa, se utiliza para definir os atributos a aplicar (os atributos não especificados se reinicializam a seu valor como padrão). O atributo "lang" define a linguagem de exportação e impede uma importação em uma aplicação na linguagem diferente (neste caso, se gera um erro). O atributo "folder" contém o nome da pasta pai do método; não é mostrada quando o método não tem uma pasta pai.  
+Durante uma importação, esta linha não se importa, se utiliza para definir os atributos a aplicar (os atributos não especificados se reinicializam a seu valor como padrão). O atributo "lang" define a linguagem de exportação e impede uma importação em uma aplicação na linguagem diferente (neste caso, se gera um erro). O atributo "folder" contém o nome da pasta pai do método; não é mostrada quando o método não tem uma pasta pai. Em um [projeto com pastas em disco](../../Project/architecture.md#disk-folder-projects), o atributo "folder" é a pasta onde o arquivo do método está armazenado no disco (por exemplo, "Invoices" para `Sources/Invoices/Methods/createInvoice.4dm`), mesmo que o próprio arquivo do método não tenha chave "folder"; não é devolvido para um método no nível superior (Top Level).  
 Podem ser definidos atributos adicionais. Para saber mais, consulte o comando [METHOD SET ATTRIBUTES](../commands/method-set-attributes).
 
 O parâmetro *opção* lhe permite seleccionar o modo de exportação do código com respeito aos elementos da linguagem tokenizados dos métodos: 
@@ -139,6 +140,16 @@ Case of
     : (Form event code:C388=On Load:K2:1)
         ALL RECORDS:C47([Customer:1])
 End case
+```
+
+## Exemplo 3
+
+Em um [projeto com pastas em disco](../../Project/architecture.md#disk-folder-projects), o arquivo do método `createInvoice` está armazenado em `Sources/Invoices/Methods`. Se quiser obter seu código com sua pasta:
+
+```4d
+var $code : Text
+METHOD GET CODE("createInvoice"; $code)
+// a primeira linha de $code contém "folder":"Invoices"
 ```
 
 ## Ver também 

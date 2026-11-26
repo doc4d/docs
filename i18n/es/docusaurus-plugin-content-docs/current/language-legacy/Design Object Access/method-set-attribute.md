@@ -24,6 +24,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|Attribute folder name desplaza el archivo del método en los proyectos con carpetas en disco|
 |14|Modificado|
 |13|Creado por|
 
@@ -54,6 +55,8 @@ Puede pasar en el parámetro *valorAtrib:*
 
 Puede pasar múltiples pares *tipoAtrib*;*valorAtrib* en una sola llamada.
 
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), la constante Attribute folder name desplaza el archivo del método en el disco, como un desplazamiento en la página Inicio del Explorador: a `Sources/<folder path>/Methods` para una carpeta, o a `Sources/Methods` si pasa una cadena vacía. Su archivo de documentación se desplaza con él. Si la carpeta no existe, el método no se desplaza y no se crea ninguna carpeta. Si varias carpetas tienen el mismo nombre, se utiliza la primera en el orden de las rutas.
+
 Puede ejecutar este comando desde un componente, pero en este caso debe pasar el parámetro *\**, por el acceso en sólo escritura al código del componente. Si omite el parámetro *\** en este contexto, se genera el error -9763.
 
 ### 
@@ -74,6 +77,17 @@ Definición de varios pares de atributos/valores:
 
 ```4d
  METHOD SET ATTRIBUTE(vPath;Attribute invisible;vInvisible;Attribute published Web;v4DAction;Attribute published SOAP;vSoap;Attribute published WSDL;vWSDL;Attribute shared;vExported;Attribute published SQL;vSQL;Attribute executed on server;vRemote;Attribute folder name;vFolder;*)
+```
+
+## Ejemplo 3
+
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), desea desplazar el método `createInvoice` a la carpeta `Archive`, y luego devolverlo al nivel raíz:
+
+```4d
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "Archive")
+// el archivo es ahora Sources/Invoices/Archive/Methods/createInvoice.4dm
+METHOD SET ATTRIBUTE("createInvoice"; Attribute folder name; "")
+// el archivo es ahora Sources/Methods/createInvoice.4dm
 ```
 
 ## Ver también 

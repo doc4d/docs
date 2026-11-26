@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Versão|Alterações|
 |---|---|
+|21 R6|Suporte dos projetos com pastas em disco|
 |13|Criado por|
 
 </details>
@@ -37,6 +38,18 @@ Como os nomes das pastas devem ser únicos, a hierarquia não é devolvida neste
 Pode limitar a lista de pastas passando uma cadeia de comparação no parâmetro *filtro*, neste caso, somente são devolvidas as pastas cujos nomes coincidam com o filtro. Pode utilizar o caracter @ para definir os filtros de tipo "começa por", "termina em" o "contém". Se passado uma cadeia vazia, o parâmetro *filtro* se ignora.   
   
 Se executado este comando desde um componente, devolve por defeito os caminhos dos métodos do componente. Se passado o parâmetro *\**, o array conterá os caminhos dos métodos da base local.
+
+Em um [projeto com pastas em disco](../../Project/architecture.md#disk-folder-projects), o comando devolve os nomes das pastas encontradas no disco em `Project/Sources`, incluindo as pastas vazias, e as pastas nomeadas no arquivo `tableFolders.json`. As pastas de tipo (`Methods`, `Classes`, `Forms`, `WebForms`) e as pastas fixas (`DatabaseMethods`, `TableForms`, `Triggers`, `Shared`) não são devolvidas. O arquivo `folders.json` é ignorado.
+
+## Exemplo
+
+Em um projeto com pastas em disco com as pastas `Sources/Invoices` e `Sources/Invoices/Archive`, se quiser obter os nomes das pastas da página Início:
+
+```4d
+ARRAY TEXT($folders; 0)
+METHOD GET FOLDERS($folders)
+// $folders contém "Invoices" e "Archive"
+```
 
 ## Ver também 
 

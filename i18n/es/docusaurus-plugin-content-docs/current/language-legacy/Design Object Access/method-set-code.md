@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R6|El atributo "folder" desplaza o crea el archivo del método en los proyectos con carpetas en disco|
 |18 R3|Modificado|
 |15|Modificado|
 |14|Modificado|
@@ -75,9 +76,11 @@ Concerniente a la propiedad "folder" de los metadatos:
 * si esta propiedad no está presente o si la carpeta ya no existe, el comando no cambia a nivel de la carpeta padre,
 * cuando esta propiedad contiene una cadena vacía, el método se coloca a nivel raíz.
 
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), la propiedad "folder" desplaza el archivo del método en el disco a `Sources/<folder path>/Methods` (o a `Sources/Methods` para una cadena vacía), y un nuevo método se crea directamente en esa carpeta. Si varias carpetas tienen el mismo nombre, se utiliza la primera en el orden de las rutas. El archivo del método siempre se guarda sin la llave "folder".
+
 Puede ejecutar el comando desde un componente, en este caso, debe pasar el parámetro *\** por el acceso al código del componente en modo sólo lectura. Si omite el parámetro *\** en este contexto, se genera el error -9763.
 
-## Ejemplo 
+## Ejemplo 1
 
 Este ejemplo exporta e importa la totalidad de los métodos proyecto de una aplicación:
 
@@ -107,6 +110,17 @@ Este ejemplo exporta e importa la totalidad de los métodos proyecto de una apli
     End for
  End if
  SHOW ON DISK($root_t)
+```
+
+## Ejemplo 2
+
+En un [proyecto con carpetas en disco](../../Project/architecture.md#disk-folder-projects), desea crear el método `sendInvoice` en la carpeta `Invoices`:
+
+```4d
+var $code : Text
+$code:="//%attributes = {\"folder\":\"Invoices\"}\r#DECLARE()\rALERT(\"Sent\")"
+METHOD SET CODE("sendInvoice"; $code)
+// el archivo se crea como Sources/Invoices/Methods/sendInvoice.4dm, sin la llave "folder"
 ```
 
 ## Ver también 

@@ -19,6 +19,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|Reloads the folder hierarchy of disk-folder projects|
 |18 R4|Created|
 
 </details>
@@ -42,6 +43,19 @@ When the command is called from:
 * a 4D Developer connected to a 4D Server on the same machine, it is executed on 4D Server first, then on the 4D Developer side.
 * a 4D Developer connected remotely to a 4D Server, it is executed on 4D Server only.
 * a 4D single-user or a 4D Server, it is executed locally.
+
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects), the command also reloads the folder hierarchy of the Explorer Home page from the folders found on disk under `Project/Sources`: folders added, renamed, moved, or deleted, and elements moved between folders. A method moved to another folder keeps its identity (open editors and breakpoints follow it). The [files at fault](../../Develop/explorer.md#files-at-fault) found on disk are reported in a dialog, or in the diagnostic log when there is no IDE.
+
+## Example
+
+In a disk-folder project, you want to add a folder with a method outside the Explorer, then show it on the Home page:
+
+```4d
+var $folder : 4D.Folder:=Folder(fk database folder).folder("Project/Sources/Reports/Methods")
+$folder.create()
+$folder.file("monthlyReport.4dm").setText("//%attributes = {}\r#DECLARE()\r")
+RELOAD PROJECT  // the Reports folder and its monthlyReport method appear on the Home page
+```
 
 ## See also 
 

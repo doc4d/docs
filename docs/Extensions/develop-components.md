@@ -117,6 +117,20 @@ Standard 4D IDE features are available for the component. You can execute the fo
 - run methods,
 - restore from trash or empty trash.
 
+#### Disk-folder components
+
+An interpreted component can be a [disk-folder project](../Project/architecture.md#disk-folder-projects): its methods and classes are stored in the Explorer folders of its `Project/Sources` folder. The host loads and runs them like the other component elements, and shows the component's folder hierarchy:
+
+- in the **Component Methods** list of the Explorer, where shared methods are shown in their folders,
+- in the component tab opened with **Edit...**, where all elements are shown in their folders.
+
+For example, the `compShared` shared method is stored in `Sources/Tools/Methods` of the component. You call it from the host as usual:
+
+```4d
+var $result : Text
+EXECUTE METHOD("compShared"; $result; "host")
+```
+
 ### Compiling components
 
 You can compile a component [directly from the host project](../Project/compiler.md#compile-components) without having to open it separately, provided it is compliant with the [requirements](../Project/compiler.md#requirements).

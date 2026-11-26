@@ -201,6 +201,8 @@ You can hide groups of tables in the Structure editor based on folders defined i
 
 The menu associated with this button displays commands that manage the display as well as the list of folders in the database. A check mark appears next to each folder displayed. You can modify the current display by selecting or deselecting a folder from this menu.
 
+In a [disk-folder project](../Project/architecture.md#disk-folder-projects), the menu lists the folders found on disk under `Project/Sources` and the folders named in the `tableFolders.json` file, where the folder of each table is stored.
+
 The **Highlight All Folders** and **Dim All Folders** commands can be used to display or hide all the tables in folders of the database.
 
 Each click on the toolbar's folder button inverts the display of the tables: highlighted tables are dimmed and vice versa.

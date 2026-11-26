@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|"folder" attribute moves or creates the method file in disk-folder projects|
 |18 R3|Modified|
 |15|Modified|
 |14|Modified|
@@ -75,9 +76,11 @@ Concerning the "folder" property of the metadata:
 * If this property is not present or if the folder does not exist, the command makes no changes at the parent folder level,
 * When this property contains an empty string, the method is placed at the root level.
 
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects), the "folder" property moves the method file on disk to `Sources/<folder path>/Methods` (or to `Sources/Methods` for an empty string), and a new method is created directly in that folder. If several folders have the same name, the first one in path order is used. The method file is always saved without the "folder" key.
+
 You can execute this command from a component, but in this case, you must pass the *\** parameter because access to the component code is read-only. If you omit the *\** parameter in this context, the error -9763 is generated.
 
-## Example 
+## Example 1
 
 This example exports and imports all the project methods of an application:
 
@@ -107,6 +110,17 @@ This example exports and imports all the project methods of an application:
     End for
  End if
  SHOW ON DISK($root_t)
+```
+
+## Example 2
+
+In a [disk-folder project](../../Project/architecture.md#disk-folder-projects), you want to create the `sendInvoice` method in the `Invoices` folder:
+
+```4d
+var $code : Text
+$code:="//%attributes = {\"folder\":\"Invoices\"}\r#DECLARE()\rALERT(\"Sent\")"
+METHOD SET CODE("sendInvoice"; $code)
+// the file is created as Sources/Invoices/Methods/sendInvoice.4dm, without the "folder" key
 ```
 
 ## See also 

@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |リリース|内容|
 |---|---|
+|21 R6|ディスクフォルダープロジェクトにおける "folder" 属性|
 |18 R3|変更|
 |15 R4|変更|
 |15|変更|
@@ -63,7 +64,7 @@ displayed_sidebar: docs
   // %attributes = {"lang":"fr","invisible":true,"folder":"Web3"}  
 ```  
     
-読み込み時、この行は読み込まれず、それに対応する属性を設定する目的でのみ使用されます(指定されていない属性はデフォルト値へとリセットされます)。"lang"属性は書き出し言語を設定し、異なる言語への読み込みを防止する目的で 使用されます(この場合、エラーが生成されます)。「フォルダー」属性にはメソッドの親フォルダーの名前が入ります。メソッドが親フォルダーを持っていない場合は表示されません。  
+読み込み時、この行は読み込まれず、それに対応する属性を設定する目的でのみ使用されます(指定されていない属性はデフォルト値へとリセットされます)。"lang"属性は書き出し言語を設定し、異なる言語への読み込みを防止する目的で 使用されます(この場合、エラーが生成されます)。「フォルダー」属性にはメソッドの親フォルダーの名前が入ります。メソッドが親フォルダーを持っていない場合は表示されません。[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) においては、"folder" 属性はメソッドファイルがディスク上で保存されているフォルダーとなります(たとえば `Sources/Invoices/Methods/createInvoice.4dm` の場合は "Invoices")。メソッドファイル自体には "folder" キーは含まれません。トップレベルにあるメソッドの場合、この属性は返されません。  
 追加で属性を定義することができます。詳細な情報に関しては、[METHOD SET ATTRIBUTES](../commands/method-set-attributes) コマンドの詳細を参照して下さい。
 
 *option*引数を使用する際、メソッドのトークナイズドされたランゲージ要素についてのコード書き出しモードを選択する事ができます:
@@ -128,6 +129,16 @@ displayed_sidebar: docs
 
 ```RAW
   //%attributes = {"lang":"en"} 4Dによってコメント追加・保存されたコメントCase of    : (Form event code:C388=On Load:K2:1)        ALL RECORDS:C47([Customer:1])End case
+```
+
+## 例題 3 
+
+[ディスクフォルダープロジェクト](../../Project/architecture.md#disk-folder-projects) において、`createInvoice` メソッドのファイルが `Sources/Invoices/Methods` に保存されています。このメソッドのコードを、フォルダーとともに取得したい場合を考えます:
+
+```4d
+var $code : Text
+METHOD GET CODE("createInvoice"; $code)
+// $code の先頭行には "folder":"Invoices" が含まれます
 ```
 
 ## 参照 
