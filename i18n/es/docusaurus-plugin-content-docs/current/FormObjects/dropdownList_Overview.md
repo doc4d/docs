@@ -5,9 +5,16 @@ title: Lista desplegable
 
 Las listas desplegables son objetos de formulario que permiten al usuario seleccionar de una lista. Los elementos mostrados en la lista desplegable se gestionan mediante un objeto, array, una lista de selección o una acción estándar.
 
-En macOS, las listas desplegables también se denominan a veces "menú emergente". Ambos nombres se refieren a los mismos objetos. Como muestra el siguiente ejemplo, el aspecto de estos objetos puede variar ligeramente según la plataforma:
+En macOS, las listas desplegables también se denominan a veces "menú emergente". Ambos nombres se refieren a los mismos objetos. As the following example shows, the appearance of these objects can differ slightly according to the platform and the selected [flyout mode](./properties_Display.md#flyout-mode):
 
-![](../assets/en/FormObjects/popupDropdown_appearance.png)
+- macOS with "pop-up" flyout mode:  
+  ![](../assets/en/FormObjects/dropdown-mac.png)
+
+- Windows with "pull-down" flyout mode ([FluentUI rendering](../FormEditor/forms.md#fluent-ui-rendering) required):  
+  ![](../assets/en/FormObjects/dropdown-windows.png)
+
+- Windows (Classic rendering):  
+  ![](../assets/en/FormObjects/dropdown-windows-classic.png)
 
 ## Tipos de listas desplegables
 
@@ -28,21 +35,33 @@ Puede crear diferentes tipos de listas desplegables con distintas funcionalidade
 
 > Esta funcionalidad sólo está disponible en proyectos 4D.
 
+<details><summary>Historia</summary>
+
+| Lanzamiento | Modificaciones                    |
+| ----------- | --------------------------------- |
+| 21 R6       | Support of styled, editable items |
+
+</details>
+
 Un [objeto](Concepts/dt_object.md) encapsulando una [colección](Concepts/dt_collection.md) puede utilizarse como fuente de datos de una lista desplegable. El objeto debe contener las siguientes propiedades:
 
-| Propiedad      | Tipo                 | Descripción                                                                                                                                                                                                                                                                             |
-| -------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `valores`      | Collection           | Obligatorio - Colección de valores escalares. Todos los valores deben ser del mismo tipo. Tipos soportados:<li>cadenas</li><li>números</li><li>fechas</li><li>horas</li>Si está vacío o no se define, la lista desplegable estará vacía |
-| `index`        | number               | Índice del elemento seleccionado actualmente (valor comprendido entre 0 y `collection.length-1`). Si se establece -1, `currentValue` se muestra como una cadena de marcador de posición                                                              |
-| `currentValue` | igual que Collection | Elemento seleccionado actualmente (se utiliza como valor de marcador de posición si se define por código)                                                                                                                                                            |
+| Propiedad      | Tipo                               | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| -------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `valores`      | Collection                         | Mandatory - Collection of entries used to build the list. Entries can be either scalar values or objects ([see below](#customizing-items-with-object-entries)). Scalar values must use one consistent data type across selectable values (`text`, `integer`, `boolean`, `date`, or `time`). If empty or undefined, the drop-down displays no items. |
+| `index`        | number                             | Index of the currently selected item in the full `values` collection (0-based). Non-selectable items and separator items keep their position and are counted in `index`. Si se establece -1, `currentValue` se muestra como una cadena de marcador de posición                                                                                                                                         |
+| `currentValue` | Same scalar type as selected value | Currently selected scalar value (used as placeholder value if set by code). For object entries, this is the entry's `value` property, not the whole object.                                                                                                                                                                                                                                            |
 
-Si el objeto contiene otras propiedades, se ignoran.
+Additional properties at the top level of the data source object are ignored by the drop-down renderer.
 
 Para inicializar el objeto asociado a la lista desplegable, puede:
 
-- Introduzca una lista de valores por defecto en las propiedades del objeto seleccionando `\<Lista Estática>` en el tema [Fuente de Datos](properties_DataSource.md) de la Lista de Propiedades. Los valores por defecto se cargan en un objeto automáticamente.
+- Enter a list of default values in the object properties by selecting `<Static List>` in the [Data Source](properties_DataSource.md) theme of the Property List. Los valores por defecto se cargan en un objeto automáticamente.
 
-- Ejecutar código que crea el objeto y sus propiedades. Por ejemplo, si "myList" es la variable  asociada a la lista desplegable, puede escribir en el evento de formulario [On Load](Events/onLoad.md):
+- Ejecutar código que crea el objeto y sus propiedades.
+
+#### Example with scalar values
+
+If "Form.myDrop" is the [expression](properties_Object.md#variable-or-expression) associated to the drop-down list, you can write in the [On Load](Events/onLoad.md) form event:
 
 ```4d
 // Form.myDrop es la fuente de datos del objeto formulario
@@ -65,6 +84,94 @@ Después de que el usuario seleccione un valor:
 Form.myDrop.values // ["apples","nuts","pears","oranges","carrots"]
 Form.myDrop.currentValue //"oranges"
 Form.myDrop.index //3
+```
+
+### Customizing items with object entries
+
+:::note Compatibilidad
+
+On Windows, item customization is only available in forms rendererd with [Fluent UI](../FormEditor/forms.md#fluent-ui-rendering).
+
+:::
+
+Inside the `values` collection of objects, each entry can be an object which defines item-level presentation and behavior:
+
+| Item property         | Tipo                                      | Descripción                                                                                                                                                                                                               |
+| --------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `values[].value`      | Text, Integer, Boolean, Date, or Time     | Scalar value represented by the item. If selectable, this value can become `currentValue`. If omitted and `separator` is not `true`, the item is displayed with no label. |
+| `values[].selectable` | Boolean                                   | Opcional. Default: `true`. When `false`, the item is visible but cannot be selected.                                                                      |
+| `values[].picture`    | 4D.File, Picture, or Text | Optional icon/picture. A text value must be a valid picture path.                                                                                                                         |
+| `values[].fontWeight` | Text                                      | Opcional. "normal" or "bold".                                                                                                                                                             |
+| `values[].fontStyle`  | Text                                      | Opcional. "normal" or "italic".                                                                                                                                                           |
+| `values[].color`      | Text or Integer                           | Optional text color. Supports CSS color names, hexadecimal color strings, RGB strings, and RGB integer values.                                                                            |
+| `values[].separator`  | Boolean                                   | Opcional. Default: `false`. When `true`, the item is rendered as a separator and all other item properties are ignored.                                   |
+
+#### Rendering and precedence rules
+
+- If `separator = true`, the item is always rendered as a non-selectable divider. In this case `value`, `selectable`, `picture`, `color`, `fontWeight`, and `fontStyle` are ignored.
+- A "-" scalar text value is interpreted as a separator (compatibility). A "-" as a `.value` property in an object entry is interpreted as a regular label, not a separator.
+- If `value` is omitted and `separator` is not `true`, the item has no text label.
+- `color`, `fontWeight`, and `fontStyle` are applied only when a `value` is displayed.
+- If `selectable` is omitted, it behaves as `true`.
+- Non-selectable items and separator items remain in the `values` collection and keep their original index positions.
+
+#### Platform notes for non-selectable items
+
+When `selectable` is false:
+
+- On **Windows**, if `color` is explicitly set, that color is rendered unchanged; if `color` is not set, the item appears gray.
+- On **macOS**, non-selectable items are alpha-blended, including when `color` is set.
+
+#### Picture placement
+
+For non-separator items with a `picture`:
+
+- Left/center-aligned items: picture is displayed on the left of the value.
+- Right-aligned items: picture is displayed on the right of the value.
+- If `value` is omitted, the picture is displayed alone.
+
+:::note Technical limitation
+
+The picture is always displayed **on the left** with hierarchical list data source on Windows or macOS.
+
+:::
+
+#### Example with mixed scalar and object entries
+
+```4d
+// Form.myDrop is the datasource of the form object
+
+Form.myDrop:=New object
+Form.myDrop.values:=New collection
+
+// Non-selectable title
+Form.myDrop.values.push({value: "Priority"; selectable: False})
+
+// Selectable styled items
+Form.myDrop.values.push({value: "Urgent"; picture: File("/RESOURCES/icons/urgent.png"); color: "#C42B1C"; fontWeight: "bold"})
+Form.myDrop.values.push({value: "Normal"; fontWeight: "bold"})
+Form.myDrop.values.push("Low")
+
+// Visual separator
+Form.myDrop.values.push({separator: True})
+
+// Non-selectable message
+Form.myDrop.values.push({value: "Information"; selectable: False; fontStyle: "italic"})
+
+// Placeholder mode
+Form.myDrop.index:=-1
+Form.myDrop.currentValue:="Select a level"
+```
+
+![](../assets/en/FormObjects/dropdown-example.png)
+
+Después de que el usuario seleccione un valor:
+
+![](../assets/en/FormObjects/dropdown-example-2.png)
+
+```4d
+//Form.myDrop.currentValue = "Normal"
+//Form.myDrop.index = 2 
 ```
 
 ### Utilizar un array
@@ -144,8 +251,6 @@ Cuando haya asociado una lista desplegable con una lista de opciones y con un ca
 Una lista desplegable jerárquica tiene una sublista asociada a cada elemento de la lista. Este es un ejemplo de lista desplegable jerárquica:
 
 ![](../assets/en/FormObjects/popupDropdown_hierar.png)
-
-> En los formularios, las listas desplegables jerárquicas están limitadas a dos niveles.
 
 Puede asignar la lista de selección jerárquica al objeto de lista desplegable utilizando el campo [Lista de selección](properties_DataSource.md#choice-list) de la Lista de propiedades.
 
