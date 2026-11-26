@@ -9,11 +9,16 @@ title: リリースノート
 
 #### ハイライト
 
+- More control over [drop-down lists](../FormObjects/dropdownList_Overview.md) look and feel:
+  - [new `popup` and `pull-down` flyout options](../FormObjects/properties_Display.md#flyout-mode); new [`OBJET SET FLYOUT MODE`](../commands/object-set-flyout-mode) and [`OBJECT Get flyout mode`](../commands/object-set-flyout-mode) commands.
+  - item attributes are now [customizable through properties](../FormObjects/dropdownList_Overview.md#customizing-items-with-object-entries) like `selectable` or `color` and rendered on Windows (*Fluent UI*) and macOS; new *selectable* parameter supported by [`GET LIST ITEM PROPERTIES`](../commands/get-list-items-properties) and [`SET LIST ITEM PROPERTIES`](../commands/set-list-items-properties).
 - 4D Web サーバー内の新しいネイティブな[MCP サーバー](../WebServer/mcp-server.md)。 AI クライアントはREST リクエストと同じ[ロールと権限](../WebServer/mcp-server.md#パーミッション) を使用して、[`exposed MCP Function`](../ORDA/ordaClasses.md#exposed-mcp-function) 関数と[ビルトインCRUD ツール](../WebServer/mcp-server.md#ビルトインcrudツール) を呼び出すことができます。サーバーは[`WebServer.mcp`](../API/WebServerClass.md#mcp) で設定され、ファイングレードトークンとオプションの[OAuth 2.1](../WebServer/mcp-server.md#oauth-21モード) をサポートし、[Claude デスクトップバンドル](../WebServer/mcp-server.md#claude-デスクトップバンドル) と一緒に使用することができます。
 - MCP 用の新しいランゲージとAPI 機能: [`MCP`](../commands/mcp) コマンドと[`4D.MCPContext`](../API/MCPContextClass.md) クラス、それに加えてファイングレードトークン用([`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken)、[`ds.listFineGrainedTokens()`](../API/DataStoreClass.md#listfinegrainedtokens)、[`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken))、セッション認証用([`mcpAuthenticated()`](../ORDA/ordaClasses.md#function-mcpauthenticated))、およびOAuth 認証用([`mcpGrant()`](../ORDA/ordaClasses.md#function-mcpgrant)、[`ds.listOAuthGrants()`](../API/DataStoreClass.md#listoauthgrants)、[`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant)) の新しいデータストアクラス関数。
+- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/21_R6): 4D 21 R6 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/178/release-note-version-20r6/))。
 
 #### 動作の変更
 
+- In a [choice list](../FormObjects/dropdownList_Overview.md#using-a-choice-list) or [hierachical choice list](../FormObjects/dropdownList_Overview.md#using-a-hierarchical-choice-list) used as a [drop-down list](../FormObjects/dropdownList_Overview.md), item attributes (style, color...) are now rendered on Windows (*Fluent UI*) and macOS. It was only supported with [menus](../Menus/overview.md) in previous releases.
 - [パーミッションの継承](../ORDA/privileges.md#継承されたパーミッション): 関数のパーミッションは、そのリストに含まれていない各アクションを、シングルトンまたはデータクラスから、その次にデータストアから継承するようになりました。また**promote** パーミッションは**execute** の権限を付与することはありません。以前は、権限のみが定義されていたシングルトン関数の**promote** パーミッションは、データストアの**execute** パーミッションへとフォールバックしていました。これは、データストア上で実行が許可されていた全てのセッション(例えばREST 経由など)に対して、制限された関数が公開されてしまう可能性がありました。昇格された関数を権限が呼び出せるようにするためには、関数の**execute** パーミッションに追加してください。
 - ライブチェッカーとコンパイラーは、今後関数コメントに対して[警告](../Project/compiler.md#警告) を生成するようになりました: 宣言分の上にあるコメントブロッククラス関数またはクラスコンストラクターに関しては、引数に $name: コメントがない場合、またMCP 行動タグ内に矛盾がある場合には警告が出されるようになりました。
 
@@ -117,7 +122,7 @@ title: リリースノート
 - [コンポーネントのアイコンをカスタマイズできる](../Extensions/develop-components.md#custom-icon) ようになりました。
 - 4D AIKit component: 新しい [ファイル API](../aikit/Classes/OpenAIFilesAPI.md) クラスを使用することで **ファイルアップロード** 機能を実装できます。
 - [**デザインモードを検索**](../Project/search-replace.md#コンポーネント内を検索) および [**コンテンツを置換**](../Project/search-replace.md#コンテンツを置換) 機能は編集可能なコンポーネントをサポートするようになりました。
-- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/21_R2): 4D 21 R2 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2026/54/release-note-version-21r2/))。
+- [**修正リスト**](https://developer.4d.com/FixedBugsList/versions/21_R2): 4D 21 R2 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2023/349/release-note-version-20r2/))。
 
 #### デベロッパー・プレビュー
 
