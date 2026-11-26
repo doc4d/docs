@@ -742,6 +742,12 @@ The `.listFineGrainedTokens()` function <!-- REF #DataStoreClass.listFineGrained
 
 When the function is called in a web context (code executed for a web or REST request), the collection only contains the tokens whose privileges are all held by the current session. Elsewhere (for example in a method or a stored procedure), it contains all the tokens.
 
+:::note
+
+The function filters the tokens by privileges, not by user: in a web context, it also returns the tokens generated for other users with the same privileges. To list the tokens of the current user only, filter the collection on an identifier you stored in `info` at generation (see the example below).
+
+:::
+
 Each object of the returned collection contains the following properties. The token itself and its hash are never returned.
 
 |Property|Type|Description|
@@ -796,6 +802,12 @@ End for each
 The `.listOAuthGrants()` function <!-- REF #DataStoreClass.listOAuthGrants().Summary -->returns the description of the grants given to users through the OAuth mode of the MCP server<!-- END REF -->. A grant is created each time a user logs in from an MCP client (see [OAuth 2.1 mode](../WebServer/mcp-server.md#oauth-21-mode)).
 
 When the function is called in a web context (code executed for a web or REST request), the collection only contains the grants whose privileges are all held by the current session. Elsewhere, it contains all the grants.
+
+:::note
+
+The function filters the grants by privileges, not by user: in a web context, it also returns the grants of other users with the same privileges. To list the grants of the current user only, filter the collection on `userName`.
+
+:::
 
 Each object of the returned collection contains the following properties:
 
@@ -1014,7 +1026,7 @@ The function returns **True** if the token was revoked, **False** otherwise (for
 
 The token stops working at the next request, and the MCP sessions opened with it are closed. [Binary URLs](../WebServer/mcp-server.md#binary-attributes) already returned to the client remain valid until they expire (10 minutes at most).
 
-When the function is called in a web context (code executed for a web or REST request), it can only revoke a token whose privileges are all held by the current session.
+When the function is called in a web context (code executed for a web or REST request), it can only revoke a token whose privileges are all held by the current session. It does not check which user the token was generated for: before revoking a token from an id sent by the client, check that it belongs to the current user (see [`.listFineGrainedTokens()`](#listfinegrainedtokens)).
 
 #### Example
 
@@ -1065,7 +1077,7 @@ The function returns **True** if the grant was revoked, **False** otherwise (for
 
 The access tokens of the grant get an HTTP 401 status from the next request, its refresh token is refused, and its MCP sessions are closed. The user must log in again from the MCP client.
 
-When the function is called in a web context (code executed for a web or REST request), it can only revoke a grant whose privileges are all held by the current session.
+When the function is called in a web context (code executed for a web or REST request), it can only revoke a grant whose privileges are all held by the current session. It does not check which user the grant belongs to: before revoking a grant from an id sent by the client, check that it belongs to the current user (see [`.listOAuthGrants()`](#listoauthgrants)).
 
 #### Example
 
