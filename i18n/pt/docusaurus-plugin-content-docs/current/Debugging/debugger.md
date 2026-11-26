@@ -477,7 +477,7 @@ O menu contextual do painel Código-fonte fornece acesso a várias funções que
 Os atalhos específicos permitem-lhe encontrar cadeias de caracteres idênticas à que foi selecionada:
 
 - Para pesquisar as próximas cadeias de caracteres idênticas, pressione **Ctrl+E** (Windows) ou **Cmd+E** (macOS)
-- Para buscar las cadenas idénticas anteriores, presione **Ctrl+Shift+E** (Windows) o **Cmd+E** (macOS)
+- Para pesquisar as cadeias idênticas anteriores, pressione **Ctrl+Shift+E** (Windows) ou **Cmd+Shift+E** (macOS)
 
 A pesquisa só é efetuada se selecionar pelo menos um carácter no painel Código fonte.
 
@@ -499,8 +499,8 @@ Esta secção lista todos os atalhos disponíveis na janela do depurador.
 - **Alt-Clique** (Windows) ou **Option-Clique** exibe a janela Editar Quebra para um novo ponto de quebra ou um ponto de quebra existente.
 - Uma expressão ou objeto selecionado pode ser copiado para a janela de avaliação personalizada através de um simples arrastar e largar.
 - **Ctrl+D** (Windows) ou **Cmd+D** (macOS) copiam as combinações de teclas selecionadas para a Janela de Observação Personalizada.
-- \*\*As combinações de teclas Ctrl+Shift+E (Windows) ou Cmd+Shift+E (macOS) localizam as cadeias de caracteres anteriores idênticas à selecionada.
-- \*\*As combinações de teclas Ctrl+Shift+E (Windows) ou Cmd+Shift+E (macOS) localizam as cadeias de caracteres anteriores idênticas à selecionada.
+- **Ctrl+E** (Windows) ou **Cmd+E** (macOS) localizam as próximas cadeias de caracteres idênticas à selecionada.
+- **Ctrl+Shift+E** (Windows) ou **Cmd+Shift+E** (macOS) localizam as cadeias de caracteres anteriores idênticas à selecionada.
 
 #### Todas as janelas
 
