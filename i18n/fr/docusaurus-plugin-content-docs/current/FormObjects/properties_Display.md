@@ -141,41 +141,47 @@ Les colonnes booléennes peuvent également être affichées sous forme de pop u
 
 [OBJECT Get format](../commands/object-get-format) - [OBJECT SET FORMAT](../commands/object-set-format)
 
-## Flyout mode
+## Menu déroulant
 
-This property allows you to specify how a [Drop down list](./dropdownList_Overview.md) will be displayed at runtime.
+Cette propriété vous permet de définir la manière dont une [liste déroulante](./dropdownList_Overview.md) s'affichera lors de l'exécution.
 
 :::note
 
-On Windows, this property is only supported with [**Fluent UI** rendered forms](../FormEditor/forms.md#fluent-ui-rendering).
+Sous Windows, cette propriété est prise en charge uniquement avec les [**formulaires rendus via Fluent UI**](../FormEditor/forms.md#fluent-ui-rendering).
 
 :::
 
-Three flyout mode options are available. For example, with this drop-down menu:
+Trois options de mode de déroulement sont disponibles. Par exemple, avec cette liste déroulante :
 
 ![](../assets/en/FormObjects/dropdown-1.png)
 
-- **Pop-up** - The drop-down list overlaps the area and moves up or down depending on the selected value.  
+- **Pop up** - La liste déroulante chevauche la zone et se déplace vers le haut ou le bas en fonction de la valeur sélectionnée.  
   ![](../assets/en/FormObjects/dropdown-2.png)
 
-- **Pull-down** - The drop-down list always opens below the area, whatever the selected value. The current value stays visible.
+- **En bas** - La liste déroulante s'ouvre toujours sous la zone, quelle que soit la valeur sélectionnée. La valeur courante reste visible.
   ![](../assets/en/FormObjects/dropdown-3.png)
 
-- **Automatic (legacy)** mode (default) - When this options is selected, the flyout mode depends on the OS and the [data source type](./dropdownList_Overview.md#drop-down-list-types) of the drop-down menu:
-  - on Windows, hierarchical lists always use pull-down mode and non-hierarchical lists or other datasource types always use pop-up mode;
-  - on macOS, choice lists (hierarchical or not) always use pull-down mode, while all other types use pop-up mode.
+- **Automatique** (ancien mode, utilisé par défaut) - Lorsque cette option est sélectionnée, le mode de déroulement dépend de l'OS et du [type de source de données](./dropdownList_Overview.md#drop-down-list-types) du menu déroulant :
+  - sous Windows, les listes hiérarchiques utilisent toujours le mode en bas, tandis que les listes non hiérarchiques ou les autres types de sources de données utilisent toujours le mode pop up ;
+  - sous macOS, les énumérations (hiérarchiques ou non) utilisent toujours le mode en bas, tandis que tous les autres types utilisent le mode pop up.
 
-When explicitly set to `popup` or `pulldown`, the flyout mode is independent of the drop-down list's data source type.
+Lorsqu'il est explicitement défini sur `pop up` ou `en bas`, le mode de déroulement est indépendant du type de source de données de la liste déroulante.
 
-If `flyoutMode` is omitted, "automatic" behavior applies. Converting an existing project does not add this property, preserving the legacy flyout mode.
+Si `flyoutMode` n'est pas spécifié, le comportement "automatique" s'applique. La conversion d'un projet existant n'ajoute pas cette propriété, ce qui permet de conserver l'ancien mode de menu déroulant.
 
-You can change the mode at runtime using [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode).
+Vous pouvez modifier le mode à l'exécution à l'aide de la commande [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode).
+
+:::tip Article(s) de blog sur le sujet
+
+[Modern Drop-down Lists: Choose the Flyout Mode and Style Every Item]https://blog.4d.com/modern-drop-down-lists-choose-the-flyout-mode-and-style-every-item)
+
+:::
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles                                             |
-| ---------- | --------------- | ------------------------------------------------------------- |
-| flyoutMode | text            | "automatic" (default), "popup", "pulldown" |
+| Nom        | Type de données | Valeurs possibles                                            |
+| ---------- | --------------- | ------------------------------------------------------------ |
+| flyoutMode | text            | "automatic" (défaut), "popup", "pulldown" |
 
 #### Objets pris en charge
 
