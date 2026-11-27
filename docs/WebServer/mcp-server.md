@@ -858,7 +858,7 @@ To install it, open the `.mcpb` file (or drag it in **Settings > Extensions** of
 
 The bundle refuses to start, and logs why, when the URL is an `http://` URL to another machine and **Allow insecure connection** is not checked, or when no token is entered and the server does not offer OAuth login with dynamic client registration.
 
-In OAuth mode, the client and its tokens are stored in the `.4d-mcp-bundle` folder of the user's home folder: delete its subfolder to log out.
+In OAuth mode, the client and its tokens are stored in the `.4d-mcp-bridge` folder of the user's home folder, in one subfolder per server: delete it to log out, or when the 4D server no longer knows the client (for example after its data file was replaced), so that the bundle registers again.
 
 Software editors can rebrand the bundle (name, icon, default server URL in its `manifest.json` file) and repackage it for their customers with the `mcpb` tool, as described in its README file.
 
