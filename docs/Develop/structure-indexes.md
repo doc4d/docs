@@ -43,6 +43,14 @@ A B-Tree index associated with a Text type field stores the first 1024 character
 
 When you choose the index architecture, 4D also provides the Automatic option. In this case, 4D automatically selects the architecture according to the type of data concerned.
 
+
+#### Object Standard
+
+This option is only available for Object type fields. When it is selected, all attribute paths are automatically indexed.
+
+You can select the standard object index type in addition to one ore more [vector index(es)](#vector-index) to handle null vectors, it will be automatically used in this case. 
+
+
 ### Composite indexes
 
 Composite indexes store the combined values of two or more fields for each entry. The classic example is a composite index based on the FirstName+LastName fields. Searching for “Peter Smith” will therefore be optimized compared with a standard search (searching for “Smith” then searching for “Peter”).
@@ -73,11 +81,6 @@ QUERY([PICTURES];[PICTURES]Photos %"cats")
 This works the same way for all the query and order by commands: [`QUERY BY FORMULA`](../commands/query-by-formula), [`QUERY SELECTION`](../commands/query-selection), [`ORDER BY`](../commands/order-by), etc.
 
 
-### Object Standard
-
-This option is only available for Object type fields. When it is selected, all attribute paths are automatically indexed.
-
-You can select the standard object index type in addition to one ore more vector index(es) to handle null vectors, it will be automatically used in this case. 
 
 ### Vector index
 
