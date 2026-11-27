@@ -110,6 +110,14 @@ Inside the `values` collection of objects, each entry can be an object which def
 |`values[].color`|Text or Integer|Optional text color. Supports CSS color names, hexadecimal color strings, RGB strings, and RGB integer values.|
 |`values[].separator`|Boolean|Optional. Default: `false`. When `true`, the item is rendered as a separator and all other item properties are ignored.|
 
+
+:::tip Related blog post
+
+[Modern Drop-down Lists: Choose the Flyout Mode and Style Every Item]https://blog.4d.com/modern-drop-down-lists-choose-the-flyout-mode-and-style-every-item)
+
+:::
+
+
 #### Rendering and precedence rules
 
 - If `separator = true`, the item is always rendered as a non-selectable divider. In this case `value`, `selectable`, `picture`, `color`, `fontWeight`, and `fontStyle` are ignored.

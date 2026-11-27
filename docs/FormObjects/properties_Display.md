@@ -180,6 +180,12 @@ If `flyoutMode` is omitted, "automatic" behavior applies. Converting an existing
 
 You can change the mode at runtime using [`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode). 
 
+:::tip Related blog post
+
+[Modern Drop-down Lists: Choose the Flyout Mode and Style Every Item]https://blog.4d.com/modern-drop-down-lists-choose-the-flyout-mode-and-style-every-item)
+
+:::
+
 #### JSON Grammar
 
 |Name|Data Type|Possible Values|
