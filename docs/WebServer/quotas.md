@@ -101,7 +101,18 @@ If either quota is exceeded, the request is rejected with an **HTTP 429 Too Many
 
 If an output byte quota is exceeded while a response is being sent, the current request is interrupted. The preprocessing rules above apply to the next request in the same time window.
 
+### MCP requests
 
+Requests to the [MCP server](mcp-server.md) (`/mcp` URL) are Web server requests: they count in the server global quotas, and each MCP session counts as a session in the session quotas. Requests over a quota get the **HTTP 429 Too Many Requests** response before any 4D code runs, including authentication code.
+
+For example, to limit each session, including MCP sessions used by AI agents, to 30 requests per minute:
+
+```4d
+var $webServer : 4D.WebServer:=WEB Server
+$webServer.quotas.nbRequestsPerMinPerSession:=30
+```
+
+MCP sessions cannot get their own quotas: the session default quotas apply to every Web session alike, and [`Session.quotas`](../API/SessionClass.md#quotas) only holds the REST entity-set limits.
 
 ### Rate limiting responses
 
