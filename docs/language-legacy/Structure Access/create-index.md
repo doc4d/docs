@@ -13,7 +13,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | aTable | Table | &#8594;  | Table for which to create an index |
 | fieldsArray | Pointer array | &#8594;  | Pointer(s) to field(s) to be indexed |
-| indexType | Integer | &#8594;  | Type of index to create: -1 = Keywords, 0 = default, 1 = Standard B-Tree, 3 = Cluster B-Tree, 4 = Cosine, 5 = Dot, 6 = Euclidean |
+| indexType | Integer | &#8594;  | Type of index to create: -1 = Keywords, 0 = default, 1 = Standard B-Tree, 3 = Cluster B-Tree, 4 = Cosine, 5 = Dot, 6 = Euclidean, 7 = Object standard |
 | indexName | Text | &#8594;  | Name of index to create |
 | * | Operator | &#8594;  | If passed = asynchronous indexing |
 </div>
@@ -24,6 +24,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|Object standard index new value|
 |21 R5|Support for Cosine, Dot, Euclidean vector indexes|
 |11 SQL|Created|
 
@@ -47,6 +48,8 @@ The *indexType* parameter sets the type of index to be created. You can pass one
 | Vector cosine index | Integer | 4    | Index optimized for AI queries using [cosine similarity](../../API/VectorClass.md#cosinesimilarity) |
 | Vector dot index | Integer | 5    | Index optimized for AI queries using [dot similarity](../../API/VectorClass.md#dotsimilarity)  |
 | Vector euclidean index | Integer | 6    | Index optimized for AI queries using [euclidean distance](../../API/VectorClass.md#euclideandistance)  |
+| Object standard index | Integer | 7    | Standard index for object fields  |
+
 
 :::note
 

@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | aField | Field | &#8594;  | Field for which to create or delete the index |
-| index | Boolean, Integer | &#8594;  | True = Create index, False = Delete index, or<br/>Create an index of the type: -1 = Keywords, 0 = default, 1 = B-Tree standard, 3 = B-Tree cluster, 4 = Cosine, 5 = Dot, 6 = Euclidean  |
+| index | Boolean, Integer | &#8594;  | True = Create index, False = Delete index, or<br/>Create an index of the type: -1 = Keywords, 0 = default, 1 = B-Tree standard, 3 = B-Tree cluster, 4 = Cosine, 5 = Dot, 6 = Euclidean, 7 = Object standard |
 | * | Operator |  &#8594;  | Asynchronous indexing if * is passed |
 </div>
 <!-- END REF-->
@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R6|Object standard index new value|
 |21 R5|Support for Cosine, Dot, Euclidean vector indexes|
 |11 SQL|Modified|
 |<6|Created|
@@ -31,14 +32,13 @@ displayed_sidebar: docs
 
 ## Compatibility Note 
 
-<!--REF #_command_.SET INDEX.Summary-->**SET INDEX**, although a legacy command, is still fully supported and can remain in your application -- there is no need to rewrite existing code.<!-- END REF--> However, it would be better to use [CREATE INDEX](../commands/create-index) and [DELETE INDEX](../commands/delete-index) to manage indexes because they provide more features. 
+**SET INDEX**, although a legacy command, is still fully supported and can remain in your application -- there is no need to rewrite existing code. However, it would be better to use [CREATE INDEX](../commands/create-index) and [DELETE INDEX](../commands/delete-index) to manage indexes because they provide more features. 
 
 ## Description 
 
-The **SET INDEX** accepts two syntaxes:
-
+<!--REF #_command_.SET INDEX.Summary-->The **SET INDEX** accepts two syntaxes:  
 * If you pass a Boolean in the *index* parameter, the command creates or removes the index for the field you pass in *aField*.
-* If you pass an integer in the *index* parameter, the command creates an index of the type specified.
+* If you pass an integer in the *index* parameter, the command creates an index of the type specified.<!-- END REF-->
 
 **index = Boolean**  
 To index the field, pass True in *index*. The command creates an index of the default type. If the index already exists, the call has no effect.   
@@ -56,6 +56,8 @@ In this case, the command creates an index of the type specified for *aField*. Y
 | Vector cosine index | Integer | 4    | Index optimized for AI queries using [cosine similarity](../../API/VectorClass.md#cosinesimilarity) |
 | Vector dot index | Integer | 5    | Index optimized for AI queries using [dot similarity](../../API/VectorClass.md#dotsimilarity)  |
 | Vector euclidean index | Integer | 6    | Index optimized for AI queries using [euclidean distance](../../API/VectorClass.md#euclideandistance)  |
+| Object standard index | Integer | 7    | Standard index for object fields  |
+
 
 
 :::note

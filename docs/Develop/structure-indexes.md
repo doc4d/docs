@@ -30,7 +30,7 @@ Indexed fields are displayed in **bold** type in the Structure editor.
 
 ### Standard indexes
 
-A standard index is intended to accelerate database operations (a standard index refers to a generic index as opposed to a keyword or composite index). 4D offers two types of architectures for standard indexes: B-Tree and Cluster B-Tree.
+A standard index is intended to accelerate database operations (a standard index refers to a generic index as opposed to a keyword, vector, or composite index). 4D offers two types of architectures for standard indexes: B-Tree and Cluster B-Tree.
 
 - **B-Tree:** Standard B-Tree type index. This multipurpose index type meets most indexing requirements.
 - **Cluster B-Tree:** B-Tree type index using clusters. This architecture is more efficient when the index does not contain a large number of keys, i.e. when the same values occur frequently in the data.
@@ -42,7 +42,6 @@ A B-Tree index associated with a Text type field stores the first 1024 character
 :::
 
 When you choose the index architecture, 4D also provides the Automatic option. In this case, 4D automatically selects the architecture according to the type of data concerned.
-The **Automatic** option is the only option available for Object type fields, except if you associated a 4D.Vector class to the field ([see below](#vector-index)). In fact, with the **Automatic** option, all attribute paths are automatically indexed.
 
 ### Composite indexes
 
@@ -74,6 +73,12 @@ QUERY([PICTURES];[PICTURES]Photos %"cats")
 This works the same way for all the query and order by commands: [`QUERY BY FORMULA`](../commands/query-by-formula), [`QUERY SELECTION`](../commands/query-selection), [`ORDER BY`](../commands/order-by), etc.
 
 
+### Object Standard
+
+This option is only available for Object type fields. When it is selected, all attribute paths are automatically indexed.
+
+You can select the standard object index type in addition to one ore more vector index(es) to handle null vectors, it will be automatically used in this case. 
+
 ### Vector index
 
 A vector index can be associated to an Object type field that was configured as a `4D.Vector` [class](./field-properties.md#4dvector-class). In this case, the following options are available:
@@ -83,9 +88,10 @@ A vector index can be associated to an Object type field that was configured as 
 - **Cosine**: the vector index is optimized for [cosine similarity](../API/VectorClass.md#understanding-the-different-vector-computations) computations. 
 - **Dot**: the vector index is optimized for [dot similarity](../API/VectorClass.md#understanding-the-different-vector-computations) computations.
 - **Euclidean**: the vector index is optimized for [euclidean distance](../API/VectorClass.md#understanding-the-different-vector-computations) computations.
-- **Automatic**: standard object index type ([see above](#standard-indexes)). You can select this index type to handle null vectors, it will be automatically used in this case. 
 
 You can select one or more index types for your vector fields, the appropriate index will be automatically used depending on the actual computation. For optimization reasons, it is recommended to only select necessary index types. 
+
+If checked, the [Object Standard](#object-standard) index type will be automatically used in this case of null vectors. 
 
 
 :::tip Related blog post
@@ -110,7 +116,7 @@ The ![](../assets/en/Develop/index-list.png) button of the toolbar in the Struct
 
 The Index List can be used to view the main properties of the indexes:
 
-- **Type:** Index type. Each type of index (B-tree, Cluster B-tree, Keyword, Euclidean, Cosine, Dot) is depicted with a different icon.  
+- **Type:** Index type. Each type of index (Automatic, B-tree, Cluster B-tree, Keyword, Object Standard, Euclidean, Cosine, Dot) is depicted with a different icon.  
 - **Description:** Table and field(s) of index. For a composite index, this list contains all the fields of the index.  
 - **Name:** Index name. This property is used in particular by the language commands. You can change or add an index name by double-clicking in this column.
 
@@ -127,15 +133,15 @@ Two additional commands are available in the menu associated with the tool butto
 
 To create a **standard index** directly:
 
-1. Select a field then choose a value from the "Index" menu of the **Inspector palette**. 
-**OR**  
+1. Select a field then choose a value from the "Index" menu of the **Inspector palette**.   
+**OR**   
 Right-click on the field then select a value from the **Index>** submenu of the context menu. 
 
 To create a **composite index** or any other type of index using the index creation dialog box:
 
-1. Select several fields while holding down the **Shift** key (for adjacent selection) or **Ctrl** (Windows) or **Command** (macOS) button then right click on one of the fields and select **New Composite Index...** in the context menu.
-**OR**  
-Select the **New Index...** in the context menu of the table or select **Index** in the add objects menu of the Structure editor tool bar.  
+1. Select several fields while holding down the **Shift** key (for adjacent selection) or **Ctrl** (Windows) or **Command** (macOS) button then right click on one of the fields and select **New Composite Index...** in the context menu.   
+**OR**   
+Select the **New Index...** in the context menu of the table or select **Index** in the add objects menu of the [Structure editor toolbar](./structure-editor.md#toolbar).  
 
 
 
@@ -150,7 +156,7 @@ It contains the following elements:
 - **Type:** Selection menu for type of index to be created. If you keep the "Automatic" option, 4D will automatically choose the index type according to the contents of the field.  
 - **List of Fields:** This area is used to specify the field(s) associated with the index. It can contain a field by default depending on the current selection in the editor.
 
-To add a field to the index, click on the **[+]** button. The list of fields of the selected table is displayed so that you can indicate the field to be added to the index.
+To add a field to the index, click on the **[+]** button. Fields of the selected table that are compatible with the selected index type are listed so that you can choose the field to be added to the index.
 
 - If you want to create a composite index, add each field to be included in the index successively. Once the list is completed, you can reorder the fields using the arrow buttons or using drag and drop.  
 - If you create a composite index based on primary key fields, make sure you put the fields in the same order in the primary key and in the index.  
@@ -164,11 +170,13 @@ Once the index has been configured, click on **OK** to generate the index.
 
 You can delete indexes that are no longer useful at any time. This can be carried out directly in the Structure editor or using the [Index List](#index-list) window. 
 
-To delete a standard index in the Structure editor:
+To delete a standard index in the Structure editor
 
-1. Select the field associated with the index you want to delete, then choose the **None** or uncheck the **Keyword Index** option (for a keyword index) in the Index menu of the **Inspector palette** 
-**OR**  
-Right-click on the field associated with the index, then choose the **None** or uncheck the **Keywords** option from the **Index>** submenu of the context menu.
+1. Right-click on the field associated with the index you want to delete, then uncheck the corresponding index name in the **Index>** submenu of the context menu.   
+**OR**    
+Double-click on the field associated with the index, then choose **None** in the Standard menu or uncheck the corresponding index option.
+
+Index associated with **Unique** fields cannot be deleted directly, you must first uncheck the **Unique** attribute for the field. 
 
 The deletion (and viewing) of a composite index can only be carried out from the List Index window, see above.
 

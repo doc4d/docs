@@ -19,7 +19,9 @@ Read [**What’s new in 4D 21 R6**](https://blog.4d.com/whats-new-in-4d-21-r6/),
 #### Behavior changes
 
 - In a [choice list](../FormObjects/dropdownList_Overview.md#using-a-choice-list) or [hierachical choice list](../FormObjects/dropdownList_Overview.md#using-a-hierarchical-choice-list) used as a [drop-down list](../FormObjects/dropdownList_Overview.md), item attributes (style, color...) are now rendered on Windows (*Fluent UI*) and macOS. It was only supported with [menus](../Menus/overview.md) in previous releases. 
-- [Permission inheritance](../ORDA/privileges.md#inherited-permissions): a function permission now inherits each action it does not list from its singleton or dataclass, then from the datastore, and a **promote** permission never grants **execute**. Previously, a singleton function permission that only defined **promote** fell back to the datastore **execute** permission, which could open a restricted function to every session allowed to execute on the datastore (for example through REST). To keep a privilege able to call a promoted function, list it in the function's **execute** permission.
+- The automatic object index has been renamed ["Object standard"](../Develop/structure-indexes.md#object-standard) to clearly differentiate it from vector indexes available for object fields. The new `Object standard index` constant is available with [`CREATE INDEX`](../commands/create-index). 
+- [Permission inheritance](../ORDA/privileges.md#inherited-permissions): a function permission now inherits each action it does not list from its singleton or dataclass, then from the datastore, and a **promote** permission never grants **execute**. Previously, a singleton function permission that only defined **promote** fell back to the datastore **execute** permission, which could open a restricted function to every session allowed to execute on the datastore (for example through REST). To keep a privilege able to call a promoted function, list it in the function's **execute** permission. 
+
 
 
 ## 4D 21 R5
