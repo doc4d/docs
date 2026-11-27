@@ -102,19 +102,6 @@ Webサーバーオブジェクトには、Webサーバーを構成する [さま
 
 > *isRunning*、*name*、*openSSLVersion*、*perfectForwardSecrecy* は読み取り専用のプロパティで、[`start()`](API/WebServerClass.md#start)関数の `settings` オブジェクトパラメーターで事前に定義することはできません。
 
-### MCP server settings
-
-The [`mcp`](../API/WebServerClass.md#mcp) property contains the settings of the [MCP server](mcp-server.md) of the host application's web server: `enabled`, `serverName`, `serverVersion`, `instructions`, `maxResults`, `crudTools`, `allowInsecureHTTP`, `trustedProxies`, `publicURL`, and `oauthDynamicRegistration`. Unlike other properties:
-
-- `mcp.enabled` can be modified while the web server is running, to enable or disable the MCP server without restarting the web server (the change is not saved in the settings: the next start of 4D uses the settings); the other `mcp` properties are read-only and can only be set in the settings or passed to the [`.start()`](../API/WebServerClass.md#start) function,
-- the `mcp` settings passed to the [`.start()`](../API/WebServerClass.md#start) function are kept when the web server is restarted.
-
-```4d
-var webServer : 4D.WebServer:=WEB Server
-	//enable the MCP server of the running web server
-webServer.mcp.enabled:=True
-```
-
 ## 4D Webコマンドのスコープ
 
 4Dランゲージには、Webサーバーの制御に使用できる [いくつかのコマンド](../commands/theme/Web_Server) があります。ただし、これらのコマンドは 1つの (デフォルト) Webサーバーで動作するように設計されています。これらのコマンドを Webサーバーオブジェクトのコンテキストで使用する場合は、そのスコープが適切であることを確認してください。
