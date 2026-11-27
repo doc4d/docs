@@ -58,13 +58,12 @@ ORDA データモデルユーザークラスのオブジェクトインスタン
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                                          |
-| ----- | --------------------------------------------------------------------------- |
-| 21 R6 | `mcp` キーワードのサポート。新しい予約された`mcpAuthenticated()` および `mcpGrant()` データストアクラス関数。 |
-| 21 R3 | `server` キーワードのサポート。                                                        |
-| 19 R4 | Entity クラスのエイリアス属性                                                          |
-| 19 R3 | Entity クラスの計算属性                                                             |
-| 18 R5 | データモデルクラス関数は、デフォルトでは REST に公開されません。新しい `exposed` および `local` キーワード。         |
+| リリース  | 内容                                                                  |
+| ----- | ------------------------------------------------------------------- |
+| 21 R3 | `server` キーワードのサポート。                                                |
+| 19 R4 | Entity クラスのエイリアス属性                                                  |
+| 19 R3 | Entity クラスの計算属性                                                     |
+| 18 R5 | データモデルクラス関数は、デフォルトでは REST に公開されません。新しい `exposed` および `local` キーワード。 |
 
 </details>
 
@@ -76,12 +75,6 @@ ORDA データモデルユーザークラスのオブジェクトインスタン
 - **クラス名**: cs.DataStore
 
 DataStore クラス内には、`ds` オブジェクトを介して使用する関数を作成することができます。
-
-#### MCPサーバー
-
-`mcpAuthenticated()` および `mcpGrant()` 関数名は[MCP サーバー](../WebServer/mcp-server.md) ([`Function mcpAuthenticated`](#function-mcpauthenticated) および [`Function mcpGrant`](#function-mcpgrant) 参照) のために予約されています。
-
-:::
 
 #### 例題
 
@@ -952,13 +945,12 @@ $arch.save() //courseName と name は "Archaeology II" に変更されます
 
 ## 公開vs非公開関数
 
-セキュリティ上の理由から、[計算属性](#計算属性-1) と [エイリアス属性](#エイリアス属性-1) と[共有シングルトン関数](../Concepts/classes.md#共有シングルトン) と、[MCP 関数](#mcp関数) を含めたデータモデルクラス関数は**リモートリクエスト** に対してはデフォルトでは**公開されていません** (つまり非公開です)。
+セキュリティ上の理由から、[計算属性](#計算属性-1) と [エイリアス属性](#エイリアス属性-1) と、[共有シングルトン関数](../Concepts/classes.md#共有シングルトン) を含めたデータモデルクラス関数は**リモートリクエスト**に対してはデフォルトでは**公開されていません** (つまり非公開です)。
 
 リモートリクエストとは以下のものを指します:
 
 - `Open datastore` によって接続されたリモートの 4Dアプリケーションが送信するリクエスト
 - REST リクエスト、[Qodly ページ](https://developer.4d.com/qodly/) からのリクエストも含める
-- [MCP サーバー](../WebServer/mcp-server.md) に送信されたリクエスト
 
 > 通常の 4Dクライアント/サーバーリクエストは影響されません。このアーキテクチャーにおいては、データモデルクラス関数は常に利用可能です。
 
@@ -970,11 +962,6 @@ $arch.save() //courseName と name は "Archaeology II" に変更されます
 // 公開関数の宣言
 exposed Function <functionName>   
 
-```
-
-```4d
-// 公開されたMCP 関数の宣言
-exposed MCP Function <functionName>
 ```
 
 ```4d
@@ -1116,156 +1103,4 @@ exposed onHTTPGet Function getThumbnail($name : Text; $width : Integer; $height 
 IP:port/rest/Products/getThumbnail?$params='["Yellow Pack",200,200]'
 ```
 
-## MCP関数
-
-4D Web サーバーの[MCP サーバー](../WebServer/mcp-server.md) はAI クライアント用のツールとしてデータモデルクラス関数を公開し、クライアントを認証するためにデータストアクラスの特定の関数を呼び出します。
-
-### `exposed mcp Function`
-
-#### シンタックス
-
-```4d
-exposed mcp Function <functionName>({$parameterName : type; ...}){->$parameterName : type}
-// コード
-```
-
-`mcp` キーワードを使用すると、公開された関数をMCP サーバーの[カスタムツール](../WebServer/mcp-server.md#カスタムツール) として公開します。これは`exposed` キーワードを使用した上でさらに明示的に指定する必要があるオプトインです:
-
-- `exposed` と宣言されている関数で`mcp` と宣言されていないものはREST リクエストで呼び出し可能ですがMCP ツールではありません
-- `mcp` で宣言されている関数で`exposed` の宣言がないものは、どのような意味でも公開されていません。
-
-`mcp` キーワードは以下のクラスにおいてサポートされています:
-
-- [データストアクラス](#datastore-クラス): ツール名は関数名です
-- [データクラスクラス](#dataclass-クラス) および [エンティティクラス](#entity-クラス): ツール名は`ClassName-functionName` です
-- 共有[シングルトンクラス](../Concepts/classes.md#singleton-classes): ツール名は`ClassName-functionName` です。
-
-エンティティセレクションクラスの関数は公開されません。
-
-宣言文の上に書かれた[コメントブロック](../Concepts/comments.md#シンタックス詳細のコメント) はAI クライアント用のツールとその引数を記述します。クライアントは、そのセッションがREST リクエストに対して[`roles.json`](privileges.md#rolesjson-file) ファイル内において関数の**execute** 許可を持っていた場合にはそのツールを呼び出すことができます。
-
-**エンティティクラス関数**
-
-エンティティクラス関数から公開されるツールは、必須の`key` 引数を受け取ります(文字列または整数): これは関数が呼び出されたエンティティのプライマリーキーです。 4D はこのエンティティを`This` としてロードし、このときデータクラスの**read** 許可と、[制限フィルター](entities.md#restricting-entity-selections) が適用されます。エンティティが見つからないか読み出せない場合には、この呼び出しは"Entity not found" エラーを返し、関数は実行されません。
-
-`$key` 引数を宣言するエンティティクラス関数は公開されず、4D はメッセージをログに記録します。
-
-引数の型が`Pointer` である関数も公開されません: インタープリタモードでは4D はメッセージをログに記録し、コンパイルモードでは警告を報告します。
-
-#### 例題
-
-エンティティクラス関数を公開する場合を考えます。クライアントは請求書のプライマリーキーを`key` 引数に渡してツールを呼び出します:
-
-```4d
-// cs.InvoiceEntity クラス
-Class extends Entity
-
-// 請求書で支払いが済んでいない金額を返す
-// MCP: @readOnly
-exposed mcp Function getAmountDue() : Real
-	return This.amount-This.payments.sum("amount")
-```
-
-### `Function mcpAuthenticated`
-
-#### シンタックス
-
-```4d
-// DataStore class
-Function mcpAuthenticated($info : Object)
-// 以下コード
-```
-
-データストアクラスの`mcpAuthenticated()` 関数は、[MCP セッション](../WebServer/mcp-server.md#mcpセッション) が作成されたときに4D によって呼び出されます。これはトークンの権限が適用されたあと、そしてアプリケーションの他のコードがこのセッションに対して実行される前のタイミングです。これはセッションごとに1回呼び出されます。
-
-これはトークンとともに保存されている情報からセッションを準備するときに使用します。例えば[`Session.storage`](../API/SessionClass.md#storage) にユーザーのカレントの値を入れ、それを[制限フィルター](entities.md#restricting-entity-selections) で使用する、などです。
-
-*$info* 引数には、セッションを開いたトークンまたはOAuth グラントのレコード全体が格納されています。この`type` プロパティによってそれらを区別することができます。 [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken) に渡したオブジェクトは、`$info.info` 内に入っています。 *$info* には以下のプロパティが格納されています:
-
-| プロパティ      | 型                          | 説明                                                                                                                                                                       |
-| ---------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| type       | Text                       | [ファイングレーンドトークン](../WebServer/mcp-server.md#ファイングレーンドトークン) には "fineGrainedToken"、 [OAuth](../WebServer/mcp-server.md#oauth-21-mode) アクセストークンには"oauth"                     |
-| id         | Text                       | トークンの識別子またはOAuth 認可の識別子                                                                                                                                                  |
-| name       | Text                       | ファイングレーンドトークン: トークン名                                                                                                                                     |
-| userName   | Text                       | OAuth: 認可のユーザー名                                                                                                                                          |
-| clientId   | Text                       | OAuth: MCP クライアントの識別子                                                                                                                                    |
-| clientName | Text                       | OAuth: MCP クライアント名                                                                                                                                       |
-| privileges | Text, Collection or Object | トークンまたは認可の権限とロール                                                                                                                                                         |
-| expiry     | Text                       | ファイングレーンドトークン: トークンの有効期限日                                                                                                                                |
-| expiresAt  | Text                       | OAuth: 認可の有効期限日時                                                                                                                                         |
-| info       | Object                     | ファイングレーンドトークン: [`ds.generateFineGrainedToken()`](../API/DataStoreClass.md#generatefinegrainedtoken) に渡された*info* オブジェクト(ない場合には *Null*) |
-| createdAt  | Text                       | トークン生成日時またはログイン日時                                                                                                                                                        |
-| IPAddress  | Text                       | MCP クライアントのIP アドレス                                                                                                                                                       |
-
-次のルールが適用されます:
-
-- この関数を呼び出すのは4D だけです。 REST リクエストまたは`mcpAuthenticated()` へのリモートデータストアの呼び出しは、これを実行することはありません: 関数が`exposed` と宣言されていなければ、呼び出しは、非公開の関数の一般的な応答(REST に対してはHTTP 404 が、リモートデータストアに対しては"関数ではありません" エラー)が返されます。関数が`exposed` と宣言されていれば、呼び出しはその関数の名前をつけたパーミッションエラー(REST に対してはHTTP 403 が、リモートデータストアに対してはエラー1561)が返され、4D は警告をログに記録します。
-- この関数はセッションの権限を変えることはできません: [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) あるいは [`Session.clearPrivileges()`](../API/SessionClass.md#clearprivileges) を呼び出した場合にはエラーが発生します。
-- この関数はセッションを拒否することはできません。ユーザーのアクセスと停止するためには、[`ds.revokeFineGrainedToken()`](../API/DataStoreClass.md#revokefinegrainedtoken) あるいは [`ds.revokeOAuthGrant()`](../API/DataStoreClass.md#revokeoauthgrant) を使用してトークンを取り消します。
-- 関数が失敗した場合、4D はエラーをログに記録しますが、それでもセッションは作成されます。
-
-#### 例題
-
-トークンのユーザーをセッションのストレージに保存する場合を考えます:
-
-```4d
-// cs.DataStore クラス
-Class extends DataStoreImplementation
-
-Function mcpAuthenticated($info : Object)
-	var $login : Text:=($info.type="oauth") ? $info.userName : $info.info.userName
-	var $user : cs.UsersEntity:=ds.Users.query("login = :1"; $login).first()
-	If ($user#Null)
-		Use (Session.storage)
-			Session.storage.user:=New shared object("ID"; $user.ID; "name"; $user.name)
-		End use
-	End if
-```
-
-### `Function mcpGrant`
-
-#### シンタックス
-
-```4d
-// DataStore class
-Function mcpGrant($user : Text; $password : Text; $clientId : Text) : Variant
-// 以下コード
-```
-
-データストアクラスが関数を`mcpGrant()` 定義すると、[OAuth 2.1 モード](../WebServer/mcp-server.md#oauth-21モード) のMCP サーバーが有効化されます。ユーザーがMCP サーバーのログインページを送信すると4D はこの関数を呼び出し、認証情報をチェックし、MCP クライアント内においてユーザーに与える権限を取得します。
-
-この関数は以下を受け取ります:
-
-- *$user* および *$password*: ログインページで入力されたユーザー名とパスワード
-- *$clientId*: MCP クライアントの識別子(メタデータドキュメントのURL、あるいは[登録](../WebServer/mcp-server.md#クライアントの登録) 時に発行されるID)。
-
-これは、[`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) によって受け入れられるあらゆる形式の、付与する権限を返します:
-
-- 権限名、またはコンマで区切られた複数の権限の名前(テキスト)
-- 権限名のコレクション
-- `privileges` または `roles` プロパティを持ったオブジェクト。このオブジェクトはまた`userName` プロパティを格納することもできます: これは認可およびMCP セッションのユーザー名となります(そうでない場合には\*$user\* が使用されます)。
-
-空の値または*Null* の場合にはログインは拒否されます。 [`roles.json`](privileges.md#rolesjson-file) ファイル内で宣言されていない権限またはロールもまたログインが拒否され、4D はメッセージをログに記録します。
-
-次のルールが適用されます:
-
-- この関数を呼び出すのは4D だけです。 REST リクエストまたは`mcpGrant()` へのリモートデータストアの呼び出しは、これを実行することはありません: 関数が`exposed` と宣言されていなければ、呼び出しは、非公開の関数の一般的な応答(REST に対してはHTTP 404 が、リモートデータストアに対しては"関数ではありません" エラー)が返されます。関数が`exposed` と宣言されていれば、呼び出しはその関数の名前をつけたパーミッションエラー(REST に対してはHTTP 403 が、リモートデータストアに対してはエラー1561)が返され、4D は警告をログに記録します。
-- この関数はセッション内で権限なしで実行されます。これはセッションの権限を変えることはできません: [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) あるいは [`Session.clearPrivileges()`](../API/SessionClass.md#clearprivileges) を呼び出した場合にはエラーが発生します。
-- パスワードは絶対に平文で保存あるいは比較しないで下さい: [`Generate password hash`](../commands/generate-password-hash) および [`Verify password hash`](../commands/verify-password-hash) を使用してください。
-
-#### 例題
-
-ユーザーはUsers データクラス内に保存されており、またそこにハッシュ化されたパスワードと役割も保存されているという場合を考えます:
-
-```4d
-// cs.DataStore クラス
-Class extends DataStoreImplementation
-
-Function mcpGrant($user : Text; $password : Text; $clientId : Text) : Variant
-	var $account : cs.UsersEntity:=ds.Users.query("login = :1"; $user).first()
-	If ($account=Null) || (Not(Verify password hash($password; $account.password)))
-		return Null // ログインを拒否
-	End if
-	return {roles: $account.role; userName: $account.login}
-```
 
