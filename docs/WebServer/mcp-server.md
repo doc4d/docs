@@ -702,7 +702,7 @@ exposed mcp Function getYearTotal($customerID : Integer; $year : Integer) : Real
 
 A custom tool can ask the user to confirm an action or to provide values before running it. The [`MCP`](../commands/mcp) command returns the [`4D.MCPContext`](../API/MCPContextClass.md) object of the current call:
 
-1. The function calls [`MCP.requireInput()`](../API/MCPContextClass.md#requireinput) with the fields to display, and returns. 4D answers the call with `resultType: "input_required"`, a form (`elicitation/create`), and a `requestState` signed by 4D.
+1. The function calls [`MCP.requireInput()`](../API/MCPContextClass.md#requireinput) with the question and the fields to display, and returns. 4D answers the call with `resultType: "input_required"`, a form (`elicitation/create`), and a `requestState` signed by 4D.
 2. The client displays the form to the user, then calls the tool again with the same arguments, the answers (`inputResponses`), and the `requestState`.
 3. 4D checks the `requestState` and runs the function again **from the top**. [`MCP.hasInput()`](../API/MCPContextClass.md#hasinput) now returns **True** and [`MCP.input`](../API/MCPContextClass.md#input) contains the answers.
 
@@ -731,7 +731,7 @@ Class extends Entity
 // Cancels the invoice
 exposed mcp Function cancel() : Text
 	If (Not(MCP.hasInput("confirm")))
-		MCP.requireInput({confirm: {type: "boolean"; prompt: "Cancel invoice "+String(This.number)+"?"}}; This.getStamp())
+		MCP.requireInput({message: "Cancel invoice "+String(This.number)+"?"; confirm: {type: "boolean"; prompt: "Cancel"}}; This.getStamp())
 		return
 	End if
 	If (MCP.bound#This.getStamp()) // the invoice was modified after the confirmation was asked

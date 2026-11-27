@@ -188,7 +188,7 @@ You ask for a confirmation only if the user has not answered yet:
 
 ```4d
 If (Not(MCP.hasInput("confirm")))
-	MCP.requireInput({confirm: {type: "boolean"; prompt: "Send the invoice to the customer?"}})
+	MCP.requireInput({message: "Send the invoice to the customer?"; confirm: {type: "boolean"; prompt: "Send"}})
 	return
 End if
 ```
@@ -242,12 +242,16 @@ End if
 
 The `.requireInput()` function <!-- REF #MCPContextClass.requireInput().Summary -->asks the user, through the MCP client, to fill in a form before the tool continues<!-- END REF -->.
 
-In *fields*, pass an object with one property per field to display. The property name is the field name, and its value is an object with:
+In *fields*, pass an object with:
 
-- a `type` property: the JSON Schema type of the field, `"string"`, `"number"`, `"integer"`, or `"boolean"`. For a choice, use a `"string"` field with an `enum` collection of the possible values, as in JSON Schema (for example `{type: "string"; enum: ["Yes"; "No"]; prompt: "Ship now?"}`),
-- a `prompt` property (Text): the text displayed to the user for this field, for example the question to confirm.
+- an optional `message` property (Text): the question displayed to the user, above the fields, for example the action to confirm with its details,
+- one property per field to display. The property name is the field name, and its value is an object with:
+  - a `type` property: the JSON Schema type of the field, `"string"`, `"number"`, `"integer"`, or `"boolean"`. For a choice, use a `"string"` field with an `enum` collection of the possible values, as in JSON Schema (for example `{type: "string"; enum: ["Yes"; "No"]; prompt: "Ship now?"}`),
+  - a `prompt` property (Text): the label displayed to the user for this field.
 
 A field is required unless its object contains `required: False`.
+
+If you omit `message`, 4D displays the prompts of the fields as the message, and the AI clients that also show each field's label then display each prompt twice. Pass the question in `message`, and a short `prompt` for each field.
 
 Any other `type` (for example `"text"` or `"enum"`) raises an error naming the field and the expected types, and the tool call ends with an error result (`isError: true`).
 
@@ -275,7 +279,7 @@ Class extends Entity
 
 exposed mcp Function close() : Text
 	If (Not(MCP.hasInput("confirm")))
-		MCP.requireInput({confirm: {type: "boolean"; prompt: "Close ticket "+String(This.ID)+"?"}; comment: {type: "string"; prompt: "Comment"; required: False}}; This.getStamp())
+		MCP.requireInput({message: "Close ticket "+String(This.ID)+"?"; confirm: {type: "boolean"; prompt: "Close"}; comment: {type: "string"; prompt: "Comment"; required: False}}; This.getStamp())
 		return
 	End if
 	If (MCP.input.confirm)
