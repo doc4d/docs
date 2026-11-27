@@ -278,7 +278,6 @@ module.exports =
             "API/IMAPTransporterClass",
             "API/IncomingMessageClass",
             "API/MailAttachmentClass",
-            "API/MCPContextClass",
             "API/MethodClass",
             "API/OutgoingMessageClass",
             "API/POP3TransporterClass",
@@ -436,7 +435,6 @@ module.exports =
             "WebServer/preemptiveWeb"
           ]
         },
-        "WebServer/mcp-server",
         {
           type: "category",
           label: "REST API",

@@ -101,19 +101,6 @@ These properties are defined:
 
 > *isRunning*, *name*, *openSSLVersion*, and *perfectForwardSecrecy* are read-only properties that cannot be predefined in the `settings` object parameter for the [`start()`](API/WebServerClass.md#start) function.   
 
-### MCP server settings
-
-The [`mcp`](../API/WebServerClass.md#mcp) property contains the settings of the [MCP server](mcp-server.md) of the host application's web server: `enabled`, `serverName`, `serverVersion`, `instructions`, `maxResults`, `crudTools`, `allowInsecureHTTP`, `trustedProxies`, `publicURL`, and `oauthDynamicRegistration`. Unlike other properties:
-
-- `mcp.enabled` can be modified while the web server is running, to enable or disable the MCP server without restarting the web server (the change is not saved in the settings: the next start of 4D uses the settings); the other `mcp` properties are read-only and can only be set in the settings or passed to the [`.start()`](../API/WebServerClass.md#start) function,
-- the `mcp` settings passed to the [`.start()`](../API/WebServerClass.md#start) function are kept when the web server is restarted.
-
-```4d
-var webServer : 4D.WebServer:=WEB Server
-	//enable the MCP server of the running web server
-webServer.mcp.enabled:=True
-```
-
 
 ## Scope of the 4D Web commands
 
