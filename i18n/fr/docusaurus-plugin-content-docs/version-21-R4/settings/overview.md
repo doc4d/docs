@@ -26,7 +26,7 @@ Lorsque le [**mode Propriétés utilisateur** est activé](#user-settings), **Pr
 - **Propriétés utilisateur...** vous donne accès aux paramètres qui peuvent être stockés en externe dans un fichier utilisateur. Si ceux-ci sont modifiés, ils sont utilisés à la place des paramètres de structure.
 - **Proppriétés utilisateur pour le fichier de données...** vous donne accès aux paramètres qui peuvent être stockés en externe dans un fichier utilisateur rattaché au fichier de données courant. S'ils sont modifiés, ils sont utilisés à la place des paramètres utilisateur ou des paramètres de structure.
 
-### Informations sur le verrouillage
+### Information verrouillage
 
 Le verrouillage peut se produire dans les modes Projet et Client/serveur lorsque :
 

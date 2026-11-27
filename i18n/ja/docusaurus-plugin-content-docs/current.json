@@ -27,14 +27,6 @@
     "message": "ORDA",
     "description": "The label for category 'ORDA' in sidebar 'docs'"
   },
-  "sidebar.docs.category.Application Builder": {
-    "message": "アプリケーションビルダー",
-    "description": "The label for category 'Application Builder' in sidebar 'docs'"
-  },
-  "sidebar.docs.category.XML keys": {
-    "message": "XML キー",
-    "description": "The label for category 'XML keys' in sidebar 'docs'"
-  },
   "sidebar.docs.category.Debugging": {
     "message": "デバッガー",
     "description": "The label for category 'Debugging' in sidebar 'docs'"

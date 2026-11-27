@@ -104,7 +104,7 @@ The strategy depends on whether a companion `_dirty` field exists on the datacla
 | Companion `_dirty` field | Action taken                                                   |
 | ------------------------ | -------------------------------------------------------------- |
 | Present                  | Sets `<vectorName>_dirty` to `True` — vector is left untouched |
-| Absent                   | Nullifies the vector field                                     |
+| Ausente                  | Nullifies the vector field                                     |
 
 | Argumento | Tipo   | Descripción                                                        |
 | --------- | ------ | ------------------------------------------------------------------ |

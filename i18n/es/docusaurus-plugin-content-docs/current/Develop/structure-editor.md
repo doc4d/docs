@@ -17,15 +17,15 @@ El editor de estructura tiene una barra de herramientas que contiene funciones c
 
 ![](../assets/en/Develop/structure-toolbar.png)
 
-From left to right, the icons perform the following actions:
+De izquierda a derecha, los iconos realizan las siguientes acciones:
 
-- add objects (tables, fields, index, relations)
+- añadir objetos (tablas, campos, índices, relaciones)
 - buscar en el editor
-- hide/display tables according to folders defined in the Home page of the Explorer
+- ocultar/mostrar tablas según las carpetas definidas en la página de inicio del Explorador
 - mostrar filtros
-- Tools (size, alignment, sort)
+- Herramientas (tamaño, alineación, ordenación)
 - colores
-- Index list window
+- Ventana de la lista de índices
 - Primary key manager
 
 ### Información sobre el bloqueo
@@ -225,7 +225,7 @@ The following properties can be set:
   To change the display format of the picture, choose a value from the Picture Format menu. The formats provided are the standard picture display formats of 4D.
   To delete a custom picture, click on the **Clear** button or right-click in the preview area and choose **Clear** from the context menu.
 - **Fill Color:** You can change the color used for the background of the editor window. To do this, click in the color selection area and choose a color from the selection menu.
-- **Default Font:** To change the default font used for table and field names, choose a vaue from this menu. You can also use the Size menu to change the default font size.
+- **Default Font:** To change the default font used for table and field names, choose a value from this menu. You can also use the Size menu to change the default font size.
 
 ## Find in Structure
 

@@ -5,9 +5,16 @@ title: Liste déroulante
 
 Les listes déroulantes sont des objets de formulaire qui permettent à l'utilisateur de sélectionner un élément dans une liste. Vous gérez les éléments qui apparaissent dans les listes déroulantes à l’aide d'un objet, d'un tableau, d’une énumération ou d'une action standard.
 
-Sous macOS, les listes déroulantes sont aussi parfois appelées "pop-up menu". Les deux noms font référence aux mêmes objets. Comme le montre l'exemple suivant, l'apparence de ces objets peut différer légèrement selon la plateforme :
+Sous macOS, les listes déroulantes sont aussi parfois appelées "pop-up menu". Les deux noms font référence aux mêmes objets. As the following example shows, the appearance of these objects can differ slightly according to the platform and the selected [flyout mode](./properties_Display.md#flyout-mode):
 
-![](../assets/en/FormObjects/popupDropdown_appearance.png)
+- macOS with "pop-up" flyout mode:  
+  ![](../assets/en/FormObjects/dropdown-mac.png)
+
+- Windows with "pull-down" flyout mode ([FluentUI rendering](../FormEditor/forms.md#fluent-ui-rendering) required):  
+  ![](../assets/en/FormObjects/dropdown-windows.png)
+
+- Windows (Classic rendering):  
+  ![](../assets/en/FormObjects/dropdown-windows-classic.png)
 
 ## Types de listes déroulantes
 
@@ -28,21 +35,33 @@ Vous pouvez créer différents types de listes déroulantes avec différentes fo
 
 > Cette fonctionnalité n'est disponible que dans les projets 4D.
 
+<details><summary>Historique</summary>
+
+| Release | Modifications                     |
+| ------- | --------------------------------- |
+| 21 R6   | Support of styled, editable items |
+
+</details>
+
 Un [objet](Concepts/dt_object.md) encapsulant une [collection](Concepts/dt_collection.md) peut être utilisé comme source de données d'une liste déroulante. Cet objet doit avoir les propriétés suivantes :
 
-| Propriété      | Type                   | Description                                                                                                                                                                                                                                                                              |
-| -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `values`       | Collection             | Obligatoire - Collection de valeurs scalaires. Toutes les valeurs doivent être du même type. Types pris en charge: <li>numériques</li><li>dates</li><li>heures</li>Si vide ou non définie, la liste déroulante est vide. |
-| `index`        | number                 | Indice de l'élément sélectionné (valeur comprise entre 0 et `collection.length-1`). Si vous passez -1, `currentValue` est affiché sous la forme d'un texte exemple                                                                                    |
-| `currentValue` | identique à Collection | Élément actuellement sélectionné (utilisé comme texte exemple si passé par code)                                                                                                                                                                                      |
+| Propriété      | Type                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| -------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `values`       | Collection                         | Mandatory - Collection of entries used to build the list. Entries can be either scalar values or objects ([see below](#customizing-items-with-object-entries)). Scalar values must use one consistent data type across selectable values (`text`, `integer`, `boolean`, `date`, or `time`). If empty or undefined, the drop-down displays no items. |
+| `index`        | number                             | Index of the currently selected item in the full `values` collection (0-based). Non-selectable items and separator items keep their position and are counted in `index`. Si vous passez -1, `currentValue` est affiché sous la forme d'un texte exemple                                                                                                                                                |
+| `currentValue` | Same scalar type as selected value | Currently selected scalar value (used as placeholder value if set by code). For object entries, this is the entry's `value` property, not the whole object.                                                                                                                                                                                                                                            |
 
-Si l'objet contient d'autres propriétés, elles sont ignorées.
+Additional properties at the top level of the data source object are ignored by the drop-down renderer.
 
 Pour initialiser l'objet associé à la liste déroulante, vous pouvez :
 
-- Entrer une liste de valeurs par défaut dans les propriétés de l'objet en sélectionnant `<Static List>` dans le thème [Data Source](properties_DataSource.md) de la liste des propriétés. Les valeurs par défaut sont chargées automatiquement dans un objet.
+- Enter a list of default values in the object properties by selecting `<Static List>` in the [Data Source](properties_DataSource.md) theme of the Property List. Les valeurs par défaut sont chargées automatiquement dans un objet.
 
-- Exécuter le code qui crée l'objet et ses propriétés. Par exemple, si "myList" est la [variable](properties_Object.md#variable-or-expression) associée à la liste déroulante, vous pouvez écrire dans l'événement formulaire [On Load](Events/onLoad.md) :
+- Exécuter le code qui crée l'objet et ses propriétés.
+
+#### Example with scalar values
+
+If "Form.myDrop" is the [expression](properties_Object.md#variable-or-expression) associated to the drop-down list, you can write in the [On Load](Events/onLoad.md) form event:
 
 ```4d
 // Form.myDrop est la source de données de l'objet formulaire
@@ -65,6 +84,94 @@ Après que l'utilisateur sélectionne une valeur :
 Form.myDrop.values // ["apples","nuts","pears","oranges","carrots"]
 Form.myDrop.currentValue //"oranges"
 Form.myDrop.index //3
+```
+
+### Customizing items with object entries
+
+:::note Compatibilité
+
+On Windows, item customization is only available in forms rendererd with [Fluent UI](../FormEditor/forms.md#fluent-ui-rendering).
+
+:::
+
+Inside the `values` collection of objects, each entry can be an object which defines item-level presentation and behavior:
+
+| Item property         | Type                                      | Description                                                                                                                                                                                                               |
+| --------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `values[].value`      | Text, Integer, Boolean, Date, or Time     | Scalar value represented by the item. If selectable, this value can become `currentValue`. If omitted and `separator` is not `true`, the item is displayed with no label. |
+| `values[].selectable` | Boolean                                   | Optionnel. Default: `true`. When `false`, the item is visible but cannot be selected.                                                                     |
+| `values[].picture`    | 4D.File, Picture, or Text | Optional icon/picture. A text value must be a valid picture path.                                                                                                                         |
+| `values[].fontWeight` | Text                                      | Optionnel. "normal" or "bold".                                                                                                                                                            |
+| `values[].fontStyle`  | Text                                      | Optionnel. "normal" or "italic".                                                                                                                                                          |
+| `values[].color`      | Text or Integer                           | Optional text color. Supports CSS color names, hexadecimal color strings, RGB strings, and RGB integer values.                                                                            |
+| `values[].separator`  | Boolean                                   | Optionnel. Default: `false`. When `true`, the item is rendered as a separator and all other item properties are ignored.                                  |
+
+#### Rendering and precedence rules
+
+- If `separator = true`, the item is always rendered as a non-selectable divider. In this case `value`, `selectable`, `picture`, `color`, `fontWeight`, and `fontStyle` are ignored.
+- A "-" scalar text value is interpreted as a separator (compatibility). A "-" as a `.value` property in an object entry is interpreted as a regular label, not a separator.
+- If `value` is omitted and `separator` is not `true`, the item has no text label.
+- `color`, `fontWeight`, and `fontStyle` are applied only when a `value` is displayed.
+- If `selectable` is omitted, it behaves as `true`.
+- Non-selectable items and separator items remain in the `values` collection and keep their original index positions.
+
+#### Platform notes for non-selectable items
+
+When `selectable` is false:
+
+- On **Windows**, if `color` is explicitly set, that color is rendered unchanged; if `color` is not set, the item appears gray.
+- On **macOS**, non-selectable items are alpha-blended, including when `color` is set.
+
+#### Picture placement
+
+For non-separator items with a `picture`:
+
+- Left/center-aligned items: picture is displayed on the left of the value.
+- Right-aligned items: picture is displayed on the right of the value.
+- If `value` is omitted, the picture is displayed alone.
+
+:::note Technical limitation
+
+The picture is always displayed **on the left** with hierarchical list data source on Windows or macOS.
+
+:::
+
+#### Example with mixed scalar and object entries
+
+```4d
+// Form.myDrop is the datasource of the form object
+
+Form.myDrop:=New object
+Form.myDrop.values:=New collection
+
+// Non-selectable title
+Form.myDrop.values.push({value: "Priority"; selectable: False})
+
+// Selectable styled items
+Form.myDrop.values.push({value: "Urgent"; picture: File("/RESOURCES/icons/urgent.png"); color: "#C42B1C"; fontWeight: "bold"})
+Form.myDrop.values.push({value: "Normal"; fontWeight: "bold"})
+Form.myDrop.values.push("Low")
+
+// Visual separator
+Form.myDrop.values.push({separator: True})
+
+// Non-selectable message
+Form.myDrop.values.push({value: "Information"; selectable: False; fontStyle: "italic"})
+
+// Placeholder mode
+Form.myDrop.index:=-1
+Form.myDrop.currentValue:="Select a level"
+```
+
+![](../assets/en/FormObjects/dropdown-example.png)
+
+Après que l'utilisateur sélectionne une valeur :
+
+![](../assets/en/FormObjects/dropdown-example-2.png)
+
+```4d
+//Form.myDrop.currentValue = "Normal"
+//Form.myDrop.index = 2 
 ```
 
 ### Utiliser un tableau
@@ -144,8 +251,6 @@ Lorsque vous avez associé une liste déroulante à une énumération et à un c
 Une liste déroulante hiérarchique a une sous-liste associée à chaque élément de la liste. Voici un exemple de liste déroulante hiérarchique :
 
 ![](../assets/en/FormObjects/popupDropdown_hierar.png)
-
-> Dans les formulaires, les listes déroulantes hiérarchiques sont limitées à deux niveaux.
 
 Vous pouvez affecter la liste hiérarchique à l'objet liste déroulante en utilisant le champ [Enumération](properties_DataSource.md#choice-list) de la liste des propriétés.
 

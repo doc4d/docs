@@ -15,7 +15,7 @@ Si vous avez l'habitude de coder avec **VS Code**, vous pouvez également utilis
 
 :::note
 
-Le débogueur ne peut être utilisé que lorsque votre code **s'exécute en mode interprété**. Si vous souhaitez déboguer le code d'une application compilée, vous devez au préalable redémarrer votre projet en mode interprété.
+Le débogueur ne peut être utilisé que lorsque votre code **s'exécute en mode interprété**. If you want to debug some code in a compiled application, you need to restart your project in interpreted mode beforehand.
 
 :::
 

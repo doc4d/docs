@@ -237,8 +237,8 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 - `WebAdmin` 権限名はアプリケーションのために予約されています。カスタムの権限のために使用しないでください。
 - Privileges および roles の名称においては文字の大小が区別されません。 [`.setPrivileges()`](../API/SessionClass.md#setprivileges) に渡された不明な名前は無視されます。
 - Qodly Studio の場合は、権限とロールに対してオプションの`id` プロパティを追加することで、名称変更された場合でもその参照関係を維持することができます。
-- Multiple entries with the same `applyTo` are not merged: the last entry wins without an error. Define only one entry per resource.
-- A resource entry that grants no actions has no effect.
+- 同じ`applyTo` を持った複数のエントリは統合されません: 最後のエントリが優先されます(エラーは発生しません)。リソースに対して定義するエントリは1つのみにしてください。
+- 何のアクションも付与しないリソースエントリには、何の効果もありません。
 
 :::
 
@@ -248,15 +248,15 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
 :::
 
-### Default location and content
+### デフォルトの場所と内容
 
-New projects generate `roles.json` at:
+新規作成されたプロジェクトは`roles.json` を以下の場所に生成します:
 
 ```
 <project folder>/Project/Sources/ 
 ```
 
-See the [Architecture](../Project/architecture.md#sources) section for details.
+詳細については[アーキテクチャー](../Project/architecture.md#sources) を参照してください。
 
 デフォルトの内容:
 
@@ -288,7 +288,7 @@ See the [Architecture](../Project/architecture.md#sources) section for details.
 
 :::note 互換性
 
-In releases before 4D 20 R6, `roles.json` was not created by default. In 4D 20 R6 and later, opening an existing project without a `roles.json` file or `"forceLogin": true` setting makes the **Activate REST authentication through ds.authentify() function** button available on the [Web Features page of the Settings dialog box](../settings/web.md#access). This button upgrades the security settings; you may need to modify your code. [こちらの blog 記事](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/) をご覧ください。
+4D 20 R6 より前のリリースでは、`roles.json` はデフォルトでは作成されていませんでした。 4D 20 R6 以降、`roles.json`ファイルがない、または `"forceLogin": true` の設定がない既存のプロジェクトを開く場合、[設定ダイアログボックスのWeb 機能ページ](../settings/web.md#アクセス権) で **ds.authentify() 関数を通しての REST認証を有効化** ボタンが利用可能になります。このボタンを使用するとセキュリティ設定が更新されるため、コードの修正が必要になる場合があります。[こちらの blog 記事](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/) をご覧ください。
 
 :::
 
@@ -300,14 +300,14 @@ Qodly Studio for 4D においては、ログインモードはRoles and Privileg
 
 ## 制限モード
 
-`restrictedByDefault` determines access to a [resource](#resources) when no [specific permission](#permissions) is defined:
+`restrictedByDefault` は、[特定のパーミッション](#パーミッション) が何も定義されていない場合の[リソース](#リソース) へのアクセスを決定します。
 
-- **Unrestricted mode** (`restrictedByDefault: false`): Resources without defined permissions are accessible to all requests.
-- **Restricted mode** (`restrictedByDefault: true`): Resources without defined permissions are blocked. Access is granted explicitly, and the [permission inheritance rules](#inherited-permissions) still apply.
+- **無制限モード** (`restrictedByDefault: false`): リソースに対して定義されたパーミッションがなくても、全てのリクエストがそれにアクセス可能です。
+- **制限モード** (`restrictedByDefault: true`): 定義されたパーミッションがないリソースは、デフォルトでブロックされます。アクセスは明示的に付与され、また[パーミッションの継承ルール](#継承されたパーミッション) も引き続き適用されます。
 
 :::note 互換性
 
-- New projects set `restrictedByDefault` to `false` by default; see [recommended configurations](#recommended-configuration).
+- 新規プロジェクトはデフォルトでは`restrictedByDefault` を`false` に設定します。詳細は[recommended configurations](#recommended-configuration)を参照してください。
 - For projects converted from earlier releases, enabling access to Qodly Studio through the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration) adds `restrictedByDefault: true` to `roles.json`.
 
 :::

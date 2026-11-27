@@ -70,7 +70,7 @@ Checked in order:
 | Check                                | `field` value     |
 | ------------------------------------ | ----------------- |
 | `dataclassName` is not empty         | `"dataclassName"` |
-| `vectorName` is not empty            | `"vectorName"`    |
+| `vectorName` no está vacío           | `"vectorName"`    |
 | `modelAlias` is set and recognised   | `"modelAlias"`    |
 | Dataclass exists in `ds`             | `"dataclassName"` |
 | Vector field exists                  | `"vectorName"`    |
@@ -104,7 +104,7 @@ The strategy depends on whether a companion `_dirty` field exists on the datacla
 | Companion `_dirty` field | Action taken                                                   |
 | ------------------------ | -------------------------------------------------------------- |
 | Present                  | Sets `<vectorName>_dirty` to `True` — vector is left untouched |
-| Absent                   | Nullifies the vector field                                     |
+| Ausente                  | Nullifies the vector field                                     |
 
 | Argumento | Tipo   | Descripción                                                        |
 | --------- | ------ | ------------------------------------------------------------------ |

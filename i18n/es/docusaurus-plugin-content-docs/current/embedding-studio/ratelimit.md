@@ -21,7 +21,7 @@ These fields are populated from the API response headers. When a provider doesn'
 
 | Campo               | Por defecto | Significado                                                                                                                        |
 | ------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `remainingTokens`   | `-1`        | Tokens left in the current window. `-1` = unknown.                                                 |
+| `remainingTokens`   | `-1`        | Tokens left in the current window. `-1` = desconocido.                                             |
 | `remainingRequests` | `-1`        | Requests left in the current window.                                                                               |
 | `limitTokens`       | `0`         | TPM (tokens per minute) ceiling.                                                                |
 | `limitRequests`     | `0`         | RPM (requests per minute) ceiling.                                                              |

@@ -37,7 +37,7 @@ title: フィールド
 
 ### `4D.Vector`クラス
 
-オブジェクト型フィールドのクラスとして`4D.Vector` を割り当てた場合、**ベクトルフィールド** を定義します。このようなフィールドは埋め込みを保存し、AI 機能を使用してデータをクエリすることに使用することができます。ベクトルに対してどのようにクエリを行うかについては[`4D.Vector` クラス](../API/VectorClass.md) のドキュメンテーションをご覧ください。
+オブジェクト型フィールドのクラスとして`4D.Vector` を割り当てた場合、**ベクトルフィールド** を定義します。 Such fields store embeddings and can be used to query data using AI features. ベクトルに対してどのようにクエリを行うかについては[`4D.Vector` クラス](../API/VectorClass.md) のドキュメンテーションをご覧ください。
 
 また[**4D Embedding Studio** コンポーネント](https://corner.4d.com/component/4d-embedding-studio) を使用すると、4D.Vector フィールドを設定したり更新したりするに役立ちます。
 

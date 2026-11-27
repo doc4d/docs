@@ -150,7 +150,7 @@ A response "without body" has none: `Content-Length: 0`, and no error page after
 
 Then, for methods that require a token:
 
-| Case                                                    | Estado HTTP                                                                                  |
+| Caso                                                    | Estado HTTP                                                                                  |
 | ------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | No token, or unknown, invalid, expired or revoked token | 401 (with a `WWW-Authenticate` challenge in [OAuth mode](#oauth-21-mode)) |
 | No 4D license available for a new MCP session           | 503 with a `Retry-After` header and the "No 4D license available" JSON-RPC error             |
@@ -790,7 +790,7 @@ Entities returned by [custom tools](#calling-a-custom-tool) are serialized the s
 
 The tools return their result in `structuredContent`, or an `isError` result with one of the following messages:
 
-| Message                                                                                                          | Case                                                                                                             |
+| Message                                                                                                          | Caso                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | Invalid parameters: ...                          | Missing, unknown, or invalid argument (including a picture or blob attribute in `attributes`) |
 | Formulas are not allowed in filter                                                                               | `filter` contains a formula                                                                                      |

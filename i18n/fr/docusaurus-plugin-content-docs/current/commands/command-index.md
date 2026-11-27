@@ -729,12 +729,13 @@ title: Commandes par nom
 [`OBJECT GET COORDINATES`](../commands/object-get-coordinates)<br/>
 [`OBJECT Get corner radius`](../commands/object-get-corner-radius)<br/>
 [`OBJECT Get data source`](../commands/object-get-data-source)<br/>
-[`OBJECT Get data source formula`](../commands/object-get-data-source-formula) **nouveau 4D 20 R10**<br/>
+[`OBJECT Get data source formula`](../commands/object-get-data-source-formula) **new 4D 20 R10**<br/>
 [`OBJECT GET DRAG AND DROP OPTIONS`](../commands/object-get-drag-and-drop-options)<br/>
 [`OBJECT Get enabled`](../commands/object-get-enabled)<br/>
 [`OBJECT Get enterable`](../commands/object-get-enterable)<br/>
 [`OBJECT GET EVENTS`](../commands/object-get-events)<br/>
 [`OBJECT Get filter`](../commands/object-get-filter)<br/>
+[`OBJECT Get flyout mode`](../commands/object-get-flyout-mode) **new 4D 21 R6**<br/>
 [`OBJECT Get focus rectangle invisible`](../commands/object-get-focus-rectangle-invisible)<br/>
 [`OBJECT Get font`](../commands/object-get-font)<br/>
 [`OBJECT Get font size`](../commands/object-get-font-size)<br/>
@@ -750,7 +751,7 @@ title: Commandes par nom
 [`OBJECT GET MINIMUM VALUE`](../commands/object-get-minimum-value)<br/>
 [`OBJECT Get multiline`](../commands/object-get-multiline)<br/>
 [`OBJECT Get name`](../commands/object-get-name)<br/>
-[`OBJECT Get padding`](../commands/object-get-padding) **nouveau 4D 21 R5**<br/>
+[`OBJECT Get padding`](../commands/object-get-padding) **new 4D 21 R5**<br/>
 [`OBJECT Get placeholder`](../commands/object-get-placeholder)<br/>
 [`OBJECT Get pointer`](../commands/object-get-pointer)<br/>
 [`OBJECT GET PRINT VARIABLE FRAME`](../commands/object-get-print-variable-frame)<br/>
@@ -768,7 +769,7 @@ title: Commandes par nom
 [`OBJECT Get title`](../commands/object-get-title)<br/>
 [`OBJECT Get type`](../commands/object-get-type)<br/>
 [`OBJECT Get value`](../commands/object-get-value)<br/>
-[`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment) **modifié 4D 21 R5**<br/>
+[`OBJECT Get vertical alignment`](../commands/object-get-vertical-alignment) **modified 4D 21 R5**<br/>
 [`OBJECT Get visible`](../commands/object-get-visible)<br/>
 [`OBJECT Is styled text`](../commands/object-is-styled-text)<br/>
 [`OBJECT MOVE`](../commands/object-move)<br/>
@@ -779,12 +780,13 @@ title: Commandes par nom
 [`OBJECT SET COORDINATES`](../commands/object-set-coordinates)<br/>
 [`OBJECT SET CORNER RADIUS`](../commands/object-set-corner-radius)<br/>
 [`OBJECT SET DATA SOURCE`](../commands/object-set-data-source)<br/>
-[`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula) **nouveau 4D 20 R10**<br/>
+[`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula) **new 4D 20 R10**<br/>
 [`OBJECT SET DRAG AND DROP OPTIONS`](../commands/object-set-drag-and-drop-options)<br/>
 [`OBJECT SET ENABLED`](../commands/object-set-enabled)<br/>
 [`OBJECT SET ENTERABLE`](../commands/object-set-enterable)<br/>
 [`OBJECT SET EVENTS`](../commands/object-set-events)<br/>
 [`OBJECT SET FILTER`](../commands/object-set-filter)<br/>
+[`OBJECT SET FLYOUT MODE`](../commands/object-set-flyout-mode) **new 4D 21 R6**<br/>
 [`OBJECT SET FOCUS RECTANGLE INVISIBLE`](../commands/object-set-focus-rectangle-invisible)<br/>
 [`OBJECT SET FONT`](../commands/object-set-font)<br/>
 [`OBJECT SET FONT SIZE`](../commands/object-set-font-size)<br/>
@@ -799,7 +801,7 @@ title: Commandes par nom
 [`OBJECT SET MAXIMUM VALUE`](../commands/object-set-maximum-value)<br/>
 [`OBJECT SET MINIMUM VALUE`](../commands/object-set-minimum-value)<br/>
 [`OBJECT SET MULTILINE`](../commands/object-set-multiline)<br/>
-[`OBJECT SET PADDING`](../commands/object-set-padding) **nouveau 4D 21 R5**<br/>
+[`OBJECT SET PADDING`](../commands/object-set-padding) **new 4D 21 R5**<br/>
 [`OBJECT SET PLACEHOLDER`](../commands/object-set-placeholder)<br/>
 [`OBJECT SET PRINT VARIABLE FRAME`](../commands/object-set-print-variable-frame)<br/>
 [`OBJECT SET RESIZING OPTIONS`](../commands/object-set-resizing-options)<br/>
@@ -814,7 +816,7 @@ title: Commandes par nom
 [`OBJECT SET THREE STATES CHECKBOX`](../commands/object-set-three-states-checkbox)<br/>
 [`OBJECT SET TITLE`](../commands/object-set-title)<br/>
 [`OBJECT SET VALUE`](../commands/object-set-value)<br/>
-[`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment) **modifié 4D 21 R5**<br/>
+[`OBJECT SET VERTICAL ALIGNMENT`](../commands/object-set-vertical-alignment) **modified 4D 21 R5**<br/>
 [`OBJECT SET VISIBLE`](../commands/object-set-visible)<br/>
 [`Object to path`](../commands/object-to-path)<br/>
 [`Old`](../commands/old)<br/>
