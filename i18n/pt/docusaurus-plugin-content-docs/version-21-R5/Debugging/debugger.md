@@ -300,7 +300,7 @@ Para exibir o tipo de parâmetro, verifique a opção **Mostrar tipos** no menu 
 
 Depois de implementar a lista de parâmetros, você pode arrastar e soltar parâmetros e resultados de funções para o [Painel de Observação Personalizado](#custom-watch-pane).
 
-You can also use the [Call chain](../commands/call-chain) command to retrieve the call chain programmatically.
+Você também pode usar o comando [Call chain](../commands/call-chain) para recuperar a cadeia de chamadas programaticamente.
 
 ## Painel de Observação Personalizado
 
@@ -347,7 +347,7 @@ Existem várias formas de adicionar expressões à lista:
 - Selecione uma expressão no [painel Source Code](#source-code-pane) e pressione **ctrl+D**  (Windows) ou **cmd+D** (macOS)
 - Dê duplo clique em algum lugar no espaço vazio do Custom Watch Pane (adiciona uma expressão com um nome de espaço reservado que você pode editar)
 - Selecione uma [opção de exibição](#display-mode) que insere expressões automaticamente.
-- Select **New Expression...** in the Custom Watch pane's [contextual menu](#contextual-menu) to add an expression using the **Formula Editor**. Pode introduzir qualquer fórmula que devolva um resultado.
+- Selecione **New Expression...** no [menu contextual](#contextual-menu) do painel Custom Watch para adicionar uma expressão usando o **Formula Editor**. Pode introduzir qualquer fórmula que devolva um resultado.
 
 Para editar uma expressão, clique nela para selecioná-la e, em seguida, clique novamente ou pressione **Enter** no seu teclado.
 
@@ -369,7 +369,7 @@ A expressão será então exibida em todas as janelas do depurador.
 
 ### Menu contextual
 
-The Custom Watch Pane’s menu is available on a contextual click or using the ![menu](../assets/en/Debugging/custom-watch-pane-menu.png) icon:
+O menu do Painel de Observação Personalizado está disponível em um clique contextual ou usando o ícone ![menu](../assets/en/Debugging/custom-watch-pane-menu.png):
 
 ![custom-watch-pane-context-menu](../assets/en/Debugging/custom-watch-pane-context-menu.png)
 
@@ -399,7 +399,7 @@ Essa área também permite que você adicione ou remova [**pontos de interrupç�
 
 ### Protótipo
 
-The prototype of the currently executed method or function in the Call chain is displayed on the top of the pane:
+O protótipo do método ou função atualmente executado na cadeia de chamadas é exibido na parte superior do painel:
 
 ![prototype](../assets/en/Debugging/prototype.png)
 
@@ -476,7 +476,7 @@ O menu contextual do painel Código-fonte fornece acesso a várias funções que
 Os atalhos específicos permitem-lhe encontrar cadeias de caracteres idênticas à que foi selecionada:
 
 - Para pesquisar as próximas cadeias de caracteres idênticas, pressione **Ctrl+E** (Windows) ou **Cmd+E** (macOS)
-- Para buscar las cadenas idénticas anteriores, presione **Ctrl+Shift+E** (Windows) o **Cmd+E** (macOS)
+- Para pesquisar as cadeias idênticas anteriores, pressione **Ctrl+Shift+E** (Windows) ou **Cmd+Shift+E** (macOS)
 
 A pesquisa só é efetuada se selecionar pelo menos um carácter no painel Código fonte.
 
@@ -499,7 +499,7 @@ Esta secção lista todos os atalhos disponíveis na janela do depurador.
 - Uma expressão ou objeto selecionado pode ser copiado para a janela de avaliação personalizada através de um simples arrastar e largar.
 - **Ctrl+D** (Windows) ou **Cmd+D** (macOS) copiam as combinações de teclas selecionadas para a Janela de Observação Personalizada.
 - **Ctrl+E** (Windows) ou **Cmd+E** (macOS) localizam as próximas cadeias de caracteres idênticas à selecionada.
-- \*\*As combinações de teclas Ctrl+Shift+E (Windows) ou Cmd+Shift+E (macOS) localizam as cadeias de caracteres anteriores idênticas à selecionada.
+- **Ctrl+Shift+E** (Windows) ou **Cmd+Shift+E** (macOS) localizam as cadeias de caracteres anteriores idênticas à selecionada.
 
 #### Todas as janelas
 
