@@ -119,7 +119,7 @@ Unlike [`Process.process()`](Process.md#process-resolution), a stub is **not** t
 
 - [Process](Process.md)
 - [Settings](Settings.md)
-- [Definition](Definition.md)
+- [Definición](Definition.md)
 - [Embedder](Embedder.md)
 - [EmbedderResult](EmbedderResult.md)
 - [Phrase](Phrase.md)
