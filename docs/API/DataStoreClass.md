@@ -758,6 +758,7 @@ Each object of the returned collection contains the following properties. The to
 |expiry|Text|Expiration date of the token|
 |info|Object|Information stored with the token|
 |createdAt|Text|Date and time of the token generation|
+|lastUsedAt|Text|Date and time of the last use of the token (null if it was never used)|
 
 #### Example
 
