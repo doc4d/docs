@@ -26,200 +26,200 @@ De izquierda a derecha, los iconos realizan las siguientes acciones:
 - Herramientas (tamaño, alineación, ordenación)
 - colores
 - Ventana de la lista de índices
-- Primary key manager
+- Gestor de llaves primarias
 
 ### Información sobre el bloqueo
 
-A closed lock icon ![](../assets/en/Develop/structure-lock.png) is displayed if the structure file is locked.  
-Locking can occur in both project and client/server modes when:
+Si el archivo de estructura está bloqueado se muestra un icono de candado cerrado ![](../assets/en/Develop/structure-lock.png).  
+El bloqueo puede ocurrir tanto en los modos proyecto y cliente/servidor cuando:
 
-- The `catalog.4DCatalog` file is *Read-only* (Projects only). Clicking on the lock icon will display an alert to unlock it, if possible.
-- Two or more users attempt to modify the same structure at the same time. The structure cannot be used until the first user frees it by closing the window. *(Cliente/servidor únicamente)*
+- El archivo `catalog.4DCatalog` está en *solo lectura* (solo para proyectos). Al hacer clic en el icono del candado, aparecerá un aviso para desbloquearlo, si es posible.
+- Dos o más usuarios intentan modificar la misma estructura al mismo tiempo. La estructura no se puede utilizar hasta que el primer usuario la libere cerrando la ventana. *(Cliente/servidor únicamente)*
 
-In both cases, the structure can be opened in *Read-only*, but cannot be used until the lock is removed.
+En ambos casos, la estructura se puede abrir en modo *solo lectura*, pero no se puede utilizar hasta que se elimine el bloqueo.
 
 ## Barra de información
 
-The lower part of the editor window is an information bar displaying data corresponding to the area the mouse is over: table, field or relation.
+La parte inferior de la ventana del editor es una barra de información que muestra datos correspondientes al elemento sobre el que se encuentra el cursor: tabla, campo o relación.
 
-#### Information about a table
+#### Información sobre una tabla
 
 - Nombre y número de la tabla
-- Table triggers:
+- Triggers de la tabla:
   - **NEW:** al guardar un nuevo registro
-  - **SAVE:** On saving existing record
+  - **SAVE:** al guardar un registro existente
   - **DEL:** al eliminar un registro
 
-#### Information about a field
+#### Información sobre un campo
 
 - Nombre y número de la tabla
-- Field name and number
+- Nombre y número del campo
 - Tipo de campo
-- Field attributes:
-  - **NUL:** Map null values to blank values
+- Atributos del campo:
+  - **NUL:** traducir los valores null a valores vacíos
   - **UNI:** único
 
-#### Information about a relation
+#### Información sobre una relación
 
-- Origin table and field (many field)
-- Destination table and field (one field)
-- Relation type and ORDA name:
-  - **N→1** (many to one) and `relatedEntities` relation attribute name
-  - **1→N** (one to many) and `relatedEntity` relation attribute name
+- Tabla y campo de origen (campo Muchos)
+- Tabla y campo de destino (campo Uno)
+- Tipo de relación y nombre ORDA:
+  - **N→1** (de Muchos a Uno) y el nombre del atributo relacional `relatedEntities`
+  - **1→ N** (Uno a Muchos) y nombre del atributo relacional `relatedEntity`
 
 :::note
 
-For more information on ORDA names, refer to the [Data Model Objects](../ORDA/dsMapping.md#structure-mapping) page.
+Para más información sobre los nombres ORDA, consulte la página [Objetos del modelo de datos](../ORDA/dsMapping.md#structure-mapping).
 
 :::
 
-## Inspector palette
+## Paleta Inspector
 
-The properties of the Structure editor objects (tables, fields and relations) can be viewed and modified via the Inspector palette:
+Las propiedades de los objetos del editor de estructuras (tablas, campos y relaciones) se pueden consultar y modificar a través de la paleta Inspector:
 
 ![](../assets/en/Develop/structure-inspector.png)
 
-This palette appears when you double-click on an object. When it is displayed, its contents are updated dynamically depending on the objects selected. The Inspector displays the [general properties of the Structure editor window](#customizing-the-editor-window) when you click in an empty area of the window.
+Esta paleta aparece al hacer doble clic en un objeto. Cuando se muestra, su contenido se actualiza dinámicamente en función de los objetos seleccionados. El Inspector muestra las [propiedades generales de la ventana del editor de estructuras](#customizing-the-editor-window) al hacer clic en un área vacía de la ventana.
 
-The different areas of the palette can be expanded/collapsed. You can click on the adjacent triangles to display or hide the corresponding information.
+Las diferentes áreas de la paleta pueden ser desplegadas/contraídas. Puede hacer clic en los triángulos adyacentes para mostrar u ocultar la información correspondiente.
 
-The following shortcuts can be used:
+Se pueden utilizar los siguientes atajos:
 
-- **Shift+click** on the title bar of a collapsed panel expands that panel and collapses all the others.
+- **Mayús+clic** en la barra de título de un panel contraído despliega ese panel y contrae todos los demás.
 - **Alt** (Windows) u **Opción** (macOS) + **clic** en la barra de título de un panel colapsado abre todos los paneles.
 - **Alt** (Windows) u **Opción** (macOS) + **clic** en la barra de título de un panel desplegado permite contraer todos los paneles.
 
-The position of the palette and the expanded/collapsed states of its panels are saved.
+La posición de la paleta y los estados desplegados/contraídos de sus paneles se guardan.
 
 ## Seleccionar un objeto
 
-To work with an image of an object in the Structure editor, you must first select it. You can then specify its properties, move it, resize it, delete it, etc. You can select several objects of the same type simultaneously to modify their common properties in the Inspector palette.
+Para trabajar con la imagen de un objeto en el editor de estructura, primero debe seleccionarlo. Luego puede especificar sus propiedades, moverla, redimensionarla, eliminarla, etc. Puede seleccionar varios objetos del mismo tipo simultáneamente para modificar sus propiedades comunes en la paleta Inspector.
 
 Para seleccionar:
 
-- **A table:** Click the image of the table, or press `Tab` / `Shift+Tab` to select each table successively.
-- **A field or relation:** Click the field or relation, or use the arrow keys to navigate.
-- **Several objects:** Use `Shift+Click` for adjacent objects, `Ctrl+Click` (Windows) or `Command+Click` (macOS) for non-adjacent ones.
+- **Una tabla:** haga clic en la imagen de la tabla, o presione `Tab` / `Mayús+Tab` para seleccionar cada tabla sucesivamente.
+- **Un campo o relación:** haga clic en el campo o relación, o utilice las teclas de flecha para navegar.
+- **Varios objetos:** utilice `Mayús + clic` para los objetos adyacentes y `Ctrl + clic` (Windows) o `Comando + clic` (macOS) para los que no lo sean.
 
-## Working with table images
+## Trabajar con imágenes de tablas
 
-You can resize or move the table images in the Structure editor according to your requirements.
+Puede cambiar el tamaño o mover las imágenes de la tabla en el editor de estructuras de acuerdo con sus necesidades.
 
-**4D Server**: en [modo desarrollo](../Desktop/clientServer.md#development-mode), cualquier modificación en las imágenes de las tablas (cambio de tamaño, ubicación...) is propagated to all developers in the Design environment.
+**4D Server**: en [modo desarrollo](../Desktop/clientServer.md#development-mode), cualquier modificación en las imágenes de las tablas (cambio de tamaño, ubicación...) se propaga a todos los desarrolladores en el entorno Diseño.
 
 ### Desplazarse por la lista de campos
 
-When you add fields to a table or when you reduce the size of a table, there may be more fields in the table than the image can display. When this happens, 4D automatically adds a cursor than you can use to scroll through the list of visible fields:
+Cuando añade campos a una tabla o cuando reduce el tamaño de una tabla, es posible que haya más campos en la tabla de los que puede mostrar la imagen. Cuando esto sucede, 4D añade automáticamente un cursor que lo que puede utilizar para desplazarse a través de la lista de campos visibles:
 
 ![](../assets/en/Develop/structure-table1.png)
 
-### Resizing a table image
+### Redimensionar una imagen de tabla
 
-You can resize a table image to display more field names or reorganize your screen.
+Puede cambiar el tamaño de una imagen de tabla para mostrar más nombres de campos o reorganizar su pantalla.
 
-- **Manual resizing**: Simply click and drag the bottom of the table image or its lower right corner.
+- **Redimensionamiento manual**: solo tiene que hacer clic y arrastrar la parte inferior de la imagen de la tabla o su esquina inferior derecha.
 
 ![](../assets/en/Develop/structure-table2.png)
 
-- **Optimal Size**: This option automatically resizes the selected table(s) so that their size corresponds exactly to the number of fields they contain (no empty lines are displayed). To apply the **Optimal Size** command to one or more tables, select **Optimal Size** from the menu associated with the toolbar button of the editor or from the editor’s context menu (click on a table).
+- **Tamaño óptimo**: esta opción ajusta automáticamente el tamaño de las tablas seleccionadas para que corresponda exactamente con el número de campos que contienen (no se muestran líneas vacías). Para aplicar el comando **Tamaño óptimo** a una o más tablas, seleccione **Tamaño óptimo** en el menú asociado con el botón de la barra de herramientas del editor o desde el menú contextual del editor (haga clic en una tabla).
 
-- **Collapse**: The **Collapse** function collapses the selected table image(s) so that only their names are visible.  This is useful for large structures.
+- **Contraer**: la función **Contraer** contrae las imágenes de las tablas seleccionadas, de modo que solo queden visibles sus nombres.  Esto es útil para estructuras grandes.
 
-To apply the **Collapse** command to one or more tables, you can:
+Para aplicar el comando **Contraer** a una o varias tablas, puede:
 
  ```
- - Select **Collapse** from the editor’s context menu (click in the title area of the table).  
- - **Shift+Double-click** in the table name area to toggle through the same sequence *original size → collapse.*
+ - Seleccionar **Contraer** en el menú contextual del editor (haga clic en el área del título de la tabla).  
+ - **Mayús+ doble clic** en el área del nombre de la tabla para alternar entre la misma secuencia: *tamaño original → contraer.*
  ```
 
 :::note Notas
 
-- A standard double-click on the table name area opens the **Inspector**.
+- Un doble clic estándar en el área de nombre de la tabla abre el **Inspector**.
 - **Alt** (Windows) u **Opción** (macOS) + doble clic abre el método de activación de la tabla en el **Editor de métodos**.
 - **Ctrl** (Windows) o **Comando** (macOS) + doble clic abre el **Explorador** en la página Formulario.
 
 :::
 
-### Moving table images
+### Desplazamiento de las imágenes de tabla
 
-You can move table images to regroup them according to function or to reorganize the Structure editor window. You can also align them to improve the readability of the structure. Any relations are redrawn automatically to correspond with the new table locations.
+Puede mover las imágenes de las tablas para reagruparlas según su función o para reorganizar la ventana del editor de estructura. También puede alinearlos para mejorar la legibilidad de la estructura. Todas las relaciones se vuelven a trazar automáticamente para que se ajusten a las nuevas ubicaciones de las tablas.
 
-To move a table image manually, click on the name of a table and drag it using the mouse cursor. Drag the table name bar only. Dragging other parts of the table image may produce different effects, such as creating a new table relation or changing the size of the table image.
+Para mover manualmente la imagen de una tabla, haga clic en el nombre de la tabla y arrástrela con el cursor. Arrastre únicamente la barra del nombre de la tabla. Si arrastra otras partes de la imagen de la tabla, pueden producirse efectos diferentes, como crear una nueva relación de tabla o cambiar el tamaño de la imagen de la tabla.
 
-To align two or more tables, select the tables to align and choose an alignment option in the tools menu:
+Para alinear dos o más tablas, seleccione las tablas a alinear y elija una opción de alineación en el menú de herramientas:
 
 ![](../assets/en/Develop/structure-align.png)
 
-These commands are only active when at least two tables are selected.
+Estos comandos solo están activos cuando se han seleccionado al menos dos tablas.
 
-## Scrolling
+## Desplazamiento
 
-Specific scrolling functions facilitate navigation among large structures:
+Las funciones específicas de desplazamiento facilitan la navegación por estructuras de gran tamaño:
 
-- The mouse wheel can be used to scroll the contents of the editor window vertically. This will also scroll through the fields of a table when the cursor is placed above it.
-- Holding down **Shift** while using the mouse wheel scrolls the contents of the window horizontally.
-- Pressing **Shift** activates the "hand" tool which can be used to drag the entire contents of window by clicking in the empty area.
+- La rueda del ratón se puede utilizar para desplazarse verticalmente por el contenido de la ventana del editor. Esto también permitirá desplazarse por los campos de una tabla cuando se sitúe el cursor sobre ella.
+- Mantener presionado **Mayús** mientras se usa la rueda del ratón desplaza el contenido de la ventana horizontalmente.
+- Presionando **Mayús** se activa la herramienta "mano" que puede utilizarse para arrastrar todo el contenido de la ventana haciendo clic en el área vacía.
 
 ## Zoom
 
-You can modify the display scale of the database structure using the **Zoom** menu in the right side of the information bar. 100% es el valor predeterminado al abrir una base de datos. Zoom action is focused on the selection if there is one.
+Puede modificar la escala de visualización de la estructura de la base de datos usando el menú **Zoom** al lado derecho de la barra de información. 100% es el valor predeterminado al abrir una base de datos. La acción de zoom se centra en la selección, si hay alguna.
 
-The current zoom setting is specific to each user and is memorized when the window is closed.
+El ajuste actual del zoom es específico para cada usuario y se guarda al cerrar la ventana.
 
 :::note
 
-You can [configure the graphic rendering of the Structure editor during a zoom](../Preferences/structure.md#graphic-quality-of-the-structure) using a preference.
+Puede [configurar la representación gráfica del editor de estructuras al hacer zoom](../Preferences/structure.md#graphic-quality-of-the-structure) mediante una opción de configuración.
 
 :::
 
 ## Mostrar tipo de objeto
 
-The **Display** button in the toolbar of the Structure editor is associated with a menu and lets you choose the objects to be displayed in the structure according to their type:
+El botón **Visualizar** de la barra de herramientas del editor de estructuras está vinculado a un menú y permite seleccionar los objetos que se mostrarán en la estructura según su tipo:
 
 ![](../assets/en/Develop/structure-display.png)
 
-Por defecto, se muestran todos los objetos. This feature allows various representations or views — from the simplest to the most complete — and provides an analysis tool for the structure based on the level of information required.
+Por defecto, se muestran todos los objetos. Esta funcionalidad permite diversas representaciones o vistas, desde las más sencillas hasta las más completas, y ofrece una herramienta de análisis de la estructura en función del nivel de información requerido.
 
-The choices are applied to all tables and fields. They are saved per user and memorized when the window is closed. Hiding objects does not change the position of the tables.
+Las opciones se aplican a todas las tablas y campos. Se guardan por usuario y se memorizan al cerrar la ventana. Ocultar objetos no modifica la posición de las tablas.
 
-- When several types of fields are checked, a logical OR operator is used to determine the objects to be displayed. For example, if *Invisible Fields* and *Not Indexed Fields* are both checked, all the non-indexed and invisible fields (indexed or not) are displayed.
-- Tables have priority over fields: if a table is not displayed, its fields are not displayed.
-- If you add an object whose type is not displayed (table, field, or relation), it becomes visible. To hide it again, you must uncheck the corresponding option in the **Display** menu.
+- Cuando se seleccionan varios tipos de campos, se utiliza un operador OR lógico para determinar los objetos a mostrar. Por ejemplo, si se marcan *Campos Invisibles* y *Campos no Indexados*, todos los campos no indexados e invisibles (indexados o no) se mostrarán.
+- Las tablas tienen prioridad sobre los campos: si una tabla no se muestra, tampoco se muestran sus campos.
+- Si añade un objeto cuyo tipo no se muestra (tabla, campo o relación), se hace visible. Para volver a ocultarlo, debe desmarcar la opción correspondiente en el menú **Visualización**.
 
-## Highlight/dim tables by folder
+## Resaltar/Ocultar las tablas por carpeta
 
-You can hide groups of tables in the Structure editor based on folders defined in the **Home Page** of the Explorer window. You configure this display using the **Folders** button in the Structure editor toolbar.
+Puede ocultar grupos de tablas en el Editor de estructura según las carpetas definidas en la **página de inicio** de la ventana del Explorador. Puede configurar esta pantalla usando el botón **Carpetas** en la barra de herramientas del editor de estructuras.
 
-The menu associated with this button displays commands that manage the display as well as the list of folders in the database. A check mark appears next to each folder displayed. You can modify the current display by selecting or deselecting a folder from this menu.
+El menú asociado a este botón muestra los comandos que permiten gestionar la visualización, así como la lista de carpetas de la base de datos. Aparece una marca de verificación junto a cada carpeta que se muestra. Puede modificar la visualización actual seleccionando o deseleccionando una carpeta de este menú.
 
-The **Highlight All Folders** and **Dim All Folders** commands can be used to display or hide all the tables in folders of the database.
+Los comandos **Mostrar todas las carpetas** y **Ocultar todas las carpetas** permiten mostrar u ocultar todas las tablas de las carpetas de la base de datos.
 
-Each click on the toolbar's folder button inverts the display of the tables: highlighted tables are dimmed and vice versa.
+Cada vez que se presiona el botón de la carpeta de la barra de herramientas, se invierte la visualización de las tablas: las tablas resaltadas se atenuaron y viceversa.
 
-When the tables are dimmed, only their outlines appear in the Structure window. Tables that are not dimmed remain fully visible.
+Cuando las tablas están atenuadas, solo aparecen sus contornos en la ventana de estructura. Las tablas que no aparecen atenuadas siguen siendo totalmente visibles.
 
 ![](../assets/en/Develop/structure-dimmed.png)
 
 :::note
 
-You can set the appearance of dimmed tables in the Structure editor to either *Dimmed* or *Invisible* using an [option in the **Structure** page of the Preferences](../Preferences/structure.md#when-a-folder-is-dimmed-its-contents-are). It is necessary to close and reopen the Structure editor window for this preference to take effect.
+Puede definir la apariencia de las tablas atenuadas en el editor de estructura para que aparezcan como *Atenuadas* o *Invisibles* mediante una [opción de la página **Estructura** de las Preferencias](../Preferences/structure.md#when-a-folder-is-dimmed-its-contents-are). Es necesario cerrar y volver a abrir la ventana del editor de estructuras para que esta configuración surta efecto.
 
 :::
 
 ## Personalizar la ventana del editor
 
-The Structure editor window has specific properties that can be set using the **Inspector**.
+La ventana del editor de estructuras tiene propiedades específicas que se pueden configurar usando el **Inspector**.
 
-To display these properties, you can either:
+Para mostrar estas propiedades, puede:
 
-- Double-click (or click, if the window is already displayed) in an empty area of the window, or
-- Right-click in an empty area and choose **Structure Properties** from the context menu.
+- Haga doble clic (o haga clic, si la ventana ya está mostrada) en un área vacía de la ventana, o
+- Haga clic derecho en un área vacía y elija **Propiedades de estructura** en el menú contextual.
 
-The Inspector palette displays the Structure properties.
+La paleta Inspector muestra las propiedades de la estructura.
 
 ![](../assets/en/Develop/structure-properties.png)
 
-The following properties can be set:
+Se pueden definir las siguientes propiedades:
 
 - **Background Picture:** You can add or modifiy the background picture used as well as its display format. To add or modify the picture, click on the **Open** button or right-click in the preview area and choose **Open** from the context menu; then select the file containing the picture to be displayed. You can use any picture format. The selected picture is displayed immediately in the preview area and in the editor window.
   To change the display format of the picture, choose a value from the Picture Format menu. The formats provided are the standard picture display formats of 4D.
@@ -227,7 +227,7 @@ The following properties can be set:
 - **Fill Color:** You can change the color used for the background of the editor window. To do this, click in the color selection area and choose a color from the selection menu.
 - **Default Font:** To change the default font used for table and field names, choose a value from this menu. You can also use the Size menu to change the default font size.
 
-## Find in Structure
+## Buscar en la estructura
 
 4D lets you carry out searches directly in the Structure editor window. Searches can be among the following elements:
 
