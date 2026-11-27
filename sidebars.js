@@ -436,7 +436,6 @@ module.exports =
             "WebServer/preemptiveWeb"
           ]
         },
-        "WebServer/mcp-server",
         {
           type: "category",
           label: "REST API",
