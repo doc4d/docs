@@ -1,9 +1,9 @@
 ---
 id: license
-title: SOFTWARE LICENSE AGREEMENT
+title: ACUERDO DE LICENCIA DE SOFTWARE
 ---
 
-# SOFTWARE LICENSE AGREEMENT
+# ACUERDO DE LICENCIA DE SOFTWARE
 
 ## Preamble
 
@@ -45,7 +45,7 @@ These expressions may be used both in singular and plural form.
 
 The purpose of the Agreement is the grant by the Licensor to the Licensee of a non-exclusive, transferable and worldwide license for the Software as set forth in Article 5 hereinafter for the whole term of the protection granted by the rights over said Software.
 
-## Article 3 - ACCEPTANCE
+## Artículo 3 - ACEPTACIÓN
 
 The Licensee shall be deemed as having accepted the terms and conditions of this Agreement upon the occurrence of the first of the following events:
 
@@ -100,7 +100,7 @@ In the event the creation of the Modified Software, the Licensee undertakes that
 
 ## Article 6 - INTELLECTUAL PROPERTY
 
-### 6.1 OVER THE INITIAL SOFTWARE
+### 6.1 SOBRE EL SOFTWARE INICIAL
 
 The Holder owns the intellectual property rights over the Initial Software. Any or all use of the Initial Software is subject to compliance with the terms and conditions under which the Holder has elected to distribute its work and no one shall be entitled to modify the terms and conditions for the distribution of said Initial Software.
 
@@ -118,7 +118,7 @@ The Licensee expressly undertakes:
 
 The Licensee undertakes not to directly or indirectly infringe the intellectual property rights of the Holder on the Software and to take, where applicable, vis- à-vis its staff, any and all measures required to ensure respect of said intellectual property rights of the Holder.
 
-## Article 7 - RELATED SERVICES
+## Artículo 7 - SERVICIOS RELACIONADOS
 
 Under no circumstances shall the Agreement oblige the Licensor to provide technical assistance or maintenance services for the Software.
 
@@ -142,7 +142,7 @@ In the event of a breach by the Licensee of its obligations hereunder, the Licen
 
 A Licensee whose Agreement is terminated shall no longer be authorized to use, modify or distribute the Software. However, any licenses that it may have granted prior to termination of the Agreement shall remain valid subject to their having been granted in compliance with the terms and conditions hereof.
 
-## Article 11 – MISCELLANEOUS
+## Artículo 11 – DISPOSICIONES VARIAS
 
 ### 11.1
 
