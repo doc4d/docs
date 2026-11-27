@@ -306,7 +306,7 @@ Default primary keys are not added to tables that are created using the SQL **CR
 
 :::
 
-## Primary key manager
+## Gestor de llaves primarias
 
 The **Primary key manager** is an assistant intended to facilitate the resolution of errors related to the presence of tables without primary keys, particularly in the context of a journaled database:
 
