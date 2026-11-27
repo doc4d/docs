@@ -81,7 +81,7 @@ $v:=$tpl.validate(ds.Students; {allowRelations: True})
 // $v.success → True
 ```
 
-#### Rejected shapes
+#### Formas rechazadas
 
 Regardless of options:
 
