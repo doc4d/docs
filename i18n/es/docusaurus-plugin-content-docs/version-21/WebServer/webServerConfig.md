@@ -590,10 +590,10 @@ Any web page open in a user's browser can make that browser send requests to you
 
 In both cases, the function is executed only if the privileges of that session allow it.
 
-| Request from another website to                                                                               | "Strict"        | "Lax"                                                                            | "None"                                                                                 |
-| ------------------------------------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function (POST only) | Runs as a guest | Runs as a guest                                                                  | Runs in the user's session (form, script)                           |
-| an exposed [onHTTPGet](../ORDA/ordaClasses.md#onhttpget-keyword) function (GET and POST)   | Runs as a guest | Runs in the user's session through a link or a redirection; as a guest otherwise | Runs in the user's session (link, redirection, image, form, script) |
+| Request from another website to                                                                               | "Strict"                 | "Lax"                                                                            | "None"                                                                                 |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function (POST only) | Se ejecuta como invitado | Se ejecuta como invitado                                                         | Runs in the user's session (form, script)                           |
+| an exposed [onHTTPGet](../ORDA/ordaClasses.md#onhttpget-keyword) function (GET and POST)   | Se ejecuta como invitado | Runs in the user's session through a link or a redirection; as a guest otherwise | Runs in the user's session (link, redirection, image, form, script) |
 
 :::note Notas
 
