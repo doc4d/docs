@@ -102,19 +102,6 @@ Si se supera cualquiera de las dos cuotas, la solicitud se rechaza con una respu
 
 Si se supera una cuota de bytes de salida mientras se envía una respuesta, se interrumpe la solicitud actual. Las reglas de preprocesamiento anteriores se aplican a la siguiente solicitud dentro de la misma ventana de tiempo.
 
-### MCP requests
-
-Requests to the [MCP server](mcp-server.md) (`/mcp` URL) are Web server requests: they count in the server global quotas, and each MCP session counts as a session in the session quotas. Requests over a quota get the **HTTP 429 Too Many Requests** response before any 4D code runs, including authentication code.
-
-For example, to limit each session, including MCP sessions used by AI agents, to 30 requests per minute:
-
-```4d
-var $webServer : 4D.WebServer:=WEB Server
-$webServer.quotas.nbRequestsPerMinPerSession:=30
-```
-
-MCP sessions cannot get their own quotas: the session default quotas apply to every Web session alike, and [`Session.quotas`](../API/SessionClass.md#quotas) only holds the REST entity-set limits.
-
 ### Respuestas de limitación de velocidad
 
 Las cuotas de limitación de velocidad utilizan intervalos de tiempo fijos. Cuando se alcanza una cuota, las solicitudes posteriores se rechazan hasta el fin de la ventana actual de un minuto o de una hora. La respuesta **HTTP 429 Too Many Requests** incluye un encabezado `Retry-After` que indica el tiempo que hay que esperar antes de enviar otra solicitud.

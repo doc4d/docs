@@ -140,7 +140,7 @@ Look up the saved definition for the given dataclass/vector pair.
 | --------------- | --------------------------- | ------------------------------------------------------------------- |
 | *dataclassName* | Text                        | Nombre de la dataclass.                             |
 | *vectorName*    | Text                        | Name of the vector field on that dataclass.         |
-| Resultado       | [Definition](Definition.md) | The matching definition, or `Null` if none matches. |
+| Resultado       | [Definición](Definition.md) | The matching definition, or `Null` if none matches. |
 
 ```4d
 var $def:=$settings.find("Students"; "student_vector_1")
@@ -179,6 +179,6 @@ var $result:=cs.EmbeddingStudio.Settings.new().invalidateVectors()
 
 ## Ver también
 
-- [Definition](Definition.md)
+- [Definición](Definition.md)
 - [Process](Process.md)
 - [Phrase](Phrase.md)

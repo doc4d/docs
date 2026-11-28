@@ -72,7 +72,7 @@ QUERY([PICTURES];[PICTURES]Photos %"cats")
 
 Esto funciona de la misma manera para todos los comandos de consulta y ordenación: [`QUERY BY FORMULA`](../commands/query-by-formula), [`QUERY SELECTION`](../commands/query-selection), [`ORDER BY`](../commands/order-by), etc.
 
-### Vector index
+### Índice vectorial
 
 Un índice vectorial puede asociarse a un campo de tipo Object asociado a una `[clase](./field-properties.md#4dvector-class) `4D.Vector\`. En este caso, están disponibles las siguientes opciones:
 

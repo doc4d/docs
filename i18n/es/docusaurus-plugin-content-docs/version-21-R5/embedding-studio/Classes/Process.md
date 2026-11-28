@@ -95,7 +95,7 @@ var $r:=$p.process([ds.Students; $def; {dataclassName: "School"; vectorName: "sc
 | Entrada                                                                                | Comportamiento                                                                                                                                                                                                                                |
 | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Null`                                                                                 | Every definition in settings.                                                                                                                                                                                                 |
-| [Definition](Definition.md)                                                            | Used as-is.                                                                                                                                                                                                                   |
+| [Definición](Definition.md)                                                            | Used as-is.                                                                                                                                                                                                                   |
 | `4D.DataClass` (e.g. `ds.Students`) | Every definition in settings whose `dataclassName` matches that dataclass.                                                                                                                                                    |
 | `{dataclassName: "..."; vectorName: "..."}`                                            | The matching saved definition, or — if none is found — a new `Definition` built from the object's fields (`modelAlias`, `phrase.template`).                                                                |
 | Collection                                                                             | Each item is resolved with the rules above and the results are **flattened** into one collection (a `4D.DataClass` item can expand to several definitions). Unsupported items are dropped. |
@@ -148,7 +148,7 @@ The polymorphic *definition* argument accepted by `processEntity` and `processEn
 | Entrada                     | Comportamiento                                                                                  |
 | --------------------------- | ----------------------------------------------------------------------------------------------- |
 | `Null`                      | All definitions in settings whose `dataclassName` matches the entity/selection. |
-| [Definition](Definition.md) | Used as-is; the `dataclassName` must match the entity/selection.                |
+| [Definición](Definition.md) | Used as-is; the `dataclassName` must match the entity/selection.                |
 | `{vectorName: "..."}`       | Looked up in settings by `vectorName` against the entity/selection dataclass.   |
 | Collection                  | Each item resolved using the rules above; mismatches are silently dropped.      |
 
@@ -181,7 +181,7 @@ Enable it only for large recalculations, such as computing the vectors of a whol
 
 - [StudioEmbedder](StudioEmbedder.md)
 - [Settings](Settings.md)
-- [Definition](Definition.md)
+- [Definición](Definition.md)
 - [Embedder](Embedder.md)
 - [ProcessResult](ProcessResult.md)
 - [Phrase](Phrase.md)
